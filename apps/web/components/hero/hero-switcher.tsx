@@ -137,7 +137,6 @@ export function HeroSwitcher() {
   const [currentVariant, setCurrentVariant] = useState<HeroVariant>("d")
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // 从 localStorage 读取保存的选择
   useEffect(() => {
     const saved = localStorage.getItem("hero-variant") as HeroVariant
     if (saved && variants.find((v) => v.id === saved)) {
@@ -146,7 +145,6 @@ export function HeroSwitcher() {
     setIsLoaded(true)
   }, [])
 
-  // 保存选择到 localStorage
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("hero-variant", currentVariant)
@@ -155,7 +153,7 @@ export function HeroSwitcher() {
 
   const CurrentComponent = variants.find((v) => v.id === currentVariant)?.component
 
-  if (!isLoaded || !CurrentComponent) {
+  if (!CurrentComponent) {
     return null
   }
 
