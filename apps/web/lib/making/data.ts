@@ -1,4 +1,4 @@
-import { Issue, WeeklySummary, Project, IssueLabel, ProjectAnalysis, isBilingualText } from './types'
+import { Issue, WeeklySummary, Project, IssueLabel, ProjectAnalysis, Insight, isBilingualText } from './types'
 
 export { isBilingualText }
 
@@ -6,12 +6,14 @@ export { isBilingualText }
 import issuesData from '@/data/issues.json'
 import weeklyData from '@/data/weekly.json'
 import projectsData from '@/data/projects.json'
+import insightsData from '@/data/insights.json'
 
 // Export data directly from imported JSON
 export const projects: Project[] = (issuesData as any).projects || []
 export const issues: Issue[] = (issuesData as any).issues || []
 export const weeklySummaries: WeeklySummary[] = (weeklyData as any).summaries || []
 export const projectAnalyses: ProjectAnalysis[] = (projectsData as any).projects || []
+export const insights: Insight[] = (insightsData as any).insights || []
 
 // Helper functions
 export function getProjectInfoById(id: string): Project | undefined {
@@ -104,4 +106,16 @@ export function getProjectById(id: string): ProjectAnalysis | undefined {
 // Get all projects with AGENTS.md
 export function getProjectsWithAgents(): ProjectAnalysis[] {
   return projectAnalyses.filter(p => p.hasAgents)
+}
+
+// Get insight by ID
+export function getInsightById(id: string): Insight | undefined {
+  return insights.find(i => i.id === id)
+}
+
+// Get all insights sorted by date (newest first)
+export function getAllInsights(): Insight[] {
+  return [...insights].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
 }

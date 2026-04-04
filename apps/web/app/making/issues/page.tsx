@@ -150,11 +150,13 @@ export default function IssuesPage() {
                   ...prev, 
                   projects: e.target.value === 'all' ? [] : [e.target.value] 
                 }))}
-                className="h-8 w-[140px] text-xs rounded-md border border-input bg-transparent px-3 py-1 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring"
+                className="h-8 min-w-[140px] max-w-[200px] text-xs rounded-md border border-input bg-transparent px-3 py-1 pr-8 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring font-medium"
               >
-                <option value="all">All Projects</option>
+                <option value="all">📁 All Projects</option>
                 {projects.map(p => (
-                  <option key={p.id} value={p.id}>{p.name}</option>
+                  <option key={p.id} value={p.id}>
+                    {p.name} ({issues.filter(i => i.project === p.id).length})
+                  </option>
                 ))}
               </select>
               <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -187,13 +189,39 @@ export default function IssuesPage() {
               const project = projects.find(p => p.id === projectId)
               return (
                 <div key={projectId}>
-                  {/* Project Header */}
+                  {/* Project Header with Dropdown */}
                   <div className="flex items-center gap-2 mb-3">
                     <div 
                       className="w-2 h-2 rounded-full"
                       style={{ backgroundColor: project?.color || '#888' }}
                     />
-                    <h2 className="text-sm font-medium">{project?.name || projectId}</h2>
+                    {/* Project Name with Dropdown */}
+                    <div className="relative group">
+                      <select
+                        value={projectId}
+                        onChange={(e) => {
+                          const newProjectId = e.target.value
+                          if (newProjectId !== projectId) {
+                            setFilters(prev => ({ 
+                              ...prev, 
+                              projects: [newProjectId] 
+                            }))
+                          }
+                        }}
+                        className="h-7 text-sm font-medium bg-transparent border border-transparent hover:border-border rounded-md px-2 py-0.5 pr-6 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-ring focus:border-ring transition-colors"
+                      >
+                        {projects.map(p => (
+                          <option key={p.id} value={p.id}>
+                            {p.name} ({issues.filter(i => i.project === p.id).length})
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg className="h-3 w-3 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                     <Badge variant="outline" className="text-xs">
                       {projectIssues.length}
                     </Badge>

@@ -28,6 +28,7 @@ import {
   getIssueByNumber
 } from "@/lib/making/data"
 import { ServerMarkdown } from "@/components/server-markdown"
+import { ProjectSwitcher } from "./project-switcher"
 
 // Generate static params for all issues
 export function generateStaticParams() {
@@ -74,14 +75,15 @@ export default async function IssueDetailPage({ params }: PageProps) {
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to issues
           </Link>
-          <div className="flex items-center gap-2">
-            <div 
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: project?.color || '#888' }}
-            />
-            <span className="font-medium text-sm truncate">{project?.name || projectId}</span>
-          </div>
-          <p className="text-xs text-muted-foreground mt-1">
+          
+          {/* Project Switcher */}
+          <ProjectSwitcher 
+            currentProjectId={projectId} 
+            projects={projects}
+            currentProject={project}
+          />
+          
+          <p className="text-xs text-muted-foreground mt-2">
             #{issue.number}
           </p>
         </div>

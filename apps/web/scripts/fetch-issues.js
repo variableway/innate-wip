@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '../data');
+const REPOS_FILE = path.join(DATA_DIR, 'repos.json');
 const ISSUES_FILE = path.join(DATA_DIR, 'issues.json');
 const SYNC_STATE_FILE = path.join(DATA_DIR, 'sync-state.json');
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -54,6 +55,19 @@ function saveIssues(data) {
   fs.writeFileSync(ISSUES_FILE, JSON.stringify(data, null, 2));
 }
 
+// Load projects from repos.json
+function loadProjects() {
+  try {
+    if (fs.existsSync(REPOS_FILE)) {
+      const data = JSON.parse(fs.readFileSync(REPOS_FILE, 'utf-8'));
+      return data.projects || [];
+    }
+  } catch (e) {
+    console.error('Error loading projects:', e.message);
+  }
+  return [];
+}
+
 // GitHub API helper
 async function githubFetch(url) {
   const headers = {
@@ -68,36 +82,16 @@ async function githubFetch(url) {
   const response = await fetch(url, { headers });
   
   if (!response.ok) {
-    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    const body = await response.text().catch(() => '');
+    let detail = '';
+    try {
+      const json = JSON.parse(body);
+      detail = json.message || '';
+    } catch {}
+    throw new Error(`GitHub API error: ${response.status} ${response.statusText}${detail ? ' - ' + detail : ''}`);
   }
   
   return response.json();
-}
-
-// Fetch all repositories for an organization
-async function fetchRepos(org) {
-  const repos = [];
-  let page = 1;
-  
-  while (true) {
-    const url = `https://api.github.com/orgs/${org}/repos?per_page=100&page=${page}`;
-    const data = await githubFetch(url);
-    
-    if (data.length === 0) break;
-    
-    repos.push(...data);
-    page++;
-    
-    // Safety limit
-    if (page > 10) break;
-  }
-  
-  // Exclude .github repo and archived repos
-  return repos.filter(repo => 
-    repo.name !== '.github' && 
-    !repo.archived &&
-    !repo.disabled
-  );
 }
 
 // Fetch issues for a repository
@@ -124,12 +118,24 @@ async function fetchIssues(org, repo) {
   return issues;
 }
 
+// Clean up title by removing Task X: prefixes
+function cleanTitle(title) {
+  if (!title) return '';
+  
+  // Remove patterns like "Task 1:", "task 1:", "Task 2:", etc.
+  // Matches: Task X:, task X:, TASK X: (where X is any number)
+  return title
+    .replace(/^Task\s+\d+[:：]\s*/i, '')
+    .replace(/^task\s+\d+[:：]\s*/i, '')
+    .trim();
+}
+
 // Transform GitHub issue to our format
 function transformIssue(issue, projectId, projectColor) {
   return {
     id: `issue-${issue.id}`,
     number: issue.number,
-    title: issue.title,
+    title: cleanTitle(issue.title),
     description: issue.body || '',
     status: issue.state === 'open' ? 'open' : 'closed',
     project: projectId,
@@ -156,36 +162,29 @@ async function main() {
     const existingData = loadExistingIssues();
     const syncState = loadSyncState();
     
-    // Fetch all repos
-    console.log('📦 Fetching repositories...');
-    const repos = await fetchRepos(GITHUB_ORG);
-    console.log(`Found ${repos.length} repositories`);
+    // Load projects
+    const projects = loadProjects();
+    console.log(`📦 Loaded ${projects.length} projects`);
     
-    // Build projects list
-    const projects = repos.map(repo => ({
-      id: repo.name,
-      name: repo.name,
-      description: repo.description || '',
-      color: '#8FA68E', // Default color, can be customized
-      repoUrl: repo.html_url,
-    }));
+    if (projects.length === 0) {
+      console.error('❌ No projects found. Please run fetch-projects.js first.');
+      process.exit(1);
+    }
     
     // Fetch issues from all repos
     const allIssues = [];
     const existingIssueIds = new Set(existingData.issues.map(i => i.id));
     let hasNewIssues = false;
     
-    for (const repo of repos) {
-      console.log(`🔍 Fetching issues from ${repo.name}...`);
+    for (const project of projects) {
+      console.log(`🔍 Fetching issues from ${project.name}...`);
       
       try {
-        const repoIssues = await fetchIssues(GITHUB_ORG, repo.name);
+        const repoIssues = await fetchIssues(GITHUB_ORG, project.name);
         console.log(`  Found ${repoIssues.length} issues`);
         
-        const project = projects.find(p => p.id === repo.name);
-        
         for (const issue of repoIssues) {
-          const transformed = transformIssue(issue, repo.name, project?.color);
+          const transformed = transformIssue(issue, project.name, project?.color);
           allIssues.push(transformed);
           
           // Check if this is a new issue
@@ -195,7 +194,7 @@ async function main() {
           }
         }
       } catch (error) {
-        console.error(`  ❌ Error fetching issues from ${repo.name}:`, error.message);
+        console.error(`  ❌ Error fetching issues from ${project.name}:`, error.message);
       }
     }
     

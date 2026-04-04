@@ -102,6 +102,21 @@ export interface ProjectsData {
   lastUpdated: string
 }
 
+// Insight/收获 - Practice reports and analysis
+export interface Insight {
+  id: string
+  title: string
+  date: string
+  summary: string
+  category: 'practice' | 'analysis' | 'guide'
+  content: string  // Embedded markdown content for static export
+}
+
+export interface InsightsData {
+  insights: Insight[]
+  lastUpdated: string
+}
+
 // Helper type guard for bilingual text
 export function isBilingualText(item: string | BilingualText): item is BilingualText {
   return typeof item === 'object' && 'zh' in item && 'en' in item

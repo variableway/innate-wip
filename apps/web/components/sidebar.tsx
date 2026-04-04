@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { CheckSquare, Calendar, Hammer, FolderGit2 } from "lucide-react"
+import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 // Making category with sub-items
@@ -24,6 +24,12 @@ const makingCategory = {
       label: "周记录",
       icon: Calendar,
       href: "/making/weekly",
+    },
+    {
+      id: "insights",
+      label: "Insights",
+      icon: Lightbulb,
+      href: "/making/insights",
     },
     {
       id: "issues",

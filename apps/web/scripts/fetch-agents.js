@@ -11,6 +11,7 @@ const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '../data');
 const PROJECTS_DIR = path.join(DATA_DIR, 'projects');
+const REPOS_FILE = path.join(DATA_DIR, 'repos.json');
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_ORG = process.env.GITHUB_ORG || 'variableway';
 
@@ -39,7 +40,13 @@ async function githubFetch(url) {
     if (response.status === 404) {
       return null; // File not found
     }
-    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    const body = await response.text().catch(() => '');
+    let detail = '';
+    try {
+      const json = JSON.parse(body);
+      detail = json.message || '';
+    } catch {}
+    throw new Error(`GitHub API error: ${response.status} ${response.statusText}${detail ? ' - ' + detail : ''}`);
   }
   
   return response.json();
@@ -59,12 +66,11 @@ async function fetchFileContent(org, repo, path) {
   return content;
 }
 
-// Load existing issues data to get project list
+// Load projects from repos.json
 function loadProjects() {
   try {
-    const issuesPath = path.join(DATA_DIR, 'issues.json');
-    if (fs.existsSync(issuesPath)) {
-      const data = JSON.parse(fs.readFileSync(issuesPath, 'utf-8'));
+    if (fs.existsSync(REPOS_FILE)) {
+      const data = JSON.parse(fs.readFileSync(REPOS_FILE, 'utf-8'));
       return data.projects || [];
     }
   } catch (e) {
