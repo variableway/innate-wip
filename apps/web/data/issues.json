@@ -377,6 +377,171 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4209135963",
+      "number": 13,
+      "title": "Test: Dual Tracing Verification",
+      "description": "Testing that both GitHub Issue and local tracing file are created",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T02:21:33Z",
+      "updatedAt": "2026-04-06T02:22:23Z",
+      "closedAt": "2026-04-06T02:22:23Z",
+      "url": "https://github.com/variableway/spark-skills/issues/13",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4209134035",
+      "number": 12,
+      "title": "Fix local workflow tracing when github-workflow is triggered",
+      "description": "## Task 3: local work flow process is not invoked\n\nwhen github-workflow is triggered,but local workflow is not processed. The Feature should be:\n\n1. READ the task , then trigger the github workflow, create issue, and create local tracing file\n2. After AI Agent do his job, issue updated, and local tracing file updated\n3. When Only trigger local workflow, the github issue is not created anymore\n\nVerfification:\n1. Update A Test GIthub Workflow Task Both Issue and local tracing file is updated\n2. Update A Test Local Workflow, only local tracing file is updated\n",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T02:20:36Z",
+      "updatedAt": "2026-04-06T02:22:58Z",
+      "closedAt": "2026-04-06T02:22:58Z",
+      "url": "https://github.com/variableway/spark-skills/issues/12",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4209034095",
+      "number": 11,
+      "title": "Install script review - support both system and project level",
+      "description": "## Task 3: Install script review\n\nPlease review the skill install script,please make sure it could be install in both system level and project level",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:32:40Z",
+      "updatedAt": "2026-04-06T01:33:23Z",
+      "closedAt": "2026-04-06T01:33:23Z",
+      "url": "https://github.com/variableway/spark-skills/issues/11",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208995812",
+      "number": 10,
+      "title": "Test: AI Config Skill",
+      "description": "Test dual tracing feature",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:13:03Z",
+      "updatedAt": "2026-04-06T01:13:08Z",
+      "closedAt": "2026-04-06T01:13:08Z",
+      "url": "https://github.com/variableway/spark-skills/issues/10",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208986321",
+      "number": 9,
+      "title": "Local workflow as a separated skill",
+      "description": "# Workflow Skill\n\n## Task 1: Github-workflow with gh command\n\n- please use github cli to rewrite the current logic for better performance\n- keep current solution as one alternative if gh was not install in first place\n\n## Task 2: local workflow as an seperated skill\n\n- keep current local workflow tracing in github-workflow-skill\n- but separate the local workflow as a skill to support only local tracing without creating an github issues.",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:08:10Z",
+      "updatedAt": "2026-04-06T01:08:28Z",
+      "closedAt": "2026-04-06T01:08:28Z",
+      "url": "https://github.com/variableway/spark-skills/issues/9",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208969470",
+      "number": 8,
+      "title": "Github-workflow with gh command",
+      "description": "## 原始需求\n\n请使用 github cli 来重写当前的逻辑以获得更好的性能\n\n## 变更内容\n\n### 1. 新增后端模块 (`github_backend.py`)\n- `GhCliBackend`: 使用 `gh` CLI 进行 Issue 操作（创建、更新、评论、获取）\n- `ApiBackend`: 使用 REST API 作为回退方案\n- `create_backend()`: 自动检测并创建最佳可用后端\n- `is_gh_available()`: 检测 `gh` 是否安装\n\n### 2. 修改 `create_issue.py`\n- 优先使用 `gh issue create`（如果可用）\n- 回退到 REST API（如果 `gh` 未安装）\n- 显示当前使用的后端类型\n\n### 3. 修改 `update_issue.py`\n- 优先使用 `gh issue close/reopen/comment/view`\n- 回退到 REST API\n- 统一接口保持向后兼容\n\n### 4. 修改 `orchestrate.py`\n- 更新为使用新的后端模块\n- 自动检测后端可用性\n\n### 5. 更新 `SKILL.md` 文档\n- 添加 GitHub CLI 性能优化说明\n- 新增 GitHub CLI 配置指南\n- 说明 REST API 回退机制\n\n## 实现目标\n\n- **性能优化**: 使用 `gh` CLI 获得更好的性能和可靠性\n- **向后兼容**: 保留原有 REST API 实现作为备选方案\n- **简化配置**: `gh` 用户无需额外配置 Token\n\n## 回退策略\n\n如果 `gh` 未安装，自动使用原有的 REST API 实现，通过以下方式获取 Token:\n1. 命令行参数: `--token`\n2. 环境变量: `GITHUB_TOKEN`\n3. 项目配置: `.github-task-workflow.yaml`\n4. 全局配置: `~/.config/github-task-workflow/config.yaml`",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T00:59:25Z",
+      "updatedAt": "2026-04-06T00:59:42Z",
+      "closedAt": "2026-04-06T00:59:41Z",
+      "url": "https://github.com/variableway/spark-skills/issues/8",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208931397",
+      "number": 7,
+      "title": "创建 Local Task Tracing 功能",
+      "description": "# Task Features\n\n## Task 1: 创建Local Task Tracking\n\n当前github workflow skill是把任务内容和更新内容会写到github，这个skill是在执行任务的时候更新到GITHUB的内容\n在本地也记录一下：\n1. 把Task原始内容和Agent解析过后的内容本地记录到tracing folder\n2. Task完成之后Update Issue的内容也更新到步骤1写入的文件中\n3. 写入的文件是markdown文件，名字按照task文件名称命名，如果后续还是这个文件里面的Task，可以继续往这个文件添加内容",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T00:39:48Z",
+      "updatedAt": "2026-04-06T00:47:27Z",
+      "closedAt": "2026-04-06T00:47:27Z",
+      "url": "https://github.com/variableway/spark-skills/issues/7",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4203206274",
       "number": 6,
       "title": "mindstorm skill",
@@ -503,5 +668,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-04-05T22:29:57.782Z"
+  "lastUpdated": "2026-04-06T02:26:16.043Z"
 }
