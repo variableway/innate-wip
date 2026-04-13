@@ -35,17 +35,40 @@ export function parseFrontmatter(content: string): { meta: PostMeta; body: strin
 
 /**
  * Markdown 转换为 HTML
- * 使用 unified/remark 处理器
+ * 使用 unified/remark 处理器，并为标题添加 id 属性
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
   const result = await unified()
     .use(remarkParse)           // 解析 Markdown
     .use(remarkGfm)             // GitHub Flavored Markdown
-    .use(remarkRehype)          // 转换为 HTML AST
+    .use(remarkRehype, {
+      handlers: {
+        // 为 h2/h3 标题添加 id 属性（用于 ToC 导航）
+        heading(state, node) {
+          const children = state.all(node)
+          const text = children
+            .filter((c): c is { type: 'text'; value: string } => c.type === 'text')
+            .map((c) => c.value)
+            .join('')
+          const id = text
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+
+          const result: { type: string; tagName: string; properties: { id: string }; children: any[] } = {
+            type: 'element',
+            tagName: `h${node.depth}`,
+            properties: { id },
+            children,
+          }
+          return result
+        },
+      },
+    })
     .use(rehypeHighlight)       // 代码高亮
     .use(rehypeStringify)       // 输出 HTML 字符串
     .process(markdown)
-  
+
   return String(result)
 }
 

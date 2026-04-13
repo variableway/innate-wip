@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { getWritingMeta, getWriting } from "@/lib/content"
+import { getWritingMeta, getWriting, extractToc } from "@/lib/content"
 import { WritingPageClient } from "@/components/writing/writing-page-client"
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ export default async function WritingPage() {
   const postsWithContent = await Promise.all(
     postsMeta.map(async (meta) => {
       const post = await getWriting(meta.slug)
+      const toc = post ? extractToc(post.content) : []
       return {
         slug: meta.slug,
         title: meta.title,
@@ -28,6 +29,7 @@ export default async function WritingPage() {
         readingTime: meta.readingTime || 1,
         author: meta.author,
         html: post?.html || "",
+        toc,
       }
     })
   )

@@ -1,28 +1,99 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react"
 import { cn } from "@allone/utils"
 
 export interface WritingViewerProps {
   title: string
   html: string
+  excerpt: string
   date: string
   author: string
   category: string
   tags: string[]
   readingTime: number
+  toc: Array<{ id: string; text: string; level: number }>
   onBack?: () => void
   isMobile?: boolean
+}
+
+function TableOfContents({ headings }: { headings: Array<{ id: string; text: string; level: number }> }) {
+  const [activeId, setActiveId] = useState<string>("")
+
+  useEffect(() => {
+    if (headings.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        }
+      },
+      { rootMargin: "-80px 0px -60% 0px" }
+    )
+
+    // Small delay to ensure headings are rendered
+    const timeout = setTimeout(() => {
+      for (const h of headings) {
+        const el = document.getElementById(h.id)
+        if (el) observer.observe(el)
+      }
+    }, 100)
+
+    return () => {
+      clearTimeout(timeout)
+      observer.disconnect()
+    }
+  }, [headings])
+
+  if (headings.length === 0) return null
+
+  return (
+    <div className="hidden lg:block sticky top-24 h-fit max-h-[calc(100vh-120px)] overflow-y-auto">
+      <h3 className="text-xs font-semibold mb-3 text-muted-foreground uppercase tracking-wider">
+        On this page
+      </h3>
+      <nav className="space-y-1">
+        {headings.map((heading) => (
+          <a
+            key={heading.id}
+            href={`#${heading.id}`}
+            className={cn(
+              "block text-sm py-1 transition-colors border-l-2 pl-3",
+              heading.level === 3 && "pl-6",
+              activeId === heading.id
+                ? "border-[#8FA68E] text-[#8FA68E] font-medium"
+                : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
+            )}
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById(heading.id)
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" })
+              }
+            }}
+          >
+            {heading.text}
+          </a>
+        ))}
+      </nav>
+    </div>
+  )
 }
 
 export function WritingViewer({
   title,
   html,
+  excerpt,
   date,
   author,
   category,
   tags,
   readingTime,
+  toc,
   onBack,
   isMobile,
 }: WritingViewerProps) {
@@ -61,7 +132,12 @@ export function WritingViewer({
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <span>{author}</span>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[11px] font-medium">
+              {author[0]}
+            </div>
+            <span>{author}</span>
+          </div>
           <span className="flex items-center gap-1">
             <Calendar className="h-3.5 w-3.5" />
             {date}
@@ -88,11 +164,31 @@ export function WritingViewer({
         )}
       </div>
 
-      {/* Content */}
-      <div
-        className="prose prose-sm dark:prose-invert max-w-none flex-1 overflow-y-auto"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {/* Content area: article + ToC sidebar */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
+          {/* Main content */}
+          <div>
+            {/* Excerpt block */}
+            {excerpt && (
+              <div className="bg-secondary/50 border-l-4 border-[#8FA68E] p-4 mb-8 rounded-r-lg">
+                <p className="text-muted-foreground italic text-sm">{excerpt}</p>
+              </div>
+            )}
+
+            {/* Article body */}
+            <div
+              className="prose prose-sm dark:prose-invert max-w-none prose-headings:scroll-mt-24 prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-a:text-[#8FA68E] prose-a:no-underline hover:prose-a:underline"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </div>
+
+          {/* ToC sidebar */}
+          <aside>
+            <TableOfContents headings={toc} />
+          </aside>
+        </div>
+      </div>
     </article>
   )
 }

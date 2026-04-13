@@ -8,6 +8,7 @@ import { FileText } from "lucide-react"
 interface WritingPostFull extends WritingListItem {
   html: string
   author: string
+  toc: Array<{ id: string; text: string; level: number }>
 }
 
 interface WritingPageClientProps {
@@ -66,7 +67,7 @@ export function WritingPageClient({ posts }: WritingPageClientProps) {
         >
           <div className="px-3 py-2">
             <WritingList
-              items={posts.map(({ html: _html, author: _author, ...rest }) => rest)}
+              items={posts.map(({ html: _html, author: _author, toc: _toc, ...rest }) => rest)}
               activeSlug={activeSlug}
               onSelect={handleSelect}
             />
@@ -83,11 +84,13 @@ export function WritingPageClient({ posts }: WritingPageClientProps) {
             <WritingViewer
               title={activePost.title}
               html={activePost.html}
+              excerpt={activePost.excerpt}
               date={activePost.date}
               author={activePost.author}
               category={activePost.category}
               tags={activePost.tags}
               readingTime={activePost.readingTime}
+              toc={activePost.toc}
               onBack={handleBack}
               isMobile={true}
             />
