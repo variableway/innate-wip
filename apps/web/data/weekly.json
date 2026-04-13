@@ -1,6 +1,106 @@
 {
   "summaries": [
     {
+      "id": "weekly-16-2026",
+      "weekNumber": 16,
+      "year": 2026,
+      "title": "Week 16: spark-cli Progress",
+      "titleZh": "第 16 周：spark-cli 进展",
+      "dateRange": {
+        "start": "2026-04-12",
+        "end": "2026-04-18"
+      },
+      "summary": "This week focused on spark-cli. Completed 3 issues including: Support Github Issue creation by title and a folder of documents; Make flush-dns support Windows and add test cases; Task: Install frontend skills system-wide and update docs.",
+      "summaryZh": "本周专注于 spark-cli。完成了 3 个 issues，包括：Support Github Issue creation by title and a folder of documents；Make flush-dns support Windows and add test cases；Task: Install frontend skills system-wide and update docs。",
+      "completedIssues": [
+        "issue-4246090044",
+        "issue-4246079464",
+        "issue-4246082358"
+      ],
+      "evaluations": {
+        "strengths": [
+          {
+            "zh": "专注于功能开发并交付价值",
+            "en": "Strong focus on feature development and delivering value"
+          },
+          {
+            "zh": "积极识别并解决问题",
+            "en": "Proactive in identifying and resolving issues"
+          },
+          {
+            "zh": "高产出，持续交付",
+            "en": "High productivity with consistent delivery"
+          }
+        ],
+        "weaknesses": [
+          {
+            "zh": "测试覆盖率有待提高",
+            "en": "Testing coverage could be improved"
+          },
+          {
+            "zh": "文档更新较少",
+            "en": "Documentation updates were minimal"
+          }
+        ],
+        "improvements": [
+          {
+            "zh": "为 issues 添加更详细的描述以便更好地跟踪",
+            "en": "Add more detailed descriptions to issues for better tracking"
+          },
+          {
+            "zh": "将大型任务拆分为更小、可交付的单元",
+            "en": "Consider breaking large tasks into smaller, deliverable chunks"
+          },
+          {
+            "zh": "为新功能包含测试",
+            "en": "Include tests with new features"
+          }
+        ]
+      },
+      "mindsetAnalysis": {
+        "strengths": [
+          {
+            "zh": "有条不紊的问题解决方法",
+            "en": "Methodical approach to problem-solving"
+          },
+          {
+            "zh": "全周保持持续的工作节奏",
+            "en": "Consistent work rhythm throughout the week"
+          },
+          {
+            "zh": "能够在多个项目之间灵活切换",
+            "en": "Ability to context-switch between multiple projects"
+          }
+        ],
+        "weaknesses": [
+          {
+            "zh": "有时过于关注实现而忽略规划",
+            "en": "Sometimes focus on implementation over planning"
+          },
+          {
+            "zh": "可能需要更多的前期设计文档",
+            "en": "May benefit from more upfront design documentation"
+          }
+        ],
+        "suggestions": [
+          {
+            "zh": "在开始复杂任务前花 10-15 分钟进行规划",
+            "en": "Spend 10-15 minutes planning before starting complex tasks"
+          },
+          {
+            "zh": "定期反思已完成的工作以识别模式",
+            "en": "Regular reflection on completed work to identify patterns"
+          },
+          {
+            "zh": "考虑记录决策日志",
+            "en": "Consider keeping a brief daily log of decisions made"
+          }
+        ]
+      },
+      "createdAt": "2026-04-13T03:27:57.904Z",
+      "updatedAt": "2026-04-13T03:27:57.904Z"
+    },
+    {
       "id": "weekly-15-2026",
       "weekNumber": 15,
       "year": 2026,
@@ -221,5 +321,5 @@
       "updatedAt": "2026-04-04T05:05:18.514Z"
     }
   ],
-  "lastUpdated": "2026-04-06T02:26:16.086Z"
+  "lastUpdated": "2026-04-13T03:27:57.904Z"
 }
