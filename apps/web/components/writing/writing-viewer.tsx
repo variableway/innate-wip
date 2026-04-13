@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react"
 import { cn } from "@allone/utils"
+import { MarkdownPreview } from "@/components/markdown-preview"
 
 export interface WritingViewerProps {
   title: string
-  html: string
+  content: string
   excerpt: string
   date: string
   author: string
@@ -35,13 +36,12 @@ function TableOfContents({ headings }: { headings: Array<{ id: string; text: str
       { rootMargin: "-80px 0px -60% 0px" }
     )
 
-    // Small delay to ensure headings are rendered
     const timeout = setTimeout(() => {
       for (const h of headings) {
         const el = document.getElementById(h.id)
         if (el) observer.observe(el)
       }
-    }, 100)
+    }, 200)
 
     return () => {
       clearTimeout(timeout)
@@ -86,7 +86,7 @@ function TableOfContents({ headings }: { headings: Array<{ id: string; text: str
 
 export function WritingViewer({
   title,
-  html,
+  content,
   excerpt,
   date,
   author,
@@ -97,6 +97,9 @@ export function WritingViewer({
   onBack,
   isMobile,
 }: WritingViewerProps) {
+  const { resolvedTheme } = useTheme()
+  const colorMode = resolvedTheme === "dark" ? "dark" : "light"
+
   return (
     <article className="flex flex-col h-full">
       {/* Header */}
@@ -171,16 +174,20 @@ export function WritingViewer({
           <div>
             {/* Excerpt block */}
             {excerpt && (
-              <div className="bg-secondary/50 border-l-4 border-[#8FA68E] p-4 mb-8 rounded-r-lg">
+              <div className="bg-secondary/50 border-l-4 border-[#8FA68E] p-4 mb-6 rounded-r-lg">
                 <p className="text-muted-foreground italic text-sm">{excerpt}</p>
               </div>
             )}
 
-            {/* Article body */}
-            <div
-              className="markdown-content max-w-none"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            {/* Markdown content rendered by @uiw/react-markdown-preview */}
+            <div data-color-mode={colorMode}>
+              <MarkdownPreview
+                source={content}
+                className="!bg-transparent !p-0"
+                style={{ backgroundColor: "transparent", padding: 0, fontSize: 14 }}
+                wrapperElement={{ "data-color-mode": colorMode }}
+              />
+            </div>
           </div>
 
           {/* ToC sidebar */}

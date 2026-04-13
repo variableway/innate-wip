@@ -6,7 +6,7 @@ import { WritingViewer, WritingViewerProps } from "@/components/writing/writing-
 import { FileText } from "lucide-react"
 
 interface WritingPostFull extends WritingListItem {
-  html: string
+  content: string
   author: string
   toc: Array<{ id: string; text: string; level: number }>
 }
@@ -67,7 +67,7 @@ export function WritingPageClient({ posts }: WritingPageClientProps) {
         >
           <div className="px-3 py-2">
             <WritingList
-              items={posts.map(({ html: _html, author: _author, toc: _toc, ...rest }) => rest)}
+              items={posts.map(({ content: _content, author: _author, toc: _toc, ...rest }) => rest)}
               activeSlug={activeSlug}
               onSelect={handleSelect}
             />
@@ -83,7 +83,7 @@ export function WritingPageClient({ posts }: WritingPageClientProps) {
           {activePost ? (
             <WritingViewer
               title={activePost.title}
-              html={activePost.html}
+              content={activePost.content}
               excerpt={activePost.excerpt}
               date={activePost.date}
               author={activePost.author}

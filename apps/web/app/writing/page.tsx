@@ -28,7 +28,7 @@ export default async function WritingPage() {
         tags: meta.tags,
         readingTime: meta.readingTime || 1,
         author: meta.author,
-        html: post?.html || "",
+        content: post?.content || "",
         toc,
       }
     })
