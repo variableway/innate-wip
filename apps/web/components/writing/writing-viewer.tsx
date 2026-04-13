@@ -97,9 +97,6 @@ export function WritingViewer({
   onBack,
   isMobile,
 }: WritingViewerProps) {
-  const { resolvedTheme } = useTheme()
-  const colorMode = resolvedTheme === "dark" ? "dark" : "light"
-
   return (
     <article className="flex flex-col h-full">
       {/* Header */}
@@ -179,15 +176,8 @@ export function WritingViewer({
               </div>
             )}
 
-            {/* Markdown content rendered by @uiw/react-markdown-preview */}
-            <div data-color-mode={colorMode}>
-              <MarkdownPreview
-                source={content}
-                className="!bg-transparent !p-0"
-                style={{ backgroundColor: "transparent", padding: 0, fontSize: 14 }}
-                wrapperElement={{ "data-color-mode": colorMode }}
-              />
-            </div>
+            {/* Markdown content */}
+            <MarkdownPreview source={content} />
           </div>
 
           {/* ToC sidebar */}

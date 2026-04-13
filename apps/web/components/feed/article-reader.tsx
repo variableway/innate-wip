@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@allone/ui"
 import { ArrowLeft, Heart, MessageCircle, Bookmark, Share2 } from "lucide-react"
+import { MarkdownPreview } from "@/components/markdown-preview"
 import { tags } from "@/lib/data"
 import type { PostMeta } from "@/lib/content"
 
@@ -226,11 +227,8 @@ export function ArticleReader({ post, relatedPosts = [] }: ArticleReaderProps) {
               </div>
             )}
 
-            {/* 文章内容（使用预渲染的 HTML） */}
-            <div 
-              className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-pre:bg-secondary prose-pre:border prose-pre:border-border"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
+            {/* 文章内容 */}
+            <MarkdownPreview source={post.content} />
 
             {/* 底部互动 */}
             <div className="flex items-center justify-between pt-8 mt-12 border-t border-border">

@@ -66,9 +66,7 @@ export default async function InsightDetailPage({ params }: InsightDetailPagePro
           </div>
 
           {/* Markdown Content */}
-          <article className="prose prose-zinc dark:prose-invert max-w-none">
-            <ServerMarkdown content={content} />
-          </article>
+          <ServerMarkdown content={content} />
         </div>
       </div>
     </div>
