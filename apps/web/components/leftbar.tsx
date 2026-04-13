@@ -6,6 +6,7 @@ import { cn } from "@allone/utils"
 import {
   Home,
   Hammer,
+  PenLine,
   Plus,
 } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
@@ -30,6 +31,12 @@ const leftBarItems: LeftBarItem[] = [
     icon: <Hammer className="h-5 w-5" />,
     label: "Making",
     href: "/making",
+  },
+  {
+    id: "writing",
+    icon: <PenLine className="h-5 w-5" />,
+    label: "Writing",
+    href: "/writing",
   },
 ]
 

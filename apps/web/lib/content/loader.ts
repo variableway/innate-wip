@@ -5,6 +5,7 @@ import { cache } from 'react'
 // 内容目录路径
 const CONTENT_DIR = path.join(process.cwd(), 'content')
 const POSTS_DIR = path.join(CONTENT_DIR, 'posts')
+const WRITING_DIR = path.join(CONTENT_DIR, 'writing')
 
 /**
  * 读取文件内容（带缓存）
@@ -56,6 +57,36 @@ export async function getAllPostsRaw(): Promise<Array<{ slug: string; content: s
   const posts = await Promise.all(
     slugs.map(async (slug) => {
       const content = await readFile(`posts/${slug}.md`)
+      if (!content) return null
+      return { slug, content }
+    })
+  )
+  return posts.filter((post): post is { slug: string; content: string } => post !== null)
+}
+
+/**
+ * 获取所有 Writing 文章 slug 列表
+ */
+export async function getAllWritingSlugs(): Promise<string[]> {
+  try {
+    const files = await fs.readdir(WRITING_DIR)
+    return files
+      .filter((file) => file.endsWith('.md'))
+      .map((file) => file.replace(/\.md$/, ''))
+  } catch (error) {
+    console.error('Failed to read writing directory:', error)
+    return []
+  }
+}
+
+/**
+ * 获取所有 Writing 文章的原始内容
+ */
+export async function getAllWritingRaw(): Promise<Array<{ slug: string; content: string }>> {
+  const slugs = await getAllWritingSlugs()
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const content = await readFile(`writing/${slug}.md`)
       if (!content) return null
       return { slug, content }
     })

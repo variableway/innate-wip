@@ -3,8 +3,16 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb } from "lucide-react"
+import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb, PenLine } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
+
+// Writing category
+const writingCategory = {
+  id: "writing",
+  label: "Writing",
+  icon: PenLine,
+  href: "/writing",
+}
 
 // Making category with sub-items
 const makingCategory = {
@@ -105,6 +113,20 @@ export function Sidebar() {
               )
             })}
           </div>
+
+          {/* Writing Item */}
+          <Link
+            href={writingCategory.href}
+            className={cn(
+              "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors mt-2",
+              pathname === writingCategory.href || pathname.startsWith(writingCategory.href + "/")
+                ? "bg-secondary text-foreground"
+                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+            )}
+          >
+            <writingCategory.icon className="h-4 w-4" />
+            <span>{writingCategory.label}</span>
+          </Link>
         </nav>
       </div>
     </aside>
