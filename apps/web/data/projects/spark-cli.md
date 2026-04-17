@@ -7,12 +7,12 @@
 **Spark** 是一个 CLI 工具，用于管理多个 Git 仓库。它提供以下核心功能：
 
 1. **多仓库更新** - 批量更新多个 Git 仓库到最新版本
-2. **Mono-repo 创建** - 将多个仓库整合为一个带有子模块的 Mono 仓库
+2. **Mono-repo 管理** - 将多个仓库添加为子模块，统一管理
 3. **子模块同步** - 同步 Mono 仓库中的所有子模块
 4. **Git 用户配置** - 配置仓库的 Git 用户信息
-5. **AI Agent 配置管理** - 管理多种 AI Agent（Claude Code、Codex、Kimi、GLM）的配置文件
-6. **任务管理** - 任务分发、同步和 GitHub 仓库创建
-7. **Gitcode 远程管理** - 为仓库添加 Gitcode 远程地址
+5. **任务管理** - 任务分发、同步和 GitHub 仓库创建
+6. **Gitcode 远程管理** - 为仓库添加 Gitcode 远程地址
+7. ~~**AI Agent 配置管理** - 管理多种 AI Agent（Claude Code、Codex、Kimi、GLM）的配置文件~~ (已禁用，待重新设计)
 
 ## 技术栈
 
@@ -35,7 +35,8 @@ spark/
 │       ├── git.go         # Git 父命令
 │       ├── config.go      # Git 用户配置
 │       ├── update.go      # 仓库更新命令
-│       ├── create.go      # mono-repo 创建命令
+│       ├── mono.go        # mono 子命令组
+│       ├── mono_add.go    # mono add 命令
 │       ├── sync.go        # 子模块同步命令
 │       └── gitcode.go     # Gitcode 远程管理
 ├── internal/              # 内部业务逻辑
@@ -90,13 +91,13 @@ spark/
 Git 仓库管理命令的父命令，包含以下子命令：
 
 ```bash
-spark git update     # 更新多个仓库
-spark git create     # 创建 Mono 仓库
-spark git sync       # 同步子模块
-spark git gitcode    # 添加 Gitcode 远程
-spark git config     # 配置 Git 用户
-spark git url        # 获取仓库 URL
-spark git clone-org  # 克隆组织所有仓库
+spark git update       # 更新多个仓库
+spark git mono add     # 添加现有仓库为子模块
+spark git mono sync    # 同步子模块
+spark git gitcode      # 添加 Gitcode 远程
+spark git config       # 配置 Git 用户
+spark git url          # 获取仓库 URL
+spark git batch-clone  # 克隆用户/组织所有仓库
 ```
 
 #### `spark git update`
@@ -109,28 +110,33 @@ spark git update -p ~/workspace -p ~/projects
 
 详细文档: [docs/usage/update.md](docs/usage/update.md)
 
-#### `spark git create`
-创建一个 Mono 仓库，将所有找到的仓库作为子模块添加。
+#### `spark git mono add`
+将本地 Git 仓库添加为子模块，或克隆远程仓库并添加为子模块。
 
+**本地模式**：
 ```bash
-spark git create -p /path/to/repos -n my-mono-repo -o ./output
+spark git mono add                    # 添加当前目录下的仓库
+spark git mono add -p /path/to/repos  # 添加指定目录下的仓库
+```
+
+**远程模式**：
+```bash
+spark git mono add https://github.com/user/repo           # 添加远程仓库
+spark git mono add https://github.com/user/repo --name my-submodule  # 指定路径名
+spark git mono add git@github.com:user/repo.git           # 使用 SSH URL
 ```
 
 | 选项 | 说明 |
 |------|------|
-| `-n, --name` | Mono 仓库名称 (默认: `mono-repo`) |
-| `-o, --output` | 输出路径 (默认: 当前目录) |
+| `-p, --path` | Mono-repo 目录 (默认: 当前目录) |
+| `-n, --name` | 子模块路径名称 (默认: 仓库名) |
 
-详细文档: [docs/usage/create.md](docs/usage/create.md)
-
-#### `spark git sync`
+#### `spark git mono sync`
 同步 Mono 仓库中的所有子模块到最新版本。
 
 ```bash
-spark git sync /path/to/mono-repo
+spark git mono sync /path/to/mono-repo
 ```
-
-详细文档: [docs/usage/sync.md](docs/usage/sync.md)
 
 #### `spark git gitcode`
 为 GitHub 仓库添加 Gitcode 作为远程地址。
@@ -268,7 +274,9 @@ spark:
 
 **跨平台支持**: Mac、Linux、Windows
 
-### AI Agent 管理
+### AI Agent 管理 (已禁用)
+
+> ⚠️ 此功能当前已禁用，命令入口已关闭（`cmd/agent.go` 中 `rootCmd.AddCommand(agentCmd)` 已注释）。待后续重新设计后再启用。
 
 #### `spark agent`
 管理多种 AI Agent 的配置文件。

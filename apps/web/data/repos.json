@@ -15,25 +15,25 @@
       "repoUrl": "https://github.com/variableway/spark-cli"
     },
     {
-      "id": "keep-them",
-      "name": "keep-them",
+      "id": "innate-keepthem",
+      "name": "innate-keepthem",
       "description": "keep some videos fron YT or other website and subtitles into local",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/keep-them"
+      "repoUrl": "https://github.com/variableway/innate-keepthem"
     },
     {
-      "id": "feeds-collectors",
-      "name": "feeds-collectors",
+      "id": "innate-feeds",
+      "name": "innate-feeds",
       "description": "collect different feeds",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/feeds-collectors"
+      "repoUrl": "https://github.com/variableway/innate-feeds"
     },
     {
-      "id": "selfhost-agent",
-      "name": "selfhost-agent",
+      "id": "innate-executable",
+      "name": "innate-executable",
       "description": "selfhost instruction and skill repo to setup",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/selfhost-agent"
+      "repoUrl": "https://github.com/variableway/innate-executable"
     },
     {
       "id": "innate-websites",
@@ -43,18 +43,18 @@
       "repoUrl": "https://github.com/variableway/innate-websites"
     },
     {
-      "id": "susu",
-      "name": "susu",
+      "id": "innate-susu",
+      "name": "innate-susu",
       "description": "AI education for Susu",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/susu"
+      "repoUrl": "https://github.com/variableway/innate-susu"
     },
     {
-      "id": "hyper-it",
-      "name": "hyper-it",
+      "id": "innate-chaos",
+      "name": "innate-chaos",
       "description": "learning hyper ",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/hyper-it"
+      "repoUrl": "https://github.com/variableway/innate-chaos"
     },
     {
       "id": "dpp-market-intel",
@@ -64,19 +64,33 @@
       "repoUrl": "https://github.com/variableway/dpp-market-intel"
     },
     {
-      "id": "capture",
-      "name": "capture",
+      "id": "innate-capture",
+      "name": "innate-capture",
       "description": "catpure the ideas,capture the moment,capture the sense",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/capture"
+      "repoUrl": "https://github.com/variableway/innate-capture"
     },
     {
-      "id": "spark-skills",
-      "name": "spark-skills",
+      "id": "fire-skills",
+      "name": "fire-skills",
       "description": "Personal AI Agent Skills Collection",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/spark-skills"
+      "repoUrl": "https://github.com/variableway/fire-skills"
+    },
+    {
+      "id": "innate-way",
+      "name": "innate-way",
+      "description": "where ideas come from,and how it process",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-way"
+    },
+    {
+      "id": "fire-workspace",
+      "name": "fire-workspace",
+      "description": "fire self workspace ",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/fire-workspace"
     }
   ],
-  "lastUpdated": "2026-04-04T06:53:07.702Z"
+  "lastUpdated": "2026-04-17T11:02:35.606Z"
 }

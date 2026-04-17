@@ -189,6 +189,23 @@ STATIC_EXPORT=true pnpm build
 - **Data Storage**: JSON files committed to repository
 - **Bilingual Support**: Weekly summaries support Chinese and English
 
+## AI Agent Guidelines
+
+### WriteAgent Skill
+
+本项目使用 `.trae/skills/write-agent/` 来维护文档更新。在以下情况时必须更新文档：
+
+1. **完成 Task 后** - 标记任务为完成状态，添加完成摘要
+2. **修改架构后** - 更新 AGENTS.md 中的架构说明
+3. **新增组件/模块** - 添加到组件列表，更新接口定义
+4. **修改配置后** - 更新配置说明和示例
+
+**文档更新原则**:
+- 及时更新：将文档更新视为任务的一部分
+- 精确描述：准确描述实现的内容
+- 保持结构：遵循现有文档的格式和风格
+- 版本追踪：记录重要的变更历史
+
 ## Dependencies of Note
 
 - `@radix-ui/*` - Accessible UI primitives
