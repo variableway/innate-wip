@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'Innate',
   description: 'What drives you, and what you makes, make you.',
   generator: 'v0.app',
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed/rss.xml',
+    },
+  },
   icons: {
     icon: [
       {

@@ -36,6 +36,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Fetch projects from GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ github.event.inputs.org || 'variableway' }}
+        run: |
+          cd apps/web
+          node scripts/fetch-projects.js
+
+      - name: Fetch AGENTS.md from GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ORG: ${{ github.event.inputs.org || 'variableway' }}
+        run: |
+          cd apps/web
+          node scripts/fetch-agents.js
+
       - name: Fetch issues from GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
