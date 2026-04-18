@@ -17,6 +17,8 @@ export interface WritingViewerProps {
   toc: Array<{ id: string; text: string; level: number }>
   onBack?: () => void
   isMobile?: boolean
+  onTagClick?: (tag: string) => void
+  onCategoryClick?: (category: string) => void
 }
 
 function TableOfContents({ headings }: { headings: Array<{ id: string; text: string; level: number }> }) {
@@ -96,6 +98,8 @@ export function WritingViewer({
   toc,
   onBack,
   isMobile,
+  onTagClick,
+  onCategoryClick,
 }: WritingViewerProps) {
   return (
     <article className="flex flex-col h-full">
@@ -113,9 +117,10 @@ export function WritingViewer({
         )}
 
         {/* Category */}
-        <span
+        <button
+          onClick={() => onCategoryClick?.(category)}
           className={cn(
-            "text-[11px] font-medium px-2 py-0.5 rounded uppercase tracking-wide",
+            "text-[11px] font-medium px-2 py-0.5 rounded uppercase tracking-wide transition-colors hover:opacity-80",
             category === "thought" && "bg-blue-500/10 text-blue-600 dark:text-blue-400",
             category === "insight" && "bg-amber-500/10 text-amber-600 dark:text-amber-400",
             category === "log" && "bg-green-500/10 text-green-600 dark:text-green-400",
@@ -123,7 +128,7 @@ export function WritingViewer({
           )}
         >
           {category}
-        </span>
+        </button>
 
         {/* Title */}
         <h1 className="text-2xl font-bold text-foreground mt-2 mb-3 leading-tight">
@@ -148,17 +153,18 @@ export function WritingViewer({
           </span>
         </div>
 
-        {/* Tags */}
+        {/* Tags — clickable */}
         {tags.length > 0 && (
           <div className="flex items-center gap-1.5 mt-3 flex-wrap">
             {tags.map((tag) => (
-              <span
+              <button
                 key={tag}
-                className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md"
+                onClick={() => onTagClick?.(tag)}
+                className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
               >
                 <Tag className="h-3 w-3" />
                 {tag}
-              </span>
+              </button>
             ))}
           </div>
         )}

@@ -17,6 +17,7 @@ interface WritingListProps {
   items: WritingListItem[]
   activeSlug?: string
   onSelect: (slug: string) => void
+  onTagClick?: (tag: string) => void
 }
 
 const categoryColors: Record<string, string> = {
@@ -26,7 +27,7 @@ const categoryColors: Record<string, string> = {
   article: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
 }
 
-export function WritingList({ items, activeSlug, onSelect }: WritingListProps) {
+export function WritingList({ items, activeSlug, onSelect, onTagClick }: WritingListProps) {
   return (
     <div className="flex flex-col gap-1 py-2">
       {items.map((item) => (
@@ -79,13 +80,17 @@ export function WritingList({ items, activeSlug, onSelect }: WritingListProps) {
             </span>
           </div>
 
-          {/* Tags */}
+          {/* Tags — clickable */}
           {item.tags.length > 0 && (
             <div className="flex items-center gap-1 mt-1.5 flex-wrap">
               {item.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center gap-0.5 text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded"
+                  className="inline-flex items-center gap-0.5 text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded hover:bg-secondary hover:text-foreground transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onTagClick?.(tag)
+                  }}
                 >
                   <Tag className="h-2.5 w-2.5" />
                   {tag}
