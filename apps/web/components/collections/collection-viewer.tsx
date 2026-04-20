@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { CollectionItem } from "@/lib/collections/types"
-import { ArrowLeft, ExternalLink, Tag, Loader2 } from "lucide-react"
+import { ArrowLeft, ExternalLink, Tag, Loader2, LayoutGrid } from "lucide-react"
 import { cn } from "@allone/utils"
 
 const sourceColors: Record<string, string> = {
@@ -33,7 +33,7 @@ export function CollectionViewer({ item, onBack, isMobile, onTagClick }: Collect
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-2 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to list
+            Back to grid
           </button>
         )}
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
@@ -52,6 +52,14 @@ const makingCategory = {
 export function Sidebar() {
   const pathname = usePathname()
   const [rssOpen, setRssOpen] = useState(false)
+  const [makingOpen, setMakingOpen] = useState(true)
+
+  // Auto-expand making when on a making sub-route
+  useEffect(() => {
+    if (pathname.startsWith("/making")) {
+      setMakingOpen(true)
+    }
+  }, [pathname])
 
   return (
     <aside className="w-56 bg-card flex flex-col self-stretch">
@@ -80,41 +88,44 @@ export function Sidebar() {
           Category
         </h3>
         <nav className="flex flex-col gap-1">
-          {/* Main Making Item */}
-          <Link
-            href={makingCategory.href}
+          {/* Main Making Item - collapsible */}
+          <button
+            onClick={() => setMakingOpen(!makingOpen)}
             className={cn(
-              "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-              pathname === makingCategory.href
+              "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors w-full text-left",
+              pathname === makingCategory.href || pathname.startsWith(makingCategory.href + "/")
                 ? "bg-secondary text-foreground"
                 : "text-muted-foreground hover:bg-secondary hover:text-foreground"
             )}
           >
             <makingCategory.icon className="h-4 w-4" />
-            <span>{makingCategory.label}</span>
-          </Link>
+            <span className="flex-1">{makingCategory.label}</span>
+            <ChevronRight className={cn("h-3 w-3 transition-transform", makingOpen && "rotate-90")} />
+          </button>
 
           {/* Sub Items */}
-          <div className="ml-4 mt-1 space-y-1">
-            {makingCategory.subItems.map((item) => {
-              const Icon = item.icon
-              return (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors",
-                    pathname === item.href || pathname.startsWith(item.href + "/")
-                      ? "bg-primary/10 text-primary font-medium"
-                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                  )}
-                >
-                  <Icon className="h-3.5 w-3.5" />
-                  <span>{item.label}</span>
-                </Link>
-              )
-            })}
-          </div>
+          {makingOpen && (
+            <div className="ml-4 mt-1 space-y-1">
+              {makingCategory.subItems.map((item) => {
+                const Icon = item.icon
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors",
+                      pathname === item.href || pathname.startsWith(item.href + "/")
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    )}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    <span>{item.label}</span>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
 
           {/* Writing Item */}
           <Link
