@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { Home, BookOpen, Globe, Hammer, FileText } from "lucide-react"
+import { Home, BookOpen, Globe, Hammer, FileText, Files } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 const mobileNavItems = [
@@ -36,6 +36,12 @@ const mobileNavItems = [
     icon: Globe,
     label: "Ideas",
     href: "/collections",
+  },
+  {
+    id: "cheatsheets",
+    icon: Files,
+    label: "Cheat",
+    href: "/cheatsheets",
   },
 ]
 

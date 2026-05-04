@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb, PenLine, Globe, Rss, ChevronRight } from "lucide-react"
+import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb, PenLine, Globe, Rss, ChevronRight, BookOpen } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 // Writing category
@@ -139,6 +139,20 @@ export function Sidebar() {
           >
             <writingCategory.icon className="h-4 w-4" />
             <span>{writingCategory.label}</span>
+          </Link>
+
+          {/* Cheatsheets Item */}
+          <Link
+            href="/cheatsheets"
+            className={cn(
+              "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors mt-1",
+              pathname === "/cheatsheets" || pathname.startsWith("/cheatsheets/")
+                ? "bg-secondary text-foreground"
+                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+            )}
+          >
+            <BookOpen className="h-4 w-4" />
+            <span>Cheatsheets</span>
           </Link>
 
           {/* Collections Item */}

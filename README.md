@@ -10,6 +10,7 @@ A modern personal website built with Next.js, featuring project tracking, GitHub
 2. **Project Analysis** - Shows project documentation (AGENTS.md) and AI-generated analysis
 3. **Weekly Summaries** - Generates weekly progress reports with AI evaluation
 4. **Knowledge Base** - Collects tutorials and learning resources
+5. **Cheatsheets** - 300+ quick reference guides for developer tools and frameworks
 
 ## Data Collection
 
@@ -36,6 +37,10 @@ innate-websites/
 ├── apps/
 │   └── web/                 # Main Next.js application
 │       ├── app/making/      # Issues, Projects, Weekly summaries
+│       ├── app/cheatsheets/ # Quick reference guides
+│       ├── app/collections/ # AI agent collections
+│       ├── app/writing/     # Blog posts
+│       ├── app/tutorials/   # Quick tutorials
 │       ├── data/            # JSON data files
 │       └── scripts/         # Data fetching scripts
 ├── packages/
@@ -51,9 +56,38 @@ innate-websites/
 - **Issues** - Browse and filter GitHub issues from all projects
 - **Projects** - View project details with AGENTS.md documentation
 - **Weekly** - Weekly progress summaries with AI analysis
+- **Insights** - AI-generated insights from project activity
 
-### Other Pages
-- Tutorials, feeds, and other content collections
+### /cheatsheets
+- Quick reference guides for 300+ developer tools and frameworks
+- Card and list view toggle with search and category filtering
+- Markdown-rendered detail pages sourced from `docs/cheatsheets/`
+
+### /collections
+- Random ideas and experiments collected from AI agents
+- Filterable by category, source, and tags
+- Embedded viewer for external content
+
+### /writing
+- Blog platform for thoughts, ideas, and experiences
+- Markdown posts with table of contents
+- RSS feed support
+
+### /tutorials
+- 5-minute quick-start tutorials for small tools
+- Copy-and-modify examples with immediate results
+- Includes Go language learning content
+
+### /feed
+- Content discovery feed with 60-second ISR refresh
+- Aggregated posts with engagement metrics
+
+### /learning-library
+- Course catalog for educational resources
+- Grid layout with course details
+
+### /deep-news
+- Deep/thoughtful articles in a feed format
 
 ## Technology Stack
 

@@ -1,0 +1,110 @@
+{
+  "projects": [
+    {
+      "id": "innate-next-mono",
+      "name": "innate-next-mono",
+      "description": "A mono repo base project for creating website",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-next-mono"
+    },
+    {
+      "id": "spark-cli",
+      "name": "spark-cli",
+      "description": "Daily Cli command ideas fired by spark",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/spark-cli"
+    },
+    {
+      "id": "innate-feeds",
+      "name": "innate-feeds",
+      "description": "collect different feeds",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-feeds"
+    },
+    {
+      "id": "innate-executable",
+      "name": "innate-executable",
+      "description": "executable tutorials website and desktop version",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-executable"
+    },
+    {
+      "id": "innate-wip",
+      "name": "innate-wip",
+      "description": "personal github repo dashboard for builing in public,always in working in process",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-wip"
+    },
+    {
+      "id": "innate-susu",
+      "name": "innate-susu",
+      "description": "AI education for Susu",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-susu"
+    },
+    {
+      "id": "innate-chaos",
+      "name": "innate-chaos",
+      "description": "learning hyper ",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-chaos"
+    },
+    {
+      "id": "dpp-market-intel",
+      "name": "dpp-market-intel",
+      "description": "dpp data and news",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/dpp-market-intel"
+    },
+    {
+      "id": "innate-capture",
+      "name": "innate-capture",
+      "description": "catpure the ideas,capture the moment,capture the sense",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-capture"
+    },
+    {
+      "id": "fire-skills",
+      "name": "fire-skills",
+      "description": "Personal AI Agent Skills Collection",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/fire-skills"
+    },
+    {
+      "id": "innate-way",
+      "name": "innate-way",
+      "description": "where ideas come from,and how it process",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-way"
+    },
+    {
+      "id": "fire-workspace",
+      "name": "fire-workspace",
+      "description": "fire self workspace ",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/fire-workspace"
+    },
+    {
+      "id": "my-tokscale",
+      "name": "my-tokscale",
+      "description": "my tokscale for model by data, copy and modify",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/my-tokscale"
+    },
+    {
+      "id": "innate-feeds-filters",
+      "name": "innate-feeds-filters",
+      "description": "filter different feeds",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-feeds-filters"
+    },
+    {
+      "id": "innate-keepthem",
+      "name": "innate-keepthem",
+      "description": "keep different resources and to know more",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-keepthem"
+    }
+  ],
+  "lastUpdated": "2026-05-04T11:20:15.342Z"
+}

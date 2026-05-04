@@ -10,7 +10,14 @@
     "start": "next start",
     "start:static": "npx serve dist",
     "lint": "eslint .",
-    "clean": "rm -rf .next dist node_modules"
+    "clean": "rm -rf .next dist node_modules",
+    "sync:data": "cd scripts && bash run-all.sh",
+    "sync:issues": "node scripts/fetch-issues.js",
+    "sync:projects": "node scripts/fetch-projects.js",
+    "sync:agents": "node scripts/fetch-agents.js",
+    "sync:weekly": "node scripts/generate-weekly.js",
+    "sync:insights": "node scripts/generate-insights.js",
+    "sync:collections": "node scripts/fetch-collections.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

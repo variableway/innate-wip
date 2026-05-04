@@ -30,4 +30,4 @@ pnpm-debug.log*
 *.swp
 *.swo
 *~
-apps/web/data/*
+
