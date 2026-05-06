@@ -78,13 +78,6 @@
       "repoUrl": "https://github.com/variableway/innate-way"
     },
     {
-      "id": "fire-workspace",
-      "name": "fire-workspace",
-      "description": "fire self workspace ",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/fire-workspace"
-    },
-    {
       "id": "my-tokscale",
       "name": "my-tokscale",
       "description": "my tokscale for model by data, copy and modify",
@@ -104,7 +97,21 @@
       "description": "keep different resources and to know more",
       "color": "#8FA68E",
       "repoUrl": "https://github.com/variableway/innate-keepthem"
+    },
+    {
+      "id": "innate-shanghai-live",
+      "name": "innate-shanghai-live",
+      "description": "innate shanghai collections",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-shanghai-live"
+    },
+    {
+      "id": "innate-ai-art",
+      "name": "innate-ai-art",
+      "description": "ai art after work",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-ai-art"
     }
   ],
-  "lastUpdated": "2026-05-04T11:20:15.342Z"
+  "lastUpdated": "2026-05-06T07:02:11.305Z"
 }

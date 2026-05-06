@@ -11,6 +11,9 @@ This file provides context for AI assistants working with this codebase.
 2. **Shows Project Documentation** (AGENTS.md) with markdown rendering
 3. **Tracks Weekly Progress** with AI-generated summaries and evaluations
 4. **Provides a Knowledge Base** for tutorials and learning resources
+5. **Cheatsheets** - 300+ quick reference guides for developer tools and frameworks
+6. **Collections** - Ideas and experiments from AI agents
+7. **Writing** - Blog platform with RSS feed support
 
 ### Data Sources:
 - **GitHub API** - Fetches issues, projects, and metadata
@@ -28,18 +31,28 @@ innate-websites/
 │       │   ├── issues/         # GitHub issues browser
 │       │   ├── projects/       # Project showcase
 │       │   └── weekly/         # Weekly summaries
+│       ├── app/cheatsheets/    # Quick reference guides
+│       ├── app/collections/    # AI agent collections
+│       ├── app/writing/        # Blog posts
+│       ├── app/tutorials/      # Quick tutorials
+│       ├── app/feed/           # Content discovery feed
 │       ├── data/               # JSON data files
 │       │   ├── issues.json     # GitHub issues data
 │       │   ├── projects.json   # Project analysis
 │       │   └── weekly.json     # Weekly summaries
 │       ├── components/         # React components
 │       │   ├── making/         # Feature-specific components
+│       │   ├── cheatsheets/    # Cheatsheet components
+│       │   ├── collections/    # Collection components
 │       │   ├── markdown-renderer.tsx
 │       │   └── server-markdown.tsx
 │       ├── lib/making/         # Data layer
 │       │   ├── data.ts         # Static data imports
 │       │   ├── types.ts        # TypeScript types
 │       │   └── server-data.ts  # Server-side data loading
+│       ├── lib/cheatsheets/    # Cheatsheet data layer
+│       │   ├── data.ts         # Markdown file parsing
+│       │   └── types.ts        # Cheatsheet types
 │       └── scripts/            # Data fetching scripts
 │           ├── fetch-issues.js
 │           ├── fetch-agents.js
@@ -188,6 +201,25 @@ STATIC_EXPORT=true pnpm build
 - **Client Components**: Used for interactive features (navigation, filters)
 - **Data Storage**: JSON files committed to repository
 - **Bilingual Support**: Weekly summaries support Chinese and English
+
+#### Cheatsheet
+```typescript
+interface CheatsheetMeta {
+  slug: string
+  title: string
+  category: string
+  tags: string[]
+  keywords: string[]
+  updated: string | null
+  weight: number
+  intro: string | null
+  description: string
+}
+
+interface Cheatsheet extends CheatsheetMeta {
+  content: string
+}
+```
 
 ## AI Agent Guidelines
 

@@ -78,13 +78,6 @@
       "repoUrl": "https://github.com/variableway/innate-way"
     },
     {
-      "id": "fire-workspace",
-      "name": "fire-workspace",
-      "description": "fire self workspace ",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/fire-workspace"
-    },
-    {
       "id": "my-tokscale",
       "name": "my-tokscale",
       "description": "my tokscale for model by data, copy and modify",
@@ -104,6 +97,20 @@
       "description": "keep different resources and to know more",
       "color": "#8FA68E",
       "repoUrl": "https://github.com/variableway/innate-keepthem"
+    },
+    {
+      "id": "innate-shanghai-live",
+      "name": "innate-shanghai-live",
+      "description": "innate shanghai collections",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-shanghai-live"
+    },
+    {
+      "id": "innate-ai-art",
+      "name": "innate-ai-art",
+      "description": "ai art after work",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-ai-art"
     }
   ],
   "issues": [
@@ -1942,28 +1949,7 @@
       "closedAt": "2026-04-08T09:57:58Z",
       "url": "https://github.com/variableway/innate-way/issues/1",
       "author": "qdriven"
-    },
-    {
-      "id": "issue-4305859313",
-      "number": 1,
-      "title": "骑行地图调研 - Task 1: 江浙沪骑行地图工具综合调研",
-      "description": "## Task 1: General Research - 骑行地图调研\n\n主要目的：\n- 研究骑行地图的使用情况\n- 评估骑行地图的功能和用户体验\n- 收集骑行地图的用户反馈和建议\n\n调研要点：\n1. 当前有哪些江浙沪骑行地图工具，选取top 5-10个进行分析\n2. 每一个工具的功能和用户体验分析，好在哪里坏在哪里\n3. 用户对于骑行地图的真实需求是什么，是否可以通过当前工具满足\n4. 是否可以加入一些社交元素，直接发图片分享之类的，完全围绕骑行地图进行分享，个人记录也行，然后自动生成日志和记录呢\n5. 当前那种记录骑行打卡功能还有什么没有满足客户需求的",
-      "status": "closed",
-      "project": "fire-workspace",
-      "labels": [
-        {
-          "id": "task",
-          "name": "task",
-          "color": "ededed",
-          "description": ""
-        }
-      ],
-      "createdAt": "2026-04-21T23:32:54Z",
-      "updatedAt": "2026-04-21T23:42:18Z",
-      "closedAt": "2026-04-21T23:42:20Z",
-      "url": "https://github.com/variableway/fire-workspace/issues/1",
-      "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-04T11:20:32.084Z"
+  "lastUpdated": "2026-05-06T07:02:33.109Z"
 }
