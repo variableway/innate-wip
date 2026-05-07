@@ -1000,6 +1000,27 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4397690965",
+      "number": 43,
+      "title": "Build the Skill Feeds Site Plan",
+      "description": "Plan a Skill Feeds Site that aggregates and benchmarks AI skills from marketplaces (skills.sh, ClawHub, etc.). Include: site architecture, skill feed aggregation, benchmarking with PromptFoo, scalable design. Write planning and research into separate files under tasks/issues/skill-feeds/.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-07T09:35:20Z",
+      "updatedAt": "2026-05-07T09:45:16Z",
+      "closedAt": "2026-05-07T09:45:16Z",
+      "url": "https://github.com/variableway/fire-skills/issues/43",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4333883806",
       "number": 42,
       "title": "Research Q&A-to-Course Recording & Top GitHub Repos",
@@ -1951,5 +1972,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-07T06:42:05.163Z"
+  "lastUpdated": "2026-05-07T10:29:34.339Z"
 }
