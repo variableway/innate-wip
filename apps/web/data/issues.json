@@ -1000,6 +1000,48 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4404122426",
+      "number": 45,
+      "title": "Personal SKILL Workflow: Evolving AI Usage Path for Coders",
+      "description": "Research and plan a personal SKILL execution workflow for a coder with broad interests. Cover: 1) Continuously evolving AI usage path, 2) Skill composition workflows with reproducible tutorials, 3) Cross-domain learning-to-practice SKILL workflows, 4) Analysis and action plan. Write findings to tasks/issues/skill-feeds/.",
+      "status": "open",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T05:56:04Z",
+      "updatedAt": "2026-05-08T05:56:10Z",
+      "closedAt": null,
+      "url": "https://github.com/variableway/fire-skills/issues/45",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4403626565",
+      "number": 44,
+      "title": "Deep Research: Agent Skill Evaluation & Top 20 OSS Eval Tools",
+      "description": "1. Deep research on how to eval Agent Skill (frameworks, methodologies, dimensions). 2. Find top 20 Agent Skill Eval open source projects. 3. Write findings into a separate file under tasks/issues/skill-feeds/.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T03:46:21Z",
+      "updatedAt": "2026-05-08T04:05:03Z",
+      "closedAt": "2026-05-08T04:05:03Z",
+      "url": "https://github.com/variableway/fire-skills/issues/44",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4397690965",
       "number": 43,
       "title": "Build the Skill Feeds Site Plan",
@@ -1972,5 +2014,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-08T03:32:56.768Z"
+  "lastUpdated": "2026-05-08T06:01:56.905Z"
 }
