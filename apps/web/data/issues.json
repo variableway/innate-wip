@@ -115,6 +115,27 @@
   ],
   "issues": [
     {
+      "id": "issue-4426314758",
+      "number": 13,
+      "title": "Fix Bug: MenuGroupRootContext is missing",
+      "description": "## Bug 描述\n\nBase UI: MenuGroupRootContext is missing. Menu group parts must be used within <Menu.Group>.\n\n## 原因\n\n在 Base UI (@base-ui/react) 中，DropdownMenuLabel（包装了 MenuGroupLabel）需要 MenuGroupRootContext，该 Context 由 DropdownMenuGroup（包装了 Menu.Group）提供。当前 DropdownMenuLabel 直接放在 DropdownMenuContent 中，缺少 DropdownMenuGroup 包裹。\n\n## 受影响文件\n\n1. `apps/intent-driven/components/theme-style-switcher.tsx` - 第 37、52 行\n2. `apps/web/components/theme-style-switcher.tsx` - 第 37、52 行\n3. `apps/intent-driven/components/layout/header.tsx` - 第 130 行\n\n## 修复方案\n\n将 DropdownMenuLabel 用 DropdownMenuGroup 包裹：\n```tsx\n// Before:\n<DropdownMenuLabel>Style</DropdownMenuLabel>\n\n// After:\n<DropdownMenuGroup>\n  <DropdownMenuLabel>Style</DropdownMenuLabel>\n</DropdownMenuGroup>\n```",
+      "status": "closed",
+      "project": "innate-next-mono",
+      "labels": [
+        {
+          "id": "bug",
+          "name": "bug",
+          "color": "d73a4a",
+          "description": "Something isn't working"
+        }
+      ],
+      "createdAt": "2026-05-12T04:55:37Z",
+      "updatedAt": "2026-05-12T04:57:09Z",
+      "closedAt": "2026-05-12T04:57:09Z",
+      "url": "https://github.com/variableway/innate-next-mono/issues/13",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4419464709",
       "number": 12,
       "title": "完成组件展示功能 - Sidebar + Main Content 布局",
@@ -2140,5 +2161,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-12T03:41:53.901Z"
+  "lastUpdated": "2026-05-12T06:40:30.268Z"
 }
