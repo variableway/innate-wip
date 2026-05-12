@@ -115,6 +115,27 @@
   ],
   "issues": [
     {
+      "id": "issue-4426959768",
+      "number": 14,
+      "title": "Fix Bug: 点击切换theme没有任何反应",
+      "description": "## Bug 描述\n\n点击切换 theme（dark/light/system），没有任何反应，主题不会切换。\n\n## 复现步骤\n\n1. 打开页面\n2. 点击 ThemeStyleSwitcher 中的 Mode 相关选项（Light/Dark/System）\n3. 主题无变化\n\n## 需要排查\n\n- ThemeProvider 是否正确配置\n- setTheme 调用是否生效\n- static export 模式下 next-themes 是否正常工作",
+      "status": "open",
+      "project": "innate-next-mono",
+      "labels": [
+        {
+          "id": "bug",
+          "name": "bug",
+          "color": "d73a4a",
+          "description": "Something isn't working"
+        }
+      ],
+      "createdAt": "2026-05-12T07:05:11Z",
+      "updatedAt": "2026-05-12T07:05:11Z",
+      "closedAt": null,
+      "url": "https://github.com/variableway/innate-next-mono/issues/14",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4426314758",
       "number": 13,
       "title": "Fix Bug: MenuGroupRootContext is missing",
@@ -2161,5 +2182,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-12T06:40:30.268Z"
+  "lastUpdated": "2026-05-12T10:37:03.609Z"
 }
