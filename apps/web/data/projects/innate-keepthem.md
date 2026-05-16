@@ -44,12 +44,15 @@ vYtDL is a YouTube downloader suite with four components:
 
 ```
 main.go → cmd.Execute() → cmd/root.go
-                              ↓
-                    cmd/download.go (flags parsing)
-                              ↓
-                    downloader.New() → yt-dlp subprocess
-                              ↓
-                    record.Manager → JSON/CSV output files
+                    ├─── cmd/download.go (flags parsing, concurrent dispatch)
+                    │            ↓
+                    │    downloader.New() → yt-dlp subprocess
+                    │            ↓
+                    │    record.Manager → JSON/CSV output files
+                    │
+                    └─── cmd/analyze.go (--mode text)
+                                 ↓
+                         vtt.Parse() → plain text
 ```
 
 ### Desktop
@@ -87,12 +90,14 @@ SQLite Database
 ### CLI (vYtDL/)
 
 - `cmd/root.go` - Cobra root command
-- `cmd/download.go` - CLI flags, download orchestration, TUI coordination
+- `cmd/download.go` - CLI flags, download orchestration, concurrent dispatch, TUI coordination
+- `cmd/analyze.go` - VTT subtitle analysis subcommand (`--mode text`)
 - `internal/config/` - Loads `config.json` for yt-dlp binary path
 - `internal/downloader/` - Core download logic, wraps yt-dlp as subprocess
 - `internal/playliststate/` - Manages `.playlist_state.json` for resume
-- `internal/record/` - Manages download_record and subtitle_mapping files
+- `internal/record/` - Manages download_record and subtitle_mapping files (thread-safe)
 - `internal/tui/` - bubbletea-based terminal UI
+- `internal/vtt/` - WebVTT parser (handles YouTube auto-generated and manual captions)
 
 ### Desktop (vYtDL-desktop/)
 
@@ -267,5 +272,6 @@ Download wrapper scripts validate `yt-dlp`/`youtube-dl` availability before runn
 
 - yt-dlp must be installed separately and path configured in `config.json`
 - YouTube may block anonymous requests; use `--cookies-from-browser` as workaround
+- YouTube `n` challenge requires a JS runtime (deno/node). Use `--js-runtimes node` if Node.js is available, or `brew install deno`. The vYtDL CLI does not pass `--js-runtimes` through yet; use yt-dlp directly for now.
 - URL escaping issues were fixed; downloader normalizes input URLs
 - Desktop `tauriStorage` type has known TypeScript incompatibility with Zustand `PersistStorage`
