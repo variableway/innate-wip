@@ -61,32 +61,33 @@ export function CollectionsList({ items, activeId, onSelect, onTagClick }: Colle
             {item.description}
           </p>
 
-          {/* Meta */}
-          <div className="flex items-center gap-3 text-[11px] text-muted-foreground">
+          {/* Meta + Tags inline */}
+          <div className="flex items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground flex-wrap">
             <span className="flex items-center gap-1">
               <Calendar className="h-3 w-3" />
               {item.date}
             </span>
+            {item.tags.length > 0 && (
+              <>
+                <span className="text-muted-foreground/20">|</span>
+                <div className="flex items-center gap-1 flex-wrap">
+                  {item.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-0.5 text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded hover:bg-secondary hover:text-foreground transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onTagClick?.(tag)
+                      }}
+                    >
+                      <Tag className="h-2.5 w-2.5" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
-
-          {/* Tags */}
-          {item.tags.length > 0 && (
-            <div className="flex items-center gap-1 mt-1.5 flex-wrap">
-              {item.tags.slice(0, 3).map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-0.5 text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded hover:bg-secondary hover:text-foreground transition-colors cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onTagClick?.(tag)
-                  }}
-                >
-                  <Tag className="h-2.5 w-2.5" />
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
         </button>
       ))}
     </div>

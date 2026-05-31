@@ -78,7 +78,7 @@ export default async function PostPage({ params }: Props) {
                 <h1 className="text-2xl font-bold text-foreground leading-tight">
                   {post.meta.title}
                 </h1>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3 flex-wrap">
+                <div className="flex items-center gap-x-4 gap-y-1.5 text-sm text-muted-foreground mt-3 flex-wrap">
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[11px] font-medium">
                       {post.meta.author[0]}
@@ -87,19 +87,22 @@ export default async function PostPage({ params }: Props) {
                   </div>
                   <span>{dateStr}</span>
                   <span>{post.meta.readingTime || 1} min read</span>
+                  {post.meta.tags.length > 0 && (
+                    <>
+                      <span className="text-muted-foreground/20 hidden sm:inline">|</span>
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {post.meta.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
-                {post.meta.tags.length > 0 && (
-                  <div className="flex items-center gap-1.5 mt-3 flex-wrap">
-                    {post.meta.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
 
               <div className="flex-1 overflow-y-auto">

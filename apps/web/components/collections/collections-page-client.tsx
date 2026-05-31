@@ -113,98 +113,91 @@ export function CollectionsPageClient({
         </div>
 
         {/* Filter bar */}
-        <div className="mt-3 space-y-2">
-          {/* Sources */}
-          {sources.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mr-1">
-                Source
-              </span>
-              {sources.map((source) => (
-                <button
-                  key={source}
-                  onClick={() =>
-                    filterSource === source ? setFilterSource(null) : setFilterSource(source)
-                  }
-                  className={cn(
-                    "text-[10px] font-medium px-2 py-0.5 rounded-full transition-colors",
-                    filterSource === source
-                      ? "bg-foreground text-background"
-                      : sourceColors[source] || "bg-muted text-muted-foreground hover:bg-secondary"
-                  )}
-                >
-                  {source}
-                </button>
-              ))}
-            </div>
-          )}
+        <div className="mt-3">
+          <div className="flex items-center gap-x-2 gap-y-1.5 flex-wrap">
+            {/* Sources */}
+            {sources.length > 0 && (
+              <>
+                {sources.map((source) => (
+                  <button
+                    key={source}
+                    onClick={() =>
+                      filterSource === source ? setFilterSource(null) : setFilterSource(source)
+                    }
+                    className={cn(
+                      "text-[10px] font-medium px-2 py-0.5 rounded-full transition-colors",
+                      filterSource === source
+                        ? "bg-foreground text-background"
+                        : sourceColors[source] || "bg-muted text-muted-foreground hover:bg-secondary"
+                    )}
+                  >
+                    {source}
+                  </button>
+                ))}
+                <span className="text-muted-foreground/20">|</span>
+              </>
+            )}
 
-          {/* Categories */}
-          {categories.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mr-1">
-                Category
-              </span>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() =>
-                    filterCategory === cat ? setFilterCategory(null) : setFilterCategory(cat)
-                  }
-                  className={cn(
-                    "text-[10px] font-medium px-2 py-0.5 rounded-full transition-colors",
-                    filterCategory === cat
-                      ? "bg-foreground text-background"
-                      : "bg-muted text-muted-foreground hover:bg-secondary"
-                  )}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          )}
+            {/* Categories */}
+            {categories.length > 0 && (
+              <>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() =>
+                      filterCategory === cat ? setFilterCategory(null) : setFilterCategory(cat)
+                    }
+                    className={cn(
+                      "text-[10px] font-medium px-2 py-0.5 rounded-full transition-colors",
+                      filterCategory === cat
+                        ? "bg-foreground text-background"
+                        : "bg-muted text-muted-foreground hover:bg-secondary"
+                    )}
+                  >
+                    {cat}
+                  </button>
+                ))}
+                <span className="text-muted-foreground/20">|</span>
+              </>
+            )}
 
-          {/* Tags */}
-          {tags.length > 0 && (
-            <div className="flex items-center gap-1 flex-wrap">
-              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mr-1">
-                Tags
-              </span>
-              {tags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => (filterTag === tag ? setFilterTag(null) : handleTagClick(tag))}
-                  className={cn(
-                    "text-[10px] px-2 py-0.5 rounded-full transition-colors",
-                    filterTag === tag
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground bg-muted hover:bg-secondary"
-                  )}
-                >
-                  #{tag}
-                </button>
-              ))}
-            </div>
-          )}
+            {/* Tags */}
+            {tags.length > 0 && (
+              <>
+                {tags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => (filterTag === tag ? setFilterTag(null) : handleTagClick(tag))}
+                    className={cn(
+                      "text-[10px] px-2 py-0.5 rounded-full transition-colors",
+                      filterTag === tag
+                        ? "bg-foreground text-background"
+                        : "text-muted-foreground bg-muted hover:bg-secondary"
+                    )}
+                  >
+                    #{tag}
+                  </button>
+                ))}
+              </>
+            )}
 
-          {/* Active filter indicator */}
-          {hasFilter && (
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span>
-                Showing {filteredCollections.length} of {collections.length} items
-                {filterSource && ` from "${filterSource}"`}
-                {filterCategory && ` in "${filterCategory}"`}
-                {filterTag && ` tagged "${filterTag}"`}
-              </span>
-              <button
-                onClick={clearFilters}
-                className="flex items-center gap-1 text-[#8FA68E] hover:text-[#8FA68E]/80 transition-colors"
-              >
-                <X className="h-3 w-3" />
-                Clear
-              </button>
-            </div>
-          )}
+            {/* Active filter indicator */}
+            {hasFilter && (
+              <>
+                <span className="text-muted-foreground/20">|</span>
+                <span className="text-xs text-muted-foreground/60">
+                  {filteredCollections.length}/{collections.length}
+                </span>
+                <button
+                  onClick={clearFilters}
+                  className="flex items-center gap-1 text-xs text-[#8FA68E] hover:text-[#8FA68E]/80 transition-colors"
+                >
+                  <X className="h-3 w-3" />
+                  Clear
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
 

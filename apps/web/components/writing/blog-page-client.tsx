@@ -148,9 +148,9 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
         </div>
 
         {/* Filters */}
-        <div className="mt-3 space-y-2">
-          {/* Categories */}
-          <div className="flex items-center gap-1.5 flex-wrap">
+        <div className="mt-3">
+          <div className="flex items-center gap-x-2 gap-y-1.5 flex-wrap">
+            {/* Categories */}
             {categories.map((cat) => {
               const colors = categoryColors[cat] || {
                 bg: "bg-muted hover:bg-muted/80",
@@ -175,52 +175,53 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
                 </button>
               )
             })}
-          </div>
 
-          {/* Tags */}
-          {tags.length > 0 && (
-            <div className="flex items-center gap-1 flex-wrap">
-              {tags.slice(0, 8).map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() =>
-                    filterTag === tag ? setFilterTag(null) : handleTagClick(tag)
-                  }
-                  className={cn(
-                    "text-[11px] px-2 py-0.5 rounded-full transition-all",
-                    filterTag === tag
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground/70 bg-muted/50 hover:bg-secondary hover:text-foreground"
-                  )}
-                >
-                  #{tag}
-                </button>
-              ))}
-              {tags.length > 8 && (
-                <span className="text-[11px] text-muted-foreground/40">
-                  +{tags.length - 8}
+            <span className="text-muted-foreground/20">|</span>
+
+            {/* Tags */}
+            {tags.length > 0 && (
+              <>
+                {tags.slice(0, 8).map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() =>
+                      filterTag === tag ? setFilterTag(null) : handleTagClick(tag)
+                    }
+                    className={cn(
+                      "text-[11px] px-2 py-0.5 rounded-full transition-all",
+                      filterTag === tag
+                        ? "bg-foreground text-background"
+                        : "text-muted-foreground/70 bg-muted/50 hover:bg-secondary hover:text-foreground"
+                    )}
+                  >
+                    #{tag}
+                  </button>
+                ))}
+                {tags.length > 8 && (
+                  <span className="text-[11px] text-muted-foreground/40">
+                    +{tags.length - 8}
+                  </span>
+                )}
+              </>
+            )}
+
+            {/* Active filter indicator */}
+            {hasFilter && (
+              <>
+                <span className="text-muted-foreground/20">|</span>
+                <span className="text-xs text-muted-foreground/60">
+                  {filteredPosts.length}/{posts.length}
                 </span>
-              )}
-            </div>
-          )}
-
-          {/* Active filter indicator */}
-          {hasFilter && (
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-muted-foreground/60">
-                Showing {filteredPosts.length} of {posts.length}
-                {filterCategory && ` in "${filterCategory}"`}
-                {filterTag && ` tagged "${filterTag}"`}
-              </span>
-              <button
-                onClick={clearFilters}
-                className="flex items-center gap-1 text-xs text-[#8FA68E] hover:text-[#6b856a] transition-colors font-medium"
-              >
-                <X className="h-3 w-3" />
-                Clear
-              </button>
-            </div>
-          )}
+                <button
+                  onClick={clearFilters}
+                  className="flex items-center gap-1 text-xs text-[#8FA68E] hover:text-[#6b856a] transition-colors font-medium"
+                >
+                  <X className="h-3 w-3" />
+                  Clear
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
@@ -332,7 +333,7 @@ function MdxInlineViewer({
           {post.title}
         </h1>
 
-        <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3 flex-wrap">
+        <div className="flex items-center gap-x-4 gap-y-1.5 text-sm text-muted-foreground mt-3 flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[11px] font-medium">
               {post.author[0]}
@@ -341,21 +342,23 @@ function MdxInlineViewer({
           </div>
           <span>{post.date}</span>
           <span>{post.readingTime} min read</span>
+          {post.tags.length > 0 && (
+            <>
+              <span className="text-muted-foreground/20 hidden sm:inline">|</span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {post.tags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => onTagClick?.(tag)}
+                    className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-
-        {post.tags.length > 0 && (
-          <div className="flex items-center gap-1.5 mt-3 flex-wrap">
-            {post.tags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => onTagClick?.(tag)}
-                className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Content with ToC */}

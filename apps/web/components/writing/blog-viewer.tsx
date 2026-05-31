@@ -86,8 +86,8 @@ export function BlogViewer({
           {title}
         </h1>
 
-        {/* Meta */}
-        <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
+        {/* Meta + Tags inline */}
+        <div className="flex items-center gap-x-4 gap-y-1.5 text-sm text-muted-foreground flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[11px] font-semibold">
               {author[0]}
@@ -102,23 +102,24 @@ export function BlogViewer({
             <Clock className="h-3.5 w-3.5" />
             {readingTime} min read
           </span>
+          {tags.length > 0 && (
+            <>
+              <span className="text-muted-foreground/20 hidden sm:inline">|</span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {tags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => onTagClick?.(tag)}
+                    className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary/70 px-2 py-0.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
+                  >
+                    <Tag className="h-3 w-3" />
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-
-        {/* Tags */}
-        {tags.length > 0 && (
-          <div className="flex items-center gap-1.5 mt-3 flex-wrap">
-            {tags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => onTagClick?.(tag)}
-                className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary/70 px-2 py-0.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
-              >
-                <Tag className="h-3 w-3" />
-                {tag}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Content area: article + ToC sidebar */}
