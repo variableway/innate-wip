@@ -177,6 +177,8 @@ function SidebarContent({
           )}
         </div>
 
+        <div className="mx-3 my-1 border-t border-border/50" />
+
         {/* Feed Category */}
         <div className="px-2 mb-2">
           <button
@@ -216,6 +218,8 @@ function SidebarContent({
             </div>
           )}
         </div>
+
+        <div className="mx-3 my-1 border-t border-border/50" />
 
         {/* Making Category */}
         <div className="px-2 mb-2">
@@ -293,6 +297,8 @@ function SidebarContent({
           )}
         </div>
 
+        <div className="mx-3 my-1 border-t border-border/50" />
+
         {/* Cheatsheets Category */}
         <div className="px-2 mb-2">
           <button
@@ -344,6 +350,8 @@ function SidebarContent({
             </div>
           )}
         </div>
+
+        <div className="mx-3 my-1 border-t border-border/50" />
 
         {/* Awesome Category */}
         <div className="px-2 mb-2">

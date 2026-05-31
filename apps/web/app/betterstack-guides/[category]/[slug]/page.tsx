@@ -2,7 +2,9 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllGuideMetas, getGuideBySlug } from "@/lib/betterstack/data"
+import { extractToc } from "@/lib/content/parser"
 import { ServerMarkdown } from "@/components/server-markdown"
+import { TableOfContents } from "@/components/table-of-contents"
 import { ArrowLeft, BookOpen } from "lucide-react"
 
 interface Props {
@@ -27,6 +29,8 @@ export default async function GuidePage({ params }: Props) {
   const { category, slug } = await params
   const guide = await getGuideBySlug(category, slug)
   if (!guide) notFound()
+
+  const toc = extractToc(guide.content)
 
   return (
     <div className="flex flex-col h-full">
@@ -66,10 +70,15 @@ export default async function GuidePage({ params }: Props) {
               </p>
             </div>
 
-            {/* Content */}
+            {/* Content with ToC */}
             <div className="flex-1 overflow-y-auto">
-              <div className="markdown-content">
-                <ServerMarkdown content={guide.content} />
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
+                <div className="markdown-content">
+                  <ServerMarkdown content={guide.content} />
+                </div>
+                <aside>
+                  <TableOfContents headings={toc} />
+                </aside>
               </div>
             </div>
           </article>
