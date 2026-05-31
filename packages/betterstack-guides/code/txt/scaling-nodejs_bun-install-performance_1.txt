@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bun-install-performance/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+// Bun's SoA (Structure of Arrays) - Cache-friendly
+const package_names = ["react", "next", ...];
+const package_versions = ["18.2.0", "13.4.0", ...];
+const package_deps = [[...], [...], ...];

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 28
+
+[output]
+{"python_version": "3.11.4", "os": "linux", "event": "Division by zero error occurred during calculation. Check the input values", "timestamp": "2023-07-23T16:07:50.127241Z", "level": "error", "exception": [{"exc_type": "ZeroDivisionError", "exc_value": "division by zero", "syntax_error": null, "is_cause": false, "frames": [{"filename": "/home/ayo/dev/betterstack/demo/python-logging/main.py", "lineno": 32, "name": "<module>", "line": "", "locals": {"__name__": "__main__", "__doc__": "None", "__package__": "None", "__loader__": "<_frozen_importlib_external.SourceFileLoader object at 0x7fdb22df2ed0>", "__spec__": "None", "__annotations__": "{}", "__builtins__": "<module 'builtins' (built-in)>", "__file__": "/home/ayo/dev/betterstack/demo/python-logging/main.py", "__cached__": "None", "structlog": "\"<module 'structlog' from '/home/ayo/.local/lib/python3.11/site-packages/structlo\"+15", "platform": "<module 'platform' from '/usr/lib64/python3.11/platform.py'>", "logging": "<module 'logging' from '/usr/lib64/python3.11/logging/__init__.py'>", "logger": "\"<BoundLoggerFilteringAtDebug(context={'python_version': '3.11.4', 'os': 'linux'}\"+249", "e": "ZeroDivisionError('division by zero')"}}]}]}

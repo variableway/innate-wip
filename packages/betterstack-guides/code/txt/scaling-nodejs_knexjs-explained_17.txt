@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/knexjs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+=== Before update ===
+...
+JavaScript: The Good Parts current price: $29.99
+...
+=== After update ===
+JavaScript: The Good Parts new price: $32.99

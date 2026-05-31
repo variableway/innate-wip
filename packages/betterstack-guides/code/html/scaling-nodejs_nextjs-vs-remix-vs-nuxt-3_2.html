@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nextjs-vs-remix-vs-nuxt-3/
+# Original language: vue
+# Normalized: html
+# Block index: 2
+
+<!-- pages/users/[id].vue -->
+<script setup>
+const route = useRoute();
+const { data: user } = await useFetch(`/api/users/${route.params.id}`);
+</script>
+
+<template>
+  <div>
+    <h1>User Profile: {{ route.params.id }}</h1>
+    <p>Name: {{ user.name }}</p>
+  </div>
+</template>

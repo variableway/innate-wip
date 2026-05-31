@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+2023-04-17 14:51:16 TRACE Main - Entering method doSomething with parameters (param1=5, param2=10)
+2023-04-17 14:51:16 DEBUG Main - Processing request for user ID 12345
+2023-04-17 14:51:16 INFO  Main - user with ID '1234' just signed in
+2023-04-17 14:51:16 WARN  Main - Potential security vulnerability detected in user input: '...'
+2023-04-17 14:51:16 ERROR Main - Failed to connect to database: java.sql.SQLException: Connection refused

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+[May 28, 2025 17:49:31 CAT] [INFO | app] A location is found. | location: [{..}] >>> {'request_id': 'd2c594ae-c680-48bc-8e05-f895727fa73f'}
+[May 28, 2025 17:50:02 CAT] [INFO | app] path: /search | method: POST | status: 200 OK | size: 1177 >>> {'request_id': 'd2c594ae-c680-48bc-8e05-f895727fa73f'}

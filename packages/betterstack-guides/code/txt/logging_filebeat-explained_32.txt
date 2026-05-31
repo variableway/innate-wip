@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+{..., "privateInfo": "This is a sample message with SSN: [REDACTED-SSN] and IP: [REDACTED-IP]"}

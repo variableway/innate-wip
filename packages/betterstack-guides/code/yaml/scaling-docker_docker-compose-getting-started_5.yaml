@@ -1,0 +1,41 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 5
+
+[label docker-compose.yml]
+version: '3.8'
+
+services:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    networks:
+      - my-network
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+
+volumes:
+  mongodb_data:

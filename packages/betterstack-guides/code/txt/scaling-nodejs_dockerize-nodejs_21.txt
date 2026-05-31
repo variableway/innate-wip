@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+url-shortener   latest    20f75e2d7b45   17 seconds ago   183MB

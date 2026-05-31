@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+> trpc-api@1.0.0 dev
+> tsx src/index.ts
+
+Server running on http://localhost:3000

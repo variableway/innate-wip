@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 19
+
+This configuration includes two appenders: `ConsoleAppender`, which directs logs
+to the console, and `RollingFile`, which sends logs to a file and rolls them
+based on size or date. Both of these appenders use a `<layout>` that uses the
+[`log4net.Ext.Json`](https://www.nuget.org/packages/log4net.Ext.Json/) package
+to format logs as JSON.
+
+For the configuration to work, the configuration file must be referenced in the
+code, as demonstrated here:

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+[output]
+{
+  . . .
+  "exception": {
+    "name": "RuntimeError",
+    "message": "Something went wrong",
+    "stack_trace": [
+      "main.rb:20:in `<main>'"
+    ]
+  }
+}

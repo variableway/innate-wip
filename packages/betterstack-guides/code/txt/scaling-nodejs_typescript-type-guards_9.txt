@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-type-guards/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Processing user: Alice
+123
+Error: User not found
+null

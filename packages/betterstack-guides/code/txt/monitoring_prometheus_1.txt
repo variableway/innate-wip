@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+# HELP http_requests_total Total number of HTTP requests made.
+# TYPE http_requests_total counter
+http_requests_total{method="GET", code="200"} 1234
+http_requests_total{method="POST", code="201"} 345
+http_requests_total{method="GET", code="404"} 12

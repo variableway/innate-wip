@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/ssh-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[label monitor_ssh.sh]
+#!/bin/bash
+
+tail -f /var/log/auth.log | grep --line-buffered "Failed password" | while read line
+do
+  echo "$(date): SSH authentication failure detected" | mail -s "SSH Alert: Failed Login" admin@example.com
+  echo "$line" >> /var/log/ssh_alerts.log
+done

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+2023-06-28 19:09:48.801818 I [969609:60] MyApp -- Starting application on port 3000
+2023-06-28 19:09:48.801844 I [969609:60] MyApp -- Device XYZ123 went offline
+2023-06-28 19:09:48.801851 E [969609:60 main.rb:13] MyApp -- Service "ABCDE" stopped unexpectedly. Restarting the service

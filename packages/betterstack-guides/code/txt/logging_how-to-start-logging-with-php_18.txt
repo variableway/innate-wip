@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+Notice:  A user requested a resource. in /home/eric/test/logging.php on line 2
+Warning:  The image failed to load! in /home/eric/test/logging.php on line 3
+Fatal error:  User requested a profile that doesn't exist! in /home/eric/test/logging.php on line 4

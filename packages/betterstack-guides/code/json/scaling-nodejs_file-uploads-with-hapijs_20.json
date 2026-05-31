@@ -1,0 +1,33 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/file-uploads-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[output]
+{
+  "totalFiles": 3,
+  "successful": 2,
+  "failed": 1,
+  "uploadTime": "2025-07-23T11:23:45.050Z",
+  "results": [
+    {
+      "filename": "test1.txt",
+      "storedFilename": "2c8e7c31-e50d-4483-a74d-e3aadf40526f.txt",
+      "success": true,
+      "location": "harpi-file-uploads/hapi-file-uploads/uploads/2c8e7c31-e50d-4483-a74d-e3aadf40526f.txt"
+    },
+    {
+      "filename": "test2.json",
+      "storedFilename": "d6e64d7d-55b1-4534-a6b6-7f9d63da4b48.json",
+      "success": true,
+      "location": "hapi-file-uploads/uploads/d6e64d7d-55b1-4534-a6b6-7f9d63da4b48.json"
+    },
+    {
+      "filename": "test3.jpg",
+      "success": false,
+      "errors": [
+        "File extension '.jpg' not allowed. Use: .pdf, .txt, or .json"
+      ]
+    }
+  ]
+}

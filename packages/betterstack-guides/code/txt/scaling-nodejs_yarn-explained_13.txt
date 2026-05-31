@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+yarn outdated v1.22.22
+info Color legend : 
+ "<red>"    : Major Update backward-incompatible updates 
+ "<yellow>" : Minor Update backward-compatible features 
+ "<green>"  : Patch Update backward-compatible bug fixes
+Package Current Wanted Latest Package Type URL               
+react   17.0.2  17.0.2 19.0.0 dependencies https://react.dev/
+✨  Done in 7.15s.

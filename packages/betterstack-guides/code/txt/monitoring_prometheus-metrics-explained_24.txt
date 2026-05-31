@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-metrics-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+# HELP api_request_duration_seconds Summary of API request durations in seconds
+# TYPE api_request_duration_seconds summary
+api_request_duration_seconds{quantile="0.01",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.05",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.5",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.9",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.95",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.99",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds{quantile="0.999",url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds_sum{url="https://jsonplaceholder.typicode.com/posts"} 0.5889730749999998
+api_request_duration_seconds_count{url="https://jsonplaceholder.typicode.com/posts"} 1
+
+api_request_duration_seconds{quantile="0.01",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.05",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.5",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.9",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.95",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.99",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds{quantile="0.999",url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds_sum{url="https://covid-api.com/api/reports/total"} 1.8197589250000001
+api_request_duration_seconds_count{url="https://covid-api.com/api/reports/total"} 1
+
+api_request_duration_seconds{quantile="0.01",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.05",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.5",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.9",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.95",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.99",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds{quantile="0.999",url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds_sum{url="https://ipinfo.io/json"} 0.45094010100000015
+api_request_duration_seconds_count{url="https://ipinfo.io/json"} 1

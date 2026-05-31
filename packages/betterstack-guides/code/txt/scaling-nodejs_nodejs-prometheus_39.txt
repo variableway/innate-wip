@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+...
+# HELP db_query_duration_seconds Histogram of database query durations in seconds
+# TYPE db_query_duration_seconds histogram
+db_query_duration_seconds_bucket{le="0.005",method="GET",route="/"} 0
+db_query_duration_seconds_bucket{le="0.01",method="GET",route="/"} 17
+db_query_duration_seconds_bucket{le="0.025",method="GET",route="/"} 190
+db_query_duration_seconds_bucket{le="0.05",method="GET",route="/"} 1052
+db_query_duration_seconds_bucket{le="0.075",method="GET",route="/"} 1542
+db_query_duration_seconds_bucket{le="0.1",method="GET",route="/"} 1559
+db_query_duration_seconds_bucket{le="+Inf",method="GET",route="/"} 1569
+db_query_duration_seconds_sum{method="GET",route="/"} 70.72987211300241
+db_query_duration_seconds_count{method="GET",route="/"} 1569
+...

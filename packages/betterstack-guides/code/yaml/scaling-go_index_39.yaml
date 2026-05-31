@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 39
+
+[label docker-compose.yml]
+. . .
+
+[highlight]
+  migrate:
+    image: migrate/migrate
+    container_name: go-blog-migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - go-blog-network
+    volumes:
+      - ./repository/migrations/:/migrations
+    command: ["-path", "/migrations/", "-database", "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@go-blog-db/${POSTGRES_DB}?sslmode=disable", "up"]
+[/highlight]
+
+volumes:
+  pg-data:
+  caddy-config:
+  caddy-data:
+
+networks:
+  go-blog-network:

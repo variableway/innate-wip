@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+{
+  "resource": { },
+  "metric": {
+    "datapoints": [{
+      "attributes": {
+        "k8s_pod_ip": "10.0.23.45"
+      }
+    }]
+  }
+}

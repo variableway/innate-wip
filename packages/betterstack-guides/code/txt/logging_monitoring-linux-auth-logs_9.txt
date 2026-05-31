@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+Feb 10 16:24:28 ubuntu-lts sshd[48687]: Disconnected from authenticating user root 180.101.88.228 port 55488 [preauth]

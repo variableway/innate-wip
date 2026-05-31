@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[label output]
+error TS18003: No inputs were found in config file '/home/ayo/dev/demo/btc/tsconfig.json'. Specified 'include' paths were '["src/**/*"]' and 'exclude' paths were '["node_modules"]'.
+
+
+Found 1 error.

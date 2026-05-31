@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 60
+
+[output]
+May 26, 2025 > 09:23:15 | DEBUG | Nominatim API response | {'request_id': '0b9a480c-f176-4c31-a64d-1804e4b006d9', 'query': 'london', 'location': <Response [200]>}
+May 26, 2025 > 09:23:17 | DEBUG | Time API response | {'request_id': '0b9a480c-f176-4c31-a64d-1804e4b006d9', 'query': 'london', 'time': <module 'time' (built-in)>}

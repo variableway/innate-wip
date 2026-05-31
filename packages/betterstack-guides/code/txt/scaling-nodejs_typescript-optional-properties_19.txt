@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-optional-properties/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+New York
+Unknown
+New York, USA
+No address available

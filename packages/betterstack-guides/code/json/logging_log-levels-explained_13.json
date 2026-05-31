@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[output]
+{"level":"info","time":"2023-06-06T11:54:28+01:00","message":"Info message"}
+{"level":"warn","time":"2023-06-06T11:54:28+01:00","message":"Warn message"}
+{"level":"warn","time":"2023-06-06T11:54:28+01:00","message":"Error message"}
+{"level":"fatal","time":"2023-06-06T11:54:28+01:00","message":"Fatal message"}

@@ -1,0 +1,61 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+{
+  "resourceMetrics": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "awesome.service"
+            }
+          }
+        ]
+      },
+      "scopeMetrics": [
+        {
+          "scope": {
+            "name": "fantastic.library",
+            "version": "2.0.0",
+            "attributes": [
+              {
+                "key": "awesome.scope.attribute",
+                "value": {
+                  "stringValue": "super scope attribute"
+                }
+              }
+            ]
+          },
+          "metrics": [
+            {
+              "name": "amazing.gauge",
+              "unit": "seconds",
+              "description": "I am a Gauge",
+              "gauge": {
+                "dataPoints": [
+                  {
+                    "asDouble": 12.34,
+                    "startTimeUnixNano": "1678886400000000000",
+                    "timeUnixNano": "1678886400000000000",
+                    "attributes": [
+                      {
+                        "key": "my.gauge.attr",
+                        "value": {
+                          "stringValue": "a wonderful value"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

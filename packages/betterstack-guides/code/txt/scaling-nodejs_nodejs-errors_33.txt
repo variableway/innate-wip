@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+Error: EEXIST: file already exists, mkdir 'temp'
+    at Object.mkdirSync (node:fs:1349:3)
+    at Object.<anonymous> (/home/ayo/dev/demo/main.js:3:4)
+    at Module._compile (node:internal/modules/cjs/loader:1099:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:975:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+    at node:internal/main/run_main_module:17:47 {
+  errno: -17,
+  syscall: 'mkdir',
+  code: 'EEXIST',
+  path: 'temp'
+}

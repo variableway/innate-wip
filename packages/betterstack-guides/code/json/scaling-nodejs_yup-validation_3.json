@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label package.json]
+{
+  ...
+  "scripts": {
+[highlight]
+    "dev": "tsx index.ts",
+    "dev:js": "node index.js"
+[/highlight]
+  }
+}

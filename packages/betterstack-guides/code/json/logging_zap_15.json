@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[output]
+{"level":"error","ts":1684148883.086758,"caller":"zap@v1.24.0/sugar.go:210","msg":"Ignored key-value pairs with non-string keys.","invalid":[{"position":0,"key":1234,"value":"userID"}],"stacktrace":"go.uber.org/zap.(*SugaredLogger).Infow\n\t/home/ayo/go/pkg/mod/go.uber.org/zap@v1.24.0/sugar.go:210\nmain.main\n\t/home/ayo/dev/demo/zap/main.go:14\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:250"}
+{"level":"info","ts":1684148883.0867138,"caller":"zap/main.go:14","msg":"User logged in"}

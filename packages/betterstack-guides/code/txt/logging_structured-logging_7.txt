@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/structured-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+error_code = TimeoutError

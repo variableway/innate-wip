@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logging-best-practices/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+{"time":"2023-11-08T08:10:54.942944689+02:00","level":"INFO","msg":"info","user":"user-12234"}

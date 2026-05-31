@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+Debugger listening on ws://127.0.0.1:9229/c8b45bff-c900-42c3-a270-7cae84596482
+For help, see: https://nodejs.org/en/docs/inspector
+Wikipedia app listening on port 3000

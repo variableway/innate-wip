@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+2023-08-30 11:22:31.164988 I [394737:60] MyApp -- user signed in -- { :user_id => 123456, :provider => "facebook" }

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+2021/04/01 13:02:31 [error] 31#31: *1 open() "/usr/share/nginx/html/not-found" failed (2: No such file or directory), client: 172.17.0.1, server: localhost, request: "POST /not-found HTTP/1.1", host: "localhost:8081"

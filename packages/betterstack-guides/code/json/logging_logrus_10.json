@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 10
+
+[output]
+{
+  "data": {
+    "user_id": 123
+  },
+  "level": "info",
+  "msg": "This will be formatted as pretty JSON",
+  "time": "2025-03-09 10:17:32"
+}

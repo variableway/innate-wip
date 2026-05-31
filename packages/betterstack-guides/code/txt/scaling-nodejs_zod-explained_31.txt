@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 31
+
+As you can see, the combination of TypeScript's compile-time checks and Zod's runtime validation ensures your data is always valid and correctly typed.
+
+
+## Integrating Zod with web frameworks
+
+Zod can validate different parts of your Express requests, ensuring data integrity before it reaches your route handlers. Each part of an HTTP request can be validated differently based on its specific requirements.
+
+### Validating request bodies
+
+Request bodies typically contain the most complex data structures and require thorough validation. When clients send POST or PUT requests, you'll want to ensure the data matches your expected format:

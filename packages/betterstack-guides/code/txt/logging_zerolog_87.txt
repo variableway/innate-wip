@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 87
+
+[output]
+2022-08-31T19:14:27+01:00 INF incoming search query 'Doom' on page '1' correlation_id=cc7qa0picq4sk77aqql0 page_num=1 search_query=Doom
+2022-08-31T19:14:27+01:00 DBG correlation_id=cc7qa0picq4sk77aqql0 page_num=1 search_query=Doom wikipedia_search_response={...}
+2022-08-31T19:14:27+01:00 TRC search query 'Doom' succeeded without errors correlation_id=cc7qa0picq4sk77aqql0 page_num=1 search_query=Doom
+2022-08-31T19:14:27+01:00 INF incoming request correlation_id=cc7qa0picq4sk77aqql0 elapsed_ms=758.538297 method=HEAD status_code=200 url=/search?q=Doom

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+2023/07/12 15:29:22 INFO Info message
+{"time":"2023-07-12T15:29:22.89164153+02:00","level":"INFO","msg":"Info message"}

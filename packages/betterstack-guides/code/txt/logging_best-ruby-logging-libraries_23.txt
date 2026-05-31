@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+2023-08-30 11:50:04.462807 D [469071:540] (1.930s) MyApp -- request a random quote

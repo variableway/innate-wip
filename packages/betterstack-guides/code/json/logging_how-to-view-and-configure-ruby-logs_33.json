@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 33
+
+{"name":"main","hostname":"fedora","pid":197075,"level":50,"time":"2023-04-19T14:01:49.974+01:00","v":0,"msg":"divided by 0","err":{"name":"ZeroDivisionError","message":"divided by 0","stack":"main.rb:24:in `/'\n  main.rb:24:in `<main>'"}}

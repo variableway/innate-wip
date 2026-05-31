@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+2025-05-23T14:25:08.635797+0200 | DEBUG | Happy logging with Loguru!

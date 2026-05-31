@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+[output]
+[Fri Jun 06 12:03:28.470305 2021] [php7:error] [pid 731] [client ::1:51092] script '/var/www/html/missing.php' not found or unable to stat

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+. . .
+{"level":"info","time":"2024-07-28T20:58:44.149Z","pid":236289,"host":"fedora","msg":"Server listening at http://[::1]:5000"}
+{"level":"info","time":"2024-07-28T20:58:44.149Z","pid":236289,"host":"fedora","msg":"Server listening at http://127.0.0.1:5000"}
+[highlight]
+{"level":"info","time":"2024-07-28T20:58:44.149Z","pid":236289,"host":"fedora","msg":"URL Shortener is running in development mode → PORT http://[::1]:5000"}
+[/highlight]

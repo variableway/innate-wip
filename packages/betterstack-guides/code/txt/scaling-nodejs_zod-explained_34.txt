@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 34
+
+This ensures that requests with malformed IDs fail fast, protecting your database queries from invalid input.
+
+### Validating API responses
+
+Response validation helps catch bugs in your own code by ensuring you're sending data in the correct format:

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-caching-redis/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[label .env]
+PORT=5000
+REDIS_URI=redis://localhost:6379
+SQLITE_FILE=user_profiles.db

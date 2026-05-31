@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors mb-3"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            返回项目列表
+            Back to projects
           </Link>
           <div className="flex items-center gap-2">
             <FolderGit2 className="h-4 w-4 text-blue-500" />
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {/* Project Navigation */}
         <div className="flex-1 p-2 space-y-1 overflow-y-auto">
           <div className="px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wide">
-            所有项目
+            All Projects
           </div>
           {projectAnalyses.map((p) => (
             <Link
@@ -107,7 +107,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="h-4 w-4" />
-              <span>在 GitHub 上查看</span>
+              <span>View on GitHub</span>
               <ExternalLink className="h-3 w-3 ml-auto" />
             </a>
           </div>
@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     </Badge>
                   ) : (
                     <Badge variant="outline" className="text-xs text-muted-foreground">
-                      无文档
+                      No docs
                     </Badge>
                   )}
                 </div>
@@ -162,7 +162,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center">
                   <Zap className="h-3.5 w-3.5 text-blue-500" />
                 </div>
-                <h3 className="text-sm font-bold">AI 项目分析</h3>
+                <h3 className="text-sm font-bold">AI Project Analysis</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -171,7 +171,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <FileText className="h-4 w-4 text-blue-500" />
-                      <CardTitle className="text-sm font-bold">功能摘要</CardTitle>
+                      <CardTitle className="text-sm font-bold">Summary</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -186,7 +186,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <Star className="h-4 w-4 text-green-500" />
-                      <CardTitle className="text-sm font-bold">项目优势</CardTitle>
+                      <CardTitle className="text-sm font-bold">Strengths</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -201,7 +201,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       </ul>
                     ) : (
                       <p className="text-sm text-muted-foreground italic">
-                        暂无记录
+                        No records
                       </p>
                     )}
                   </CardContent>
@@ -212,7 +212,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <AlertTriangle className="h-4 w-4 text-orange-500" />
-                      <CardTitle className="text-sm font-bold">改进空间</CardTitle>
+                      <CardTitle className="text-sm font-bold">Areas for Improvement</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -227,7 +227,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       </ul>
                     ) : (
                       <p className="text-sm text-muted-foreground italic">
-                        暂无记录
+                        No records
                       </p>
                     )}
                   </CardContent>
@@ -238,7 +238,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-2">
                       <Lightbulb className="h-4 w-4 text-purple-500" />
-                      <CardTitle className="text-sm font-bold">主要功能</CardTitle>
+                      <CardTitle className="text-sm font-bold">Key Features</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -253,7 +253,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       </ul>
                     ) : (
                       <p className="text-sm text-muted-foreground italic">
-                        暂无记录
+                        No records
                       </p>
                     )}
                   </CardContent>
@@ -278,10 +278,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="text-center py-12">
               <FileText className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-foreground mb-2">
-                暂无 AGENTS.md 文件
+                No AGENTS.md file
               </h3>
               <p className="text-sm text-muted-foreground">
-                该项目尚未创建 AGENTS.md 文件
+                This project has not created an AGENTS.md file
               </p>
             </div>
           )}

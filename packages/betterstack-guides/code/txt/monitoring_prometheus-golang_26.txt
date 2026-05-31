@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-golang/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+. . .
+# HELP post_request_duration_seconds Duration of requests to https://jsonplaceholder.typicode.com/posts
+# TYPE post_request_duration_seconds summary
+post_request_duration_seconds{quantile="0.5"} 0.1095123
+post_request_duration_seconds{quantile="0.9"} 0.127119377
+post_request_duration_seconds{quantile="0.99"} 0.5448496
+post_request_duration_seconds_sum 11.270166696
+post_request_duration_seconds_count 86

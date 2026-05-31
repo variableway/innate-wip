@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-readonly/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+src/mutation.ts:7:10 - error TS2540: Cannot assign to 'theme' because it is a read-only property.
+
+7   config.theme = "dark"; // Accidental mutation
+           ~~~~~
+
+
+Found 1 error in src/mutation.ts:7

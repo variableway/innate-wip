@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 23
+
+otlp/betterstack:
+  endpoint: "https://in-otel.logs.betterstack.com:443"

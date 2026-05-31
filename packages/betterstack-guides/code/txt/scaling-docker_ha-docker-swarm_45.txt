@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[output]
+ID             NAME          MODE         REPLICAS   IMAGE          PORTS
+xh24wj31z4ml   nginx_nginx   replicated   4/4        nginx:latest   *:8088->80/tcp

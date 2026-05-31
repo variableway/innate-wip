@@ -1,33 +1,26 @@
 import { Metadata } from 'next'
 import { FeedList } from "@/components/feed/feed-list"
-import { getPostsMeta } from "@/lib/content"
-import { Home } from "lucide-react"
+import { getWritingMeta } from "@/lib/content"
+import { Newspaper, PenLine, Star, Hash, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
   title: 'Feed | Innate',
   description: 'Discover stories, thinking, and expertise from writers on any topic.',
 }
 
-/**
- * ISR 配置
- * 仅在服务端模式下生效（非静态导出）
- * 60 秒重新验证
- */
-export const revalidate = 60
-
-/**
- * 动态模式配置
- * - auto: 自动选择（开发时为动态，静态导出时为静态）
- * - force-dynamic: 强制动态渲染
- * - force-static: 强制静态渲染
- */
-export const dynamic = 'auto'
+function StatPill({ icon, value, label }: { icon: React.ReactNode; value: number; label: string }) {
+  return (
+    <div className="flex items-center gap-1.5 text-xs text-muted-foreground/70">
+      <span className="text-[#8FA68E]">{icon}</span>
+      <span className="font-semibold text-foreground">{value}</span>
+      <span>{label}</span>
+    </div>
+  )
+}
 
 export default async function FeedPage() {
-  // 从文件系统加载文章元数据
-  const postsMeta = await getPostsMeta({ status: 'published' })
+  const postsMeta = await getWritingMeta({ status: 'published' })
 
-  // 转换为 FeedList 需要的格式
   const posts = postsMeta.map((meta) => ({
     slug: meta.slug,
     title: meta.title,
@@ -45,24 +38,45 @@ export default async function FeedPage() {
     category: meta.category,
     tags: meta.tags,
     readTime: meta.readingTime,
-    likes: 0,
-    comments: 0,
     isEditorsPick: meta.editorsPick || false,
   }))
 
-  return (
-    <div className="max-w-3xl mx-auto py-6 px-6">
-      {/* 页面头部 */}
-      <div className="flex items-center gap-3 mb-8">
-        <Home className="h-6 w-6 text-[#8FA68E]" />
-        <div>
-          <h1 className="text-2xl font-bold text-foreground">Feed</h1>
-          <p className="text-sm text-muted-foreground">Discover stories, thinking, and expertise from writers on any topic.</p>
-        </div>
-      </div>
+  const categories = Array.from(new Set(posts.map((p) => p.category).filter(Boolean)))
+  const editorsPicks = posts.filter((p) => p.isEditorsPick).length
+  const totalReadTime = posts.reduce((sum, p) => sum + (p.readTime || 1), 0)
 
-      {/* Feed 列表 */}
-      <FeedList posts={posts} />
+  return (
+    <div className="h-full overflow-y-auto">
+      <div className="max-w-3xl mx-auto py-8 px-6">
+        {/* Hero Header */}
+        <div className="mb-8 pb-6 border-b border-border/50">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#8FA68E]/10">
+              <Newspaper className="h-5 w-5 text-[#8FA68E]" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground tracking-tight">Feed</h1>
+              <p className="text-sm text-muted-foreground/70">
+                Discover stories, thinking, and expertise.
+              </p>
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div className="flex items-center gap-x-4 gap-y-1 flex-wrap mt-3">
+            <StatPill icon={<PenLine className="h-3.5 w-3.5" />} value={posts.length} label="posts" />
+            <span className="text-muted-foreground/20">|</span>
+            <StatPill icon={<Hash className="h-3.5 w-3.5" />} value={categories.length} label="categories" />
+            <span className="text-muted-foreground/20">|</span>
+            <StatPill icon={<Star className="h-3.5 w-3.5" />} value={editorsPicks} label="picks" />
+            <span className="text-muted-foreground/20">|</span>
+            <StatPill icon={<Clock className="h-3.5 w-3.5" />} value={totalReadTime} label="min read" />
+          </div>
+        </div>
+
+        {/* Feed List */}
+        <FeedList posts={posts} />
+      </div>
     </div>
   )
 }

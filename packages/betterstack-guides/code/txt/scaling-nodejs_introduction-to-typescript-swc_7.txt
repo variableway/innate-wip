@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-typescript-swc/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Created user: Alice Johnson (alice@example.com)
+User created successfully: {
+  id: 2847,
+  createdAt: 2025-06-11T07:26:16.631Z,
+  name: 'Alice Johnson',
+  email: 'alice@example.com'
+}
+All users: [
+  {
+    id: 2847,
+    createdAt: 2025-06-11T07:26:16.631Z,
+    name: 'Alice Johnson',
+    email: 'alice@example.com'
+  }
+]

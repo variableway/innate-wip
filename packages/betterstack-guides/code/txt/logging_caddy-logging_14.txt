@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+2025/02/09 08:34:32.306 INFO    http.log.access.log0    handled request {"request": {"remote_ip": "172.17.0.1", "remote_port": "55860", "client_ip": "172.17.0.1", "proto": "HTTP/1.1", "method": "GET", "host": "localhost", "uri": "/404", "headers": {"Sec-Fetch-Mode": ["navigate"], "Accept-Encoding": ["gzip, deflate, br, zstd"], "Accept-Language": ["en-US,en;q=0.9"], "Cookie": ["REDACTED"], "Connection": ["keep-alive"], "Upgrade-Insecure-Requests": ["1"], "Sec-Ch-Ua": ["\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\""], "Sec-Fetch-Site": ["none"], "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"], "Sec-Fetch-User": ["?1"], "Sec-Ch-Ua-Mobile": ["?0"], "Sec-Fetch-Dest": ["document"], "Sec-Ch-Ua-Platform": ["\"Linux\""], "Accept": ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"]}}, "bytes_read": 0, "user_id": "", "duration": 0.000073208, "size": 0, "status": 404, "resp_headers": {"Server": ["Caddy"]}}

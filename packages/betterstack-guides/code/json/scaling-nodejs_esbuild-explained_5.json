@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-explained/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[label package.json]
+{
+  "name": "esbuild-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+[highlight]
+    "build": "esbuild src/main.js --bundle --outfile=dist/bundle.js",
+    "dev": "esbuild src/main.js --bundle --outfile=dist/bundle.js --watch"
+[/highlight]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  }
+}

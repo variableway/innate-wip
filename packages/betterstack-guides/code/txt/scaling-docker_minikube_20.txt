@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 20
+
+This output tells you that one pod is ready out of the one desired (1/1), that
+all pods are running the latest version (UP-TO-DATE: 1), and that one pod is
+available to serve requests (AVAILABLE: 1).
+
+### Exposing services
+
+While your application is now running in the cluster, it's not yet accessible
+from outside. To make it accessible, you need to expose it as a Kubernetes
+Service.
+
+Services provide a stable endpoint to access one or more pods, abstracting away
+the individual pod IPs which can change as pods are created and destroyed.
+
+To expose your deployment as a service:

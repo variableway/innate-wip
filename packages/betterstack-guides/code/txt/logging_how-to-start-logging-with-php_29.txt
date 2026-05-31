@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+. . .
+Package operations: 2 installs, 0 updates, 0 removals
+  - Installing psr/log (3.0.0): Extracting archive
+  [highlight]
+  - Installing monolog/monolog (3.1.0): Extracting archive
+  [/highlight]
+11 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating autoload files
+1 package you are using is looking for funding.
+Use the `composer fund` command to find out more!

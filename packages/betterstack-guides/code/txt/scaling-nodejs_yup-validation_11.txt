@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Validation error: 4 errors occurred
+- username: Username must have at least 3 characters
+- username: Username must only contain letters and numbers
+- email: Please provide a valid email address
+- age: You must be at least 18 years old

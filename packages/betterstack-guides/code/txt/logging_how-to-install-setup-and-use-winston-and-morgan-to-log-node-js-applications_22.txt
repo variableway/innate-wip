@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+[2025-05-23 12:26:06.669 PM] info:      Info message
+[2025-05-23 12:26:06.672 PM] error:     Error message
+[2025-05-23 12:26:06.672 PM] warn:      Warning message

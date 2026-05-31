@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+{"name": "file.txt", "event": "File opened successfully", "level": "info", "timestamp": "2025-06-06T14:01:31.637133Z", "func_name": "read_files"}

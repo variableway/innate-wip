@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-docker/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[label /etc/docker/daemon.json]
+{
+  "log-driver": "syslog",
+  "log-opts": {
+    "mode": "non-blocking",
+    [highlight]
+    "max-buffer-size": "20m"
+    [/highlight]
+  }
+}

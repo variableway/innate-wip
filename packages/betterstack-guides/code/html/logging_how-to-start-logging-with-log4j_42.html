@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: xml
+# Normalized: html
+# Block index: 42
+
+[label src/main/resources/log4j2.xml]
+. . .
+<Loggers>
+    <AsyncLogger name="com.foo.Bar" level="trace" includeLocation="true">
+        <AppenderRef ref="Console"/>
+    </AsyncLogger>
+    <Root level="info" includeLocation="true">
+        <AppenderRef ref="Console"/>
+    </Root>
+</Loggers>

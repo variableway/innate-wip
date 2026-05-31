@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+[+] Running 4/4
+ ✔ Network docker-compose_my-network    C...                                     0.1s
+ ✔ Container docker-compose-database-1  Created                                  0.1s
+ ✔ Container docker-compose-backend-1   Created                                  0.0s
+ ✔ Container docker-compose-frontend-1  Created                                  0.1s
+Attaching to docker-compose-backend-1, docker-compose-database-1, docker-compose-frontend-1
+...
+docker-compose-backend-1   | MongoDB connected
+docker-compose-database-1  | {"t":{"$date":"2023-10-11T22:22:24.511+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.30.0.3:43190","uuid":{"uuid":{"$uuid":"32276766-6e59-48ba-afbf-5db8b7d7d3d5"}},"connectionId":2,"connectionCount":2}}
+docker-compose-database-1  | {"t":{"$date":"2023-10-11T22:22:24.516+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"172.30.0.3:43190","client":"conn2","doc":{"driver":{"name":"nodejs|Mongoose","version":"5.9.0|7.6.1"},"platform":"Node.js v18.18.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-31-generic","type":"Linux"}}}}
+...

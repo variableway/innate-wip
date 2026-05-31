@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-metrics-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+max_over_time(http_server_active_connections[1d])

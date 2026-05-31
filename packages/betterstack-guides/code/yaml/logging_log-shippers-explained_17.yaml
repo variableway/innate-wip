@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 17
+
+[label /etc/filebeat/filebeat.yml]
+. . .
+  processors:
+    - add_fields:
+        target: ""
+        fields:
+          mutated: "true"
+. . .

@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 30
+
+[label docker-compose.yml]
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_MONITOR_ONLY=true
+      - WATCHTOWER_NOTIFICATIONS=email
+      - WATCHTOWER_NOTIFICATION_EMAIL_FROM=your-email@gmail.com
+      - WATCHTOWER_NOTIFICATION_EMAIL_TO=recipient@example.com
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=smtp.gmail.com
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=587
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=your-email@gmail.com
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=your-app-password
+    command: --interval 300 demo-ubuntu demo-nginx demo-custom-node

@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-sampling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 3
+
+[label otelcol.yaml]
+processors:
+  tail_sampling:
+    decision_wait: 10s # How long to wait for traces
+    num_traces: 100 # Maximum traces to keep in memory
+    expected_new_traces_per_sec: 1
+    policies:
+      [
+        {
+          name: retain-payment-service,
+          type: string_attribute,
+          string_attribute: {
+            key: service.name,
+            values: [payment-service]
+          }
+        }
+      ]
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+[highlight]
+      processors: [tail_sampling, batch]
+[/highlight]
+      exporters: [otlp/jaeger]

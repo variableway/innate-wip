@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+k8s_pod_labeL_app
+k8s_service_annotation_team

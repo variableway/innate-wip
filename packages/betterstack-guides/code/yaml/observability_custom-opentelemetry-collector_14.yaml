@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/observability/custom-opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 14
+
+[label .github/workflows/release-custom.yaml]
+name: Release otelcol-custom
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    name: Release Custom Distribution
+    uses: ./.github/workflows/base-release.yaml
+    with:
+      distribution: otelcol-custom
+    secrets: inherit

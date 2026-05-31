@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+INFO:     Started server process [7654]
+INFO:     Waiting for application startup.
+2025-02-28 14:15:37.123 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-02-28 14:15:37.124 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("task")
+2025-02-28 14:15:37.125 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-02-28 14:15:37.126 INFO sqlalchemy.engine.Engine CREATE TABLE task (
+    id VARCHAR NOT NULL, 
+    title VARCHAR NOT NULL, 
+    description VARCHAR, 
+    priority INTEGER NOT NULL, 
+    completed BOOLEAN NOT NULL, 
+    created_at TIMESTAMP NOT NULL, 
+    updated_at TIMESTAMP NOT NULL, 
+    PRIMARY KEY (id)
+)
+2025-02-28 14:15:37.127 INFO sqlalchemy.engine.Engine [no key 0.00031s] ()
+2025-02-28 14:15:37.128 INFO sqlalchemy.engine.Engine CREATE INDEX ix_task_id ON task (id)
+...
+INFO:     Application startup complete.

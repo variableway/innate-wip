@@ -1,0 +1,52 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 22
+
+### Log4net pros
+
+- Easy to extend with plugins.
+- Features dynamic configuration, allowing changes without needing to restart
+  the application.
+- Compatible with a wide range of frameworks, including .NET Framework 1+, Mono
+  1+, and others, ensuring broad application.
+- Known for its maturity and stability.
+
+### Log4net cons
+
+- Configuration processes can be complex and daunting, particularly for new
+  users.
+- Finding .NET Core specific documentation can be challenging, complicating its
+  implementation for modern applications.
+- The .NET Core implementation of Log4net is missing several features like
+  colored console outputs, stack trace patterns, and others, as detailed
+- Encounters compatibility issues with Linux due to
+  [kernel calls in the Log4net codebase](https://issues.apache.org/jira/browse/LOG4NET-658),
+  leading to potential operational problems.
+- Updates for Log4net are infrequent, with the
+  [last major version released on NuGet in 2022](https://www.nuget.org/packages/log4net/#versions-body-tab),
+  raising concerns about its ongoing maintenance and support.
+
+**Learn more**: [How To Start Logging With Log4net
+](https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4net/)
+
+## 5. ZLogger
+
+![Screenshot of ZLogger Github homepage](https://imagedelivery.net/xZXo0QFi-1_4Zimer-T0XQ/692c42e2-e871-45ae-ae77-c3b9ca3ed800/public
+=1200x600)
+
+### ZLogger Overview
+
+[ZLogger](https://github.com/Cysharp/ZLogger) is a modern, zero-allocation
+text/structured logger for .NET and Unity, enhancing
+`Microsoft.Extensions.Logging`. It achieves high performance and minimal
+overhead by using
+[string interpolation](https://devblogs.microsoft.com/dotnet/string-interpolation-in-c-10-and-net-6/)
+and
+[IUtf8SpanFormattable](https://learn.microsoft.com/en-us/dotnet/api/system.iutf8spanformattable?view=net-8.0)
+for UTF8 output, unlike typical UTF16-based loggers.
+
+It supports various output destinations like `File`, `RollingFile`, `InMemory`,
+`Console`, `Stream`, and an `AsyncBatchingProcessor`.
+
+Getting started with ZLogger is quite straightforward:

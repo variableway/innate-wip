@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 7
+
+[label pod-distribution.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: node-distribution-test
+spec:
+ replicas: 9
+ selector:
+   matchLabels:
+     app: distribution-test
+ template:
+   metadata:
+     labels:
+       app: distribution-test
+   spec:
+     affinity:
+       podAntiAffinity:
+         preferredDuringSchedulingIgnoredDuringExecution:
+         - weight: 100
+           podAffinityTerm:
+             labelSelector:
+               matchExpressions:
+               - key: app
+                 operator: In
+                 values:
+                 - distribution-test
+             topologyKey: "kubernetes.io/hostname"
+     containers:
+     - name: pause
+       image: k8s.gcr.io/pause:3.5

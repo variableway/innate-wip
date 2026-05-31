@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-with-hapi-js/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{
+  "data": {
+    "createAuthor": {
+      "id": "3",
+      "name": "Isaac Asimov",
+      "email": "isaac@asimov.com"
+    }
+  }
+}

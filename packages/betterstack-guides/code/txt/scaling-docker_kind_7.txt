@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+kind v0.20.0 go1.20.4 linux/amd64

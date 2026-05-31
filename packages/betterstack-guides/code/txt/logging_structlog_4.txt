@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+Collecting structlog
+  Downloading structlog-25.4.0-py3-none-any.whl.metadata (7.6 kB)
+Downloading structlog-25.4.0-py3-none-any.whl (68 kB)
+Installing collected packages: structlog
+Successfully installed structlog-25.4.0

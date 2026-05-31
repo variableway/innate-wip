@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 24
+
+The `validate` method returns a tuple with either an error or the validated result. The `failures()` method gives you every validation error in your data, so you can show users all the problems at once instead of making them fix one error at a time.
+
+Run the updated code:

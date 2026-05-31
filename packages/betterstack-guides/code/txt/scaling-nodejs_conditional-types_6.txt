@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/conditional-types/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+src/problem.ts(23,18): error TS2322: Type 'null' is not assignable to type 'T'.
+  'T' could be instantiated with an arbitrary type which could be unrelated to 'null'.
+
+
+Found 1 error in the same file.

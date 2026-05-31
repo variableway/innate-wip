@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pnpm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Legend: production dependency, optional only, dev only
+
+pnpm-demo@1.0.0 /Users/username/pnpm-demo
+
+dependencies:
+express 4.21.2

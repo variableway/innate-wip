@@ -1,0 +1,39 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nextjs-vs-remix-vs-nuxt-3/
+# Original language: vue
+# Normalized: html
+# Block index: 6
+
+<!-- pages/users.vue -->
+<script setup>
+// Server-side data fetching with automatic caching
+const { data: users } = await useFetch('/api/users');
+
+// Function to add a new user
+async function addUser(userData) {
+  const { data } = await useFetch('/api/users', {
+    method: 'POST',
+    body: userData
+  });
+  
+  // Refresh the user list
+  await refreshNuxtData('users');
+}
+</script>
+
+<template>
+  <div>
+    <h1>Users</h1>
+    
+    <form @submit.prevent="addUser(formData)">
+      <input v-model="formData.name" placeholder="Name" />
+      <input v-model="formData.email" placeholder="Email" />
+      <button type="submit">Add User</button>
+    </form>
+    
+    <ul>
+      <li v-for="user in users" :key="user.id">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+</template>

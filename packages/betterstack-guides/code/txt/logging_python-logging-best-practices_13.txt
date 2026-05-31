@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/python-logging-best-practices/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+{"asctime": "2023-04-27 20:31:54,737", "levelname": "INFO", "message": "Employee name: Alice, age: 30, salary: 50000"}

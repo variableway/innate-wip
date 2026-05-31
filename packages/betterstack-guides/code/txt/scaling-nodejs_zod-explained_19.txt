@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 19
+
+As you can see, the validation error message now shows that the name field contains invalid characters.
+
+## Handling errors gracefully in Zod
+
+Zod provides a structured way to handle validation errors, making it easy to display meaningful error messages to users and debug issues efficiently. This section focuses on how to manage and present errors effectively.
+
+You've already seen `safeParse()` in previous sections. It doesn't throw errors but instead returns an object containing either valid data or validation errors:

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+root: 2023-02-05T14:11:56Z | WARNING | example.py:8 | 428223 >>> system disk is 85% full
+root: 2023-02-05T14:11:56Z | ERROR | example.py:9 | 428223 >>> unexpected error

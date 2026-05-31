@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 39
+
+[output]
+{"level":"info","v":0,"caller":"/home/ayo/dev/betterstack/demo/slog/main.go:18","time":"2023-07-13T07:56:45+02:00","message":"hello from Logr and Zerolog!"}
+{"level":"error","error":"file not found","file_path":"/home/john/abc.txt","caller":"/home/ayo/dev/betterstack/demo/slog/main.go:19","time":"2023-07-13T07:56:45+02:00","message":"file open failed"}

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< com.example:logback-demo >----------------------
+[INFO] Building logback-demo 1.0-SNAPSHOT
+[INFO]   from pom.xml
+. . .
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.252 s
+[INFO] Finished at: 2023-05-01T15:14:25-04:00
+[INFO] ------------------------------------------------------------------------

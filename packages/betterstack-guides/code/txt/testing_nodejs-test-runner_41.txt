@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+▶ GET /
+  ✔ returns status 200 (10.716153ms)
+▶ GET / (25.512059ms)
+
+. . .

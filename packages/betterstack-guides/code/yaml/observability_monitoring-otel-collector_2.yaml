@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+processors:
+ k8sattributes:
+   extract:
+     metadata:
+       - namespace
+       - node
+       - pod
+       - deployment

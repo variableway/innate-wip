@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+{
+  ...
+  "host": {
+    "name": "a3bc504aa467"
+  },
+  "ssn": "407-01-2433",
+[highlight]
+  "is_successful": true,
+[/highlight]
+  "input": {
+    "type": "filestream"
+  },
+  "status": 200,
+  "ip": "127.0.0.1"
+}
+...

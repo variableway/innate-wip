@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 62
+
+[output]
+Custom format: 6/2/2025 at 14:30
+Day of week: 4
+Day of year: 37

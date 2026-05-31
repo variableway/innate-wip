@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 27
+
+[label prometheus.yml]
+remote_write:
+  - url: "http://remote-storage-system:9090/api/v1/write"
+    write_relabel_configs:
+      - source_labels: [__name__]
+        regex: node_.*
+        action: keep
+      - source_labels: [environment]
+        regex: testing
+        action: drop

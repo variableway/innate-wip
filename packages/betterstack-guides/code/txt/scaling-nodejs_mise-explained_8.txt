@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Tool    Version           Source            Requested
+node    22.20.0           ~/.tool-versions  22.20.0
+node    24.9.0
+python  3.13.7
+ruby    3.4.6             ~/.tool-versions  3.4.6

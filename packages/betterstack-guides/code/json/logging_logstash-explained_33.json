@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: json
+# Normalized: json
+# Block index: 33
+
+[output]
+{..., "privateInfo": "This is a sample message with SSN: 123-45-6789 and IP: 192.168.0.1"}

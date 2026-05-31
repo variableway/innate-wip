@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vinejs-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}

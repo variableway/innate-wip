@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-metrics-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+# HELP http_request_duration_seconds Histogram of HTTP request durations in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.005"} 11
+http_request_duration_seconds_bucket{le="0.01"} 11
+http_request_duration_seconds_bucket{le="0.025"} 11
+http_request_duration_seconds_bucket{le="0.05"} 11
+http_request_duration_seconds_bucket{le="0.1"} 11
+http_request_duration_seconds_bucket{le="0.25"} 35
+http_request_duration_seconds_bucket{le="0.5"} 77
+http_request_duration_seconds_bucket{le="1"} 77
+http_request_duration_seconds_bucket{le="2.5"} 77
+http_request_duration_seconds_bucket{le="5"} 77
+http_request_duration_seconds_bucket{le="10"} 77
+http_request_duration_seconds_bucket{le="+Inf"} 77
+http_request_duration_seconds_sum 19.730312268000002
+http_request_duration_seconds_count 77

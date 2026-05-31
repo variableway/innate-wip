@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+[watch] build finished, watching for changes...
+[watch] build started (change: "src/utils.js")
+[watch] build finished

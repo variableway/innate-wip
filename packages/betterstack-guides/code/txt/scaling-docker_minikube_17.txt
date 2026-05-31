@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 17
+
+This command instructs Kubernetes to create a deployment named "hello-minikube"
+using the `echoserver` image from Google's container registry. A deployment
+manages a replicated application, ensuring that the specified number of
+instances (pods) are running at all times.
+
+The output confirms the successful creation of your deployment:

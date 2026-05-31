@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 57
+
+[output]
+{
+  "beat": "filebeat",
+  "binary_arch": "amd64",
+  "build_commit": "bce373f7dcd56a5575ad2c0ec40159722607e801",
+  "build_time": "2025-04-29T23:44:32.000Z",
+  "elastic_licensed": true,
+  "ephemeral_id": "5828abd5-8591-48d5-9d3a-15b6281cd504",
+  "gid": "0",
+  "hostname": "6fc86bf74515",
+  "name": "6fc86bf74515",
+  "uid": "0",
+  "username": "root",
+  "uuid": "61654154-4353-478e-88ac-3556aa7f7dd5",
+  "version": "9.0.1"
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 5
+
+args:
+ - "--feature-gates=telemetry.useOtelWithSDKConfigurationForInternalTelemetry"

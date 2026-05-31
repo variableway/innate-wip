@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 14
+
+[label values.yaml]
+extraEnvs:
+  - name: OBSERVABILITY_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: otel-secrets
+        key: observability-api-key
+  - name: METRICS_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: otel-secrets
+        key: metrics-api-key

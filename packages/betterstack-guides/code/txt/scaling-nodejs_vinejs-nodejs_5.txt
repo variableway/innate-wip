@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vinejs-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Server running on http://localhost:3000
+Completed running 'index.js'

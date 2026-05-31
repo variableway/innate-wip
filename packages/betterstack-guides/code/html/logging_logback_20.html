@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: xml
+# Normalized: html
+# Block index: 20
+
+[label logback.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration>
+    <import class="ch.qos.logback.core.ConsoleAppender" />
+
+    <appender name="STDOUT" class="ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp />
+                <loggerName />
+                <logLevel />
+                <message />
+                [highlight]
+                <mdc />
+                [/highlight]
+            </providers>
+        </encoder>
+    </appender>
+
+    <root level="trace">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 14
+
+The `define` function creates custom validators. Return `true` if the data is valid, or return an error message string if it's not. This gives you complete control over your validation logic.
+
+Test the strong password requirement by updating your test data:

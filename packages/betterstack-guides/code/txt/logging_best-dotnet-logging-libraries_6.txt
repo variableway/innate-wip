@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+In this example, logs are formatted into JSON and directed to an `app.json` file
+with a minimum severity warning level. Simultaneously, other logs are stored in
+the `all-*.logs` file.
+
+When you run the file, the console shows the following output:

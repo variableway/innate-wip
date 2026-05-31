@@ -1,0 +1,33 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+[label log-processing-stack/docker-compose.yml]
+services:
+  logify-script:
+    build:
+      context: ./logify
+    image: logify:latest
+    container_name: logify
+  nginx:
+    image: betterstackcommunity/nginx-helloworld:latest
+    logging:
+      driver: json-file
+    container_name: nginx
+    ports:
+      - '80:80'
+[highlight]
+  vector:
+    image: timberio/vector:latest-alpine
+    volumes:
+      - ./vector:/etc/vector
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: ["-c", "/etc/vector/vector.yaml"]
+    ports:
+      - '8686:8686'
+    container_name: vector
+    depends_on:
+      - logify-script
+      - nginx
+[/highlight]

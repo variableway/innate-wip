@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[label .env]
+GO_ENV=development
+PORT=8000
+LOG_LEVEL=info
+POSTGRES_DB=go-blog
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=admin
+[highlight]
+POSTGRES_HOST=go-blog-db
+[/highlight]

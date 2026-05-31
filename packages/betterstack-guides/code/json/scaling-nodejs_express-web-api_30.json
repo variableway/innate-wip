@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-web-api/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+{
+  "id": "997e5cd6-277b-4b52-b9bd-ef63de18a28e",
+  "title": "Updated Blog Post Title",
+  "content": "This content has been updated. Express makes updating API resources easy!",
+  "published": true,
+  "created_at": "2025-03-18T11:09:57.510Z",
+  "updated_at": "2025-03-18T11:23:41.923Z"
+}

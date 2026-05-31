@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 2
+
+[output]
+Mar 23 12:38:09 peter dbus-daemon[1757]: [session uid=1000 pid=1757] Activating via systemd: service name='org.freedesktop.Tracker1' unit='tracker-store.service' requested by ':1.1' (uid=1000 pid=1754 comm="/usr/libexec/tracker-miner-fs " label="unconfined")
+Mar 23 12:38:09 peter systemd[1743]: Starting Tracker metadata database store and lookup manager...
+Mar 23 12:38:09 peter dbus-daemon[1757]: [session uid=1000 pid=1757] Successfully activated service 'org.freedesktop.Tracker1'
+Mar 23 12:38:09 peter systemd[1743]: Started Tracker metadata database store and lookup manager.
+Mar 23 12:38:40 peter tracker-store[359847]: OK
+Mar 23 12:38:40 peter systemd[1743]: tracker-store.service: Succeeded.
+Mar 23 12:39:01 peter CRON[359873]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+Mar 23 12:39:23 peter systemd[1]: Starting Clean php session files...
+Mar 23 12:39:23 peter systemd[1]: phpsessionclean.service: Succeeded.
+Mar 23 12:39:23 peter systemd[1]: Finished Clean php session files.

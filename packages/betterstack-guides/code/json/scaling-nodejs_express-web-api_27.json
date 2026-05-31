@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-web-api/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+
+{
+  "errors": [
+    {
+      "type": "field",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "msg": "Post ID must be a valid UUID",
+      "path": "id",
+      "location": "params"
+    }
+  ],
+  "status": "Unprocessable Entity"
+}

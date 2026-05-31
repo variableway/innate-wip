@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+src/strict-checks.ts:16:5 - error TS2322: Type 'number | undefined' is not assignable to type 'number'.
+  Type 'undefined' is not assignable to type 'number'.
+
+16     return this.age;
+       ~~~~~~
+
+
+Found 1 error in src/strict-checks.ts:16

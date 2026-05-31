@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+((0.50, 0.05), (0.90, 0.01), (0.99, 0.001))

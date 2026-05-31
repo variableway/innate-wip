@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[output]
+{
+  "level": 30,
+[highlight]
+  "timestamp": "2022-06-15T05:03:17.639Z",
+[/highlight]
+  "pid": 226316,
+  "hostname": "fedora",
+  "msg": "Server restarted after receiving shutdown signal"
+}

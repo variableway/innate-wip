@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: json
+# Normalized: json
+# Block index: 48
+
+[output]
+{"status_code":404,"detail":"Post with ID 27f80e88-41bc-49c3-98a0-94b5d9dcd42e not found"}

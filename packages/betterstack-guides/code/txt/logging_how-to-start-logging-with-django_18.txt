@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 28, 2025 - 18:27:49
+Django version 5.1.4, using settings 'horus.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.

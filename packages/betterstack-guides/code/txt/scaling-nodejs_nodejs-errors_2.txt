@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+Error: socket hang up
+    at connResetException (node:internal/errors:691:14)
+    at Socket.socketOnEnd (node:_http_client:466:23)
+    at Socket.emit (node:events:532:35)
+    at endReadableNT (node:internal/streams/readable:1346:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ECONNRESET'
+}

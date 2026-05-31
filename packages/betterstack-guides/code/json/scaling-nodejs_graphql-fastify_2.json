@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-fastify/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[label package.json]
+{
+  "name": "fastify-graphql-server",
+  "version": "1.0.0",
+  [highlight]
+  "type": "module",
+  [/highlight]
+  "scripts": {
+    [highlight]
+    "dev": "node --watch app.js",
+    "start": "node app.js"
+    [/highlight]
+  }
+}

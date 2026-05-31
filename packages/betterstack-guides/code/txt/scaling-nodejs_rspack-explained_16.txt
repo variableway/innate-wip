@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rspack-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+> rspack-project@1.0.0 dev
+> rspack dev
+
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:3000/, http://[::1]:3000/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.1.167:3000/
+...

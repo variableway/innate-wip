@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 29
+
+[output]
+{"event": "Log entry in JSON format", "timestamp": "2025-06-06T13:57:18.255548Z", "level": "info", "process_id": 55971}

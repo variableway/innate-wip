@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+time=2023-03-15T13:00:11.333+01:00 level=INFO msg="Info message"
+time=2023-03-15T13:00:11.333+01:00 level=WARN msg="Warning message"
+time=2023-03-15T13:00:11.333+01:00 level=ERROR msg="Error message"

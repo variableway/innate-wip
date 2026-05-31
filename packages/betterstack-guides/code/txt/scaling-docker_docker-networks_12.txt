@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+WARNING! This will remove all custom networks not used by at least one container.
+Are you sure you want to continue? [y/N] y
+Deleted Networks:
+my_custom_network
+my_network

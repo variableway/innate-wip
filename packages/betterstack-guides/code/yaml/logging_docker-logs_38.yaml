@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 38
+
+[label docker-compose.yml]
+services:
+  vector:
+    image: timberio/vector:latest-alpine
+    container_name: vector
+    volumes:
+      - ./vector.yaml:/etc/vector/vector.yaml:ro
+      - /var/run/docker.sock:/var/run/docker.sock

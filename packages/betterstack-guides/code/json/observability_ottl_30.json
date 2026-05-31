@@ -1,0 +1,58 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+2024-09-19T11:26:07.663Z      debug   ottl@v0.108.0/parser.go:302     TransformContext after statement execution {
+  "kind": "processor",
+  "name": "transform/parse_failed_pw",
+  "pipeline": "logs",
+  "statement": "set(attributes[\"port\"], Int(attributes[\"port\"]))",
+  "condition matched": true,
+  "TransformContext": {
+    "resource": {
+      "attributes": {},
+      "dropped_attribute_count": 0
+    },
+    "scope": {
+      "attributes": {},
+      "dropped_attribute_count": 0,
+      "name": "",
+      "version": ""
+    },
+    "log_record": {
+      "attributes": {
+        "log.file.name": "/var/log/auth.log",
+[highlight]
+        "log.record.original": "Feb 10 15:45:09 ubuntu-lts sshd[47341]: Failed password for root from 103.106.189.143 port 60824 ssh2",
+        "timestamp": 1707579909000000000,
+        "hostname": "ubuntu-lts",
+        "appname": "sshd",
+        "pid": 47341,
+        "event": "Failed password",
+        "username": "root",
+        "ip_address": "103.106.189.143",
+        "port": 60824,
+        "protocol": "ssh2"
+[/highlight]
+      },
+      "body": "Feb 10 15:45:09 ubuntu-lts sshd[47341]: Failed password for root from 103.106.189.143 port 60824 ssh2",
+      "dropped_attribute_count": 0,
+      "flags": 0,
+      "observed_time_unix_nano": 1726745167562902040,
+[highlight]
+      "severity_number": 9,
+      "severity_text": "info",
+[/highlight]
+      "span_id": "0000000000000000",
+[highlight]
+      "time_unix_nano": 1707579909000000000,
+[/highlight]
+      "trace_id": "00000000000000000000000000000000"
+    },
+    "cache": {}
+  },
+  "trace_id": "0d96a4b9a90d524ef822fe548ad7a933",
+  "span_id": "29af57a2ba4b6c49"
+}

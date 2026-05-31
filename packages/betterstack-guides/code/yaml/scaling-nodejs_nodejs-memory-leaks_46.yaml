@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: yml
+# Normalized: yaml
+# Block index: 46
+
+[label /etc/prometheus/prometheus.yml]
+global:
+  scrape_interval: 15s
+
+[highlight]
+rule_files:
+  - "/etc/prometheus/alerts.yml"
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+       - localhost:9093
+[/highlight]
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'memoryleak_demo'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:3000']

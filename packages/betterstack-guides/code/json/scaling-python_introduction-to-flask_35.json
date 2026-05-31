@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: json
+# Normalized: json
+# Block index: 35
+
+[output]
+[
+    {
+        "content": "This is an unpublished draft post.",
+        "created_at": "2025-02-27T11:24:18.867765",
+        "id": "13c21de2-499e-4047-bb62-5dd55ce22e2f",
+        "published": false,
+        "title": "Draft Post",
+        "updated_at": "2025-02-27T11:24:18.867775"
+    }
+]

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+14:01:05.219 [main] INFO com.example.App -- This is an info message.

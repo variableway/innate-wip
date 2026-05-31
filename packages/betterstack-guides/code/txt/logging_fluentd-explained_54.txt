@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[label log-processing-stack/docker-compose.yml]
+services:
+  logify-script:
+    build:
+      context: ./logify
+    container_name: logify
+    depends_on:
+      - fluentd
+    logging:
+      driver: "fluentd"
+      options:
+        tag: docker.logify
+
+  fluentd:
+    build:
+      context: ./fluentd-docker
+    volumes:
+      - ./fluentd-docker/fluent.conf:/fluentd/etc/fluent.conf
+    container_name: fluent
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"

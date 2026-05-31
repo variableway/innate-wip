@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-03-02 11:41:28 CAT; 36s ago
+   Main PID: 19530 (prometheus)
+      Tasks: 9 (limit: 9302)
+     Memory: 22.3M
+        CPU: 287ms
+     CGroup: /system.slice/prometheus.service
+             └─19530 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.path /var/lib/prometheus/ --web.co>

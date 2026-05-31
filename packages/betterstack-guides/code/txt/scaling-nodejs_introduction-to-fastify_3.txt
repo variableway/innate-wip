@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+> fastify-guide@1.0.0 dev
+> node --watch src/app.js
+
+{"level":"info","time":"2024-08-18T10:31:46.533Z","pid":30817,"host":"MACOOKs-MBP","msg":"Server listening at http://[::1]:3000"}
+{"level":"info","time":"2024-08-18T10:31:46.534Z","pid":30817,"host":"MACOOKs-MBP","msg":"Server listening at http://127.0.0.1:3000"}
+{"level":"info","time":"2024-08-18T10:31:46.534Z","pid":30817,"host":"MACOOKs-MBP","msg":"Blog App is running in development mode at http://[::1]:3000"}

@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[
+  {
+    "name": "cpu.usage",
+    "datapoints": [
+      { "value": 75, "attributes": { "region": "test" } },
+      { "value": 80, "attributes": { "region": "us-east" } }
+    ]
+  },
+  {
+    "name": "memory.usage",
+    "datapoints": [
+      { "value": 60, "attributes": { "region": "test" } }
+    ]
+  }
+]

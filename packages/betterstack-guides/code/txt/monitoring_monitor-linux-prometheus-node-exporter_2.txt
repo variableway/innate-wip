@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+[+] Running 3/3
+ ✔ Network prometheus-node-exporter_host-monitoring   Created    0.2s
+ ✔ Volume "prometheus-node-exporter_prometheus_data"  Created    0.0s
+ ✔ Container prometheus                               Created    0.1s

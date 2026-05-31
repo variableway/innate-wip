@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+{
+  . . .
+[highlight]
+  "duration_ms": 3003.161854983773,
+  "duration": "3.003s",
+[/highlight]
+  "name": "MyApp",
+  "message": "Sleep for 3 seconds"
+}

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+event_name JSONExtract(raw, 'event', 'name', 'Nullable(String)') String (LowCardinality, ZSTD)

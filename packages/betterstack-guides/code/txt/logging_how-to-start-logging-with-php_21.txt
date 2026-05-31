@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+Fatal error: Uncaught ValueError: trigger_error(): Argument #2 ($error_level) must be one of E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE, or E_USER_DEPRECATED in /home/ayo/dev/betterstack/betterstack-community/demo/logging-php/logging.php:2
+Stack trace:
+#0 /home/ayo/dev/betterstack/betterstack-community/demo/logging-php/logging.php(2): trigger_error()
+#1 {main}
+  thrown in /home/ayo/dev/betterstack/betterstack-community/demo/logging-php/logging.php on line 2

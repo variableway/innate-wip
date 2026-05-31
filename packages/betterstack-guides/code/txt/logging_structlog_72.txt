@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 72
+
+[output]
+. . .
+2025-06-06T14:30:17.685920Z [info     ] incoming search query for      [worldClock.views] ip=None query= request_id=6abdbcbf-4b5d-4f0e-b3e3-3ed1da17e136 user_id=None
+2025-06-06T14:30:18.566211Z [debug    ] Nominatim API response         [worldClock.views] ip=None location=<Response [200]> query= request_id=6abdbcbf-4b5d-4f0e-b3e3-3ed1da17e136 user_id=None
+2025-06-06T14:30:18.566802Z [info     ] location  not found            [worldClock.views] ip=None query= request_id=6abdbcbf-4b5d-4f0e-b3e3-3ed1da17e136 user_id=None
+. . .

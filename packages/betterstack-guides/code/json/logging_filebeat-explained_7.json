@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Task completed successfully", "pid": 513579, "ssn": "407-01-2433", "timestamp": 1749023382}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749023382}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Operation finished", "pid": 513579, "ssn": "407-01-2433", "timestamp": 1749023385}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749023385}

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+{
+  "timestamp": "Apr 15 12:34:56",
+  "hostname": "server1",
+  "appname": "sshd",
+  "pid": "12345",
+  "event": "Failed password",
+  "username": "admin",
+  "ip_address": "192.168.1.100",
+  "port": "22",
+  "protocol": "ssh2"
+}

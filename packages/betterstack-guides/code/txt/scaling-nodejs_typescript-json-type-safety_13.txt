@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-json-type-safety/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+ALICE
+35
+Active user

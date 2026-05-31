@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+# HELP jvm_memory_used_bytes The amount of used memory
+# TYPE jvm_memory_used_bytes gauge
+jvm_memory_used_bytes{area="heap"} 4.2467328E7
+jvm_memory_used_bytes{area="nonheap"} 5.4423552E7
+
+# HELP process_uptime_seconds The uptime of the Java virtual machine
+# TYPE process_uptime_seconds gauge
+process_uptime_seconds 30.88
+
+# HELP jvm_threads_live_threads The current number of live threads
+# TYPE jvm_threads_live_threads gauge
+jvm_threads_live_threads 23.0
+...

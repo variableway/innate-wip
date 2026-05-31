@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-fastapi/
+# Original language: json
+# Normalized: json
+# Block index: 33
+
+[output]
+{
+    "title": "Write Documentation",
+    "description": "Document the API endpoints and models",
+    "priority": 3,
+    "completed": true,
+    "id": "d5477b21-1b1a-4745-b2b5-01da0f65a679",
+    "created_at": "2025-02-28T10:59:22.476886",
+    "updated_at": "2025-02-28T10:59:22.476901"
+}

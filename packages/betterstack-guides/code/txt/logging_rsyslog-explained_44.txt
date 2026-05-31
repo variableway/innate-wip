@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 44
+
+[label /etc/rsyslog.d/70-logtail.conf]
+# Send only FileLogs (our logify application) to Better Stack
+[highlight]
+if $syslogtag == 'FileLogs' then {
+[/highlight]
+    action(
+     type="omfwd"
+     protocol="tcp"
+     target="YOUR_INGESTING_HOST"
+     port="6514"
+     template="LogtailFormat"
+     TCP_Framing="octet-counted"
+     StreamDriver="gtls"
+     StreamDriverMode="1"
+     StreamDriverAuthMode="x509/name"
+     StreamDriverPermittedPeers="*.betterstackdata.com"
+     queue.spoolDirectory="/var/spool/rsyslog"
+     queue.filename="logtail"
+     queue.maxdiskspace="75m"
+     queue.type="LinkedList"
+     queue.saveonshutdown="on"
+    )
+[highlight]
+}
+[/highlight]

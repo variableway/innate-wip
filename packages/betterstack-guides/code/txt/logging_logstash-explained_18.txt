@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[label logstash/config/logstash.conf]
+input {
+  file {
+    path => "/var/log/logify/app.log"
+    start_position => "beginning"
+  }
+}
+[highlight]
+filter {
+  if [message] =~ /^{.*}$/ {
+    json {
+      source => "message"
+    }
+  }
+}
+[/highlight]
+
+output {
+  stdout {
+    codec => rubydebug
+  }
+}

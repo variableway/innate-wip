@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 37
+
+[output]
+{"title": "My first post", "route": "post", "event": "Post Created", "level": "info", "timestamp": "2025-06-06T14:00:17.830155Z"}

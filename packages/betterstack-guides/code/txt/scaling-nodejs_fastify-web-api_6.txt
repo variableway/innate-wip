@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+
+> fastify-blog-api@1.0.0 start
+> node --watch app.js
+
+(node:33210) ExperimentalWarning: Watch mode is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+[11:34:44 UTC] INFO: Server listening at http://127.0.0.1:3000
+[11:34:44 UTC] INFO: Server listening at http://192.168.1.167:3000

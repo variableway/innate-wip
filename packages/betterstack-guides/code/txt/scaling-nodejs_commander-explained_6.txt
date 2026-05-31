@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/commander-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Debug mode is enabled
+Options: { timeout: '60', debug: true }

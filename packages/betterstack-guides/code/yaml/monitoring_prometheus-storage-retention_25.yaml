@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 25
+
+sources:
+  better_stack_prometheus_source_$SOURCE_TOKEN:
+    type: "prometheus_remote_write"
+    address: "0.0.0.0:9090"
+
+...
+sinks:
+  better_stack_http_sink_$SOURCE_TOKEN:
+    type: "http"
+    inputs:
+      - "better_stack_prometheus_transform_$SOURCE_TOKEN"
+    uri: "https://$INGESTING_HOST/metrics"
+    method: "post"
+    encoding:
+      codec: "json"
+    compression: "gzip"
+    auth:
+      strategy: "bearer"
+      token: "$SOURCE_TOKEN"

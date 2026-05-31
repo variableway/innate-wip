@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 29
+
+[label /etc/amtool/config.yml]
+alertmanager.url: "http://localhost:9093"
+author: John Doe
+comment_required: false # for silencing
+output: simple
+# Set a default receiver
+receiver: betterstack

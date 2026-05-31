@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 14
+
+[output]
+{
+  "level": 30,
+  "timestamp": "2023-10-25T01:06:06.783Z",
+  "pid": 605689,
+  "hostname": "fedora",
+  "requestID": "f9ed4675f1c53513c61a3b3b4e25b4c0",
+  "msg": "Uploading image.png was successful"
+}

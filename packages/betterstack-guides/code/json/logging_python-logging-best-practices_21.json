@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/python-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+[output]
+{"asctime": "2023-04-27T21:36:39Z", "levelname": "INFO", "message": "User made a payment with credit card number: [REDACTED]"}

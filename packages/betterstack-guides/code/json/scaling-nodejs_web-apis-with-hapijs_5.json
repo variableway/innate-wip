@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[output]
+{
+  "message": "Welcome to the Hapi.js Blog API"
+}

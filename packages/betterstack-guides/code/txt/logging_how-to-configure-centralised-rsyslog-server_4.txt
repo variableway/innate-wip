@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+● rsyslog.service - System Logging Service
+     Loaded: loaded (/lib/systemd/system/rsyslog.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2022-02-07 12:41:41 UTC; 2 days ago
+TriggeredBy: ● syslog.socket
+       Docs: man:rsyslogd(8)
+             https://www.rsyslog.com/doc/
+   Main PID: 638 (rsyslogd)
+      Tasks: 4 (limit: 2275)
+     Memory: 180.4M
+     CGroup: /system.slice/rsyslog.service
+             └─638 /usr/sbin/rsyslogd -n -iNONE

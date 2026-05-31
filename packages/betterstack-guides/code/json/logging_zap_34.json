@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 34
+
+[output]
+{"level":"info","timestamp":"2023-05-17T16:00:17.611+0100","msg":"an info message"}
+{"level":"warn","timestamp":"2023-05-17T16:00:17.611+0100","msg":"a warning"}
+{"level":"info","timestamp":"2023-05-17T16:00:17.611+0100","msg":"an info message"}
+{"level":"warn","timestamp":"2023-05-17T16:00:17.611+0100","msg":"a warning"}
+{"level":"info","timestamp":"2023-05-17T16:00:17.611+0100","msg":"an info message"}
+{"level":"warn","timestamp":"2023-05-17T16:00:17.611+0100","msg":"a warning"}

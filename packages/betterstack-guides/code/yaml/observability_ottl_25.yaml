@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 25
+
+[label config.yaml]
+processors:
+  transform/parse_failed_pw:
+    log_statements:
+      - context: log
+        statements:
+[highlight]
+          - set(attributes["log.record.original"], body)
+[/highlight]

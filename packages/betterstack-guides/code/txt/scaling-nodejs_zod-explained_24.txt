@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 24
+
+This mapped format helps:  
+
+- Display errors in forms  
+- Send clear API validation responses  
+- Retrieve field-specific errors quickly  
+- Handle nested object validation efficiently
+
+
+The simplicity of the field-to-message mapping makes it much easier to work with than the raw error format while retaining all the essential information for user feedback.
+
+## Type inference and TypeScript integration
+
+In this section, you will learn how Zod integrates with TypeScript to provide automatic type inference from your schemas. This ensures your validation rules and TypeScript types stay synchronized, eliminating the need for separate type definitions.
+
+
+Often in TypeScript projects, you need to maintain separate type definitions and validation logic:

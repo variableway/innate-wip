@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+{
+  "cid": 1,
+  "client": "172.17.0.1",
+  "host": "localhost:8081",
+  "message": "open() \"/usr/share/nginx/html/not-found\" failed (2: No such file or directory)",
+  "pid": 31,
+  "request": "POST /not-found HTTP/1.1",
+  "server": "localhost",
+  "severity": "error",
+  "tid": 31,
+  "timestamp": "2021-04-01T13:02:31Z"
+}

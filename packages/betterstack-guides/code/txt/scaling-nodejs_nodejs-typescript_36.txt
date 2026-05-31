@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[label output]
+/home/ayo/dev/betterstack/demo/btc-exchange-rates/src/server.ts
+   80:31  error  'next' is defined but never used             @typescript-eslint/no-unused-vars
+  101:7   error  'server' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 2 problems (2 errors, 0 warnings)

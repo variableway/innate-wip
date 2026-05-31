@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+Feb 10 15:45:09 ubuntu-lts sshd[47341]: Failed password for root from 103.106.189.143 port 60824 ssh2
+Feb 10 15:45:11 ubuntu-lts sshd[47341]: Connection closed by authenticating user root 103.106.189.143 port 60824 [preauth]
+Feb 10 15:45:11 ubuntu-lts sshd[47339]: Failed password for root from 180.101.88.228 port 11349 ssh2
+Feb 10 15:45:12 ubuntu-lts sshd[47343]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.106.189.143  user=root
+Feb 10 15:45:14 ubuntu-lts sshd[47339]: Failed password for root from 180.101.88.228 port 11349 ssh2
+Feb 10 15:45:14 ubuntu-lts sshd[47343]: Failed password for root from 103.106.189.143 port 33990 ssh2
+Feb 10 15:45:16 ubuntu-lts sshd[47343]: Connection closed by authenticating user root 103.106.189.143 port 33990 [preauth]
+Feb 10 15:45:16 ubuntu-lts sshd[47339]: Received disconnect from 180.101.88.228 port 11349:11:  [preauth]
+Feb 10 15:45:16 ubuntu-lts sshd[47339]: Disconnected from authenticating user root 180.101.88.228 port 11349 [preauth]
+Feb 10 15:45:16 ubuntu-lts sshd[47339]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.101.88.228  user=root
+Feb 10 15:45:18 ubuntu-lts sshd[47345]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.106.189.143  user=root
+Feb 10 15:45:21 ubuntu-lts sshd[47345]: Failed password for root from 103.106.189.143 port 35180 ssh2
+. . .

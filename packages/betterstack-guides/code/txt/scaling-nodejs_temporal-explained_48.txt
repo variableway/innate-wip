@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+Round down: 2025-02-06T14:00:00Z
+Round up: 2025-02-06T15:00:00Z

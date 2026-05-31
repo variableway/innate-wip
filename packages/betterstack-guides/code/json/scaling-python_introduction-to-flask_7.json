@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{
+  "message": "Welcome to the Blog API"
+}

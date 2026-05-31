@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+< Debugger listening on ws://127.0.0.1:9229/c1835fa2-1569-442b-ae48-b5408988a546
+< For help, see: https://nodejs.org/en/docs/inspector
+<
+connecting to 127.0.0.1:9229 ... ok
+< Debugger attached.
+<
+< [
+<    2,  3,  5,  7, 11, 13, 17, 19,
+<   23, 29, 31, 37, 41, 43, 47, 53,
+<   59, 61, 67, 71, 73, 79, 83, 89,
+<   97
+< ]
+<
+< Waiting for the debugger to disconnect...
+<
+debug>

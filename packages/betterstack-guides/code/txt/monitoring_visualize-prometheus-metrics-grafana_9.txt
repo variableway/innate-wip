@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/visualize-prometheus-metrics-grafana/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+NAME      IMAGE                    COMMAND     SERVICE   CREATED         STATUS         PORTS
+grafana   grafana/grafana:latest   "/run.sh"   grafana   8 minutes ago   Up 8 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp

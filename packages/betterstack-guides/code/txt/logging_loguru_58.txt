@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 58
+
+[output]
+[highlight]
+May 26, 2025 > 09:11:21 | TRACE | homepage visited | {'request_id': 'b87db028-99ed-4214-9429-ee245e9008ed'}
+[/highlight]
+May 26, 2025 > 09:11:21 | INFO | incoming 'GET' request to '/' | {'request_id': 'b87db028-99ed-4214-9429-ee245e9008ed', 'path': '/', 'method': 'GET', 'status_code': 200, 'response_size': 1068, 'elapsed': 0.004179239273071289}

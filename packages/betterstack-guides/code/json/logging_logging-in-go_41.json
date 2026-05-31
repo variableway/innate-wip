@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+{"time":"2023-02-24T10:35:16.964821548+01:00","level":"INFO","msg":"Info message"}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 37
+
+After applying the configuration, you can check that the PVC has been created
+and its status:

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+{"name":"main","hostname":"fedora","pid":128605,"level":20,"time":"2023-04-19T12:34:18.648+01:00","v":0,"msg":"Calling external API at example.com","api_url":"https://api.example.com/products","request_body":{"id":42}}

@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 38
+
+[label stateful-app.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: stateful-app
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: stateful
+ template:
+   metadata:
+     labels:
+       app: stateful
+   spec:
+     containers:
+     - name: app
+       image: nginx
+       volumeMounts:
+       - mountPath: /data
+         name: data-volume
+     volumes:
+     - name: data-volume
+       persistentVolumeClaim:
+         claimName: data-pvc

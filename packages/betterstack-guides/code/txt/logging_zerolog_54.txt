@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[output]
+  __    _   ___
+ / /\  | | | |_)
+/_/--\ |_| |_| \_ , built with Go
+
+watching .
+!exclude assets
+watching logger
+!exclude tmp
+building...
+running...
+2022/09/02 11:02:35 Starting Wikipedia App Server on port '3000'

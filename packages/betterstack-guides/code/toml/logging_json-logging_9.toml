@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: toml
+# Normalized: toml
+# Block index: 9
+
+[label /etc/vector/vector.toml]
+[sources.nginx_error]
+type = "file"
+include = ["/var/log/nginx/error.log"]
+read_from = "end"
+
+[transforms.nginx_error_to_json]
+type = "remap"
+inputs = [ "nginx_error" ]
+[highlight]
+source = """
+structured, err = parse_nginx_log(.message, "error")
+if err != null {
+        log("Unable to parse Nginx log: " + err, level: "error")
+} else {
+        . = merge(., structured)
+}
+"""
+[/highlight]
+
+[sinks.print]
+type = "console"
+inputs = ["nginx_error_to_json"]
+encoding.codec = "json"

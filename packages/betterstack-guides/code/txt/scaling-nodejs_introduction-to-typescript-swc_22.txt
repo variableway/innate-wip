@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-typescript-swc/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+ RUN  v3.2.3 /Users/stanley/typescript-swc-project
+
+ ✓ src/__tests__/UserService.test.ts (1 test) 1ms
+   ✓ UserService > should create a new user with generated id and timestamp 1ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  13:06:39
+   Duration  318ms (transform 54ms, setup 0ms, collect 47ms, tests 1ms, environment 0ms, prepare 58ms)

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/logging-best-practices/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+. . .
+Requests/sec: 152572.85
+Transfer/sec:     18.92MB

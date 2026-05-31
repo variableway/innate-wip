@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 32
+
+[output]
+{"x": 10, "y": 5, "action_status": "started", "timestamp": 1690213820.4083755, "task_uuid": "09df3632-96d2-4dd8-b782-1926cd87ccc9", "action_type": "multiply", "task_level": [1]}
+{"result": 50, "action_status": "succeeded", "timestamp": 1690213820.4084144, "task_uuid": "09df3632-96d2-4dd8-b782-1926cd87ccc9", "action_type": "multiply", "task_level": [2]}

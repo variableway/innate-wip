@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+# HELP http_request_duration_seconds HTTP request duration in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{app="demo",le="0.1"} 12
+http_request_duration_seconds_bucket{app="demo",le="0.2"} 25
+http_request_duration_seconds_bucket{app="demo",le="0.5"} 45
+http_request_duration_seconds_bucket{app="demo",le="1.0"} 78
+http_request_duration_seconds_bucket{app="demo",le="2.5"} 95
+http_request_duration_seconds_bucket{app="demo",le="5.0"} 98
+http_request_duration_seconds_bucket{app="demo",le="+Inf"} 100
+http_request_duration_seconds_sum{app="demo"} 47.423
+http_request_duration_seconds_count{app="demo"} 100

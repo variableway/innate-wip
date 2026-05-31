@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/valibot-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+{ name: 'Jane', age: 30 }

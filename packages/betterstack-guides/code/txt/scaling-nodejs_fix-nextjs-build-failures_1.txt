@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fix-nextjs-build-failures/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        25G  3.2G   21G  14% /

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-caching-redis/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+redis[s]://[[username][:password]@][host][:port][/db-number]

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+               config_file
+-----------------------------------------
+ /etc/postgresql/15/main/postgresql.conf

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+2023-07-23 17:20:10 [debug    ] Database query executed in 0.025 seconds os=linux python_version=3.11.4
+2023-07-23 17:20:10 [info     ] Processing file 'data.csv' completed. 1000 records were imported elapsed_ms=300 file=data.csv num_records=1000 os=linux python_version=3.11.4
+. . .

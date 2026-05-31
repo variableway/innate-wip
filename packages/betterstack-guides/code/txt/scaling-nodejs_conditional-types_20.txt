@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/conditional-types/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+src/utilities.ts(58,7): error TS2741: Property 'email' is missing in type '{ id: number; name: string; }' but required in type '{ id: number; name: string; email: string; }'.
+
+
+Found 1 error in the same file.

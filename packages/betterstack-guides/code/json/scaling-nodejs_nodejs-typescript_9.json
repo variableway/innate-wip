@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+[label nodemon.json]
+{
+  "watch": ["src"],
+  "ext": ".js",
+  "ignore": [],
+[highlight]
+  "exec": "node dist/server.js"
+[/highlight]
+}

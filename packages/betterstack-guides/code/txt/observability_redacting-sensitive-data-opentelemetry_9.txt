@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+keep_keys(attributes, ["http.method", "http.route", "http.url"])

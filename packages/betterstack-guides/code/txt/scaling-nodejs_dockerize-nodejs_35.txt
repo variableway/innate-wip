@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+. . .
+{msg":"Connected to database"}
+[highlight]
+{msg":"Server listening at http://0.0.0.0:5000"}
+{msg":"URL Shortener is running in production mode → PORT http://0.0.0.0:5000"}
+[/highlight]

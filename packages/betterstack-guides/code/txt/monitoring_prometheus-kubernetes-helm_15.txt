@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+release "prometheus" uninstalled

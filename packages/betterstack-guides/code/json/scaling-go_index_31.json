@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: json
+# Normalized: json
+# Block index: 31
+
+[output]
+. . .
+{"level":"info","ts":1723543833.3596091,"msg":"serving initial configuration"}
+{"level":"info","ts":1723543833.3660367,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+{"level":"info","ts":1723543833.366192,"logger":"tls","msg":"finished cleaning storage u

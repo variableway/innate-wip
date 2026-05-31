@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-php/laravel-task-scheduling/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[output]
+INFO  Server running on [http://127.0.0.1:8000].
+
+Press Ctrl+C to stop the server

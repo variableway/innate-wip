@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/sre-golden-signals/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 7
+
+- alert: HighLatency
+  expr: histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, route)) > 2
+  for: 5m
+  labels:
+    severity: warning
+  annotations:
+    summary: "High latency on {{ $labels.route }}"
+    description: "P99 latency for {{ $labels.route }} is above 2 seconds"

@@ -30,7 +30,7 @@ import {
 import { extractToc } from "@/lib/content/parser"
 import { ServerMarkdown } from "@/components/server-markdown"
 import { TableOfContents } from "@/components/table-of-contents"
-import { ProjectSwitcher } from "./project-switcher"
+import { ProjectSwitcher } from "@/components/making/project-switcher"
 
 // Generate static params for all issues
 export function generateStaticParams() {

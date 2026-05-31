@@ -1,0 +1,42 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+[output]
+d
+{
+  ....
+  "agent": {
+    "version": "9.0.1",
+    "ephemeral_id": "875d13fe-aa4e-491f-84c7-94ac2ff3378d",
+    "id": "525d8aa6-26f4-46cf-9941-ed9dc7c849e6",
+    "name": "1f1af5b9fc53",
+    "type": "filebeat"
+  },
+  "ssn": "407-01-2433",
+  "level": 30,
+  "pid": 169516,
+  "log": {
+    "offset": 658520,
+    "file": {
+      "path": "/var/log/logify/app.log",
+      "device_id": "2049",
+      "inode": "259470",
+      "fingerprint": "337d323bb6858c439b81fec30abaccc82f8576477737a881801695d2ad617b1f"
+    }
+  },
+  "input": {
+    "type": "filestream"
+  },
+  "timestamp": 1748875942,
+  "status": 200,
+  "ip": "127.0.0.1",
+  "fields": {
+[highlight]
+    "env": "development"
+[/highlight]
+  },
+  "msg": "Operation finished"
+}
+...

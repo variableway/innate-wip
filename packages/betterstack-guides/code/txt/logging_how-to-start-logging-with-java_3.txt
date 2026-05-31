@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+2023-04-13 16:46:09 INFO  Main - Hello world!

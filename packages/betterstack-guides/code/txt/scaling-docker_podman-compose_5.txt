@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-compose/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+podman-compose version 1.3.0
+podman version 5.4.1

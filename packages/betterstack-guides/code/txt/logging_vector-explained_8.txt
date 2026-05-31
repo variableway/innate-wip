@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+sources:
+  <unique_source_name>:
+    # source configuration properties go here
+
+transforms:
+  <unique_transform_name>:
+    # transform configuration properties go here
+
+sinks:
+  <unique_destination_name>:
+    # sink configuration properties go here

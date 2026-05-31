@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 14
+
+[label docker-compose.yml]
+services:
+  auth:
+    build:
+      dockerfile: auth.Dockerfile
+      context: .
+      target: ${NODE_ENV}
+    container_name: json-to-yaml-auth
+    environment:
+      . . .
+[highlight]
+      OTEL_SERVICE_NAME: ${AUTH_OTEL_SERVICE_NAME}
+[/highlight]
+    env_file:
+      - ./.env
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    ports:
+      - 8000:8000
+    networks:
+      - json-to-yaml-network
+    volumes:
+      - .:/node/app
+
+  converter:
+    build:
+      dockerfile: converter.Dockerfile
+      context: .
+      target: ${NODE_ENV}
+    container_name: json-to-yaml-converter
+    environment:
+      CONVERTER_PORT: ${CONVERTER_PORT}
+      LOG_LEVEL: ${LOG_LEVEL}
+[highlight]
+      OTEL_SERVICE_NAME: ${CONVERTER_OTEL_SERVICE_NAME}
+[/highlight]
+      . . .

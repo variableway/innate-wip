@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/docker-compose-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+[docker-compose.yml]
+services:
+  collector:
+    container_name: otel-collector
+    image: otel/opentelemetry-collector:latest
+
+  vector:
+    image: timberio/vector:latest-alpine
+    container_name: vector-demo

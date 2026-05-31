@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mikro-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+[info] MikroORM version: 6.4.11
+[discovery] ORM entity discovery started ...
+[info] MikroORM successfully connected to database ...
+[query] select `b0`.* from `books` as `b0` ...
+==== All Books ====
+TypeScript: The Good Parts by Douglas Crockford, $29.99  
+Eloquent TypeScript by Marijn Haverbeke, $34.95  
+You Don't Know TypeScript by Kyle Simpson, $24.99  
+Node.js and TypeScript Design Patterns by Mario Casciaro, $39.99

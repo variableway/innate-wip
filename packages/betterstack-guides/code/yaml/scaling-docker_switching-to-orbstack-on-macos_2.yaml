@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/switching-to-orbstack-on-macos/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+services:
+  nginx:
+    image: nginx
+    labels:
+      - dev.orbstack.domains=foo.local,bar.local

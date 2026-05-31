@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 37
+
+[output]
+{"level":"info","time":"2022-09-02T08:40:58+01:00","message":"a message from the gods: 1"}
+{"level":"warn","time":"2022-09-02T08:40:58+01:00","message":"warn message: 1"}
+{"level":"error","time":"2022-09-02T08:40:58+01:00","message":"error message: 1"}
+{"level":"info","time":"2022-09-02T08:40:58+01:00","message":"a message from the gods: 2"}
+{"level":"warn","time":"2022-09-02T08:40:58+01:00","message":"warn message: 2"}
+{"level":"info","time":"2022-09-02T08:40:58+01:00","message":"a message from the gods: 3"}
+{"level":"warn","time":"2022-09-02T08:40:58+01:00","message":"warn message: 3"}
+{"level":"error","time":"2022-09-02T08:40:58+01:00","message":"error message: 3"}
+{"level":"warn","time":"2022-09-02T08:40:58+01:00","message":"warn message: 4"}
+{"level":"error","time":"2022-09-02T08:40:58+01:00","message":"error message: 5"}
+{"level":"error","time":"2022-09-02T08:40:58+01:00","message":"error message: 7"}
+{"level":"warn","time":"2022-09-02T08:40:58+01:00","message":"warn message: 9"}
+{"level":"error","time":"2022-09-02T08:40:58+01:00","message":"error message: 9"}

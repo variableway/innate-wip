@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+Deno 2.0.6
+exit using ctrl+d, ctrl+c, or close()
+REPL is running with all permissions allowed.
+To specify permissions, run `deno repl` with allow flags.
+[highlight]
+> console.log(((name: string) => `Hello, ${name}!`)("Alice"));
+[/highlight]
+Hello, Alice!
+undefined
+>

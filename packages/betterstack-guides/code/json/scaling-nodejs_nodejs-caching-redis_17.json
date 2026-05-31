@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-caching-redis/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{
+[highlight]
+  "source": "cache",
+[/highlight]
+  "data": {. . .}
+}

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-file-uploads/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+{"level":30,"time":1752570010045,"pid":63742,"hostname":"MacBookPro","msg":"Server listening at http://[::1]:3000"}
+{"level":30,"time":1752570010046,"pid":63742,"hostname":"MacBookPro","msg":"Server listening at http://127.0.0.1:3000"}
+Fastify file upload server running on http://localhost:3000

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+# HELP external_api_request_duration External API request duration
+# TYPE external_api_request_duration summary
+external_api_request_duration{quantile="0.5"} 0.341
+external_api_request_duration{quantile="0.95"} 0.465
+external_api_request_duration{quantile="0.99"} 0.591
+external_api_request_duration_sum 12.423
+external_api_request_duration_count 32

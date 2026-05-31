@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+[output]
+● nginx.service - A high performance web server and a reverse proxy server
+    Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+    Active: active (running) since Sun 2021-11-28 12:17:36 UTC; 6s ago
+    Docs: man:nginx(8)
+    Process: 532819 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/S>
+    Process: 532829 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Main PID: 532831 (nginx)
+    Tasks: 2 (limit: 1136)
+    Memory: 5.7M
+    CGroup: /system.slice/nginx.service
+            ├─532831 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+            └─532832 nginx: worker process
+
+Nov 28 12:17:36 ubuntu-20-04 systemd[1]: Starting A high performance web server and a reverse proxy server...

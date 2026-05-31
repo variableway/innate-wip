@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[label Caddyfile]
+<your_domain_name> {
+	log {
+[highlight]
+		format append {
+			operating_system {system.os}
+            server_env {env.SERVER_ENV}
+             static_field static_value
+		}
+[/highlight]
+	}
+}

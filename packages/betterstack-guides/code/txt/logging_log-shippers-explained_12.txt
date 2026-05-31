@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[label /etc/td-agent/td-agent.conf]
+. . .
+<match *>
+  @type logtail
+  @id output_logtail
+  source_token <your_betterstack_source_token>
+  flush_interval 2 # in seconds
+</match>

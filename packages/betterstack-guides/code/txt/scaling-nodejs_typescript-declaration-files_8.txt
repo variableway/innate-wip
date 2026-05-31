@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-declaration-files/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+src/app.ts:4:23 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+4 const result = calc.add("5", "10");
+                        ~~~
+
+src/app.ts:5:36 - error TS2554: Expected 2 arguments, but got 1.
+
+5 const badResult = calc.multiply(5);
+                                     ~
+
+
+Found 2 errors in the same file, starting at: src/app.ts:4

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-fastapi/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+[output]
+{
+    "title": "Learn FastAPI",
+    "description": "Complete the FastAPI tutorial and build a project",
+    "priority": 2,
+    "completed": false,
+    "id": "5b499058-a5d6-4c85-8a88-0d1dd4600fac",
+    "created_at": "2025-02-28T10:44:55.434117",
+    "updated_at": "2025-02-28T10:44:55.434124"
+}

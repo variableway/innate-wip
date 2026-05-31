@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+logify  | {"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Operation finished", "pid": 1, "ssn": "407-01-2433", "time": 1748507479}
+...
+logify  | {"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Operation finished", "pid": 1, "ssn": "407-01-2433", "time": 1748507461}
+nginx  | {"timestamp":"2025-05-29T08:31:12+00:00","pid":"8","remote_addr":"172.18.0.1","remote_user":"","request":"GET /?4 HTTP/1.1","status": "200","body_bytes_sent":"11109","request_time":"0.000","http_referrer":"","http_user_agent":"curl/8.5.0","time_taken_ms":"1748507472.760"}
+...
+nginx  | {"timestamp":"2025-05-29T08:31:12+00:00","pid":"8","remote_addr":"172.18.0.1","remote_user":"","request":"GET /?5 HTTP/1.1","status": "200","body_bytes_sent":"11109","request_time":"0.000","http_referrer":"","http_user_agent":"curl/8.5.0","time_taken_ms":"1748507472.761"}

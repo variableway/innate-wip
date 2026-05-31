@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-validator-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 25
+
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "name": [
+      "Name is required",
+      "Name must be between 2 and 50 characters"
+    ],
+    "email": [
+      "Invalid email address",
+      "Invalid email format"
+    ],
+    "password": [
+      "Password must be at least 8 characters long"
+    ]
+  }
+}

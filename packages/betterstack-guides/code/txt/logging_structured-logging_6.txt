@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/structured-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+(service_name = "Service A" AND error_code = "TimeoutError") OR (service_name = "Service B" AND error.code = "TimeoutError")

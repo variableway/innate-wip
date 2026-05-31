@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+[+] Running 3/3
+ ✔ Container url-shortener-db            Healthy        10.8s
+ ✔ Container url-shortener-app           Started        11.2s
+ ✔ Container url-shortener-caddy-server  Started        11.5

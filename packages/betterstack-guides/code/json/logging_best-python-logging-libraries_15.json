@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[output]
+{"timestamp": 1689601339.628792, "message": "Processing document", "level": "DEBUG", "file": "main.py", "context": {"user_id": "USR-1243", "doc_id": "DOC-2348"}}

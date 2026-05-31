@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+. . .
+{"level":"info","ts":1722214551.173808,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+{"level":"info","ts":1722214551.174112,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+[highlight]
+{"level":"info","ts":1722214551.1741202,"msg":"serving initial configuration"}
+[/highlight]
+{"level":"info","ts":1722214551.1805758,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+{"level":"info","ts":1722214551.1807494,"logger":"tls","msg":"finished cleaning storage units"}

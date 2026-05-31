@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+exporters:
+  otlp:
+    endpoint: api.example.com:443
+    headers:
+      api-key: ${API_KEY}

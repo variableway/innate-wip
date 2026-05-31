@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+2023-04-20 20:23:43.382 [main] INFO com.example.App - Hello World!

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+2025-05-23 14:16:33.051 | DEBUG    | __main__:<module>:3 - Happy logging with Loguru!

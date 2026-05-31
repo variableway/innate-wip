@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/ruby-rails-prometheus/
+# Original language: promql
+# Normalized: js
+# Block index: 24
+
+#HELP http_request_duration_seconds Duration of HTTP requests
+#TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.005"} 0
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.01"} 0
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.025"} 4
+...
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="+Inf"} 154
+http_request_duration_seconds_sum{method="GET",path="/",status="200"} 68.487667757
+http_request_duration_seconds_count{method="GET",path="/",status="200"} 154

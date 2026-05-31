@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[label application.log]
+{"host":"falcon","application":"Semantic Logger","timestamp":"2025-01-29T04:38:40.643648Z","level":"error","level_index":4,"pid":1425652,"thread":"60","file":"main.rb","line":15,"name":"MyApp","message":"Error message"}
+{"host":"falcon","application":"Semantic Logger","timestamp":"2025-01-29T04:38:40.643675Z","level":"fatal","level_index":5,"pid":1425652,"thread":"60","file":"main.rb","line":16,"name":"MyApp","message":"Fatal message"}

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[label /etc/td-agent/td-agent.conf]
+. . .
+<filter access.nginx>
+  @type record_transformer
+  <record>
+    hostname "#{Socket.gethostname}"
+  </record>
+</filter>

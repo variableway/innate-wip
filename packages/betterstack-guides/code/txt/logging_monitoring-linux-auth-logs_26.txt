@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+Received disconnect from <your_server_ip> port 22:2: Too many authentication failures
+Disconnected from <your_server_ip> port 22

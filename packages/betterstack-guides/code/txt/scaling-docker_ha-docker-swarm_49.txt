@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[output]
+ID                            HOSTNAME    STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+9r83zto8qpqiazt6slxfkjypq     manager-1   Ready     Drain          Unreachable      20.10.18
+uspt9qwqnzqwl78gbxc7omja7     manager-2   Ready     Drain          Leader           20.10.18
+txrdxwuwjpg5jjfer3bcmtc5r *   manager-3   Ready     Drain          Reachable        20.10.18
+kaq8r9gec4t58yc9oh3dc0r2d     worker-1    Ready     Active                          20.10.18
+vk1224zd81xcihgm1iis2703z     worker-2    Ready     Active                          20.10.18

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+D, [2023-08-30T12:06:15.252379 #505263] DEBUG -- : database query executed
+I, [2023-08-30T12:06:15.252419 #505263]  INFO -- : user signed in
+W, [2023-08-30T12:06:15.252426 #505263]  WARN -- : disk space is 95% full
+E, [2023-08-30T12:06:15.252430 #505263] ERROR -- : encountered an unexpected error while backing up database
+F, [2023-08-30T12:06:15.252434 #505263] FATAL -- : application crashed

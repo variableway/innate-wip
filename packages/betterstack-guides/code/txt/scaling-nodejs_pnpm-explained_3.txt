@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pnpm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+Packages: +69
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 69, reused 0, downloaded 69, added 69, done
+
+dependencies:
++ express 4.21.2
+
+Done in 8.3s using pnpm v10.6.4

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 33
+
+[output]
+{"name": "John Doe", "post_id": 2, "comment_id": "1", "event": "Comment created", "level": "info", "timestamp": "2025-06-06T13:58:08.937636Z"}
+{"name": "Bob Foster", "post_id": 2, "comment_id": "2", "event": "Comment created", "level": "info", "timestamp": "2025-06-06T13:58:08.937869Z"}
+{"name": "Jane Miles", "post_id": 2, "comment_id": "3", "event": "Comment created", "level": "info", "timestamp": "2025-06-06T13:58:08.937889Z"}

@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/monitoring/grafana-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+NAME                           READY   STATUS              RESTARTS   AGE
+pod/grafana-6ddc59dff5-jqwfv   0/1     ContainerCreating   0          35s
+
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/grafana   ClusterIP   10.97.116.140   <none>        80/TCP    35s
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/grafana   0/1     1            0           35s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/grafana-6ddc59dff5   1         1         0       35s

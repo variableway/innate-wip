@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/jaeger-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+fix: overriding MySQL query delay       {"old": "300ms", "new": "50ms"}
+fix: disabling db connection mutex
+Starting all services
+Starting        {"service": "frontend", "address": "http://0.0.0.0:8080"}
+Starting        {"service": "customer", "address": "http://0.0.0.0:8081"}
+Starting        {"service": "route", "address": "http://0.0.0.0:8083"}
+Starting        {"service": "driver", "address": "0.0.0.0:8082", "type": "gRPC"}

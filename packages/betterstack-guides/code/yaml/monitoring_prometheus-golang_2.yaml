@@ -1,0 +1,49 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-golang/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label docker-compose.yml]
+services:
+  app:
+    build:
+      context: .
+      target: ${GO_ENV}
+    container_name: golang-demo
+    environment:
+      PORT: ${PORT}
+      LOG_LEVEL: ${LOG_LEVEL}
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
+    networks:
+      - prometheus-golang
+    volumes:
+      - .:/app
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/etc/prometheus/console_libraries
+      - --web.console.templates=/etc/prometheus/consoles
+      - --web.enable-lifecycle
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    networks:
+      - prometheus-golang
+
+networks:
+  prometheus-golang:
+
+volumes:
+  prometheus_data:

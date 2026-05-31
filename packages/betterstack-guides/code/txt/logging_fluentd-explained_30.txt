@@ -1,0 +1,33 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[label fluentd-config/fluent.conf]
+<source>
+  @type tail
+  path /var/log/logify/app.log
+  pos_file /var/log/fluent/file.log.pos
+  tag file.logs
+  format none
+  <parse>
+    @type json
+  </parse>
+</source>
+
+[highlight]
+<filter file.logs>
+  @type record_transformer
+  remove_keys emailAddress
+  <record>
+    hostname "#{Socket.gethostname}"
+  </record>
+</filter>
+[/highlight]
+
+<match file.logs>
+  @type stdout
+  <format>
+  @type json
+  </format>
+</match>

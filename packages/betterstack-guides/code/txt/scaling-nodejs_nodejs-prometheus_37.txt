@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+Running 10s test @ http://localhost:3000
+....
+┌──────┬───────┐
+│ Code │ Count │
+├──────┼───────┤
+│ 200  │ 1559  │
+└──────┴───────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 10
+
+2k requests in 10.02s, 1.49 MB read628

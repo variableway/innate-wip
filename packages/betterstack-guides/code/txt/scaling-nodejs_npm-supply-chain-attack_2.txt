@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/npm-supply-chain-attack/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+found 3 vulnerabilities (1 moderate, 2 high)
+run `npm audit fix` to fix them, or `npm audit` for details

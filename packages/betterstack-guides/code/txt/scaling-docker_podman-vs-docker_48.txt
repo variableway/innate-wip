@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+/home/<your_user_name>/.local/bin has been added to PATH, but you need to open a new terminal or re-login for this PATH change to take effect.
+
+You will need to open a new terminal or re-login for the PATH changes to take effect.
+
+Otherwise pipx is ready to go! ✨ 🌟 ✨

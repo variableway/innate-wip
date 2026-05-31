@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 17
+
+This nested structure shows how Superstruct handles complex objects:
+
+- `AddressSchema` validates address components separately
+- `optional()` makes phone number not required
+- `array(string())` ensures hobbies is a list of strings
+- `zipCode` uses a regex pattern for US zip codes
+
+Test the nested validation with complete data:

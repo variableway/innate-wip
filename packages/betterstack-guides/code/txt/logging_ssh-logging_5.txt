@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/ssh-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Jul 17 15:47:10 webserver sshd[5679]: Failed password for invalid user admin from 45.227.253.82 port 38654 ssh2

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+delete_matching_keys(attributes, "http.request.header.*")

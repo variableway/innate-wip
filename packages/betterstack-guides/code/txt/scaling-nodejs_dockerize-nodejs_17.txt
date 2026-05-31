@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[label .dockerignore]
+**/*.env
+
+# Dependencies
+**/node_modules
+
+# Other unnecessary files or directories
+.git/

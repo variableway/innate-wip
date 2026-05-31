@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "slug": "development",
+      "name": "Development & Code Tools",
+      "description": "Development & Code Tools",
+      "icon": "code",
+      "color": "#3b82f6"
+    },
+    {
+      "slug": "productivity",
+      "name": "Productivity & Collaboration",
+      "description": "Productivity & Collaboration",
+      "icon": "briefcase",
+      "color": "#a855f7"
+    },
+    {
+      "slug": "communication",
+      "name": "Communication & Writing",
+      "description": "Communication & Writing",
+      "icon": "message-square",
+      "color": "#ec4899"
+    },
+    {
+      "slug": "data",
+      "name": "Data & Analysis",
+      "description": "Data & Analysis",
+      "icon": "bar-chart",
+      "color": "#22c55e"
+    },
+    {
+      "slug": "meta",
+      "name": "Meta & Utilities",
+      "description": "Meta & Utilities",
+      "icon": "settings",
+      "color": "#6b7280"
+    }
+  ]
+}

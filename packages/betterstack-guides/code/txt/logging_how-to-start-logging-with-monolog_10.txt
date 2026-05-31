@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n

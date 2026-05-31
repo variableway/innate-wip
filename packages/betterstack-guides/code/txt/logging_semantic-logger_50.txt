@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 50
+
+[output]
+2025-01-29 11:26:23.411208 I [1595209:puma srv tp 002] (6.049ms) OrdersController -- Completed #show -- {:controller=>"OrdersController", :action=>"show", :format=>"*/*", :method
+=>"GET", :path=>"/order", :status=>200, :view_runtime=>0.77, :db_runtime=>0.0, :queries_count=>0, :cached_queries_count=>0, :order_id=>12345, :customer_id=>789, :total_amount=>299.99, :payment_st
+atus=>"paid", :allocations=>635, :status_message=>"OK"

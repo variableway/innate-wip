@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+"error" where attributes["http.status_code"] >= 400

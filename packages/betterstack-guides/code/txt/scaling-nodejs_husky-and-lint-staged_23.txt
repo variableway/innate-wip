@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/husky-and-lint-staged/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+  lint-staged:bin Running lint-staged@15.0.2 +0ms
+  lint-staged Loaded config from .lintstagedrc.json +0ms
+  lint-staged:cfg Normalized config to: +1ms
+  lint-staged:cfg {
+  lint-staged:cfg   '*.{js,jsx,ts,tsx}': [ 'eslint --fix --max-warnings=0', 'prettier --write' ],
+  lint-staged:cfg   '*.{json,css,md}': [ 'prettier --write' ]
+  lint-staged:cfg } +0ms

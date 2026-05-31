@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+{"@timestamp":"2023-04-03T21:55:37.102Z","ecs.version":"1.2.0","log.level":"INFO","message":"A user just signed in.","process.thread.name":"main","log.logger":"org.example.Main"}

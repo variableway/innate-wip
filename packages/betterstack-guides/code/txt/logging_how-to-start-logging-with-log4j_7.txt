@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+2023-04-20 20:44:47.254 [main] TRACE com.example.App - Entering method processOrder().
+2023-04-20 20:44:47.255 [main] DEBUG com.example.App - Received order with ID 12345.
+2023-04-20 20:44:47.255 [main] INFO com.example.App - Order shipped successfully.
+2023-04-20 20:44:47.255 [main] WARN com.example.App - Potential security vulnerability detected in user input: '...'
+2023-04-20 20:44:47.255 [main] ERROR com.example.App - Failed to process order. Error: {. . .}
+2023-04-20 20:44:47.255 [main] FATAL com.example.App - System crashed. Shutting down...

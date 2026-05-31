@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[output]
+{
+	"__MONOTONIC_TIMESTAMP" : "303528319506",
+	"_PID" : "1982",
+	"_STREAM_ID" : "15e02852f29f485b9e2866a7a27c3b4d",
+	"__CURSOR" : "s=699003bb8d9b4e16a49ee0d845f5be64;i=8a01f57;b=40d8cb53df934b6b8205666796a69234;m=46abb29a12;t=62bd0e194cf30;x=cdfa3e7b1b67aafd",
+	"_GID" : "0",
+	"_BOOT_ID" : "40d8cb53df934b6b8205666796a69234",
+	"_TRANSPORT" : "stdout",
+	"_MACHINE_ID" : "fd08879b531543db8847a3f7cea42cac",
+	"__SEQNUM" : "144711511",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"SYSLOG_IDENTIFIER" : "supergfxd",
+	"_SELINUX_CONTEXT" : "system_u:system_r:unconfined_t:s0",
+	"_SYSTEMD_SLICE" : "system.slice",
+	"__REALTIME_TIMESTAMP" : "1737025998081840",
+	"_COMM" : "supergfxd",
+	"_EXE" : "/usr/bin/supergfxd",
+	"_SYSTEMD_UNIT" : "supergfxd.service",
+	"SYSLOG_FACILITY" : "3",
+	"_UID" : "0",
+	"PRIORITY" : "6",
+	"_SYSTEMD_CGROUP" : "/system.slice/supergfxd.service",
+	"MESSAGE" : "WARN: get_runtime_status: Could not find dGPU",
+	"_SYSTEMD_INVOCATION_ID" : "1e2f890b696c4cedab849d5ccc3afefc",
+	"_CMDLINE" : "/usr/bin/supergfxd",
+	"_RUNTIME_SCOPE" : "system",
+	"_HOSTNAME" : "falcon",
+	"__SEQNUM_ID" : "699003bb8d9b4e16a49ee0d845f5be64"
+}

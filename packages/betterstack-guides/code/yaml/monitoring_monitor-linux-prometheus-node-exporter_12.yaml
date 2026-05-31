@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 12
+
+[label docker-compose.yml]
+. . .
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+      [highlight]
+      - ./textfiles:/textfiles
+      [/highlight]
+    command:
+      - --path.procfs=/host/proc
+      - --path.rootfs=/rootfs
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)
+      - --collector.processes
+      - --collector.systemd
+      [highlight]
+      - --collector.textfile.directory=./textfiles
+      [/highlight]
+    ports:
+      - 9100:9100
+    networks:
+      - host-monitoring

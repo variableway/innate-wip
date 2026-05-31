@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+LOG:  starting PostgreSQL 15.3 (Ubuntu 15.3-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.3.0-1ubuntu1~22.04.1) 11.3.0, 64-bit
+LOG:  listening on IPv4 address "127.0.0.1", port 5432
+LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+LOG:  database system was shut down at 2023-07-27 17:45:08 UTC
+LOG:  database system is ready to accept connections

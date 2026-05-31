@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+__main__: 2023-02-09 08:37:47,860 | INFO | main.py20 | 161954 >>> user james logged in with firefox

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+{
+  "span": {
+      "attributes": {
+        "http.url": "https://example.com?client_id=test-id&client_secret=cd76c726-cdbd-4951-8d60-f67770236661",
+      }
+  }
+}

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[label Caddyfile]
+<your_domain_name> {
+	log {
+[highlight]
+		format filter {
+			request delete # Remove request field entirely
+			wrap json
+		}
+[/highlight]
+	}
+}

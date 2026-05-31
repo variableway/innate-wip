@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+...
+-rw-r--r--@ 1 stanley  staff  814 Mar 12 12:15 app.py
+-rw-r--r--@ 1 stanley  staff    0 Mar 12 12:19 blog.db
+drwxr-xr-x@ 8 stanley  staff  256 Mar 12 12:15 src
+...

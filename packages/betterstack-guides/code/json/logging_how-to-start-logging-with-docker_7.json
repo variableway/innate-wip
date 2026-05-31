@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-docker/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[label /etc/docker/daemon.json]
+{
+  "log-driver": "local",
+  "log-opts": {
+    "max-size": "20m",
+    "max-file": "5",
+    "compress": "true",
+  }
+}

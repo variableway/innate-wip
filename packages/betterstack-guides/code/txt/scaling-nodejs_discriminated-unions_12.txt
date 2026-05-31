@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/discriminated-unions/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+User: alice
+Error: Not found

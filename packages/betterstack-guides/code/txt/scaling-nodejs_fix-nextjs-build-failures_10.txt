@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fix-nextjs-build-failures/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+              total        used        free      shared  buff/cache   available
+Mem:           981Mi       234Mi       123Mi       1.0Mi       623Mi       601Mi
+Swap:          2.0Gi         0B       2.0Gi

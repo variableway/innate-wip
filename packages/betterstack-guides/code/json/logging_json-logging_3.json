@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+{
+  "name": "image.jpg",
+  "size_bytes": 2382,
+  "timestamp": "2023-11-30T04:07:41.746806Z",
+  "level": "info",
+  "msg": "image uploaded"
+}

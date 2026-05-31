@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 43
+
+[output]
+{"name": "file1.t3x", "event": "Unsupported File", "level": "warning", "timestamp": "2025-06-06T14:02:17.670824Z"}

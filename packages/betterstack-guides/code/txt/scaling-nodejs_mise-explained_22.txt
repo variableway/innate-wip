@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+Name       Description
+check-env  Verify environment variables
+hello      Simple greeting task
+versions   Display tool versions

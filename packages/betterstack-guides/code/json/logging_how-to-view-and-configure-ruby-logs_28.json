@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 28
+
+[output]
+{"name":"main","hostname":"fedora","pid":79872,"level":30,"time":"2023-04-19T11:57:06.167+01:00","v":0,"msg":"Hello from Ougai logger"}

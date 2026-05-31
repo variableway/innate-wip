@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+telemetry:
+ metrics:
+   address: ${MY_POD_IP}:8888

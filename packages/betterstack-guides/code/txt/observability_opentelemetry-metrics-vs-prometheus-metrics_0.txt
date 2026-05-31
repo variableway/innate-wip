@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+# HELP http_requests_total The total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{method="GET", status="200"} 1027
+http_requests_total{method="POST", status="201"} 15
+
+# HELP http_request_duration_seconds The HTTP request latencies in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.1"} 2400
+http_request_duration_seconds_bucket{le="0.2"} 5000
+http_request_duration_seconds_bucket{le="0.5"} 8000
+http_request_duration_seconds_bucket{le="1.0"} 10000
+http_request_duration_seconds_bucket{le="+Inf"} 12000
+http_request_duration_seconds_sum 329.45
+http_request_duration_seconds_count 12000
+
+# HELP memory_usage_bytes Memory usage in bytes
+# TYPE memory_usage_bytes gauge
+memory_usage_bytes{application="app1"} 256000000
+memory_usage_bytes{application="app2"} 128000000

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 21
+
+The `app.log` in the `bin/Debug/net8.0` or any directory of your choosing will
+also contain the JSON content:

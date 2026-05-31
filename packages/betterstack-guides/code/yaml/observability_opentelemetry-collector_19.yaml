@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+service:
+  extensions: [health_check, pprof, zpages]

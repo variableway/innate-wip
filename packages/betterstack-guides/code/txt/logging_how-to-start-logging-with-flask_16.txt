@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+[May 28, 2025 17:03:26 CAT] INFO | app >>> An info message

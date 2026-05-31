@@ -1,0 +1,42 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[label nginx.conf]
+. . .
+http {
+    . . .
+    log_format custom_json escape=json '{'
+        '"level":"info",'
+        '"ts": "$time_iso8601",'
+        '"message": "handled request $request_method $request_uri",'
+        '"request": {'
+            '"id": "$http_x_request_id",'
+            '"remote_ip": "$remote_addr",'
+            '"remote_port": "$remote_port",'
+            '"protocol": "$server_protocol",'
+            '"method": "$request_method",'
+            '"host": "$host",'
+            '"uri": "$request_uri",'
+            '"headers": {'
+                '"user-agent": "$http_user_agent",'
+                '"accept": "$http_accept",'
+                '"accept-encoding": "$http_accept_encoding",'
+                '"traceparent": "$http_traceparent",'
+                '"tracestate": "$http_tracestate"'
+            '}'
+        '},'
+        '"bytes_read": $request_length,'
+        '"duration_msecs": $request_time,'
+        '"size": $bytes_sent,'
+        '"status": $status,'
+        '"resp_headers": {'
+          '"content_length": "$sent_http_content_length",'
+          '"content_type": "$sent_http_content_type"'
+        '}'
+    '}';
+
+    access_log /var/log/nginx/access.log custom_json;
+    . . .
+}

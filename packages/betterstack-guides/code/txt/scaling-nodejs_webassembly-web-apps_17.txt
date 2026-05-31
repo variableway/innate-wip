@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/webassembly-web-apps/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+-rw-r--r--@ 1 stanley  staff    689 Jul  3 10:11 math_operations.cpp
+-rw-r--r--@ 1 stanley  staff  56533 Jul  3 10:13 math_operations.js
+-rwxr-xr-x@ 1 stanley  staff   1821 Jul  3 10:13 math_operations.wasm

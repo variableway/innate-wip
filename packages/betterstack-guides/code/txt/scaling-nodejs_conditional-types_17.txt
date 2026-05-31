@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/conditional-types/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+User: John Doe (john@example.com)
+Posts: First Post, Second Post
+New user: { id: 2, name: 'Jane', email: 'jane@example.com' }
+New post: { id: 3, title: 'Third Post', content: 'More content' }

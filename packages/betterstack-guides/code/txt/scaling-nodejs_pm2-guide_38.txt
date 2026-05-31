@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+[PM2] Init System found: systemd
+[PM2] To setup the Startup Script, copy/paste the following command:
+sudo env PATH=$PATH:/home/<username>/.local/share/nvm/v20.5.0/bin /home/<username>/.local/share/nvm/v20.5.0/lib/node_modules/pm2/bin/pm2 startup systemd -u <username> --hp /home/<username>

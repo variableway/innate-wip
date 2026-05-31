@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "lib": [
       "dom",
       "dom.iterable",
@@ -26,15 +27,6 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "@allone/ui": [
-        "../../packages/ui/src"
-      ],
-      "@allone/ui/*": [
-        "../../packages/ui/src/*"
-      ],
-      "@allone/utils": [
-        "../../packages/utils/src"
       ]
     }
   },
@@ -43,11 +35,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "dist/types/**/*.ts",
-    "dist/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "innate-feeds-main"
   ]
 }

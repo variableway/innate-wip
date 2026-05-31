@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/kysely-query-builder/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+=== Deleting Books by David Wilson ===
+
+=== Remaining Books ===
+[
+  {
+    id: 1,
+    title: 'SQL Database Design',
+    author: 'Michael Johnson',
+    price: 39.99,
+    in_stock: 1
+  }
+]

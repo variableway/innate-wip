@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: txt
+# Normalized: txt
+# Block index: 22
+
+[output]
+. . .
+0|cryptoSt | {"level":30,"time":1638172796810,"pid":29333,"hostname":"Kreig","msg":"Server listening at <http://127.0.0.1:3000>"}
+0|cryptoSt | {"level":30,"time":1638172796859,"pid":29340,"hostname":"Kreig","msg":"Server listening at <http://127.0.0.1:3001>"}
+0|cryptoSt | {"level":30,"time":1638172796917,"pid":29349,"hostname":"Kreig","msg":"Server listening at <http://127.0.0.1:3002>"}
+0|cryptoSt | {"level":30,"time":1638172797000,"pid":29362,"hostname":"Kreig","msg":"Server listening at <http://127.0.0.1:3003>"}

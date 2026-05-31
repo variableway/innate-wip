@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+node_network_receive_bytes_total:
+  {device="eth0"}: 1000000
+node_network_transmit_bytes_total:
+  {device="eth1"}: 20000

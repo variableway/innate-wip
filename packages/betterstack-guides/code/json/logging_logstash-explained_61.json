@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: json
+# Normalized: json
+# Block index: 61
+
+[output]
+{
+  "host" : "1d89e10af6b7",
+  "version" : "9.0.1",
+  "http_address" : "0.0.0.0:9600",
+  "id" : "6b559c89-f8f6-402d-931a-7940574b7c76",
+  "name" : "1d89e10af6b7",
+  "ephemeral_id" : "4c59ece1-c98a-441a-8c7f-476bc74cbadf",
+  "snapshot" : false,
+  "status" : "green",
+  "pipeline" : {
+    "workers" : 2,
+    "batch_size" : 125,
+    "batch_delay" : 50
+  },
+  "build_date" : "2025-04-29T15:24:44+00:00",
+  "build_sha" : "4e850d791be668438b0d19f729fa734d4bc7657b",
+  "build_snapshot" : false

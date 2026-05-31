@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-enums/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Status: COMPLETED
+Can escalate? true
+Cache key: app:user_profile

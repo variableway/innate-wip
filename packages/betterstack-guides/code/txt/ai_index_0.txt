@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/ai/index/
+# Original language: zero
+# Normalized: txt
+# Block index: 0
+
+pub fun main(world: World) -> Void raises {
+    check world.out.write("hello from zero\n")
+}

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 18
+
+Log4net is flexible and allows you to configure its behavior. Before configuring
+it, it helps to understand these two key components:
+
+- **Appenders**: destinations to which logs are forwarded. These destinations
+  can include databases, files, or the console.
+- **layouts** : Layouts format log messages, determining how the information is
+  presented.
+
+To configure Log4net, you use the `log4net.config` file:

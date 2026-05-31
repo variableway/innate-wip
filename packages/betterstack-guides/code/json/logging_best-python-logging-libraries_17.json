@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{"timestamp": 1689601518.884659, "message": "Processing document", "level": "DEBUG", "file": "main.py", "context": {"user_id": "USR-1243", "doc_id": "DOC-2348"}}
+{"timestamp": 1689601518.884706, "message": "Invalid configuration detected. Falling back to defaults", "level": "WARNING", "file": "main.py", "context": {"user_id": "USR-1243", "doc_id": "DOC-2348"}}
+{"timestamp": 1689601518.884729, "message": "Document processed successfully", "level": "SUCCESS", "file": "main.py", "context": {"user_id": "USR-1243", "doc_id": "DOC-2348"}}

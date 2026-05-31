@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prisma-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "prisma_demo", schema "public" at "localhost:5432"
+
+Applying migration `20250226084639_init`
+
+The following migration(s) have been created and applied from new schema changes:
+
+migrations/
+  └─ 20250226084639_init/
+    └─ migration.sql
+
+Your database is now in sync with your schema.
+
+✔ Generated Prisma Client (v6.4.1) to ./node_modules/@prisma/client in 44ms

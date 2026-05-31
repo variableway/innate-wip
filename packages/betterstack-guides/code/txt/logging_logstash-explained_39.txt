@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[label log-processing-stack/docker-compose.yml]
+services:
+  logify-script:
+    build:
+      context: ./logify
+    container_name: logify
+  nginx:
+    image: betterstackcommunity/nginx-helloworld:latest
+    container_name: nginx
+    ports:
+      - '80:80'

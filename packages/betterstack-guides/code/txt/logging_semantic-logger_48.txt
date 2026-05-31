@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+2025-01-29 11:09:53.608201 I [1590493:puma srv tp 001] Rails -- Started GET "/" for ::1 at 2025-01-29 11:09:53 +0100
+2025-01-29 11:09:53.625462 D [1590493:puma srv tp 001] ActiveRecord::Base --   ActiveRecord::SchemaMigration Load (0.1ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER
+ BY "schema_migrations"."version" ASC /*application='Myapp'*/
+2025-01-29 11:09:53.657161 I [1590493:puma srv tp 001] Rails -- Completed 200 OK in 16ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)

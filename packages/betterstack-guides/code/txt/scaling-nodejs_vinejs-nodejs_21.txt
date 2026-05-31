@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vinejs-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+...
+{"message":"The street field must have at least 3 characters","rule":"minLength","field":"address.street","meta":{"min":3}},{"message":"The city field must have at least 2 characters","rule":"minLength","field":"address.city","meta":{"min":2}},{"message":"The zip field format is invalid","rule":"regex","field":"address.zip"},{"message":"The skills field must have at least 1 items","rule":"array.minLength","field":"skills","meta":{"min":1}}]}

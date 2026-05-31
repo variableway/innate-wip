@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 35
+
+The stop command gracefully shuts down your Minikube cluster, preserving its
+state. The subsequent start command creates a new cluster with the updated
+resource allocations. This process maintains your existing workloads and
+configurations while providing them with the newly allocated resources.
+
+### Storage provisioning
+
+Persistent storage is a crucial requirement for many applications, particularly
+those that need to store data that survives pod restarts or rescheduling.
+Minikube comes with the default storage class provisioner enabled, allowing you
+to use Kubernetes' standard storage mechanisms out of the box.
+
+To use persistent storage, you first need to create a Persistent Volume Claim
+(PVC), which requests storage resources in the cluster. Here's an example PVC
+definition:

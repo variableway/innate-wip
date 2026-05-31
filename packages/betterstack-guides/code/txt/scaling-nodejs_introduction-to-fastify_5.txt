@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+content-length: 27
+...
+
+{"message":"Blog app demo"}%

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[label .env]
+. . .
+OTEL_EXPORTER_OTLP_ENDPOINT=http://json-to-yaml-collector:4318

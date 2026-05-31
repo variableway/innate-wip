@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+LOG:  statement: UPDATE album SET title = 'Audioslave' WHERE albumid = 10;
+[highlight]
+LOG:  duration: 18.498 ms
+[/highlight]

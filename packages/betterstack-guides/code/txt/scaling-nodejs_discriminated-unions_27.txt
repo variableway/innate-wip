@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/discriminated-unions/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+src/exhaustive.ts:36:27 - error TS2345: Argument of type 'ErrorEvent' is not assignable to parameter of type 'never'.
+
+36       return assertNever(event);
+                            ~~~~~
+
+
+Found 1 error in src/exhaustive.ts:36

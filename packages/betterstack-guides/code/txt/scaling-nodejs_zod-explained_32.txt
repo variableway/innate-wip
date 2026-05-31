@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 32
+
+This validates that all required fields are present and properly formatted. If validation fails, clients receive structured error messages explaining exactly what went wrong.
+
+### Validating query parameters
+
+Query parameters present unique challenges because they always come as strings and often need type conversion. They're also frequently optional with default values:

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+. . .
+reading config file /etc/logrotate.d/logify
+error: /etc/logrotate.d/logify:7 unknown option 'compresss' -- ignoring line
+. . .

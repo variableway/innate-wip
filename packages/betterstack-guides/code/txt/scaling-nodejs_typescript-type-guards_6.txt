@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-type-guards/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Processing user: Alice
+123
+/Users/stanley/ts-type-guards/src/unsafe-types.ts:9
+  console.log(`Processing user: ${data.name}`);
+                                       
+TypeError: Cannot read properties of undefined (reading 'name')

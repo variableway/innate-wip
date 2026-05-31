@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{
+  "severity": "INFO",
+  "timestamp": "2025-02-09 08:52:36 UTC",
+  "logger": "http.log.access.log0",
+  "msg": "handled request",
+  "request": {. . .},
+  "bytes_read": 0,
+  "user_id": "",
+  "duration": 5,
+  "size": 0,
+  "status": 304,
+  "resp_headers": {. . .}
+}

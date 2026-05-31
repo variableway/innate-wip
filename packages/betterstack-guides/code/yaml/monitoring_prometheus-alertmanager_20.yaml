@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 20
+
+[label alertmanager.yml]
+inhibit_rules:
+  - source_matchers:
+      - alertname = HighMemoryUsage
+    target_matchers:
+      - alertname = MemoryUsageWarning
+    equal: ['instance', 'job']

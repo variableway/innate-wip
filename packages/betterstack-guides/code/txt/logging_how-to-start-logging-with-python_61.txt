@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 61
+
+[output]
+<RootLogger root (WARNING)>
+<Logger app (WARNING)>

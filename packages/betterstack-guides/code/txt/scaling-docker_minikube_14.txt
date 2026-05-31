@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 14
+
+When you run this command, Minikube performs several operations in sequence.
+First, it ensures that the dashboard add-on is enabled. Then, it starts a proxy
+server to securely connect to the dashboard from your local machine. Finally, it
+automatically opens your default web browser and navigates to the dashboard URL.
+
+![3.png](https://imagedelivery.net/xZXo0QFi-1_4Zimer-T0XQ/cbeb356d-313a-49d6-85ab-0227dc386200/md2x =4004x2478)
+
+The dashboard opens in your browser, presenting a comprehensive view of your
+cluster. This automatic process works seamlessly when you're running Minikube
+locally on a desktop or laptop with a graphical interface.
+
+For scenarios where you're running Minikube on a remote server or when you don't
+want the browser to open automatically, you can use the --url flag:

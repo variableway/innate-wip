@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 54
+
+[label vector.yaml]
+. . .
+sinks:
+  betterstack:
+    type: "http"
+    method: "post"
+    inputs: [nginx_json]
+    uri: "https://<your_ingesting_host>/"
+    encoding:
+      codec: "json"
+    compression: "gzip"
+    auth:
+      strategy: "bearer"
+      token: "<your_betterstack_source_token>"

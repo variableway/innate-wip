@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 37
+
+[output]
+{"x": 1, "y": 0, "action_status": "started", "timestamp": 1690215830.1103916, "task_uuid": "f267b0f5-8c07-4828-a973-0a8a273f272d", "action_type": "__main__.calculate", "task_level": [1]}
+{"exception": "builtins.ZeroDivisionError", "reason": "division by zero", "action_status": "failed", "timestamp": 1690215830.1104264, "task_uuid": "f267b0f5-8c07-4828-a973-0a8a273f272d", "action_type": "__main__.calculate", "task_level": [2]}

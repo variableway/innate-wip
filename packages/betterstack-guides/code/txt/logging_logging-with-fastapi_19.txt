@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+{"timestamp": "2025-05-20T09:57:19.885400", "level": "INFO", "logger": "app", "module": "main", "line": 65, "message": "User data requested for user_id: 42"}

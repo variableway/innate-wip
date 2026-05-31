@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[label filebeat-config/filebeat.yml]
+filebeat.inputs:
+- type: filestream
+  id: logify-logs
+  paths:
+    - /var/log/logify/app.log
+
+processors:
+  - decode_json_fields:
+      fields: ["message"]
+      target: ""
+[highlight]
+  - drop_fields:
+      fields: ["emailAddress", "message"]  
+
+  - add_fields:
+      fields:
+        env: "development"  # Add a new 'env' field set to "development"
+[/highlight]
+output.console:
+  pretty: true

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-run/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+Hello from Podman!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Podman took the following steps:
+ 1. The Podman client contacted the local Podman engine.
+ 2. The Podman engine pulled the "hello-world" image from the Docker Hub.
+ 3. The Podman engine created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Podman engine streamed that output to the Podman client, which sent it
+    to your terminal.

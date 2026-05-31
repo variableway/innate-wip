@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+^C{"level":"info","ts":1699609912.4189968,"msg":"shutting down","signal":"SIGINT"}
+{"level":"warn","ts":1699609912.419042,"msg":"exiting; byeee!! 👋","signal":"SIGINT"}
+{"level":"info","ts":1699609912.419472,"logger":"http","msg":"servers shutting down with eternal grace period"}
+{"level":"info","ts":1699609912.4202948,"logger":"admin","msg":"stopped previous server","address":"localhost:2019"}
+{"level":"info","ts":1699609912.4203057,"msg":"shutdown complete","signal":"SIGINT","exit_code":0}

@@ -1,0 +1,38 @@
+# Source: https://betterstack.com/community/guides/logging/logging-microservices/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+{
+  "trace_id": "0x5b8aa5a2d2c872e8321cf37308d69df2",
+  "spans": [
+    {
+      "context": {
+        "trace_id": "0x5b8aa5a2d2c872e8321cf37308d69df2",
+        "span_id": "0x4cfe3a1a593b7fa4",
+        "..."
+      },
+      "parent_id": null,
+      "..."
+    },
+    {
+      "context": {
+        "trace_id": "0x5b8aa5a2d2c872e8321cf37308d69df2",
+        "span_id": "0x6f589e41e789eb60",
+        "..."
+      },
+      "parent_id": "0x4cfe3a1a593b7fa4",
+      "..."
+    },
+    {
+      "context": {
+        "trace_id": "0x5b8aa5a2d2c872e8321cf37308d69df2",
+        "span_id": "0x6f589e41e789eb61",
+        "..."
+      },
+      "parent_id": "0x6f589e41e789eb60",
+      "..."
+    }
+    ...
+  ]
+}

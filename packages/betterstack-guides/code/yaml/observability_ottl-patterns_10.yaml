@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 10
+
+filter:
+  error_mode: ignore
+  metrics:
+    metric:
+      - 'name == "cpu.usage" and HasAttrOnDatapoint("region", "test")'

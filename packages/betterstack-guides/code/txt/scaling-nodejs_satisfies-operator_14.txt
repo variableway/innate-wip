@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/satisfies-operator/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Home page
+List users
+Create user
+About page

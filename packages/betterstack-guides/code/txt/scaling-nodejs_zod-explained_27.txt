@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 27
+
+While TypeScript only captures the basic types, Zod maintains the full validation rules, such as minimum length and email format. 
+
+Now, update your code to use the inferred `User` type along with Zod’s validation:

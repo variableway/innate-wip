@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+0 * * * * /usr/sbin/logrotate /home/<user>/logify/logrotate.conf --state /home/<user>/logify/logrotate.state

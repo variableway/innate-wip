@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-web-api/
+# Original language: json
+# Normalized: json
+# Block index: 34
+
+[output]
+
+{
+  "errors": [
+    {
+      "type": "field",
+      "value": "Hi",
+      "msg": "Title must be between 3 and 100 characters",
+      "path": "title",
+      "location": "body"
+    }
+  ],
+  "status": "Unprocessable Entity"
+}

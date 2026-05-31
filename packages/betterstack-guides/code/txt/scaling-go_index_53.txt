@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[output]
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+go-blog-prod   latest    0e40c49ab29b   5 seconds ago   17.8MB

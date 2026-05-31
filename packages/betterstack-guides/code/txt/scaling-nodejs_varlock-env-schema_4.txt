@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/varlock-env-schema/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+✅ APP_ENV*
+   "testing"

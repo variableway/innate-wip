@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 36
+
+[label pvc.yaml]
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: data-pvc
+spec:
+ accessModes:
+   - ReadWriteOnce
+ resources:
+   requests:
+     storage: 1Gi

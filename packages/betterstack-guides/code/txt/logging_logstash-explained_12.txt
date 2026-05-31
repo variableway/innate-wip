@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+...
+Configuration OK
+[2025-06-04T10:12:08,648][INFO ][logstash.runner          ] Using config.test_and_exit mode. Config Validation Result: OK. Exiting Logstashogstash

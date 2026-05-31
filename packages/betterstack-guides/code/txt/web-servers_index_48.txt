@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[label Caddyfile]
+<your_domain_name> {
+  redir /api /api/
+
+  handle_path /api/* {
+    reverse_proxy backend:3000
+  }
+
+  handle {
+    root * /usr/share/caddy
+    file_server
+    try_files {path} /index.html
+  }
+
+  log {
+    output stdout
+  }
+}

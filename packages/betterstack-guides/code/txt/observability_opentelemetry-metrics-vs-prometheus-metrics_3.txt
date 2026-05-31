@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+# HELP http_requests_total Total number of HTTP requests received
+# TYPE http_requests_total counter
+http_requests_total{method="GET",path="/",status="200"} 121

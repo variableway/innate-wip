@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-type-guards/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Regular user: Alice
+Admin Bob: read, write, delete

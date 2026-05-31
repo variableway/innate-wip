@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+nginx  | {"timestamp":"2025-06-04T08:17:18+00:00","pid":"8","remote_addr":"172.18.0.1","remote_user":"","request":"GET /?1 HTTP/1.1","status": "200","body_bytes_sent":"11109","request_time":"0.000","http_referrer":"","http_user_agent":"curl/8.5.0","time_taken_ms":"1749025038.755"}
+...
+logify  | {"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 1, "ssn": "407-01-2433", "timestamp": 1749025042}

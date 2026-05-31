@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 50
+
+[output]
+dev       169516  0.0  0.0   7740  3456 ?        S    Jun02   3:06 /bin/bash ./logify.sh

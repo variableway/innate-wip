@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+[2025/05/30 09:12:43] [ info] Configuration:
+[2025/05/30 09:12:43] [ info]  flush time     | 1.000000 seconds
+[2025/05/30 09:12:43] [ info]  grace          | 5 seconds
+[2025/05/30 09:12:43] [ info]  daemon         | 0
+[2025/05/30 09:12:43] [ info] ___________
+[2025/05/30 09:12:43] [ info]  inputs:
+[2025/05/30 09:12:43] [ info]      tail
+[2025/05/30 09:12:43] [ info] ___________
+[2025/05/30 09:12:43] [ info]  filters:
+[2025/05/30 09:12:43] [ info] ___________
+[2025/05/30 09:12:43] [ info]  outputs:
+[2025/05/30 09:12:43] [ info]      stdout.0
+[2025/05/30 09:12:43] [ info] ___________
+[2025/05/30 09:12:43] [ info]  collectors:
+configuration test is successful

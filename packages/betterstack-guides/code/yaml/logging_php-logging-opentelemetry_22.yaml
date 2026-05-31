@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 22
+
+attributes/betterstack:
+  actions:
+    - key: better_stack_source_token
+      value: <your_source_token>
+      action: insert

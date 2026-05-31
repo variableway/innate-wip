@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label .env]
+NODE_ENV=production
+LOG_LEVEL=info
+PORT=5000
+[highlight]
+POSTGRES_DB=url-shortener
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=admin
+POSTGRES_HOST=localhost
+[/highlight]

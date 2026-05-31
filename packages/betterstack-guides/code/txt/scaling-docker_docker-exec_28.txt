@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+OCI runtime exec failed: exec failed: unable to start container process: exec: "ps": executable file not found in $PATH: unknown

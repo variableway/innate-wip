@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+> drizzle-tutorial@1.0.0 db:push
+> drizzle-kit push
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/path/to-your/drizzle-tutorial/drizzle.config.ts'
+[✓] Pulling schema from database...
+[✓] Changes applied

@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 3
+
+filelog:
+ include:
+   - /var/log/pods/*/*/*.log
+ start_at: beginning
+ include_file_path: true
+ operators:
+   # Router to identify log format
+   - type: router
+     id: format-router
+     routes:
+       - output: parser-docker
+         expr: 'body matches "^\\{"'
+       - output: parser-crio
+         expr: 'body matches "^[^ Z]+ "'
+       - output: parser-containerd
+         expr: 'body matches "^[^ Z]+Z"'
+
+   # Format-specific parsers follow...
+   # Kubernetes metadata extraction operations...
+   # Attribute normalization steps...

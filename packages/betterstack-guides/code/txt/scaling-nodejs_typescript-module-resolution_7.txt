@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-module-resolution/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/username/ts-module-resolution/src/services/logger' imported from /Users/username/ts-module-resolution/src/index.js

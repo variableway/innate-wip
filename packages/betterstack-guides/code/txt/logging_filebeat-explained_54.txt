@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[label log-processing-stack/docker-compose.yml]
+  filebeat-logify:
+    image: docker.elastic.co/beats/filebeat:9.0.1
+    container_name: filebeat-logify
+    user: root
+  [highlight]
+    ports:
+      - "5066:5066"
+[/highlight]
+    command:
+      - "-e"
+      - "--strict.perms=false"
+    volumes:
+      - ./filebeat-config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock

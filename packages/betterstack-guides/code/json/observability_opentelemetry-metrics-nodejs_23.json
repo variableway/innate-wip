@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: jsonc
+# Normalized: json
+# Block index: 23
+
+[output]
+{
+  descriptor: {
+    name: 'system.memory.heap',
+    type: 'OBSERVABLE_GAUGE',
+    description: 'Memory usage of the allocated heap objects.',
+    unit: 'By',
+    valueType: 1,
+    advice: {}
+  },
+  dataPointType: 2,
+  dataPoints: [
+    {
+      attributes: {},
+      startTime: [ 1731077051, 834000000 ],
+      endTime: [ 1731077051, 834000000 ],
+      value: 14233384
+    }
+  ]
+}

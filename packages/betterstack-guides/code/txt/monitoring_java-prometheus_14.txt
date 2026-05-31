@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{app="demo"} 42.0

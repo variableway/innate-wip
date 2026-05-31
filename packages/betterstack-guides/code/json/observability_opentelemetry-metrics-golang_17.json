@@ -1,0 +1,80 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+{
+  "Resource": [. . .],
+  "ScopeMetrics": [
+    {
+      "Scope": {
+        "Name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "Version": "0.56.0",
+        "SchemaURL": ""
+      },
+      "Metrics": [
+        {
+[highlight]
+          "Name": "http.server.request.size",
+[/highlight]
+          "Description": "Measures the size of HTTP request messages.",
+          "Unit": "By",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [. . .],
+                "StartTime": "2024-10-30T09:24:38.457932153+01:00",
+                "Time": "2024-10-30T09:24:47.460096693+01:00",
+                "Value": 0
+              }
+            ],
+            "Temporality": "CumulativeTemporality",
+            "IsMonotonic": true
+          }
+        },
+        {
+[highlight]
+          "Name": "http.server.response.size",
+[/highlight]
+          "Description": "Measures the size of HTTP response messages.",
+          "Unit": "By",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [. . .],
+                "StartTime": "2024-10-30T09:24:38.457933515+01:00",
+                "Time": "2024-10-30T09:24:47.460100785+01:00",
+                "Value": 12
+              }
+            ],
+            "Temporality": "CumulativeTemporality",
+            "IsMonotonic": true
+          }
+        },
+        {
+[highlight]
+          "Name": "http.server.duration",
+[/highlight]
+          "Description": "Measures the duration of inbound HTTP requests.",
+          "Unit": "ms",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [. . . ],
+                "StartTime": "2024-10-30T09:24:38.457935351+01:00",
+                "Time": "2024-10-30T09:24:47.460101534+01:00",
+                "Count": 1,
+                "Bounds": [0, 5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 10000],
+                "BucketCounts": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                "Min": 0.044231,
+                "Max": 0.044231,
+                "Sum": 0.044231
+              }
+            ],
+            "Temporality": "CumulativeTemporality"
+          }
+        }
+      ]
+    }
+  ]
+}

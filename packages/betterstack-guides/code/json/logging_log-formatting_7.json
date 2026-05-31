@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{
+  "timestamp": "2023-09-06T15:13:11+00:00",
+  "pid":"8",
+  "remote_addr": "217.138.222.109",
+  "remote_user": "",
+  "request": "GET /icons/ubuntu-logo.png HTTP/1.1",
+  "status": "404",
+  "body_bytes_sent": "197",
+  "request_time_ms": "0.000",
+  "http_referrer": "http://192.168.100.1/",
+  "http_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.87 Safari/537.36"
+}

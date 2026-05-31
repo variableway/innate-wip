@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: output
+# Normalized: txt
+# Block index: 26
+
+time="2025-04-28T15:30:00Z" level=info msg="Found new yourusername/custom-node:v1 image (sha256:abc123...)"
+time="2025-04-28T15:30:01Z" level=info msg="Stopping /demo-custom-node (abc123...)"
+time="2025-04-28T15:30:04Z" level=info msg="Creating /demo-custom-node"

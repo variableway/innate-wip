@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+[27-Jul-2022 16:05:49 America/New_York] database not available!

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-express/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+
+> express-graphql-api@1.0.0 dev
+> node --watch server.js
+
+Server running on http://localhost:4000/graphql
+GraphiQL IDE available at http://localhost:4000/

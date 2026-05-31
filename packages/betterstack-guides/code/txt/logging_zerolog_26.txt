@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+2022-09-01T10:03:06+01:00 TRC main.go:23 > trace message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 DBG main.go:24 > debug message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 INF main.go:25 > info message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 WRN main.go:26 > warn message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 ERR main.go:27 > error message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 FTL main.go:28 > fatal message go_version=go1.19 pid=2616969
+2022-09-01T10:03:06+01:00 PNC main.go:29 > panic message go_version=go1.19 pid=2616969

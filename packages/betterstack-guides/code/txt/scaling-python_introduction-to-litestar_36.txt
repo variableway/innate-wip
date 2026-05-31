@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+
+*   Trying 127.0.0.1:8000...
+* Connected to 127.0.0.1 (127.0.0.1) port 8000
+> GET /api/posts/non-existent-id HTTP/1.1
+> Host: 127.0.0.1:8000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 404 Not Found
+< date: Wed, 12 Mar 2025 11:15:28 GMT
+< server: uvicorn
+< content-type: application/json
+< content-length: 69
+< 
+* Connection #0 to host 127.0.0.1 left intact
+{"status_code":404,"detail":"Post with ID non-existent-id not found"}%

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+NAME      IMAGE                                          COMMAND              SERVICE         CREATED          STATUS          PORTS
+logify    logify:latest                                  "./logify.sh"        logify-script   16 seconds ago   Up 15 seconds
+nginx     betterstackcommunity/nginx-helloworld:latest   "/runner.sh nginx"   nginx           16 seconds ago   Up 15 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp

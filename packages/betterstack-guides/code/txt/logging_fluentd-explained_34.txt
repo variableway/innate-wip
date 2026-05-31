@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[label fluentd-config/fluent.conf]
+...
+<filter file.logs>
+  @type record_transformer
+[highlight]
+  enable_ruby true
+[/highlight]
+  remove_keys emailAddress
+  <record>
+    hostname "#{Socket.gethostname}"
+[highlight]
+    timestamp ${Time.at(record["timestamp"]).strftime("%Y-%m-%dT%H:%M:%S.%L%z")}
+[/highlight]
+  </record>
+</filter>
+...

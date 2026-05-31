@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/ssh-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Jul 17 15:49:45 webserver sshd[5680]: Accepted publickey for jenkins from 10.0.2.20 port 52413 ssh2: RSA SHA256:LmNoPqRsTuVwXyZ1234567890AbCdEfGhIjK

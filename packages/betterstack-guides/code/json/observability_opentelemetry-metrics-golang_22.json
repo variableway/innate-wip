@@ -1,0 +1,54 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+{
+  "Resource": [. . .],
+  "ScopeMetrics": [
+    {
+      "Scope": {
+        "Name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "Version": "0.56.0",
+        "SchemaURL": ""
+      },
+      "Metrics": [. . .]
+    },
+    {
+      "Scope": {
+        "Name": "otel-metrics-demo",
+        "Version": "",
+        "SchemaURL": ""
+      },
+      "Metrics": [
+        {
+[highlight]
+          "Name": "http.server.requests",
+[/highlight]
+          "Description": "Total number of HTTP requests received.",
+          "Unit": "{requests}",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [
+                  {
+                    "Key": "http.route",
+                    "Value": {
+                      "Type": "STRING",
+                      "Value": "/"
+                    }
+                  }
+                ],
+                "StartTime": "2024-10-30T12:08:52.480835467+01:00",
+                "Time": "2024-10-30T12:09:04.482299763+01:00",
+                "Value": 1
+              }
+            ],
+            "Temporality": "CumulativeTemporality",
+            "IsMonotonic": true
+          }
+        }
+      ]
+    }
+  ]
+}

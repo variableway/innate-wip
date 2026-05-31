@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+flask-world-clock
+├── LICENSE
+├── README.md
+├── app.py
+├── requirements.txt
+├── screenshot.png
+├── templates
+│   ├── fail.html
+│   ├── home.html
+│   ├── layout.html
+│   └── success.html
+└── worldClock.log

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[output]
+May 23, 2025 > 14:29:43 | ERROR | An error has been caught in function '<module>', process 'MainProcess' (45732), thread 'MainThread' (8498575424): | {}
+Traceback (most recent call last):
+
+> File "/home/eric/loguru-demo/app.py", line 15, in <module>
+    test(0)
+    └ <function test at 0x1050358a0>
+
+  File /home/eric/loguru-demo/app.py", line 11, in test
+    50 / x
+         └ 0
+
+ZeroDivisionError: division by zero

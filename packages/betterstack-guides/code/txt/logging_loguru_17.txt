@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+May 23, 2025 > 14:25:32 | DEBUG | Happy logging with Loguru!

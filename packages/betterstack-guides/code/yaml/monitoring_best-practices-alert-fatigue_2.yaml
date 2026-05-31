@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/best-practices-alert-fatigue/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label alertmanager.yaml]
+route:
+  receiver: 'team_notifications'
+  group_by: ['alertname', 'job', 'service']
+  group_wait: 30s          # Waits 30 seconds to gather related alerts
+  group_interval: 5m       # Sends grouped updates every 5 minutes
+  repeat_interval: 1h      # Resends notifications every hour for unresolved alerts

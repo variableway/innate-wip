@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+< Debugger listening on ws://127.0.0.1:9229/4b213303-bf46-44ab-b01b-3cbe85f6e5e5
+< For help, see: https://nodejs.org/en/docs/inspector
+<
+connecting to 127.0.0.1:9229 ... ok
+< Debugger attached.
+<
+Break on start in index.js:18
+ 16 }
+ 17
+>18 console.log(getPrimes(100));
+ 19
+debug>

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 68
+
+[output]
+--> Deploying to production environment
+--> on host <your_remote_server_ip>
+Use --update-env to update environment variables
+[PM2] Applying action reloadProcessId on app [dadjokes](ids: [ 0 ])
+[PM2] [dadjokes](0) ✓
+--> Success

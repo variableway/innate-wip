@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087391Z","level":"trace","level_index":0,"pid":336086,"thread":"60","name":"MyApp","message":"entered main function"}
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087409Z","level":"debug","level_index":1,"pid":336086,"thread":"60","name":"MyApp","message":"database query executed"}
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087414Z","level":"info","level_index":2,"pid":336086,"thread":"60","name":"MyApp","message":"server started on port 8080"}
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087415Z","level":"warn","level_index":3,"pid":336086,"thread":"60","name":"MyApp","message":"disk space is 95% full"}
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087416Z","level":"error","level_index":4,"pid":336086,"thread":"60","file":"main.rb","line":11,"name":"MyApp","message":"encountered an unexpected error while backing up database"}
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-08-30T09:05:11.087428Z","level":"fatal","level_index":5,"pid":336086,"thread":"60","file":"main.rb","line":12,"name":"MyApp","message":"application crashed"}

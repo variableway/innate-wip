@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{"environment":"dev","ip":"127.0.0.1","level":30,"msg":"Task completed successfully","pid":101999,"ssn":"407-01-2433","status":200,"time":1748506768}
+...

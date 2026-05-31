@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/knexjs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+
+==== All Books ====
+...
+JavaScript: The Good Parts by Douglas Crockford - $29.99
+Eloquent JavaScript by Marijn Haverbeke - $34.95
+You Don't Know JS by Kyle Simpson - $24.99

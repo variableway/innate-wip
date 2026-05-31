@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+An important thing to note from this output is the last line, which indicates
+that `kubectl` has been automatically configured to interact with your new
+Minikube cluster. 
+
+This means you can start using `kubectl` commands right away
+without additional configuration steps.
+
+### Configuration options
+
+While the basic start command works well for many use cases, Minikube provides
+numerous options to customize your cluster according to specific requirements.
+
+If you need to work with a particular version of Kubernetes, perhaps to ensure
+compatibility with a production environment or to test an application against a
+specific release, you can specify the version:

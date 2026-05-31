@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+[output]
+ log_line_prefix
+------------------
+ %m [%p] %q%u@%d
+(1 row)

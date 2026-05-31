@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+{
+  "name": "process_payment",
+  "duration_ms": 750,
+  "attributes": {}
+}

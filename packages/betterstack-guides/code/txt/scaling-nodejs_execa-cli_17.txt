@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/execa-cli/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+
+Setting up project...
+Git working directory not clean.

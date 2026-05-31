@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-skiplibcheck/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+npx tsc  3.83s user 0.30s system 190% cpu 2.173 total

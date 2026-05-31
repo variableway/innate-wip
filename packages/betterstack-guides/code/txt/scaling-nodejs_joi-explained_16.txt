@@ -1,0 +1,39 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/joi-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+
+Error object structure:
+{
+  "_original": {
+    "username": "j@",
+    "email": "invalid",
+    "age": 16
+  },
+  "details": [
+    {
+      "message": "\"username\" must only contain alpha-numeric characters",
+      "path": [
+        "username"
+      ],
+      "type": "string.alphanum",
+      "context": {
+        "label": "username",
+        "value": "j@",
+        "key": "username"
+      }
+    },
+    {
+      "message": "Username must have at least 3 characters",
+      "path": [
+        "username"
+      ],
+      "type": "stri...
+
+First error detail:
+- Path: username
+- Type: string.alphanum
+- Message: "username" must only contain alpha-numeric characters
+- Context: { label: 'username', value: 'j@', key: 'username' }

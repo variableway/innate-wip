@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+2025-05-30 06:51:29.959945549 +0000 file.logs: {"message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 124134, \"ssn\": \"407-01-2433\", \"timestamp\": 1748587889}"}
+2025-05-30 06:51:30.291452283 +0000 file.logs: {"message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Initialized application\", \"pid\": 125150, \"ssn\": \"407-01-2433\", \"timestamp\": 1748587890}"}
+2025-05-30 06:51:32.972080525 +0000 file.logs: {"message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 124134, \"ssn\": \"407-01-2433\", \"timestamp\": 1748587892}"}
+2025-05-30 06:51:33.301134577 +0000 file.logs: {"message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Connected to database\", \"pid\": 125150, \"ssn\": \"407-01-2433\", \"timestamp\": 1748587893}"}
+...

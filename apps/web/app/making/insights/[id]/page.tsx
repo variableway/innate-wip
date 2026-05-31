@@ -7,20 +7,17 @@ import { extractToc } from "@/lib/content/parser"
 import { ServerMarkdown } from "@/components/server-markdown"
 import { TableOfContents } from "@/components/table-of-contents"
 
-// Generate static params for all insights
 export function generateStaticParams() {
   return insights.map((insight) => ({
     id: insight.id,
   }))
 }
 
-interface InsightDetailPageProps {
-  params: Promise<{
-    id: string
-  }>
+interface Props {
+  params: Promise<{ id: string }>
 }
 
-export default async function InsightDetailPage({ params }: InsightDetailPageProps) {
+export default async function InsightDetailPage({ params }: Props) {
   const { id } = await params
   const insight = getInsightById(id)
 
@@ -68,9 +65,7 @@ export default async function InsightDetailPage({ params }: InsightDetailPagePro
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
-            {/* Markdown Content */}
             <ServerMarkdown content={content} />
-
             <aside>
               <TableOfContents headings={toc} />
             </aside>

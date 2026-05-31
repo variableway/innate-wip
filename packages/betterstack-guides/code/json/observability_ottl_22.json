@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+[output]
+2024-09-19T10:20:57.119Z      debug   ottl@v0.108.0/parser.go:394     condition evaluation result {
+[highlight]
+  "match": false,
+[/highlight]
+  "TransformContext": {
+    . . .
+    "log_record": {
+      . . .
+[highlight]
+      "body": "Feb 10 15:45:09 ubuntu-lts sshd[47341]: Failed password for root from 103.106.189.143 port 60824 ssh2",
+[/highlight]
+      . . .
+    },
+    "cache": {}
+  }
+}

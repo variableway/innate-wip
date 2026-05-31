@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+LOG:  connection received: host=[local]
+LOG:  connection authenticated: identity="postgres" method=peer (/etc/postgresql/15/main/pg_hba.conf:90)
+LOG:  connection authorized: user=postgres database=chinook application_name=psql
+LOG:  disconnection: session time: 0:00:08.602 user=postgres database=chinook host=[local]

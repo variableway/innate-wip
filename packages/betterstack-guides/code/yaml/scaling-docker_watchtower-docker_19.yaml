@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+[label docker-compose.yml]
+  custom-node:
+    image: yourusername/custom-node:v1
+    container_name: demo-custom-node

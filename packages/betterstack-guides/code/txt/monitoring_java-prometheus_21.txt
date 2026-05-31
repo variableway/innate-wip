@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+# HELP jvm_memory_used JVM memory currently used
+# TYPE jvm_memory_used gauge
+jvm_memory_used{unit="bytes"} 384716234

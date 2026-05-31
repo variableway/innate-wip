@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+"field1": { "a_key": 10 }

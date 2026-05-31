@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rspack-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 3
+
+rspack-demo/
+├── node_modules/
+├── public/
+├── src/
+│   ├── index.js
+│   └── style.css
+├── index.html
+├── package.json
+└── rspack.config.js

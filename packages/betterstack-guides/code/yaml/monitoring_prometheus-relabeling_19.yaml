@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+[label prometheus.yml]
+scrape_configs:
+  - job_name: 'my_services'
+    relabel_configs:
+      - source_labels: [service_id]
+        modulus: 5
+        target_label: __tmp_hashmod
+        action: hashmod
+      - source_labels: [__tmp_hashmod]
+[highlight]
+        regex: 0  # This Prometheus server will scrape services with remainder 0
+[/highlight]
+        action: keep

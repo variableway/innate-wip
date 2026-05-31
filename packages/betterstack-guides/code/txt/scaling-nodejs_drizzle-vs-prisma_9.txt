@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-vs-prisma/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+model User {
+  id      Int     @id @default(autoincrement())
+  posts   Post[]  // One-to-many relationship
+  profile Profile? // One-to-one relationship
+}
+
+model Post {
+  id       Int  @id @default(autoincrement())
+  author   User @relation(fields: [authorId], references: [id])
+  authorId Int
+}
+
+model Profile {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique
+}

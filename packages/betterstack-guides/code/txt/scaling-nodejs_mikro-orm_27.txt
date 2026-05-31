@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mikro-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+...
+[query] begin
+[query] delete from `books` where `id` in (4) [took 1 ms, 1 row affected]
+[query] commit
+Book deleted successfully
+[query] select count(*) as `count` from `books` as `b0` [took 1 ms]
+Total books after deletion: 3

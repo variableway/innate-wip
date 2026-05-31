@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+{
+  "timestamp": "2023-11-30T15:45:12.123Z",
+  "level": "info",
+  "message": "User login failed",
+  "user_id": "123456",
+  "username": "johndoe",
+  "session": {
+    "id": "abc123xyz",
+    "ip": "192.168.1.10",
+    "device": "iPhone 13, iOS 15.4",
+    "location": "New York, USA"
+  },
+  "service": {
+    "name": "UserAuthenticationService",
+    "version": "1.2.0",
+    "host": "auth-server-01"
+  },
+  "request": {
+    "path": "/login",
+    "status": 401,
+    "duration_ms": 200
+  }
+}

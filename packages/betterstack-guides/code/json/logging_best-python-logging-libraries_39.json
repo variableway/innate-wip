@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 39
+
+[output]
+{"msg": "a standalone message", "timestamp": 1690217318.2063951, "task_uuid": "500b06e6-c0ba-42b4-9d6c-466ea3f1634d", "task_level": [2], "message_type": "mymsg"}

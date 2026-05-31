@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 41
+
+sources:
+  apache_logs:
+    type: file
+    include:
+      - /var/log/apache2/*.log
+
+sinks:
+  betterstack:
+    type: http
+    method: post
+    inputs:
+      - apache_logs
+    uri: "https://<your_ingestion_host>/"
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+      token: "<your_source_token>"

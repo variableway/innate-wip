@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+[{"date":1748597021.737611,"hostname":"99364cec02ec","ip":"REDACTED","status":"200","level":"30","msg":"Connected to database","pid":"134450","is_successful":"true","timestamp":"2025-05-30T09:23:41Z","ssn":"REDACTED"}]
+...
+[{"date":1748597030.778092,"hostname":"99364cec02ec","ip":"REDACTED","status":"200","level":"30","msg":"Initialized application","pid":"134450","is_successful":"true","timestamp":"2025-05-30T09:23:50Z","ssn":"REDACTED"}]

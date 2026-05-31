@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+timestamp=2023-07-12T11:34:53.007127029+02:00 level=info message="fetching random quote" app=myapp env=prod
+timestamp=2023-07-12T11:34:54.013085863+02:00 level=info message="fetching random quote" app=myapp duration=1005 env=prod

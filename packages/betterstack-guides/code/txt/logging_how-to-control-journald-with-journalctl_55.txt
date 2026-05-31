@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: txt
+# Normalized: txt
+# Block index: 55
+
+[output]
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000001705f4-0005d7c8815c6001.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-000000000018a118-0005d7ccffbf428b.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000001a39bc-0005d7d1621e9d0e.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000001bd232-0005d7d5977c6dd9.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000001d6237-0005d7d9614516c8.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000001ef1f4-0005d7dd2e4431c9.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-00000000002081d7-0005d7e0f8261d1a.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-000000000022130a-0005d7e4c5032aa2.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-000000000023ac43-0005d7e9129c10c1.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-000000000025457d-0005d7ecc6945d7e.journal (128.0M).
+Deleted archived journal /var/log/journal/cee31bed2e414d19ab394c074b55b354/system@d96f9da5333a4e1d8394272215ea1917-000000000026d5ce-0005d7f0c66f8cfe.journal (128.0M).
+Vacuuming done, freed 1.3G of archived journals from /var/log/journal/cee31bed2e414d19ab394c074b55b354.
+Vacuuming done, freed 0B of archived journals from /run/log/journal.
+Vacuuming done, freed 0B of archived journals from /var/log/journal.

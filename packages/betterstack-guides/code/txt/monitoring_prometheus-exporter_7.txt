@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+. . .
+# HELP nginx_connections_active Active client connections
+# TYPE nginx_connections_active gauge
+nginx_connections_active 1
+
+# HELP nginx_connections_handled Handled client connections
+# TYPE nginx_connections_handled counter
+nginx_connections_handled 3
+
+# HELP nginx_http_requests_total Total HTTP requests
+# TYPE nginx_http_requests_total counter
+nginx_http_requests_total 30
+. . .

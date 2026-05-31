@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+. . .
+2024-08-12 12:11:51.257 UTC [1] LOG:  database system is ready to accept connections

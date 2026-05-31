@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+event.name="successful login" context.username=root

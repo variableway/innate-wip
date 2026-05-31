@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bullmq-scheduled-tasks/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[label .env]
+HEARTBEAT_URL='<your_heartbeat_url>'

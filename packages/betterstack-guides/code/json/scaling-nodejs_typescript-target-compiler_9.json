@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-target-compiler/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+[highlight]
+    "target": "ES2017",
+    "module": "nodenext",
+[/highlight]
+    "outDir": "./dist",
+    "strict": true
+  }
+}

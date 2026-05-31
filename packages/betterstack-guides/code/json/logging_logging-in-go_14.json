@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 14
+
+[output]
+{
+  "time": "2023-03-15T13:15:29.956566795+01:00",
+  "level": "INFO",
+  "msg": "incoming request",
+  "method": "GET",
+  [highlight]
+  "!BADKEY": "time_taken_ms"
+  [/highlight]
+}

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 29
+
+type: S3
+config:
+  bucket: "thanos"
+  endpoint: "minio:9000"
+  access_key: "access-key"
+  secret_key: "secret-key"
+  insecure: true

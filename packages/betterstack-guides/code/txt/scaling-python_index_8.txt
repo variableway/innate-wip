@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-python/index/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Starting failing task
+Starting long task
+Long task: iteration 0
+Long task: iteration 1
+Long task was cancelled
+  + Exception Group Traceback (most recent call last):
+...
+    | ValueError: Simulated error

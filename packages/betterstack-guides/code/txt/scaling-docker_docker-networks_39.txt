@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+Server:    127.0.0.11
+Address 1: 127.0.0.11
+
+Name:      db_container
+Address 1: 172.18.0.3

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+8cc2f57070e04be1add3b66fa8ce785f1d620e47972b2c4210aab4d3c3fd1f40

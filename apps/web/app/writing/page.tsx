@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { getWritingMeta, getWriting, extractToc } from "@/lib/content"
-import { WritingPageClient } from "@/components/writing/writing-page-client"
+import { BlogPageClient } from "@/components/writing/blog-page-client"
 
 export const metadata: Metadata = {
   title: "Writing | Innate",
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 export default async function WritingPage() {
   const postsMeta = await getWritingMeta({ status: "published" })
 
-  // Load full content for each post
   const postsWithContent = await Promise.all(
     postsMeta.map(async (meta) => {
       const post = await getWriting(meta.slug)
@@ -30,9 +29,10 @@ export default async function WritingPage() {
         author: meta.author,
         content: post?.content || "",
         toc,
+        type: meta.type,
       }
     })
   )
 
-  return <WritingPageClient posts={postsWithContent} />
+  return <BlogPageClient posts={postsWithContent} />
 }

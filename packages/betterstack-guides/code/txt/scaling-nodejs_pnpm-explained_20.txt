@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pnpm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+Packages: -1
+-
+Progress: resolved 330, reused 330, downloaded 0, added 0, done
+
+dependencies:
+- lodash 4.17.21
+
+Done in 526ms using pnpm v10.6.4

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parsing-csv-files-with-papa-parse/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[label employees.csv] 
+id,name,department,salary
+1,John Smith,Engineering,75000
+2,Sara Johnson,Marketing,82000
+3,Michael Brown,Finance,95000

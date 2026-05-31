@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 6
+
+livenessProbe:
+  grpc:
+    port: 9000
+    service: Health
+  initialDelaySeconds: 10
+  periodSeconds: 10

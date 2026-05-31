@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-clustering/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+[PM2] Starting /home/stanley/scaling-nodejs/index.js in cluster_mode (0 instance)
+[PM2] Done.
+┌────┬──────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name     │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼──────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ index    │ default     │ 1.0.0   │ cluster │ 112344   │ 0s     │ 0    │ online    │ 0%       │ 51.2mb   │ stanley  │ disabled │
+│ 1  │ index    │ default     │ 1.0.0   │ cluster │ 112351   │ 0s     │ 0    │ online    │ 0%       │ 49.2mb   │ stanley  │ disabled │
+│ 2  │ index    │ default     │ 1.0.0   │ cluster │ 112362   │ 0s     │ 0    │ online    │ 0%       │ 47.0mb   │ stanley  │ disabled │
+│ 3  │ index    │ default     │ 1.0.0   │ cluster │ 112373   │ 0s     │ 0    │ online    │ 0%       │ 37.7mb   │ stanley  │ disabled │
+└────┴──────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

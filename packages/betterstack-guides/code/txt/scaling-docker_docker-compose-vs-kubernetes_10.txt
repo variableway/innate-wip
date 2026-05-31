@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+NAME          TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
+kubernetes    ClusterIP      10.96.0.1       <none>         443/TCP        1h
+web-service   LoadBalancer   10.96.45.123    203.0.113.10   80:30123/TCP   30s

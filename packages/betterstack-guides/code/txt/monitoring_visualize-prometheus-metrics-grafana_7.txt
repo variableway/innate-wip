@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/visualize-prometheus-metrics-grafana/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+[+] Running 3/3
+ ✔ Container node-exporter  Running                        0.0s
+ ✔ Container prometheus     Running                        0.0s
+[highlight]
+ ✔ Container grafana        Started                        0.5s
+[/highlight]

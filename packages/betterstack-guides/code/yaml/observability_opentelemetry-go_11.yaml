@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-go/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 11
+
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: go-image-upload-collector:4318

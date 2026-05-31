@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[output]
+{"level":"info","time":"2022-08-31T21:20:04+01:00","caller":"/home/user/dev/main.go:12","message":"info message"}
+{"level":"debug","username":"joshua","time":"2022-08-31T21:20:04+01:00","caller":"/home/user/dev/main.go:13"}

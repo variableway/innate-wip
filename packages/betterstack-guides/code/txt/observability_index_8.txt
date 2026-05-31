@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/observability/index/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+2024-10-14T15:33:35.870+0100    info    service@v0.111.0/service.go:136 Setting up own telemetry...
+2024-10-14T15:33:35.870+0100    info    telemetry/metrics.go:70 Serving metrics {"address": "localhost:8888", "metrics level": "Normal"}
+2024-10-14T15:33:35.872+0100    info    service@v0.111.0/service.go:208 Starting otelcol-custom...      {"Version": "0.1.0", "NumCPU": 16}
+2024-10-14T15:33:35.872+0100    info    extensions/extensions.go:39     Starting extensions...
+2024-10-14T15:33:35.872+0100    info    extensions/extensions.go:42     Extension is starting...        {"kind": "extension", "name": "health_check"}
+2024-10-14T15:33:35.872+0100    info    healthcheckextension@v0.111.0/healthcheckextension.go:33        Starting health_check extension {"kind": "extension", "name": "health_check", "config"
+: {"Endpoint":"localhost:13133","TLSSetting":null,"CORS":null,"Auth":null,"MaxRequestBodySize":0,"IncludeMetadata":false,"ResponseHeaders":null,"CompressionAlgorithms":null,"ReadTimeout":0,"
+ReadHeaderTimeout":0,"WriteTimeout":0,"IdleTimeout":0,"Path":"/","ResponseBody":null,"CheckCollectorPipeline":{"Enabled":false,"Interval":"5m","ExporterFailureThreshold":5}}}
+2024-10-14T15:33:35.873+0100    info    extensions/extensions.go:59     Extension started.      {"kind": "extension", "name": "health_check"}
+2024-10-14T15:33:35.873+0100    warn    internal@v0.111.0/warning.go:40 Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attac
+ks.     {"kind": "receiver", "name": "otlp", "data_type": "traces", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safe
+guards-against-denial-of-service-attacks"}
+2024-10-14T15:33:35.873+0100    info    otlpreceiver@v0.111.0/otlp.go:169       Starting HTTP server    {"kind": "receiver", "name": "otlp", "data_type": "traces", "endpoint": "0.0.0.0:4318"
+}
+2024-10-14T15:33:35.873+0100    info    healthcheck/handler.go:132      Health Check state change       {"kind": "extension", "name": "health_check", "status": "ready"}
+2024-10-14T15:33:35.873+0100    info    service@v0.111.0/service.go:234 Everything is ready. Begin running and processing data.

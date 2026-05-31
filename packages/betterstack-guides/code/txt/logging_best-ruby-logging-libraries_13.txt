@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+2023-08-30 10:55:45.703627 T [303347:60] MyApp -- entered main function
+2023-08-30 10:55:45.703640 D [303347:60] MyApp -- database query executed
+2023-08-30 10:55:45.703645 I [303347:60] MyApp -- server started on port 8080
+2023-08-30 12:02:37.277804 W [303347:60] MyApp -- disk space is 95% full
+2023-08-30 10:55:45.703648 E [303347:60 main.rb:11] MyApp -- encountered an unexpected error while backing up database
+2023-08-30 10:55:45.703658 F [303347:60 main.rb:12] MyApp -- application crashed

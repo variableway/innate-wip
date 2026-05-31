@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 56
+
+[label registry-deployment.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: my-app
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: my-app
+ template:
+   metadata:
+     labels:
+       app: my-app
+   spec:
+     containers:
+     - name: my-app
+       image: localhost:5000/my-app:latest

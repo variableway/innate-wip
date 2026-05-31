@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parsing-csv-files-with-papa-parse/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+File opened
+Got chunk: { id: 1, name: 'John Smith', department: 'Engineering', salary: 75000 }
+Got chunk: { id: 2, name: 'Sara Johnson', department: 'Marketing', salary: 82000 }
+Got chunk: { id: 3, name: 'Michael Brown', department: 'Finance', salary: 95000 }
+File data event
+File ended
+Parse stream finished

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-optional-properties/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+src/problem.ts:8:23 - error TS18048: 'user.phone' is possibly 'undefined'.
+
+8   const phoneNumber = user.phone.replace(/-/g, "");
+                        ~~~~~~~~~~
+
+
+Found 1 error in src/problem.ts:8

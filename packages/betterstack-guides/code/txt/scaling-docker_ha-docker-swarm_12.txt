@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+Swarm initialized: current node (9r83zto8qpqiazt6slxfkjypq) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    [highlight]
+    docker swarm join --token <token> <manager_1_server_ip>:<port>
+    [/highlight]
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.

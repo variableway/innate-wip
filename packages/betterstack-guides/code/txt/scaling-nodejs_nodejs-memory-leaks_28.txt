@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+INFO Requests: 0 (0%), requests per second: 0, mean latency: 0 ms
+INFO Requests: 1817 (26%), requests per second: 364, mean latency: 2.8 ms
+INFO Requests: 3367 (48%), requests per second: 310, mean latency: 3.1 ms
+INFO Requests: 4689 (67%), requests per second: 264, mean latency: 3.7 ms
+INFO Requests: 5802 (83%), requests per second: 223, mean latency: 4.4 ms
+INFO Requests: 6779 (97%), requests per second: 195, mean latency: 5 ms
+INFO
+INFO Target URL:          http://localhost:3000/
+INFO Max requests:        7000
+INFO Concurrency level:   1
+INFO Agent:               keepalive
+INFO
+INFO Completed requests:  7000
+INFO Total errors:        0
+INFO Total time:          26.827927721000002 s
+INFO Requests per second: 261
+INFO Mean latency:        3.7 ms
+INFO
+INFO Percentage of the requests served within a certain time
+INFO   50%      3 ms
+INFO   90%      4 ms
+INFO   95%      5 ms
+INFO   99%      8 ms
+INFO  100%      436 ms (longest request)

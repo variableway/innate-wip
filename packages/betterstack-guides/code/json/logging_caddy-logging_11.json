@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{"level":"info","ts":1739088509.125909,"logger":"http.log.access","msg":"handled request","request":{"remote_ip":"172.17.0.1","remote_port":"52492","client_ip":"172.17.0.1","proto":"HTTP/1.1
+","method":"GET","host":"localhost","uri":"/","headers":{"User-Agent":["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"],"Sec-Fetch-Mod
+e":["navigate"],"Sec-Fetch-Dest":["document"],"If-Modified-Since":["Fri, 06 Sep 2024 23:18:01 GMT"],"Accept-Language":["en-US,en;q=0.9"],"Connection":["keep-alive"],"Sec-Ch-Ua":["\"Not A(Bra
+nd\";v=\"8\", \"Chromium\";v=\"132\""],"Sec-Ch-Ua-Platform":["\"Linux\""],"Upgrade-Insecure-Requests":["1"],"Sec-Fetch-User":["?1"],"Accept-Encoding":["gzip, deflate, br, zstd"],"Cookie":["R
+EDACTED"],"Cache-Control":["max-age=0"],"Sec-Ch-Ua-Mobile":["?0"],"Accept":["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/sign
+ed-exchange;v=b3;q=0.7"],"Sec-Fetch-Site":["none"],"If-None-Match":["\"d3zl2qa5ottsedi\""]}},"bytes_read":0,"user_id":"","duration":0.003175926,"size":0,"status":304,"resp_headers":{"Etag":[
+"\"d3zl2qa5ottsedi\""],"Server":["Caddy"],"Vary":["Accept-Encoding"]}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+[2025-05-28 16:49:48,499] WARNING in app: A warning message.

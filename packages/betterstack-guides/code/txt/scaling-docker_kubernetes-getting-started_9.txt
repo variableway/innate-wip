@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Client Version: v1.32.3
+Kustomize Version: v5.5.0

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label package.json]
+{
+  "name": "yarn-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: json
+# Normalized: json
+# Block index: 29
+
+[output]
+{"@timestamp":"2023-04-19T19:22:45.516Z","ecs.version":"1.2.0","log.level":"ERROR","message":"An exception has been caught.","process.thread.name":"main","log.logger":"org.example.Main","error.type":"java.lang.ArrayIndexOutOfBoundsException","error.message":"Index 10 out of bounds for length 3","error.stack_trace":"java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 3\n\tat org.example.Main.main(Main.java:19)\n"}

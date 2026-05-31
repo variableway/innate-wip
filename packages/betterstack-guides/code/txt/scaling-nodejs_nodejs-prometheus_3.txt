@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+> nodejs-prometheus-demo@1.0.0 dev
+> nodemon
+
+[nodemon] 3.1.3
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+Connection with SQLite has been established
+{"level":30,"time":1718533820757,"pid":14043,"hostname":"MACOOKs-MBP","msg":"Server listening at http://[::1]:3000"}
+{"level":30,"time":1718533820758,"pid":14043,"hostname":"MACOOKs-MBP","msg":"Server listening at http://127.0.0.1:3000"}
+server listening on 3000

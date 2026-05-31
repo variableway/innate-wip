@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/sensitive-data/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+{"message": "A user just logged in.", "username": "jack", "password": "[REDACTED]"}

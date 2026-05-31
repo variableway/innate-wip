@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 15
+
+[label alertmanager.yml]
+route:
+  routes:
+    - receiver: 'betterstack'
+      matchers:
+      - severity="critical"
+      group_wait: 10s # Quicker notification for critical alerts.
+      group_interval: 2m
+      repeat_interval: 15m

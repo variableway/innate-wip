@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+2025-01-28 15:47:10.416653 I [1330085:60] MyApp -- Info message
+2025-01-28 15:47:10.416689 W [1330085:60] MyApp -- Warning message
+2025-01-28 15:47:10.416699 E [1330085:60 main.rb:16] MyApp -- Error message
+2025-01-28 15:47:10.416724 F [1330085:60 main.rb:17] MyApp -- Fatal message

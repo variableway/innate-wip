@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 40
+
+[label docker-compose.yaml]
+version: '3'
+
+name: caddy-tutorial
+
+services:
+  caddy:
+    container_name: caddy
+    image: caddy
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./dist:/usr/share/caddy
+[highlight]
+  vector:
+    container_name: vector
+    image: timberio/vector:0.34.0-alpine
+    restart: always
+    volumes:
+      - ./vector.yaml:/etc/vector/vector.yaml
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+[/highlight]
+
+volumes:
+  caddy-config:
+  caddy-data:

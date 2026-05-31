@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+...
+app.py:7:1: ANN001 [*] Missing type annotation for function argument `a`
+app.py:7:1: ANN001 [*] Missing type annotation for function argument `b`
+app.py:7:1: ANN201 [*] Missing return type annotation for function
+...
+app.py:29:1: ANN001 [*] Missing type annotation for function argument `items`
+app.py:29:1: ANN201 [*] Missing return type annotation for function
+Found 9 errors.
+[*] 9 fixable with the `--fix` option.

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+{"message":"Username eric is not long enough.","context":{},"level":400,"level_name":"ERROR","channel":"exceptions","datetime":"2022-08-01T22:16:24.605838+02:00","extra":{}}

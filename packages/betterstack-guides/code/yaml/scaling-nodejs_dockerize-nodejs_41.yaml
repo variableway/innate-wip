@@ -1,0 +1,70 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 41
+
+[label docker-compose.yml]
+services:
+  app:
+    build:
+      context: .
+    container_name: url-shortener-app
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      LOG_LEVEL: ${LOG_LEVEL}
+      PORT: ${PORT}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+    env_file:
+     - ./.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - url-shortener
+
+  caddy:
+    image: caddy:alpine
+    container_name: url-shortener-caddy-server
+    depends_on:
+      - app
+    ports:
+      - 80:80
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - url-shortener
+
+  postgres:
+    image: postgres:alpine
+    restart: always
+    container_name: url-shortener-db
+    env_file:
+     - ./.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: [CMD-SHELL, "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - url-shortener
+
+volumes:
+  pg-data:
+  caddy-config:
+  caddy-data:
+
+networks:
+  url-shortener:

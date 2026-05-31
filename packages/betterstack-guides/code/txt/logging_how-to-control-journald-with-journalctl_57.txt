@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 57
+
+[label /etc/systemd/journad.conf]
+[Journal]
+Compress=yes
+SystemMaxUse=5G
+RuntimeMaxUse=1G
+SystemKeepFree=10%
+RuntimeKeepFree=15%
+SystemMaxFileSize=100M
+RuntimeMaxFileSize=50M
+SystemMaxFiles=100
+RuntimeMaxFiles=50

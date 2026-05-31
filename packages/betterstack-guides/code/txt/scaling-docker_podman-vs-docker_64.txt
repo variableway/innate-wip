@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 64
+
+[output]
+CONTAINER ID  IMAGE                               COMMAND               CREATED        STATUS            PORTS                 NAMES
+980f5792fb9c  docker.io/library/wordpress:latest  apache2-foregroun...  3 minutes ago  Up 3 minutes ago  0.0.0.0:8080->80/tcp  wordpress
+21615c3d3623  docker.io/library/mysql:5.7         mysqld                2 minutes ago  Up 2 minutes ago                        db

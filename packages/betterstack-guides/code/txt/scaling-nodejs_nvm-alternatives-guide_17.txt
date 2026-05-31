@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-alternatives-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[label .node-version]
+16.13.0

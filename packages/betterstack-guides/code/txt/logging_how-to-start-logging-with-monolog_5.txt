@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+[2022-07-12T01:01:11.444566+02:00] daily.DEBUG: This file has been executed. [] []

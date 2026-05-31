@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{
+  "log_record": {
+    "attributes": {
+      "log.record.original": "Feb 10 15:45:09 ubuntu-lts sshd[47341]: Failed password for root from 103.106.189.143 port 60824 ssh2"
+    }
+  }
+}

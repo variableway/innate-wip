@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/sre-golden-signals/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 10
+
+- alert: HighConnectionPoolSaturation
+  expr: avg(db_connection_pool_usage_ratio) > 0.8
+  for: 5m
+  labels:
+    severity: warning
+  annotations:
+    summary: "Connection pool nearing capacity"
+    description: "Database connection pool usage is above 80% for 5 minutes"

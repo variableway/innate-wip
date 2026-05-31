@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+{
+  "level": 50,
+  "time": 1703627326917,
+  "pid": 228875,
+  "hostname": "fedora",
+  "err": {
+    "type": "Error",
+    "message": "processing error",
+    "stack": "Error: processing error\n    at alwaysThrowError (file:///home/ayo/dev/betterstack/demo/nodejs-logging/index.js:6:9)\n    at file:///home/ayo/dev/betterstack/demo/nodejs-logging/index.js:10:3\n    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)\n    at async loadESM (node:internal/process/esm_loader:34:7)\n    at async handleMainPromise (node:internal/modules/run_main:113:12)"
+  },
+  "msg": "An unexpected error occurred while processing the request"
+}

@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 4
+
+[output]
+peter    :1           Sat Mar 13 08:06   still logged in
+reboot   system boot  Sat Mar 13 08:06   still running
+peter    :1           Fri Mar 12 07:42 - down  (1+00:22)
+reboot   system boot  Fri Mar 12 07:42 - 08:05 (1+00:23)
+peter    :1           Sun Mar  7 11:20 - down  (4+20:21)
+reboot   system boot  Sun Mar  7 11:20 - 07:41 (4+20:21)
+peter    :1           Fri Mar  5 08:02 - crash (2+03:17)
+reboot   system boot  Fri Mar  5 08:01 - 07:41 (6+23:39)
+peter    :0           Tue Mar  2 08:38 - crash (2+23:23)
+reboot   system boot  Tue Mar  2 08:38 - 07:41 (9+23:03)
+peter    :1           Thu Feb 25 11:44 - down  (4+20:53)
+reboot   system boot  Thu Feb 25 11:44 - 08:37 (4+20:53)
+
+wtmp begins Thu Feb 25 11:43:23 2021

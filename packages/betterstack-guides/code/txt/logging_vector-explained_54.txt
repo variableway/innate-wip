@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[label log-processing-stack/vector/vector.yaml]
+[highlight]
+api:
+  enabled: true
+  address: "0.0.0.0:8686"
+[/highlight]
+sources:
+  bash_logs:
+    type: "docker_logs"
+    include_images:
+      - "logify:latest"
+  
+  nginx_logs:
+    type: "docker_logs"
+    include_images:
+      - "betterstackcommunity/nginx-helloworld:latest"
+  
+  vector_logs:
+    type: "internal_logs"
+# ... rest of configuration

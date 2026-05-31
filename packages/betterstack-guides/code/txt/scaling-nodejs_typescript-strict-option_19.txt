@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+Alice (alice@example.com) - 555-0100
+Bob (bob@example.com)
+No user provided
+alice@example.com
+no-email@example.com
+Alice (alice@example.com) - 555-0100
+Bob (bob@example.com)
+No users to process

@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 43
+
+Now any changes you make to files in your local ~/projects/myapp directory will
+be immediately visible when accessing the NGINX server in your pod. This
+bidirectional mount significantly accelerates the development cycle by
+eliminating the need to rebuild and redeploy containers for every code change.
+
+## Advanced Minikube features
+
+As you become more comfortable with Minikube, you can leverage its advanced
+features to manage more complex development scenarios, test against different
+Kubernetes versions, and extend its functionality.
+
+### Working with multiple profiles
+
+Minikube's profile feature allows you to run multiple Kubernetes clusters side
+by side on the same machine. This is particularly useful for testing
+applications across different Kubernetes versions or with different
+configurations.
+
+To create a new profile, you can use the -p or --profile flag when starting
+Minikube:

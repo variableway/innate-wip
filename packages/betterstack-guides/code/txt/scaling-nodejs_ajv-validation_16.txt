@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ajv-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Validation errors: [
+  {
+    instancePath: '/name',
+    schemaPath: '#/properties/name/minLength',
+    keyword: 'minLength',
+    params: { limit: 2 },
+    message: 'must NOT have fewer than 2 characters'
+  },
+  {
+    instancePath: '/age',
+    schemaPath: '#/properties/age/minimum',
+    keyword: 'minimum',
+    params: { comparison: '>=', limit: 1 },
+    message: 'must be >= 1'
+  },
+  {
+    instancePath: '/email',
+    schemaPath: '#/properties/email/format',
+    keyword: 'format',
+    params: { format: 'email' },
+    message: 'must match format "email"'
+  }
+]

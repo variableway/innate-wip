@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/logging-metrics-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+127.0.0.1 alice Alice [06/May/2021:11:26:42 +0200] "GET / HTTP/1.1" 200 3477

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+2023-05-14T20:42:39.137+0100    INFO    zap/main.go:12  Hello from Zap logger!

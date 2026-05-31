@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[output]
+{"time":"2023-09-14T11:49:17.671587229+02:00","level":"INFO","msg":"an info message"}

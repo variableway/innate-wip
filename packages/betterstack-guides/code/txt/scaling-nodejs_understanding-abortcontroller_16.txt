@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Press Enter to abort the fetch operation:
+Fetching data...
+Operation timed out after 5 ms

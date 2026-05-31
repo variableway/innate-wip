@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-file-uploads/
+# Original language: json
+# Normalized: json
+# Block index: 10
+
+{
+  "success": true,
+  "filename": "test-file.txt",
+  "mimetype": "text/plain",
+  "encoding": "7bit",
+  "path": "/Users/your_username/fastify-file-uploads/uploads/test-file.txt"
+}

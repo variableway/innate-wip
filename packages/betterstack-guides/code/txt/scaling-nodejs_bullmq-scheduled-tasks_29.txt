@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bullmq-scheduled-tasks/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-12-21 15:06:09 UTC; 51s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 8684 (mongod)
+     Memory: 73.0M
+        CPU: 1.378s
+     CGroup: /system.slice/mongod.service
+             └─8684 /usr/bin/mongod --config /etc/mongod.conf

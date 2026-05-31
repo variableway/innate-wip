@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-clustering/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+[PM2] Applying action deleteProcessId on app [all](ids: [ 0, 1, 2, 3 ])
+[PM2] [index](1) ✓
+[PM2] [index](0) ✓
+[PM2] [index](2) ✓
+[PM2] [index](3) ✓
+┌────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+└────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

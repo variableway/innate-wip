@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 20
+
+[label redis-deployment.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: redis
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: redis
+ template:
+   metadata:
+     labels:
+       app: redis
+   spec:
+     containers:
+     - name: redis
+       image: redis:latest

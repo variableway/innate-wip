@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 48
+
+This command creates a cluster running Kubernetes version 1.24.0 specifically.
+This capability is valuable for ensuring that your applications work correctly
+with the Kubernetes version used in production, or for testing compatibility
+with upcoming versions before upgrading your production environment.
+
+You can also use different Kubernetes versions in different profiles, allowing
+you to maintain multiple clusters with various versions simultaneously:

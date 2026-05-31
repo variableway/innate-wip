@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 15
+
+[label compose.yaml]
+. . .
+services:
+  notification-engine:
+    image: notification-engine:0.1.0
+    build:
+      context: notification-engine
+      dockerfile: ../Dockerfile
+    environment:
+      <<: *aws-settings
+      CMS_API_URL: http://cms
+      OTEL_SERVICE_NAME: notification-engine
+[highlight]
+      OTEL_LOGS_EXPORTER: otlp
+      OTEL_LOGS_PROCESSOR: simple
+[/highlight]
+      SQS_RECEIVE_INTERVAL: 3
+. . .

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+*
+ * @param {number} a - The first number to add.
+ * @param {number} b - The second number to add.
+ * @returns {number} The sum of the two numbers.
+ */
+export function add(a, b) {
+  return a + b;
+}

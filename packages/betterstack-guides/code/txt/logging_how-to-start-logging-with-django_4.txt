@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[label .env]
+OPEN_WEATHER_API_KEY=<api key>

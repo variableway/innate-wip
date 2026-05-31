@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Testing: Admin without permissions
+✗ Invalid
+  - permissions: Permissions are required for admin users
+
+Testing: Regular user with permissions
+✗ Invalid
+  - permissions: Permissions are only allowed for admin users
+
+Testing: Valid admin
+✓ Valid

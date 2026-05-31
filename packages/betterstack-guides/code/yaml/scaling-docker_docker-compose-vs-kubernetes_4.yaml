@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+[label service.yaml]
+apiVersion: v1
+kind: Service
+metadata:
+ name: web-service
+spec:
+ selector:
+   app: web
+ ports:
+ - port: 80
+   targetPort: 80
+ type: LoadBalancer

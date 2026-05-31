@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/best-practices-alert-fatigue/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+alert: LowDiskSpace
+expr: node_filesystem_free_bytes / node_filesystem_size_bytes < 0.1
+labels:
+  service: my_critical_app

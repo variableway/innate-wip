@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+/var/lib/docker/containers/<container-id>/<container-id>-json.log

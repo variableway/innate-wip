@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-tuple-types/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+src/problem.ts:19:44 - error TS2345: Argument of type '[number, number, number]' is not assignable to parameter of type '[number, number]'.
+  Source has 3 element(s) but target allows only 2.
+
+19 console.log("Bad distance 1:", calculateDistance(badPoint1));
+                                                    ~~~~~~~~~~
+
+src/problem.ts:20:44 - error TS2345: Argument of type '[number]' is not assignable to parameter of type '[number, number]'.
+  Source has 1 element(s) but target requires 2.
+
+20 console.log("Bad distance 2:", calculateDistance(badPoint2));
+                                                    ~~~~~~~~~~
+
+
+Found 2 errors in the same file, starting at: src/problem.ts:19

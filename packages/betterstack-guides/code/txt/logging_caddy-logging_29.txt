@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+/api/user?secret_code=[REDACTED]&email_address=f0e4c2f7

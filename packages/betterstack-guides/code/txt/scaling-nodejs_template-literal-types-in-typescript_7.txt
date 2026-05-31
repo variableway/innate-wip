@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/template-literal-types-in-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+src/problem.ts:8:7 - error TS2322: Type '"api/users"' is not assignable to type '`/api/${string}`'.
+
+8 const badPath: ApiPath = "api/users"; // Missing leading slash - no error!
+        ~~~~~~~
+
+src/problem.ts:9:7 - error TS2322: Type '"primary-btn"' is not assignable to type '`btn-${string}`'.
+
+9 const badClass: CssClass = "primary-btn"; // Wrong prefix - no error!
+        ~~~~~~~~
+
+
+Found 2 errors in the same file, starting at: src/problem.ts:8

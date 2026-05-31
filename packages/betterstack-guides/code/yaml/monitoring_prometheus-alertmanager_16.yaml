@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 16
+
+[label alertmanager.yml]
+receivers:
+  - name: 'betterstack'
+    webhook_configs:
+      - url: '<webhook_url>'
+
+  - name: 'frontend-email'
+    email_configs:
+    - to: <example2@gmail.com>
+      from: <example@gmail.com>
+      smarthost: smtp.gmail.com:587
+      auth_username: <example@gmail.com>
+      auth_identity: <example@gmail.com>
+      auth_password: <app_password>
+      send_resolved: true

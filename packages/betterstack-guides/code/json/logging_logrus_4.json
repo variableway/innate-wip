@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[output]
+{"level":"info","msg":"Hello from the global Logrus logger!","time":"2025-03-09T10:11:57+01:00"}
+{"level":"debug","msg":"This debug message will now be visible","time":"2025-03-09T10:11:57+01:00"}

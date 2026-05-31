@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sequelize-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Executing (default): SELECT 1+1 AS result
+Connection has been established successfully.
+Executing (default): DROP TABLE IF EXISTS `books`;
+Executing (default): PRAGMA foreign_keys = OFF
+Executing (default): DROP TABLE IF EXISTS `books`;
+Executing (default): PRAGMA foreign_keys = ON
+Executing (default): DROP TABLE IF EXISTS `books`;
+Executing (default): CREATE TABLE IF NOT EXISTS `books` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` VARCHAR(200) NOT NULL, `author` VARCHAR(100) NOT NULL, `price` DECIMAL(10,2), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);
+Executing (default): PRAGMA INDEX_LIST(`books`)
+Database tables created successfully!

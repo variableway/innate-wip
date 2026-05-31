@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vitejs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+  VITE v6.3.5  ready in 180 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help

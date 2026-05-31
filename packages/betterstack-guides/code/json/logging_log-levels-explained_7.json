@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-06-05T22:59:17.869874Z","level":"info","level_index":2,"pid":3824579,"thread":"60","name":"MyApp","message":"API request to /api/v1/users completed successfully","payload":{"method":"GET","status_code":200,"elapsed_ms":212,"endpoint":"/api/v1/users"}}

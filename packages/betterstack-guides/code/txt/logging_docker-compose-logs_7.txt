@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/docker-compose-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+vector-demo  | {
+vector-demo  |   "appname": "shaneIxD",
+vector-demo  |   "facility": "ntp",
+vector-demo  |   "hostname": "up.lc",
+vector-demo  |   "message": "You're not gonna believe what just happened",
+vector-demo  |   "msgid": "ID628",
+vector-demo  |   "procid": 6363,
+vector-demo  |   "severity": "notice",
+vector-demo  |   "timestamp": "2024-12-27T11:25:08.084Z",
+vector-demo  |   "version": 2
+vector-demo  | }
+vector-demo  | {
+vector-demo  |   "appname": "CrucifiX",
+vector-demo  |   "facility": "lpr",
+vector-demo  |   "hostname": "make.ltd",
+vector-demo  |   "message": "We're gonna need a bigger boat",
+vector-demo  |   "msgid": "ID562",
+vector-demo  |   "procid": 9048,
+vector-demo  |   "severity": "info",
+vector-demo  |   "timestamp": "2024-12-27T11:25:09.084Z",
+vector-demo  |   "version": 2
+vector-demo  | }

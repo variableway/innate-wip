@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 38
+
+[label docker-compose.yml]
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --schedule "0 0 * * 0" demo-ubuntu demo-nginx

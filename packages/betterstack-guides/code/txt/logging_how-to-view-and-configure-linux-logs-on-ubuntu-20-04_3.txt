@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 3
+
+[output]
+NAME   LINE         TIME             COMMENT
+george pts/0        2021-03-21 15:29 (2001:67c:1220:80c:b1:a84e:69ee:f530)
+willie pts/1        2021-03-21 07:20 (adsl-dyn22.78-98-29.t-com.sk)
+bonnie pts/2        2021-03-21 10:31 (2001:67c:1220:80c:b1:a84e:69ee:f530)
+peter  pts/6        2021-03-21 14:37 (100.64.97.50)
+...

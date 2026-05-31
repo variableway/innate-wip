@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+[output]
+{"level":30,"time":1687675301170,"pid":2376870,"hostname":"fedora","msg":"Hello from Pino logger"}

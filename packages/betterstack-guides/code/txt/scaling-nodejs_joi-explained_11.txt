@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/joi-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Validation errors:
+- Username must have at least 3 characters
+- Please provide a valid email address
+- You must be at least 18 years old

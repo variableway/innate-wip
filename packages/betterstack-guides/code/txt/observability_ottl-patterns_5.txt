@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+Apr 15 12:34:56 server1 sshd[12345]: Failed password for invalid user admin from 192.168.1.100 port 22 ssh2

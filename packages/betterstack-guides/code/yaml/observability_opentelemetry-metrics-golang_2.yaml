@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label docker-compose.yml]
+services:
+  app:
+    build:
+      context: .
+      target: ${GO_ENV}
+    container_name: otel-metrics-demo
+    environment:
+      PORT: ${PORT}
+      LOG_LEVEL: ${LOG_LEVEL}
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
+    networks:
+      - otel-metrics-demo-network
+    volumes:
+      - .:/app
+
+  collector:
+    container_name: otel-metrics-demo-collector
+    image: otel/opentelemetry-collector:latest
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol/config.yaml
+    networks:
+      - otel-metrics-demo-network
+
+networks:
+  otel-metrics-demo-network:

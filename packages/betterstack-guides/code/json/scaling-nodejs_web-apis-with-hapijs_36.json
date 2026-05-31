@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+[output]
+{
+  "message": "Post deleted successfully",
+  "deletedPost": {
+    "_id": "687f3f4a39f28d32871cd0bd",
+    "title": "Post to Delete",
+    "content": "This post will be deleted to test the DELETE endpoint.",
+    "published": true,
+    "author": "Test Author",
+    "tags": [
+      "test"
+    ],
+    "createdAt": "2025-07-22T07:35:38.338Z",
+    "updatedAt": "2025-07-22T07:35:38.338Z",
+    "__v": 0
+  }
+}

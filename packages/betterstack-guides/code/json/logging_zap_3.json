@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+{"level":"info","ts":1684092708.7246346,"caller":"zap/main.go:12","msg":"Hello from Zap logger!"}

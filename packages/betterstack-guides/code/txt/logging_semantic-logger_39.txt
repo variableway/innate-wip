@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+2025-01-29 11:28:00.133910 I [1597443:puma srv tp 001] ApplicationController -- Info message

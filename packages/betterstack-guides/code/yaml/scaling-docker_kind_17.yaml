@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 17
+
+[label extra-mounts.yaml]
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+ extraMounts:
+ - hostPath: /path/to/my/files
+   containerPath: /files

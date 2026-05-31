@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 26
+
+[tasks.deploy]
+run = """
+npm run build
+rsync -av dist/ server:/var/www/
+"""
+description = "Build and deploy to production"
+dir = "{{config_root}}"

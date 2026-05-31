@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 27
+
+This command uses command substitution to pass the URL from minikube service
+directly to curl, which then makes an HTTP request to your application. The
+response will be the output from the echo server, confirming that your
+application is accessible:

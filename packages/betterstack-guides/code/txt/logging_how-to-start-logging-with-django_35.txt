@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+horus.views.search at 2025-05-28 18:34:00,184 (INFO) :: User b617a3b3-773b-42aa-b679-fc12e2370818 has navigated to /search
+horus.views.search at 2025-05-28 18:34:00,184 (INFO) :: User b617a3b3-773b-42aa-b679-fc12e2370818 searched for london

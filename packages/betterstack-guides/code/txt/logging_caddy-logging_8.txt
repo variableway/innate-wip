@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[label Caddyfile]
+:80 {
+	# Ensure the default Caddy page continues to work
+	root * /usr/share/caddy
+	file_server
+
+[highlight]
+	# Enable request logging to stderr
+	log
+[/highlight]
+}

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 3
+
+[label otel-config.yaml]
+...
+exporters:
+  otlphttp:
+    endpoint: "https://ingest.betterstack.com/otlp"
+    headers:
+      Authorization: "Bearer YOUR_BETTER_STACK_API_KEY"

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+. . .
+go-blog-db     | 2024-08-13 11:10:21.712 UTC [29] LOG:  database system was shut down at 2024-08-13 11:08:18 UTC
+go-blog-db     | 2024-08-13 11:10:21.723 UTC [1] LOG:  database system is ready to accept connections
+go-blog-app    | Server started on port 8000
+go-blog-caddy  | {"level":"info","ts":1723547432.817205,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+go-blog-caddy  | {"level":"info","ts":1723547432.818028,"msg":"adapted config to JSON","adapter":"caddyfile"}
+go-blog-caddy  | {"level":"info","ts":1723547432.8187122,"logger":"admin","msg":"admin endpoint started","address":"localhost:2019","enforce_origin":false,"origins":["//127.0.0.1:2019","//lo
+calhost:2019","//[::1]:2019"]}
+. . .

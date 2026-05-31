@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: json
+# Normalized: json
+# Block index: 50
+
+[label /var/lib/postgresql/15/main/log/postgresql-Sun.json]
+{"timestamp":"2023-07-30 22:48:01.817 UTC","user":"postgres","dbname":"chinook","pid":18254,"remote_host":"[local]","session_id":"64c6e836.474e","line_num":1,"ps":"idle","session_start":"2023-07-30 22:46:14 UTC","vxid":"4/3","txid":0,"error_severity":"LOG","message":"statement: SHOW data_directory;","application_name":"psql","backend_type":"client backend","query_id":0}
+{"timestamp":"2023-07-30 22:49:21.808 UTC","user":"postgres","dbname":"chinook","pid":18254,"remote_host":"[local]","session_id":"64c6e836.474e","line_num":2,"ps":"idle","session_start":"2023-07-30 22:46:14 UTC","vxid":"4/4","txid":0,"error_severity":"LOG","message":"statement: TABLE albu limit 10;","application_name":"psql","backend_type":"client backend","query_id":0}
+{"timestamp":"2023-07-30 22:49:21.808 UTC","user":"postgres","dbname":"chinook","pid":18254,"remote_host":"[local]","session_id":"64c6e836.474e","line_num":3,"ps":"SELECT","session_start":"2023-07-30 22:46:14 UTC","vxid":"4/4","txid":0,"error_severity":"ERROR","state_code":"42P01","message":"relation \"albu\" does not exist","statement":"TABLE albu limit 10;","cursor_position":7,"application_name":"psql","backend_type":"client backend","query_id":0}

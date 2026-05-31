@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-php/index/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[label .dockerignore]
+/.git
+/.idea
+/.vscode
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+*.log
+.gitignore
+.gitattributes

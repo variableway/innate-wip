@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+web-app   3/3     3            3           45s

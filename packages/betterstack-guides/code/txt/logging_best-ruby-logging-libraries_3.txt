@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+E, [2023-08-30T15:55:38.870752 #632021] ERROR -- : encountered an unexpected error while backing up database
+F, [2023-08-30T15:55:38.870783 #632021] FATAL -- : application crashed

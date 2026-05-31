@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-alternatives-guide/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+[label package.json]
+{
+ "name": "my-project",
+ "version": "1.0.0",
+ "volta": {
+   "node": "16.13.0",
+   "npm": "8.1.0"
+ }
+}

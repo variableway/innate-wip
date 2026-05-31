@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/webpack-vs-parcel/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label package.json]
+{
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}

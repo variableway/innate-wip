@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-alternatives-guide/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+[label docker-compose.yml]
+version: '3'
+services:
+ app:
+   build: .
+   volumes:
+     - .:/app
+     - /app/node_modules
+   ports:
+     - "3000:3000"
+   environment:
+     - NODE_ENV=development
+   command: npm run dev

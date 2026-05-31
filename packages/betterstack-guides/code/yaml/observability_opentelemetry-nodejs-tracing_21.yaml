@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+[label otelcol.yaml]
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: json-to-yaml-collector:4318
+
+processors:
+  batch:
+
+exporters:
+  otlp/jaeger:
+    endpoint: json-to-yaml-jaeger:4317
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/jaeger]

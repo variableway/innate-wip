@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rate-limiting-express/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+HTTP/1.1 200 OK
+X-Powered-By: Express
+RateLimit-Policy: 100;w=900
+RateLimit-Limit: 100
+RateLimit-Remaining: 99
+RateLimit-Reset: 900
+Content-Type: application/json; charset=utf-8
+Content-Length: 103
+ETag: W/"67-2Ouk9IhxCGFRr8is7Lc1VRa2+rk"
+Date: Tue, 29 Jul 2025 11:23:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Rate Limiting Demo API","timestamp":"2025-07-29T11:23:27.315Z","environment":"development"}

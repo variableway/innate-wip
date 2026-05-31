@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[label Caddyfile]
+http:// localhost {
+	reverse_proxy url-shortener-app:5000
+}

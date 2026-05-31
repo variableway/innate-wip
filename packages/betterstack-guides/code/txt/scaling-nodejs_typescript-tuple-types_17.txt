@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-tuple-types/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+Response status: 200
+Response body: Success
+Hex color: #ff8040
+2D distance: 5
+3D distance: 7.0710678118654755

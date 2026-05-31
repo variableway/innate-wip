@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/observability/index/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+.
+├── distributions
+│   └── otelcol-custom
+│       ├── config.yaml
+│       ├── Dockerfile
+│       └── manifest.yaml
+├── .github
+│   └── workflows
+│       ├── base-release.yaml
+│       └── release-custom.yaml
+├── LICENSE
+├── README.md
+└── tags

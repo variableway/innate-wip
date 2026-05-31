@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-environment-variables/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+
+Environment: development
+Log level: info
+Server port: 4000
+API key: dev-key
+Database URL: mongodb://localhost:27017/dev_db

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/
+# Original language: html
+# Normalized: html
+# Block index: 25
+
+[label src/views/new.ejs]
+<h1>Create New Post</h1>
+<form class="create-post-form" action="/post" method="post">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required />
+  <label for="content">Content:</label>
+  <textarea id="content" name="content" required></textarea>
+  <button type="submit">Create</button>
+</form>

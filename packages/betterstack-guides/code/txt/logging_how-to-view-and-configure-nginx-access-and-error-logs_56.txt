@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 56
+
+[output]
+[+] Restarting 2/2
+ ✔ Container nginx-server  Started                                         0.8s
+ ✔ Container vector        Started                                         0.8s

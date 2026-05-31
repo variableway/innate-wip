@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+[output]
+2024-09-19T10:20:57.119Z      debug   ottl@v0.108.0/parser.go:394     condition evaluation result {
+[highlight]
+  "match": true,
+[/highlight]
+  "TransformContext": {
+    . . .
+    "log_record": {
+      . . .
+[highlight]
+      "body": "Feb 10 15:45:16 ubuntu-lts sshd[47339]: Received disconnect from 180.101.88.228 port 11349:11:  [preauth]",
+[/highlight]
+      . . .
+    },
+    "cache": {}
+  }
+}

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 5
+
+livenessProbe:
+  exec:
+    command:
+    - /bin/sh
+    - -c
+    - 'grep "ready" /app/status.txt'
+  initialDelaySeconds: 5
+  periodSeconds: 5

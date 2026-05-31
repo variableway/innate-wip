@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: xml
+# Normalized: html
+# Block index: 16
+
+[label log4j2.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <JsonTemplateLayout eventTemplateUri="classpath:EcsLayout.json"/>
+        </Console>
+        <File name="file" fileName="logs/app.log">
+            . . .
+        </File>
+        <NoSql name="database">
+            . . .
+        </NoSql>
+    </Appenders>
+    <Loggers>
+        [highlight]
+        <Root level="TRACE">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file" />
+            <AppenderRef ref="database" />
+        </Root>
+        [/highlight]
+    </Loggers>
+</Configuration>

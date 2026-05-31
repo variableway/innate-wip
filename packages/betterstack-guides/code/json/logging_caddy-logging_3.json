@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+{"level":"info","ts":1739084748.8252573,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1739084748.8262916,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"info","ts":1739084748.8272777,"logger":"admin","msg":"admin endpoint started","address":"localhost:2019","enforce_origin":false,"origins":["//localhost:2019","//[::1]:2019","//127.
+0.0.1:2019"]}
+{"level":"warn","ts":1739084748.8273637,"logger":"http.auto_https","msg":"server is listening only on the HTTP port, so no automatic HTTPS will be applied to this server","server_name":"srv0
+","http_port":80}
+{"level":"info","ts":1739084748.8274624,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc000468e00"}
+{"level":"info","ts":1739084748.8275497,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+{"level":"info","ts":1739084748.853014,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+{"level":"info","ts":1739084748.8530247,"msg":"serving initial configuration"}
+{"level":"info","ts":1739084748.8591967,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+{"level":"info","ts":1739084748.8593786,"logger":"tls","msg":"finished cleaning storage units"}

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+Error: invalid configuration: processors::transform/redact: unable to parse OTTL statement "set(\"\")": error while parsing arguments for call to "set": incorrect number of arguments. Expected: 2 Received: 1

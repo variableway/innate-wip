@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rspack-explained/
+# Original language: scss
+# Normalized: css
+# Block index: 8
+
+[label src/style.scss]
+$primary-color: #d04f4f;
+$secondary-color: #4fd0c6;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: $primary-color;
+  
+  &:hover {
+    color: $secondary-color;
+  }
+}

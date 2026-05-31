@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-index-signatures/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+Version: 1.0.0
+Theme: dark
+Debug: true

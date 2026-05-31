@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[label Caddyfile]
+<your_domain_name> {
+    log {
+        output stdout
+        format json {
+            message_key     msg           # Key for the log message
+            level_key      severity       # Key for the log level
+            time_key       timestamp      # Key for the timestamp
+            name_key       logger         # Key for the logger name
+            caller_key     function       # Key for the caller information
+            stacktrace_key stack          # Key for error stacktraces
+            time_format    "2006-01-02 15:04:05 MST"  # RFC3339-like format
+            time_local                    # Use local timezone
+            duration_format "ms"          # Show durations in milliseconds
+            level_format   "upper"        # Uppercase log levels
+        }
+    }
+}

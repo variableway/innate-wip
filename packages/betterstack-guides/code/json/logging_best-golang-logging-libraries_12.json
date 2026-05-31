@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[output]
+{"level":"info","ts":1689301952.7301471,"msg":"Using Slog frontend with Zap backend!","process_id":1662258}

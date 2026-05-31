@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O    PIDS
+9d6d833b7fdd   web-app   0.00%     43.48MiB / 7.654GiB   0.55%     49.2kB / 56.9kB   0B / 4.1kB   18

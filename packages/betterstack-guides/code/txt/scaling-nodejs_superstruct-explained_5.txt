@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+Your TypeScript setup is ready. You can write Superstruct code and test it right away.
+
+## Understanding Superstruct fundamentals
+
+Superstruct uses functions to define what your data should look like. You combine these functions to create validation rules that check your data automatically.
+
+Create a file called `schemas.ts` with your first validation schema:

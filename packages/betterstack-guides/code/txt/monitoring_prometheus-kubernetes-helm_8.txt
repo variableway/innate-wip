@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090

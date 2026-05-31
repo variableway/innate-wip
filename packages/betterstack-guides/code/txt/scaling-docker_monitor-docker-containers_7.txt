@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+{"message":"Hello from containerized app!","timestamp":"2025-07-09T15:38:55.412Z"}%

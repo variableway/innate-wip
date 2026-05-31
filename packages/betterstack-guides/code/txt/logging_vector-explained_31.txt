@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[label log-processing-stack/vector/vector.yaml]
+...
+transforms:
+  app_logs_parser:
+    inputs:
+      - "app_logs"
+    type: "remap"
+    source: |
+      # Parse JSON logs
+      ., err = parse_json(.message)
+
+      # Remove emailAddress field
+      del(.emailAddress)
+
+      # Add an environment field
+      .environment = "dev"
+
+      # Format date to the ISO format
+      .time = from_unix_timestamp!(.time)
+      .time = format_timestamp!(.time, format: "%+")
+
+      if .status == 200 {
+        .success = true
+      }
+[highlight]
+      # Redact field values
+      . = redact(., filters: ["us_social_security_number", r'^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$'])
+[/highlight]
+...

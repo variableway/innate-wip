@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[label package.json]
+{
+  "name": "hapijs-blog-api",
+  "version": "1.0.0",
+[highlight]
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+[/highlight]
+  ...
+}

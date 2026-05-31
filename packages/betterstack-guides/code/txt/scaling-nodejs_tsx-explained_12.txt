@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/tsx-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+[LOG] 2025-08-05T13:26:19.943Z - Processing user data
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com"
+}

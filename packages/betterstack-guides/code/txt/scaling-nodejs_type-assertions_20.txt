@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+/Users/stanley/ts-assertions/src/double.ts:15
+dog.bark(); // Will crash!
+    ^
+
+TypeError: dog.bark is not a function

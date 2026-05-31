@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-verbatimmodulesyntax/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+src/app.ts:1:10 - error TS1484: 'LogLevel' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+
+1 import { LogLevel } from "./logger.js";
+           ~~~~~~~~
+
+
+Found 1 error in src/app.ts:1

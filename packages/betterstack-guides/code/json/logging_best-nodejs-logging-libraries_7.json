@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{"level":"info","message":"Hello from Winston logger!"}

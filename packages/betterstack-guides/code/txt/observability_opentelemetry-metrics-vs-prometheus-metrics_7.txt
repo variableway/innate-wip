@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+# HELP http_request_duration_seconds Duration of HTTP requests
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.005"} 2
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.01"} 2
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.025"} 5
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.05"} 11
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.1"} 18
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.25"} 34
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="0.5"} 74
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="1"} 121
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="2.5"} 121
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="5"} 121
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="10"} 121
+http_request_duration_seconds_bucket{method="GET",path="/",status="200",le="+Inf"} 121
+http_request_duration_seconds_sum{method="GET",path="/",status="200"} 51.009393553
+http_request_duration_seconds_count{method="GET",path="/",status="200"} 121

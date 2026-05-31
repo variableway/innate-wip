@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-pino-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+{"level":"INFO","timestamp":"2025-05-22T11:24:57.997Z","pid":5582,"host":"ubuntu","node_version":"v22.16.0","msg":"starting the program"}
+{"level":"TRACE","timestamp":"2025-05-22T11:24:57.998Z","pid":5582,"host":"ubuntu","node_version":"v22.16.0","userID":"johndoe","msg":"getUser called"}
+{"level":"TRACE","timestamp":"2025-05-22T11:24:57.998Z","pid":5582,"host":"ubuntu","node_version":"v22.16.0","userID":"johndoe","msg":"getUser completed"}
+{"level":"INFO","timestamp":"2025-05-22T11:24:57.998Z","pid":5582,"host":"ubuntu","node_version":"v22.16.0","msg":"ending the program"}

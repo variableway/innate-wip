@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/logging-framework/
+# Original language: json
+# Normalized: json
+# Block index: 0
+
+{
+  error: 0,
+  warn: 1,
+  info: 2,
+  http: 3,
+  verbose: 4,
+  debug: 5,
+  silly: 6
+}

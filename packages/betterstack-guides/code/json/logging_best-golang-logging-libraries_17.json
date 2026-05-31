@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+ts=2023-11-16T16:15:59.264556037+02:00 level=info "Hello from Phuslu logger"

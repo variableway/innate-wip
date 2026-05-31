@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/custom-opentelemetry-collector/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+REPOSITORY                              TAG                            IMAGE ID       CREATED          SIZE
+[highlight]
+custom-collector                        0.1.0                          c6b5c4948d9d   13 minutes ago   37.2MB
+[/highlight]
+otel/opentelemetry-collector-contrib    latest                         c120a635b3b3   10 days ago      274MB
+otel/opentelemetry-collector            latest                         d99412a28679   10 days ago      111MB

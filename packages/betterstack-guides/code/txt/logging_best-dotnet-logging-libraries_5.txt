@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+While you've encountered one severity level so far, Serilog offers five logging
+level methods: `Verbose()`, `Debug()`, `Information()`, `Warning()`, `Error()`,
+and `Fatal`.
+
+As mentioned, Serilog is highly configurable. To be able to configure it
+successfully, first, you need to be familiar with the following components:
+
+- [Sinks](https://github.com/serilog/serilog/wiki/Configuration-Basics#sinks):
+  the destinations to which logs are forwarded, such as databases or the
+  console. A curated list of examples can be found
+  [here](https://github.com/serilog/serilog/wiki/Provided-Sinks).
+
+- [Output Templates](https://github.com/serilog/serilog/wiki/Configuration-Basics#output-templates):
+  responsible for formatting log entries.
+
+- [Enrichers](https://github.com/serilog/serilog/wiki/Configuration-Basics#enrichers):
+  modify or add properties to a log entry.
+
+- [Filters](https://github.com/serilog/serilog/wiki/Configuration-Basics#filters):
+  enable the filtering of logs based on specified criteria.
+
+Now, let's look at an example that demonstrates how to configure Serilog to
+format logs as JSON and use sinks to forward logs to various destinations while
+setting the minimum severity level for each destination based on specific needs:

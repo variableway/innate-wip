@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 19
+
+[env]
+API_SECRET = "actual-secret-key"
+DATABASE_PASSWORD = "sensitive-password"

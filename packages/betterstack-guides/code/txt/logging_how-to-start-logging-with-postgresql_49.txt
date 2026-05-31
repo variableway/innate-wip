@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[label /var/lib/postgresql/15/main/log/postgresql-Sun.log]
+time=2023-07-30 22:48:01.817 UTC pid=18254 error=00000 sess_id=64c6e836.474e tag=idle usr=postgres db=chinook app=psql LOG:  statement: SHOW data_directory;
+time=2023-07-30 22:49:21.808 UTC pid=18254 error=00000 sess_id=64c6e836.474e tag=idle usr=postgres db=chinook app=psql LOG:  statement: TABLE albu limit 10;
+time=2023-07-30 22:49:21.808 UTC pid=18254 error=42P01 sess_id=64c6e836.474e tag=SELECT usr=postgres db=chinook app=psql ERROR:  relation "albu" does not exist at character 7
+time=2023-07-30 22:49:21.808 UTC pid=18254 error=42P01 sess_id=64c6e836.474e tag=SELECT usr=postgres db=chinook app=psql STATEMENT:  TABLE albu limit 10;

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-timeouts/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+Error creating post: TypeError: fetch failed
+    at node:internal/deps/undici/undici:12502:13
+    at async file:///home/dami/dev/demo/http-requests/fetch.js:2:20 {
+  [cause]: HeadersTimeoutError: Headers Timeout Error
+      at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:7569:32)
+      at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:6659:17)
+      at listOnTimeout (node:internal/timers:573:17)
+      at process.processTimers (node:internal/timers:514:7) {
+    code: 'UND_ERR_HEADERS_TIMEOUT'
+  }
+}

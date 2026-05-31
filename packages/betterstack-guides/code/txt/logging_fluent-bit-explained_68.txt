@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 68
+
+[label log-processing-stack/docker-compose.yml]
+    container_name: fluent-bit
+    ports:
+[highlight]
+      - "2020:2020"
+[/highlight]
+      - "24224:24224"

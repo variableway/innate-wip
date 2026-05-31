@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-laravel/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[label .env]
+. . .
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+. . .

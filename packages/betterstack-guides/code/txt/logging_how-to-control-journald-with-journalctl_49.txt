@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[output]
+Jan 17 03:47:57 Ubuntu-20-04 sshd[2133328]: Invalid user hadoop from 193.32.162.79 port 45694
+Jan 17 03:46:49 Ubuntu-20-04 sshd[2133324]: Invalid user admin from 92.255.85.189 port 42582
+Jan 17 03:44:30 Ubuntu-20-04 sshd[2133319]: Invalid user sysadmin from 2.57.122.194 port 44086
+Jan 17 03:40:39 Ubuntu-20-04 sshd[2133309]: Invalid user ansible from 193.32.162.79 port 45834
+Jan 17 03:36:37 Ubuntu-20-04 sshd[2133297]: Invalid user sysadmin from 2.57.122.194 port 40998
+Jan 17 03:34:38 Ubuntu-20-04 sshd[2133292]: Invalid user admin from 92.255.85.188 port 20794
+. . .

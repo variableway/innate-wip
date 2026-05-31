@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 47
+
+This command switches the active profile to "minikube," reconfiguring kubectl to
+interact with that cluster. This approach allows you to maintain separate
+development environments for different projects or testing scenarios without
+interference between them.
+
+### Version management
+
+Kubernetes evolves rapidly, with new versions released regularly. To ensure
+compatibility with different Kubernetes environments or to test how your
+applications work across versions, Minikube allows you to specify which
+Kubernetes version to use.
+
+When starting Minikube, you can specify the Kubernetes version:

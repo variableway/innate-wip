@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+...
+[2025/05/30 09:13:57] [debug] [input:tail:tail.0] scan_glob add(): /var/log/logify/app.log, inode 259470
+[2025/05/30 09:13:57] [debug] [input:tail:tail.0] 1 new files found on path '/var/log/logify/app.log'
+[2025/05/30 09:13:57] [debug] [stdout:stdout.0] created event channels: read=33 write=34
+[2025/05/30 09:13:57] [ info] [sp] stream processor started
+[2025/05/30 09:13:57] [debug] [input:tail:tail.0] inode=259470 file=/var/log/logify/app.log promote to TAIL_EVENT
+[2025/05/30 09:13:57] [ info] [output:stdout:stdout.0] worker #0 started
+[2025/05/30 09:13:57] [ info] [input:tail:tail.0] inotify_fs_add(): inode=259470 watch_fd=1 name=/var/log/logify/app.log
+[2025/05/30 09:13:57] [debug] [input:tail:tail.0] [static files] processed 0b, done
+[2025/05/30 09:13:57] [debug] [input:tail:tail.0] inode=259470, /var/log/logify/app.log, events: IN_MODIFY
+[2025/05/30 09:13:58] [debug] [task] created task=0x704401836960 id=0 OK
+[2025/05/30 09:13:58] [debug] [output:stdout:stdout.0] task_id=0 assigned to thread #0

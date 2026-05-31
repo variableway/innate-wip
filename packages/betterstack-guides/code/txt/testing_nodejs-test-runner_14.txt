@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+▶ formatFileSize function
+  ✖ should return "1.00 GB" for sizeBytes = 1073741824 (1.286924ms)
+    'test did not finish before its parent and was cancelled'
+
+▶ formatFileSize function (2.843585ms)
+
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 1
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.138765
+
+✖ failing tests:
+
+test at file:/home/ayo/dev/betterstack/demo/testrunner-demo/tests/formatter.test.js:6:3
+✖ should return "1.00 GB" for sizeBytes = 1073741824 (1.286924ms)
+  'test did not finish before its parent and was cancelled'

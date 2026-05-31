@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/varlock-env-schema/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label .env.schema]
+# @type=string @required @sensitive
+APP_ENV=testing
+
+# @type=port
+PORT=3002

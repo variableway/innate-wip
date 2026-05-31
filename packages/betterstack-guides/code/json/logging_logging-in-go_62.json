@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 62
+
+[output]
+{
+  "time": "2023-03-15T14:44:24.223381036+01:00",
+  "level": "INFO",
+  "msg": "info",
+  "user": {
+    "id": "user-12234",
+    "name": "Jan Doe"
+  }
+}

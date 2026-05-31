@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/exponential-backoff/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+actualDelay = min(maxDelay, random(baseDelay, 3 * baseDelay))

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 71
+
+LOG:  disconnection: session time: 0:00:02.824 user=postgres database=chinook host=[local]

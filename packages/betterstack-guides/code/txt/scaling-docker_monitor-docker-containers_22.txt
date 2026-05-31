@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+MemTotal:        8025360 kB
+MemFree:         6998344 kB
+MemAvailable:    7364392 kB
+Buffers:           40008 kB
+Cached:           447776 kB

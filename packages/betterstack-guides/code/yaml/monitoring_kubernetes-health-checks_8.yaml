@@ -1,0 +1,55 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 8
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: my-web-app:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_HOST
+          value: "postgres-service"
+        - name: DB_PORT
+          value: "5432"
+
+        # Gives the application time to connect to the database
+        startupProbe:
+          httpGet:
+            path: /api/startup
+            port: 3000
+          failureThreshold: 30
+          periodSeconds: 2
+
+        # Checks if the application is running correctly
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          periodSeconds: 15
+          timeoutSeconds: 3
+          failureThreshold: 3
+
+        # Checks if the application can serve traffic
+        readinessProbe:
+          httpGet:
+            path: /api/ready
+            port: 3000
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3

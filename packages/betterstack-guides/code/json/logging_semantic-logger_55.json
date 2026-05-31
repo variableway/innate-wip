@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 55
+
+[output]
+{
+  "host": "falcon",
+  "application": "Semantic Logger",
+  "environment": "development",
+  "timestamp": "2025-01-29T17:07:36.005944Z",
+  "level": "debug",
+  "level_index": 1,
+  "pid": 1698257,
+  "thread": "puma srv tp 001",
+[highlight]
+  "named_tags": {
+    "request_id": "701a41a3-19ef-4c5e-9df5-1d00cf415ed1"
+  },
+[/highlight]
+  "name": "Rack",
+  "message": "Started",
+  "payload": {
+    "method": "GET",
+    "path": "/",
+    "ip": "::1"
+  }
+}

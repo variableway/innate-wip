@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/knexjs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+{
+  method: 'raw',
+  sql: 'SELECT 1+1 AS result',
+  bindings: [],
+  options: {},
+  __knexQueryUid: '0xFEhwNLFoawCTzERidJs'
+}
+Database connection established successfully
+[
+  ...
+]
+Books table created successfully!

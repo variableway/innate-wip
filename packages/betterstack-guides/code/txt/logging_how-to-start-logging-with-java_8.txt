@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+{
+    "instant" : {
+        "epochSecond" : 1680549415,
+        "nanoOfSecond" : 978810000
+    },
+    "thread" : "main",
+    "level" : "INFO",
+    "loggerName" : "org.example.Main",
+    "message" : "A user just signed in.",
+    "endOfBatch" : false,
+    "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+    "threadId" : 1,
+    "threadPriority" : 5
+}

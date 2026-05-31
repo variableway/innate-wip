@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 58
+
+[output]
+podman run --name=wordpress -d --label io.podman.compose.config-hash=c3e51c9a26e54848a06f92083413698bee90acd721b4aa3054280e110819a68c --label io.podman.compose.project=podman-tutorial --label io.podman.compose.version=1.0.6 --label PODMAN_SYSTEMD_UNIT=podman-compose@podman-tutorial.service --label com.docker.compose.project=podman-tutorial --label com.docker.compose.project.working_dir=/home/<your_user_name>/podman-tutorial --label com.docker.compose.project.config_files=docker-compose.yml --label com.docker.compose.container-number=1 --label com.docker.compose.service=wordpress -e WORDPRESS_DB_HOST=db -e WORDPRESS_DB_USER=testuser -e WORDPRESS_DB_PASSWORD=testpass -e WORDPRESS_DB_NAME=testdb -v podman-tutorial_wordpress:/var/www/html --net podman-tutorial_default --network-alias wordpress -p 8080:80 --restart always wordpress

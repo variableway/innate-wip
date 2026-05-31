@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+node:2641257) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Mocking setTimeout in Node.js
+  ✔ should successfully mock setTimeout (1.156348ms)
+▶ Mocking setTimeout in Node.js (2.780952ms)
+
+. . .

@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-php/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+# HELP http_request_duration HTTP request duration in seconds
+# TYPE http_request_duration histogram
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.005"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.01"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.025"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.05"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.1"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.25"} 0
+http_request_duration_bucket{status="200",path="root",method="GET",le="0.5"} 3
+http_request_duration_bucket{status="200",path="root",method="GET",le="1"} 8
+http_request_duration_bucket{status="200",path="root",method="GET",le="2.5"} 18
+http_request_duration_bucket{status="200",path="root",method="GET",le="5"} 25
+http_request_duration_bucket{status="200",path="root",method="GET",le="10"} 25
+http_request_duration_bucket{status="200",path="root",method="GET",le="+Inf"} 25
+http_request_duration_sum{status="200",path="root",method="GET"} 47.423
+http_request_duration_count{status="200",path="root",method="GET"} 25

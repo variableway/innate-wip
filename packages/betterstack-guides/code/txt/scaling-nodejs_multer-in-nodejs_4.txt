@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/multer-in-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+{
+  fieldname: 'uploadedFile',
+  originalname: 'sample.png',
+  encoding: '7bit',
+  mimetype: 'image/png',
+  destination: 'uploads/',
+  filename: 'sample.png',
+  path: 'uploads/sample.png',
+  size: 614539
+}

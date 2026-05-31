@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+(node:2644346) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Mocking the Date object in Node.js
+  ✔ should effectively mock the Date object starting from 200 milliseconds (1.496926ms)
+▶ Mocking the Date object in Node.js (4.26249ms)
+
+. . .

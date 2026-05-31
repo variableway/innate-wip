@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+This shows the basic Superstruct workflow: define schemas with functions, then validate data with the schema's methods.
+
+## Building advanced validation schemas
+
+Superstruct gives you many ways to validate data beyond just checking types. You can add length requirements, format checks, and custom rules that fit your specific needs.
+
+### Adding string constraints
+
+Most string fields need more than just type checking. Superstruct has built-in validators for common string requirements.
+
+Update your `schemas.ts` file to include more detailed validations:

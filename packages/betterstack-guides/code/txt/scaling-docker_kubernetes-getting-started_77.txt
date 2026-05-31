@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 77
+
+[output]
+deployment.apps/hello-app
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+3         <none>

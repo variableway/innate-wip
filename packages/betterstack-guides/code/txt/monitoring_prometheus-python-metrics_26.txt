@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+. . .
+# HELP http_active_requests Number of active connections to the service
+# TYPE http_active_requests gauge
+http_active_requests 101.0

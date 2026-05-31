@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+2024/08/13 09:51:30 Unable to connect to database:failed to connect to `user=postgres database=go-blog`:
+        127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused
+        [::1]:5432 (localhost): dial error: dial tcp [::1]:5432: connect: connection refused

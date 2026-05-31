@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+app.py:36:25: B006 Do not use mutable data structures for argument defaults
+   |
+36 | def process_items(items=[]):  # Bugbear will flag mutable default argument
+   |                         ^^ B006
+37 |     """Process a list of items."""
+38 |     return [x for x in items for y in items]  # Bugbear will flag nested comprehension
+   |
+   = help: Replace with `None`; initialize within function
+
+Found 1 error.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

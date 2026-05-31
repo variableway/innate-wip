@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 29
+
+This configuration file defines two Kubernetes resources: a Deployment and a
+Service. The Deployment specifies that three replica pods should be created,
+each running the nginx:1.21 image. These pods will be labeled with app: nginx.
+
+The Service definition creates a NodePort service that selects pods with the
+label app: nginx, making your application accessible from outside the cluster.
+The service maps port 80 in the cluster to port 80 on the pods.
+
+Apply this configuration using kubectl:

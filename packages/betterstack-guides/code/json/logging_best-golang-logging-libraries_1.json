@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+[output]
+{"level":"info","time":"2023-07-12T11:57:28+02:00","message":"Hello from Zerolog global logger"}

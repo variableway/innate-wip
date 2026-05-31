@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-express/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[output]
+{
+  "data": {
+    "users": [
+      {
+        "id": 1,
+        "name": "Sarah Chen",
+        "email": "sarah@example.com"
+      },
+      {
+        "id": 2,
+        "name": "Mike Johnson",
+        "email": "mike@example.com"
+      },
+      {
+        "id": 3,
+        "name": "Emma Wilson",
+        "email": "emma@example.com"
+      }
+    ],
+    "user": {
+      "name": "Sarah Chen",
+      "role": "developer"
+    }
+  }
+}

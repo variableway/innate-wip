@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[label .oxlintrc.json]
+{
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "react/jsx-key": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts"],
+      "rules": {
+        "typescript/no-explicit-any": "off"
+      }
+    }
+  ]
+}

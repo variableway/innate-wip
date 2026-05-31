@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 71
+
+[output]
+2025-06-06T14:28:33.955914Z [debug    ] Search query New York succeeded without errors [worldClock.views] coordinate=['40.7127281', '-74.0060152'] ip=None query='New York' request_id=92ea07e4-8e02-4ec7-8d11-41bbc7c09f27 user_id=None

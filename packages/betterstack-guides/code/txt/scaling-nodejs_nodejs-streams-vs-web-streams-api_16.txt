@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-streams-vs-web-streams-api/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+...
+{
+  title: 'Signed, Sealed, Delivered',
+  release_date: 'October 13, 2013',
+  tagline: null
+}
+...
+{
+  title: 'My Date with Drew',
+  release_date: 'August 05, 2005',
+  tagline: null
+}: null
+Stream ended

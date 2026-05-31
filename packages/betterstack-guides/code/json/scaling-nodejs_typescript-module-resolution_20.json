@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-module-resolution/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  }
+}

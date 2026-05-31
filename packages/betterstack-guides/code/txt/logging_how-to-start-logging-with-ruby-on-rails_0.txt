@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-ruby-on-rails/
+# Original language: txt
+# Normalized: txt
+# Block index: 0
+
+views/index.html.erb
+    <h1>Persons</h1>
+    <ul>
+        <% @persons.each do |person| %>
+            <li><%= person.name %> (<%= person.age %>)</li>
+        <% end %>
+    </ul>

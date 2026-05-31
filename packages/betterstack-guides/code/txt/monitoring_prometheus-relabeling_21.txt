@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+parsing YAML file /etc/prometheus/prometheus.yml: keepequal action requires only 'source_labels' and `target_label`, and no other fields"

@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+[output]
+{
+  "time": "2023-02-26T19:26:46.046793623+01:00",
+  "level": "INFO",
+  "msg": "image upload successful",
+  "program_info": {
+    "pid": 229108,
+    "go_version": "go1.20"
+  },
+  "image_id": "39ud88"
+}
+{
+  "time": "2023-02-26T19:26:46.046847902+01:00",
+  "level": "WARN",
+  "msg": "storage is 90% full",
+  "program_info": {
+    "pid": 229108,
+    "go_version": "go1.20"
+  },
+  "available_space": "900.1 MB"
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[output]
+{"level":"info","time":"2022-08-18T13:45:51+01:00","message":"Hello from global logger"}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+All checks passed!

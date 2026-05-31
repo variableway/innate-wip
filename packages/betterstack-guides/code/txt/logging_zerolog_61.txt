@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 61
+
+[output]
+. . .
+2022-09-02T11:23:11+01:00 INF Starting Wikipedia App Server on port '3000' git_revision=510791faa17a362faeab72bd367ca26e5b0ad5f6 go_version=go1.19 port=3000

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 16
+
+### Chaining multiple validations
+
+You can also chain multiple validations together. This allows you to create more complex validation rules by combining multiple constraints in a sequence. Each validation will be checked in order, and all must pass for the data to be considered valid.
+
+To start, update the `name` field in `validation.ts` as follows:

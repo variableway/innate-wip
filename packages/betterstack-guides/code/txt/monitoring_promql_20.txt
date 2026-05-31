@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+# Calculate the per-second rate of HTTP requests over the past 5 minutes
+rate(http_requests_total[5m])

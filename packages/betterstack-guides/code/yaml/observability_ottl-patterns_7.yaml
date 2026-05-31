@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 7
+
+transform:
+  error_mode: ignore
+  trace_statements:
+    - context: span
+      statements:
+        - replace_all_patterns(attributes, "key", "-", "_")
+        - replace_all_patterns(attributes, "key", "\\s", "_")

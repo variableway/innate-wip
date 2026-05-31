@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+Getting all users:
+Users: [
+  { id: '1', name: 'Alice', email: 'alice@example.com' },
+  { id: '2', name: 'Bob', email: 'bob@example.com' }
+]
+
+Getting user with ID 1:
+User: { id: '1', name: 'Alice', email: 'alice@example.com' }
+
+Creating a new user:
+User created: { id: '3', name: 'Charlie', email: 'charlie@example.com' }

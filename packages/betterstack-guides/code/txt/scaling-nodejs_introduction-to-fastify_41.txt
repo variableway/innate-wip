@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+...
+{"level":"info","time":"2024-08-18T16:14:36.380Z","pid":42449,"host":"ubuntu","reqId":"req-1","msg":"Incoming request: GET /"}
+{"level":"info","time":"2024-08-18T16:14:36.385Z","pid":42449,"host":"ubuntu","reqId":"req-1","msg":"Request completed: GET / - Status 200"}
+...

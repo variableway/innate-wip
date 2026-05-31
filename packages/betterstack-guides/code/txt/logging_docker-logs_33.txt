@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+latest: Pulling from amir20/dozzle
+15851880b5d7: Pull complete
+d57a2496955d: Pull complete
+Digest: sha256:2727b94bb5d2962152020677fed93d182d3791e7c7aaf8ad4b2ccbd45efab09e
+Status: Downloaded newer image for amir20/dozzle:latest
+docker.io/amir20/dozzle:latest

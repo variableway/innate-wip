@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ajv-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+User with defaults: { name: 'Charlie', age: 28, email: 'charlie@example.com', isActive: true }

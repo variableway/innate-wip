@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/logging/logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+{
+  "http_verb": "POST",
+  "path": "/user/login",
+  "source_ip": "203.0.113.45",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+  "request_id": "req_98765",
+  "response_status": 500,
+  "error_id": "ERR500",
+  "error_message": "Internal Server Error",
+  "oauth_application": "AuthApp_123",
+  "oauth_scope": "read",
+  "user_id": "user_789",
+  "service_name": "AuthService",
+  "git_revision": "7f8ff286cda761c340719191e218fb22f3d0a72",
+  "request_duration_ms": 320,
+  "database_time_ms": 120,
+  "rate_limit_remaining": 99,
+  "rate_limit_total": 100
+}

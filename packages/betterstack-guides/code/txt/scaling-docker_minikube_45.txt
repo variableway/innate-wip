@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 45
+
+The output shows each profile with its driver, IP address, Kubernetes version,
+and status:

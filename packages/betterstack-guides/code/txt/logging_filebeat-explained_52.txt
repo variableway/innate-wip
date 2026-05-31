@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 52
+
+[label filebeat-config/filebeat.yml]
+[highlight]
+http.enabled: true
+http.host: 0.0.0.0
+http.port: 5066
+[/highlight]
+
+filebeat.autodiscover:
+  providers:
+  ...
+
+output.elasticsearch:
+  hosts: 'https://s1332781.eu-nbg-2.betterstackdata.com:443'
+  path: '/elastic'
+  headers:
+    X-Better-Stack-Source-Token: 'T3jWxnJJowffDjDkriV5siJK'

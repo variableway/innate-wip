@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 55
+
+[PM2] App [dadjokes] launched (3 instances)
+┌────┬─────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name        │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼─────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ dadjokes    │ default     │ 1.0.0   │ cluster │ 1000013  │ 0s     │ 0    │ online    │ 0%       │ 51.9mb   │ ayo      │ disabled │
+│ 1  │ dadjokes    │ default     │ 1.0.0   │ cluster │ 1000023  │ 0s     │ 0    │ online    │ 0%       │ 48.1mb   │ ayo      │ disabled │
+│ 2  │ dadjokes    │ default     │ 1.0.0   │ cluster │ 1000035  │ 0s     │ 0    │ online    │ 0%       │ 40.3mb   │ ayo      │ disabled │
+└────┴─────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

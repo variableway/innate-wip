@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/ssh-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label /etc/ssh/sshd_config]
+LogLevel VERBOSE

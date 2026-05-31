@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-file-uploads/
+# Original language: json
+# Normalized: json
+# Block index: 25
+
+{
+  "totalFiles": 3,
+  "successful": 2,
+  "failed": 1,
+  "uploadTime": "2024-07-15T10:30:45.123Z",
+  "results": [
+    {
+      "originalFilename": "test1.txt",
+      "storedFilename": "a1b2c3d4-e5f6-7890-abcd-ef1234567890.txt",
+      "success": true,
+      "path": "/path/to/uploads/a1b2c3d4-e5f6-7890-abcd-ef1234567890.txt"
+    },
+    {
+      "originalFilename": "test2.txt",
+      "storedFilename": "b2c3d4e5-f6g7-8901-bcde-f23456789012.txt",
+      "success": true,
+      "path": "/path/to/uploads/b2c3d4e5-f6g7-8901-bcde-f23456789012.txt"
+    },
+    {
+      "filename": "test3.exe",
+      "success": false,
+      "errors": [
+        "File extension '.exe' not allowed. Allowed: .jpg, .jpeg, .png, .pdf, .txt"
+      ]
+    }
+  ]
+}

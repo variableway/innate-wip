@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{
+    "request": {
+        "client_ip": "8c6976e5",
+    }
+}

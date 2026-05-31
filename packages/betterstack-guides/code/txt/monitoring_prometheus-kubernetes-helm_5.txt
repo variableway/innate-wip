@@ -1,0 +1,37 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+NAME                                                     READY   STATUS              RESTARTS   AGE
+pod/prometheus-alertmanager-0                            1/1     Running             0          68s
+pod/prometheus-kube-state-metrics-6cf54df84c-95q62       1/1     Running             0          68s
+pod/prometheus-prometheus-node-exporter-25brd            1/1     Running             0          68s
+pod/prometheus-prometheus-pushgateway-544579d549-dhd2k   1/1     Running             0          68s
+pod/prometheus-server-87dc57df4-crv5p                    0/2     ContainerCreating   0          68s
+
+NAME                                          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/kubernetes                            ClusterIP   10.96.0.1        <none>        443/TCP    2m9s
+service/prometheus-alertmanager               ClusterIP   10.110.188.32    <none>        9093/TCP   68s
+service/prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP   68s
+service/prometheus-kube-state-metrics         ClusterIP   10.97.85.87      <none>        8080/TCP   68s
+service/prometheus-prometheus-node-exporter   ClusterIP   10.96.249.245    <none>        9100/TCP   68s
+service/prometheus-prometheus-pushgateway     ClusterIP   10.108.175.217   <none>        9091/TCP   68s
+service/prometheus-server                     ClusterIP   10.99.42.106     <none>        80/TCP     68s
+
+NAME                                                 DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/prometheus-prometheus-node-exporter   1         1         1       1            1           kubernetes.io/os=linux   68s
+
+NAME                                                READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/prometheus-kube-state-metrics       1/1     1            1           68s
+deployment.apps/prometheus-prometheus-pushgateway   1/1     1            1           68s
+deployment.apps/prometheus-server                   0/1     1            0           68s
+
+NAME                                                           DESIRED   CURRENT   READY   AGE
+replicaset.apps/prometheus-kube-state-metrics-6cf54df84c       1         1         1       68s
+replicaset.apps/prometheus-prometheus-pushgateway-544579d549   1         1         1       68s
+replicaset.apps/prometheus-server-87dc57df4                    1         1         0       68s
+
+NAME                                       READY   AGE
+statefulset.apps/prometheus-alertmanager   1/1     68s

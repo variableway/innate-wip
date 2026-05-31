@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-prometheus-backend/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label .env]
+OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+OTEL_EXPORTER_OTLP_METRICS_ENDPOINT=http://localhost:9090/api/v1/otlp/v1/metrics
+OTEL_SERVICE_NAME="inventory-service"
+OTEL_RESOURCE_ATTRIBUTES="service.instance.id=123456,deployment.environment=production,custom.team=inventory-management"
+OTEL_METRIC_EXPORT_INTERVAL=3000

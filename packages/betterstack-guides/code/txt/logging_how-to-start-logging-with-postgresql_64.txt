@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 64
+
+LOG:  statement: DROP table album;
+ERROR:  cannot drop table album because other objects depend on it
+DETAIL:  constraint fk_trackalbumid on table track depends on table album
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP table album;

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+2025-05-20 11:15:45 - main - INFO - Item list requested with skip=5, limit=20

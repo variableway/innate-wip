@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+[output]
+2023-08-30 11:30:07.355499 D [414838:60] {username: John, user_id: 12345} MyApp -- user signed in
+2023-08-30 11:30:07.355525 D [414838:60] {username: John, user_id: 12345} MyApp -- user opened document -- { :doc_id => "xyz" }
+2023-08-30 11:30:07.355535 D [414838:60] {username: John, user_id: 12345} MyApp -- user signed out

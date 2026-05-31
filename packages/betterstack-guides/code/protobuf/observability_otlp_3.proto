@@ -1,0 +1,39 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: proto
+# Normalized: protobuf
+# Block index: 3
+
+[label metrics.proto]
+message MetricsData {
+  repeated ResourceMetrics resource_metrics = 1;
+}
+
+message ResourceMetrics {
+  reserved 1000;
+  opentelemetry.proto.resource.v1.Resource resource = 1;
+  repeated ScopeMetrics scope_metrics = 2;
+  string schema_url = 3;
+}
+
+message ScopeMetrics {
+  opentelemetry.proto.common.v1.InstrumentationScope scope = 1;
+  repeated Metric metrics = 2;
+  string schema_url = 3;
+}
+
+message Metric {
+  reserved 4, 6, 8;
+  string name = 1;
+  string description = 2;
+  string unit = 3;
+  oneof data {
+    Gauge gauge = 5;
+    Sum sum = 7;
+    Histogram histogram = 9;
+    ExponentialHistogram exponential_histogram = 10;
+    Summary summary = 11;
+  }
+  repeated opentelemetry.proto.common.v1.KeyValue metadata = 12;
+}
+
+. . .

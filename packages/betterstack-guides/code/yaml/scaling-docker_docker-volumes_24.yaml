@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-volumes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 24
+
+[label compose.yaml]
+services:
+  db:
+    image: postgres:16
+[highlight]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+[/highlight]
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: myapp
+      POSTGRES_DB: myapp_db
+
+  web:
+    build: ./app
+[highlight]
+    volumes:
+      - ./app:/code
+      - ./static:/app/static
+[/highlight]
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+[highlight]
+volumes:
+  postgres_data:
+[/highlight]

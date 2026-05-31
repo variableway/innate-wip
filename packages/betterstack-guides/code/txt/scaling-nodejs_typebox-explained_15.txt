@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typebox-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Valid profile: true
+Invalid profile: false
+Validation errors: [
+  {
+    type: 45,
+    schema: { type: 'string', [Symbol(TypeBox.Kind)]: 'String' },
+    path: '/username',
+    value: undefined,
+    message: 'Expected required property',
+    errors: []
+  },
+  {
+    type: 54,
+    schema: { type: 'string', [Symbol(TypeBox.Kind)]: 'String' },
+    path: '/username',
+    value: undefined,
+    message: 'Expected string',
+    errors: []
+  }
+]

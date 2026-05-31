@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+[output]
+{"level":"info","ts":1684164941.7644951,"caller":"zap/main.go:52","msg":"user registration successful","service":"userService","requestID":"abc123","username":"john.doe","email":"john@example.com"}
+{"level":"info","ts":1684164941.764551,"caller":"zap/main.go:57","msg":"redirecting user to admin dashboard","service":"userService","requestID":"abc123"}

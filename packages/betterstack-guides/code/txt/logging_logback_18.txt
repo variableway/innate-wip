@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+{"@timestamp":"2023-05-17T18:19:04.104726-04:00","logger_name":"com.example.App","level":"INFO","message":"Order shipped successfully.","destination":"xxxxxxxxxx","orderNumber":"1234567890","buyerName":"jack"}

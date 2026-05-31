@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Epoch Seconds: 1738842325
+Epoch Milliseconds: 1738842325915
+Epoch Microseconds: 1738842325915325n
+Epoch Nanoseconds: 1738842325915325901n

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parcel-vs-vite/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[label .parcelrc]
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  },
+  "optimizers": {
+    "*.js": ["@parcel/optimizer-terser"]
+  }
+}

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+...
+2025-05-30 06:50:30 +0000 [info]: starting fluentd-1.18.0 pid=7 ruby="3.2.8"
+2025-05-30 06:50:30 +0000 [info]: spawn command to main:  cmdline=["/usr/local/bin/ruby", "-Eascii-8bit:ascii-8bit", "/usr/local/bundle/bin/fluentd", "-c", "/fluentd/etc/fluent.conf", "--plugin", "/fluentd/plugins", "--under-supervisor"]
+2025-05-30 06:50:31 +0000 [info]: #0 init worker0 logger path=nil rotate_age=nil rotate_size=nil
+2025-05-30 06:50:31 +0000 [info]: adding match pattern="file.logs" type="stdout"
+2025-05-30 06:50:31 +0000 [info]: adding source type="tail"
+2025-05-30 06:50:31 +0000 [info]: #0 starting fluentd worker pid=16 ppid=7 worker=0
+2025-05-30 06:50:31 +0000 [info]: #0 following tail of /var/log/logify/app.log
+2025-05-30 06:50:31 +0000 [info]: #0 fluentd worker is now running worker=0

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/sre-golden-signals/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 8
+
+- alert: LowTraffic
+  expr: sum(rate(http_requests_total[5m])) < 10
+  for: 10m
+  labels:
+    severity: warning
+  annotations:
+    summary: "Unusually low traffic detected"
+    description: "Request rate has fallen below 10 rps for 10 minutes"

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/logging-microservices/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+{
+     "level": 30,
+     "time": "2023-02-23T06:25:33.497Z",
+     "pid": 39977,
+     "hostname": "fedora",
+     "msg": "Hello, world!"
+   }

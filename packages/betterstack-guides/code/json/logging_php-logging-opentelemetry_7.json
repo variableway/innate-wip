@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[label ./notification-engine/composer.json]
+{
+  "autoload": {
+    "psr-4": {
+      "Demo\\Project\\": "src/"
+    }
+  },
+  "require": {
+    "aws/aws-sdk-php": "^3.304",
+    "nette/mail": "^4.0",
+[highlight]
+    "open-telemetry/sdk": "^1.0",
+    "open-telemetry/exporter-otlp": "^1.0",
+    "ext-opentelemetry": "*"
+[/highlight]
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
+  }
+}

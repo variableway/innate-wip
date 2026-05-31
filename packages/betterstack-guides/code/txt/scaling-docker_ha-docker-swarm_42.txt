@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[output]
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                   PORTS     NAMES
+62e396145307   nginx:latest   "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes (healthy)   80/tcp    nginx_nginx.2.uk18jo6wwlq6qfrv2lr6zk1xz

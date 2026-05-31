@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-caching-redis/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+Cache key is: express-demo:/btc-exchange-rate:328d6e380abbc6a7ea60c9cf7954349d866e19bc

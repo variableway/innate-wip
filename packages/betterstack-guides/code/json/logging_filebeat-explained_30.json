@@ -1,0 +1,56 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+...
+{
+  "@timestamp": "2025-06-04T08:13:18.496Z", 
+   "@metadata": {
+    "beat": "filebeat",
+    "type": "_doc",
+    "version": "9.0.1"
+  },
+  "fields": {
+    "env": "development"
+  },
+  "input": {
+    "type": "filestream"
+  },
+[highlight]
+  "ip": "[REDACTED-IP]",
+[/highlight]
+  "status": 200,
+  "msg": "Operation finished",
+  "pid": 169516,
+  "timestamp": 1748871122,
+  "log": {
+    "file": {
+      "path": "/var/log/logify/app.log",
+      "device_id": "2049",
+      "inode": "259470",
+      "fingerprint": "337d323bb6858c439b81fec30abaccc82f8576477737a881801695d2ad617b1f"
+    },
+    "offset": 376373
+  },
+  "ecs": {
+    "version": "8.0.0"
+  },
+  "host": {
+    "name": "6079c3618796"
+  },
+  "agent": {
+    "type": "filebeat",
+    "version": "9.0.1",
+    "ephemeral_id": "4e8cea1f-bd78-4068-b016-1b8e36e768af",
+    "id": "a4a5b3a4-ac08-4488-aac0-a0251c0d4ec7",
+    "name": "6079c3618796"
+  },
+  "level": 30,
+  "is_successful": true,
+[highlight]
+  "ssn": "[REDACTED-SSN]"
+[/highlight]
+}
+...

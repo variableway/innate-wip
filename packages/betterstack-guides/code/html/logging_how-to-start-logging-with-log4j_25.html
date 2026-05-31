@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: xml
+# Normalized: html
+# Block index: 25
+
+<Http name="Http" url="https://localhost:9200/test/log4j/">
+      <Property name="X-Java-Runtime" value="$${java:runtime}" />
+      <JsonLayout properties="true" />
+      <SSL>
+          <KeyStore location="log4j2-keystore.jks"
+              passwordEnvironmentVariable="KEYSTORE_PASSWORD" />
+          <TrustStore location="truststore.jks" passwordFile="${sys:user.home}/truststore.pwd" />
+      </SSL>
+  </Http>

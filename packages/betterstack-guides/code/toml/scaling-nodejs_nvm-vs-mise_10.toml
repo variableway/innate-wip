@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-vs-mise/
+# Original language: toml
+# Normalized: toml
+# Block index: 10
+
+[tasks.test]
+run = "npm test"
+description = "Run tests"
+
+[tasks.dev]
+run = "npm run dev"
+description = "Start dev server"

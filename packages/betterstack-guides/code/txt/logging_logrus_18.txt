@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: txt
+# Normalized: txt
+# Block index: 18
+
+[output]
+[2025-03-09 10:23:57] [INFO   ] User logged in | action=login | user_id=123
+[2025-03-09 10:23:57] [INFO   ] This is an info message | component=test
+[2025-03-09 10:23:57] [WARNING] This is a warning message | component=test
+[2025-03-09 10:23:57] [ERROR  ] This is an error message | component=test

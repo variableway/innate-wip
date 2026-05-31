@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Fetching data...
+Aborting fetch...
+Operation aborted

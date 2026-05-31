@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+processors:
+  attributes/update:
+    actions:
+      - key: payment.card_number
+        action: delete
+      - key: user.email
+        action: delete
+      - key: app_secret
+        value: [REDACTED]
+        action: update
+      - key: client.ip_address
+        action: hash

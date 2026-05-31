@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 23
+
+[label alerts.yml]
+groups:
+- name: Group1
+  rules:
+  - alert: InhibitingRule
+    . . .
+  - alert: InhibitedRule
+    . . .
+
+- name: Group2
+  rules:
+  - alert: InhibitingRule
+    . . .
+  - alert: SecondInhibitedRule
+    . . .

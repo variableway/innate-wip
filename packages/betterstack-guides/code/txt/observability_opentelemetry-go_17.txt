@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-go/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[label .env]
+. . .
+OTEL_EXPORTER_OTLP_ENDPOINT=http://go-image-upload-collector:4318

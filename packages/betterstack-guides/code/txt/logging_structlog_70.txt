@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 70
+
+[output]
+. . .
+2025-06-06T14:28:09.328039Z [debug    ] Nominatim API response         [worldClock.views] ip=None location=<Response [200]> query='New York' request_id=fc1c09eb-74e1-4e2b-ac4a-17f01057f232 user_id=None
+2025-06-06T14:28:33.954774Z [debug    ] Time API response              [worldClock.views] ip=None query='New York' request_id=92ea07e4-8e02-4ec7-8d11-41bbc7c09f27 time=<Response [200]> user_id=None

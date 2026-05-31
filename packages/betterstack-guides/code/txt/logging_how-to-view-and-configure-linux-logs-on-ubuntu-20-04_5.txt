@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+[output]
+falcon   tty3                  Thu Feb 12 07:10 - 07:10  (00:00)
+ruby     tty1                  Thu Feb 12 07:09 - 07:09  (00:00)
+sergio   tty1                  Thu Feb 12 07:09 - 07:09  (00:00)
+
+btmp begins Thu Feb 25 11:43:32 2021

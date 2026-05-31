@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-verbatimmodulesyntax/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+src/service.ts:1:10 - error TS1484: 'User' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+
+1 import { User, Product, API_VERSION, validateEmail } from "./types.js";
+           ~~~~
+
+src/service.ts:1:16 - error TS1484: 'Product' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+
+1 import { User, Product, API_VERSION, validateEmail } from "./types.js";
+                 ~~~~~~~
+
+
+Found 2 errors in the same file, starting at: src/service.ts:1

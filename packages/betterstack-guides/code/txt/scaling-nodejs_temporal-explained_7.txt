@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Object [Temporal.Now] {
+  instant: [Function: instant],
+  plainDateTime: [Function: plainDateTime],
+  plainDateTimeISO: [Function: plainDateTimeISO],
+  plainDate: [Function: plainDate],
+  plainDateISO: [Function: plainDateISO],
+  plainTimeISO: [Function: plainTimeISO],
+  timeZoneId: [Function: timeZoneId],
+  zonedDateTime: [Function: zonedDateTime],
+  zonedDateTimeISO: [Function: zonedDateTimeISO]
+}

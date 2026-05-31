@@ -1,0 +1,10 @@
+{
+  "name": "@innate/betterstack-guides",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Better Stack Community Guides - scraped and organized",
+  "scripts": {
+    "sync": "bash ../../scripts/scrape-betterstack.sh",
+    "finalize": "node ../../scripts/finalize-betterstack.js"
+  }
+}

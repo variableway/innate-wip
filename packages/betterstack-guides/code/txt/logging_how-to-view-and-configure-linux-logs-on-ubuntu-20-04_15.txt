@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 15
+
+[output]
+alternatives  bootlog      dpkg               ubuntu-advantage-tools
+apache2       btmp         ppp                ufw
+apport        certbot      rsyslog            unattended-upgrades
+apt           cups-daemon  speech-dispatcher  wtmp

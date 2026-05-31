@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 78
+
+[output]
+2022-09-02T12:38:59+01:00 INF incoming search query 'Go' on page '1' page_num=1 search_query=Go
+2022-09-02T12:39:00+01:00 INF incoming request elapsed_ms=854.622151 method=GET status_code=200 url=/search?q=Go

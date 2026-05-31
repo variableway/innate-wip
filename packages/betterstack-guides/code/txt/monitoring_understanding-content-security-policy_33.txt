@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+Content-Security-Policy: connect-src 'self' wss://realtime.example.com;

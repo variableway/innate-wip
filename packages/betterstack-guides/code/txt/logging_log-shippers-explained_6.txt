@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[label /etc/vector/vector.toml]
+sources:
+  access_nginx:
+    type: "file"
+    include:
+      - "/var/log/nginx/access.log"
+    read_from: "end"

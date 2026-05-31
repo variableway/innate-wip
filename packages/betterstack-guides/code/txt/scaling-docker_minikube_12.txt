@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 12
+
+This command will show your single Minikube node and its status:

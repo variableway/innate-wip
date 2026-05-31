@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typebox-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+User-friendly errors: {
+  username: 'This field is invalid',
+  email: 'This format is invalid',
+  password: 'This field is invalid',
+  age: 'This field is invalid'
+}

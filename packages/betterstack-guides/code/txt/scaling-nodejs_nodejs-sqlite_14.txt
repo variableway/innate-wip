@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-sqlite/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+> book-inventory@1.0.0 dev
+> node --watch --experimental-sqlite server.js
+
+(node:6270) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Server running on port 5000

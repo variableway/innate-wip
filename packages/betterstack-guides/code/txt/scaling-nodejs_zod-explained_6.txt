@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+This snippet defines a schema for a user object, ensuring that:
+
+- `name` is a string.
+- `age` is a number.
+- `email` is a valid email string.
+
+Now, let's validate some sample data using this schema. Create a new file `index.ts` and add the following code:

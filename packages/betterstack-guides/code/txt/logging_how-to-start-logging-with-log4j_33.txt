@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+{
+  "instant" : {
+    "epochSecond" : 1682530421,
+    "nanoOfSecond" : 359757000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.example.App",
+  "message" : "Order shipped successfully.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}

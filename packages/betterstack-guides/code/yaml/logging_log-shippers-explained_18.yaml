@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 18
+
+[label /etc/filebeat/filebeat.yml]
+output.file:
+  path: "/tmp/filebeat"
+  filename: filebeat
+  rotate_every_kb: 10000
+  number_of_files: 7
+  permissions: 0600
+  rotate_on_startup: true

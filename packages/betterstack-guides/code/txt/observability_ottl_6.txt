@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+{"some_key": "some_value"}

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 25
+
+filter:
+  error_mode: ignore
+    logs:
+      log_record:
+        - IsMatch(body, ".*DEBUG.*") and resource.attributes["environment"] == "production" and resource.attributes["cluster"] == "primary"

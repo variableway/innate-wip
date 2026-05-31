@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 89
+
+[output]
+|-------------|--------------|-------------------|---------------------------|
+|  NAMESPACE  |     NAME     |    TARGET PORT    |            URL            |
+|-------------|--------------|-------------------|---------------------------|
+| default     | example-8080 | example-8080/8080 | http://192.168.49.2:30381 |
+| default     | kubernetes   | No node port      |                           |
+| kube-system | kube-dns     | No node port      |                           |
+|-------------|--------------|-------------------|---------------------------|

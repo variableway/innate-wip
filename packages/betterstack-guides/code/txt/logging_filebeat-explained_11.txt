@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+filebeat version 9.0.1 (amd64), libbeat 9.0.1 [bce373f7dcd56a5575ad2c0ec40159722607e801 built 2025-04-29 23:44:32 +0000 UTC]

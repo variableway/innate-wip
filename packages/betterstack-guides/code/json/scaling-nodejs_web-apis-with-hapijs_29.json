@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 29
+
+[output]
+{
+  "_id": "687f381d1ad899147070cfd9",
+  "title": "Advanced Hapi.js Features",
+  "content": "This updated post covers advanced Hapi.js features including plugins, caching, and authentication.",
+  "published": true,
+  "author": "John Developer",
+  "tags": [
+    "hapi",
+    "nodejs",
+    "api"
+  ],
+  "createdAt": "2025-07-22T07:05:01.760Z",
+  "updatedAt": "2025-07-22T07:26:06.618Z",
+  "__v": 0
+}

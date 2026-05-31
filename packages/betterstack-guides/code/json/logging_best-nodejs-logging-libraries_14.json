@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 14
+
+[output]
+{"startTime":"2023-09-27T04:59:15.967Z","categoryName":"default","level":"INFO","data":"Hello from Log4js-node","name":"John","age":21}

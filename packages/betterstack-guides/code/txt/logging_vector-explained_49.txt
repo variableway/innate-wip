@@ -1,0 +1,52 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[label log-processing-stack/vector/vector.yaml]
+sources:
+  bash_logs:
+    type: docker_logs
+    include_images:
+      - "logify:latest"
+[highlight]
+  nginx_logs:
+    type: docker_logs
+    include_images:
+      - "betterstackcommunity/nginx-helloworld:latest"
+  
+  vector_logs:
+    type: internal_logs
+[/highlight]
+
+sinks:
+  better_stack_bash:
+    type: http
+    method: post
+    ... 
+
+[highlight]
+  better_stack_nginx:
+    type: http
+    method: post
+    inputs:
+      - "nginx_logs"
+    uri: "https://<your_nginx_ingesting_host>/"
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+      token: "<your_nginx_source_token>"
+
+  better_stack_vector:
+    type: http
+    method: post
+    inputs:
+      - "vector_logs"
+    uri: "https://<your_vector_ingesting_host>/"
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+      token: "<your_vector_source_token>"
+[/highlight]

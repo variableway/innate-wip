@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 10
+
+[label /etc/vector/vector.yaml]
+. . .
+
+sinks:
+  print:
+    type: "console"
+    inputs:
+      - "parse_auth_log"
+    encoding:
+      codec: "json"
+
+[highlight]
+  better_stack_http_sink:
+    type: "http"
+    method: "post"
+    inputs:
+      - "parse_auth_log"
+    uri: "https://in.logs.betterstack.com/"
+    encoding:
+      codec: "json"
+    auth:
+      strategy: "bearer"
+      token: "<your_source_token>"
+[/highlight]

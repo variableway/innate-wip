@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 13
+
+The "Ready" status indicates that your node is healthy and available to schedule
+and run workloads. The "control-plane" role indicates that this node is running
+the Kubernetes control plane components, as is expected in a single-node
+Minikube cluster.
+
+## Working with the Kubernetes dashboard
+
+One of Minikube's convenient features is the inclusion of the Kubernetes
+Dashboard, a web-based user interface for managing your cluster. This graphical
+interface provides an intuitive way to interact with your Kubernetes resources.
+
+Minikube makes accessing the dashboard straightforward with a dedicated command:

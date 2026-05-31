@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+src/const.ts:26:9 - error TS2540: Cannot assign to 'host' because it is a read-only property.
+
+26 config2.host = "127.0.0.1"; // Error!
+           ~~~~
+Found 1 error in src/const.ts:26

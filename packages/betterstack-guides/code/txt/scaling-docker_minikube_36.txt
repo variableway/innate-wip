@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 36
+
+This YAML defines a PVC that requests 1 gigabyte of storage with the
+ReadWriteOnce access mode, which means the volume can be mounted for read/write
+access by a single node at a time.
+
+Apply this configuration to create the PVC:

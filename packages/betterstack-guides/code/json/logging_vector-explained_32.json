@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: json
+# Normalized: json
+# Block index: 32
+
+[output]
+{"environment":"dev","ip":"[REDACTED]","level":30,"msg":"Initialized application","pid":101999,"ssn":"[REDACTED]","status":200,"success":true,"time":"2025-05-29T08:24:44+00:00"}
+...

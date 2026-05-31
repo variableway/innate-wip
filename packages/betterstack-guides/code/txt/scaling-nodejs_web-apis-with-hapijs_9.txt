@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Connected to MongoDB successfully
+Server running on http://localhost:3000

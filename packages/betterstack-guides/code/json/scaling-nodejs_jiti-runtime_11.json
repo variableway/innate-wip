@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-runtime/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[label config.json]
+{
+  "appName": "JitiDemo",
+  "version": "1.0.0",
+  "features": {
+    "authentication": true,
+    "caching": true,
+    "logging": false
+  }
+}

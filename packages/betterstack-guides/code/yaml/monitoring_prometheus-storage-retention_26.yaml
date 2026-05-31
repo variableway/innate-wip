@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 26
+
+remote_write:
+  - url: 'http://localhost:9090'

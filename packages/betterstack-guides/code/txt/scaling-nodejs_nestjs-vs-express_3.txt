@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nestjs-vs-express/
+# Original language: txt
+# Normalized: txt
+# Block index: 3
+
+src/
+├── app.controller.ts    # Main application controller
+├── app.module.ts        # Root application module
+├── app.service.ts       # Application business logic
+└── main.ts             # Application entry point

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-environment-variables/
+# Original language: txt
+# Normalized: txt
+# Block index: 15
+
+[label .production.env]
+PORT=8080
+API_KEY=prod-key
+DATABASE_URL=mongodb://prod-server:27017/prod_db

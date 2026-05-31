@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+{
+  "timestamp": "2023-07-30 22:48:01.817 UTC",
+  "user": "postgres",
+  "dbname": "chinook",
+  "pid": 18254,
+  "remote_host": "[local]",
+  "session_id": "64c6e836.474e",
+  "line_num": 1,
+  "ps": "idle",
+  "session_start": "2023-07-30 22:46:14 UTC",
+  "vxid": "4/3",
+  "txid": 0,
+  "error_severity": "LOG",
+  "message": "statement: SHOW data_directory;",
+  "application_name": "psql",
+  "backend_type": "client backend",
+  "query_id": 0
+}

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 18
+
+connectors:
+  count:
+    logs:
+      app.event.count:
+        description: "Log count by event"
+        attributes:
+          - key: event

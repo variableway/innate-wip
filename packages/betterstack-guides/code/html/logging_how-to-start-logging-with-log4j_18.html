@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: xml
+# Normalized: html
+# Block index: 18
+
+[label log4j2.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+    <Appenders>
+        [highlight]
+        <RollingFile name="rolling" fileName="logs/app.log"
+            filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="250 MB" />
+            </Policies>
+        </RollingFile>
+        [/highlight]
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            [highlight]
+            <AppenderRef ref="rolling" />
+            [/highlight]
+        </Root>
+    </Loggers>
+
+</Configuration>

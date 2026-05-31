@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+.
+├── auth
+│   ├── app.js
+│   ├── controllers
+│   ├── db
+│   ├── public
+│   ├── redis.js
+│   ├── routes
+│   ├── schemas
+│   ├── server.js
+│   └── views
+├── auth.Dockerfile
+├── config
+│   ├── db.js
+│   ├── env.js
+│   └── logger.js
+├── converter
+│   ├── app.js
+│   ├── controllers
+│   ├── routes
+│   └── server.js
+├── converter.Dockerfile
+├── docker-compose.yml
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+├── screenshot.png
+└── tags

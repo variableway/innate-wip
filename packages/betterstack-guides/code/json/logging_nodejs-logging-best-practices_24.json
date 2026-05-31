@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+[output]
+{"durationMs":1002,"level":"info","message":"Timer completed"}

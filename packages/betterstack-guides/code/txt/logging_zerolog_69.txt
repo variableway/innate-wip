@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 69
+
+[output]
+2022-08-29T15:59:50+01:00 INF incoming request method=GET elapsed_ms=0.034017 url=/
+2022-08-29T15:59:50+01:00 INF incoming request method=GET elapsed_ms=0.03332 url=/favicon.ico

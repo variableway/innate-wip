@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 5
+
+[label pod.yaml]
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-streams-vs-web-streams-api/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+...
+{
+  title: 'My Date with Drew',
+  release_date: 'August 05, 2005',
+  tagline: null
+}
+Movie processing completed
+Movie stream processing completed

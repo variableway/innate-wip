@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 13
+
+In this example, you've configured two targets: `FileTarget` to send logs to a
+file (`myApp.log`) and `ConsoleTarget` to display logs in the console. The
+`FileTarget` is configured to use a `JsonLayout` for formatting the log messages
+in JSON format.
+
+You then set up rules that define the minimum severity level and the target for
+each rule. This ensures that logs with a severity level of `Info` and above go
+to the file, while logs with a severity level of `Debug` and above go to the
+console.
+
+Now, when you run the program, it will produce output similar to the following:

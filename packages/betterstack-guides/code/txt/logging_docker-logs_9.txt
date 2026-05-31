@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+. . .
+{
+  "appname": "devankoshal",
+  "facility": "ntp",
+  "hostname": "names.realestate",
+  "message": "#hugops to everyone who has to deal with this",
+  "msgid": "ID816",
+  "procid": 7831,
+  "severity": "warning",
+  "timestamp": "2025-05-29T05:54:19.053Z",
+  "version": 1
+}
+{
+  "appname": "CrucifiX",
+  "facility": "syslog",
+  "hostname": "names.city",
+  "message": "We're gonna need a bigger boat",
+  "msgid": "ID862",
+  "procid": 8576,
+  "severity": "err",
+  "timestamp": "2025-05-29T05:54:20.053Z",
+  "version": 2
+}

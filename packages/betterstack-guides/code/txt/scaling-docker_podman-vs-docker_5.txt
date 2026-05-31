@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)

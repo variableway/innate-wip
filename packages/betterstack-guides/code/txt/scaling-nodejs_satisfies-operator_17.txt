@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/satisfies-operator/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+
+src/routes.ts:13:14 - error TS2353: Object literal may only specify known properties, and 'PUT' does not exist in type 'RouteHandler'.
+
+13   invalid: { PUT: () => console.log("Invalid") },
+                ~~~
+
+
+Found 1 error in src/routes.ts:13

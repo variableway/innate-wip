@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[label log-processing-stack/docker-compose.yml]
+services:
+  logify-script:
+    build:
+      context: ./logify
+    container_name: logify
+    logging:
+      driver: "fluentd"
+      options:
+        tag: docker.logify
+        fluentd-address: 127.0.0.1:24224
+    depends_on:
+      - fluent-bit
+    links:
+      - fluent-bit
+
+  fluent-bit:
+    image: fluent/fluent-bit:latest
+    volumes:
+      - ./fluent-bit-config:/fluent-bit/etc
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: ["fluent-bit", "-c", "/fluent-bit/etc/fluent-bit.conf"]
+    container_name: fluent-bit
+    ports:
+      - "24224:24224"

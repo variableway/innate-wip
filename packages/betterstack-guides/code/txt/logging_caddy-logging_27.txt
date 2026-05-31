@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[label Caddyfile]
+<your_domain_name> {
+	log {
+		format filter {
+[highlight]
+			request>uri query {
+				delete apikey
+				replace secret_code [REDACTED]
+				hash email_address
+			}
+		}
+[/highlight]
+	}
+}

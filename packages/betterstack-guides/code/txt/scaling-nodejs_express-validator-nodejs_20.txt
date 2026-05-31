@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-validator-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+{"message":"User registered successfully","user":{"name":"Jane Doe","email":"jane@unauthorized.com"}}

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 66
+
+[output]
+    > kubectl.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubectl:  47.56 MiB / 47.56 MiB [------------] 100.00% 2.42 GiB p/s 200ms
+service/example created
+pod/example created

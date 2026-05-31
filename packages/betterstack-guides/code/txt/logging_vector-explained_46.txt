@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+[label log-processing-stack/vector/vector.yaml]
+sources:
+  bash_logs:
+    type: docker_logs
+    include_images:
+      - "logify:latest"
+
+sinks:
+  better_stack_bash:
+    type: http
+    method: post
+    inputs:
+      - "bash_logs"
+[highlight]
+    uri: "https://<your_bash_ingesting_host>/"
+[/highlight]
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+[highlight]
+      token: "<your_bash_source_token>"
+[/highlight]

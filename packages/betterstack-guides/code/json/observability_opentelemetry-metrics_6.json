@@ -1,0 +1,37 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics/
+# Original language: jsonc
+# Normalized: json
+# Block index: 6
+
+{
+  "Resource": [. . .],
+  "ScopeMetrics": [
+    {
+      "Scope": {
+        "Name": "example-meter",
+        "Version": "0.1.0",
+        "SchemaURL": ""
+      },
+      "Metrics": [
+        // A Counter metric
+        {
+          "Name": "http.server.requests_total",
+          "Description": "Total number of HTTP requests received.",
+          "Unit": "{requests}",
+          "Data": {
+            "DataPoints": [
+              {
+                "Attributes": [],
+                "StartTime": "2024-10-26T20:09:37.211330188+01:00",
+                "Time": "2024-10-26T20:09:43.212680907+01:00",
+                "Value": 3
+              }
+            ],
+            "Temporality": "CumulativeTemporality",
+            "IsMonotonic": true
+          }
+        }
+      ]
+    }
+  ]
+}

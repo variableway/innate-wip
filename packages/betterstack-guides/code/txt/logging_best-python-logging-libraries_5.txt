@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label error.log]
+example: 2023-07-23 14:14:47,578 | ERROR | main.py:34 | 143936 >>> Failed to connect to database: 'my_db'
+Traceback (most recent call last):
+  File "/home/ayo/dev/betterstack/demo/python-logging/main.py", line 32, in <module>
+    raise Exception("Failed to connect to database: 'my_db'")
+Exception: Failed to connect to database: 'my_db'

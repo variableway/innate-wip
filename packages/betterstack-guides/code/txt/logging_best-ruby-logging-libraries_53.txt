@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[output]
+D, [2023-08-30T20:35:15.275648 #1450800] DEBUG -- : database query executed query=SELECT 1; duration=200ms
+I, [2023-08-30T20:35:15.275688 #1450800]  INFO -- : user signed in username=johndoe user_id=123456
+W, [2023-08-30T20:35:15.275701 #1450800]  WARN -- : disk space is 95% full space_used=1234278MB space_remaining=100MB

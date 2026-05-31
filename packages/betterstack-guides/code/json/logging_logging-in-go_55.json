@@ -1,0 +1,33 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 55
+
+[output]
+{
+  "time": "2024-01-03T07:09:31.013954119+01:00",
+  "level": "ERROR",
+  "msg": "image uploaded",
+[highlight]
+  "error": {
+    "msg": "something happened",
+    "trace": [
+      {
+        "func": "main.main",
+        "source": "slog/main.go",
+        "line": 82
+      },
+      {
+        "func": "runtime.main",
+        "source": "runtime/proc.go",
+        "line": 267
+      },
+      {
+        "func": "runtime.goexit",
+        "source": "runtime/asm_amd64.s",
+        "line": 1650
+      }
+    ]
+  }
+}
+[/highlight]

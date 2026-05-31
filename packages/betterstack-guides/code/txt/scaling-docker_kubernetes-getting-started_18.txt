@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+NAME        READY   STATUS    RESTARTS   AGE
+nginx-pod   1/1     Running   0          45s

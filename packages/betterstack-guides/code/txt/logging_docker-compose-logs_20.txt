@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/docker-compose-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+2024-12-27T15:30:15.447550836Z {
+2024-12-27T15:30:15.447597685Z   "appname": "AmbientTech",
+2024-12-27T15:30:15.447604453Z   "facility": "daemon",
+2024-12-27T15:30:15.447610353Z   "hostname": "we.fast",
+2024-12-27T15:30:15.447615603Z   "message": "Great Scott! We're never gonna reach 88 mph with the flux capacitor in its current state!",
+2024-12-27T15:30:15.447621239Z   "msgid": "ID775",
+2024-12-27T15:30:15.447626122Z   "procid": 3492,
+2024-12-27T15:30:15.447631152Z   "severity": "info",
+2024-12-27T15:30:15.447636136Z   "timestamp": "2024-12-27T15:30:15.446Z",
+2024-12-27T15:30:15.447641455Z   "version": 1
+2024-12-27T15:30:15.447646420Z }

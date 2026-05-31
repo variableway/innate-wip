@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label Dockerfile]
+# Use Node 20.16 alpine as base image
+FROM node:20.16-alpine3.19 AS base

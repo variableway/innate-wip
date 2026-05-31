@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+▶ Mocking fs.readFile in Node.js
+  ✔ should successfully read the content of a text file (0.566754ms)
+▶ Mocking fs.readFile in Node.js (3.307336ms)
+
+. . .

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)

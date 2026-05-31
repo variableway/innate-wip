@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[output]
+[1]+ 101999 Running                 ./logify.sh &  (wd: ~/nginx-logging-tutorial/log-processing-stack/logify)

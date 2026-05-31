@@ -4,7 +4,7 @@ import { useState, useMemo } from "react"
 import Link from "next/link"
 import { CheatsheetMeta, ViewMode } from "@/lib/cheatsheets/types"
 import { Badge } from "@innate/ui"
-import { cn } from "@allone/utils"
+import { cn } from "@/lib/utils"
 import {
   BookOpen,
   LayoutGrid,
@@ -116,11 +116,8 @@ export function CheatsheetsPageClient({
           />
         </div>
 
-        {/* Category filters */}
-        <div className="mt-2 flex items-center gap-1.5 flex-wrap">
-          <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mr-1">
-            Category
-          </span>
+        {/* Category filters + clear inline */}
+        <div className="mt-2 flex items-center gap-x-2 gap-y-1.5 flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -139,22 +136,22 @@ export function CheatsheetsPageClient({
               {cat}
             </button>
           ))}
+          {hasFilter && (
+            <>
+              <span className="text-muted-foreground/20">|</span>
+              <span className="text-xs text-muted-foreground/60">
+                {filtered.length}/{total}
+              </span>
+              <button
+                onClick={clearFilters}
+                className="flex items-center gap-1 text-xs text-blue-500 hover:text-blue-600"
+              >
+                <X className="h-3 w-3" />
+                Clear
+              </button>
+            </>
+          )}
         </div>
-
-        {hasFilter && (
-          <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
-            <span>
-              Showing {filtered.length} of {total}
-            </span>
-            <button
-              onClick={clearFilters}
-              className="flex items-center gap-1 text-blue-500 hover:text-blue-600"
-            >
-              <X className="h-3 w-3" />
-              Clear
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Content */}

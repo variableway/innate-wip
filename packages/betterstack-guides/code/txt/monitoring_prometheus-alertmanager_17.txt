@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+alertname=NodeExporterDown

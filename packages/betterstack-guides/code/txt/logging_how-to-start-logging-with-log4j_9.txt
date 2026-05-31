@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+2023-04-24 17:13:30.257 [main] VERBOSE com.example.App - a verbose message

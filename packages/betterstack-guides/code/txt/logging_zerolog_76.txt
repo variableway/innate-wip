@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 76
+
+2022-08-31T15:44:28+01:00 INF incoming request method=GET elapsed_ms=457.825211 status_code=200 url=/search?q=Go

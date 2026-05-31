@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+{
+  "kind": "SPAN_KIND_SERVER",
+  "attributes": {
+    "http.route.server": "/api/v1/users"
+  }
+}

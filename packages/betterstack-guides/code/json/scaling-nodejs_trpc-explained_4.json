@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[label package.json]
+{
+  "name": "trpc-api",
+  "version": "1.0.0",
+  "description": "A tRPC API example",
+[highlight]
+  "main": "dist/index.js",
+  "type": "module",
+[/highlight]
+  "scripts": {
+[highlight]
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+[/highlight]
+  }
+...
+}

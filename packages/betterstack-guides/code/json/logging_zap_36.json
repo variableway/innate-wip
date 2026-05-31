@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+[output]
+{"level":"info","timestamp":"2023-05-17T17:00:59.899+0100","msg":"user login","user":{"id":"USR-12345","name":"John Doe","email":"john.doe@example.com"}}

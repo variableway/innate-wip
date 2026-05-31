@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 10
+
+[label prometheus.yml]
+relabel_configs:
+  - source_labels: [id]
+    regex: ^(.*)\.(.*)\.(.*)$
+    replacement: $1 # already the default
+    target_label: name
+
+  - source_labels: [id]
+    regex: ^(.*)\.(.*)\.(.*)$
+    replacement: $2
+    target_label: region
+
+  - source_labels: [id]
+    regex: ^(.*)\.(.*)\.(.*)$
+    replacement: $3
+    target_label: env

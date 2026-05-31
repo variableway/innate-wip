@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/index/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+Jul 17 15:45:23 webserver sshd[5678]: Accepted password for devuser from 10.0.2.15 port 49812 ssh2

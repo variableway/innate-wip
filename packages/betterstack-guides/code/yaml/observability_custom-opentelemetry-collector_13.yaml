@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/observability/custom-opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 13
+
+[label .github/workflows/base-release.yaml]
+name: Reusable release workflow
+
+on:
+  workflow_call:
+    inputs:
+      distribution:
+        required: true
+        type: string
+
+jobs:
+  release:
+    name: ${{ inputs.distribution }} release
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Write release version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Build the Docker image
+        run: docker build -t ${{ inputs.distribution }}:${VERSION} distributions/${{ inputs.distribution }}
+
+      - name: Log into Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Tag the Docker image
+        run: docker tag ${{ inputs.distribution }}:${VERSION} ${{vars.DOCKERHUB_USERNAME}}/${{ inputs.distribution }}:${VERSION}
+
+      - name: Push the image to Docker Hub
+        run: docker push ${{vars.DOCKERHUB_USERNAME}}/${{ inputs.distribution }}:${VERSION}

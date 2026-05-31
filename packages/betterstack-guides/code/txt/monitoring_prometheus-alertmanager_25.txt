@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[label /etc/alertmanager/templates/email.tmpl]
+{{ define "email.myorg.text" }}
+Alert Summary:
+{{ range .Alerts }}
+- Alert: {{ .Annotations.summary }}
+- Description: {{ .Annotations.description }}
+- Severity: {{ .Labels.severity }}
+{{ end }}
+View Alert Runbook: https://internal.example.com/wiki/alerts/{{ .GroupLabels.alertname }}
+{{ end }}

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{"python_version": "3.11.4", "os": "linux", "event": "Database query executed in 0.025 seconds", "timestamp": "2023-07-23T15:32:21.590688Z", "level": "debug"}
+{"python_version": "3.11.4", "os": "linux", "file": "data.csv", "elapsed_ms": 300, "num_records": 1000, "event": "Processing file 'data.csv' completed. 1000 records were imported", "timestamp": "2023-07-23T15:32:21.590720Z", "level": "info"}
+. . .

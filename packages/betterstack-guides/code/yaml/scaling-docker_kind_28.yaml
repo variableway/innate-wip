@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 28
+
+[label ingress-cluster.yaml]
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+ kubeadmConfigPatches:
+ - |
+   kind: InitConfiguration
+   nodeRegistration:
+     kubeletExtraArgs:
+       node-labels: "ingress-ready=true"
+ extraPortMappings:
+ - containerPort: 80
+   hostPort: 80
+   protocol: TCP
+ - containerPort: 443
+   hostPort: 443
+   protocol: TCP

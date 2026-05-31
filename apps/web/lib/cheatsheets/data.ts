@@ -3,7 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { Cheatsheet, CheatsheetMeta } from "./types"
 
-const CHEATSHEETS_DIR = path.join(process.cwd(), "../../docs/cheatsheets")
+const CHEATSHEETS_DIR = path.join(process.cwd(), "content", "cheatsheets")
 
 function parseCheatsheet(slug: string, raw: string): Cheatsheet {
   const { data, content } = matter(raw)

@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: xml
+# Normalized: html
+# Block index: 27
+
+[label logback.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration>
+    <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder" />
+    <import class="ch.qos.logback.core.ConsoleAppender" />
+
+    <appender name="STDOUT" class="ConsoleAppender">
+        <encoder class="PatternLayoutEncoder">
+            [highlight]
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -- [%marker] %msg%n</pattern>
+            [/highlight]
+        </encoder>
+    </appender>
+
+    <root level="trace">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

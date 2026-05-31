@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 13
+
+[label prometheus.yml]
+relabel_configs:
+  - source_labels: [app, region]
+    separator: ":"
+    regex: frontend:us-west
+    action: keep

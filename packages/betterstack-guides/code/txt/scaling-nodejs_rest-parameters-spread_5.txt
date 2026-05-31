@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rest-parameters-spread/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+src/problem.ts:17:27 - error TS2554: Expected 0 arguments, but got 3.
+
+17 console.log("Sum1:", sum1(1, 2, 3));
+                             ~~~~~~~
+
+
+Found 1 error in src/problem.ts:17

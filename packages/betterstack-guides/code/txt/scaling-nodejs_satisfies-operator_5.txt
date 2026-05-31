@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/satisfies-operator/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+src/config.ts:11:34 - error TS2339: Property 'toUpperCase' does not exist on type 'string | RGB'.
+  Property 'toUpperCase' does not exist on type 'RGB'.
+
+11 const greenUpper = palette.green.toUpperCase();
+                                    ~~~~~~~~~~~
+
+Found 1 error in src/config.ts:11

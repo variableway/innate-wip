@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/discriminated-unions/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+src/invalid.ts:16:3 - error TS2353: Object literal may only specify known properties, and 'error' does not exist in type 'SuccessResponse'.
+
+16   error: { message: "This makes no sense", code: 500 }, // Error!
+     ~~~~~
+
+src/invalid.ts:21:3 - error TS2353: Object literal may only specify known properties, and 'data' does not exist in type 'ErrorResponse'.
+
+21   data: { userId: 1, username: "alice" }, // Error!
+     ~~~~
+
+
+Found 2 errors in the same file, starting at: src/invalid.ts:16

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+[+] Running 13/13
+ ✔ prometheus Pulled                                                                                                                             77.3s
+   ✔ 6ce8b87a9754 Pull complete                                                                                                                   8.3s
+   ✔ d2f8aae8d80e Pull complete                                                                                                                   7.8s
+   ...
+   ✔ 9afdc6cdd365 Pull complete                                                                                                                  61.5s
+   ✔ be6157533a37 Pull complete                                                                                                                  61.7s
+[+] Running 2/2
+ ✔ Network nodejs-prometheus-demo_default         Created                                                                                         0.0s
+ ✔ Container nodejs-prometheus-demo-prometheus-1  Started                                                                                         0.3s

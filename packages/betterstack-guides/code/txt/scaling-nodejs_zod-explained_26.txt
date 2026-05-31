@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 26
+
+The `z.infer` utility extracts the TypeScript type from our Zod schema. Typescript infers this as:

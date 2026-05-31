@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 44
+
+[output]
+# HELP http_response_size_bytes Summary of HTTP response sizes in bytes
+# TYPE http_response_size_bytes summary
+http_response_size_bytes{quantile="0.01",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.05",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.5",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.9",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.95",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.99",method="GET",route="/"} 880
+http_response_size_bytes{quantile="0.999",method="GET",route="/"} 880
+http_response_size_bytes_sum{method="GET",route="/"} 1423840
+http_response_size_bytes_count{method="GET",route="/"} 1618637

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 20
+
+collector:
+  container_name: json-to-yaml-collector
+[highlight]
+  image: otel/opentelemetry-collector-contrib:latest
+[/highlight]
+  volumes:
+[highlight]
+    - ./otelcol.yaml:/etc/otelcol-contrib/config.yaml
+[/highlight]

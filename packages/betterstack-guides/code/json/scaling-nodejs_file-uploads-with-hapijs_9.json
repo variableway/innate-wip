@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/file-uploads-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+{
+  "filename": "test-file.txt",
+  "contentType": "text/plain",
+  "location": "/path/to/your/project/uploads/test-file.txt"
+}

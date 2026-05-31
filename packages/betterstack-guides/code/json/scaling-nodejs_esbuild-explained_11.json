@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-explained/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[label package.json]
+"scripts": {
+[highlight]
+  "build": "esbuild src/main.js --bundle --outfile=dist/bundle.js --format=esm",
+  "dev": "esbuild src/main.js --bundle --outfile=dist/bundle.js --format=esm --watch"
+[/highlight]
+}

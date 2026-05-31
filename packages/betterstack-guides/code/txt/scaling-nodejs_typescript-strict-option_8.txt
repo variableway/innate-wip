@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+src/without-strict.ts:1:22 - error TS7006: Parameter 'user' implicitly has an 'any' type.
+
+1 function getUserName(user) {
+                       ~~~~
+
+src/without-strict.ts:5:23 - error TS7006: Parameter 'value' implicitly has an 'any' type.
+
+5 function processValue(value) {
+                        ~~~~~
+
+src/without-strict.ts:9:19 - error TS7006: Parameter 'items' implicitly has an 'any' type.
+
+9 function findItem(items, index) {
+                    ~~~~~
+
+src/without-strict.ts:9:26 - error TS7006: Parameter 'index' implicitly has an 'any' type.
+
+9 function findItem(items, index) {
+                           ~~~~~
+
+
+Found 4 errors in the same file, starting at: src/without-strict.ts:1

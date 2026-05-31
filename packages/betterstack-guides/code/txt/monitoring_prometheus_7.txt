@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+process_resident_memory_bytes

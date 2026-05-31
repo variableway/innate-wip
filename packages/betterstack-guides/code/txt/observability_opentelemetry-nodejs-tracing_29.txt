@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+OTEL_NODE_DISABLED_INSTRUMENTATIONS=fs,net,dns

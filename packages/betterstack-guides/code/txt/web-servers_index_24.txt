@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+dist/index.html                   0.41 kB │ gzip:   0.28 kB
+dist/assets/index-1eb968c3.css  232.27 kB │ gzip:  31.10 kB
+dist/assets/index-1a72bdb1.js   410.87 kB │ gzip: 127.99 kB
+✓ built in 2.48s

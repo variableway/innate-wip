@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[output]
+{"log":"  \"appname\": \"BryanHorsey\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055677329Z"}
+{"log":"  \"facility\": \"lpr\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055692882Z"}
+{"log":"  \"hostname\": \"some.associates\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055705333Z"}
+{"log":"  \"message\": \"#hugops to everyone who has to deal with this\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055716046Z"}
+{"log":"  \"msgid\": \"ID282\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055724085Z"}
+{"log":"  \"procid\": 4741,\n","stream":"stdout","time":"2025-05-29T05:51:23.055731325Z"}
+{"log":"  \"severity\": \"info\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055740056Z"}
+{"log":"  \"timestamp\": \"2025-05-29T05:51:23.054Z\",\n","stream":"stdout","time":"2025-05-29T05:51:23.055751695Z"}
+{"log":"  \"version\": 2\n","stream":"stdout","time":"2025-05-29T05:51:23.055763635Z"}
+{"log":"}\n","stream":"stdout","time":"2025-05-29T05:51:23.055775068Z"}

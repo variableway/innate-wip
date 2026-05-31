@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-runtime/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+CommonJS config: {
+  database: { host: 'localhost', port: 5432 },
+  api: { version: 'v1', timeout: 5000 }
+}
+ESM module: { defaultSettings: { environment: 'development', debug: true } }

@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-module-resolution/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+src/services/logger.ts:1:42 - error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../utils/formatter.js'?
+
+1 import { formatMessage, formatError } from "../utils/formatter";
+                                               ~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:1:26 - error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './services/logger.js'?
+
+1 import { Logger } from "./services/logger";
+                           ~~~~~~~~~~~~~~~~~~~
+
+Found 2 errors in 2 files.
+
+Errors  Files
+     1  src/index.ts:1
+     1  src/services/logger.ts:1

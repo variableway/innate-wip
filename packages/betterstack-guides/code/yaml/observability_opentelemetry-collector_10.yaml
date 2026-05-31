@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 10
+
+processors:
+  batch:
+  batch/2:
+    send_batch_size: 10000
+    timeout: 10s
+  batch/test:
+    timeout: 1s

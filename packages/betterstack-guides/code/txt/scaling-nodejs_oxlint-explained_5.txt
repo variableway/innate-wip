@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+
+> oxlint-demo@1.0.0 lint
+> oxlint
+
+
+  ⚠ eslint(no-unused-vars): Variable 'unused' is declared but never used. Unused variables should start with a '_'.
+   ╭─[index.js:5:7]
+ 4 │ function processData(data) {
+ 5 │   let unused = "This variable is never used";
+   ·       ───┬──
+   ·          ╰── 'unused' is declared here
+ 6 │ 
+   ╰────
+  help: Consider removing this declaration.
+
+Found 1 warning and 0 errors.
+Finished in 3ms on 1 file with 101 rules using 10 threads.

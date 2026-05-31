@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+[+] Running 4/4
+ ✔ Container go-blog-caddy          Removed                      0.3s
+ ✔ Container go-blog-app            Removed                      0.2s
+ ✔ Container go-blog-db             Removed                      0.3s
+ ✔ Network go-blog_go-blog-network  Removed                      0.4

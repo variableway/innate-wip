@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label /etc/rsyslog.conf]
+module(load="imtcp")
+input(type="imtcp" port="514")

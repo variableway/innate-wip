@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+Subject: Watchtower updates on hostname
+
+Watchtower 1.4.0
+Using notifications: email
+Checking containers: demo-ubuntu, demo-nginx, demo-custom-node
+Found new yourusername/custom-node:v1 image (sha256:def456...)

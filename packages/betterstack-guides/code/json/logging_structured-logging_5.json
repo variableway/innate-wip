@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/structured-logging/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[output]
+{
+  "timestamp": "2024-06-16T17:39:00+01:00",
+  "level": "info",
+  "log_type": "application",
+  "http_method": "POST",
+  "http_path": "/api/orders",
+  "duration": 0.235,
+  "db_duration": 0.120,
+  "db_num_queries": 5,
+  "user": "usr_456",
+  "status": 201
+}

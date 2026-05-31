@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/index/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+otelcol-custom
+├── components.go
+├── go.mod
+├── go.sum
+├── main.go
+├── main_others.go
+├── main_windows.go
+└── otelcol-custom

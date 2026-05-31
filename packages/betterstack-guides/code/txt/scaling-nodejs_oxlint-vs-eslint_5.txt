@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+[output]
+  ⚠ eslint(no-unused-vars): Variable 'userId' is declared but never used
+  ⚠ react/jsx-key: Missing "key" prop for element in iterator
+  ⚠ typescript/no-explicit-any: Unexpected any. Specify a different type
+  
+Found 47 warnings in 0.8s

@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+{
+  "Scope": {
+    "Name": "otel-metrics-demo",
+    "Version": "",
+    "SchemaURL": ""
+  },
+  "Metrics": [
+    . . .
+    {
+[highlight]
+      "Name": "http.server.active_requests",
+[/highlight]
+      "Description": "Number of in-flight requests.",
+      "Unit": "{requests}",
+      "Data": {
+        "DataPoints": [
+          {
+            "Attributes": [],
+            "StartTime": "2024-10-30T15:08:44.081618023+01:00",
+            "Time": "2024-10-30T15:09:32.082396312+01:00",
+[highlight]
+            "Value": 250
+[/highlight]
+          }
+        ],
+        "Temporality": "CumulativeTemporality",
+        "IsMonotonic": false
+      }
+    }
+  ]
+}

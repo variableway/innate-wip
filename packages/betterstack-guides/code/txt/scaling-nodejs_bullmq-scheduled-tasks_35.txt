@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bullmq-scheduled-tasks/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+Processing job: backupMongoDB
+Starting database backup: ./backup-2023-12-21_15-16-00.gz
+Database "admin" successfully backed up to ./backup-2023-12-21_15-16-00.gz
+repeat:565112efdb4682ea9115e85543a22c15:1703171760000 has completed!
+Processing job: backupMongoDB
+Starting database backup: ./backup-2023-12-21_15-17-00.gz
+Database "admin" successfully backed up to ./backup-2023-12-21_15-17-00.gz
+repeat:565112efdb4682ea9115e85543a22c15:1703171820000 has completed!

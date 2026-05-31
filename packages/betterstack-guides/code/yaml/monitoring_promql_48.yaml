@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 48
+
+[label alerts.yml]
+- alert: HighErrorRate
+[highlight]
+  expr: rate(http_requests_total{code=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+[/highlight]
+  for: 2m
+  labels:
+    severity: error
+  annotations:
+    summary: "High error rate detected"
+    description: "The error rate is above 5% for {{ $labels.instance }}"

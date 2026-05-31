@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 58
+
+[output]
+POD ID        NAME        STATUS      CREATED        INFRA ID      # OF CONTAINERS
+bf97c02c7c07  example     Running     7 minutes ago  5827494c3cce  3

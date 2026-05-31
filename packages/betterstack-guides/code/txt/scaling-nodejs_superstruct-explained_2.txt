@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 2
+
+Here's what each tool does:
+
+- `typescript`: The main TypeScript compiler
+- `tsx`: Runs TypeScript files directly without compiling them first
+
+Create your TypeScript config file:

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-python/index/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Fast operation started
+Fast operation completed
+Fast operation result: Success
+Slow operation started
+Error in slow operation: Function slow_operation timed out after 2.0 seconds
+Main function completed

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+{
+  "csp-report": {
+    "document-uri": "https://example.com/page.html",
+    "referrer": "",
+    "violated-directive": "script-src",
+    "effective-directive": "script-src",
+    "original-policy": "default-src 'self'; script-src 'self'; report-uri https://example.com/csp-reports",
+    "disposition": "report",
+    "blocked-uri": "https://evil.com/malicious.js",
+    "status-code": 0,
+    "source-file": "https://example.com/page.html"
+  }
+}

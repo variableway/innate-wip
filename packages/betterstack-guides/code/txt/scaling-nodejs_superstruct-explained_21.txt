@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 21
+
+In this code, you're creating data with multiple validation problems, then examining the error object's properties to understand what information Superstruct provides when validation fails.
+
+Run this code:

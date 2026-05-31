@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-interfaces/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+user@example.com
+null

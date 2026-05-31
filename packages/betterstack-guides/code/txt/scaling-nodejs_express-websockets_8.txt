@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-websockets/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Restarting 'server.js'
+Server running on http://localhost:3000
+New client connected from ::1
+Client disconnected - Code: 1001, Reason:

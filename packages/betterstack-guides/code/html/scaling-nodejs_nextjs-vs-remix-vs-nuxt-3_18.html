@@ -1,0 +1,49 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nextjs-vs-remix-vs-nuxt-3/
+# Original language: vue
+# Normalized: html
+# Block index: 18
+
+<!-- error.vue (global error page) -->
+<script setup>
+const props = defineProps({
+  error: Object
+});
+
+function handleError() {
+  clearError({ redirect: '/' });
+}
+</script>
+
+<template>
+  <div>
+    <h1>{{ error.statusCode }}</h1>
+    <p>{{ error.message }}</p>
+    <button @click="handleError">Go back home</button>
+  </div>
+</template>
+
+<!-- In components or pages -->
+<script setup>
+const { data, error, pending } = await useFetch('/api/users');
+
+// Handle component-level errors
+watch(error, (newError) => {
+  if (newError) {
+    console.error('Failed to fetch users:', newError);
+  }
+});
+</script>
+
+<template>
+  <div>
+    <div v-if="pending">Loading users...</div>
+    <div v-else-if="error">
+      Failed to load users: {{ error.message }}
+    </div>
+    <ul v-else>
+      <li v-for="user in data" :key="user.id">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+</template>

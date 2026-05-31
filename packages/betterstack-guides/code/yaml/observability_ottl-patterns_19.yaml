@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+transform:
+  metric_statements:
+    - context: datapoint
+      statements:
+        - set(resource.attributes["k8s.pod.ip"], attributes["k8s_pod_ip"])

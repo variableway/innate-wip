@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Sequelize CLI [Node: 22.5.1, CLI: 6.6.2, ORM: 6.37.3]
+
+Loaded configuration file "src/config/db.js".
+Using environment "development".
+== 20240729152055-create-url: migrating =======
+== 20240729152055-create-url: migrated (0.038s)

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/cli-tsc-compiler/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+
+Created a new tsconfig.json                                                                         
+                                                                                                 TS 
+You can learn more at https://aka.ms/tsconfig

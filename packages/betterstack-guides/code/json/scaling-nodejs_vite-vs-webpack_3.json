@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vite-vs-webpack/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+"scripts": {
+  "build": "webpack",
+  "dev": "webpack serve"
+}

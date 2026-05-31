@@ -1,0 +1,58 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+{
+  "resourceLogs": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "super.service"
+            }
+          }
+        ]
+      },
+      "scopeLogs": [
+        {
+          "scope": {
+            "name": "awesome.library",
+            "version": "3.1.4",
+            "attributes": [
+              {
+                "key": "fantastic.scope.attribute",
+                "value": {
+                  "stringValue": "wonderful scope attribute"
+                }
+              }
+            ]
+          },
+          "logRecords": [
+            {
+              "timeUnixNano": "1678886400000000000",
+              "observedTimeUnixNano": "1678886400000000000",
+              "severityNumber": 9,
+              "severityText": "Info",
+              "traceId": "ABCDEF0123456789ABCDEF0123456789",
+              "spanId": "123456789ABCDEF0",
+              "body": {
+                "stringValue": "A delightful log message"
+              },
+              "attributes": [
+                {
+                  "key": "amazing.attribute",
+                  "value": {
+                    "intValue": 123
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

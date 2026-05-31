@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+volumes:
+ - name: varlogpods
+   hostPath:
+     path: /var/log/pods
+volumeMounts:
+ - name: varlogpods
+   mountPath: /var/log/pods
+   readOnly: true

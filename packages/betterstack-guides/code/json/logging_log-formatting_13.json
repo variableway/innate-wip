@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+{
+  "time": "2023-05-24T19:39:27.005Z",
+  "level": "DEBUG",
+[highlight]
+  "source": {
+    "function": "main.main",
+    "file": "app/main.go",
+    "line": 30
+  },
+[/highlight]
+  "msg": "Debug message"
+}

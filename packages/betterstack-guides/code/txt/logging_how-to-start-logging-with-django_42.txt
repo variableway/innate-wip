@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[label .env]
+...
+LOGTAIL_SOURCE_TOKEN=<your_source_token>
+LOGTAIL_INGESTING_HOST=<your_ingesting_host>

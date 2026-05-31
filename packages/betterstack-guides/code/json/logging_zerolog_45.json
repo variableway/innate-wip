@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 45
+
+[output]
+{"level":"error","stack":[{"func":"main","line":"19","source":"main.go"},{"func":"main","line":"250","source":"proc.go"},{"func":"goexit","line":"1594","source":"asm_amd64.s"}],"error":"file open failed!","time":"2022-08-24T21:52:24+01:00","message":"something happened!"}

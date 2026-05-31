@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 51
+
+To enable an add-on, such as the metrics-server for monitoring pod resource
+usage:

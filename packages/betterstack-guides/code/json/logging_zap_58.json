@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 58
+
+[output]
+{"time":"2023-05-20T21:21:43.335894635+01:00","level":"INFO","msg":"incoming request","method":"GET","path":"/api/user","status":200}

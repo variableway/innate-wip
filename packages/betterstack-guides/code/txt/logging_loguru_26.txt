@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+May 23, 2025 > 14:28:42 | INFO | product page opened | {'seller_id': '001', 'product_id': '123'}
+May 23, 2025 > 14:28:42 | INFO | product updated | {'seller_id': '001', 'product_id': '123'}
+May 23, 2025 > 14:28:42 | INFO | product page closed | {'seller_id': '001', 'product_id': '123'}
+May 23, 2025 > 14:28:42 | INFO | INFO message | {}

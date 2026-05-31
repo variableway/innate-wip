@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-vs-asdf/
+# Original language: txt
+# Normalized: txt
+# Block index: 4
+
+[label .tool-versions]
+nodejs 20.10.0
+ruby 3.2.2
+python 3.11.0
+terraform 1.6.0

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 22
+
+[label alerts.yml]
+  # Node Down Alert
+  - alert: NodeDown
+    expr: up{job="node-exporter"} == 0
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Node down ({{ $labels.instance }})"
+      description: "The node {{ $labels.instance }} is down for the last 2 minutes."

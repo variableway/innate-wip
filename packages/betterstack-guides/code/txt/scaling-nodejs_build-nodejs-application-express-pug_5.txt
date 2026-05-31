@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/build-nodejs-application-express-pug/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+[output]
+> hacker-news@1.0.0 dev
+> npx pm2-dev server.js
+
+===============================================================================
+--- PM2 development mode ------------------------------------------------------
+Apps started         : server
+Processes started    : 1
+Watch and Restart    : Enabled
+Ignored folder       : node_modules
+===============================================================================
+server-0  | Hacker news server started on port: 3000

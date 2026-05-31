@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 10
+
+{"level":60,"time":1643664517737,"msg":"Fatal message"}

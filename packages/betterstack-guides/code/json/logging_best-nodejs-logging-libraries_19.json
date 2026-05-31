@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 19
+
+[output]
+{"name":"myapp","hostname":"fedora","pid":2454325,"level":30,"width":300,"height":400,"file":"needsmore.jpg","msg":"image uploaded successfully","time":"2023-06-25T08:04:12.110Z","v":0}
+{"name":"myapp","hostname":"fedora","pid":2433470,"level":50,"err":{"message":"request failed to complete","name":"Error","stack":"Error: request failed to complete\n    at Object.<anonymous> (/home/ayo/dev/betterstack/demo/nodejs-logging/index.js:7:14)\n    at Module._compile (node:internal/modules/cjs/loader:1254:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)\n    at Module.load (node:internal/modules/cjs/loader:1117:32)\n    at Module._load (node:internal/modules/cjs/loader:958:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n    at node:internal/main/run_main_module:23:47"},"msg":"request failed to complete","time":"2023-06-25T07:30:16.369Z","v":0}

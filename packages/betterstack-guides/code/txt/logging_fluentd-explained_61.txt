@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 61
+
+[label log-processing-stack/fluentd-docker/fluent.conf]
+<source>
+  @type forward
+  port 24224
+  bind 0.0.0.0
+</source>
+
+<match docker.logify.**>
+[highlight]
+  @type logtail
+  @id output_logify_logtail
+  source_token <your_logify_source_token>
+  ingesting_host <your_logify_ingesting_host>
+  flush_interval 2
+[/highlight]
+</match>

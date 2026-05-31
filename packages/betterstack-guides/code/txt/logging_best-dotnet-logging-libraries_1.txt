@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+info: Program[0]
+      Info message
+warn: Program[0]
+      Warning message
+fail: Program[0]
+      Error message
+crit: Program[0]
+      Critical message

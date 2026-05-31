@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 49
+
+[label custom-nodes.yaml]
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+ kubeadmConfigPatches:
+ - |
+   kind: InitConfiguration
+   nodeRegistration:
+     kubeletExtraArgs:
+       system-reserved: memory=2Gi
+- role: worker
+ kubeadmConfigPatches:
+ - |
+   kind: JoinConfiguration
+   nodeRegistration:
+     kubeletExtraArgs:
+       eviction-hard: 'memory.available<10%'

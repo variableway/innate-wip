@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 24
+
+[label otelcol.yaml]
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: node-exporter
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['node-exporter:9100']
+
+processors:
+  attributes/betterstack:
+    actions:
+      - key: better_stack_source_token
+[highlight]
+        value: <your_source_token>
+[/highlight]
+        action: insert
+  batch:
+
+exporters:
+  prometheusremotewrite/betterstack:
+    endpoint: https://in-otel.logs.betterstack.com/metrics
+
+service:
+  pipelines:
+    metrics/betterstack:
+      receivers: [prometheus]
+      processors: [batch, attributes/betterstack]
+      exporters: [prometheusremotewrite/betterstack]

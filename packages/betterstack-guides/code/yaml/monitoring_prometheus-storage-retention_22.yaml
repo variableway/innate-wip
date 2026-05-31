@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 22
+
+- alert: PrometheusStorageFilling
+  expr: (predict_linear(prometheus_tsdb_storage_blocks_bytes[1h], 24 * 3600) / prometheus_tsdb_storage_blocks_bytes_total) > 0.8
+  for: 1h
+  labels:
+    severity: warning
+  annotations:
+    summary: "Prometheus storage is filling up"
+    description: "Prometheus storage is predicted to fill within 24 hours."

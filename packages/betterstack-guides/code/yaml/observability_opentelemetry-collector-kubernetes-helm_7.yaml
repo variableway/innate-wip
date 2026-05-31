@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 7
+
+exporters:
+  otlp:
+    endpoint: observability.example.com:443
+    headers:
+      api-key: ${OBSERVABILITY_API_KEY}
+  otlp/metrics:
+    endpoint: metrics.example.com:443
+    headers:
+      api-key: ${METRICS_API_KEY}

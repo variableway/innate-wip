@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 16
+
+[label config.yaml]
+processors:
+  transform/redact:
+[highlight]
+    error_mode: ignore
+[/highlight]

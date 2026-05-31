@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 13
+
+Superstruct tells you exactly which field failed and why, making it easy to fix problems.
+
+### Creating custom validation functions
+
+You can write your own validation functions for special requirements that the built-in validators don't cover.
+
+Add a custom password validator to your `schemas.ts`:

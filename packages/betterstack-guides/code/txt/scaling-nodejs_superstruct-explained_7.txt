@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+The `create()` method checks your data against the schema. If the data is valid, it returns the data. If not, it throws an error with details about what went wrong.
+
+Run your code:

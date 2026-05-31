@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[label fluent-bit-config/convert_timestamp.lua]
+function append_converted_timestamp(tag, timestamp, record)
+  new_record = record
+  new_record["timestamp"] = os.date("!%Y-%m-%dT%TZ", record["timestamp"])
+  return 2, timestamp, new_record
+end

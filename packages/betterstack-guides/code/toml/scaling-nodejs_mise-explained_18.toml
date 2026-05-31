@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 18
+
+[env]
+PROJECT_ROOT = "{{ config_root }}"
+DATA_DIR = "{{ config_root }}/data"

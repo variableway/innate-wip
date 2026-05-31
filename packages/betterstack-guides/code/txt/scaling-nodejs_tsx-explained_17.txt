@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/tsx-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+Created user: { id: 98, name: 'Native TypeScript User', isActive: true }
+(node:85308) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

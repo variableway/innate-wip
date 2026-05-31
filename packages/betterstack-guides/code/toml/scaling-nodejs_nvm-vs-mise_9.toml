@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-vs-mise/
+# Original language: toml
+# Normalized: toml
+# Block index: 9
+
+[tools]
+node = "22.0.0"
+
+[env]
+DATABASE_URL = "postgresql://localhost/myapp"
+API_KEY = "dev-key-123"
+NODE_ENV = "development"

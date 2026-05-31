@@ -1,0 +1,48 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typebox-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Valid user: false
+Invalid user: false
+Validation errors: [
+  {
+    type: 52,
+    schema: {
+      minLength: 2,
+      maxLength: 50,
+      type: 'string',
+      [Symbol(TypeBox.Kind)]: 'String'
+    },
+    path: '/name',
+    value: 'J',
+    message: 'Expected string length greater or equal to 2',
+    errors: []
+  },
+  {
+    type: 39,
+    schema: {
+      minimum: 18,
+      maximum: 120,
+      type: 'number',
+      [Symbol(TypeBox.Kind)]: 'Number'
+    },
+    path: '/age',
+    value: 16,
+    message: 'Expected number to be greater or equal to 18',
+    errors: []
+  },
+  {
+    type: 49,
+    schema: {
+      format: 'email',
+      type: 'string',
+      [Symbol(TypeBox.Kind)]: 'String'
+    },
+    path: '/email',
+    value: 'not-an-email',
+    message: "Unknown format 'email'",
+    errors: []
+  }
+]

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+Books before deletion: 4
+Deleted 1 book(s)
+Books after deletion: 3

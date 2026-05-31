@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+src/server.ts:23:5 - error TS2339: Property 'misuse' does not exist on type 'Express'.
+
+23 app.misuse(morganMiddleware);
+       ~~~~~~

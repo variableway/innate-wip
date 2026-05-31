@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/file-uploads-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 14
+
+{
+  "statusCode": 400,
+  "error": "Bad Request",
+  "message": "File validation failed"
+}

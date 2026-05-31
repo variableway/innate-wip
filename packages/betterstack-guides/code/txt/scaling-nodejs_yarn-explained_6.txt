@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+total 64
+drwxr-xr-x@  6 stanley  staff    192 Mar 19 16:14 .
+drwxr-xr-x@  4 stanley  staff    128 Mar 19 16:10 ..
+-rw-r--r--@  1 stanley  staff    235 Mar 19 16:18 index.js
+drwxr-xr-x@ 71 stanley  staff   2272 Mar 19 16:13 node_modules
+-rw-r--r--@  1 stanley  staff    140 Mar 19 16:13 package.json
+-rw-r--r--@  1 stanley  staff  21747 Mar 19 16:13 yarn.lock

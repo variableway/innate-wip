@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 8
+
+This configuration provides 4 CPUs and 8GB of memory to your Minikube cluster,
+which can significantly improve performance for resource-intensive applications.
+
+Minikube supports different virtualization and containerization technologies
+through its driver system. While Docker is the default on most systems, you
+might want to use an alternative like VirtualBox:

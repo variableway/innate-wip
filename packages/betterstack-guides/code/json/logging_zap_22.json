@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+[output]
+{"level":"warn","ts":1684166023.952419,"caller":"zap/main.go:46","msg":"User account is nearing the storage limit","username":"john.doe","storageUsed":4.5,"storageLimit":5}

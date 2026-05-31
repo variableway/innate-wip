@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 25
+
+version: '3.8'
+
+services:
+ web:
+   image: nginx
+   networks:
+     - frontend
+   ports:
+     - "8080:80"
+
+ api:
+   image: my-api-service
+   networks:
+     - frontend
+     - backend
+
+ db:
+   image: postgres:14
+   networks:
+     - backend
+   environment:
+     POSTGRES_PASSWORD: example
+
+networks:
+ frontend:
+   driver: bridge
+ backend:
+   driver: bridge
+   internal: true

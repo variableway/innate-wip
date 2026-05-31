@@ -1,0 +1,48 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: proto
+# Normalized: protobuf
+# Block index: 0
+
+[label trace.proto]
+// https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto
+message TracesData {
+  repeated ResourceSpans resource_spans = 1;
+}
+
+message ResourceSpans {
+  opentelemetry.proto.resource.v1.Resource resource = 1;
+  repeated ScopeSpans scope_spans = 2;
+}
+
+message ScopeSpans {
+  opentelemetry.proto.common.v1.InstrumentationScope scope = 1;
+  repeated Span spans = 2;
+}
+
+message Span {
+  bytes trace_id = 1;
+  bytes span_id = 2;
+  string trace_state = 3;
+  bytes parent_span_id = 4;
+  fixed32 flags = 16;
+  string name = 5;
+  enum SpanKind {}
+  SpanKind kind = 6;
+  fixed64 start_time_unix_nano = 7;
+  fixed64 end_time_unix_nano = 8;
+  Status status = 15;
+  message Event {}
+  repeated Event events = 11;
+  repeated opentelemetry.proto.common.v1.KeyValue attributes = 9;
+  uint32 dropped_attributes_count = 10;
+  uint32 dropped_events_count = 12;
+  message Link {}
+  repeated Link links = 13;
+  uint32 dropped_links_count = 14;
+  Status status = 15;
+}
+
+
+message Status {}
+
+enum SpanFlags {}

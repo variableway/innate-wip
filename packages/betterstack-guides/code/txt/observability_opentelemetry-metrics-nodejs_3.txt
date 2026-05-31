@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[label .env]
+NODE_ENV=development
+PORT=8000
+OTEL_SERVICE_NAME=nodejs-metrics-demo
+LOG_LEVEL=info
+OTEL_EXPORTER_OTLP_ENDPOINT=http://nodejs-metrics-demo-collector:4318

@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 58
+
+[output]
+0|dadjokes  | Request handled by process: 0
+0|dadjokes  | Executing some operation on process 0 only...
+1|dadjokes  | Request handled by process: 1
+2|dadjokes  | Request handled by process: 2
+0|dadjokes  | Request handled by process: 0
+0|dadjokes  | Executing some operation on process 0 only...
+1|dadjokes  | Request handled by process: 1
+0|dadjokes  | GET /joke 200 106 - 1935.223 ms
+2|dadjokes  | Request handled by process: 2
+0|dadjokes  | GET /joke 200 160 - 1137.809 ms
+0|dadjokes  | Request handled by process: 0
+0|dadjokes  | Executing some operation on process 0 only...
+1|dadjokes  | Request handled by process: 1
+2|dadjokes  | GET /joke 200 171 - 1083.629 ms
+2|dadjokes  | GET /joke 200 100 - 2079.859 ms
+2|dadjokes  | Request handled by process: 2
+0|dadjokes  | Request handled by process: 0
+0|dadjokes  | Executing some operation on process 0 only...
+0|dadjokes  | GET /joke 200 119 - 1070.117 ms
+2|dadjokes  | GET /joke 200 130 - 1073.907 ms
+1|dadjokes  | GET /joke 200 142 - 6049.548 ms
+1|dadjokes  | GET /joke 200 111 - 3412.896 ms
+1|dadjokes  | GET /joke 200 148 - 5938.372 ms
+0|dadjokes  | GET /joke 200 111 - 5827.303 ms

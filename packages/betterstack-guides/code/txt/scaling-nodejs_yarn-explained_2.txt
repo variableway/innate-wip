@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+
+yarn init v1.22.22
+question name (yarn-demo): 
+question version (1.0.0): 
+question description: 
+question entry point (index.js): 
+question repository url: 
+question author: 
+question license (MIT): 
+question private: 
+success Saved package.json
+✨  Done in 28.24s.

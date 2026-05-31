@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+. . .
+2025-05-29T05:56:34.055786115Z {
+2025-05-29T05:56:34.055878279Z   "appname": "shaneIxD",
+2025-05-29T05:56:34.055932562Z   "facility": "uucp",
+2025-05-29T05:56:34.055941573Z   "hostname": "for.star",
+2025-05-29T05:56:34.055949305Z   "message": "There's a breach in the warp core, captain",
+2025-05-29T05:56:34.055957197Z   "msgid": "ID722",
+2025-05-29T05:56:34.055965544Z   "procid": 9725,
+2025-05-29T05:56:34.055972968Z   "severity": "info",
+2025-05-29T05:56:34.055980777Z   "timestamp": "2025-05-29T05:56:34.054Z",
+2025-05-29T05:56:34.055988453Z   "version": 2
+2025-05-29T05:56:34.055995896Z }
+2025-05-29T05:56:35.056088105Z {
+2025-05-29T05:56:35.056164377Z   "appname": "BryanHorsey",
+2025-05-29T05:56:35.056179668Z   "facility": "local1",
+2025-05-29T05:56:35.056191584Z   "hostname": "we.ice",
+2025-05-29T05:56:35.056203405Z   "message": "Pretty pretty pretty good",
+2025-05-29T05:56:35.056215567Z   "msgid": "ID827",
+2025-05-29T05:56:35.056227890Z   "procid": 9256,
+2025-05-29T05:56:35.056239141Z   "severity": "info",
+2025-05-29T05:56:35.056300226Z   "timestamp": "2025-05-29T05:56:35.054Z",
+2025-05-29T05:56:35.056308531Z   "version": 2
+2025-05-29T05:56:35.056316392Z }

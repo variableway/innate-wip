@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Error: getaddrinfo ENOTFOUND http://localhost
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'http://localhost'
+}

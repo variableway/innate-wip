@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+ALICE
+84
+path_to/ts-strict-option/src/without-strict.ts:10
+  return items[index].id;
+                      ^
+
+TypeError: Cannot read properties of undefined (reading 'id')
+    ...
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)

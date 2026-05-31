@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-best-practices/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 9
+
+processors:
+  servicegraph:
+    metrics_exporter: prometheus
+    store:
+      ttl: 2s
+      max_items: 1000

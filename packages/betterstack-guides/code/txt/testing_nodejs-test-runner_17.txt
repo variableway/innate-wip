@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+▶ formatFileSize function
+  ﹣ should return '0B' for sizeBytes = 0 (0.882616ms) # test name does not match pattern
+  ﹣ should return '1.00 MB' for sizeBytes = 1048576 (0.190468ms) # test name does not match pattern
+  ✔ should return '1.00 GB' for sizeBytes = 1073741824 @large (0.365786ms)
+  ✔ should return '5.00 GB' for sizeBytes = 5368709120 @large (0.187443ms)
+▶ formatFileSize function (6.018844ms)
+
+ℹ tests 4
+ℹ suites 1
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 137.936039

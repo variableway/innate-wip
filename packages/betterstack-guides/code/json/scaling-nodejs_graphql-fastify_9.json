@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-fastify/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+[output]
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "name": "Alex Chen",
+        "email": "alex@example.com"
+      },
+      {
+        "id": "2",
+        "name": "Maria Garcia",
+        "email": "maria@example.com"
+      },
+      {
+        "id": "3",
+        "name": "James Wilson",
+        "email": "james@example.com"
+      }
+    ],
+    "user": {
+      "name": "Alex Chen",
+      "role": "developer"
+    }
+  }
+}

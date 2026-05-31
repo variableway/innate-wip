@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 24
+
+This shows that your service has been assigned an internal IP address
+(CLUSTER-IP) and is mapping port 8080 internally to port 31234 externally. The
+external port is randomly assigned by Kubernetes.
+
+### Accessing applications via Minikube
+
+Minikube provides a convenient way to access services that have been exposed
+with NodePort. Instead of needing to know the IP address of the Minikube node
+and the assigned NodePort, you can use the minikube service command:

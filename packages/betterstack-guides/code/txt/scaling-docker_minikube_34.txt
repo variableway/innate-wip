@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 34
+
+These commands modify Minikube's stored configuration, changing the defaults for
+memory and CPU allocation. However, it's important to note that these changes
+don't affect an already running cluster. For the changes to take effect, you'll
+need to restart your cluster:

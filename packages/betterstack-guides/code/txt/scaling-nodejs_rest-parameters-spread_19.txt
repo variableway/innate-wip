@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rest-parameters-spread/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+Profile: {
+  id: 'U123',
+  name: 'Alice',
+  email: 'alice@example.com',
+  theme: 'dark',
+  notifications: true,
+  lastLogin: 2025-11-27T07:13:53.113Z
+}
+Updated theme: light
+Updated user: { id: 'U123', name: 'Alice Smith', email: 'alice@example.com' }

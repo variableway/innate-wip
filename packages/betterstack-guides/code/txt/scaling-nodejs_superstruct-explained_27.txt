@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 27
+
+This formatting function converts technical error messages into language that regular users can understand. You keep the structured format you need for forms and APIs, but make the messages much clearer.
+
+Run the code with friendly error formatting:

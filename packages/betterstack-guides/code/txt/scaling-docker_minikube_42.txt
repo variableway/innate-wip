@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 42
+
+This configuration creates a pod that mounts the /app directory (which is
+connected to your local ~/projects/myapp) to /usr/share/nginx/html in the
+container. This means that the NGINX server in the container will serve content
+directly from your local development directory.
+
+Apply this configuration:

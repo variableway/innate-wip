@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-with-hapi-js/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]> hapi-graphql-api@1.0.0 dev
+> node --watch server.js
+
+Server running at: http://localhost:4000/

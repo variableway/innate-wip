@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+HTTP/1.1 200 OK
+content-type: text/plain; charset=utf-8
+content-length: 13
+Date: Sun, 18 Aug 2024 10:35:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=72
+
+Blog app demo%

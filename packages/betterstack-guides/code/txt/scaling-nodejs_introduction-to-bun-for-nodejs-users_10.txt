@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-bun-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[label bunfig.toml]
+preload = ["./preload.ts"]

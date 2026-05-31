@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 73
+
+LOG:  This is an informational message
+WARNING:  Something unexpected happened
+ERROR:  An unexpected error

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-php/index/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[label .env]
+DB_CONNECTION=pgsql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=laravel_blog
+DB_USERNAME=postgres
+DB_PASSWORD=admin

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 28
+
+[label prometheus.yml]
+alerting:
+  alert_relabel_configs:
+    - source_labels: [alertname]
+      regex: "HighCPU.*"
+      target_label: team
+      replacement: "ops-team"
+      action: replace

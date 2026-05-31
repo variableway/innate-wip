@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/never-unknown-types/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+src/problem.ts:13:13 - error TS2322: Type '"contrast"' is not assignable to type 'never'.
+
+13       const exhaustiveCheck: never = theme;
+               ~~~~~~~~~~~~~~~
+
+
+Found 1 error in src/problem.ts:13

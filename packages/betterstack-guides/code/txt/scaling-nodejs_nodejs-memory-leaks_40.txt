@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: text
+# Normalized: txt
+# Block index: 40
+
+[output]
+alertmanager.service - Prometheus Alert Manager Service
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-28 21:12:22 CAT; 6s ago
+   Main PID: 24277 (alertmanager)
+      Tasks: 9 (limit: 9302)
+     Memory: 13.2M
+        CPU: 205ms
+     CGroup: /system.slice/alertmanager.service
+             └─24277 /usr/local/bin/alertmanager/alertmanager --config.file=/usr/local/bin/alertmanager/alertmanager.yml

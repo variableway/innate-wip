@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[label /etc/rsyslog.d/70-logtail.conf]
+global(DefaultNetstreamDriverCAFile="/etc/ssl/certs/ca-certificates.crt")
+[highlight]
+global(
+  workDirectory="/var/spool/rsyslog"
+)
+
+# Load the imfile module to read logs from a file
+module(load="imfile")
+
+# Define a new input for reading logs from a file
+input(type="imfile"
+      File="/var/log/logify/app.log"
+      Tag="FileLogs"
+      PersistStateInterval="10"
+      Facility="local0")
+[/highlight]
+
+template(name="LogtailFormat" type="list") {
+  ...
+}
+# Existing Better Stack configuration below...

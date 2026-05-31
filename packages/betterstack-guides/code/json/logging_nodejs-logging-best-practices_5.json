@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+{"message":"user 'xyz' created successfully"}

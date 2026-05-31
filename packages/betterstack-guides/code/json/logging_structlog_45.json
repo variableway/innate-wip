@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 45
+
+[output]
+{"exc_info": true, "event": "Cannot divide one by zero!", "level": "error", "timestamp": "2025-06-06T14:02:36.907179Z"}

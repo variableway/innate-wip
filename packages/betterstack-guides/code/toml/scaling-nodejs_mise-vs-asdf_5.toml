@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-vs-asdf/
+# Original language: toml
+# Normalized: toml
+# Block index: 5
+
+[label .mise.toml]
+[tools]
+node = "20.10.0"
+ruby = "3.2.2"
+python = "3.11.0"
+
+[env]
+DATABASE_URL = "postgresql://localhost/myapp"
+API_KEY = { file = ".env.local", key = "API_KEY" }
+
+[tasks.test]
+run = "npm test"
+
+[tasks.dev]
+run = "npm run dev"
+depends = ["install"]

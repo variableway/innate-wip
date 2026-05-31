@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+{"timestamp":"2023-08-30T17:28:54.939779+02:00","level":"INFO","logger":"example","message":"user signed in"}
+{"timestamp":"2023-08-30T17:28:54.956600+02:00","level":"WARN","logger":"example","message":"disk space is 95% full"}
+{"timestamp":"2023-08-30T17:28:54.956620+02:00","level":"ERROR","logger":"example","message":"encountered an unexpected error while backing up database"}
+{"timestamp":"2023-08-30T17:28:54.956631+02:00","level":"FATAL","logger":"example","message":"application crashed"}

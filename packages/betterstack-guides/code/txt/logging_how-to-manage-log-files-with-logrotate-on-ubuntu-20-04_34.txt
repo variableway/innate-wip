@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[label ~/logify/logrotate.conf]
+/home/<user>/logify/*.log
+{
+    hourly
+    missingok
+    rotate 7
+    compress
+    notifempty
+    [highlight]
+    sharedscripts
+    postrotate
+      curl https://betteruptime.com/api/v1/heartbeat/<heartbeat_id>
+    endscript
+    [/highlight]
+}

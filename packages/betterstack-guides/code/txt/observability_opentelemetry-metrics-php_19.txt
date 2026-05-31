@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-php/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{status="200",path="metrics",method="GET"} 2
+http_requests_total{status="200",path="root",method="GET"} 1

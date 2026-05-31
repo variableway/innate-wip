@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2023/03/31 12:34:56 [notice] 1#1: using the "epoll" event method
+2023/03/31 12:34:56 [notice] 1#1: nginx/1.21.4
+2023/03/31 12:34:56 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6)
+2023/03/31 12:34:56 [notice] 1#1: OS: Linux 5.15.0-25-generic
+2023/03/31 12:34:56 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/03/31 12:34:56 [notice] 1#1: start worker processes
+2023/03/31 12:34:56 [notice] 1#1: start worker process 29
+2023/03/31 12:34:56 [notice] 1#1: start worker process 30
+2023/03/31 12:34:56 [notice] 1#1: start worker process 31

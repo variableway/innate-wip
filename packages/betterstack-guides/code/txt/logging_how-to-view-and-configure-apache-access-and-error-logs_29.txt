@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 29
+
+[output]
+CustomLog ${APACHE_LOG_DIR}/custom.log custom
+CustomLog ${APACHE_LOG_DIR}/access.log common
+CustomLog ${APACHE_LOG_DIR}/combined.log combined

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+src/without-strict.ts:24:29 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+24 const result = processValue("42");
+                               ~~~~
+
+Found 1 error in src/without-strict.ts:24

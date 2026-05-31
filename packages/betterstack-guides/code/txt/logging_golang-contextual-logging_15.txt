@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/golang-contextual-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+time=2024-07-02T21:10:53.718+02:00 level=ERROR source=/home/pp/development/betterstack/contextual-logs/thirdpartyctx/main.go:88 msg="failed to login" payload.username="Harry Potter" payload.auth_method=password SpanID=abcdef1234567890

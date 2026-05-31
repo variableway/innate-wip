@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vitejs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+3:56:48 PM [vite] (client) page reload index.html
+3:57:08 PM [vite] Pre-transform error: Failed to load url /src/main.js (resolved id: /src/main.js). Does the file exist?

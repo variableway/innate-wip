@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+2023-04-29 08:07:25 [WARNING] This is a sample log record for database service.
+2023-04-29 08:07:26 [ERROR] This is a sample log record for app service.
+2023-04-29 08:07:27 [INFO] This is a sample log record for app service.
+2023-04-29 08:07:28 [ERROR] This is a sample log record for app service.
+2023-04-29 08:07:29 [INFO] This is a sample log record for database service.
+2023-04-29 08:07:31 [ERROR] This is a sample log record for web service.
+2023-04-29 08:07:32 [INFO] This is a sample log record for network service.
+2023-04-29 08:07:33 [INFO] This is a sample log record for network service.
+. . .

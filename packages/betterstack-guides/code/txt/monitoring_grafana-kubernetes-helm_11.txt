@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/grafana-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000

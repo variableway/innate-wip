@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+{"level":30,"time":1638163169765,"pid":3474,"hostname":"Kreig","msg":"Server listening at <http://127.0.0.1:3000>"}

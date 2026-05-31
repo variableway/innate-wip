@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+State           Recv-Q          Send-Q                     Local Address:Port                     Peer Address:Port          Process
+LISTEN          0               511                                    *:3000                                *:*              users:(("node",pid=13446,fd=21))

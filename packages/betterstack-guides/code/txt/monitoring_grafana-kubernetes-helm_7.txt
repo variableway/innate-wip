@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/grafana-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+grafana default         1               2025-04-13 17:21:48.507199693 +0100 WAT deployed        grafana-8.11.4  11.6.0

@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 13
+
+The output is a structured error object from Zod, where `_errors` at the root level is empty since there are no global errors. 
+
+Each invalid field (`name`, `age`, `email`, `password`) has its own `_errors` array containing specific validation messages.
+
+This format makes it easy to pinpoint which fields failed and why.
+
+The output clearly identifies which fields failed validation and provides helpful error messages.
+
+
+### Refining values
+
+Zod allows further validation through `.refine()`, which enables custom validation logic.
+
+In the `validation.ts` file, enhance the password validation in the `UserSchema`:

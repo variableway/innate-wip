@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 66
+
+[output]
+2025-06-06T14:20:36.438009Z [info     ] request_started                [django_structlog.middlewares.request] ip=None request='GET /' request_id=c9e8d320-b214-4fd4-83b2-131a0ad2468a user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' user_id=None
+2025-06-06T14:20:36.438009Z [info     ] request_started                [django_structlog.middlewares.request] ip=None request='GET /' request_id=c9e8d320-b214-4fd4-83b2-131a0ad2468a user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' user_id=None
+2025-06-06T14:20:36.506138Z [info     ] request_finished               [django_structlog.middlewares.request] code=200 ip=None request='GET /' request_id=c9e8d320-b214-4fd4-83b2-131a0ad2468a user_id=None
+2025-06-06T14:20:36.506138Z [info     ] request_finished

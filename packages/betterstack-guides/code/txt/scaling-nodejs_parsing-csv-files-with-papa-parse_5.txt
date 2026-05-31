@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parsing-csv-files-with-papa-parse/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Headers: id,name,department,salary
+Employee: John Smith works in Engineering earning $75000
+Employee: Sara Johnson works in Marketing earning $82000
+Employee: Michael Brown works in Finance earning $95000

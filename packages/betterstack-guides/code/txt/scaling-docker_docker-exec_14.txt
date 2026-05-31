@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=0756f0d455ee
+NGINX_VERSION=1.27.0
+NJS_VERSION=0.8.4
+NJS_RELEASE=2~bookworm
+PKG_RELEASE=2~bookworm
+[highlight]
+VAR1=value1
+VAR2=value2
+[/highlight]
+HOME=/root

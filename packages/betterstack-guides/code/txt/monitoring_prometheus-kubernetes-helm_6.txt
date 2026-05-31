@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+prometheus      default         1               2025-04-13 15:30:52.710496686 +0100 WAT deployed        prometheus-27.8.0       v3.2.1

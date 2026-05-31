@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+app-123_us-east-1_prod

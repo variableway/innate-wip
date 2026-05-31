@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/passport-js-with-express/
+# Original language: json
+# Normalized: json
+# Block index: 32
+
+[output]
+{
+  "error": "User already exists"
+}

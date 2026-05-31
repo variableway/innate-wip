@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 50
+
+[output]
+Original: PT2H45M30S
+Rounded to hours: PT3H

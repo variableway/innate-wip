@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: txt
+# Normalized: txt
+# Block index: 19
+
+1.7 GB × 90 days = 153 GB of storage

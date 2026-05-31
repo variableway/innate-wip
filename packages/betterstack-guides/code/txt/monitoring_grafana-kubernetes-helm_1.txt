@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/grafana-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+"grafana" has been added to your repositories

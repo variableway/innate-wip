@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 66
+
+[output]
+--> Deploying to production environment
+--> on host <your_git_repo_url>
+
+  ○ deploying origin/prod
+  ○ executing pre-deploy-local
+  ○ hook pre-deploy
+  ○ fetching updates
+  ○ full fetch
+Fetching origin
+  ○ resetting HEAD to origin/prod
+HEAD is now at 4c31583 Add pm2 config file
+  ○ executing post-deploy `pm2 startOrRestart ecosystem.config.js --env production`
+[PM2][WARN] Applications dadjokes not running, starting...
+[PM2][WARN] Environment [production] is not defined in process file
+[PM2] App [dadjokes] launched (1 instances)
+. . .
+--> Success

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+[May 28, 2025 17:51:03 CAT] [INFO | app] A user performed a search. | query: idufvuiew >>> {'request_id': 'b316b464-769a-4b9f-853c-a3bc0e407680'}
+[May 28, 2025 17:51:04 CAT] [INFO | app] A location is NOT found. >>> {'request_id': 'b316b464-769a-4b9f-853c-a3bc0e407680'}
+[May 28, 2025 17:51:04 CAT] [INFO | app] path: /search | method: POST | status: 200 OK | size: 497 >>> {'request_id': 'b316b464-769a-4b9f-853c-a3bc0e407680'}

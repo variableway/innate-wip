@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 35
+
+[output]
+{"file":"something.png","level":"info","message":"File uploaded successfully","requestId":"f9ed4675f1c53513c61a3b3b4e25b4c0","service":"admin-service","type":"image/png","userId":"jdn33d8h2"}

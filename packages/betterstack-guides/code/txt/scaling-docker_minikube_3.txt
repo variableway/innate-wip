@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+minikube version: v1.35.0
+commit: 08896fd1dc362c097c925146c4a0d0dac715ace0

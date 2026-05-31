@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: json
+# Normalized: json
+# Block index: 44
+
+[output]
+{
+    "id": "27f80e88-41bc-49c3-98a0-94b5d9dcd42e",
+    "title": "Post to Delete",
+    "content": "This post will be deleted to test the DELETE endpoint.",
+    "created_at": "2025-03-12T11:31:29.473946",
+    "updated_at": "2025-03-12T11:31:29.473951",
+    "published": true
+}

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: output
+# Normalized: txt
+# Block index: 28
+
+Hello from v2 - UPDATED!

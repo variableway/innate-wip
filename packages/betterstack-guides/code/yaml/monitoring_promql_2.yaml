@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label prometheus.yml]
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - 'localhost:9090'
+
+  - job_name: node-exporter
+    static_configs:
+      - targets:
+          - 'node-exporter:9100'

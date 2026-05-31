@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/log-sampling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 8
+
+[label /etc/vector/vector.yaml]
+sources:
+  myapp_logs:
+    type: file
+    include:
+      - /var/log/myapp/app.log
+
+transforms:
+[highlight]
+  sample_myapp:
+    type: sample
+    inputs:
+      - myapp_logs
+    key_field: msg
+    rate: 5
+[/highlight]
+
+sinks:
+  print:
+    type: console
+    inputs:
+      - sample_myapp
+    encoding:
+      codec: json

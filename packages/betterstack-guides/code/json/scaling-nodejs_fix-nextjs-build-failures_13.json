@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fix-nextjs-build-failures/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[label package.json]
+"scripts": {
+  "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=2048\" next build",
+  ...
+}

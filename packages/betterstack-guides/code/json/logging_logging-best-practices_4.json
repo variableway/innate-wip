@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+{
+  "timestamp": "2023-11-06T14:52:43.123Z",
+  "level": "INFO",
+  "message": "Login attempt failed due to incorrect password",
+  "user_id": "12345",
+  "source_ip": "192.168.1.25",
+  "attempt_num": 3,
+  "request_id": "xyz-request-456",
+  "service": "user-authentication",
+  "device_info": "iPhone 12; iOS 16.1",
+  "location": "New York, NY"
+}

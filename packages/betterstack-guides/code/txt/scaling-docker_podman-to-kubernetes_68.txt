@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 68
+
+[output]
+NAME          READY   STATUS    RESTARTS   AGE
+pod/example   2/2     Running   0          7m11s
+
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+service/example      NodePort    10.110.196.168   <none>        80:30381/TCP   7m11s
+service/kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP        11m

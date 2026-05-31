@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/log-sampling/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+[output]
+{"level":"info","time":"2023-12-28T17:57:24+01:00","message":"an info message: 1"}
+{"level":"info","time":"2023-12-28T17:57:24+01:00","message":"an info message: 6"}

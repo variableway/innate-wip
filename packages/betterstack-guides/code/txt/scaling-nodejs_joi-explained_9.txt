@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/joi-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Validation error: "username" must have at least 3 characters

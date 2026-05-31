@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+18394cb59b3e1d334143300e9a86744c2babb6994b5a92782fb92e10098f25b4

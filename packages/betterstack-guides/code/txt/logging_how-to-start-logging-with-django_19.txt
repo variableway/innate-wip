@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+horus.views.index at 2025-05-28 18:27:59,042 (INFO) :: New user with ID: ce0f77e5-577c-4752-b259-b3e757de3b07

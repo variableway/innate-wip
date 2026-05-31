@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+. . .
+go-blog-app      |
+go-blog-app      |   __    _   ___
+go-blog-app      |  / /\  | | | |_)
+go-blog-app      | /_/--\ |_| |_| \_ v1.52.3, built with Go go1.23
+go-blog-app      |
+go-blog-app      | mkdir /app/tmp
+go-blog-app      | watching .
+go-blog-app      | watching bin
+go-blog-app      | watching models
+go-blog-app      | watching repository
+go-blog-app      | watching repository/migrations
+go-blog-app      | watching templates
+go-blog-app      | !exclude tmp
+go-blog-app      | building...
+go-blog-app      | running...
+go-blog-app      | Server started on port 8000
+. . .

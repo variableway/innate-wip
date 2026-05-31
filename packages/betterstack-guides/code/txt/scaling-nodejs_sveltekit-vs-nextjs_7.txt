@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sveltekit-vs-nextjs/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+app/
+├── page.js                 // /
+├── about/page.js          // /about
+├── blog/
+│   ├── page.js            // /blog
+│   └── [slug]/page.js     // /blog/post-title
+└── dashboard/
+    ├── layout.js          // Shared layout
+    ├── page.js            // /dashboard
+    └── settings/page.js   // /dashboard/settings

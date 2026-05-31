@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+> express-blog-api@1.0.0 start
+> node --watch app.js
+
+Server running on http://localhost:3000

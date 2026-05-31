@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 26
+
+### Creating user-friendly error messages
+
+Raw Superstruct errors can be too technical for regular users. You can create helper functions to make the messages more friendly and actionable.
+
+Add a formatting function to your error handling file:

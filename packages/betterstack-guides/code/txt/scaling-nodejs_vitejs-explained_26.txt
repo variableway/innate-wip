@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vitejs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+ DEV  v3.1.3 /Users/stanley/vite-project
+      UI started at http://localhost:51204/__vitest__/
+
+ ✓ src/main.test.js (1 test) 1ms
+   ✓ sample test > adds numbers correctly 1ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  17:05:24
+   Duration  655ms (transform 16ms, setup 0ms, collect 11ms, tests 1ms, environment 405ms, prepare 45ms)
+
+ PASS  Waiting for file changes...
+       press h to show help, press q to quit

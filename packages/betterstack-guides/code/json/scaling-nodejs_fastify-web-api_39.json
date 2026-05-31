@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: json
+# Normalized: json
+# Block index: 39
+
+[output]
+{
+  "id": "600be861-a0d4-4d4e-9897-b40f50c1452f",
+  "title": "Updated Blog Post Title",
+  "content": "This content has been updated. Fastify makes updating API resources easy!",
+  "published": true,
+  "createdAt": "2025-03-19T12:16:08.265Z",
+  "updatedAt": "2025-03-19T12:30:02.243Z"
+}

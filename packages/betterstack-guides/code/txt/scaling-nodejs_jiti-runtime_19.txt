@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-runtime/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+[jiti] [init] version: 2.5.1 module-cache: true fs-cache: true rebuild-fs-cache: false interop-defaults: true
+[jiti] [cache] [hit] ./app.ts ~> ./node_modules/.cache/jiti/jiti-demo-app.90b55b14.mjs
+[jiti] [transpile] [esm] ./app.ts (1.049ms)
+You have 2 incomplete tasks:
+- Write documentation
+- Deploy to production

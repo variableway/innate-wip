@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+[output]
+{"context":{"logLevel":30},"message":"Hello from Roarr logger","sequence":"0","time":1687682375862,"version":"2.0.0"}

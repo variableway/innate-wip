@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+example: 2023-07-23 14:42:18,599 | INFO | main.py:30 | 187901 >>> Server started listening on port 8080
+example: 2023-07-23 14:14:47,578 | WARNING | main.py:28 | 143936 >>> Disk space on drive '/var/log' is running low. Consider freeing up space
+example: 2023-07-23 14:14:47,578 | ERROR | main.py:34 | 143936 >>> Failed to connect to database: 'my_db'
+Traceback (most recent call last):
+  File "/home/ayo/dev/betterstack/demo/python-logging/main.py", line 32, in <module>
+    raise Exception("Failed to connect to database: 'my_db'")
+Exception: Failed to connect to database: 'my_db'

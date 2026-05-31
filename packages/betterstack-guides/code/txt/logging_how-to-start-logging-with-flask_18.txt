@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+. . .
+[May 28, 2025 17:07:56 CAT] INFO | _internal >>> 127.0.0.1 - - [28/May/2025 17:07:56] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-sourcemap-option/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+total 16
+drwxr-xr-x  4 user  staff  128 Dec 17 10:30 .
+drwxr-xr-x  6 user  staff  192 Dec 17 10:28 ..
+-rw-r--r--  1 user  staff  891 Dec 17 10:30 calculator.js
+-rw-r--r--  1 user  staff  245 Dec 17 10:30 calculator.d.ts

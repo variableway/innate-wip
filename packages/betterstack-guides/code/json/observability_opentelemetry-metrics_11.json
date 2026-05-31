@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{
+  "Name":"http.request.duration",
+  "Description":"The duration of an HTTP request.",
+  "Unit":"s",
+  "Data":{
+    "DataPoints":[
+      {
+        "Attributes":[],
+        "StartTime":"2024-10-27T19:47:25.477241011+01:00",
+        "Time":"2024-10-27T19:47:34.478340202+01:00",
+        "Count":1,
+        "Bounds":[0, 5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 10000],
+        "BucketCounts":[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Min":0.00001627,
+        "Max":0.00001627,
+        "Sum":0.00001627
+      }
+    ],
+    "Temporality":"CumulativeTemporality"
+  }
+}

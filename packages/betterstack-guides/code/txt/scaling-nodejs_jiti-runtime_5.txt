@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-runtime/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Loaded: { default: 'Hello, Alice! You are 30 years old.' }

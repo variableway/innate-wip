@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[label requirements.txt]
+Flask==3.1.0
+python-dotenv==1.0.1
+prometheus_client
+[highlight]
+requests
+[/highlight]

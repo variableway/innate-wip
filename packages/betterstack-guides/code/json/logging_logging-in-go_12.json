@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[output]
+{
+  "time":"2023-02-24T11:52:49.554074496+01:00",
+  "level":"INFO",
+  "msg":"incoming request",
+  "method":"GET",
+  "time_taken_ms":158,
+  "path":"/hello/world?q=search",
+  "status":200,
+  "user_agent":"Googlebot/2.1 (+http://www.google.com/bot.html)"
+}

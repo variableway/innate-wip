@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/best-practices-alert-fatigue/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 1
+
+[label alerts.yaml]
+alert: TargetDown
+expr: up == 0
+[highlight]
+for: 5m
+[/highlight]

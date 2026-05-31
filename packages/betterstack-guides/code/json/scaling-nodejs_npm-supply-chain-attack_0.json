@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/npm-supply-chain-attack/
+# Original language: json
+# Normalized: json
+# Block index: 0
+
+[label package.json]
+"scripts": {
+  "preinstall": "node setup_bun.js"
+}

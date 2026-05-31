@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+> hapijs-blog-api@1.0.0 dev
+> node --watch server.js
+
+Server running on http://localhost:3000

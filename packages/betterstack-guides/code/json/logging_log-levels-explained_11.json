@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[output]
+{"level":"trace","time":"2023-06-06T11:01:55+01:00","message":"Entering complexCalculation() function"}
+{"level":"trace","input":5,"time":"2023-06-06T11:01:55+01:00","message":"Received input: 5"}
+{"level":"trace","step1-result":10,"time":"2023-06-06T11:01:55+01:00","message":"Intermediate value after step 1"}
+{"level":"trace","step2-result":20,"time":"2023-06-06T11:01:55+01:00","message":"Intermediate value after step 2"}
+{"level":"trace","final-result":60,"time":"2023-06-06T11:01:55+01:00","message":"Final result is: 60"}
+{"level":"trace","time":"2023-06-06T11:01:55+01:00","message":"Exiting complexCalculation() function"}
+{"level":"info","result":60,"time":"2023-06-06T11:01:55+01:00","message":"Calculation completed"}

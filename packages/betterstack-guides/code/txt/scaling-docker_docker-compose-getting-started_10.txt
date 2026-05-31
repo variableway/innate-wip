@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+docker-compose-database-1  | {"t":{"$date":"2023-10-11T22:22:35.024+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"172.30.0.3:44760","client":"conn3","doc":{"driver":{"name":"nodejs|Mongoose","version":"5.9.0|7.6.1"},"platform":"Node.js v18.18.0, LE","os":{"name":"linux","architecture":"x64","version":"6.2.0-31-generic","type":"Linux"}}}}

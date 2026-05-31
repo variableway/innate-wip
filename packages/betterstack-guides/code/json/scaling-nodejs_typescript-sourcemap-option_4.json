@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-sourcemap-option/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+[highlight]
+    "outDir": "./dist",
+[/highlight]
+    "rootDir": "./src",
+[highlight]
+    "sourceMap": false,
+[/highlight]
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+. . .
+otel-metrics-demo            |
+otel-metrics-demo            |   __    _   ___
+otel-metrics-demo            |  / /\  | | | |_)
+otel-metrics-demo            | /_/--\ |_| |_| \_ v1.52.3, built with Go go1.23.1
+otel-metrics-demo            |
+otel-metrics-demo            | watching .
+otel-metrics-demo            | !exclude tmp
+otel-metrics-demo            | building...
+otel-metrics-demo            | running...
+[highlight]
+otel-metrics-demo            | 2024/11/04 10:34:15 Starting HTTP server on port 8000
+[/highlight]
+. . .

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+b42129bbb2a8c1b253d59b017c872a19d7182819ab37b0b0d86ed6dc052313f9

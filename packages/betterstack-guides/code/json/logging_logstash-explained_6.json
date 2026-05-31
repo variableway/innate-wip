@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+[output]
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 531475, "ssn": "407-01-2433", "timestamp": 1749031783}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Operation finished", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749031785}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 531475, "ssn": "407-01-2433", "timestamp": 1749031786}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749031788}

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+. . .
+nodejs-metrics-demo            | > otel-metrics-nodejs@1.0.0 dev
+nodejs-metrics-demo            | > nodemon main.js
+nodejs-metrics-demo            |
+nodejs-metrics-demo            | [nodemon] 3.1.7
+nodejs-metrics-demo            | [nodemon] to restart at any time, enter `rs`
+nodejs-metrics-demo            | [nodemon] watching path(s): *.*
+nodejs-metrics-demo            | [nodemon] watching extensions: js,mjs,cjs,json
+nodejs-metrics-demo            | [nodemon] starting `node main.js`
+nodejs-metrics-demo            | {"level":30,"time":1730991149200,"pid":32,"hostname":"f1dce9ace51f","msg":"Server listening at http://127.0.0.1:8000"}
+nodejs-metrics-demo            | {"level":30,"time":1730991149201,"pid":32,"hostname":"f1dce9ace51f","msg":"Server listening at http://192.168.32.3:8000"}
+. . .

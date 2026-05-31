@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/watchtower-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+Unable to find image 'containrrr/watchtower:latest' locally
+latest: Pulling from containrrr/watchtower
+1045b2f97fda: Pull complete
+35a104a262d3: Pull complete
+1a0671483169: Pull complete
+Digest: sha256:bbf9794a691b59ed2ed3089fec53844f14ada249ee5e372ff0e595b73f4e9ab3
+Status: Downloaded newer image for containrrr/watchtower:latest
+b6d1b765b2b8480357f246d3bcc3f422ff492b3deabb84cb0ab2909e2d63b9d3

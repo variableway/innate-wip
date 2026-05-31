@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+User: Bob
+/Users/stanley/ts-assertions/src/danger.ts:10
+console.log(`Email: ${data.email.toLowerCase()}`); // Crashes!
+                                 ^
+
+TypeError: Cannot read properties of undefined (reading 'toLowerCase')

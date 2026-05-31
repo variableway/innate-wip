@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+Using Litestar app from app:app
+Starting server process ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+┌──────────────────────────────┬──────────────────────┐
+│ Litestar version             │ 2.15.1               │
+│ Debug mode                   │ Disabled             │
+│ Python Debugger on exception │ Disabled             │
+│ CORS                         │ Disabled             │
+│ CSRF                         │ Disabled             │
+│ OpenAPI                      │ Enabled path=/schema │
+│ Compression                  │ Disabled             │
+└──────────────────────────────┴──────────────────────┘
+INFO:     Started server process [24198]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)

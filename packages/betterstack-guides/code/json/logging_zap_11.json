@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[output]
+{"level":"info","ts":1684147807.960761,"caller":"zap/main.go:17","msg":"Hello from Zap logger!"}
+{"level":"info","ts":1684147807.960845,"caller":"zap/main.go:18","msg":"Hello from Zap logger!"}
+{"level":"info","ts":1684147807.960909,"caller":"zap/main.go:21","msg":"Hello from Zap logger! The time is 11:50 AM"}
+{"level":"info","ts":1684148355.2692218,"caller":"zap/main.go:25","msg":"User logged in","username":"johndoe","userid":123456,"provider":"google"}

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[output]
+{"file":"/var/log/logify/app.log","host":"cf088a0fe2a2","message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Initialized application\", \"pid\": 101999, \"ssn\": \"407-01-2433\", \"time\": 1748504820}","source_type":"file","timestamp":"2025-05-29T07:53:21.937600042Z"}
+{"file":"/var/log/logify/app.log","host":"cf088a0fe2a2","message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Connected to database\", \"pid\": 101999, \"ssn\": \"407-01-2433\", \"time\": 1748504823}","source_type":"file","timestamp":"2025-05-29T07:53:21.937620774Z"}
+...

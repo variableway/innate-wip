@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 29
+
+[label config.yaml]
+processors:
+  transform/parse_failed_pw:
+    log_statements:
+      - context: log
+        statements:
+          - set(attributes["log.record.original"], body)
+          - merge_maps(attributes, ExtractPatterns(body, "^(?P<timestamp>\\w+ \\w+ [0-9]+:[0-9]+:[0-9]+) (?P<hostname>\\S+) (?P<appname>\\S+)(\\[(?P<pid>\\d+)\\]). (?P<event>Failed password) for (invalid user )?(?P<username>\\w+) from (?P<ip_address>[\\d.]+) port (?P<port>\\d+) (?P<protocol>\\w+)$"), "upsert")
+[highlight]
+          - set(severity_number, SEVERITY_NUMBER_INFO)
+          - set(severity_text, "info")
+          - set(time, Time(attributes["timestamp"], "%b %d %H:%M:%S"))
+          - set(attributes["timestamp"], UnixNano(time))
+          - set(attributes["pid"], Int(attributes["pid"]))
+          - set(attributes["port"], Int(attributes["port"]))
+[/highlight]

@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/observability/ebpf-observability/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+.rwxr-xr-x@   37k root 17 Jul  2024  argdist
+.rwxr-xr-x@  2.8k root 17 Jul  2024  commandreadline
+.rwxr-xr-x@   16k root 17 Jul  2024  bindsnoop
+.rwxr-xr-x@   11k root 17 Jul  2024  biolatency
+.rwxr-xr-x@   10k root 17 Jul  2024  biolatpcts
+.rwxr-xr-x@  4.0k root 17 Jul  2024  biopattern
+.rwxr-xr-x@   11k root 17 Jul  2024  biosnoop
+.rwxr-xr-x@  9.6k root 17 Jul  2024  biotop
+. . .

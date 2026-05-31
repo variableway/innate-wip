@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+[output]
+{
+  . . .
+  "duration_ms": 1002.2141790250316,
+  "duration": "1.002s",
+  "name": "MyApp",
+  "message": "called external API",
+[highlight]
+  "metric": "ExternalAPI/request_time"
+[/highlight]
+}

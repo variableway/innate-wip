@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 33
+
+The `transform` method is beneficial here, as it automatically converts string values to their proper types while maintaining type safety.
+
+### Validating route parameters
+
+Route parameters usually need strict validation since they identify specific resources. Invalid parameters should be caught early to avoid unnecessary database lookups:

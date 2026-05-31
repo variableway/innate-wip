@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+Jan 02 05:12:20 falcon kernel: ucsi_acpi USBC000:00: unknown error 0
+Jan 02 05:12:20 falcon kernel: ucsi_acpi USBC000:00: UCSI_GET_PDOS failed (-5)
+Jan 02 05:12:21 falcon kernel: ACPI Error: Thread 1156460608 cannot release Mutex [ECMX] acquired by thread 2163781696 (20240827/exmutex-378)
+Jan 02 05:12:21 falcon kernel: ACPI Error: Aborting method \_SB.PC00.LPCB.ECDV._Q66 due to previous error (AE_AML_NOT_OWNER) (20240827/psparse-529)
+. . .

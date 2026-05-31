@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+Content-Security-Policy: connect-src 'self' https://api.example.com;

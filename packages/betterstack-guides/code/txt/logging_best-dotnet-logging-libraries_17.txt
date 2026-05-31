@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 17
+
+In this example, Log4net is configured to send logs to the console.
+
+After running the file, the output will look like this:

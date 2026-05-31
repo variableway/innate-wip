@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+alternatives  apt      btmp  rsyslog                 ufw                  wtmp
+apport        bootlog  dpkg  ubuntu-advantage-tools  unattended-upgrades
