@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
+import { CommandPalette } from "@/components/command-palette"
 
 interface AppShellProps {
   categories: Array<{
@@ -40,6 +41,7 @@ export function AppShell({ categories, children }: AppShellProps) {
           isMobile={isMobile}
           categories={categories}
         />
+        <CommandPalette categories={categories} />
         <main className="flex-1 overflow-hidden relative">{children}</main>
       </div>
     </div>

@@ -20,6 +20,7 @@ import {
   CheckSquare,
   FileText,
   Tag,
+  Search,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import {
@@ -183,6 +184,17 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
 
         {/* Right: actions */}
         <div className="flex items-center gap-1">
+          <button
+            onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
+            className="hidden md:flex items-center gap-1.5 h-8 px-2.5 rounded-lg text-xs text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors border border-border/50"
+            aria-label="Open command palette"
+          >
+            <Search className="h-3.5 w-3.5" />
+            <span className="text-[11px]">Search</span>
+            <kbd className="hidden lg:inline-flex h-4 min-w-[1rem] items-center justify-center rounded border border-border bg-muted px-1 text-[10px] font-medium text-muted-foreground">
+              ⌘K
+            </kbd>
+          </button>
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
             className="relative w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
