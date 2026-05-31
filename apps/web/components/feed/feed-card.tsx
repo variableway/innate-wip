@@ -73,8 +73,8 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
         )}
       >
         <div className="p-6">
-          {/* 头部：编辑精选标记 + 日期 */}
-          <div className="flex items-center justify-between mb-3">
+          {/* Header: badges + date + tags inline */}
+          <div className="flex items-center gap-x-3 gap-y-1.5 flex-wrap mb-3">
             <div className="flex items-center gap-2">
               {post.isEditorsPick && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-[#D4845E]/10 text-[#D4845E]">
@@ -91,6 +91,23 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
               )}
             </div>
             <span className="text-xs text-muted-foreground">{post.date}</span>
+            {post.tags && post.tags.length > 0 && (
+              <>
+                <span className="text-muted-foreground/20 hidden sm:inline">|</span>
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-0.5 rounded-md"
+                    style={{
+                      backgroundColor: `${getTagColor(tag)}20`,
+                      color: getTagColor(tag),
+                    }}
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </>
+            )}
           </div>
 
           {/* 标题 */}
@@ -102,24 +119,6 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
           <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
             {post.summary}
           </p>
-
-          {/* 标签 */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-1 rounded-md"
-                  style={{
-                    backgroundColor: `${getTagColor(tag)}20`,
-                    color: getTagColor(tag),
-                  }}
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
 
           {/* 底部：作者信息 + 元数据 */}
           <div className="flex items-center justify-between pt-4 border-t border-border/50">
