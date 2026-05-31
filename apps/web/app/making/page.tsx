@@ -40,26 +40,26 @@ export default function MakingPage() {
         <section className="mb-10 py-8 px-6 bg-gradient-to-br from-muted/50 to-background rounded-2xl border border-border/50">
           <div className="max-w-2xl">
             <h1 className="text-3xl font-bold mb-4">
-              Innate
+              Making
             </h1>
             <p className="text-xl text-muted-foreground font-medium mb-2">
               What drives you and what you make, makes you.
             </p>
             <p className="text-base text-muted-foreground/80 leading-relaxed">
-              记录创作过程，追踪项目进展，反思成长轨迹。通过 AI 分析每周的工作，
-              发现优势与改进空间，持续成为更好的自己。
+              Track your creative process, monitor project progress, and reflect on your growth journey.
+              AI-powered weekly analysis helps discover strengths and areas for improvement.
             </p>
             <div className="flex gap-3 mt-6">
               <Link href="/making/issues">
                 <Button className="font-bold">
                   <CheckSquare className="h-4 w-4 mr-2" />
-                  查看 Issues
+                  Issues
                 </Button>
               </Link>
               <Link href="/making/weekly">
                 <Button variant="outline" className="font-bold">
                   <Calendar className="h-4 w-4 mr-2" />
-                  周记录
+                  Weekly
                 </Button>
               </Link>
             </div>
@@ -73,7 +73,7 @@ export default function MakingPage() {
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
                 <FolderGit2 className="h-4 w-4 text-blue-500" />
               </div>
-              <h2 className="text-lg font-bold">项目</h2>
+              <h2 className="text-lg font-bold">Projects</h2>
               <Badge variant="secondary" className="text-xs">
                 {projectAnalyses.length}
               </Badge>
@@ -82,7 +82,7 @@ export default function MakingPage() {
               href="/making/projects"
               className="text-sm text-primary hover:underline flex items-center gap-1"
             >
-              查看全部
+              View all
               <ChevronRight className="h-3.5 w-3.5" />
             </Link>
           </div>
@@ -102,14 +102,14 @@ export default function MakingPage() {
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Brain className="h-4 w-4 text-primary" />
                 </div>
-                <h2 className="text-lg font-bold">每周分析</h2>
+                <h2 className="text-lg font-bold">Weekly Analysis</h2>
               </div>
               {recentWeeklies.length >= 4 && (
                 <Link 
                   href="/making/weekly"
                   className="text-sm text-primary hover:underline flex items-center gap-1"
                 >
-                  查看更多
+                  View more
                   <ChevronRight className="h-3.5 w-3.5" />
                 </Link>
               )}
@@ -129,7 +129,7 @@ export default function MakingPage() {
             <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
               <TrendingUp className="h-4 w-4 text-green-500" />
             </div>
-            <h2 className="text-lg font-bold">快速导航</h2>
+            <h2 className="text-lg font-bold">Quick Nav</h2>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -142,10 +142,10 @@ export default function MakingPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-base group-hover:text-primary transition-colors">
-                        做什么
+                        Issues
                       </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        查看所有正在进行的项目和已完成的 issues
+                        View all active and completed issues
                       </p>
                     </div>
                   </div>
@@ -162,10 +162,10 @@ export default function MakingPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-base group-hover:text-primary transition-colors">
-                        周记录
+                        Weekly
                       </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        AI 分析每周工作成果与思维成长
+                        AI analysis of weekly work and mindset growth
                       </p>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
                   </Badge>
                 ) : (
                   <Badge variant="outline" className="text-xs text-muted-foreground">
-                    无文档
+                    No docs
                   </Badge>
                 )}
               </div>
@@ -217,14 +217,14 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
             <div className="flex items-center gap-1.5">
               <Star className="h-3.5 w-3.5 text-yellow-500" />
               <span className="text-xs text-muted-foreground">
-                {project.strengths.length} 优势
+                {project.strengths.length} strengths
               </span>
             </div>
             {project.weaknesses.length > 0 && (
               <div className="flex items-center gap-1.5">
                 <AlertTriangle className="h-3.5 w-3.5 text-orange-500" />
                 <span className="text-xs text-muted-foreground">
-                  {project.weaknesses.length} 改进点
+                  {project.weaknesses.length} improvements
                 </span>
               </div>
             )}
@@ -256,7 +256,7 @@ function WeeklyCard({ weekly }: { weekly: ReturnType<typeof getLatestWeeklies>[0
             <div>
               <div className="flex items-center gap-2 mb-1.5">
                 <Badge variant="outline" className="text-xs font-bold">
-                  第 {weekly.weekNumber} 周
+                  Week {weekly.weekNumber}
                 </Badge>
                 <span className="text-xs text-muted-foreground">
                   {weekly.dateRange.start} ~ {weekly.dateRange.end}
@@ -281,13 +281,13 @@ function WeeklyCard({ weekly }: { weekly: ReturnType<typeof getLatestWeeklies>[0
             <div className="flex items-center gap-1.5">
               <CheckSquare className="h-3.5 w-3.5 text-green-500" />
               <span className="text-xs text-muted-foreground">
-                {completedIssues.length} 个 issues
+                {completedIssues.length} issues
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-purple-500" />
               <span className="text-xs text-muted-foreground">
-                {Array.isArray(weekly.evaluations.strengths) ? weekly.evaluations.strengths.length : 0} 个优势
+                {Array.isArray(weekly.evaluations.strengths) ? weekly.evaluations.strengths.length : 0} strengths
               </span>
             </div>
           </div>

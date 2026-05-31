@@ -28,7 +28,7 @@ export default function ProjectsPage() {
         <div className="px-4 py-3">
           <div className="flex items-center gap-2">
             <FolderGit2 className="h-5 w-5 text-blue-500" />
-            <h1 className="text-lg font-semibold">项目</h1>
+            <h1 className="text-lg font-semibold">Projects</h1>
             <Badge variant="secondary" className="text-xs">
               {projectAnalyses.length}
             </Badge>
@@ -64,7 +64,7 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
                 </Badge>
               ) : (
                 <Badge variant="outline" className="text-xs text-muted-foreground">
-                  无文档
+                  No docs
                 </Badge>
               )}
             </div>
@@ -122,14 +122,14 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
           <div className="flex items-center gap-1.5">
             <Star className="h-3.5 w-3.5 text-yellow-500" />
             <span className="text-xs text-muted-foreground">
-              {project.strengths?.length || 0} 优势
+              {project.strengths?.length || 0} strengths
             </span>
           </div>
           {project.weaknesses && project.weaknesses.length > 0 && (
             <div className="flex items-center gap-1.5">
               <AlertTriangle className="h-3.5 w-3.5 text-orange-500" />
               <span className="text-xs text-muted-foreground">
-                {project.weaknesses.length} 改进点
+                {project.weaknesses.length} improvements
               </span>
             </div>
           )}

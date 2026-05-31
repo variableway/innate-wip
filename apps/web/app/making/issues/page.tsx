@@ -74,7 +74,7 @@ export default function IssuesPage() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <CheckSquare className="h-5 w-5 text-primary" />
-              <h1 className="text-lg font-semibold">做什么</h1>
+              <h1 className="text-lg font-semibold">Issues</h1>
               <Badge variant="secondary" className="text-xs">
                 {filteredIssues.length}
               </Badge>
