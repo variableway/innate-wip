@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 25
+
+This command outputs the complete URL that you can use to access your
+application:

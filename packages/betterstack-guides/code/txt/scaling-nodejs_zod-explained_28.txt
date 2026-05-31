@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 28
+
+Since TypeScript already enforces correct types, this ensures that any errors at runtime come from Zod’s additional validation rules. When you run the script:

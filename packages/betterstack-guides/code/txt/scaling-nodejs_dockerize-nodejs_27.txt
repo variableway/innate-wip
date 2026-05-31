@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+b4cf8bc783d4cdcedfd623a8af1a6aa592b5b64d3e2bbaf3492064657d7f54f7

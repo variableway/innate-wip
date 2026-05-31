@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+timestamp=2023-07-12T16:40:08.086175967+02:00 level=info message="Hello from Logf!" caller=/home/ayo/dev/betterstack/demo/slog/main.go:19 go_version=1.20

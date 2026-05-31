@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+# HELP post_request_duration_seconds Duration of requests to https://jsonplaceholder.typicode.com/posts
+# TYPE post_request_duration_seconds summary
+post_request_duration_seconds{quantile="0.5"} 0.15260272
+post_request_duration_seconds{quantile="0.9"} 0.182577072
+post_request_duration_seconds{quantile="0.99"} 0.58300406
+post_request_duration_seconds_sum 13.936881877000005
+post_request_duration_seconds_count 81

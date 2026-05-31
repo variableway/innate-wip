@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: jsonc
+# Normalized: json
+# Block index: 30
+
+[label /etc/docker/daemon.json]
+{
+  "log-driver": "splunk",
+  "log-opts": {
+[highlight]
+    "cache-disabled": "false", // or remove this property entirely
+[/highlight]
+    . . .
+  }
+}

@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+ruff.....................................................................Failed
+- hook id: ruff
+- exit code: 1
+- files were modified by this hook
+
+app.py:3:5: ANN201 Missing return type annotation for public function `problematic_function`
+app.py:3:26: ANN001 Missing type annotation for function argument `x`
+app.py:3:29: ANN001 Missing type annotation for function argument `y`
+Found 6 errors (3 fixed, 3 remaining).
+
+ruff-format..............................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+
+1 file reformatted

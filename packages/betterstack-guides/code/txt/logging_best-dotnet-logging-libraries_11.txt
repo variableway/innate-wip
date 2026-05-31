@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 11
+
+### Serilog pros
+
+- Offers extensive support for various sinks (destinations).
+
+- Benefits from active development and a robust community, ensuring continuous
+  improvement and support.
+- Features a wide array of plugins to expand its functionality.
+
+- Supports advanced capabilities like
+  [destructuring](https://github.com/serilog/serilog/wiki/Structured-Data#preserving-object-structure)
+  and
+  [LogContext](https://github.com/serilog/serilog/wiki/Enrichment#the-logcontext)
+  for enhanced logging details.
+
+### Serilog cons
+
+- [Unable to immediately recreate and write to the current rolling file](https://github.com/serilog/serilog-sinks-file/issues/128),
+  which can delay logging to new files.
+- Doesn't natively log exceptions as structured objects, often necessitating
+  third-party tools like
+  [Serilog.Exceptions](https://github.com/RehanSaeed/Serilog.Exceptions) for
+  structured error logging.
+- Requires a substantial number of dependencies for full setup, potentially
+  complicating the initial configuration process.
+
+**Learn more**: [How To Start Logging With Serilog
+](https://betterstack.com/community/guides/logging/how-to-start-logging-with-serilog/)
+
+## 3. Nlog
+
+![Screenshot of Nlog](https://imagedelivery.net/xZXo0QFi-1_4Zimer-T0XQ/42a77288-e06e-46dc-124c-547cca9ee300/public
+=1200x600)
+
+[NLog](https://nlog-project.org/) is a robust logging library for .NET, known
+for its high performance, flexibility, and full support for structured logging.
+
+NLog supports the following severity levels: `Fatal,` `Error,` `Warn,` `Info,`
+`Debug,` and `Trace.`
+
+Here's a simple example that demonstrates how to get started with NLog:

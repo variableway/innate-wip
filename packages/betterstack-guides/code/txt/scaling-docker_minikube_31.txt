@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 31
+
+Now you have a deployment of three NGINX pods and a service exposing them. You
+can access the service using the same approach as before:

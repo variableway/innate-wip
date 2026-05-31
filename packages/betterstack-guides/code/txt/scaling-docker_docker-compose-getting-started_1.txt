@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+.
+├── backend
+│   ├── Dockerfile
+│   ├── index.js
+│   ├── Models
+│   │   └── Todo.js
+│   ├── package.json
+│   └── package-lock.json
+└── frontend
+    ├── Dockerfile
+    ├── index.html
+    ├── package.json
+    ├── package-lock.json
+    ├── public
+    │   └── favicon.ico
+    ├── README.md
+    ├── src
+    │   ├── App.vue
+    │   ├── components
+    │   │   └── TodoList.vue
+    │   ├── index.css
+    │   └── main.js
+    └── vite.config.js
+
+6 directories, 16 files

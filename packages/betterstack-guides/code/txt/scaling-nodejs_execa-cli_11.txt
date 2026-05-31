@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/execa-cli/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+DEMO: Direct terminal output:
+execa-demo@1.0.0 /path/to/execa-demo└── execa@9.5.2
+Command completed

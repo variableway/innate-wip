@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/build-nodejs-application-express-pug/
+# Original language: txt
+# Normalized: txt
+# Block index: 1
+
+[output]
+Hacker news server started on port: 3000

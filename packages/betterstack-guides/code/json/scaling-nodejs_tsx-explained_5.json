@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/tsx-explained/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[label package.json]
+"scripts": {
+[highlight]
+  "start": "tsx app.ts"
+[/highlight]
+}

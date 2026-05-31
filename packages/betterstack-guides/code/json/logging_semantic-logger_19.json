@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 19
+
+[output]
+{
+  "host": "falcon",
+  "application": "Semantic Logger",
+  "timestamp": "2025-01-28T14:40:03.873527Z",
+  "level": "info",
+  "level_index": 2,
+  "pid": 1327780,
+  "thread": "60",
+  "name": "MyApp",
+  "message": "User signed in",
+}

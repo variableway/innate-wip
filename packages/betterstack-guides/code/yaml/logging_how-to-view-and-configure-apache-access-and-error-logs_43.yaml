@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 43
+
+services:
+  vector:
+    image: timberio/vector:0.40.0-alpine
+    container_name: apache-vector
+    volumes:
+      - ./vector.yaml:/etc/vector/vector.yaml:ro
+      - /var/log/apache2:/var/log/apache2:ro
+    restart: unless-stopped

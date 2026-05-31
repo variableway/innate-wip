@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+2022-02-09T22:17:42+00:00 ubuntu-20-04 root: test from client

@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 11
+
+[label otelcol.yaml]
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: localhost:4318
+
+processors:
+  batch:
+
+exporters:
+  prometheus:
+    endpoint: localhost:1212 # metrics will be available at http://localhost:1212/metrics
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus]

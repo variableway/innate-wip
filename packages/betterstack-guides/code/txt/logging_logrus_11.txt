@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+time="2023-03-09 14:02:00" level=info msg="This will be formatted as colored text" user_id=123

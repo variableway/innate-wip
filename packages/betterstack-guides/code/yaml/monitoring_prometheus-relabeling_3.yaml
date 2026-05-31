@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 3
+
+[label prometheus.yml]
+metric_relabel_configs:
+  - source_labels: [method, code]
+    separator: "_"

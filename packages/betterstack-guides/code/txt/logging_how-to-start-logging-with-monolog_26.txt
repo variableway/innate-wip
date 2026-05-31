@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+debug-2022-08-02.log

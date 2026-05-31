@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+[2022-07-11T03:32:57.111007+02:00] my_logger.DEBUG: This is a debug message. [] []
+[2022-07-11T03:32:57.111750+02:00] my_logger.INFO: This is an info message. [] []
+[2022-07-11T03:32:57.111941+02:00] my_logger.ERROR: This is an error message. [] []
+[2022-07-11T03:32:57.112127+02:00] my_logger.CRITICAL: This is a critical message. [] []

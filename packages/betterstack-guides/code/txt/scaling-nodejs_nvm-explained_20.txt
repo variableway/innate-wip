@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+...
+       v22.11.0   (LTS: Jod)
+       v22.12.0   (LTS: Jod)
+       v22.13.0   (LTS: Jod)
+       v22.13.1   (LTS: Jod)
+->     v22.14.0   (Latest LTS: Jod)
+        v23.0.0
+        v23.1.0
+        v23.2.0
+        v23.3.0
+        v23.4.0
+        v23.5.0
+        v23.6.0
+        v23.6.1
+        v23.7.0
+        v23.8.0
+        v23.9.0
+       v23.10.0

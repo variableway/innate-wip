@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+processors:
+  transform/parse_failed_pw:
+    log_statements:
+      - context: log
+        statements:
+          - merge_maps(attributes, ExtractPatterns(body, "^(?P<timestamp>\\w+ \\w+ [0-9]+:[0-9]+:[0-9]+) (?P<hostname>\\S+) (?P<appname>\\S+)(\\[(?P<pid>\\d+)\\]). (?P<event>Failed password) for (invalid user )?(?P<username>\\w+) from (?P<ip_address>[\\d.]+) port (?P<port>\\d+) (?P<protocol>\\w+)$"), "upsert")

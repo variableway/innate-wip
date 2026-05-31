@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+|-----------|---------------|-------------|--------------|
+| NAMESPACE |     NAME      | TARGET PORT |     URL      |
+|-----------|---------------|-------------|--------------|
+| default   | nginx-service |             | No node port |
+|-----------|---------------|-------------|--------------|
+😿  service default/nginx-service has no node port
+❗  Services [default/nginx-service] have type "ClusterIP" not meant to be exposed, however for local development minikube allows you to access this !
+🏃  Starting tunnel for service nginx-service.
+|-----------|---------------|-------------|------------------------|
+| NAMESPACE |     NAME      | TARGET PORT |          URL           |
+|-----------|---------------|-------------|------------------------|
+| default   | nginx-service |             | http://127.0.0.1:33051 |
+|-----------|---------------|-------------|------------------------|
+🎉  Opening service default/nginx-service in default browser...
+❗  Because you are using a Docker driver on linux, the terminal needs to be open to run it.

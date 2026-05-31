@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+[output]
+{"level":"info","ts":1684094903.7353888,"caller":"zap/main.go:17","msg":"User logged in","username":"johndoe","userid":123456,"provider":"google"}

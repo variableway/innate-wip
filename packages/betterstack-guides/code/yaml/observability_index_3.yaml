@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/index/
+# Original language: yml
+# Normalized: yaml
+# Block index: 3
+
+replaces:
+  # see https://github.com/openshift/api/pull/1515
+  - github.com/openshift/api => github.com/openshift/api v0.0.0-20230726162818-81f778f3b3ec

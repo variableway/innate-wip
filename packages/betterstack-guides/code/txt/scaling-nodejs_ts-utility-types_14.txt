@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-utility-types/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Update: { email: 'newemail@example.com' }
+Created: {
+  user: {
+    id: '1',
+    email: 'test@example.com',
+    name: 'Test User',
+    isActive: true
+  },
+  created: 2025-09-22T14:52:20.100Z
+}

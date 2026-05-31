@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+{
+  "body": "DEBUG: Connection pool initialized",
+  "resource": {
+    "environment": "production",
+    "cluster": "primary"
+  }
+}
+{
+  "body": "ERROR: Connection failed",
+  "resource": {
+    "environment": "production",
+    "cluster": "primary"
+  }
+}

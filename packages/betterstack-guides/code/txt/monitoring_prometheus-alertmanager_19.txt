@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+[+] Stopping 1/1
+ ✔ Container node-exporter  Stopped                              0.2

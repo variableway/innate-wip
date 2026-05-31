@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+<manager_1_server_ip>

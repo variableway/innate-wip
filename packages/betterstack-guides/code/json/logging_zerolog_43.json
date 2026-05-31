@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 43
+
+[output]
+{"level":"error","err":"file open failed","time":"2022-08-31T22:59:07+01:00","message":"something happened!"}

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+WARN  example : disk space is 95% full
+ERROR  example : encountered an unexpected error while backing up database
+FATAL  example : application crashed

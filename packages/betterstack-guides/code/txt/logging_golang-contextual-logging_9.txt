@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/golang-contextual-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+time=2024-07-02T20:30:58.807+02:00 level=ERROR source=/home/pp/contextual-logs/main.go:50 msg="failed to login" service=authService node=auth-node-1 environment=production payload.username="Harry Potter" payload.auth_method=password request_id=f833cba9-96ec-4e38-aa55-c9f7b2030e1a user_id=40b834ad-264d-4a17-abfd-2b9fe707f3ba

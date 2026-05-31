@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+__main__ | INFO | Successfully connected to the database 'my_db' on host 'ubuntu'
+__main__ | WARNING | Detected suspicious activity from IP address: 111.222.333.444

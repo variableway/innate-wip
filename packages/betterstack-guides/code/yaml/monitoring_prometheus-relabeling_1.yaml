@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 1
+
+[label prometheus.yml]
+<relabel_configs|metric_relabel_configs|write_relabel_configs|alert_relabel_configs>:
+  - source_labels: [label_name,...]
+    separator: ;
+    regex: (.*)
+    target_label: label_name
+    replacement: $1
+    action: replace
+    modulus: <int> # Only for hashmod

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sequelize-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Executing (default): INSERT INTO `books` (`id`,`title`,`author`,`price`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+Executing (default): INSERT INTO `books` (`id`,`title`,`author`,`price`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+Executing (default): INSERT INTO `books` (`id`,`title`,`author`,`price`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+Added: JavaScript: The Good Parts by Douglas Crockford - $29.99 with ID: 3
+Added: Eloquent JavaScript by Marijn Haverbeke - $34.95 with ID: 1
+Added: You Don't Know JS by Kyle Simpson - $24.99 with ID: 2
+Executing (default): INSERT INTO `books` (`id`,`title`,`author`,`price`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+Added: Node.js Design Patterns by Mario Casciaro - $39.99 with ID: 4

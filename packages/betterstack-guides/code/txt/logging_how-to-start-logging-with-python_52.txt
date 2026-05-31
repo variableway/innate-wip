@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 52
+
+[output]
+{"name": "__main__", "timestamp": "2023-02-07T14:36:42Z", "severity": "CRITICAL", "filename": "example.py", "lineno": 26, "process": 1437321, "message": "Uncaught exception", "exc_info": "Traceback (most recent call last):\n  File \"/home/betterstack/community/python-logging/example.py\", line 31, in <module>\n    raise RuntimeError(\"Test unhandled\")\nRuntimeError: Test unhandled"}

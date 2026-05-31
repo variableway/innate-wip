@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[output]
+20:51:14.925 [main] ERROR com.example.App -- [FATAL] System crushed. Shutting down...

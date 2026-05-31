@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 12
+
+The Logger is configured to log informational and error messages in this
+example. When you run the file, you won't see any output.
+
+For Nlog to work, it needs proper configuration, which can be done
+programmatically or using a configuration file.
+
+Regardless of which configuration you choose, you will need to familiarize
+yourself with the following concepts:
+
+- **Targets**: these are the destinations to which logs are sent; examples
+  include files, databases, and the console.
+- **Rules**: defines the target to send logs to and the minimum severity level.
+- **Layouts**: format log messages in various formats such as JSON, CSV, etc.
+- **Filters**: Filter logs according to given criteria.
+
+With that, let's look at a programmatically configured example:

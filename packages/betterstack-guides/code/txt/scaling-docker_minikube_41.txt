@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 41
+
+This mounts your local ~/projects/myapp directory to /app in the Minikube
+environment. Any changes you make to files in your local directory will be
+instantly available to pods that mount the /app path.
+
+The mount command will block the terminal while maintaining the mount
+connection. This is by design, as it needs to continue running to serve files
+between your host and the Minikube environment.
+
+To use the mounted path in a pod, you can create a pod that references it using
+a hostPath volume:

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+time=2023-08-30T12:14:01.133053 level=INFO pid=519895 msg='user signed in'

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[label .dockerignore]
+# Go build output
+bin/
+
+# Git metadata
+.git/
+
+# Sensitive configuration
+*.env

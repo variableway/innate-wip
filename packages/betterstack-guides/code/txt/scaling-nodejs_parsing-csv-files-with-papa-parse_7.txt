@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parsing-csv-files-with-papa-parse/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Total employees: 3
+Average salary: $84000.00
+Number of high earners: 2
+
+High earners:
+- Sara Johnson ($82000)
+- Michael Brown ($95000)

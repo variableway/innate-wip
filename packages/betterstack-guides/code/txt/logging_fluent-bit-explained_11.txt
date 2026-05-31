@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[label fluent-bit-config/fluent-bit.conf]
+[SERVICE]
+    Flush        1
+    Daemon       off
+    Log_Level    debug
+
+[INPUT]
+    Name         tail
+    Path         /var/log/logify/app.log
+    Tag          filelogs
+
+[OUTPUT]
+    Name         stdout
+    Match        filelogs

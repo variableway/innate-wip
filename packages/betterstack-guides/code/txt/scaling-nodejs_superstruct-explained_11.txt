@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 11
+
+In the highlighted code, you're importing the validation schema, creating an object with intentionally invalid data, and attempting to validate it using `UserSchema.create()`. If the validation fails, the code catches the error and logs a helpful message to the console, making it easy to see which fields didn't pass the validation rules.
+
+Run this code:

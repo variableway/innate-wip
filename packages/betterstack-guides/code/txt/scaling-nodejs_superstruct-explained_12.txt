@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 12
+
+You'll get a clear error message:

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+2023-05-15T12:06:12.996+0100    ERROR   zap@v1.24.0/sugar.go:210        Ignored key-value pairs with non-string keys.   {"invalid": [{"position": 0, "key": 1234, "value": "userID"}]}
+go.uber.org/zap.(*SugaredLogger).Infow
+        /home/ayo/go/pkg/mod/go.uber.org/zap@v1.24.0/sugar.go:210
+main.main
+        /home/ayo/dev/demo/zap/main.go:14
+runtime.main
+        /usr/local/go/src/runtime/proc.go:250
+2023-05-15T12:06:12.996+0100    INFO    zap/main.go:14  User logged in

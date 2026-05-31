@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+[2022-08-01T17:48:41.743689+00:00] my_logger.DEBUG: This file has been executed {"user":"Eric"} {"memory_usage":"2 MB","git":{"branch":"master","commit":"430064a2157bd3ec484bf5ec3be4ed69dd3b68c3"},"process_id":1472185}

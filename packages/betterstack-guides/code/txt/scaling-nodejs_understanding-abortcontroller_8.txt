@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[label fetch-data-with-timeout.js]
+const url = "https://jsonplaceholder.typicode.com/todos/1";
+
+const fetchTodo = async () => {
+[highlight]
+  const timeoutMS = 5;
+[/highlight]
+
+  try {
+    console.log("Fetching data...");
+    const response = await fetch(url, {
+[higlight]
+      signal: AbortSignal.timeout(timeoutMS),
+[/highlight]
+    });
+    const todo = await response.json();
+    console.log("Todo:", todo);
+  } catch (error) {
+[highlight]
+    if (error.name === "TimeoutError") {
+      console.log(`Operation timed out after ${timeoutMS} milliseconds`);
+[/highlight]
+    } else {
+      console.error("Error:", error);
+    }
+  }
+};
+
+fetchTodo();

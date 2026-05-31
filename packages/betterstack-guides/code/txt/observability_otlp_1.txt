@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+TracesData -> ResourceSpans -> ScopeSpans -> Span

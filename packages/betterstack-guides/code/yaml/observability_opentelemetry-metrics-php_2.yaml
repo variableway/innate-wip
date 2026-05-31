@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-php/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label compose.yaml]
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      APP_PORT: ${APP_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/var/www/html
+
+  collector:
+    container_name: otel-metrics-demo-collector
+    image: otel/opentelemetry-collector:latest
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol/config.yaml
+    networks:
+      - otel-metrics-demo-network
+
+volumes:
+ prometheus_data:

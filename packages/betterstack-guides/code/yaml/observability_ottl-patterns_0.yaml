@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+processors:
+  transform/redact:
+    trace_statements:
+      - context: span
+        statements:
+          - replace_pattern(attributes["http.url"], "client_id=[^&]+", "client_id=[REDACTED]")
+          - replace_pattern(attributes["http.url"], "client_secret=[^&]+", "client_secret=[REDACTED]")

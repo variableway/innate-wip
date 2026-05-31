@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 52
+
+histogram_quantile(0.95, rate(db_query_duration_seconds_bucket[2m]))

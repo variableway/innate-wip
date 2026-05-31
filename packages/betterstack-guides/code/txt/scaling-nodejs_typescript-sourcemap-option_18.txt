@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-sourcemap-option/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+Sum: 30
+Product: 24
+Error caught: Error: Cannot divide by zero
+Stack trace: Error: Cannot divide by zero
+    at Calculator.divide (file:///path/to/src/calculator.ts:21:13)
+    at file:///path/to/src/calculator.ts:40:27

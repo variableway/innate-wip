@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/python-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[output]
+{"asctime": "2023-04-27 14:50:35,894", "levelname": "INFO", "message": "An info"}
+{"asctime": "2023-04-27 14:50:35,895", "levelname": "WARNING", "message": "A warning"}

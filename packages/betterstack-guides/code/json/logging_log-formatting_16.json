@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+{
+  "name": "__main__",
+  "timestamp": "2023-02-06T09:28:54Z",
+  "severity": "ERROR",
+  "filename": "example.py",
+  "lineno": 26,
+  "process": 913135,
+  "message": "division by zero",
+  "exc_info": "Traceback (most recent call last):\n  File \"/home/betterstack/community/python-logging/example.py\", line 24, in <module>\n    1 / 0\n    ~~^~~\nZeroDivisionError: division by zero"
+}

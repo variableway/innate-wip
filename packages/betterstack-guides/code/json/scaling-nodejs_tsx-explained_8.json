@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/tsx-explained/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+[output]
+{ message: 'Hello, TSX user!', timestamp: 2025-08-05T12:26:49.207Z }

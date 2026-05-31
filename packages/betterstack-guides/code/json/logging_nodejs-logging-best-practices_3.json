@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+{"level":30,"time":"2022-06-16T14:33:14.245Z","pid":373373,"hostname":"fedora","user_id":"283487","msg":"user profile updated"}

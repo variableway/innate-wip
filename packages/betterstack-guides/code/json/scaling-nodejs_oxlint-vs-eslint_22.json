@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+{
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": ["oxlint"]
+  }
+}

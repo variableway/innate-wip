@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 9
+
+[label port-forward-example.yaml]
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+ extraPortMappings:
+ - containerPort: 30000
+   hostPort: 8080
+   protocol: TCP

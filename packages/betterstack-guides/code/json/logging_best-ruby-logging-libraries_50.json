@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 50
+
+[output]
+{"time": "2023-08-30T20:19:48+02:00", "msg": "database query executed", "level": "DEBUG", "pid": 1390809}
+{"time": "2023-08-30T20:19:48+02:00", "msg": "user signed in", "level": "INFO", "pid": 1390809}
+{"time": "2023-08-30T20:19:48+02:00", "msg": "disk space is 95% full", "level": "WARN", "pid": 1390809}

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 2
+
+The TypeScript dependencies include:
+
+- `typescript`: The TypeScript compiler and language service
+- `tsx`: A CLI command that allows running TypeScript files directly, similar to how `node` runs JavaScript files
+
+Next, generate a TypeScript configuration file:

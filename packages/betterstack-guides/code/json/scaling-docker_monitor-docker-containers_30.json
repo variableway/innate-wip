@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+{
+  "Status": "healthy",
+  "FailingStreak": 0,
+  "Log": [
+    {
+      "Start": "2025-07-09T15:55:59.895713385Z",
+      "End": "2025-07-09T15:55:59.965304843Z",
+      "ExitCode": 0,
+      "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{\"status\":\"healthy\",\"timestamp\":\"2025-07-09T15:55:59.960Z\",\"uptime\":4.911826628}\r100    80  100    80    0     0  11999      0 --:--:-- --:--:-- --:--:-- 13333\n"
+    }
+  ]
+}

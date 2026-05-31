@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/sensitive-data/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+{"message": "A user just logged in.", "email": "******@gmail.com", "password": "REDACTED"}

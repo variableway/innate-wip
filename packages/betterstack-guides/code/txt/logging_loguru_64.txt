@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 64
+
+[output]
+May 26, 2025 > 06:27:00 | ERROR | list index out of range | {'request_id': 'c3a053fc-0156-465c-96cd-6c8074ac527c', 'query': 'nonexistent'}
+Traceback (most recent call last):
+
+  File "/home/ayo/dev/betterstack/community/demo/django-world-clock/djangoWorldClock/worldClock/views.py", line 58, in search
+    coordinate = [location[0]["lat"], location[0]["lon"]]
+IndexError: list index out of range

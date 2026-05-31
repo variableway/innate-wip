@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+set(attributes["environment"], "production") where attributes["host.name"] == "my_host"

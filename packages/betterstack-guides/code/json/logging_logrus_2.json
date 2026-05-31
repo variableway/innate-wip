@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[output]
+{"level":"info","msg":"Hello from Logrus!","time":"2025-03-09T10:10:30+01:00"}

@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prettier-vs-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[label package.json]
+{
+  "scripts": {
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md}'",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

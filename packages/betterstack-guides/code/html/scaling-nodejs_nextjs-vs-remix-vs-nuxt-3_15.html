@@ -1,0 +1,60 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nextjs-vs-remix-vs-nuxt-3/
+# Original language: vue
+# Normalized: html
+# Block index: 15
+
+<!-- pages/users/create.vue -->
+<script setup>
+const { data, error, execute } = useAsyncData('createUser', async () => {
+  // This won't run immediately since we set immediate: false
+  return await $fetch('/api/users', {
+    method: 'POST',
+    body: formData.value
+  });
+}, { immediate: false });
+
+const formData = ref({
+  name: '',
+  email: ''
+});
+
+const errors = ref({});
+
+async function submitForm() {
+  // Validate
+  errors.value = {};
+  if (!formData.value.name) errors.value.name = 'Name is required';
+  if (!formData.value.email) errors.value.email = 'Email is required';
+  if (Object.keys(errors.value).length) return;
+  
+  // Submit form
+  await execute();
+  
+  if (data.value && !error.value) {
+    // Success - redirect
+    navigateTo('/users');
+  }
+}
+</script>
+
+<template>
+  <form @submit.prevent="submitForm">
+    <div>
+      <label>
+        Name: <input v-model="formData.name" />
+      </label>
+      <p v-if="errors.name" class="error">{{ errors.name }}</p>
+    </div>
+    
+    <div>
+      <label>
+        Email: <input v-model="formData.email" type="email" />
+      </label>
+      <p v-if="errors.email" class="error">{{ errors.email }}</p>
+    </div>
+    
+    <button type="submit" :disabled="$fetch.pending">
+      {{ $fetch.pending ? 'Creating...' : 'Create User' }}
+    </button>
+  </form>
+</template>

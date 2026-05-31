@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 27
+
+[label pyproject.toml]
+[tool.ruff]
+select = ["E", "F", "I", "B", "ANN"]
+[highlight]
+line-length = 88  
+# Exclude directories
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    "venv",
+    "__pycache__",
+]
+
+# Target Python version
+target-version = "py312"
+[/highlight]

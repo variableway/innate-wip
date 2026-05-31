@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[output]
+{"text": "2023-07-17 15:26:21.597 | INFO     | __main__:<module>:9 - Server started successfully.\n", "record": {"elapsed": {"repr": "0:00:00.006401", "seconds": 0.006401}, "exception": null, "extra": {}, "file": {"name": "main.py", "path": "/home/ayo/dev/betterstack/demo/python-logging/main.py"}, "function": "<module>", "level": {"icon": "ℹ️", "name": "INFO", "no": 20}, "line": 9, "message": "Server started successfully.", "module": "main", "name": "__main__", "process": {"id": 3852028, "name": "MainProcess"}, "thread": {"id": 140653618894656, "name": "MainThread"}, "time": {"repr": "2023-07-17 15:26:21.597156+02:00", "timestamp": 1689600381.597156}}}

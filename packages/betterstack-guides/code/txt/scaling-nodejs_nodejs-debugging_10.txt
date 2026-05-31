@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+  1 function getPrimes(max) {
+  2   const sieve = {};
+  3   const primes = [];
+  4
+  5   for (let i = 2; i <= max; ++i) {
+> 6     if (!sieve[i]) {
+  7       primes.push(i);
+  8
+  9       for (let j = i << 1; j <= max; j += i) {
+ 10         sieve[j] = true;

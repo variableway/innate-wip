@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label mainline/debian/Dockerfile]
+. . .
+ln -sf /dev/stdout /var/log/nginx/access.log \
+&& ln -sf /dev/stderr /var/log/nginx/error.log \

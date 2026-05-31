@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+20:01:02.809 [main] DEBUG com.example.App -- Received request from 198.12.34.56
+20:01:02.812 [main] INFO com.example.App -- User logged in: john
+20:01:02.812 [main] WARN com.example.App -- Connection to server lost. Retrying...
+20:01:02.812 [main] ERROR com.example.App -- Failed to write data to file: myFile.txt

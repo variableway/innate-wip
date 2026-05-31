@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+2025-06-06 15:47:07 [debug    ] Database connection established
+2025-06-06 15:47:07 [info     ] Processing data from the API
+2025-06-06 15:47:07 [warning  ] Resource usage is nearing capacity
+2025-06-06 15:47:07 [error    ] Failed to save the file. Please check permissions
+2025-06-06 15:47:07 [critical ] System has encountered a critical failure. Shutting down

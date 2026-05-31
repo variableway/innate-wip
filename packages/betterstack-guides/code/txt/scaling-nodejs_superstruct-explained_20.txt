@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 20
+
+And in the console, it might look something like this:
+
+![Screenshot of the output](https://imagedelivery.net/xZXo0QFi-1_4Zimer-T0XQ/a9ac4b0b-6ee2-4b7d-fab5-64d42dd4b100/public =1404x1170)
+
+The output is well-formatted, and certain elements, such as strings, numbers, and keys, are color—coded, making it easier to read and identify details quickly.
+
+
+This demonstrates how you can build complex validation schemas by combining simple validation functions. Each piece handles one concern, making your validation logic easy to understand and maintain.
+
+
+## Handling validation errors gracefully
+
+Superstruct gives you detailed information about validation failures. You can use this information to debug problems and show helpful messages to users.
+
+### Understanding Superstruct error structure
+
+When validation fails, Superstruct creates error objects that tell you exactly what went wrong and where the problem occurred.
+
+Create a new file to explore error handling:

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{"level":"info","message":"user 'xyz' created successfully"}
+{"level":"fatal","message":"database failed to connect"}

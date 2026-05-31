@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-go/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+. . .
+ ✔ Network go-image-upload_go-image-upload-network      Created            0.2s
+ ✔ Container go-image-upload-jaeger                     Healthy           31.5s
+ ✔ Container go-image-upload-db                         Healthy           11.4s
+ ✔ Container go-image-upload-redis                      Healthy           12.2s
+ ✔ Container go-image-upload-migrate                    Exited            12.0s
+ ✔ Container go-image-upload-collector                  Started           31.6s
+ ✔ Container go-image-upload-app                        Started           12.1s

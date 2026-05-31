@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+total 80
+drwxr-xr-x   1 root root 4096 Mar  7 15:10 .
+drwxr-xr-x   1 root root 4096 Mar  7 15:10 ..
+-rwxr-xr-x   1 root root    0 Mar  7 15:10 .containerenv
+drwxr-xr-x   2 root root 4096 Feb 27 00:00 bin
+drwxr-xr-x   2 root root 4096 Dec  9 22:52 boot
+. . .

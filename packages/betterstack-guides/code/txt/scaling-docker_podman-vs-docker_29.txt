@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+Error: no registries found in registries.conf, a registry must be provided

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[output]
+[May 28, 2025 17:49:30 CAT] [INFO | app] A user performed a search. | query: new york >>> {'request_id': 'd2c594ae-c680-48bc-8e05-f895727fa73f'}

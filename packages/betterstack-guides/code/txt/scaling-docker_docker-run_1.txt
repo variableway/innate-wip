@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-run/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+a2abf6c4d29d: Pull complete
+a9edb18cadd1: Pull complete
+589b7251471a: Pull complete
+186b1aaa4aa6: Pull complete
+Digest: sha256:4d34523d254c63950f323be24968c3e19a9e9f6e324c34bbf236dfc7494bde96
+Status: Downloaded newer image for nginx:latest

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+{"level":"debug","time":1686043946948,"env":"production","query":"SELECT * FROM users WHERE age >= 18","time_taken_ms":2.57,"msg":"Select 18+ users from the database"}

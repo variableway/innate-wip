@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/biome-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "eslint . && prettier --check ."
+  }
+}

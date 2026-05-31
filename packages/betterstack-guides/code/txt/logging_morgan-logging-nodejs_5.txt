@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/morgan-logging-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Server running on http://localhost:3000

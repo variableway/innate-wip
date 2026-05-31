@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 25
+
+[output]
+{
+  . . .
+[highlight]
+  "exception": {
+    "name": "RuntimeError",
+[/highlight]
+    "message": "Failed to write to file",
+    "stack_trace": [
+      "main.rb:24:in `rescue in oh_no'",
+      "main.rb:19:in `oh_no'",
+      "main.rb:28:in `<main>'"
+    ],
+[highlight]
+    "cause": {
+      "name": "IOError",
+[/highlight]
+      "message": "not opened for reading",
+      "stack_trace": [
+        "main.rb:22:in `read'",
+        "main.rb:22:in `oh_no'",
+        "main.rb:28:in `<main>'"
+      ]
+    }
+  }
+}

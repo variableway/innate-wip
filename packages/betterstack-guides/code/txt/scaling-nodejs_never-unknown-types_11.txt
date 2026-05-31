@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/never-unknown-types/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+{ id: 123, name: 'Alice' }
+Error: Invalid user data: id must be a number
+    at parseUser (/path/to/src/safe-parsing.ts:12:11)

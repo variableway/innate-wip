@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 59
+
+[output]
+CONTAINER ID  IMAGE                                    COMMAND               CREATED        STATUS            PORTS                 NAMES
+5827494c3cce  localhost/podman-pause:4.3.1-0                                 8 minutes ago  Up 8 minutes ago  0.0.0.0:8080->80/tcp  bf97c02c7c07-infra
+7307f130b295  docker.io/library/caddy:2.7.6-alpine     caddy run --confi...  8 minutes ago  Up 8 minutes ago  0.0.0.0:8080->80/tcp  caddy
+cd2daa5962e1  docker.io/timberio/vector:0.35.0-alpine                        8 minutes ago  Up 7 minutes ago  0.0.0.0:8080->80/tcp  vector

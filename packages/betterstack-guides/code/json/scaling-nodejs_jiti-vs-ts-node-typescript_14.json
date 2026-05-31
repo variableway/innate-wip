@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-vs-ts-node-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 14
+
+// tsconfig.json (required)
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "cache": true,
+    "compilerOptions": {
+      "target": "es2020",
+      "module": "commonjs",
+      "paths": { "@/*": ["src/*"] }
+    }
+  }
+}

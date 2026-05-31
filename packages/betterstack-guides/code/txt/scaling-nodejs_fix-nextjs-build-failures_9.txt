@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fix-nextjs-build-failures/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+NAME      TYPE SIZE USED PRIO
+/swapfile file   2G   0B   -2

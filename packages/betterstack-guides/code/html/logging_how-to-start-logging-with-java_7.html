@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: xml
+# Normalized: html
+# Block index: 7
+
+[label log4j2.xml]
+. . .
+<Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+        [highlight]
+        <JsonLayout></JsonLayout>
+        [/highlight]
+    </Console>
+</Appenders>
+<Loggers>
+    <Root level="TRACE">
+        <AppenderRef ref="console" />
+    </Root>
+</Loggers>

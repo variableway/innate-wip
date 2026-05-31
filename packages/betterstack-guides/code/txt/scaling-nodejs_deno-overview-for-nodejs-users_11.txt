@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+┌ ⚠️  Deno requests net access to "jsonplaceholder.typicode.com:443".
+├ Requested by `fetch()` API.
+├ Run again with --allow-net to bypass this prompt.
+└ Allow? [y/n/A] (y = yes, allow; n = no, deny; A = allow all net permissions) >

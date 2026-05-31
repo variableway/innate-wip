@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[output]
+{"name": "__main__", "filename": "main.py", "lineno": 38, "message": "Disk usage warning", "disk_usage": 85.2, "threshold": 80, "level": "WARNING", "timestamp": "2023-06-07 12:48:35,251"}

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: txt
+# Normalized: txt
+# Block index: 1
+
+[output]
+  ⚠ eslint(no-unused-vars): 
+  ╭─[src/components/Button.tsx:5:7]
+  5 │ const Button = ({ label, onClick, disabled }) => {
+  6 │   const unusedValue = 'test';
+    ·         ───────────
+  7 │   return (
+  ╰────
+  
+Finished in 412ms
+Found 1 warning

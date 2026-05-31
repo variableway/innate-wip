@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: json
+# Normalized: json
+# Block index: 73
+
+[output]
+{"plugins":[{"plugin_id":"object:8ac","plugin_category":"input","type":"monitor_agent","config":{"@type":"monitor_agent","bind":"0.0.0.0","port":"24220"},"output_plugin":false,"retry_count":null,"emit_records":0,"emit_size":0},
+...
+buffer_total_queued_size":0,"retry_count":0,"emit_records":3,"emit_size":0,"emit_count":3,"write_count":1,"rollback_count":0,"slow_flush_count":0,"flush_time_count":1429,"buffer_stage_length":0,"buffer_stage_byte_size":0,"buffer_queue_byte_size":0,"buffer_available_buffer_space_ratios":100.0,"retry":{}}]}

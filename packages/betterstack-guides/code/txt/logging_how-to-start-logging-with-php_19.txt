@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+[8-Jul-2022 22:11:43 America/New_York] PHP Notice:  A user requested a service. in /home/eric/test/logging.php on line 3
+[8-Jul-2022 22:11:43 America/New_York] PHP Warning:  The image failed to load! in /home/eric/test/logging.php on line 4
+[8-Jul-2022 22:11:43 America/New_York] PHP Fatal error:  User requested a profile that doesn't exist! in /home/eric/test/logging.php on line 5

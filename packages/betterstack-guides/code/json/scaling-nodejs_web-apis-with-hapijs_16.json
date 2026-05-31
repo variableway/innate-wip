@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{
+  "title": "Getting Started with Hapi.js",
+  "content": "Hapi.js is a powerful Node.js framework for building scalable APIs. This post explores its key features and benefits.",
+  "published": true,
+  "author": "John Developer",
+  "tags": [
+    "hapi",
+    "nodejs", 
+    "api"
+  ],
+  "_id": "687f381d1ad899147070cfd9",
+  "createdAt": "2025-07-22T07:05:01.760Z",
+  "updatedAt": "2025-07-22T07:05:01.760Z",
+  "__v": 0
+}

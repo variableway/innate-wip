@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: json
+# Normalized: json
+# Block index: 40
+
+[output]
+{
+    "code": 404,
+    "status": "Not Found"
+}

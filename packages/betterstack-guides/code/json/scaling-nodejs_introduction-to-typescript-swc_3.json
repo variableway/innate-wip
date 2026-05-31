@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-typescript-swc/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

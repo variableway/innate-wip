@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/husky-and-lint-staged/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+✔ Preparing lint-staged...
+⚠ Running tasks for staged files...
+  ❯ .lintstagedrc.json — 1 file
+    ❯ *.{js,jsx,ts,tsx} — 1 file
+      ✖ eslint --fix --max-warnings=0 [FAILED]
+      ◼ prettier --write
+    ↓ *.{json,css,md} — no files
+↓ Skipped because of errors from tasks.
+✔ Reverting to original state because of errors...
+✔ Cleaning up temporary files...
+
+✖ eslint --fix --max-warnings=0:
+
+/Users/stanley/commit-quality-demo/src/test.js
+  2:9  warning  'unused' is assigned a value but never used  no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+ESLint found too many warnings (maximum: 0).
+
+husky - pre-commit script failed (code 1)

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-index-signatures/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Alice's score: 95
+Numeric key: 100
+First item: first
+Second item: second

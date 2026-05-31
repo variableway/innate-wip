@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+> esbuild-demo@1.0.0 build
+> esbuild src/main.js --bundle --outfile=dist/bundle.js --format=esm
+
+
+  dist/bundle.js   1.3kb
+  dist/bundle.css  595b 
+
+⚡ Done in 15ms

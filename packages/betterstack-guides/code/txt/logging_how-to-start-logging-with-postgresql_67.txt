@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 67
+
+[label /etc/postgresql/15/main/postgresql.conf]
+log_connections = off
+log_disconnections = off

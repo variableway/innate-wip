@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 16
+
+### Combining multiple validation rules
+
+You can also chain multiple validations together by creating more complex schemas. This allows you to build sophisticated validation logic step by step.
+
+Update your `schemas.ts` to include nested validation:

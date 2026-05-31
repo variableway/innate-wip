@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_totalgeneration0 492.0
+python_gc_objects_collected_totalgeneration1 325.0
+python_gc_objects_collected_totalgeneration2 0.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_totalgeneration0 0.0
+python_gc_objects_uncollectable_totalgeneration1 0.0
+python_gc_objects_uncollectable_totalgeneration2 0.0
+. . .

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 26
+
+receivers:
+  - name: 'email'
+    email_configs:
+      - to: 'team@example.com'
+        subject: '[{{ .Status | toUpper }}] {{ .GroupLabels.alertname }}'
+[highlight]
+        text: '{{ template "email.myorg.text" . }}'
+
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'
+[/highlight]

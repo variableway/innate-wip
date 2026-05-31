@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label /etc/systemd/system/prometheus.service]
+[Service]
+ExecStart=/usr/local/bin/prometheus \
+    --config.file=/etc/prometheus/prometheus.yml \
+[highlight]
+    --storage.tsdb.path=/var/lib/prometheus \
+    --storage.tsdb.retention.time=90d
+[/highlight]

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/sensitive-data/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+http://www.example.com/<id>/<address>

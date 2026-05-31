@@ -1,0 +1,43 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-explained/
+# Original language: css
+# Normalized: css
+# Block index: 16
+
+[label src/styles.css]
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+#time-display {
+  font-weight: 500;
+  color: #4b5563;
+}

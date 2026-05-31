@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+{"@timestamp":"2025-06-05T10:42:31.631819+00:00", "host":"ubuntu", "severity":5, "facility":16, "syslog-tag":"FileLogs", "source":"FileLogs", "message":"{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Operation finished\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1749120151}", "environment": "dev"}

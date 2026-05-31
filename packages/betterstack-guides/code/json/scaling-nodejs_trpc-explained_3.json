@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

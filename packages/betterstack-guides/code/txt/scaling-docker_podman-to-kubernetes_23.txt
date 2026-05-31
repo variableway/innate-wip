@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+e21066fdb234833ffd3167a1b3bda8f5910df7708176da594a054dd09200fae

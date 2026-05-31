@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+2025-05-20 11:33:46 - main - DEBUG - This is a debug message
+2025-05-20 11:33:46 - main - INFO - This is an info message
+2025-05-20 11:33:46 - main - WARNING - This is a warning message
+2025-05-20 11:33:46 - main - ERROR - This is an error message
+2025-05-20 11:33:46 - main - CRITICAL - This is a critical message

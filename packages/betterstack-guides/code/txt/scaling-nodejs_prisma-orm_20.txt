@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prisma-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+prisma-postgres-demo/
+├── prisma/
+│   ├── schema.prisma
+│   └── migrations/
+├── src/
+│   ├── app.ts
+│   └── index.ts
+├── package.json
+└── tsconfig.json

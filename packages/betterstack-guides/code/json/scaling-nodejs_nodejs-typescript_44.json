@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 44
+
+[label tsconfig.json]
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+[highlight]
+    "sourceMap": true
+[/highlight]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

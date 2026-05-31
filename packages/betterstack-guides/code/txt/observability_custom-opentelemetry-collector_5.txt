@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/custom-opentelemetry-collector/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+2024-10-14T15:25:48.750+0100    INFO    internal/command.go:125 OpenTelemetry Collector Builder {"version": "v0.111.0"}
+2024-10-14T15:25:48.751+0100    INFO    internal/command.go:161 Using config file       {"path": "manifest.yaml"}
+2024-10-14T15:25:48.751+0100    INFO    builder/config.go:142   Using go        {"go-executable": "/home/ayo/.local/share/mise/installs/go/1.23.1/bin/go"}
+2024-10-14T15:25:48.752+0100    INFO    builder/main.go:101     Sources created {"path": "./otelcol-custom"}
+2024-10-14T15:26:04.034+0100    INFO    builder/main.go:192     Getting go modules
+2024-10-14T15:26:18.890+0100    INFO    builder/main.go:112     Compiling
+2024-10-14T15:26:45.951+0100    INFO    builder/main.go:131     Compiled        {"binary": "./otelcol-custom/otelcol-custom"}

@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+{
+  "host": "falcon",
+  "application": "Semantic Logger",
+  "timestamp": "2025-01-29T19:08:29.310165Z",
+  "level": "info",
+  "level_index": 2,
+  "pid": 1733346,
+  "thread": "60",
+[highlight]
+  "named_tags": {
+    "facility": "SFO Airport",
+    "region": "Bay Area"
+  },
+[/highlight]
+  "named_tags": {
+  "name": "WeatherStation",
+  "message": "Wind sensor calibrated",
+  "payload": {
+    "bearing_adjusted": true,
+    "previous_direction": "NW"
+  }
+}

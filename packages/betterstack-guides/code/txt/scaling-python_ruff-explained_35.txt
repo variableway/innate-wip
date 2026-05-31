@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[label .gitignore]
+# Virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Ruff cache
+.ruff_cache/
+
+# Other common exclusions
+.DS_Store

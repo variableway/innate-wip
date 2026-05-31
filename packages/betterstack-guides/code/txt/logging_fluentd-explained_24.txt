@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+2025-05-30 06:53:27.412729262 +0000 file.logs: {"status":200,"ip":"127.0.0.1","level":30,"emailAddress":"user@mail.com","msg":"Connected to database","pid":124134,"ssn":"407-01-2433","timestamp":1748588007}
+2025-05-30 06:53:27.697872740 +0000 file.logs: {"status":200,"ip":"127.0.0.1","level":30,"emailAddress":"user@mail.com","msg":"Initialized application","pid":125150,"ssn":"407-01-2433","timestamp":1748588007}
+2025-05-30 06:53:30.422330464 +0000 file.logs: {"status":200,"ip":"127.0.0.1","level":30,"emailAddress":"user@mail.com","msg":"Initialized application","pid":124134,"ssn":"407-01-2433","timestamp":1748588010}
+2025-05-30 06:53:30.709683311 +0000 file.logs: {"status":200,"ip":"127.0.0.1","level":30,"emailAddress":"user@mail.com","msg":"Initialized application","pid":125150,"ssn":"407-01-2433","timestamp":1748588010}
+...

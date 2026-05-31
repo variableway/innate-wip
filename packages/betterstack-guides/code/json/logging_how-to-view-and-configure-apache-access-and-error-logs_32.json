@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: json
+# Normalized: json
+# Block index: 32
+
+[output]
+{
+  "timestamp": "[06/Jun/2025:12:35:26 +0000]",
+  "protocol": "HTTP/1.1",
+  "method": "HEAD",
+  "request": "/index.html",
+  "query": "?name=john&age=30",
+  "request_size_in_bytes": "92",
+  "status_code": "200",
+  "response_size_in_bytes": "255",
+  "time_taken_ms": "0"
+}

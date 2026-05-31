@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prisma-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Environment variables loaded from .env
+Running seed command `ts-node prisma/seed.ts` ...
+Database has been seeded!
+
+🌱  The seed command has been executed.

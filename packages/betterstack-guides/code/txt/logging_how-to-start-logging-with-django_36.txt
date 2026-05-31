@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-django/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+horus.views.search at 2025-05-28 18:36:00,702 (INFO) :: Invalid access made to /search, redirecting to /

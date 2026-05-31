@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[label Caddyfile]
+:80 {
+    root * /usr/share/caddy
+    file_server
+[highlight]
+    try_files {path} /index.html
+[/highlight]
+}

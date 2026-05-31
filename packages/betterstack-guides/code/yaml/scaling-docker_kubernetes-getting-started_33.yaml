@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 33
+
+[label hello-app-deployment.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app
+  labels:
+    app: hello-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-app
+  template:
+    metadata:
+      labels:
+        app: hello-app
+    spec:
+      containers:
+      - name: hello-app
+        image: paulbouwer/hello-kubernetes:1.10
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MESSAGE
+          value: "Hello from my Kubernetes cluster!"

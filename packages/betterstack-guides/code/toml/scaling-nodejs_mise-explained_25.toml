@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 25
+
+[tasks.test]
+run = "npm test"
+depends = ["build"]
+
+[tasks.build]
+run = "npm run build"

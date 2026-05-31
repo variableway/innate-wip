@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-laravel/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+[2022-07-01 19:46:10] local.INFO: The route /user is being accessed. {"username":"test"}

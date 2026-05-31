@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/error-handling-nestjs/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{
+  "message": "Product with identifier abc123 not found",
+  "errorCode": "RESOURCE_NOT_FOUND",
+  "timestamp": "2023-05-16T14:30:45.123Z",
+  "statusCode": 404
+}

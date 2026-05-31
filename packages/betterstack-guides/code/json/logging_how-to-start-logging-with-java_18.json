@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[label EcsLayout.json]
+  {
+    . . .
+    "password": "${json:MaskingJsonMessage@mdc:password}"
+  }

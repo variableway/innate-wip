@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[label Caddyfile]
+<your_domain_name> {
+	log {
+[highlight]
+		output stdout
+[/highlight]
+	}
+}

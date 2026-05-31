@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: json
+# Normalized: json
+# Block index: 49
+
+[output]
+
+{
+  "error": "Post with ID e1d7d3df-8d62-44ef-a1a2-f629db0755ff not found"
+}

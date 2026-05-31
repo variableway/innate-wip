@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[label logstash/config/logstash.conf]
+...
+filter {
+  if [message] =~ /^{.*}$/ {
+    json {
+      source => "message"
+    }
+  }
+
+  mutate {
+    remove_field => ["event", "message", "emailAddress"]
+    add_field => { "env" => "development" }
+  }
+[highlight]
+  # Add the 'is_successful' field based on the 'status' field
+  if [status] == 200 {
+    mutate {
+      add_field => { "is_successful" => "true" }
+    }
+  } else {
+    mutate {
+      add_field => { "is_successful" => "false" }
+    }
+  }
+[/highlight]
+}
+...

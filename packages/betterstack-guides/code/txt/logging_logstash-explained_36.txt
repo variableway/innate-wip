@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+[1]+ 531475 Running                 ./logify.sh &  (wd: ~/log-processing-stack/logify)

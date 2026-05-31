@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Function.listen (/home/ayo/dev/demo/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/ayo/dev/demo/main.js:16:18)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1357:8)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}

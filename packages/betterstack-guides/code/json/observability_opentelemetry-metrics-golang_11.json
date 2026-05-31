@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{
+  "Resource": [
+    {
+      "Key": "service.name",
+      "Value": {
+        "Type": "STRING",
+        "Value": "my-service"
+      }
+    },
+    {
+      "Key": "service.version",
+      "Value": {
+        "Type": "STRING",
+        "Value": "0.1.0"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.language",
+      "Value": {
+        "Type": "STRING",
+        "Value": "go"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.name",
+      "Value": {
+        "Type": "STRING",
+        "Value": "opentelemetry"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.version",
+      "Value": {
+        "Type": "STRING",
+        "Value": "1.31.0"
+      }
+    }
+  ],
+  "ScopeMetrics": null
+}

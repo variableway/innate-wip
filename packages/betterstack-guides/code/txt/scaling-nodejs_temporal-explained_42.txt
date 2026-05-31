@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[output]
+Time until: P1M1DT19H45M
+Time since: -P1M1DT19H45M

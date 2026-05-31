@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+2024/01/03 10:24:22 Info message
+2024/01/03 10:24:22 INFO Info message

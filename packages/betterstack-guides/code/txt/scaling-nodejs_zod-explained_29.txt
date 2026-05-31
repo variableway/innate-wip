@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 29
+
+You can also extend the existing schema to include optional fields while ensuring TypeScript correctly infers them as optional in the type definition.
+
+Create a new file `extended.ts` that builds upon `UserSchema`:

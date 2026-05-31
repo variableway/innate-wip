@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-type-guards/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+Using default configuration
+Initializing with key: abc123
+Timeout: 3000ms
+Retries: 3
+Error: API key is required

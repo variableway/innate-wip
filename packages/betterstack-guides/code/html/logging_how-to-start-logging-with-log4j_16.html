@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: xml
+# Normalized: html
+# Block index: 16
+
+[label log4j2.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        [highlight]
+        <File name="file" fileName="logs/app.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+        [/highlight]
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            [highlight]
+            <AppenderRef ref="file" />
+            [/highlight]
+        </Root>
+    </Loggers>
+</Configuration>

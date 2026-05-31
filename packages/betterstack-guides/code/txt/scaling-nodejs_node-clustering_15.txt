@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-clustering/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Primary 96715 is running.
+Worker 96726 is active.
+Primary 96715 received a message from worker 96726: { msgFromWorker: 'Message sent from worker 96726.' }
+Worker 96727 is active.
+Primary 96715 received a message from worker 96727: { msgFromWorker: 'Message sent from worker 96727.' }
+Worker 96729 is active.
+Primary 96715 received a message from worker 96729: { msgFromWorker: 'Message sent from worker 96729.' }
+Worker 96728 is active.
+Primary 96715 received a message from worker 96728: { msgFromWorker: 'Message sent from worker 96728.' }

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/distributed-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+baggage: userId=alice,serverNode=DF%2028,isProduction=false

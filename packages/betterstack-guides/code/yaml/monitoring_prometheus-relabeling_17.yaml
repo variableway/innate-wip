@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 17
+
+[label prometheus.yml]
+scrape_configs:
+  - job_name: 'kubernetes-pods'
+    relabel_configs:
+      - action: labelmap
+        regex: __meta_kubernetes_(.*)
+        replacement: k8s_${1}

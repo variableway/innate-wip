@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 28
+
+[label docker-compose.yml]
+version: '3'
+
+name: caddy-tutorial
+
+services:
+  caddy:
+    container_name: caddy
+    image: caddy
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+[highlight]
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./dist:/usr/share/caddy
+[/highlight]
+
+volumes:
+  caddy-config:
+  caddy-data:

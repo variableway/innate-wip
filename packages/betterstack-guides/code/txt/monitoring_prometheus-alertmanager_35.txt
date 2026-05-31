@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+ID                                    Matchers                 Ends At                  Created By  Comment
+b16d0599-03ed-4863-8b8c-77bc2355837b  instance="web-server-1"  2024-11-20 16:41:28 UTC  Ayo         scheduled downtime

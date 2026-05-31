@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{"timestamp":"2023-08-30T12:15:24.673590","level":"INFO ","pid":521057,"msg":"user signed in"}

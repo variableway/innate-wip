@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 23
+
+`StructError` objects give you structured information about validation failures. You can see which field failed, what value caused the problem, and get a human-readable description.
+
+### Collecting multiple validation errors
+
+By default, Superstruct stops at the first error it finds. You can collect all errors at once using the `validate` method instead of `create`.
+
+Update your error handling file:

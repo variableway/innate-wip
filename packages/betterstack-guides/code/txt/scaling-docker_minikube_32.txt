@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 32
+
+This more complex deployment demonstrates how Kubernetes orchestrates multiple
+instances of your application, providing load balancing and failover
+capabilities. If any of the three nginx pods fails, Kubernetes will
+automatically recreate it to maintain the desired state of three replicas.
+
+## Managing Minikube resources
+
+As you work with more demanding applications, you might need to adjust
+Minikube's resource allocation or leverage its storage capabilities. This
+section explores how to configure resources, provision storage, and share files
+between your host and the Minikube environment.
+
+### Configuring memory and CPU allocation
+
+Minikube's default resource allocation may not be sufficient for all use cases,
+especially when running multiple or resource-intensive applications.
+Fortunately, adjusting these resources is straightforward.
+
+You can configure resources when starting Minikube by using command-line flags:

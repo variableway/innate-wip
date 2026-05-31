@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+. . .
+ Swarm: active
+  NodeID: 9r83zto8qpqiazt6slxfkjypq
+  Is Manager: true
+  ClusterID: q6laywz9u8xlis9wlkbzap8i0
+  Managers: 1
+  Nodes: 1
+. . .

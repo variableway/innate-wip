@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+{
+  "user id": "12345",
+  "service-version": "1.2.3"
+}

@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[output]
+{
+  "time": "2023-06-29T06:37:38.429463999+02:00",
+  "level": "ERROR",
+  "source": {
+    "function": "main.main",
+    "file": "app/main.go",
+    "line": 38
+  },
+  "msg": "an unexpected error",
+[highlight]
+  "build_info": {
+    "go_version": "go1.20.2",
+    "commit_hash": "9b0695e1c4732a2ea2c8ac678472c4c3c235101b"
+  }
+[/highlight]
+}

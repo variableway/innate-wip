@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bullmq-scheduled-tasks/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Processing job: welcomeMessage
+Sending a welcome message every few seconds
+repeat:e2c71bc16c1c48320b5a4569f3ce9f0c:1703153825000 has completed!
+Processing job: welcomeMessage
+Sending a welcome message every few seconds
+repeat:e2c71bc16c1c48320b5a4569f3ce9f0c:1703153890000 has completed!

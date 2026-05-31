@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+Error: creating container storage: the container name "caddy" is already in use by 7307f130b2951ea8202bbf6d1d6d1a81fbdb66d022d65c26f9c209ee2e664bf2. You have to remove that container to be able to reuse that name: that name is already in use

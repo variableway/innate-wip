@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+.
+├── cms
+├── notification-engine
+├── producer
+├── compose.yaml
+├── Dockerfile
+├── elasticmq.conf
+└── otelcol.yaml
+
+3 directories, 4 files

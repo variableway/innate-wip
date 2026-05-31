@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+NETWORK ID     NAME               DRIVER    SCOPE
+7b369448a044   bridge             bridge    local
+615e9a7b9421   host               host      local
+cba62d0d8c2c   my_custom_network  bridge    local
+f4bd3d0bbac5   my_network         bridge    local
+70f998968268   none               null      local

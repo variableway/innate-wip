@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mapped-types/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+src/conditional.ts:20:7 - error TS2741: Property 'render' is missing in type '{ id: number; title: string; publishedAt: Date; }' but required in type 'OptionalMethods<Article>'.
+
+20 const article1: ArticleWithOptionalMethods = {
+         ~~~~~~~~
+
+  src/conditional.ts:15:3
+    15   render: () => string;
+         ~~~~~~
+    'render' is declared here.
+
+
+Found 1 error in src/conditional.ts:20

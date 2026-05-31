@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+Fatal error: Uncaught Error: Call to undefined method emptyClass::one() in /home/ayo/dev/betterstack/community/demo/logging-php/logging.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ayo/dev/betterstack/community/demo/logging-php/logging.php on line 9

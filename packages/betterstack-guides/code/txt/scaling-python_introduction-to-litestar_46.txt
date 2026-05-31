@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+[output]
+*   Trying 127.0.0.1:8000...
+* Connected to 127.0.0.1 (127.0.0.1) port 8000
+> DELETE /api/posts/27f80e88-41bc-49c3-98a0-94b5d9dcd42e HTTP/1.1
+> Host: 127.0.0.1:8000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 204 No Content
+< date: Wed, 12 Mar 2025 11:32:49 GMT
+< server: uvicorn
+< 
+* Connection #0 to host 127.0.0.1 left intact

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/kysely-query-builder/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"]
+}

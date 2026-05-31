@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+[output]
+0.40.0-alpine: Pulling from timberio/vector
+c6a83fedfae6: Already exists
+b9fc015ecb16: Pull complete
+f7f83e464043: Pull complete
+fe91b3a632fb: Pull complete
+5312bc41fca9: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:7a81fdd62e056321055a9e4bdec4073d752ecf68f4c192e676b85001721523c2
+Status: Downloaded newer image for timberio/vector:0.40.0-alpine
+docker.io/timberio/vector:0.40.0-alpine

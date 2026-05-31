@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+access_log off;
+access_log /dev/null;

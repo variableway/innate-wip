@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+yarn remove v1.22.22
+[1/2] 🗑  Removing module lodash...
+[2/2] 🔨  Regenerating lockfile and installing missing dependencies...
+success Uninstalled packages.
+✨  Done in 0.50s.

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/webassembly-web-apps/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:8080/, http://[::1]:8080/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.1.167:8080/
+<i> [webpack-dev-server] Content not from webpack is served from '/Users/stanley/wasm-performance-demo/' directory
+asset bundle.js 170 KiB [emitted] (name: main)
+runtime modules 27.4 KiB 12 modules

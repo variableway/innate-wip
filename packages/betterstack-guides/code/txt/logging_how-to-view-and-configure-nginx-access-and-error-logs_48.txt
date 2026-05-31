@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+[+] Running 3/3
+ ✔ Network nginx-logging-tutorial_default  Created                         0.3s
+ ✔ Container nginx-server                  Started                         0.6s
+ ✔ Container vector                        Started                         0.6s

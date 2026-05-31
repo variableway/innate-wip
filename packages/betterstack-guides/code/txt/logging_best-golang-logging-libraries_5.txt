@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+{"level":"info","ts":1689166454.9876506,"caller":"slog/main.go:12","msg":"Hello from Zap!"}

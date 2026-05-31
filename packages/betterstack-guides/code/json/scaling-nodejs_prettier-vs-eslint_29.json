@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prettier-vs-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 29
+
+[label package.json]
+{
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --cache" // --cache improves performance
+    ]
+  }
+}

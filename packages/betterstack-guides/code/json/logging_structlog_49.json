@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 49
+
+[label app.log]
+{"event": "Info message", "level": "info", "timestamp": "2025-06-06T14:05:55.936319Z"}
+{"event": "Error message", "level": "error", "timestamp": "2025-06-06T14:05:55.936752Z"}

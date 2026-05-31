@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+[output]
+{"level":"info","service":"main","time":"2022-08-31T21:13:51+01:00","message":"main logger message"}
+{"level":"info","service":"auth","time":"2022-08-31T21:13:51+01:00","message":"auth logger message"}
+{"level":"info","service":"admin","time":"2022-08-31T21:13:51+01:00","message":"admin logger message"}

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+Trying to pull docker.io/library/caddy:2.7.6-alpine...
+Getting image source signatures
+Copying blob b7343593237d done
+Copying blob c926b61bad3b done
+Copying blob 6fd2155878b9 done
+Copying blob 08886dfc0722 done
+Copying config 657b947906 done
+Writing manifest to image destination
+Storing signatures
+7307f130b2951ea8202bbf6d1d6d1a81fbdb66d022d65c26f9c209ee2e664bf2

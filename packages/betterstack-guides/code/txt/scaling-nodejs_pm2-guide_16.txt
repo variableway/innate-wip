@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+[PM2] Applying action restartProcessId on app [dadjokes](ids: [ 0 ])
+[PM2] [dadjokes](0) ✓
+┌─────┬─────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name        │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼─────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ dadjokes    │ default     │ 1.0.0   │ fork    │ 4873     │ 1s     │ 1    │ online    │ 0%       │ 52.6mb   │ ayo      │ disabled │
+└─────┴─────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parcel-vs-vite/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[label package.json]
+{
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "default": {
+      "distDir": "dist",
+      "sourceMap": true
+    }
+  }
+}

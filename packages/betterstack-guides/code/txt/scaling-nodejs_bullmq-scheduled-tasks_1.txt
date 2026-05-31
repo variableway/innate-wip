@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/bullmq-scheduled-tasks/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+● redis-server.service - Advanced key-value store
+     Loaded: loaded (/lib/systemd/system/redis-server.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-12-21 10:11:36 UTC; 27s ago
+       Docs: http://redis.io/documentation, man:redis-server(1)
+   Main PID: 6395 (redis-server)
+     Status: "Ready to accept connections"
+      Tasks: 5 (limit: 2244)
+     Memory: 2.5M
+        CPU: 153ms
+     CGroup: /system.slice/redis-server.service
+             └─6395 "/usr/bin/redis-server 127.0.0.1:6379"
+
+Dec 21 10:11:36 bullmq-server systemd[1]: Starting Advanced key-value store...
+Dec 21 10:11:36 bullmq-server systemd[1]: Started Advanced key-value store.

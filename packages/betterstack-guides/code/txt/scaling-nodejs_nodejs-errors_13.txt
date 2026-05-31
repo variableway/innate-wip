@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+node    2902  ayo   19u  IPv6 781904      0t0  TCP *:3001 (LISTEN)

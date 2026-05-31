@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+{
+  "appname": "sshd",
+  "context": {
+    "ip_address": "180.101.88.228",
+    "port": "55488",
+    "stage": "preauth",
+    "username": "root"
+  },
+  "event": {
+    "category": "authentication",
+    "name": "disconnect user"
+  },
+  "file": "/var/log/auth.log",
+  "host": "ubuntu-lts",
+  "hostname": "ubuntu-lts",
+  "message": "Disconnected from authenticating user root 180.101.88.228 port 55488 [preauth]",
+  "procid": 48687,
+  "source_type": "file",
+  "timestamp": "2024-02-10T16:24:28Z"
+}

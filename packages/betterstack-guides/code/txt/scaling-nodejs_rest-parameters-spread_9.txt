@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rest-parameters-spread/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Sum of 1, 2, 3: 6
+Sum of 1, 2, 3, 4, 5: 15
+INFO: Server started
+INFO: Port 3000
+INFO: Ready

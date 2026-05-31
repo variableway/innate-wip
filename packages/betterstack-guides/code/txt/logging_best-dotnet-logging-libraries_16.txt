@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 16
+
+This way, you don't have to configure programmatically; you add all the
+configurations in the external file, whichever suits you better.
+
+### NLog pros
+
+- It is fast.
+- Offers flexible configuration options, allowing both programmatic and
+  file-based setups.
+- Has comprehensive and well-maintained and documentation.
+- Supports enhanced logging capabilities with features like the
+  [asynchronous wrapper](https://nlog-project.org/documentation/v5.0.0/html/T_NLog_Targets_Wrappers_AsyncTargetWrapper.htm).
+- Extensible through a variety of third-party plugins.
+
+### NLog cons
+
+- Configuration can sometimes become challenging, especially for complex
+  scenarios.
+- While growing in popularity, NLog's community is still smaller compared to
+  other libraries like Serilog, which might affect support and resource
+  availability.
+- Limited integration with
+  [C# interpolated strings](https://github.com/NLog/NLog/issues/825).
+
+**Learn more**: [How To Start Logging With NLog
+](https://betterstack.com/community/guides/logging/how-to-start-logging-with-nlog/)
+
+[ad-logs]
+
+## 4. Log4net
+
+![Screenshot of Log4net Github homepage](https://imagedelivery.net/xZXo0QFi-1_4Zimer-T0XQ/847f428e-127c-49d3-7811-07345af6dd00/lg2x
+=1200x600)
+
+[Log4net](https://logging.apache.org/log4net/) is a powerful logging framework
+for .NET that draws inspiration from Java's Log4j logging framework. It is known
+for its high-performance, modular, and extensively designed architecture,
+allowing it be extended through the use of plugins. Furthermore, It can be
+configured through XML or using dynamic configuration options.
+
+You can kick off using Log4net with an example like this:

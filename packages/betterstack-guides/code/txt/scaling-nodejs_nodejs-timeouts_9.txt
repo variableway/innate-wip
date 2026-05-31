@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-timeouts/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+AbortError: The operation was aborted
+    at abortFetch (node:internal/deps/undici/undici:5623:21)
+    at requestObject.signal.addEventListener.once (node:internal/deps/undici/undici:5560:9)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:639:20)
+    at AbortSignal.dispatchEvent (node:internal/event_target:581:26)
+    at abortSignal (node:internal/abort_controller:291:10)
+    at AbortController.abort (node:internal/abort_controller:321:5)
+    at AbortSignal.abort (node:internal/deps/undici/undici:4958:36)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:639:20)
+    at AbortSignal.dispatchEvent (node:internal/event_target:581:26)
+    at abortSignal (node:internal/abort_controller:291:10) {
+  code: 'ABORT_ERR'
+}

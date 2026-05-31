@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+I, [2023-04-17T19:50:35.871039 #33575]  INFO -- : Starting application...
+E, [2023-04-17T19:50:35.871069 #33575] ERROR -- : An error occurred!
+I, [2023-04-17T19:50:35.871075 #33575]  INFO -- : Shutting down application...

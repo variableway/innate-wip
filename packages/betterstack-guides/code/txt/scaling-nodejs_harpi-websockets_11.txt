@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/harpi-websockets/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Restarting 'server.js'
+Server running on http://localhost:3000
+Client 1 connected. Total connections: 1
+Client 1 disconnected. Remaining: 0
+Client 2 connected. Total connections: 1
+Client 2 disconnected. Remaining: 0
+Client 3 connected. Total connections: 1

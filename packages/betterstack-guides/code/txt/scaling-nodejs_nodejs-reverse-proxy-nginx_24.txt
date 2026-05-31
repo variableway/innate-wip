@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: txt
+# Normalized: txt
+# Block index: 24
+
+upstream cryptoStats {
+    server localhost:3000;
+    server localhost:3001;
+    server localhost:3002;
+    server localhost:3003;
+}
+
+server {
+    server_name <your_domain_or_server_ip>;
+
+    location / {
+        proxy_pass <http://cryptoStats>;
+    }
+}

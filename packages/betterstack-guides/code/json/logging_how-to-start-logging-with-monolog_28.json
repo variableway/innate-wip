@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: json
+# Normalized: json
+# Block index: 28
+
+[output]
+{"message":"This file has been executed.","context":{"user":"Eric"},"level":200,"level_name":"INFO","channel":"my_logger","datetime":"2022-08-02T11:32:00.489995+00:00","extra":{}}

@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 19
+
+[output]
+{
+  "time":"2023-02-24T12:03:12.175582603+01:00",
+  "level":"INFO",
+  "msg":"image uploaded",
+  "id":23123,
+[highlight]
+  "properties":{
+    "width":4000,
+    "height":3000,
+    "format":"jpeg"
+  }
+[/highlight]
+}

@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+2024-02-10T16:24:25.649333Z  INFO vector::app: Log level is enabled. level="info"
+2024-02-10T16:24:25.650544Z  INFO vector::app: Loading configs. paths=["/etc/vector/vector.yaml"]
+2024-02-10T16:24:25.753544Z  INFO vector::topology::running: Running healthchecks.
+2024-02-10T16:24:25.754023Z  INFO vector::topology::builder: Healthcheck passed.
+2024-02-10T16:24:25.754073Z  INFO vector::topology::builder: Healthcheck passed.
+2024-02-10T16:24:25.754499Z  INFO source{component_kind="source" component_id=auth_logs component_type=file}: vector::sources::file: Starting file server. include=["/var/log/auth.log"] exclu
+de=[]
+2024-02-10T16:24:25.755199Z  INFO vector: Vector has started. debug="false" version="0.35.0" arch="x86_64" revision="e57c0c0 2024-01-08 14:42:10.103908779"
+2024-02-10T16:24:25.755600Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2024-02-10T16:24:25.756187Z  INFO source{component_kind="source" component_id=auth_logs component_type=file}:file_server: file_source::checkpointer: Loaded checkpoint data.
+[highlight]
+2024-02-10T16:24:25.756824Z  INFO source{component_kind="source" component_id=auth_logs component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=
+/var/log/auth.log file_position=15899101
+[/highlight]
+{"appname":"sudo","event":{"category":"authentication"},"file":"/var/log/auth.log","host":"ubuntu-lts","hostname":"ubuntu-lts","message":"pam_unix(sudo:session): session closed for user root","source_type":"file","timestamp":"2024-02-10T16:24:24Z"}
+{"appname":"sudo","event":{"category":"authentication"},"file":"/var/log/auth.log","host":"ubuntu-lts","hostname":"ubuntu-lts","message":"ayo : TTY=pts/5 ; PWD=/home/ayo ; USER=root ; COMMAND=/usr/bin/vector","source_type":"file","timestamp":"2024-02-10T16:24:25Z"}
+{"appname":"sudo","event":{"category":"authentication"},"file":"/var/log/auth.log","host":"ubuntu-lts","hostname":"ubuntu-lts","message":"pam_unix(sudo:session): session opened for user root (uid=0) by ayo(uid=1000)","source_type":"file","timestamp":"2024-02-10T16:24:25Z"}
+{"file":"/var/log/auth.log","host":"ubuntu-lts","message":"Feb 10 16:24:25 ubuntu-lts sshd[48693]: Failed password for root from 103.106.189.143 port 54756 ssh2","source_type":"file","timestamp":"2024-02-10T16:24:25.757389859Z"}

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 37
+
+[label .pre-commit-config.yaml]
+repos:
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.2.0
+    hooks:
+    -   id: ruff
+        args: [--fix]
+    -   id: ruff-format

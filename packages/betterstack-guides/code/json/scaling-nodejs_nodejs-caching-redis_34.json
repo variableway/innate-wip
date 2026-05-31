@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-caching-redis/
+# Original language: json
+# Normalized: json
+# Block index: 34
+
+[output]
+{
+  "message": "User profile updated",
+  "user": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30,
+    "created_at": "2024-11-18 22:58:24",
+[highlight]
+    "bio": "New bio for John Doe"
+[/highlight]
+  }
+}

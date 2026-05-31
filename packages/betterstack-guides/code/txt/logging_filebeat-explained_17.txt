@@ -1,0 +1,42 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+...
+{
+  "@timestamp": "2025-06-04T07:52:54.769Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "_doc",
+    "version": "9.0.1"
+  },
+  "log": {
+    "offset": 779629,
+    "file": {
+      "path": "/var/log/logify/app.log",
+      "device_id": "2049",
+      "inode": "259470",
+      "fingerprint": "337d323bb6858c439b81fec30abaccc82f8576477737a881801695d2ad617b1f"
+    }
+  },
+  "message": "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1748878010}",
+  "input": {
+    "type": "filestream"
+  },
+  "ecs": {
+    "version": "8.0.0"
+  },
+  "host": {
+    "name": "645301c4e5a2"
+  },
+  "agent": {
+    "id": "c9c201f5-b93b-4719-976e-23eebfbbc91e",
+    "name": "645301c4e5a2",
+    "type": "filebeat",
+    "version": "9.0.1",
+    "ephemeral_id": "714a7298-45e8-4f57-bc8e-6426bf1a7d7d"
+  }
+}
+...

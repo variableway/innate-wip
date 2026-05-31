@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-bun-for-nodejs-users/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[label package.json]
+{
+  "dependencies": {
+    "lodash": "git+ssh://github.com/lodash/lodash.git#4.17.21",
+    "moment": "git@github.com:moment/moment.git"
+ }
+}

@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[label filebeat-config/filebeat.yml]
+filebeat.autodiscover:
+  providers:
+    - type: docker
+      labels.dedot: true
+      templates:
+        - condition:
+            contains:
+              docker.container.image: "logify"
+          config:
+            - type: filestream
+              id: container-${data.docker.container.id}
+              prospector.scanner.symlinks: true
+              parsers:
+                - container: ~
+              paths:
+                - /var/lib/docker/containers/${data.docker.container.id}/*.log
+              processors:
+                - decode_json_fields:
+                    fields: ["message"]
+                    target: ""
+
+output.elasticsearch:
+  hosts: 'https://<your_ingestion_host>:443'
+  path: '/elastic'
+  headers:
+    X-Better-Stack-Source-Token: '<your_source_token>'

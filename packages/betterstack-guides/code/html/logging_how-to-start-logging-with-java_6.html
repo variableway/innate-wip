@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: xml
+# Normalized: html
+# Block index: 6
+
+[label log4j2.xml]
+. . .
+<Loggers>
+    <Logger name="org.apache.test" level="trace" additivity="false">
+        <AppenderRef ref="Out"/>
+    </Logger>
+    [highlight]
+    <Root level="error">
+    [/highlight]
+        <AppenderRef ref="Out"/>
+    </Root>
+</Loggers>

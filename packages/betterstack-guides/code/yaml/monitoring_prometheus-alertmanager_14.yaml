@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 14
+
+[label alertmanager.yml]
+route:
+  receiver: betterstack # root receiver
+
+  routes:
+  # All alerts with service=postgresql or service=clickhouse
+  # are dispatched to the database slack.
+  - receiver: 'database-slack'
+    matchers:
+    - service=~"postgresql|clickhouse"
+
+  # All alerts with the team=frontend label match this sub-route.
+  - receiver: 'frontend-email'
+    matchers:
+    - team="frontend"

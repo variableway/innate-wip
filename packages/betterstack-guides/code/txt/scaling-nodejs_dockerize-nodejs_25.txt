@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+{"level":"fatal","time":"2024-07-28T23:07:58.786Z","pid":17,"host":"54431553635f","err":{"type":"ConnectionRefusedError","message":"","stack":"SequelizeConnectionRefusedError\n    at Client.
+_connectionCallback (/build/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:133:24)\n    at Client._handleErrorWhileConnecting (/app/node_modules/pg/lib/client.js:327:19)\n
+   at Client._handleErrorEvent (/build/node_modules/pg/lib/client.js:337:19)\n    at Connection.emit (node:events:519:28)\n    at Socket.reportStreamError (/app/node_modules/pg/lib/connection.
+js:58:12)\n    at Socket.emit (node:events:519:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.pr
+ocessTicksAndRejections (node:internal/process/task_queues:82:21)","name":"SequelizeConnectionRefusedError","parent":{"type":"AggregateError","message":"","stack":"AggregateError [ECONNREFUS
+ED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)","aggregateErrors":[{"type":"Error","message":"connect ECONNREFUSED ::1:5432","stack":
+"Error: connect ECONNREFUSED ::1:5432\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-111,"code":"ECONNREFUSED","syscall":"connect"
+,"address":"::1","port":5432},{"type":"Error","message":"connect ECONNREFUSED 127.0.0.1:5432","stack":"Error: connect ECONNREFUSED 127.0.0.1:5432\n    at createConnectionError (node:net:1648
+:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":5432}],"code":"ECONNREFUSED"},"original":{"type":"Ag
+gregateError","message":"","stack":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)","aggregateErrors":[{"ty
+pe":"Error","message":"connect ECONNREFUSED ::1:5432","stack":"Error: connect ECONNREFUSED ::1:5432\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:16
+78:16)","errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"::1","port":5432},{"type":"Error","message":"connect ECONNREFUSED 127.0.0.1:5432","stack":"Error: connect ECONNREFUS
+ED 127.0.0.1:5432\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"127.0.0.
+1","port":5432}],"code":"ECONNREFUSED"}},"msg":""}
+{"level":"info","time":"2024-07-28T23:07:58.787Z","pid":17,"host":"54431553635f","msg":"Server closed"}

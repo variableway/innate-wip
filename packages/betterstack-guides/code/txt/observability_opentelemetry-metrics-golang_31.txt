@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[0, 5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 10000]

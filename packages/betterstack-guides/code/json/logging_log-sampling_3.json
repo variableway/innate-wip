@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/log-sampling/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+{"level":"info","time":"2023-12-28T18:11:20+01:00","message":"an info message: 1"}
+{"level":"warn","time":"2023-12-28T18:11:20+01:00","message":"a warning message: 2"}
+{"level":"debug","time":"2023-12-28T18:11:20+01:00","message":"a debug message: 4"}
+{"level":"info","time":"2023-12-28T18:11:20+01:00","message":"an info message: 6"}
+{"level":"warn","time":"2023-12-28T18:11:20+01:00","message":"a warning message: 7"}
+{"level":"debug","time":"2023-12-28T18:11:20+01:00","message":"a debug message: 9"}

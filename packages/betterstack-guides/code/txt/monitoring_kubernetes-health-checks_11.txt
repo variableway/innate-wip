@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  30s   default-scheduler  Successfully assigned default/web-app-xyz to node-1
+  Normal  Pulling    29s   kubelet            Pulling image "my-web-app:latest"
+  Normal  Pulled     25s   kubelet            Successfully pulled image "my-web-app:latest"
+  Normal  Created    25s   kubelet            Created container web-app
+  Normal  Started    24s   kubelet            Started container web-app
+  Normal  Startup    10s   kubelet            Container web-app passed startup probe

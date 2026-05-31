@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[output]
+Server listening on http://localhost:3000/
+Created heapdump file: Heap.20230226.163127.14272.0.001.heapsnapshot
+Created heapdump file: Heap.20230226.163444.14272.0.002.heapsnapshot

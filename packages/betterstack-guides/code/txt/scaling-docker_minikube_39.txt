@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 39
+
+You can use this PVC in your deployments by referencing it in the pod
+specification. This allows your applications to store data persistently,
+ensuring it remains available even if pods are restarted or rescheduled to
+different nodes (though in Minikube's case, there's only one node).
+
+### File system mounting between host and cluster
+
+During development, you often need to test changes to your application without
+rebuilding containers for every modification. Minikube's mount feature allows
+you to mount directories from your local file system into the cluster, providing
+a direct link between your development environment and the running containers.
+
+To mount a directory from your host machine to Minikube:

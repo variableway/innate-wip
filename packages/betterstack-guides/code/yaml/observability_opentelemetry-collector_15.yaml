@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 15
+
+processors:
+  memory_limiter:
+    check_interval: 5s
+    limit_mib: 4000 # 4 mebibytes hard limit
+    spike_limit_mib: 800 # soft limit is `limit_mib` minus `spike_limit_mib` (3200)

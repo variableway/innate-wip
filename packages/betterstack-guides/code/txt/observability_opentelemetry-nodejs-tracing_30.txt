@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[label .env]
+. . .
+OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,fastify,redis,pg,undici

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+http {
+    map $status $loggable {
+        ~^[23]  0;  # Match 2xx and 3xx status codes
+        default 1;  # Log everything else
+    }
+
+    access_log /var/log/nginx/access.log combined if=$loggable;
+}

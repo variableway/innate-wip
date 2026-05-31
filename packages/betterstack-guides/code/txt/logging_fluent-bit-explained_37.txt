@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[label fluent-bit-config/redact.lua]
+-- Function to redact SSNs and IP addresses in any field
+function redact_sensitive_portions(record)
+    local redacted_record = {}  -- Initialize a new table for the redacted record
+
+    for key, value in pairs(record) do
+        local redacted_value = value  -- Initialize redacted_value with the original value
+
+        -- Redact SSNs
+        redacted_value, _ = string.gsub(redacted_value, '%d%d%d%-%d%d%-%d%d%d%d', 'REDACTED')
+
+        -- Redact IP addresses
+        redacted_value, _ = string.gsub(redacted_value, '%d+%.%d+%.%d+%.%d+', 'REDACTED')
+
+        redacted_record[key] = redacted_value  -- Add the redacted value to the new table
+    end
+
+    return redacted_record
+end
+
+-- Entry point for Fluent Bit filter
+function filter(tag, timestamp, record)
+    local redacted_record = redact_sensitive_portions(record)
+    return 1, timestamp, redacted_record
+end
+
+-- Return the filter object
+return {
+    filter = filter
+}

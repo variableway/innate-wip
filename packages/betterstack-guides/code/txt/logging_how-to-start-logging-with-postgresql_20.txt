@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+2023-07-30 08:31:50.628 UTC [2176] postgres@chinook <log_message>

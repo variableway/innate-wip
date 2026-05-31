@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[output]
+Exactly same time: true
+Same or before: true
+Same or after: true

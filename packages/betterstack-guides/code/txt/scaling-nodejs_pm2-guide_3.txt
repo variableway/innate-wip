@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+===============================================================================
+--- PM2 development mode ------------------------------------------------------
+Apps started         : server
+Processes started    : 1
+Watch and Restart    : Enabled
+Ignored folder       : node_modules
+===============================================================================
+server-0  | dadjokes server started on port: 3000

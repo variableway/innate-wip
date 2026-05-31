@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[label docker-compose.yml]
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+[highlight]
+      - ./rules.yml:/etc/prometheus/rules.yml
+
+  alertmanager:
+    image: prom/alertmanager
+    restart: unless-stopped
+    ports:
+      - "9093:9093"
+
+    volumes:
+      - ./alertmanager/alertmanager.yml:/alertmanager.yml
+    command: --config.file=/alertmanager.yml --log.level=debug
+[/highlight]

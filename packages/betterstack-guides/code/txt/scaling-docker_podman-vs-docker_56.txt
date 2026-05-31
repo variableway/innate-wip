@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 56
+
+[output]
+podman volume inspect podman-tutorial_wordpress || podman volume create podman-tutorial_wordpress
+['podman', 'volume', 'inspect', 'podman-tutorial_wordpress']
+Error: inspecting object: no such volume podman-tutorial_wordpress
+['podman', 'volume', 'create', '--label', 'io.podman.compose.project=podman-tutorial', '--label', 'com.docker.compose.project=podman-tutorial', 'podman-tutorial_wordpress']
+['podman', 'volume', 'inspect', 'podman-tutorial_wordpress']

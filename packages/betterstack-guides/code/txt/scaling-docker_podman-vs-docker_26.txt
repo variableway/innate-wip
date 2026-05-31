@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+Resolving "caddy" using unqualified-search registries (/home/<your_user_name>/.config/containers/registries.conf)
+Trying to pull docker.io/library/caddy:latest
+...

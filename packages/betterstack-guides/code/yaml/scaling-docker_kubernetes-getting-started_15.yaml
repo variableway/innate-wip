@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 15
+
+[label pod.yaml]
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.27
+    ports:
+    - containerPort: 80

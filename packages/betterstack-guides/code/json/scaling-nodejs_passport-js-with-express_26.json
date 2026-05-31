@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/passport-js-with-express/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{
+  "message": "User created successfully",
+  "user": {
+    "id": "50c45f88-2934-4ff3-94d0-2db9be0a19ba",
+    "username": "testuser"
+}

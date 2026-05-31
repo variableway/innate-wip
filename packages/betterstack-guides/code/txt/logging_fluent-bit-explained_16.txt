@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+[0] filelogs: [[1748596437.607280423, {}], {"log"=>"{"status": "200", "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 134450, "ssn": "407-01-2433", "timestamp": 1748596437}"}]
+...
+[0] filelogs: [[1748596443.628922727, {}], {"log"=>"{"status": "200", "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Task completed successfully", "pid": 134450, "ssn": "407-01-2433", "timestamp": 1748596443}"}]

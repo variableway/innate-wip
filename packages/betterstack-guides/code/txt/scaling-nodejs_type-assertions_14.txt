@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Invalid user data

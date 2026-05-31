@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: json
+# Normalized: json
+# Block index: 66
+
+[output]
+{"timestamp":"2023-08-03 15:56:26.988 UTC","user":"postgres","dbname":"chinook","pid":14155,"remote_host":"[local]","session_id":"64cbce27.374b","line_num":5,"ps":"DROP TABLE","session_start":"2023-08-03 15:56:23 UTC","vxid":"3/8","txid":16414,"error_severity":"ERROR","state_code":"2BP01","message":"cannot drop table album because other objects depend on it","detail":"constraint fk_trackalbumid on table track depends on table album","hint":"Use DROP ... CASCADE to drop the dependent objects too.","statement":"DROP table album;","func_name":"reportDependentObjects","file_name":"dependency.c","file_line_num":1189,"application_name":"psql","backend_type":"client backend","query_id":0}

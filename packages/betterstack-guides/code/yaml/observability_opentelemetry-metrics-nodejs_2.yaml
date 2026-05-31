@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label docker-compose.yml]
+services:
+  app:
+    build:
+      context: .
+      target: ${NODE_ENV}
+    container_name: nodejs-metrics-demo
+    environment:
+      PORT: ${PORT}
+      LOG_LEVEL: ${LOG_LEVEL}
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME}
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+    env_file:
+      - ./.env
+    ports:
+      - 8000:8000
+    networks:
+      - nodejs-metrics-demo-network
+    volumes:
+      - .:/node/app
+
+  collector:
+    container_name: nodejs-metrics-demo-collector
+    image: otel/opentelemetry-collector:latest
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol/config.yaml
+    networks:
+      - nodejs-metrics-demo-network
+
+networks:
+  nodejs-metrics-demo-network:

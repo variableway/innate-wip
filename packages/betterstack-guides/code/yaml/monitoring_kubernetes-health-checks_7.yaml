@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 7
+
+startupProbe:
+  httpGet:
+    path: /startup
+    port: 8080
+  failureThreshold: 12
+  periodSeconds: 5
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 8080
+  periodSeconds: 10
+  timeoutSeconds: 2
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /ready
+    port: 8080
+  periodSeconds: 5
+  timeoutSeconds: 1
+  failureThreshold: 2
+  successThreshold: 2

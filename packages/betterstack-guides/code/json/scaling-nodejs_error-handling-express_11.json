@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{
+  "status": "error",
+  "message": "Invalid input",
+  "details": ["Title is required", "Author name must be at least 3 characters"]
+}

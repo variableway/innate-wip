@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/passport-js-with-express/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[output]
+{"message":"Hello World - Authentication Server","authenticated":false}

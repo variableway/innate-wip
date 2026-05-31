@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[output]
+> hello-kubernetes@1.10.1 start
+> node server.js
+
+{"level":30,"time":1742181412962,"pid":18,"hostname":"hello-app-5b568cb498-dflt2","msg":"Listening on: http://hello-app-5b568cb498-dflt2:8080"}
+. . .

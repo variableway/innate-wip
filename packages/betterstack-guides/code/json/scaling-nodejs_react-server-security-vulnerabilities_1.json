@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/react-server-security-vulnerabilities/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+{
+      "id": "user_abc_123",
+      "message": "Hello, async function submitName(name) { ... const conn = db.createConnection(\"SECRET_KEY_12345\"); ... }!"
+    }

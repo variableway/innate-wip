@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+CONTAINER ID  IMAGE                                 COMMAND               CREATED        STATUS                 PORTS                 NAMES
+7307f130b295  docker.io/library/caddy:2.7.6-alpine  caddy run --confi...  7 minutes ago  Up About a minute ago  0.0.0.0:8080->80/tcp  caddy

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+1/u create_posts_table (54.393139ms)

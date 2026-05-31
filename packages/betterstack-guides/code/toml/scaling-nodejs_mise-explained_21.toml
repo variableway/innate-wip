@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 21
+
+[tools]
+node = "22"
+python = "3.13"
+
+[env]
+DATABASE_URL = "postgresql://localhost/myapp_dev"
+API_KEY = "dev-key-123"
+LOG_LEVEL = "debug"
+
+[highlight]
+[tasks.hello]
+run = "echo 'Hello from Mise!'"
+description = "Simple greeting task"
+
+[tasks.versions]
+run = "node --version && python --version"
+description = "Display tool versions"
+
+[tasks.check-env]
+run = "echo $DATABASE_URL"
+description = "Verify environment variables"
+[/highlight]

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 38
+
+[output]
+{
+  "statusCode": 404,
+  "error": "Not Found",
+  "message": "Post not found"
+}

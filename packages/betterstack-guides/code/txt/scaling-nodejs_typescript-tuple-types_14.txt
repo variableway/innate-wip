@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-tuple-types/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+[2025-11-27T08:39:35.388Z] INFO: Server started
+[2025-11-27T08:39:35.388Z] ERROR: Connection failed Retrying Attempt 3
+GET /api/users
+POST /api/users
+Headers: { 'Content-Type': 'application/json' }
+Body: { name: 'Alice' }

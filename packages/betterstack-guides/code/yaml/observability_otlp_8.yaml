@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 8
+
+[label otelcol.yaml]
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: localhost:4318
+
+processors:
+  batch:
+
+exporters:
+  otlp/jaeger:
+    endpoint: jaeger:4317
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/jaeger]

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+▶ formatFileSize function
+[highlight]
+  ﹣ should return '0B' for sizeBytes = 0 (0.474751ms) # SKIP
+[/highlight]
+  ✔ should return '1.00 MB' for sizeBytes = 1048576 (0.276706ms)
+  ✔ should return '1.00 GB' for sizeBytes = 1073741824 @large (0.172765ms)
+  ✔ should return '5.00 GB' for sizeBytes = 5368709120 @large (0.147009ms)
+▶ formatFileSize function (3.439809ms)
+
+. . .

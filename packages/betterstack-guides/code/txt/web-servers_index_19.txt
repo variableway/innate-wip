@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+caddy  | {"level":"info","ts":1699618884.7067113,"logger":"tls.obtain","msg":"acquiring lock","identifier":"<your_domain_name>"}
+caddy  | {"level":"info","ts":1699618884.7076728,"logger":"tls.obtain","msg":"lock acquired","identifier":"<your_domain_name>"}
+caddy  | {"level":"info","ts":1699618884.707749,"logger":"tls.obtain","msg":"obtaining certificate","identifier":"<your_domain_name>"}
+caddy  | {"level":"info","ts":1699618884.7086315,"logger":"http","msg":"waiting on internal rate limiter","identifiers":["<your_domain_name>"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":""}
+caddy  | {"level":"info","ts":1699618884.7086391,"logger":"http","msg":"done waiting on internal rate limiter","identifiers":["<your_domain_name>"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":""}
+caddy  | {"level":"info","ts":1699618885.8201177,"logger":"http.acme_client","msg":"authorization finalized","identifier":"<your_domain_name>","authz_status":"valid"}
+caddy  | {"level":"info","ts":1699618885.8201704,"logger":"http.acme_client","msg":"validations succeeded; finalizing order","order":"https://acme-v02.api.letsencrypt.org/acme/order/1406393766/221214636416"}
+caddy  | {"level":"info","ts":1699618886.933485,"logger":"http.acme_client","msg":"successfully downloaded available certificate chains","count":2,"first_url":"https://acme-v02.api.letsencrypt.org/acme/cert/0439041a395e765fd31f5cd2b7d1e92fe056"}
+caddy  | {"level":"info","ts":1699618886.9343963,"logger":"tls.obtain","msg":"certificate obtained successfully","identifier":"<your_domain_name>"}
+caddy  | {"level":"info","ts":1699618886.9346375,"logger":"tls.obtain","msg":"releasing lock","identifier":"<your_domain_name>"}

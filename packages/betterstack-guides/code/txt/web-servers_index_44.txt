@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 44
+
+[output]
+.
+├── Caddyfile
+├── dist
+│   ├── assets
+│   │   ├── index-1a72bdb1.js
+│   │   └── index-1eb968c3.css
+│   └── index.html
+├── docker-compose.yml
+├── index.html
+├── backend
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
+└── vector.yaml

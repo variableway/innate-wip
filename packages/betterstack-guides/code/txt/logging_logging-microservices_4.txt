@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/logging-microservices/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+{
+  "name": "search_service",
+  "context": {
+    "trace_id": "0x5b8aa5a2d2c872e8321cf37308d69df2",
+    "span_id": "0x051581bf3cb55c13"
+  },
+  "parent_id": null,
+  "start_time": "2023-11-08T15:20:30.891Z",
+  "end_time": "2023-11-08T15:20:30.897Z",
+  "attributes": {
+    "http.route": "hotel_search"
+  },
+  "events": [
+    {
+      "name": "Search Initiated",
+      "timestamp": "2023-11-08T15:20:30.895Z",
+      "attributes": {
+        "user_id": 12345
+      }
+    }
+  ]
+}

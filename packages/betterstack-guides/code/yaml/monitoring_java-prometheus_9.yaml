@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 9
+
+global:
+ scrape_interval: 10s
+
+scrape_configs:
+ - job_name: spring-app
+   metrics_path: /actuator/prometheus
+   static_configs:
+     - targets:
+         - app:8080

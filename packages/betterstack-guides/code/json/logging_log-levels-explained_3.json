@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+{"level":"error","ts":1686002351.601908,"caller":"slog/main.go:20","msg":"an error occurred while doing something that can fail","error":"Unhandled exception: division by zero","stacktrace":"main.main\n\t/home/ayo/dev/demo/slog/main.go:20\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:250"}

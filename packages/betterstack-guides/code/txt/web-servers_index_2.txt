@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+{"level":"info","ts":1699254136.4679956,"msg":"using provided configuration","config_file":"/etc/caddy/Caddyfile","config_adapter":"caddyfile"}

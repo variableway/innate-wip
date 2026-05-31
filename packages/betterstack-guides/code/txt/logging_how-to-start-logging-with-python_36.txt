@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+. . .
+File "/usr/lib64/python3.11/logging/__init__.py", line 1606, in makeRecord
+ raise KeyError("Attempt to overwrite %r in LogRecord" % key)
+[highlight]
+KeyError: "Attempt to overwrite 'message' in LogRecord"
+[/highlight]

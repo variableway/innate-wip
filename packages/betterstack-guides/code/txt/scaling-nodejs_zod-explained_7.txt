@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+In this script, you import the `UserSchema` from the `validation.ts` file, which defines the expected user data structure. The `safeParse` method validates `userData` against this schema. 
+
+- If `userData` matches the schema, `safeParse` returns an object with `success: true`, and the validated data is logged to the console.  
+- If the validation fails, `safeParse` returns an object with `success: false`, and the `format()` method provides a structured error message showing which fields are invalid and why.  
+
+This approach ensures that the input data is correctly validated before being used in the application, helping to prevent potential issues caused by unexpected or malformed data.
+
+Run the script using:

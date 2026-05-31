@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+. . .
+ℹ start of coverage report
+ℹ ------------------------------------------------------------------------
+ℹ file                    | line % | branch % | funcs % | uncovered lines
+ℹ ------------------------------------------------------------------------
+ℹ formatter.js            |  83.33 |    66.67 |  100.00 | 3-4
+ℹ tests/formatter.test.js |  95.24 |   100.00 |   80.00 | 7
+ℹ tests/index.test.js     | 100.00 |   100.00 |  100.00 |
+ℹ ------------------------------------------------------------------------
+ℹ all files               |  94.74 |    92.86 |   90.91 |
+ℹ ------------------------------------------------------------------------
+ℹ end of coverage report

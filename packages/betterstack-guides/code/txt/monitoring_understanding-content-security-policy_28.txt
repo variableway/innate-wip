@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+Content-Security-Policy-Report-Only:
+     default-src 'self';
+     script-src 'self' https://analytics.example.com;
+     style-src 'self' https://fonts.googleapis.com;
+     img-src 'self' https://images.cdn.com;
+     report-uri https://example.com/csp-reports;

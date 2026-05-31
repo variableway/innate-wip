@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+2023-03-31T12:34:54.123456789Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+2023-03-31T12:34:54.234567890Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+...

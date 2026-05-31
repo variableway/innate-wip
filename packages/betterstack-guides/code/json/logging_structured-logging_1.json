@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/structured-logging/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+{
+  "timestamp": "2024-06-17T08:55:00Z",
+  "level": "INFO",
+  "message": "User 'user123' logged in",
+  "user": "user123",
+  "ip_address": "192.168.0.1"
+},
+{
+  "timestamp": "2024-06-17T08:55:01Z",
+  "level": "ERROR",
+  "message": "Database connection failed",
+  "error": {
+    "code": "DB_CONNECT_ERROR",
+    "message": "Connection refused"
+   }
+}

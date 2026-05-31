@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+Active connections: 10
+server accepts handled requests
+  1000 1000 5000
+Reading: 2 Writing: 5 Waiting: 3

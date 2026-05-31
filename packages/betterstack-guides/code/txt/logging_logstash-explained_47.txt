@@ -1,0 +1,38 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[label log-processing-stack/docker-compose.yml]
+version: '3'
+services:
+  logify-script:
+    build:
+      context: ./logify
+    container_name: logify
+[highlight]
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://127.0.0.1:5000"
+        tag: docker.logify
+    depends_on:
+      - logstash
+[/highlight]
+  nginx:
+    image: betterstackcommunity/nginx-helloworld:latest
+    container_name: nginx
+    ports:
+      - '80:80'
+
+[highlight]
+  logstash:
+    image: docker.elastic.co/logstash/logstash:9.0.1
+    container_name: logstash
+    volumes:
+      - ./logstash/config/container-logs.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5000:5000/udp"
+    networks:
+      - default
+[/highlight]

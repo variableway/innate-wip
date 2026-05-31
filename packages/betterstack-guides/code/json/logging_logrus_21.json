@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+[output]
+{"environment":"development","go_version":"go1.17.5","host":"myserver","level":"info","msg":"Application started","pid":12345,"service":"user-service","time":"2023-03-09T15:32:10Z","version":"1.0.0"}
+{"component":"database","environment":"development","go_version":"go1.17.5","host":"myserver","level":"info","msg":"Connected to database","pid":12345,"service":"user-service","time":"2023-03-09T15:32:10Z","version":"1.0.0"}
+{"component":"http","environment":"development","go_version":"go1.17.5","host":"myserver","level":"info","msg":"HTTP server listening","pid":12345,"service":"user-service","time":"2023-03-09T15:32:10Z","version":"1.0.0"}
+{"component":"database","environment":"development","go_version":"go1.17.5","host":"myserver","level":"info","msg":"Migrations completed","pid":12345,"service":"user-service","time":"2023-03-09T15:32:10Z","version":"1.0.0"}
+{"component":"database","environment":"development","go_version":"go1.17.5","host":"myserver","level":"info","msg":"Query executed","pid":12345,"query_time_ms":15,"service":"user-service","time":"2023-03-09T15:32:10Z","version":"1.0.0"}

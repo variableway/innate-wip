@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+{
+  "appname": "sshd",
+  "context": {
+    "auth_method": "publickey",
+    "ip_address": "102.89.44.150",
+    "port": "23793",
+    "protocol": "ssh2",
+    "ssh_signature": "RSA SHA256:8Gdo7Q35uybWwTaGAoWrQXowqn0MEGaErerTlpR7nTM",
+    "username": "ayo"
+  },
+  "event": {
+    "category": "authentication",
+    "name": "successful login"
+  },
+  "file": "/var/log/auth.log",
+  "host": "ubuntu-lts",
+  "hostname": "ubuntu-lts",
+  "message": "Accepted publickey for ayo from 102.89.44.150 port 23793 ssh2: RSA SHA256:8Gdo7Q35uybWwTaGAoWrQXowqn0MEGaErerTlpR7nTM",
+  "procid": 177261,
+  "source_type": "file",
+  "timestamp": "2024-02-15T17:35:05Z"
+}

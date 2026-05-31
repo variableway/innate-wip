@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+service:
+  telemetry:
+    metrics:
+      address: 0.0.0.0:8888
+      level: detailed

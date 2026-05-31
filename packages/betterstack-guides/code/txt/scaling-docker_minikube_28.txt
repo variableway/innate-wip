@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 28
+
+### Creating a more complex deployment
+
+While the command-line approach is quick and convenient for simple applications,
+real-world deployments often involve more complex configurations. For such
+cases, using YAML configuration files provides more control and reproducibility.
+
+Let's create a more realistic deployment using a YAML configuration file. Save
+the following as `nginx-deployment.yaml`:

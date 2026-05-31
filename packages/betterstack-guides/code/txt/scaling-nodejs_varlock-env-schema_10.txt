@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/varlock-env-schema/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[label .env.schema]
+# @defaultSensitive=false
+# @plugin(@varlock/1password-plugin)
+# @initOp(token=$OP_TOKEN)
+# ---
+
+# @type=opServiceAccountToken
+OP_TOKEN=op://...[service account token]...

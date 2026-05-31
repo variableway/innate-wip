@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-java/
+# Original language: xml
+# Normalized: html
+# Block index: 9
+
+[label log4j2.xml]
+. . .
+<Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+        <JsonTemplateLayout eventTemplateUri="classpath:EcsLayout.json"/>
+    </Console>
+</Appenders>

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prettier-vs-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[label package.json]
+{
+  "scripts": {
+    "format": "prettier --write . && eslint --fix ."
+  }
+}

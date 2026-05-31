@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 50
+
+The output provides a comprehensive overview of available add-ons and their
+current status:

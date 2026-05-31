@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[output]
+. . .
+go-blog-app      | main.go has changed
+go-blog-app      | building...
+go-blog-app      | running...
+go-blog-app      | Server started on port 8000
+. . .

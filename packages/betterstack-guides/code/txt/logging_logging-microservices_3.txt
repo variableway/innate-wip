@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/logging-microservices/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+{
+  "timestamp": "2023-10-15T14:30:46",
+  "service": "Search",
+  "logLevel": "INFO",
+  "X-Correlation-ID": "xyz-456",
+  "message": "Searching available hotels ..."
+}
+{
+  "timestamp": "2023-10-15T14:30:47",
+  "service": "Search",
+  "logLevel": "INFO",
+  "X-Correlation-ID": "xyz-456",
+  "message": "Found 3 hotels matching criteria ..."
+}
+{
+  "timestamp": "2023-10-15T14:30:48",
+  "service": "Booking",
+  "logLevel": "INFO",
+  "X-Correlation-ID": "xyz-456",
+  "message": "User selected Hotel XYZ ..."
+}
+...

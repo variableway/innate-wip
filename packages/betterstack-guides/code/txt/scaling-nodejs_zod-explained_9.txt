@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+Now that you know how to get started with Zod, you will customize validation in Zod.
+
+
+## Customizing validations in Zod
+
+Zod provides a rich set of built-in validation utilities that allow you to enforce constraints beyond basic type checking. You can customize your schema by adding conditions, refining values, or chaining multiple validation rules.
+
+### Adding constraints
+
+You can enforce specific constraints on values using Zod's built-in methods. Let's enhance our `UserSchema` to include more detailed validations:

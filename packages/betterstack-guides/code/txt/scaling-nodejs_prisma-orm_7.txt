@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prisma-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[label .env]
+DATABASE_URL="postgresql://<username>:<password>@localhost:5432/prisma_demo?schema=public"

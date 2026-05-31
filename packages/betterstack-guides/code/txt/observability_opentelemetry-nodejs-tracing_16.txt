@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+[+] Running 4/4
+ ✔ Container json-to-yaml-auth       Started                    13.6s
+ ✔ Container json-to-yaml-db         Healthy                    12.5s
+ ✔ Container json-to-yaml-redis      Healthy                    12.5s
+ ✔ Container json-to-yaml-converter  Started                    12.5s

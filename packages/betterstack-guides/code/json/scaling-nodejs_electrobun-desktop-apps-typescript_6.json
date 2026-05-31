@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/electrobun-desktop-apps-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+[label package.json]
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "bun run build:dev && electrobun dev",
+    "build:dev": "bun install && electrobun build"
+  },
+  "dependencies": {
+    "electrobun": "^1.14.4",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/bun": "latest"
+  }
+}

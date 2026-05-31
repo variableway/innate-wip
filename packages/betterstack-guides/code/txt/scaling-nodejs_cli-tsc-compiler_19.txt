@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/cli-tsc-compiler/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+hello.js
+math.js

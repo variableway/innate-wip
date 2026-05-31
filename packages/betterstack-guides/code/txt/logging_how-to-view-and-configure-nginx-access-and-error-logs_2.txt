@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+docker: Error response from daemon: driver failed programming external connectivity on endpoint nginx (363e1b33c95786ca6293208b529051a4cf0509208444707b65aef2ddd329ef7e): Bind for 0.0.0.0:80
+failed: port is already allocated.

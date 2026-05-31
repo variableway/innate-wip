@@ -1,0 +1,44 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Error object structure:
+{
+  "name": "ValidationError",
+  "message": "4 errors occurred",
+  "errors": [
+    "Username must have at least 3 characters",
+    "Username must only contain letters and numbers",
+    "Please provide a valid email address",
+    "You must be at least 18 years old"
+  ],
+  "inner": [
+    {
+      "message": "Username must have at least 3 characters",
+      "path": "username",
+      "type": "min"
+    },
+    {
+      "message": "Username must only contain letters and numbers",
+      "path": "username",
+      "type": "matches"
+    },
+    {
+      "message": "Please provide a valid email address",
+      "path": "email",
+      "type": "email"
+    },
+    {
+      "message": "You must be at least 18 years old",
+      "path": "age",
+      "type": "min"
+    }
+  ]
+}
+
+First validation error:
+- Path: username
+- Type: min
+- Message: Username must have at least 3 characters

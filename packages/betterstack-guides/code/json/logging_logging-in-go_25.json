@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 25
+
+[output]
+{
+  "time": "2023-05-24T19:00:18.384136084+01:00",
+  "level": "WARN",
+  "msg": "storage is 90% full",
+  "program_info": {
+    "pid": 1971993,
+    "go_version": "go1.20.2",
+    "available_space": "900.1 mb"
+  }
+}

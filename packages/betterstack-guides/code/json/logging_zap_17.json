@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{"level":"info","timestamp":"2023-05-15T12:40:16.647+0100","caller":"zap/main.go:42","msg":"Hello from Zap!","pid":2329946}

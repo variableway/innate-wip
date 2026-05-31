@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+Thu 2025-01-16 15:55:48.909780 WAT [s=699003bb8d9b4e16a49ee0d845f5be64;i=8a0606e;b=40d8cb53df934b6b8205666796a69234;m=49c77811b6;t=62bd3fd5a46d4;x=cdfa3e7b1b67aafd]
+    _TRANSPORT=stdout
+    _STREAM_ID=15e02852f29f485b9e2866a7a27c3b4d
+    PRIORITY=6
+    SYSLOG_FACILITY=3
+    SYSLOG_IDENTIFIER=supergfxd
+    MESSAGE=WARN: get_runtime_status: Could not find dGPU
+    _PID=1982
+    _UID=0
+    _GID=0
+    _COMM=supergfxd
+    _EXE=/usr/bin/supergfxd
+    _CMDLINE=/usr/bin/supergfxd
+    _CAP_EFFECTIVE=1ffffffffff
+    _SELINUX_CONTEXT=system_u:system_r:unconfined_t:s0
+    _SYSTEMD_CGROUP=/system.slice/supergfxd.service
+    _SYSTEMD_UNIT=supergfxd.service
+    _SYSTEMD_SLICE=system.slice
+    _SYSTEMD_INVOCATION_ID=1e2f890b696c4cedab849d5ccc3afefc
+    _BOOT_ID=40d8cb53df934b6b8205666796a69234
+    _MACHINE_ID=fd08879b531543db8847a3f7cea42cac
+    _HOSTNAME=falcon
+    _RUNTIME_SCOPE=system

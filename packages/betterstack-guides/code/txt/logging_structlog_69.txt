@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 69
+
+[output]
+. . .
+2025-06-06T14:28:08.278516Z [info     ] incoming search query for New York [worldClock.views] ip=None query='New York' request_id=fc1c09eb-74e1-4e2b-ac4a-17f01057f232 user_id=None
+. . .

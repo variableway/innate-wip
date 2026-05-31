@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-module-resolution/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+[INFO] Application started
+[ERROR] Sample error

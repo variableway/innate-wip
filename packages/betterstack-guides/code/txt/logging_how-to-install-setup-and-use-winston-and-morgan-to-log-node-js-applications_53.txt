@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[output]
+{"@fields":{"level":"error","service":"service-a"},"@message":"logging to a file"}

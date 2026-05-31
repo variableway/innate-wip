@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-verbatimmodulesyntax/
+# Original language: json
+# Normalized: json
+# Block index: 5
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+[highlight]
+    "outDir": "./dist",
+[/highlight]
+    "rootDir": "./src",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    ...
+[highlight]
+    "verbatimModuleSyntax": false,
+[/highlight]
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  }
+}

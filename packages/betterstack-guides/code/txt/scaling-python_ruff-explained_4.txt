@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+app.py:1:8: F401 [*] `sys` imported but unused
+  |
+1 | import sys
+  |        ^^^ F401
+2 | import os
+3 | import json
+  |
+  = help: Remove unused import: `sys`
+
+app.py:2:8: F401 [*] `os` imported but unused
+  |
+1 | import sys
+2 | import os
+  |        ^^ F401
+3 | import json
+  |
+  = help: Remove unused import: `os`
+
+app.py:3:8: F401 [*] `json` imported but unused
+  |
+1 | import sys
+2 | import os
+3 | import json
+  |        ^^^^ F401
+  |
+  = help: Remove unused import: `json`
+
+Found 3 errors.
+[*] 3 fixable with the `--fix` option.

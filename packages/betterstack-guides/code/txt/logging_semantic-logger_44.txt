@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 44
+
+2025-01-29 10:47:56.985250 I [1582027:puma srv tp 001 remote_ip.rb:96] Rack -- Started -- {:method=>"GET", :path=>"/", :ip=>"::1"}
+2025-01-29 10:47:56.996849 D [1582027:puma srv tp 001] (0.097ms) ActiveRecord -- ActiveRecord::SchemaMigration Load -- {:sql=>"SELECT \"schema_migrations\".\"version\" FROM \"schema_migratio
+ns\" ORDER BY \"schema_migrations\".\"version\" ASC /*application='Myapp'*/", :allocations=>23, :cached=>nil}
+2025-01-29 10:47:57.014109 D [1582027:puma srv tp 001] ApplicationController -- Processing #hello
+2025-01-29 10:47:57.059583 D [1582027:puma srv tp 001] ActionView -- Rendering -- {:template=>"html template"}
+2025-01-29 10:47:57.059645 I [1582027:puma srv tp 001 subscriber.rb:138] (0.017ms) ActionView -- Rendered -- {:template=>"html template", :allocations=>10}
+2025-01-29 10:47:57.059922 I [1582027:puma srv tp 001 subscriber.rb:138] (45.7ms) ApplicationController -- Completed #hello -- {:controller=>"ApplicationController", :action=>"hello", :forma
+t=>"*/*", :method=>"GET", :path=>"/", :status=>200, :view_runtime=>5.29, :db_runtime=>0.0, :queries_count=>0, :cached_queries_count=>0, :allocations=>4802, :status_message=>"OK"}

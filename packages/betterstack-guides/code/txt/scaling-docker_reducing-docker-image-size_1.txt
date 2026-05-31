@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/reducing-docker-image-size/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
+e8aff90ae3dc   2 weeks ago    /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>      2 weeks ago    /bin/sh -c #(nop)  ENTRYPOINT ["docker-ent…     0B
+<missing>      2 weeks ago    /bin/sh -c #(nop)  COPY file:4d192565a7220f…    388B
+<missing>      2 weeks ago    /bin/sh -c set -ex   && for key in     6A010…   7.73MB
+. . .

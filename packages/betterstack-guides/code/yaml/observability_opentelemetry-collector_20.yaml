@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 20
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]

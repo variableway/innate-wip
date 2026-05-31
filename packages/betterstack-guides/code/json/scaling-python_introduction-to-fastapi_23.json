@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-fastapi/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+[output]
+{
+    "detail": [
+        {
+            "type": "less_than_equal",
+            "loc": [
+                "body",
+                "priority"
+            ],
+            "msg": "Input should be less than or equal to 5",
+            "input": 10,
+            "ctx": {
+                "le": 5
+            }
+        }
+    ]
+}

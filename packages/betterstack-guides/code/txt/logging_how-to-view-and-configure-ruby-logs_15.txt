@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+timestamp=2023-04-18T09:57:35.895145 level=INFO git_commit_hash=13f2942d96a8a25b4da6e86bd5865c0eee13cc62 pid=106742 msg='Starting application...'

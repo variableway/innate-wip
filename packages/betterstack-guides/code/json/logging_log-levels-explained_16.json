@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{"level":"security","time":1686051401495,"env":"production","msg":"A notable security event"}

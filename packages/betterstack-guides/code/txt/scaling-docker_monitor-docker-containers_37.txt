@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                            PORTS                    NAMES
+f3a1b2c3d4e5   monitoring-demo   "docker-entrypoint.s…"   5 minutes ago   Up 10 seconds (health: starting)   0.0.0.0:3000->3000/tcp   web-app

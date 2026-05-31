@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+2025-05-23 14:20:37.297 | INFO     | __main__:<module>:10 - An info message.
+2025-05-23 14:20:37.298 | SUCCESS  | __main__:<module>:11 - A success message.
+2025-05-23 14:20:37.298 | WARNING  | __main__:<module>:12 - A warning message.
+2025-05-23 14:20:37.298 | ERROR    | __main__:<module>:13 - An error message.
+2025-05-23 14:20:37.298 | CRITICAL | __main__:<module>:14 - A critical message.

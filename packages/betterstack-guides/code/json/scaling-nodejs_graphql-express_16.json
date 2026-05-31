@@ -1,0 +1,39 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-express/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{
+  "data": {
+    "books": [
+      {
+        "id": 1,
+        "title": "The Handmaid's Tale",
+        "publishedYear": 1985,
+        "author": {
+          "name": "Margaret Atwood",
+          "email": "margaret@example.com"
+        }
+      },
+      {
+        "id": 2,
+        "title": "Norwegian Wood",
+        "publishedYear": 1987,
+        "author": {
+          "name": "Haruki Murakami",
+          "email": "haruki@example.com"
+        }
+      },
+      {
+        "id": 3,
+        "title": "Oryx and Crake",
+        "publishedYear": 2003,
+        "author": {
+          "name": "Margaret Atwood",
+          "email": "margaret@example.com"
+        }
+      }
+    ]
+  }
+}

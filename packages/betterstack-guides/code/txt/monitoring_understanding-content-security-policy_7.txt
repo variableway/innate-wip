@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+Content-Security-Policy: img-src 'self' https://images.cdn.com data:;

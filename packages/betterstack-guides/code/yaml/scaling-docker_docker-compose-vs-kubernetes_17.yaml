@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 17
+
+[label simple-compose.yaml]
+version: '3'
+services:
+ web:
+   image: nginx:latest
+   ports:
+     - "80:80"
+ redis:
+   image: redis:latest

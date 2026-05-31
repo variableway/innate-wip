@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+/build/node_modules/env-schema/index.js:85
+    const error = new Error(ajv.errorsText(ajv.errors, { dataVar: 'env' }))
+                  ^
+
+Error: env must have required property 'POSTGRES_USER', env must have required property 'POSTGRES_PASSWORD', env must have required property 'POSTGRES_DB'
+    at envSchema (/build/node_modules/env-schema/index.js:85:19)
+    at file:///build/src/config/env.js:46:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:316:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:123:5) {
+
+. . .

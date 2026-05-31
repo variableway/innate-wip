@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+{ 4: true,
+  6: true,
+  . . .
+  99: true,
+  100: true }

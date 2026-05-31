@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 52
+
+docker compose up -d

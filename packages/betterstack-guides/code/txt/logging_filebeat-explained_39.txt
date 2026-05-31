@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+[output]
+NAME      IMAGE                                          COMMAND              SERVICE         CREATED          STATUS          PORTS
+logify    logify:latest                                  "./logify.sh"        logify-script   26 seconds ago   Up 26 seconds
+nginx     betterstackcommunity/nginx-helloworld:latest   "/runner.sh nginx"   nginx           26 seconds ago   Up 26 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp

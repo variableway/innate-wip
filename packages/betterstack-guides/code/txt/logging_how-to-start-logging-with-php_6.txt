@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-php/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[label php.ini]
+. . .
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+display_errors = On
+log_errors = On
+error_log = error.log
+. . .

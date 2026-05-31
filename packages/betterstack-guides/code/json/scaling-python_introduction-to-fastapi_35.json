@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-fastapi/
+# Original language: json
+# Normalized: json
+# Block index: 35
+
+[output]
+{
+    "detail": "Task with ID non-existent-id not found"
+}

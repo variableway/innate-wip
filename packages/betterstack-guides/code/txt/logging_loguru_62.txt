@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 62
+
+[output]
+May 26, 2025 > 06:18:48 | ERROR | list index out of range | {'request_id': 'b582b6f2-2917-4f76-8012-3197b235a222', 'query': 'nonexistent'}
+Traceback (most recent call last):
+
+  File "/usr/lib64/python3.10/threading.py", line 973, in _bootstrap
+
+. . .

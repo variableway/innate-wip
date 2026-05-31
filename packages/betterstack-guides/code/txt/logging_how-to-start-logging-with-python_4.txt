@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+INFO:root:An info message
+WARNING:root:A warning message
+ERROR:root:An error message
+CRITICAL:root:A critical message

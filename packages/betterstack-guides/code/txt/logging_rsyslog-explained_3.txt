@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+rsyslogd  8.2312.0 (aka 2023.12) compiled with:
+	PLATFORM:				x86_64-pc-linux-gnu
+	PLATFORM (lsb_release -d):
+	FEATURE_REGEXP:				Yes
+	GSSAPI Kerberos 5 support:		Yes
+	FEATURE_DEBUG (debug build, slow code):	No
+	32bit Atomic operations supported:	Yes
+	64bit Atomic operations supported:	Yes
+	memory allocator:			system default
+	Runtime Instrumentation (slow code):	No
+	uuid support:				Yes
+	systemd support:			Yes
+	Config file:				/etc/rsyslog.conf
+	PID file:				/run/rsyslogd.pid
+	Number of Bits in RainerScript integers: 64

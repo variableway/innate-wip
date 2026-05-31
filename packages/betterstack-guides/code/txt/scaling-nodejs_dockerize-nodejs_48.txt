@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+NAME                         IMAGE                       COMMAND                  SERVICE    CREATED         STATUS                   PORTS
+url-shortener-app            fastify-url-shortener-app   "docker-entrypoint.s…"   app        3 minutes ago   Up 2 minutes
+url-shortener-caddy-server   caddy:alpine                "caddy run --config …"   caddy      3 minutes ago   Up 2 minutes             443/tcp, 0.0.0.0:80->80/tcp, :::80->80/tcp, 2019/tcp, 443/udp
+url-shortener-db             postgres:alpine             "docker-entrypoint.s…"   postgres   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp

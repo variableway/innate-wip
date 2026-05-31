@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+D, [2023-04-17T20:24:22.752275 #90147] DEBUG -- : Started processing request for user 1234
+I, [2023-04-17T20:24:22.752306 #90147]  INFO -- : Server started on port 3000
+W, [2023-04-17T20:24:22.752313 #90147]  WARN -- : Disk space low: only 5% remaining on /dev/sda1
+E, [2023-04-17T20:24:22.752317 #90147] ERROR -- : Failed to write to file /var/log/application.log: permission denied
+F, [2023-04-17T20:24:22.752321 #90147] FATAL -- : Fatal error: could not connect to database at localhost:3306

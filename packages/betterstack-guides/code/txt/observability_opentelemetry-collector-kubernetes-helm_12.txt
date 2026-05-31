@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+NAME                                READY   STATUS    RESTARTS   AGE
+my-otel-collector-daemonset-8x4fg   1/1     Running   0          45s
+my-otel-collector-daemonset-p2jlm   1/1     Running   0          45s

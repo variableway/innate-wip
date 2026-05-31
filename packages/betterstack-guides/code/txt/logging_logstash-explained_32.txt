@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+{
+    "is_successful" => "true",
+            "level" => 30,
+             "host" => {
+        "name" => "1c0b31426a30"
+    },
+[highlight]
+              "ssn" => "REDACTED",
+[/highlight]
+              "msg" => "Operation finished",
+              "pid" => 531475,
+              "env" => "development",
+           "status" => 200,
+       "@timestamp" => 2025-06-04T10:33:54.782784914Z,
+         "@version" => "1",
+    [highlight]
+               "ip" => "REDACTED",
+    [/highlight]
+        "timestamp" => 1749032885,
+              "log" => {
+        "file" => {
+            "path" => "/var/log/logify/app.log"
+        }
+    }
+}
+...

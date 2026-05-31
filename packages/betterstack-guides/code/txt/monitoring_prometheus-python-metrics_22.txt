@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+# HELP http_requests_total Total number of HTTP requests received
+# TYPE http_requests_total counter
+http_requests_total{method="GET",path="/metrics",status="200"} 9.0
+http_requests_total{method="GET",path="/",status="200"} 2.0

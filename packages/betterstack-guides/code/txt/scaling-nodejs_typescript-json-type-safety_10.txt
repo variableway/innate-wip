@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-json-type-safety/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+src/typed-parsing.ts:11:19 - error TS2339: Property 'email' does not exist on type 'User'.
+
+11 console.log(user.email);
+                     ~~~~~
+
+Found 1 error in src/typed-parsing.ts:11

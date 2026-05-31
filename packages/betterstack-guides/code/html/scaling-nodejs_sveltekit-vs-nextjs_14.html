@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sveltekit-vs-nextjs/
+# Original language: svelte
+# Normalized: html
+# Block index: 14
+
+<!-- Using the API in components -->
+<script>
+  export let data; // From load function
+  
+  async function addUser(userData) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify(userData)
+    });
+    return response.json();
+  }
+</script>

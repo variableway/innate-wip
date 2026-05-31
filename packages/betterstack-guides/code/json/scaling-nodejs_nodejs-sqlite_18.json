@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-sqlite/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[output]
+[
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "isbn": "9780743273565",
+    "publishedYear": 1925,
+    "genre": "Classic",
+    "price": 12.99,
+    "inStock": true,
+    "addedOn": "2025-04-24T10:15:30.000Z"
+  }
+]

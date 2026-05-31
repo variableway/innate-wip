@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-bun-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+bun test v1.1.26 (0a37423b)
+
+index_test.js:
+✓ addition of two numbers [0.66ms]
+
+ 1 pass
+ 0 fail
+ 1 expect() calls
+Ran 1 tests across 1 files. [121.00ms]

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 71
+
+[output]
+LAST SEEN   TYPE     REASON              OBJECT                          MESSAGE
+35s         Normal   Scheduled           pod/hello-app-9c7b8f6d4-x5m2j   Successfully assigned default/hello-app-9c7b8f6d4-x5m2j to minikube
+33s         Normal   Pulled              pod/hello-app-9c7b8f6d4-x5m2j   Container image "paulbouwer/hello-kubernetes:1.10" already present on machine
+33s         Normal   Created             pod/hello-app-9c7b8f6d4-x5m2j   Created container hello-app
+33s         Normal   Started             pod/hello-app-9c7b8f6d4-x5m2j   Started container hello-app
+35s         Normal   SuccessfulCreate    replicaset/hello-app-9c7b8f6d4  Created pod: hello-app-9c7b8f6d4-x5m2j
+35s         Normal   ScalingReplicaSet   deployment/hello-app            Scaled up replica set hello-app-9c7b8f6d4 to 1

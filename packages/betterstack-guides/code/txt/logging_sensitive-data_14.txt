@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/sensitive-data/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+{"level":30,"time":1685725299857,"pid":58486,"hostname":"Erics-MacBook-Pro.local","logData":{"message":"A payment has been made.","credit_card":"fHdCE6poQH"}}

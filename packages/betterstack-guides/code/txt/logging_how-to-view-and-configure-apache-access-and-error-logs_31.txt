@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[label /etc/apache2/sites-available/000-default.conf] 
+CustomLog ${APACHE_LOG_DIR}/access.log json

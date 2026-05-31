@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+[output]
+{"status":200,"ip":"127.0.0.1","level":30,"msg":"Task completed successfully","pid":124134,"ssn":"407-01-2433","timestamp":"2025-05-30T06:58:43.000+0000","hostname":"60c63140cb57"}
+{"status":200,"ip":"127.0.0.1","level":30,"msg":"Connected to database","pid":125150,"ssn":"407-01-2433","timestamp":"2025-05-30T06:58:43.000+0000","hostname":"60c63140cb57"}
+...

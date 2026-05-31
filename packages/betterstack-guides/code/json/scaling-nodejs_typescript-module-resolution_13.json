@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-module-resolution/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  }
+}

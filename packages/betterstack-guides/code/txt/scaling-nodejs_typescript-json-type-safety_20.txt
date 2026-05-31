@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-json-type-safety/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+User: Alice, Age: 30
+Status: Active

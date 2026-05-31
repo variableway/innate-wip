@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/multer-in-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Server running on http://localhost:3000
+Error: Only image files are allowed!
+    at fileFilter (file:///path/to/your/project/index.js:24:15)
+    at wrappedFileFilter (/path/to/your/project/node_modules/multer/index.js:44:7)
+    at Multipart.<anonymous> (/path/to/your/project/node_modules/multer/lib/make-middleware.js:109:7)
+...
+    at Multipart._write (/path/to/your/project/node_modules/busboy/lib/types/multipart.js:567:19)

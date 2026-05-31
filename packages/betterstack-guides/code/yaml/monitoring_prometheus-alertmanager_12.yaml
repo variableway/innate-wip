@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yml
+# Normalized: yaml
+# Block index: 12
+
+[label alertmanager.yml]
+route:
+  group_by: ['alertname', 'cluster', 'service']

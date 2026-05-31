@@ -1,0 +1,46 @@
+# Source: https://betterstack.com/community/guides/observability/distributed-tracing/
+# Original language: jsonc
+# Normalized: json
+# Block index: 0
+
+{
+  "Name": "HTTP GET /",
+  "SpanContext": {
+[highlight]
+    "TraceID": "e3c306d18bac2742de07756bdb9e607b",
+    "SpanID": "3ee91f86b5468681",
+[/highlight]
+    "TraceFlags": "01",
+    "TraceState": "",
+    "Remote": false
+  },
+  "Parent": {
+    "TraceID": "00000000000000000000000000000000",
+    "SpanID": "0000000000000000",
+    "TraceFlags": "00",
+    "TraceState": "",
+    "Remote": false
+  },
+  "SpanKind": 2,
+[highlight]
+  "StartTime": "2024-08-26T14:19:47.205308249+01:00",
+  "EndTime": "2024-08-26T14:19:47.206802188+01:00",
+[/highlight]
+  "Attributes": [. . .],
+  "Events": null,
+  "Links": null,
+  "Status": {
+    "Code": "Unset",
+    "Description": ""
+  },
+  "DroppedAttributes": 0,
+  "DroppedEvents": 0,
+  "DroppedLinks": 0,
+  "ChildSpanCount": 0,
+  "Resource": [. . .],
+  "InstrumentationLibrary": {
+    "Name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+    "Version": "0.53.0",
+    "SchemaURL": ""
+  }
+}

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+notification-engine-1  |
+notification-engine-1  | Warning: Undefined array key "name" in /app/src/Application.php on line 70
+notification-engine-1  | Demo\Project\Helper\Str::kebab(): Argument #1 ($value) must be of type string, null given, called in /app/src/Application.php on line 70

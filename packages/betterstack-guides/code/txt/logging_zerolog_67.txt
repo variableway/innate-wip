@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 67
+
+[output]
+2022-09-02T11:30:34+01:00 INF incoming request elapsed_ms=0.293015 git_revision=510791faa17a362faeab72bd367ca26e5b0ad5f6 go_version=go1.19 method=GET url=/ user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"

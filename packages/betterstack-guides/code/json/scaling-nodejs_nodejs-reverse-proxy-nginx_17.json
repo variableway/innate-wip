@@ -1,0 +1,54 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+[
+  {
+    "symbol":"ETHBTC",
+    "priceChange":"0.00114000",
+    "priceChangePercent":"1.531",
+    "weightedAvgPrice":"0.07509130",
+    "prevClosePrice":"0.07445100",
+    "lastPrice":"0.07558400",
+    "lastQty":"0.06960000",
+    "bidPrice":"0.07559700",
+    "bidQty":"1.34580000",
+    "askPrice":"0.07559800",
+    "askQty":"4.62410000",
+    "openPrice":"0.07444400",
+    "highPrice":"0.07580100",
+    "lowPrice":"0.07432200",
+    "volume":"61307.31800000",
+    "quoteVolume":"4603.64643133",
+    "openTime":1638075364169,
+    "closeTime":1638161764169,
+    "firstId":311613024,
+    "lastId":311773622,
+    "count":160599
+  },
+  {
+    "symbol":"LTCBTC",
+    "priceChange":"-0.00001900",
+    "priceChangePercent":"-0.544",
+    "weightedAvgPrice":"0.00348225",
+    "prevClosePrice":"0.00348900",
+    "lastPrice":"0.00347100",
+    "lastQty":"3.11600000",
+    "bidPrice":"0.00347100",
+    "bidQty":"3.85200000",
+    "askPrice":"0.00347200",
+    "askQty":"20.40000000",
+    "openPrice":"0.00349000",
+    "highPrice":"0.00353000",
+    "lowPrice":"0.00341900",
+    "volume":"90987.24300000",
+    "quoteVolume":"316.84041690",
+    "openTime":1638075364074,
+    "closeTime":1638161764074,
+    "firstId":74054439,
+    "lastId":74085858,
+    "count":31420
+  }
+]

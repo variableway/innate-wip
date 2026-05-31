@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/logging-best-practices/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+[2023-11-03 08:45:33,123] ERROR: Database connection failed: Timeout exceeded.
+Nov  3 08:45:10 myserver kernel: USB device 3-2: new high-speed USB device number 4 using ehci_hcd
+ERROR:  relation "custome" does not exist at character 15

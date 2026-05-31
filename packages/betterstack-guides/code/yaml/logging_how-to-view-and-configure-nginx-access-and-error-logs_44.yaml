@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 44
+
+[label vector.yaml]
+sources:
+  nginx:
+    type: docker_logs
+    include_images:
+      - nginx
+
+transforms:
+  nginx_json:
+    type: remap
+    inputs:
+      - nginx
+    source: |
+      .context = parse_json(.message) ?? parse_nginx_log(.message, "error") ?? set!(value: {}, path: ["message"], data: .message)
+      .message = .context.message
+      del(.context.message)
+      .
+
+sinks:
+  print:
+    type: console
+    inputs:
+      - nginx_json
+    encoding:
+      codec: json

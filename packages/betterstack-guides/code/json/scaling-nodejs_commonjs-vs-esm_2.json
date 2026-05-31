@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/commonjs-vs-esm/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[label package.json]
+{
+  "type": "module"
+  ...
+}

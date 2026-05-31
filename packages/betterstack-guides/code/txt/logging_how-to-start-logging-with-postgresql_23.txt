@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+STATEMENT:  select c.firstname, c.lastname, i.invoiceid, i.invoicedate, i.billingcountry
+        from customer as c, invoice as i
+        where c.country = 'Brazil' and
+        select distinct billingcountry from invoice;
+LOG:  statement: select distinct billingcountry from invoice;
+LOG:  statement: select albumid, title from album where artistid = 2;

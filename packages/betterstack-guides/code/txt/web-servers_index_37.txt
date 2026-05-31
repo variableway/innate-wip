@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+caddy  | {"level":"info","ts":1699966070.0058851,"logger":"http.log.access.log0","msg":"handled request","request":{"remote_ip":"62.73.122.237","remote_port":"54834","client_ip":"62.73.122.237","proto":"HTTP/2.0","method":"GET","host":"<your_domain_name>","uri":"/assets/index-1eb968c3.css","headers":{"If-None-Match":["\"s444rz4z7z\""],"If-Modified-Since":["Tue, 14 Nov 2023 12:16:47 GMT"],"Sec-Gpc":["1"],"Sec-Fetch-Dest":["style"],"User-Agent":["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],"Sec-Ch-Ua-Platform":["\"Linux\""],"Sec-Ch-Ua-Mobile":["?0"],"Accept-Encoding":["gzip, deflate, br"],"Sec-Ch-Ua":["\"Brave\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""],"Accept":["text/css,*/*;q=0.1"],"Accept-Language":["en-US,en;q=0.8"],"Sec-Fetch-Site":["same-origin"],"Sec-Fetch-Mode":["no-cors"],"Referer":["https://<your_domain_name>/"]},"tls":{"resumed":false,"version":772,"cipher_suite":4865,"proto":"h2","server_name":"<your_domain_name>"}},"bytes_read":0,"user_id":"","duration":0.000236047,"size":0,"status":304,"resp_headers":{"Server":["Caddy"],"Alt-Svc":["h3=\":443\"; ma=2592000"],"Etag":["\"s444rz4z7z\""]}}

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[label Caddyfile]
+<your_domain_name> {
+	log {
+		format filter {
+[highlight]
+			request>uri rename path
+			status rename status_code
+[/highlight]
+		}
+	}
+}

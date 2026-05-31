@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 52
+
+[label .env]
+DB_USER=<your_example_username>
+DB_PASS=<your_example_password>
+DB_NAME=<your_example_database>

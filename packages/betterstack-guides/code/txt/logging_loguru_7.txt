@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+2025-05-23 14:18:03.342 | DEBUG    | __main__:<module>:4 - A debug message.
+2025-05-23 14:18:03.342 | INFO     | __main__:<module>:5 - An info message.
+2025-05-23 14:18:03.342 | SUCCESS  | __main__:<module>:6 - A success message.
+2025-05-23 14:18:03.342 | WARNING  | __main__:<module>:7 - A warning message.
+2025-05-23 14:18:03.342 | ERROR    | __main__:<module>:8 - An error message.
+2025-05-23 14:18:03.342 | CRITICAL | __main__:<module>:9 - A critical message.

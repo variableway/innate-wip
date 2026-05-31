@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output
+...
+├── app.py
+├── instance
+│   └── blog.db

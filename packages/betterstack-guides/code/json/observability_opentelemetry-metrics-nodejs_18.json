@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[output]
+{
+  descriptor: {
+    name: 'http.server.requests',
+    type: 'COUNTER',
+    description: 'Total number of HTTP requests received.',
+    unit: '{requests}',
+    valueType: 1,
+    advice: {}
+  },
+  dataPointType: 3,
+  dataPoints: [
+    {
+      attributes: {},
+      startTime: [ 1731062906, 735000000 ],
+      endTime: [ 1731062907, 834000000 ],
+      value: 1
+    }
+  ]
+}

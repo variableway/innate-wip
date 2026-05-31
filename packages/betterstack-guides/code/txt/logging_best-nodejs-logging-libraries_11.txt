@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+[2023-09-27T06:56:02.101] [INFO] default - Hello from Log4js-node { name: 'John', age: 21 }

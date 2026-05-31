@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+[May 28, 2025 17:48:52 CAT] [INFO | app] A user visited the home page >>> {'request_id': 'd2c594ae-c680-48bc-8e05-f895727fa73f'}
+[May 28, 2025 17:48:52 CAT] [INFO | app] path: / | method: GET | status: 200 OK | size: 946 >>> {'request_id': 'd2c594ae-c680-48bc-8e05-f895727fa73f'}

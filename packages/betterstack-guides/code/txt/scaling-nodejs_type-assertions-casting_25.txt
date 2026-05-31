@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions-casting/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+src/pitfalls.ts:16:15 - error TS2352: Conversion of type '{ status: string; code: number; }' to type 'User' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ status: string; code: number; }' is missing the following properties from type 'User': name, email
+
+16 const user2 = apiResponse as User; // Wrong shape entirely
+                 ~~~~~~~~~~~~~~~~~~~
+
+
+Found 1 error in src/pitfalls.ts:16

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-go/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+collector:
+  container_name: go-image-upload-collector
+  image: otel/opentelemetry-collector-contrib:0.107.0
+  volumes:
+[highlight]
+    - ./otelcol.yaml:/etc/otelcol-contrib/config.yaml
+[/highlight]

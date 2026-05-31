@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 48
+
+[output]
+[26/May/2025 08:47:24] "GET /favicon.ico HTTP/1.1" 404 2327
+[26/May/2025 08:47:30] "GET / HTTP/1.1" 200 1068
+d[26/May/2025 08:47:31] "GET /favicon.ico HTTP/1.1" 404 2327
+[26/May/2025 08:47:45] "POST /search/ HTTP/1.1" 200 1179

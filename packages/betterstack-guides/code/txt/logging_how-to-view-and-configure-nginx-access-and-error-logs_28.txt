@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+172.17.0.1 - - [27/May/2025:09:32:40 +0000]  404 "localhost" "GET /favicon.ico HTTP/1.1" 555 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" "-"

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 47
+
+[output]
+{"event": "Cannot divide one by zero!", "level": "error", "timestamp": "2025-06-06T14:03:01.803031Z", "exception": [{"exc_type": "ZeroDivisionError", "exc_value": "division by zero", "exc_notes": [], "syntax_error": null, "is_cause": false, "frames": [{"filename": "/Users/stanley/structlog_demo/app.py", "lineno": 14, "name": "<module>", "locals": {"structlog": "\"<module 'structlog' from '/Users/stanley/\"+116", "logger": "'<BoundLoggerLazyProxy(logger=None, wrapper_class=None, processors=None, context_'+55"}}], "is_group": false, "exceptions": []}]}

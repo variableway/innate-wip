@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+NAMES     STATUS
+web-app   Up 2 minutes (unhealthy)

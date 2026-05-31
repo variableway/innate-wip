@@ -1,0 +1,61 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: json
+# Normalized: json
+# Block index: 51
+
+[output]
+. . .
+{
+  "container_created_at": "2025-05-27T08:59:06.052457248Z",
+  "container_id": "0f17a23cef07616df8cf4f698664e8b9f2c62daaff75bbfc77d750f797eb06c5",
+  "container_name": "nginx-server",
+[highlight]
+  "context": {
+    "bytes_read": 72,
+    "duration_msecs": 0.0,
+    "level": "info",
+    "request": {
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "",
+        "traceparent": "",
+        "tracestate": "",
+        "user-agent": "curl/8.6.0"
+      },
+      "host": "localhost",
+      "id": "",
+      "method": "GET",
+      "protocol": "HTTP/1.1",
+      "remote_ip": "172.24.0.1",
+      "remote_port": "34480",
+      "uri": "/"
+    },
+    "resp_headers": {
+      "content_length": "615",
+      "content_type": "text/html"
+    },
+    "size": 853,
+    "status": 200,
+    "ts": "2025-05-27T11:13:57+00:00"
+  },
+[/highlight]
+  "host": "3d0ebf54b0eb",
+  "image": "nginx:alpine",
+  "label": {
+    "com.docker.compose.config-hash": "b27d7c9cd09c4f82e419ac408790cbea8ea31a8102d37160b93b318cb4f18cc6",
+    "com.docker.compose.container-number": "1",
+    "com.docker.compose.depends_on": "",
+    "com.docker.compose.image": "sha256:1ae23480369fa4139f6dec668d7a5a941b56ea174e9cf75e09771988fe621c95",
+    "com.docker.compose.oneoff": "False",
+    "com.docker.compose.project": "nginx-logging-tutorial",
+    "com.docker.compose.project.config_files": "/home/ayo/dev/betterstack/demo/nginx-docker/docker-compose.yml",
+    "com.docker.compose.project.working_dir": "/home/ayo/dev/betterstack/demo/nginx-docker",
+    "com.docker.compose.service": "nginx",
+    "com.docker.compose.version": "2.29.1",
+    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+  },
+  "message": "handled request GET /",
+  "source_type": "docker_logs",
+  "stream": "stdout",
+  "timestamp": "2025-05-27T11:13:57.834369885Z"
+}

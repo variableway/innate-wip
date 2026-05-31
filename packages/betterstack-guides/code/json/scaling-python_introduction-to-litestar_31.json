@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: json
+# Normalized: json
+# Block index: 31
+
+[output]
+[
+    {
+        "id": "0e672f06-e8ac-4ded-a983-ca0b2d771634",
+        "title": "Draft Post",
+        "content": "This is an unpublished draft post.",
+        "created_at": "2025-03-12T11:09:21.098464",
+        "updated_at": "2025-03-12T11:09:21.098473",
+        "published": false
+    }
+]

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 49
+
+[output]
+NAME       IMAGE                                          COMMAND                  SERVICE         CREATED         STATUS         PORTS
+logify     log-processing-stack-logify-script             "./logify.sh"            logify-script   5 seconds ago   Up 4 seconds
+logstash   docker.elastic.co/logstash/logstash:9.0.1      "/usr/local/bin/dock…"   logstash        6 seconds ago   Up 5 seconds   5044/tcp, 0.0.0.0:5000->5000/udp, [::]:5000->5000/udp, 9600/tcp
+nginx      betterstackcommunity/nginx-helloworld:latest   "/runner.sh nginx"       nginx           6 seconds ago   Up 5 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp

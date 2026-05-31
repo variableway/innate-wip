@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 31
+
+[output]
+{"level":"info","time":"2022-09-02T08:05:48+01:00","message":"a message from the gods: 1"}
+{"level":"info","time":"2022-09-02T08:05:48+01:00","message":"a message from the gods: 6"}

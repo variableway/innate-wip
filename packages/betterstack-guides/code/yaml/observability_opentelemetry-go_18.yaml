@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-go/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 18
+
+[label docker-compose.yml]
+  collector:
+    container_name: go-image-upload-collector
+    image: otel/opentelemetry-collector:0.107.0
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol/config.yaml
+    depends_on:
+      jaeger:
+        condition: service_healthy
+    networks:
+      - go-image-upload-network
+
+  jaeger:
+    container_name: go-image-upload-jaeger
+    image: jaegertracing/all-in-one:latest
+    environment:
+      JAEGER_PROPAGATION: w3c
+    ports:
+      - 16686:16686
+    healthcheck:
+      test: [CMD, wget, -q, -S, -O, "-", "localhost:14269"]
+    networks:
+      - go-image-upload-network

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+[output]
+/src/components/Button.tsx
+  15:7   error  'handleClick' is defined but never used  no-unused-vars
+  23:5   error  Missing return type on function          @typescript-eslint/explicit-module-boundary-types
+  
+/src/utils/api.ts
+  8:3    error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 52 problems (52 errors, 0 warnings)

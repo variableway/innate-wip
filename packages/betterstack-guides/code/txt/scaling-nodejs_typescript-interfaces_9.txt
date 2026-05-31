@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-interfaces/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+src/problem.ts:21:32 - error TS2345: Argument of type '{ name: string; email: string; }' is not assignable to parameter of type 'User'.
+  Property 'age' is missing in type '{ name: string; email: string; }' but required in type 'User'.
+
+21 const invalidUser = createUser({
+                                  ~
+22   name: "Bob",
+   ~~~~~~~~~~~~~~
+23   email: "bob@example.com",
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+24 });
+   ~
+
+  src/problem.ts:4:3
+    4   age: number;
+        ~~~
+    'age' is declared here.
+
+src/problem.ts:29:3 - error TS2561: Object literal may only specify known properties, but 'emial' does not exist in type 'User'. Did you mean to write 'email'?
+
+29   emial: "charlie@example.com", // Typo in 'email'
+     ~~~~~
+
+
+Found 2 errors in the same file, starting at: src/problem.ts:21

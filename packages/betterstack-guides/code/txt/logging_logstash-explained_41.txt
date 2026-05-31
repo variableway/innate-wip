@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+NAME      IMAGE                                          COMMAND              SERVICE         CREATED          STATUS          PORTS
+logify    log-processing-stack-logify-script             "./logify.sh"        logify-script   13 seconds ago   Up 13 seconds
+nginx     betterstackcommunity/nginx-helloworld:latest   "/runner.sh nginx"   nginx           13 seconds ago   Up 13 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp

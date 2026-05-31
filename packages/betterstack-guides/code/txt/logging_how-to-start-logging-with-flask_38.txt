@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-flask/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+[May 28, 2025 18:11:22 CAT] [DEBUG | app] A debug message
+[May 28, 2025 18:11:22 CAT] [INFO | app] An info message
+[May 28, 2025 18:11:22 CAT] [WARNING | app] A warning message
+[May 28, 2025 18:11:22 CAT] [ERROR | app] An error message
+[May 28, 2025 18:11:22 CAT] [CRITICAL | app] A critical message

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 39
+
+2025/05/27 17:41:58 [error] 29#29: *1 open() "/usr/share/nginx/html/make" failed (2: No such file or directory), client: 172.17.0.1, server: localhost, request: "GET /make HTTP/1.1", host: "localhost"

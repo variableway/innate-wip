@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 24
+
+{
+    "timestamp": "2023-10-01T04:20:18.357Z",
+    "data": {
+        "rates": {
+            "aed": {
+                "name": "United Arab Emirates Dirham",
+                "type": "fiat",
+                "unit": "DH",
+                "value": 99314.944
+            },
+            "ars": {
+                "name": "Argentine Peso",
+                "type": "fiat",
+                "unit": "$",
+                "value": 9464154.224
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+[label otel-config.yaml]
+...
+service:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      processors: [memory_limiter, batch]
+      exporters: [otlphttp]

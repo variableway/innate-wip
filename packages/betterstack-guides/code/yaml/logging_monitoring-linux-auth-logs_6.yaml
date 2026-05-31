@@ -1,0 +1,60 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 6
+
+[label /etc/vector/vector.yaml]
+sources:
+  auth_logs:
+    type: file
+    include:
+      - /var/log/auth.log
+
+transforms:
+  parse_auth_log:
+    inputs:
+      - auth_logs
+    type: remap
+    source: |
+      . |= parse_linux_authorization!(.message)
+
+      .event = {
+          "category": "authentication"
+      }
+
+      if contains(.message, "Failed password") {
+          .event.name = "failed password"
+          .context = parse_regex!(.message, r'Failed password for (invalid user )?(?P<username>\w+) from (?P<ip_address>[\d.]+) port (?P<port>\d+) (?P<protocol>\w+)')
+      } else if contains(.message, "Invalid user") {
+          .event.name = "invalid user"
+          .context = parse_regex!(.message, r'Invalid user (?P<username>\w+) from (?P<ip_address>[\d.]+) port (?P<port>\d+)')
+      } else if contains(.message, "Accepted") {
+          .event.name = "successful login"
+          .context = parse_regex!(.message, r'Accepted (?P<auth_method>\w+) for (?P<username>\w+) from (?P<ip_address>[\d.]+) port (?P<port>\d+) (?P<protocol>\w+)(: )?(?P<ssh_signature>RSA SHA256:[A-Za-z0-9+/=]+)?')
+      } else if contains(.message, "Received disconnect") {
+          .event.name = "disconnect user"
+          .context = parse_regex!(.message, r'Received disconnect from (?P<ip_address>[\d.]+)(?: port (?P<port>\d+))?:(?P<error_code>\d+):.*\[(?P<stage>\w+)\]')
+      } else if contains(.message, "Disconnected") {
+          .event.name = "disconnect user"
+          .context = parse_regex!(.message, r'Disconnected from (invalid |authenticating )?user (?P<username>\w+) (?P<ip_address>[\d.]+) port (?P<port>\d+) \[(?P<stage>\w+)\]')
+      } else if contains(.message, "session opened for user") {
+          .event.name = "session opened"
+          .context = parse_regex!(.message, r'pam_unix\((?P<service>\S+):(?P<pam_activity>\S+)\): session opened for user (?P<sudo_user>\S+)\(uid=(?P<sudo_user_id>\d+)\) by (?P<username>\S+)?\(uid=(?P<user_id>\d+)\)')
+      } else if contains(.message, "session closed for user") {
+            .event.name = "session closed"
+            .context = parse_regex!(.message, r'pam_unix\((?P<service>\S+):(?P<pam_activity>\S+)\): session closed for user (?P<sudo_user>\S+)')
+      } else if contains(.message, "TTY=") {
+            .event.name = "sudo command"
+            .context = parse_regex!(.message, r'(?P<username>\S+) : ((?P<error>.*?) ; )?TTY=(?P<tty>\S+) ; PWD=(?P<pwd>\S+) ; USER=(?P<sudo_user>\S+) ;( COMMAND=(?P<command>.+))?')
+      } else if contains(.message, "authentication failure") {
+            .event.name = "sudo authentication failure"
+            .context = parse_regex!(.message, r'pam_unix\((?P<service>\S+):(?P<pam_activity>\S+)\): (?P<error>.*?); ?logname=(?P<logname>.*?) ?uid=(?P<uid>\d+) ?euid=(?P<euid>\d+) ?tty=(?P<tty>\S+) ?ruser=(?P<ruser>.*?) ?rhost=(?P<rhost>.*?)( user=(?P<user>\w+))?')
+      }
+
+sinks:
+  print:
+    type: console
+    inputs:
+      - parse_auth_log
+    encoding:
+      codec: json

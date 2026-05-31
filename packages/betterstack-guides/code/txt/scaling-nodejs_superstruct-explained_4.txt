@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 4
+
+The ES2022 target ensures compatibility with modern JavaScript features while avoiding issues with async/await and other features that Superstruct relies on.
+
+Add a script to your `package.json` to run your project easily:

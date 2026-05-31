@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+2025-06-06 15:53:17 [error    ] Failed to save the file. Please check permissions
+2025-06-06 15:53:17 [critical ] System has encountered a critical failure. Shutting down

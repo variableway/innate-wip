@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+REPOSITORY                     TAG         IMAGE ID      CREATED       SIZE
+docker.io/library/hello-world  latest      9c7a54a9a43c  6 months ago  19.9 kB

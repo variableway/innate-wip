@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-vs-eslint/
+# Original language: txt
+# Normalized: txt
+# Block index: 18
+
+[output]
+error: Dependency cycle detected
+  ┌─ api/users.ts:1:1
+  │
+1 │ import { formatDate } from '../utils';
+  │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  │
+  = api/users.ts → utils/index.ts → api/users.ts

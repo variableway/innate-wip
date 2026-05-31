@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+# Logfile created on 2023-04-18 10:23:38 +0100 by logger.rb/v1.5.3
+{"timestamp":"2023-04-18T10:23:38.615776","level":"INFO ","pid":144698,"msg":"Starting application..."}

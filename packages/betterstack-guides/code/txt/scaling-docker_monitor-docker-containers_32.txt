@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+   18 root      0:00 node app.js

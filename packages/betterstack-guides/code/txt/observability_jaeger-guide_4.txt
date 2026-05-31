@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/jaeger-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+. . .
+cobra@v1.8.1/command.go:985     Starting all services
+frontend/server.go:78   Starting        {"service": "frontend", "address": "http://0.0.0.0:8080"}
+customer/server.go:57   Starting        {"service": "customer", "address": "http://0.0.0.0:8081"}
+route/server.go:55      Starting        {"service": "route", "address": "http://0.0.0.0:8083"}
+driver/server.go:63     Starting        {"service": "driver", "address": "0.0.0.0:8082", "type": "gRPC"}

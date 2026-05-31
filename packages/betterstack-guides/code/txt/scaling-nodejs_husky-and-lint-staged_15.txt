@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/husky-and-lint-staged/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+
+✔ Backed up original state in git stash (79da3b1)
+✔ Running tasks for staged files...
+✔ Applying modifications from tasks...
+✔ Cleaning up temporary files...
+[master 8a845e8] Fix formatting and remove unused variable
+ 1 file changed, 3 deletions(-)

@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-validator-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+{
+  "errors": [
+    {
+      "type": "field",
+      "value": "",
+      "msg": "Name is required",
+      "path": "name",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "value": "not-an-email",
+      "msg": "Invalid email format",
+      "path": "email",
+      "location": "body"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[label /etc/postgresql/15/main/postgresql.conf]
+log_line_prefix = 'time=%m pid=%p error=%e sess_id=%c %qtag=%i usr=%u db=%d app=%a '

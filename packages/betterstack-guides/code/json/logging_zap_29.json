@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 29
+
+[output]
+{"level":"fatal","ts":1684170760.2103574,"caller":"zap/main.go:47","msg":"Something went terribly wrong","context":"main","code":500,"error":"An error occurred","stacktrace":"main.main\n\t/home/ayo/dev/demo/zap/main.go:47\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:250"}
+exit status 1

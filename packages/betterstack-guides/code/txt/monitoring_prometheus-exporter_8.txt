@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summarygo_gc_duration_seconds{quantile="0"} 5.8137e-05
+go_gc_duration_seconds{quantile="0.25"} 5.8137e-05
+go_gc_duration_seconds{quantile="0.5"} 8.5096e-05
+go_gc_duration_seconds{quantile="0.75"} 8.5096e-05
+go_gc_duration_seconds{quantile="1"} 8.5096e-05
+go_gc_duration_seconds_sum 0.000143233
+go_gc_duration_seconds_count 2
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 10
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.536e+07
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 4
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nestjs-vs-rails/
+# Original language: txt
+# Normalized: txt
+# Block index: 1
+
+src/
+├── app.controller.ts    # HTTP request handler
+├── app.module.ts        # Application organization
+├── app.service.ts       # Business logic
+└── main.ts             # Application bootstrap

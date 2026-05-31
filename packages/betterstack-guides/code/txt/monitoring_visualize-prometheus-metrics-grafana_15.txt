@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/visualize-prometheus-metrics-grafana/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+https://grafana.com/grafana/dashboards/1860-node-exporter-full/

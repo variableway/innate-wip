@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[output]
+server started on port: 3000
+Exchange rates cache updated

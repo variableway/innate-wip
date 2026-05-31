@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-python-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+[output]
+{"name": "example", "filename": "main.py", "lineno": 31, "process": 179775, "message": "Server started listening on port 8080", "severity": "INFO", "timestamp": "2023-07-23 14:39:03,265"}
+{"name": "example", "filename": "main.py", "lineno": 32, "process": 179775, "message": "Disk space on drive '/var/log' is running low. Consider freeing up space", "severity": "WARNING", "timestamp": "2023-07-23 14:39:03,265"}
+{"name": "example", "filename": "main.py", "lineno": 38, "process": 179775, "message": "Failed to connect to database: 'my_db'", "exc_info": "Traceback (most recent call last):\n  File \"/home/ayo/dev/betterstack/demo/python-logging/main.py\", line 36, in <module>\n    raise Exception(\"Failed to connect to database: 'my_db'\")\nException: Failed to connect to database: 'my_db'", "severity": "ERROR", "timestamp": "2023-07-23 14:39:03,265"}

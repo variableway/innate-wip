@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-pino-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 30
+
+[output]
+...
+{"level":"INFO","time":"2025-05-22T11:10:52.206Z","pid":5422,"hostname":"ubuntu","msg":"info"}

@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/testing/nodejs-test-runner/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+TAP version 13
+# Subtest: formatFileSize function
+    # Subtest: should return "1.00 GB" for sizeBytes = 1073741824
+    ok 1 - should return "1.00 GB" for sizeBytes = 1073741824
+      ---
+      duration_ms: 0.66647
+      ...
+    1..1
+ok 1 - formatFileSize function
+  ---
+  duration_ms: 4.305755
+  type: 'suite'
+  ...
+1..1
+# tests 1
+# suites 1
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0

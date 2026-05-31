@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label /etc/td-agent/td-agent.conf]
+<source>
+  ....
+</source>
+
+<filter unique.id>
+   ...
+ </filter>
+<match unique.id>
+   ...
+</match>

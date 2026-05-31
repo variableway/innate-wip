@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/docker-logs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 36
+
+[label vector.yaml]
+sources:
+  docker_containers:
+    type: docker_logs
+    exclude_containers:
+      - vector
+
+sinks:
+  better_stack:
+    type: http
+    method: post
+    inputs:
+      - "docker_containers"
+[highlight]
+    uri: "https://<your_ingesting_host>/"
+[/highlight]
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+[highlight]
+      token: "<your_betterstack_source_token>"
+[/highlight]

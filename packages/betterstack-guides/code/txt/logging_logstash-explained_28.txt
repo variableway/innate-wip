@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+{
+           "status" => 200,
+               "ip" => "127.0.0.1",
+              "ssn" => "407-01-2433",
+              "msg" => "Task completed successfully",
+             "host" => {
+        "name" => "fdf9a9d756c9"
+    },
+              "log" => {
+        "file" => {
+            "path" => "/var/log/logify/app.log"
+        }
+    },
+              "pid" => 531475,
+              "env" => "development",
+         "@version" => "1",
+            "level" => 30,
+       "@timestamp" => 2025-06-04T10:26:55.694607835Z,
+[highlight]
+    "is_successful" => "true",
+[/highlight]
+        "timestamp" => 1749032810
+}
+...

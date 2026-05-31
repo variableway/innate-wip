@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-tuple-types/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Distance: 5
+Bad distance 1: 22.360679774997898
+Bad distance 2: NaN

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[label Caddyfile]
+<your_domain_name {
+	log {
+		format filter {
+[highlight]
+			request>client_ip ip_mask {
+				ipv4 24 # Applies a /24 subnet mask, anonymizing the last part of IPv4 addresses.
+				ipv6 56 # Keep only the first 56 bits of an IPv6 address
+			}
+[/highlight]
+		}
+	}
+}

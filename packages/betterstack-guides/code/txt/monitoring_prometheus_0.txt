@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+http_requests_total{method="GET", status="200"}

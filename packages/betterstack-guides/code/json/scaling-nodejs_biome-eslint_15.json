@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/biome-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+// package.json
+{
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

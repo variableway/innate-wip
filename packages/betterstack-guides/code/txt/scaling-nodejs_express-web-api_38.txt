@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+* Host localhost:3000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:3000...
+* Connected to localhost (::1) port 3000
+> DELETE /api/posts/7cd5e61f-5b8e-4a49-bc43-63d7d3942d5f HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 204 No Content
+< X-Powered-By: Express
+< Access-Control-Allow-Origin: *
+< Date: Tue, 18 Mar 2025 11:29:28 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< 
+* Connection #0 to host localhost left intact

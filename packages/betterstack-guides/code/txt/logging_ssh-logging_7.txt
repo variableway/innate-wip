@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/ssh-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Jul 17 16:02:33 webserver sshd[5678]: Disconnected from user devuser 10.0.2.15 port 49812

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/best-ruby-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 25
+
+[output]
+{"name":"main","hostname":"fedora","pid":684730,"level":10,"time":"2023-08-30T16:25:53.470+02:00","v":0,"msg":"entered main function"}
+{"name":"main","hostname":"fedora","pid":684730,"level":20,"time":"2023-08-30T16:25:53.471+02:00","v":0,"msg":"database query executed"}
+{"name":"main","hostname":"fedora","pid":684730,"level":30,"time":"2023-08-30T16:25:53.471+02:00","v":0,"msg":"user signed in"}
+{"name":"main","hostname":"fedora","pid":684730,"level":40,"time":"2023-08-30T16:25:53.471+02:00","v":0,"msg":"disk space is 95% full"}
+{"name":"main","hostname":"fedora","pid":684730,"level":50,"time":"2023-08-30T16:25:53.471+02:00","v":0,"msg":"encountered an unexpected error while backing up database"}
+{"name":"main","hostname":"fedora","pid":684730,"level":60,"time":"2023-08-30T16:25:53.471+02:00","v":0,"msg":"application crashed"}

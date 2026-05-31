@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: json
+# Normalized: json
+# Block index: 36
+
+[output]
+{
+ "my_network": {
+   "IPAMConfig": null,
+   "Links": null,
+   "Aliases": [
+     "8ec8a37d91f5"
+   ],
+   "NetworkID": "f4bd3d0bbac5e664a9841052905e3364c8fe5da1d8055df42b9f8c72b6c7e2b3",
+   "EndpointID": "4921db32c813b1b7660941a7c646a92c2138a1c4dd95714e5f76a43b654spzr",
+   "Gateway": "172.18.0.1",
+   "IPAddress": "172.18.0.2",
+   "IPPrefixLen": 16,
+   "IPv6Gateway": "",
+   "GlobalIPv6Address": "",
+   "GlobalIPv6PrefixLen": 0,
+   "MacAddress": "02:42:ac:12:00:02",
+   "DriverOpts": null
+ }
+}

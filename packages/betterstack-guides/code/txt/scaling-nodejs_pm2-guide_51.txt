@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 51
+
+[output]
+PM2        | 2022-03-14T09:18:30: PM2 log: App [dadjokes:0] starting in -fork mode-
+PM2        | 2022-03-14T09:18:30: PM2 log: App [dadjokes:0] online
+PM2        | 2022-03-14T09:23:18: PM2 log: Stopping app:dadjokes id:0
+PM2        | 2022-03-14T09:23:18: PM2 log: App [dadjokes:0] exited with code [0] via signal [SIGINT]
+PM2        | 2022-03-14T09:23:18: PM2 log: App [dadjokes:0] will restart in 100ms
+PM2        | 2022-03-14T09:23:18: PM2 log: pid=21869 msg=process killed
+PM2        | 2022-03-14T09:23:38: PM2 log: [PM2][WORKER] Reset the restart delay, as app dadjokes has been up for more than 30000ms
+
+PM2      | App [dadjokes:0] starting in -fork mode-
+PM2      | App [dadjokes:0] online
+0|dadjokes  | Random Joke server started on port: 3000
+0|dadjokes  | GET /joke 200 97 - 760.323 ms
+0|dadjokes  | GET /joke 200 92 - 750.802 ms
+0|dadjokes  | GET /joke 200 117 - 715.876 ms

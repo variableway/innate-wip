@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 32
+
+[output]
+timestamp=2023-07-12T11:47:18.796211807+02:00 level=info message="Hello from Apex logger" app=myapp env=prod

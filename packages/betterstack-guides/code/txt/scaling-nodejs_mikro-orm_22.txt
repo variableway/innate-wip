@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mikro-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+=== Before update ===
+[query] select `b0`.* from `books` as `b0` where `b0`.`title` = 'TypeScript: The Good Parts' limit 1 [took 0 ms, 1 result]
+TypeScript: The Good Parts current price: $29.99
+[query] begin
+[query] update `books` set `price` = 32.99, `updated_at` = 1743579474295 where `id` = 1 [took 1 ms, 1 row affected]
+[query] commit
+=== After update ===
+TypeScript: The Good Parts new price: $32.99

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-metrics-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+# HELP http_server_active_connections Current number of active HTTP connections
+# TYPE http_server_active_connections gauge
+http_server_active_connections 15
+
+# HELP node_memory_usage_bytes Memory usage of the Node.js process in bytes
+# TYPE node_memory_usage_bytes gauge
+node_memory_usage_bytes{type="rss"} 52428800
+node_memory_usage_bytes{type="heapTotal"} 21495808
+node_memory_usage_bytes{type="heapUsed"} 12582912
+node_memory_usage_bytes{type="external"} 1048576

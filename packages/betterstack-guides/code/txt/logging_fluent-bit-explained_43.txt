@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+[output]
+{...,privateInfo":"This is a sample message with SSN: REDACTED and IP: REDACTED"}

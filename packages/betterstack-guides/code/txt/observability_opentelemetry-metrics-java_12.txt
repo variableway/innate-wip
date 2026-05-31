@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-java/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{app="demo"} 42

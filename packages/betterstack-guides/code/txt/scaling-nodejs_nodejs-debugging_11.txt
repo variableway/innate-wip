@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+break in index.js:5
+  4
+  5   for (let i = 2; i <= max; ++i) {
+> 6     if (!sieve[i]) {
+  7       primes.push(i);
+  8

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 38
+
+[output]
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-04-19T16:08:04.092164Z","level":"info","level_index":2,"pid":258049,"thread":"60","name":"MyApp","message":"Hello from semantic logger"}

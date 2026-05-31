@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 62
+
+DEBUG:  server process (PID 13557) exited with exit code 0
+INFO:  vacuuming "chinook.public.album"
+NOTICE:  identifier "very_very_very_very_very_very_very_very_long_table_name_with_more_than_63_characters" will be truncated to "very_very_very_very_very_very_very_very_long_table_name_with_mo"
+WARNING:  SET LOCAL can only be used in transaction blocks
+LOG:  statement: UPDATE album SET title = 'Audioslave' WHERE albumid = 10;
+ERROR:  relation "albu" does not exist at character 7
+FATAL:  role "root" does not exist
+PANIC: database system shutdown requested

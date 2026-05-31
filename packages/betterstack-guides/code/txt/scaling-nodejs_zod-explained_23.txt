@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 23
+
+The `formatZodErrors` function transforms the error array using `reduce`. For each error, it extracts the field name from the error's path array using `join(".")`, creating a simple mapping between field names and their corresponding error messages.
+
+
+When you run the file, you'll see the errors in a much cleaner format:

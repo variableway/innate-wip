@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+input {
+      plugin_name{...}
+ }
+
+filter {
+     plugin_name{...}
+}
+
+output {
+     plugin_name{...}
+}

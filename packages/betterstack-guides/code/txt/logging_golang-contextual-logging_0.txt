@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/golang-contextual-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+2024/07/02 19:34:50 ERROR failed to login

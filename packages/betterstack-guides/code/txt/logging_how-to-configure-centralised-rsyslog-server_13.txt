@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+tcp    LISTEN  0       25                  0.0.0.0:514            0.0.0.0:*      users:(("rsyslogd",pid=440497,fd=5))
+tcp    LISTEN  0       25                     [::]:514               [::]:*      users:(("rsyslogd",pid=440497,fd=6))

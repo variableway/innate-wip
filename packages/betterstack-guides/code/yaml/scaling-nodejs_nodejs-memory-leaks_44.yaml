@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: yml
+# Normalized: yaml
+# Block index: 44
+
+[label /etc/prometheus/alerts.yml]
+groups:
+- name: memory leak
+  rules:
+  - alert: High memory Usage
+    expr: avg(nodejs_external_memory_bytes / 1024) > 2000
+    for: 1m
+    annotations:
+      severity: critical
+      description: memory usage high

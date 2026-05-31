@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-declaration-files/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+src/use-store.ts:15:24 - error TS2345: Argument of type 'string' is not assignable to parameter of type '{ name: string; age: number; }'.
+
+15 userStore.set("user2", "invalid");
+                          ~~~~~~~~~
+
+src/use-store.ts:16:17 - error TS2345: Argument of type 'number' is not assignable to parameter of type '"apiKey" | "timeout" | "debug"'.
+
+16 configStore.get(123);
+                   ~~~
+
+
+Found 2 errors in the same file, starting at: src/use-store.ts:15

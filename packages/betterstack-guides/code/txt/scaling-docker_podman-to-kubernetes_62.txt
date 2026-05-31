@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 62
+
+[output]
+WARN[0000] Truncation Annotation: "5827494c3cce19080da3e0804596c4f46c71c342429d8171bfa45f4188b140bf" to "5827494c3cce19080da3e0804596c4f46c71c342429d8171bfa45f4188b140b": Kubernetes only allows 63 characters
+WARN[0000] Truncation Annotation: "5827494c3cce19080da3e0804596c4f46c71c342429d8171bfa45f4188b140bf" to "5827494c3cce19080da3e0804596c4f46c71c342429d8171bfa45f4188b140b": Kubernetes only allows 63 characters

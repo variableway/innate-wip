@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/build-nodejs-application-express-pug/
+# Original language: pug
+# Normalized: html
+# Block index: 9
+
+[label views/home.pug]
+extends default
+
+block content
+  .home-search
+    img(src="/images/hn.png" width="180" height="180")
+    form(action='/search' method='GET')
+      input.home-input(autofocus='' placeholder='Search Hacker News' type='search' name='q')

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 6
+
+processors:
+  batch:
+    send_batch_size: 8192
+    timeout: 5s
+  memory_limiter:
+    check_interval: 5s
+    limit_mib: 800
+    spike_limit_mib: 150

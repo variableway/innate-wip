@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-php/laravel-task-scheduling/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+0 * * * *  php artisan inspire ............................. Next Due: 6 minutes from now
+0 * * * *  bash script.sh ...................................Next Due: 6 minutes from now
+0 0 * * *  Closure at: app/Console/Kernel.php:23 ............Next Due: 4 hours from now
+0 * * * *  App\Jobs\UpdateSearchIndex .......................Next Due: 6 minutes from now

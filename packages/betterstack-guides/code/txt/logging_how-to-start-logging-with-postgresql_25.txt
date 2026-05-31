@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+ERROR:  relation "custome" does not exist at character 15
+STATEMENT:  select * from custome where country = 'Brazil';
+ERROR:  duplicate key value violates unique constraint "pk_album"
+DETAIL:  Key (albumid)=(10) already exists.
+STATEMENT:  UPDATE album SET albumid = 10 WHERE albumid = 2;

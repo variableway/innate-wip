@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/python-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+{"text": "April 27, 2023 > 19:50:33 | INFO | Incoming API request: GET /api/users/123\n", "record": {"elapsed": {"repr": "0:00:00.017884", "seconds": 0.017884}, "exception": null, "extra": {}, "file": {"name": "main.py", "path": "/home/betterstack/dev/demo/python-logging/main.py"}, "function": "<module>", "level": {"icon": "ℹ️", "name": "INFO", "no": 20}, "line": 21, "message": "Incoming API request: GET /api/users/123", "module": "main", "name": "__main__", "process": {"id": 407115, "name": "MainProcess"}, "thread": {"id": 140129253443392, "name": "MainThread"}, "time": {"repr": "2023-04-27 20:50:33.843118+01:00", "timestamp": 1682625033.843118}}}

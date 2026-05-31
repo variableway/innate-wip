@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 75
+
+[output]
+[========================>] Parsed 289019 bytes of 289019 (100.00%), queries: 102, events: 42
+LOG: Ok, generating html report...

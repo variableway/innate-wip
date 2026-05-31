@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+2025-06-06 15:51:42 [warning  ] Resource usage is nearing capacity
+2025-06-06 15:51:42 [error    ] Failed to save the file. Please check permissions
+2025-06-06 15:51:42 [critical ] System has encountered a critical failure. Shutting down

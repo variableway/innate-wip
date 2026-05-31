@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 17
+
+[label config.yaml]
+service:
+  telemetry:
+    logs:
+      level: debug

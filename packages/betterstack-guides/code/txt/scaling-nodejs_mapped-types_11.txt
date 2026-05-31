@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mapped-types/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Database product: { id: 1, name: 'Laptop', price: null }
+New product input: { name: 'Mouse', price: 25 }

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+^CGracefully stopping... (press Ctrl+C again to force)
+Aborting on container exit...
+[+] Stopping 3/3
+ ✔ Container docker-compose-frontend-1  Stopped                                   0.3s
+ ✔ Container docker-compose-backend-1   Stopped                                  10.3s
+ ✔ Container docker-compose-database-1  Stopped                                   0.3s
+canceled

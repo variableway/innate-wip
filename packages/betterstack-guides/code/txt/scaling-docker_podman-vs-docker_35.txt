@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+Getting image source signatures
+Copying blob 01bb4fce3eb1 skipped: already exists
+Copying config 9c7a54a9a4 done
+Writing manifest to image destination
+Storing signatures

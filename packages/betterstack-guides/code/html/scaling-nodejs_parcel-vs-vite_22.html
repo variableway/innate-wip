@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parcel-vs-vite/
+# Original language: vue
+# Normalized: html
+# Block index: 22
+
+<!-- Vue component with HMR -->
+<template>
+  <div class="counter">
+    <button @click="increment">Count: {{ count }}</button>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    const count = ref(0)
+    const increment = () => count.value++
+    return { count, increment }
+  }
+}
+</script>
+
+<style scoped>
+.counter {
+  /* Scoped CSS is processed efficiently */
+}
+</style>

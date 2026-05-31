@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+rsyslogd: version 8.2312.0, config validation run (level 1), master config /etc/rsyslog.d/51-rsyslog-logify.conf
+rsyslogd: End of config validation run. Bye.

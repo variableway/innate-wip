@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 28
+
+[label alerts.yml]
+- alert: LowDiskSpace
+[highlight]
+  expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} < bool 0.1
+[/highlight]
+  for: 5m
+  labels:
+    severity: critical
+  annotations:
+    summary: "Low disk space on {{ $labels.instance }}"
+    description: "The root filesystem on {{ $labels.instance }} has less than 10% available disk space."

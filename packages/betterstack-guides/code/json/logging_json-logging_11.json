@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{
+  "message": "Application failed to execute database query",
+  "timestamp": "2022-03-31T13:32:33.928188+00:00",
+  "logger": "__main__",
+  "level": "error",
+[highlight]
+  "exception": {
+    "type": "DatabaseException",
+    "message": "Failed to execute query",
+    "trace": [
+      {
+        "file": "app.py",
+        "line": 50,
+        "method": "execute_query"
+      },
+      {
+        "file": "database.py",
+        "line": 34,
+        "method": "query"
+      }
+    ]
+  }
+[/highlight]
+}

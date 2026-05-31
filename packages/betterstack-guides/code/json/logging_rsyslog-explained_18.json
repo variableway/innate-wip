@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[output]
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Connected to database", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749119648}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "msg": "Operation finished", "pid": 652089, "ssn": "407-01-2433", "time": 1749119651}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Task completed successfully", "pid": 169516, "ssn": "407-01-2433", "timestamp": 1749119651}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "msg": "Task completed successfully", "pid": 652089, "ssn": "407-01-2433", "time": 1749119654}

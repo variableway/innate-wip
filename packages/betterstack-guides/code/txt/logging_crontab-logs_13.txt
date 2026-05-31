@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[label crontab]
+0 7 * * * /path/to/monitor-cron.sh >> /var/log/cron-monitor.log 2>&1

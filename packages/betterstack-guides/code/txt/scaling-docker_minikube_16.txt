@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 16
+
+This approach gives you more flexibility, allowing you to copy the URL and
+access it in a browser of your choice, or to set up additional tunneling if
+needed for remote access.
+
+## Deploying sample applications
+
+With your Minikube cluster up and running, you can now deploy applications to
+test its functionality. This section walks you through deploying a simple
+application and then advances to a more complex deployment scenario.
+
+The most straightforward way to deploy an application is using kubectl's create
+deployment command. Let's deploy a simple echo server application to
+demonstrate:

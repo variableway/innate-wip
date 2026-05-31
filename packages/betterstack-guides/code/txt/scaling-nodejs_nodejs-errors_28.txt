@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+[Error: EACCES: permission denied, open '/etc/sudoers'] {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/etc/sudoers'
+}

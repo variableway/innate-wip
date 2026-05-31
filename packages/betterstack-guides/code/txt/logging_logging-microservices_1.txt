@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/logging-microservices/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+2023-07-31 06:43:37 [warning] Resource usage is nearing capacity

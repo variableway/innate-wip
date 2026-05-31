@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+[output]
+. . .
+196.251.85.66 - - [06/Jun/2025:11:11:54 +0000] "GET /.env_sample HTTP/1.1" 404 453 "-" "Mozilla/5.0 (Windows NT 10.0; rv:45.9) Gecko/20100101 Goanna/3.2 Firefox/45.9 PaleMoon/27.4.0"
+179.43.161.218 - - [06/Jun/2025:11:14:52 +0000] "GET / HTTP/1.1" 200 3460 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46"
+204.76.203.212 - - [06/Jun/2025:11:24:19 +0000] "GET / HTTP/1.1" 200 3460 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46"
+5.183.209.244 - - [06/Jun/2025:11:40:25 +0000] "GET / HTTP/1.1" 200 10926 "-" "-

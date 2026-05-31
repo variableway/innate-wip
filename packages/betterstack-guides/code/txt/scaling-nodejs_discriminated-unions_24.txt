@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/discriminated-unions/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+User 42 logged in at 2025-12-01T09:27:39.328Z
+User 42 logged out after 3600s
+Page view: /dashboard from /home

@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 17
+
+Now, the `name` field must adhere to multiple requirements. It must be between 3 and 50 characters in length, ensuring that names are neither too short nor excessively long. 
+
+Additionally, it can only contain letters and spaces, preventing the use of numbers, special characters, or symbols.
+
+Next, update the `invalidUserData` object to include a name with numbers:

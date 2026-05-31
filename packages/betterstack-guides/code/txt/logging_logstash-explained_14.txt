@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Using bundled JDK: /usr/share/logstash/jdk
+Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties
+[2025-06-04T10:17:08,594][INFO ][logstash.runner          ] Log4j configuration path used is: /usr/share/logstash/config/log4j2.properties
+[2025-06-04T10:17:08,604][INFO ][logstash.runner          ] Starting Logstash {"logstash.version"=>"9.0.1", "jruby.version"=>"jruby 9.4.9.0 (3.1.4) 2024-11-04 547c6b150e OpenJDK 64-Bit Server VM 21.0.7+6-LTS on 21.0.7+6-LTS +indy +jit [x86_64-linux]"}
+...
+[2025-06-04T10:17:11,753][INFO ][logstash.inputs.file     ][main] No sincedb_path set, generating one based on the "path" setting {:sincedb_path=>"/usr/share/logstash/data/plugins/inputs/file/.sincedb_6ff35dd80a4f58587f6a15aac8621421", :path=>["/var/log/logify/app.log"]}
+[2025-06-04T10:17:11,757][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=>"main"}
+[2025-06-04T10:17:11,776][INFO ][filewatch.observingtail  ][main][c9f2074a79168ce5100234aafffb333e5a1e3150160bd36abd7c699e62cd0a03] START, creating Discoverer, Watch with file and sincedb collections
+[2025-06-04T10:17:11,782][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}

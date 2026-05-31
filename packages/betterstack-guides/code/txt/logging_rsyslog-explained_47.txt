@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+rsyslogd: version 8.2312.0, config validation run (level 1), master config /etc/rsyslog.d/70-logtail.conf
+rsyslogd: End of config validation run. Bye.

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+INFO 127.0.0.1:52301 - "GET /docs HTTP/1.1" 200
+INFO 127.0.0.1:52301 - "GET /openapi.json HTTP/1.1" 200
+INFO 127.0.0.1:52303 - "GET / HTTP/1.1" 200
+INFO 127.0.0.1:52303 - "GET /favicon.ico HTTP/1.1" 404
+INFO 127.0.0.1:52324 - "GET /items HTTP/1.1" 307
+INFO 127.0.0.1:52324 - "GET /items/ HTTP/1.1" 200
+INFO 127.0.0.1:52324 - "GET /favicon.ico HTTP/1.1" 404

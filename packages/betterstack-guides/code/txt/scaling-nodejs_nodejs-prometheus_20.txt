@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{method="GET",route="/"} 1
+...

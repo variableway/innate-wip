@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/json-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+2023-07-30 08:31:50.628 UTC [2176] postgres@chinook LOG:  statement: select albumid, title from album where artistid = 2;

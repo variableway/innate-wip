@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-vs-bun-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+// tsconfig.json - Advanced TypeScript features
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "config": ["./config.ts"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}

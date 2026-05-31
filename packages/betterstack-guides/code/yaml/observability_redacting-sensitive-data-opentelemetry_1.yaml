@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 1
+
+processors:
+  redaction/allowlist:
+    allow_all_keys: false
+    allowed_keys:
+      - http.method
+      - http.url
+      - http.status_code

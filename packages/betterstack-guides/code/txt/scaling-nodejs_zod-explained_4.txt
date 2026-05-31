@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 4
+
+Now, once the main file is created, you can execute the project using:

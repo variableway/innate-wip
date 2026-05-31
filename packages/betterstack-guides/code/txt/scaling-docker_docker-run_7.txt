@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-run/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
+556d36710c4c   nginx     "/docker-entrypoint.…"   2 seconds ago   Up 1 second   80/tcp    sleepy_moore

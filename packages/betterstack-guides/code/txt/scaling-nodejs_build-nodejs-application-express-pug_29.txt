@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/build-nodejs-application-express-pug/
+# Original language: txt
+# Normalized: txt
+# Block index: 29
+
+[output]
+> hacker-news@1.0.0 start
+> npx pm2 start server.js
+
+[PM2] Starting /home/ayo/dev/demo/hacker-news/server.js in fork_mode (1 instance)
+[PM2] Done.
+┌─────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼───────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ server    │ default     │ 1.0.0   │ fork    │ 24985    │ 0s     │ 0    │ online    │ 0%       │ 20.3mb   │ ayo      │ disabled │
+└─────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

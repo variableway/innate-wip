@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[label /etc/fluent-bit/fluent-bit.conf]
+[SERVICE]
+    Flush        1
+    Daemon       off
+    Log_Level    debug
+
+[INPUT]
+    Name         tail
+    Path         /var/log/nginx/access.log
+    Tag          filelogs
+
+[OUTPUT]
+    Name         stdout
+    Match        filelogs

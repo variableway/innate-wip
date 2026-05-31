@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+http://localhost:9100/metrics

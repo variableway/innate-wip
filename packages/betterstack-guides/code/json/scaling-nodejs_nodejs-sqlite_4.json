@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-sqlite/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[label package.json]
+{
+  "name": "book-inventory",
+  "version": "1.0.0",
+  "description": "Book inventory using Node.js native SQLite",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --watch --experimental-sqlite server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[label crontab]
+0 2 * * * (date; /path/to/your/script.sh) >> /var/log/custom_scripts.log 2>&1

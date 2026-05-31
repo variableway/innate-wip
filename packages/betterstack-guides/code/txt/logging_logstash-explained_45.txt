@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[label log-processing-stack/logstash/config/container-logs.conf]
+input {
+  gelf {
+    port => 5000
+  }
+}
+
+filter {
+  if [tag] == "docker.logify" {
+    mutate { add_tag => "docker_logify" }
+  }
+}
+
+output {
+  if "docker_logify" in [tags] {
+    http {
+      url => "https://<your_logify_ingesting_host>"
+      http_method => "post"
+      headers => {
+        "Authorization" => "Bearer <your_logify_source_token>"
+      }
+      format => "json"
+    }
+  }
+  
+  # Also output to console for verification
+  stdout {
+    codec => rubydebug
+  }
+}

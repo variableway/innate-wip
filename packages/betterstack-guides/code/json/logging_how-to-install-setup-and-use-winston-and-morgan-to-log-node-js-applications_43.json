@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 43
+
+[output]
+{"date":"Mon Jun 06 2022 14:00:03 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: An uncaught error\nError: An uncaught error\n    at Object.<anonymous> (/home/ayo/winston-logging/index.js:15:7)\n    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Module._load (node:internal/modules/cjs/loader:827:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47","os":{"loadavg":[1.75,0.82,0.95],"uptime":271655.58},"process":{"argv":[". . ."],"cwd":"/home/ayo/dev/betterstack/betterstack-community/demo/snippets","execPath":"/home/ayo/.volta/tools/image/node/18.1.0/bin/node","gid":1000,"memoryUsage":{"arrayBuffers":110487,"external":465350,"heapTotal":11141120,"heapUsed":7620128,"rss":47464448},"pid":421995,"uid":1000,"version":"v18.1.0"},"stack":". . .","trace":[. . .]}

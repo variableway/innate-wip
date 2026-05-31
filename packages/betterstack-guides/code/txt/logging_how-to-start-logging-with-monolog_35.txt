@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 35
+
+[output]
+{"message":"The username eric is too short.","context":{"exception":{"class":"Exception","message":"The username eric is too short.","code":0,"file":"C:\\Users\\Eric\\Documents\\Better Stack\\monlog-logging\\exception.php:20"}},"level":400,"level_name":"ERROR","channel":"exceptions","datetime":"2022-08-01T23:15:03.475664+02:00","extra":{}}

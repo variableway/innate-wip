@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 22
+
+The `error.errors` array contains detailed validation issues, each with:
+
+- `code`: The type of error (e.g., `too_small`, `invalid_string`)
+- `message`: The error message
+- `path`: The field where the error occurred
+- Additional context-specific properties like `minimum` for length validations
+
+
+## Mapping validation errors
+
+In the previous section, you saw Zod's raw error format, which can be verbose and complex when handling validation errors. The raw format includes an array of error objects containing the error code, message, path, and additional validation-specific properties. 
+
+While this detailed format is helpful for debugging, it's often too complex to display to users or handle in application logic.
+
+Let's create a helper function that maps these detailed error objects to a simple field-message structure:

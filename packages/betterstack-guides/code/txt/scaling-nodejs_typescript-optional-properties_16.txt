@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-optional-properties/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Profile 1 bio: undefined
+Profile 1 avatar: null
+Profile 2 bio: Developer
+
+JSON representation:
+{"username":"alice","avatar":null}
+{"username":"bob","bio":"Developer","avatar":"avatar.jpg"}

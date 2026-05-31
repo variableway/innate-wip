@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-with-hapi-js/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+{
+  "data": {
+    "books": [
+      {
+        "id": "1",
+        "title": "1984",
+        "publishedYear": 1949,
+        "author": {
+          "name": "George Orwell",
+          "email": "george@orwell.com"
+        }
+      },
+      {
+        "id": "2",
+        "title": "Fahrenheit 451",
+        "publishedYear": 1953,
+        "author": {
+          "name": "Ray Bradbury",
+          "email": "ray@bradbury.com"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 22
+
+[label alertmanager.yml]
+inhibit_rules:
+  - source_matchers:
+      - inhibit="true"
+    target_matchers:
+      - inhibited="true"

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+# HELP system_uptime_seconds The system uptime in seconds
+# TYPE system_uptime_seconds gauge
+system_uptime_seconds 1346404.27

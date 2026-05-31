@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+NS             TYPE   NPROCS    PID USER   COMMAND
+4026531837     user        4  98786 marin  /lib/systemd/systemd --user
+├─4026531834   time       10  98786 marin  /lib/systemd/systemd --user
+└─4026532337   user        6  99106 marin  catatonit -P
+  ├─4026532340 net         2 100589 marin  /catatonit -P
+  ├─4026532403 uts         2 100589 marin  /catatonit -P
+  ├─4026532404 ipc         2 100589 marin  /catatonit -P
+  ├─4026532407 mnt         1 100594 165531 /http-echo
+  ├─4026532408 pid         1 100594 165531 /http-echo
+  └─4026532409 cgroup      1 100594 165531 /http-echo

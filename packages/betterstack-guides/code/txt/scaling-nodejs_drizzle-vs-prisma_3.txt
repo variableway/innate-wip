@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-vs-prisma/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[label schema.prisma]
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  profile   Profile?
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+}

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/understanding-content-security-policy/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+Content-Security-Policy: default-src 'self'; script-src 'self' https://analytics.example.com; style-src 'self' https://fonts.googleapis.com;

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 56
+
+[output]
+{"level":"info","ts":1684613929.8395753,"msg":"incoming request","method":"GET","path":"/api/user","status":200}

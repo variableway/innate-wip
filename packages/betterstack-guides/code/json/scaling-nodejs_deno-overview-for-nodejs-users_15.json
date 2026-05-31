@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[label deno.json]
+{
+  "imports": {
+    "std/assert": "jsr:@std/assert@^1.0.0"
+  },
+  "tasks": {
+    "dev": "deno run --watch app.ts"
+  }
+}

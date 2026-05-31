@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+. . .
+LOG:  redirecting log output to logging collector process
+HINT:  Future log output will appear in directory "log".

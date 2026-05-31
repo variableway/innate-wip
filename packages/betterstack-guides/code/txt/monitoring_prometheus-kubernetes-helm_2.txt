@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "prometheus-community" chart repository
+Update Complete. ⎈Happy Helming!⎈

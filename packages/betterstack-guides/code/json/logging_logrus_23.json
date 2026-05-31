@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+[output]
+{"error":"something went wrong","level":"error","msg":"Failed to process request","time":"2025-03-09T10:25:17+01:00"}
+{"error":"something went wrong","level":"error","msg":"Failed to process request","time":"2025-03-09T10:25:17+01:00"}
+{"context":"user lookup","error":"something went wrong","level":"error","msg":"User data could not be retrieved","time":"2025-03-09T10:
+25:17+01:00","user_id":123}
+{"error":"critical subsystem failure","level":"fatal","msg":"System cannot continue","time":"2025-03-09T10:25:17+01:00"}
+exit status 1

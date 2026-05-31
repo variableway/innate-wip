@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[label /etc/rsyslog.d/51-rsyslog-logify.conf]
+...
+input(type="imfile"
+      File="/var/log/logify/app.log"
+      Tag="FileLogs"
+      PersistStateInterval="10"
+      Facility="local0")
+
+[highlight]
+template(name="json-template" type="list" option.jsonf="on") {
+    property(outname="@timestamp" name="timereported" dateFormat="rfc3339" format="jsonf")
+    property(outname="host" name="hostname" format="jsonf")
+    property(outname="severity" name="syslogseverity" caseConversion="upper" format="jsonf" datatype="number")
+    property(outname="facility" name="syslogfacility" format="jsonf" datatype="number")
+    property(outname="syslog-tag" name="syslogtag" format="jsonf")
+    property(outname="source" name="app-name" format="jsonf" onEmpty="null")
+    property(outname="message" name="msg" format="jsonf")
+}
+[/highlight]
+
+if $syslogtag == 'FileLogs' then {
+    action(
+        type="omfile"
+        file="/var/log/syslog"
+[highlight]
+        template="json-template"
+[/highlight]
+    )
+}

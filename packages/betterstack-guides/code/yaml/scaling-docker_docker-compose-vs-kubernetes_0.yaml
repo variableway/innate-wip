@@ -1,0 +1,45 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+[label compose.yaml]
+services:
+ web:
+   image: nginx:latest
+   ports:
+     - "8080:80"
+   volumes:
+     - ./website:/usr/share/nginx/html
+   depends_on:
+     - app
+   networks:
+     - frontend
+     - backend
+
+ app:
+   build: ./app
+   environment:
+     - DATABASE_URL=postgres://postgres:password@db:5432/mydb
+   depends_on:
+     - db
+   networks:
+     - backend
+
+ db:
+   image: postgres:15
+   environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=password
+     - POSTGRES_DB=mydb
+   volumes:
+     - postgres_data:/var/lib/postgresql/data
+   networks:
+     - backend
+
+networks:
+ frontend:
+ backend:
+
+volumes:
+ postgres_data:

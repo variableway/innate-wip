@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 19
+
+[output]
+LogFormat "%t %H %m %U %q %I %>s %O %{ms}T" custom

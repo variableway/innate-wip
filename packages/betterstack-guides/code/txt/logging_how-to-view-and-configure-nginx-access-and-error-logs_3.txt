@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+. . .
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2025/05/27 14:47:59 [notice] 1#1: using the "epoll" event method
+2025/05/27 14:47:59 [notice] 1#1: nginx/1.27.0
+2025/05/27 14:47:59 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2025/05/27 14:47:59 [notice] 1#1: OS: Linux 6.9.12-200.fc40.x86_64
+2025/05/27 14:47:59 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1073741816:1073741816
+2025/05/27 14:47:59 [notice] 1#1: start worker processes
+2025/05/27 14:47:59 [notice] 1#1: start worker process 29

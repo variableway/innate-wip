@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/docker-compose-logs/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+{"appname":"AmbientTech","message":"Great Scott! We're never gonna reach 88 mph...","severity":"info","timestamp":"2024-12-27T15:30:15.446Z"}

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[label Caddyfile]
+format filter {
+	fields {
+		<field> <filter> ...
+	}
+	<field> <filter> ...
+	wrap <encode_module> ...
+}

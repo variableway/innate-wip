@@ -1,0 +1,44 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+Metric #5
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests
+     -> Unit:
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> path: Str(/)
+     -> status: Str(200)
+StartTimestamp: 2024-11-28 16:18:13.804 +0000 UTC
+Timestamp: 2024-11-28 16:25:43.804 +0000 UTC
+Count: 121
+Sum: 51.009394
+ExplicitBounds #0: 0.005000
+ExplicitBounds #1: 0.010000
+ExplicitBounds #2: 0.025000
+ExplicitBounds #3: 0.050000
+ExplicitBounds #4: 0.100000
+ExplicitBounds #5: 0.250000
+ExplicitBounds #6: 0.500000
+ExplicitBounds #7: 1.000000
+ExplicitBounds #8: 2.500000
+ExplicitBounds #9: 5.000000
+ExplicitBounds #10: 10.000000
+Buckets #0, Count: 2
+Buckets #1, Count: 0
+Buckets #2, Count: 3
+Buckets #3, Count: 6
+Buckets #4, Count: 7
+Buckets #5, Count: 16
+Buckets #6, Count: 40
+Buckets #7, Count: 47
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0

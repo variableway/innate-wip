@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+[PM2] Starting /home/ayo/dev/demo/dadjokes/server.js in fork_mode (1 instance)
+[PM2] Done.
+┌─────┬─────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name        │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼─────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ dadjokes    │ default     │ 1.0.0   │ fork    │ 1658     │ 0s     │ 0    │ online    │ 0%       │ 18.3mb   │ ayo      │ disabled │
+└─────┴─────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

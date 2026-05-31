@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+[Error: EISDIR: illegal operation on a directory, read] {
+  errno: -21,
+  code: 'EISDIR',
+  syscall: 'read'
+}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: txt
+# Normalized: txt
+# Block index: 0
+
+--storage.tsdb.retention.time    # How long to keep your data
+--storage.tsdb.retention.size    # Maximum size allowed for storage

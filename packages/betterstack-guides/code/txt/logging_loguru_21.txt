@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+{"text": "May 23, 2025 > 12:26:56 | DEBUG | Happy logging with Loguru!\n", "record": {"elapsed": {"repr": "0:00:00.008704", "seconds": 0.008704}, "exception": null, "extra": {}, "file": {"name": "app.py", "path": "/home/eric/loguru-demo/app.py"}, "function": "<module>", "level": {"icon": "🐞", "name": "DEBUG", "no": 10}, "line": 11, "message": "Happy logging with Loguru!", "module": "app", "name": "__main__", "process": {"id": 44959, "name": "MainProcess"}, "thread": {"id": 8498575424, "name": "MainThread"}, "time": {"repr": "2025-05-23 14:26:56.042220+02:00", "timestamp": 1748003216.04222}}}

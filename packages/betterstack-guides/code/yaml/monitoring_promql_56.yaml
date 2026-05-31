@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/monitoring/promql/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 56
+
+[label alerts.yml]
+groups:
+- name: HighCPUAlert
+  rules:
+  - alert: HighCPUUsage
+[highlight]
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+[/highlight]
+    for: 10m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High CPU usage on {{ $labels.instance }}"
+      description: "CPU usage on {{ $labels.instance 1 }} is above 80% for more than 10 minutes."

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: json
+# Normalized: json
+# Block index: 41
+
+[output]
+{
+    "id": "692381d2-9397-4eac-9b97-32598d648475",
+    "title": "Updated Blog Post Title",
+    "content": "This content has been updated. Litestar makes updating API resources easy!",
+    "created_at": "2025-03-12T10:42:35.700944",
+    "updated_at": "2025-03-12T11:25:06.677273",
+    "published": false
+}

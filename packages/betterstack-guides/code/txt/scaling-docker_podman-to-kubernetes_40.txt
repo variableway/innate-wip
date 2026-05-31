@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 40
+
+Error: invalid config provided: published or exposed ports must be defined when the pod is created: network cannot be configured when it is shared with a pod

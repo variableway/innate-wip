@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prettier-vs-eslint/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+line 1: Missing semicolon
+line 2: 'y' is defined but never used
+line 3: Expected '===' and instead saw '=='
+line 5: Missing semicolon

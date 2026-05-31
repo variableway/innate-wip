@@ -1,0 +1,83 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+{
+  descriptor: {
+[highlight]
+    name: 'http.server.duration',
+[/highlight]
+    type: 'HISTOGRAM',
+    description: 'Measures the duration of inbound HTTP requests.',
+    unit: 'ms',
+    valueType: 1,
+    advice: {}
+  },
+  dataPointType: 0,
+  dataPoints: [
+    {
+      attributes: {. . .},
+      startTime: [ 1731050420, 601000000 ],
+      endTime: [ 1731050423, 231000000 ],
+      value: {
+        min: 4.938558,
+        max: 4.938558,
+        sum: 4.938558,
+        buckets: {
+          boundaries: [
+               0,    5,    10,   25,
+              50,   75,   100,  250,
+             500,  750,  1000, 2500,
+            5000, 7500, 10000
+          ],
+          counts: [
+            0, 1, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0
+          ]
+        },
+        count: 1
+      }
+    }
+  ]
+}
+{
+  descriptor: {
+[highlight]
+    name: 'http.client.duration',
+[/highlight]
+    type: 'HISTOGRAM',
+    description: 'Measures the duration of outbound HTTP requests.',
+    unit: 'ms',
+    valueType: 1,
+    advice: {}
+  },
+  dataPointType: 0,
+  dataPoints: [
+    {
+      attributes: { 'http.method': 'POST', 'net.peer.name': 'localhost' },
+      startTime: [ 1731062189, 890000000 ],
+      endTime: [ 1731062197, 316000000 ],
+      value: {
+        min: 5.970701,
+        max: 5.970701,
+        sum: 5.970701,
+        buckets: {
+          boundaries: [
+               0,    5,    10,   25,
+              50,   75,   100,  250,
+             500,  750,  1000, 2500,
+            5000, 7500, 10000
+          ],
+          counts: [
+            0, 0, 1, 0, 0, 0,
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0
+          ]
+        },
+        count: 1
+      }
+    }
+  ]
+}

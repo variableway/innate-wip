@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/express-validator-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+{"errors":[{"type":"field","value":"","msg":"Name is required","path":"name","location":"body"},{"type":"field","value":"not-an-email","msg":"Invalid email address","path":"email","location":"body"},{"type":"field","value":"123","msg":"Password must be at least 8 characters long","path":"password","location":"body"}]}

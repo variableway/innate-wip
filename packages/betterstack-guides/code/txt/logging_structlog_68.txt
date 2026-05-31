@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 68
+
+[output]
+. . .
+2025-06-06T14:26:59.601629Z [debug    ] homepage visited               [worldClock.views] ip=None request_id=92a9237e-e9ee-47c8-835f-d4a598772d0b user_id=None
+. . .

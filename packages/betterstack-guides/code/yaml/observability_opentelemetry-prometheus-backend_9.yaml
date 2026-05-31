@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-prometheus-backend/
+# Original language: yml
+# Normalized: yaml
+# Block index: 9
+
+[label prometheus.yml]
+otlp:
+  promote_resource_attributes:
+    - service.instance.id
+    - service.name
+    - service.namespace
+    - deployment.environment
+    - k8s.namespace.name
+    - k8s.pod.name

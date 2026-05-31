@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 12
+
+[label hpa.yaml]
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+ name: web-app-hpa
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: web-app
+ minReplicas: 3
+ maxReplicas: 10
+ metrics:
+ - type: Resource
+   resource:
+     name: cpu
+     target:
+       type: Utilization
+       averageUtilization: 70

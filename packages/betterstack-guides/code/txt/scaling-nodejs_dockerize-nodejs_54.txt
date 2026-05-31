@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[output]
+[+] Running 3/3
+ ✔ Container url-shortener-db            Created                                                                                                                                         0.0s
+ ✔ Container url-shortener-app           Recreated                                                                                                                                       0.2s
+ ✔ Container url-shortener-caddy-server  Recreated                                                                                                                                       0.1s
+Attaching to url-shortener-app, url-shortener-caddy-server, url-shortener-db
+. . .
+url-shortener-db            | 2024-07-30 14:43:31.061 UTC [1] LOG:  database system is ready to accept connections
+url-shortener-app           |
+[highlight]
+url-shortener-app           | > url-shortener@1.0.0 dev
+url-shortener-app           | > npx nodemon src/server.js
+[/highlight]
+url-shortener-app           |
+. . .
+url-shortener-caddy-server  | {"level":"info","ts":1722350622.1455085,"msg":"serving initial configuration"}
+url-shortener-caddy-server  | {"level":"info","ts":1722350622.152146,"logger":"tls","msg":"storage cleaning happened too recently; skipping for now","storage":"FileStorage:/data/caddy","instance":"4dc8b8de-9c03-44e8-8c5c-3a61aa14c47c","try_again":1722437022.1521447,"try_again_in":86399.999999631}
+url-shortener-caddy-server  | {"level":"info","ts":1722350622.1522992,"logger":"tls","msg":"finished cleaning storage units"}
+[highlight]
+url-shortener-app           | [nodemon] 3.1.4
+url-shortener-app           | [nodemon] to restart at any time, enter `rs`
+url-shortener-app           | [nodemon] watching path(s): *.*
+url-shortener-app           | [nodemon] watching extensions: js,mjs,cjs,json
+url-shortener-app           | [nodemon] starting `node src/server.js`
+[/highlight]
+. . .
+url-shortener-app           | {"level":"info","time":"2024-07-30T14:43:42.459Z","pid":18,"host":"5d53b2894b01","msg":"URL Shortener is running in development mode → PORT http://0.0.0.0:5000"}

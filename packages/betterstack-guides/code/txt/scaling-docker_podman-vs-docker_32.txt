@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 32
+
+[output]
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob 719385e32844 done
+Copying config 9c7a54a9a4 done
+Writing manifest to image destination
+Storing signatures
+9c7a54a9a43cca047013b82af109fe963fde787f63f9e016fdc3384500c2823d

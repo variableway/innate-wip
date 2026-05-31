@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 22
+
+[output]
+{
+  "time": "2023-11-16T09:03:04.631228502+02:00",
+  "level": "INFO",
+  "msg": "user logged in",
+  "user_id": 42
+}
+{
+  "time": "2023-11-16T09:03:04.631353885+02:00",
+  "level": "INFO",
+  "msg": "user deleted doc",
+  "user_id": 42,
+  "doc_id": "DOC-123"
+}
+{
+  "time": "2023-11-16T09:03:04.6313599+02:00",
+  "level": "INFO",
+  "msg": "user logged out",
+  "user_id": 42
+}

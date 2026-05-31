@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 60
+
+[output]
+US format: Thursday, February 6, 2025 at 2:30 PM
+German format: Donnerstag, 6. Februar 2025 um 14:30

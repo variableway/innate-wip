@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions-casting/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+src/problem.ts:5:37 - error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+
+5   console.log("Input value:", input.value);
+                                      ~~~~~
+
+src/problem.ts:6:36 - error TS2339: Property 'type' does not exist on type 'HTMLElement'.
+
+6   console.log("Input type:", input.type);
+                                     ~~~~
+
+
+Found 2 errors in the same file, starting at: src/problem.ts:5

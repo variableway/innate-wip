@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+ID             NAME                IMAGE          NODE        DESIRED STATE   CURRENT STATE               ERROR     PORTS
+ikjo7su8ooo6   nginx_nginx.1       nginx:latest   worker-2    Running         Running 19 minutes ago
+inel921owq9b    \_ nginx_nginx.1   nginx:latest   manager-2   Shutdown        Shutdown 19 minutes ago
+y0y5mvj5n44r   nginx_nginx.2       nginx:latest   worker-1    Running         Running 19 minutes ago
+uk18jo6wwlq6    \_ nginx_nginx.2   nginx:latest   manager-3   Shutdown        Shutdown 19 minutes ago
+ijbalagf7isy   nginx_nginx.3       nginx:latest   worker-1    Running         Running about an hour ago
+drgu007baw8z   nginx_nginx.4       nginx:latest   worker-2    Running         Running about an hour ago

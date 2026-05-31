@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-alternatives-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[label .tool-versions]
+nodejs 16.13.0
+yarn 1.22.17

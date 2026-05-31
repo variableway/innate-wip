@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[output]
+timestamp=2023-07-12T11:50:22.470598627+02:00 level=info message="Hello from Apex logger" app=myapp env=prod
+{"fields":{"app":"myapp","env":"prod"},"level":"info","timestamp":"2023-07-12T11:50:22.470598627+02:00","message":"Hello from Apex logger"}

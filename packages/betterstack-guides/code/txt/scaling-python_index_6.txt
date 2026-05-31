@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-python/index/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+Task A starting
+Task B starting
+Task C starting
+Task B completed after 1 seconds
+Task A completed after 2 seconds
+Task C completed after 3 seconds
+All tasks completed in 3.00 seconds

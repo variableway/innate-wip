@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+-- Logs begin at Fri 2022-02-11 15:34:17 UTC, end at Wed 2022-02-16 21:33:52 UTC. --
+Feb 16 00:00:00 ubuntu-2gb-nbg1-1 vector[74071]: {"appname":"ahmadajmi","facility":"local4","hostname":"we.com","message":"#hugops to everyone who has to deal with this","msgid":"ID844","procid":113,"severity":"alert","timestam>
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: Starting Rotate log files...
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: Starting Daily man-db regeneration...
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 CRON[79633]: pam_unix(cron:session): session opened for user ayo by (uid=0)
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 CRON[79641]: (ayo) CMD (/usr/sbin/logrotate /home/ayo/logrotate.conf --state /home/ayo/custom-state)
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 CRON[79633]: pam_unix(cron:session): session closed for user ayo
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: logrotate.service: Succeeded.
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: Finished Rotate log files.
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 vector[74071]: {"appname":"meln1ks","facility":"ntp","hostname":"make.net","message":"You're not gonna believe what just happened","msgid":"ID477","procid":6062,"severity":"notice","timestamp":>
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: man-db.service: Succeeded.
+Feb 16 00:00:01 ubuntu-2gb-nbg1-1 systemd[1]: Finished Daily man-db regeneration.
+Feb 16 00:00:02 ubuntu-2gb-nbg1-1 vector[74071]: {"appname":"shaneIxD","facility":"daemon","hostname":"names.com","message":"Take a breath, let it go, walk away","msgid":"ID74","procid":1031,"severity":"notice","timestamp":"202>

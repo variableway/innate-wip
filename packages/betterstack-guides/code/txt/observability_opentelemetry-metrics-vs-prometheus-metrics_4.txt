@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+Metric #7
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests received
+     -> Unit:
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> path: Str(/)
+     -> status: Str(200)
+StartTimestamp: 2024-11-28 16:18:13.804 +0000 UTC
+Timestamp: 2024-11-28 16:25:43.804 +0000 UTC
+Value: 121.000000

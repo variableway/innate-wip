@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 55
+
+[label prometheus.yml]
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["localhost:9090"]
+  - job_name: "movies-app"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["host.docker.internal:3000"]
+
+[highlight]
+rule_files:
+  - "/etc/prometheus/rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - "alertmanager:9093"
+[/highlight]

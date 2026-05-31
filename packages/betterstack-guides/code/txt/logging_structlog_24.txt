@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+2025-06-06T13:55:40.717123Z [info     ] An info message

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 35
+
+[output]
+[Fri Jun 06 12:22:02.458723 2025] [core:notice] [pid 844354:tid 124116142696320] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Jun 06 12:24:59.735074 2025] [mpm_event:notice] [pid 844354:tid 124116142696320] AH00492: caught SIGWINCH, shutting down gracefully
+[Fri Jun 06 12:24:59.843106 2025] [mpm_event:notice] [pid 844628:tid 134591834847104] AH00489: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Fri Jun 06 12:24:59.843448 2025] [core:notice] [pid 844628:tid 134591834847104] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Jun 06 12:32:03.858576 2025] [mpm_event:notice] [pid 844628:tid 134591834847104] AH00492: caught SIGWINCH, shutting down gracefully
+[Fri Jun 06 12:32:03.976519 2025] [mpm_event:notice] [pid 845198:tid 139909693675392] AH00489: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Fri Jun 06 12:32:03.976851 2025] [core:notice] [pid 845198:tid 139909693675392] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Jun 06 12:35:23.598168 2025] [mpm_event:notice] [pid 845198:tid 139909693675392] AH00492: caught SIGWINCH, shutting down gracefully

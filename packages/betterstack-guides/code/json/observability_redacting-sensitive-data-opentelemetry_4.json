@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+{
+  "span": {
+      "attributes": {
+        "http.method": "GET",
+        [highlight]
+        "http.url": "https://example.com/posts/1?client_id=test-id&client_secret=cd76c726-cdbd-4951-8d60-f67770236661",
+        [/highlight]
+        "net.peer.name": "example.com",
+        "user_agent.original": "go-resty/2.14.0 (https://github.com/go-resty/resty)",
+        "http.status_code": 200
+      }
+  }
+}

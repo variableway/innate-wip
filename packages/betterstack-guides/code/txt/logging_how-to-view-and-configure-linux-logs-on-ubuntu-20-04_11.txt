@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 11
+
+[output]
+-rw-r----- 1 syslog adm  47K mar 30 09:49 /var/log/syslog
+-rw-r----- 1 syslog adm 3,5G mar 30 07:45 /var/log/syslog.1.gz
+-rw-r----- 1 syslog adm 1,6M mar 29 10:06 /var/log/syslog.2.gz
+-rw-r----- 1 syslog adm  29K mar 28 07:49 /var/log/syslog.3.gz
+-rw-r----- 1 syslog adm  54K mar 27 08:08 /var/log/syslog.4.gz
+-rw-r----- 1 syslog adm 6,4M mar 26 07:35 /var/log/syslog.5.gz
+-rw-r----- 1 syslog adm  31K mar 25 08:01 /var/log/syslog.6.gz

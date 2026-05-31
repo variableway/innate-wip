@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 10
+
+Each validator adds a specific rule:
+
+- `size(string(), 3, 20)`: Username must be 3-20 characters long
+- `pattern(string(), /^[^\s@]+@[^\s@]+\.[^\s@]+$/)`: Email must match a valid email pattern
+- `size(string(), 8, 50)`: Password must be 8-50 characters long
+- `pattern(string(), regex)`: Phone number must match the pattern
+
+Test these rules with invalid data. Update your `index.ts` file:

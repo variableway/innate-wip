@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+< Debugger listening on ws://127.0.0.1:9229/2f6b1ece-11f3-4244-9fa0-1ad001285090
+< For help, see: https://nodejs.org/en/docs/inspector
+<
+connecting to 127.0.0.1:9229 ... ok
+< Debugger attached.
+<
+break in index.js:6
+  4
+  5   for (let i = 2; i <= max; ++i) {
+> 6     debugger;
+  7     if (!sieve[i]) {
+  8       primes.push(i);

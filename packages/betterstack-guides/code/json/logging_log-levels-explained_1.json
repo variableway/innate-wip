@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/log-levels-explained/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+[output]
+{"level":"fatal","time":1685998234741,"env":"production","err":{"type":"Error","message":"no space available for write operations","stack":"Error: no space available for write operations\n    at Object.<anonymous> (/home/ayo/dev/betterstack/demo/nodejs-logging/index.js:21:3)\n    at Module._compile (node:internal/modules/cjs/loader:1254:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)\n    at Module.load (node:internal/modules/cjs/loader:1117:32)\n    at Module._load (node:internal/modules/cjs/loader:958:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n    at node:internal/main/run_main_module:23:47"},"msg":"Disk space critically low"}

@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/logging-framework/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{
+  "level": "error",
+  "time": 1643706943924,
+  "pid": 13185,
+  "hostname": "Kreig",
+  "err": {
+    "type": "Error",
+    "message": "ValidationError: email address in invalid",
+    "stack": "Error: ValidationError: email address in invalid\n    at Object.<anonymous> (/home/ayo/dev/betterstack/demo/snippets/main.js:3:14)\n    at Module._compile (node:internal/modules/cjs/loader:1097:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1149:10)\n    at Module.load (node:internal/modules/cjs/loader:975:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n    at node:internal/main/run_main_module:17:47"
+  },
+  "msg": "ValidationError: email address in invalid"
+}

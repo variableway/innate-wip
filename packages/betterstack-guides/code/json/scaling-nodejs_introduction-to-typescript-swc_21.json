@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-typescript-swc/
+# Original language: json
+# Normalized: json
+# Block index: 21
+
+[label package.json]
+{
+  "scripts": {
+    "build": "swc src -d dist --copy-files --strip-leading-paths",
+    "build:watch": "swc src -d dist --watch --copy-files --strip-leading-paths",
+    "type-check": "tsc --noEmit",
+    "build:production": "npm run type-check && npm run build",
+    "dev": "npm run build && node dist/index.js",
+[highlight]
+    "test": "vitest run",
+    "test:watch": "vitest",
+[/highlight]
+    "clean": "rm -rf dist"
+  }
+}

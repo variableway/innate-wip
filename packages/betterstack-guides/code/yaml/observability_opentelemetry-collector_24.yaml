@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 24
+
+service:
+  telemetry:
+    traces:
+      processors:
+        batch:
+          exporter:
+            otlp:
+              protocol: grpc/protobuf
+              endpoint: jaeger:4317

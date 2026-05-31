@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-vs-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[label service.yaml]
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: myapp-service
+   spec:
+     selector:
+       app: myapp
+     ports:
+     - port: 80
+       targetPort: 8080
+     type: LoadBalancer

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 30
+
+The output confirms that both resources have been created:

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/execa-cli/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Command: ls -la
+Exit code: 0
+Output: total 40
+drwxr-xr-x@  6 stanley  group   192 Apr  8 13:29 .
+drwxr-xr-x@  4 stanley  group   128 Apr  8 13:28 ..
+-rw-r--r--@  1 stanley  group   423 Apr  8 13:32 index.js
+drwxr-xr-x@ 26 stanley  group   832 Apr  8 13:29 node_modules
+-rw-r--r--@  1 stanley  group  9983 Apr  8 13:29 package-lock.json
+-rw-r--r--@  1 stanley  group   291 Apr  8 13:29 package.json
+Error output:

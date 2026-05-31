@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 10
+
+Here's what each constraint does:
+
+- `.min(3, "Message")`: Ensures that `name` has at least 3 characters.
+- `.int()`: Ensures that `age` is an integer.
+- `.positive("Message")`: Ensures that `age` is a positive number.
+- `.email("Message")`: Ensures that `email` is in a valid format.
+- `.min(8, "Message")`: Ensures that `password` is at least 8 characters long.
+
+To test these constraints, modify the `index.ts` file to include invalid data:

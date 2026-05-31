@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-volumes/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+[{volume 8a7f02923b9a13a3c991ebf119bf1a2c4d968a91ef9730e0c4762a57d17a1234 /var/lib/docker/volumes/8a7f02923b9a13a3c991ebf119bf1a2c4d968a91ef9730e0c4762a57d17a1234/_data /var/lib/postgresql/data local  true }]

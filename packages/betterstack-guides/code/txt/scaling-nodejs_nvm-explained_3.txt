@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+
+Downloading and installing node v23.10.0...
+Downloading https://nodejs.org/dist/v23.10.0/node-v23.10.0-darwin-arm64.tar.xz...
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v23.10.0 (npm v10.9.2)

@@ -1,0 +1,44 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-fastify/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+{
+  "data": {
+    "projects": [
+      {
+        "id": "1",
+        "title": "Mobile App",
+        "owner": {
+          "name": "Alex Chen",
+          "email": "alex@example.com"
+        },
+        "tasks": [
+          {
+            "title": "Setup authentication",
+            "completed": false
+          },
+          {
+            "title": "Design user interface",
+            "completed": true
+          }
+        ]
+      },
+...
+      {
+        "id": "3",
+        "title": "API Gateway",
+        "owner": {
+          "name": "Alex Chen",
+          "email": "alex@example.com"
+        },
+        "tasks": [
+          {
+            "title": "Configure routing",
+            "completed": false
+          }
+        ]
+      }
+    ]
+  }
+}

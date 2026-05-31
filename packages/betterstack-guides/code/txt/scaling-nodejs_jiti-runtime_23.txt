@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/jiti-runtime/
+# Original language: text
+# Normalized: txt
+# Block index: 23
+
+[output]
+jiti] [init] version: 2.5.1 module-cache: true fs-cache: true rebuild-fs-cache: false interop-defaults: true
+[jiti] [init] version: 2.5.1 module-cache: true fs-cache: false rebuild-fs-cache: false interop-defaults: true
+[jiti] [cache] [hit] ./example.ts ~> /var/folders/rr/372_1g9j1cbd1_zhrcc13s8m0000gn/T/jiti/jiti-demo-example.4f2e888f.cjs
+[jiti] [transpile] [cjs] ./example.ts (1.267ms)
+First load (cached): 3.184ms
+Second load (cached): 0.196ms
+First load (uncached): 0.08ms
+Second load (uncached): 0.071ms

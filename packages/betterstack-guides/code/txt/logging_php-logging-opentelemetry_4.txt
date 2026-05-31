@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+ ✔ Container otel-php-logging-postmark-1             Healthy    32.6s
+ ✔ Container otel-php-logging-jaeger-1               Healthy    32.6s
+ ✔ Container otel-php-logging-queue-1                Healthy    32.6s
+ ✔ Container otel-php-logging-mailgun-1              Healthy    32.6s
+ ✔ Container otel-php-logging-collector-1            Started    31.1s
+ ✔ Container otel-php-logging-cms-1                  Started    32.0s
+ ✔ Container otel-php-logging-producer-1             Started    32.0s
+ ✔ Container otel-php-logging-notification-engine-1  Started    32.7s

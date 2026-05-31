@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rate-limiting-express/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Access-Control-Allow-Credentials: true
+RateLimit-Policy: 50;w=300
+RateLimit-Limit: 50
+RateLimit-Remaining: 49
+RateLimit-Reset: 300
+Content-Type: application/json; charset=utf-8
+...
+{"users":[{"id":1,"name":"John Doe","email":"john@example.com"},{"id":2,"name":"Jane Smith","email":"jane@example.com"}],"total":2,"requestId":"4795edym6"}%

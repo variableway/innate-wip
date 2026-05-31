@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/esbuild-vs-vite/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[label package.json]
+{
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  }
+}

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 55
+
+[output]
+fluent-bit  | [{"date":1748597844.0,"container_id":"dc9535d28c625e35b7bbfd7425bbcf7edfca98b2a704e1ea8798031c44456776","container_name":"/logify","source":"stdout","log":"{\"status\": \"200\", \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Initialized application\", \"pid\": 1, \"ssn\": \"407-01-2433\", \"timestamp\": 1748597844}"}]
+fluent-bit  | [{"date":1748597847.0,"container_id":"dc9535d28c625e35b7bbfd7425bbcf7edfca98b2a704e1ea8798031c44456776","container_name":"/logify","source":"stdout","log":"{\"status\": \"200\", \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Operation finished\", \"pid\": 1, \"ssn\": \"407-01-2433\", \"timestamp\": 1748597847}"}]

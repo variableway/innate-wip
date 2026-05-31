@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-explained/
+# Original language: json
+# Normalized: json
+# Block index: 6
+
+"plugins": ["react", "unicorn", "typescript", "oxc"]

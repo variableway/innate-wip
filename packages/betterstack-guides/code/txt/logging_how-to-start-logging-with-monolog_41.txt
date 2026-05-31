@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+{"message":"Uncaught exception","context":{"exception":{"class":"Error","message":"Call to undefined method emptyClass::one()","code":0,"file":"C:\\Users\\Eric\\Documents\\Better Stack\\monlog-logging\\exception.php:27"}},"level":400,"level_name":"ERROR","channel":"uncaught","datetime":"2022-08-02T00:00:34.004608+02:00","extra":{}}

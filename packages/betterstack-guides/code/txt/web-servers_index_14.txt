@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Error response from daemon: driver failed programming external connectivity on endpoint caddy (b555101cb58677dc7e017d23747f326a978a6ea920955d3131432d700a5e843f): Bind for 0.0.0.0:80 failed: port is already allocated

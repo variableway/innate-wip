@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+src/server.ts:76:27 - error TS18046: 'data' is of type 'unknown'.
+
+76       lastUpdated: format(data.timestamp, 'LLL dd, yyyy hh:mm:ss a O'),
+                             ~~~~
+
+Found 2 errors in the same file, starting at: src/server.ts:31

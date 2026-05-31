@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 15
+
+[output]
+127.0.0.1 alice Alice [06/June/2025:11:26:42 +0200] "GET / HTTP/1.1" 200 3477

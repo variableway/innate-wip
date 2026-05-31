@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 52
+
+[output]
+{
+  "time": "2024-01-02T14:13:44.41886393+01:00",
+  "level": "ERROR",
+  "msg": "upload failed",
+  "error": "something happened"
+}

@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+src/double.ts:12:13 - error TS2352: Conversion of type 'Cat' to type 'Dog' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'bark' is missing in type 'Cat' but required in type 'Dog'.
+
+12 const dog = cat as Dog;
+            ~~~~~~~~~~
+
+  src/double.ts:6:3
+    6   bark(): void;
+        ~~~~~~~~~~~~~
+    'bark' is declared here.
+
+Found 1 error in src/double.ts:12

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+[Error: ENOTDIR: not a directory, opendir '/etc/passwd'] {
+  errno: -20,
+  code: 'ENOTDIR',
+  syscall: 'opendir',
+  path: '/etc/passwd'
+}

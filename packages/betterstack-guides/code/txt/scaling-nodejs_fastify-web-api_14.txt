@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+Restarting 'app.js'
+Database connection established successfully.
+[11:54:59 UTC] INFO: Server listening at http://127.0.0.1:3000
+[11:54:59 UTC] INFO: Server listening at http://192.168.1.167:3000

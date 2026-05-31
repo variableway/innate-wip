@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: text
+# Normalized: txt
+# Block index: 31
+
+[output]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       100G   85G   15G  85% /

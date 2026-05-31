@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 36
+
+[output]
+2023-04-18 13:59:14.436080 I [249876:60] MyApp -- Hello from semantic logger

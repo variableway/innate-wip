@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[label deno.json]
+{
+  "vendor": true
+}

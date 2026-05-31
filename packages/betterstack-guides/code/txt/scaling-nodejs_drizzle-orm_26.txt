@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+==== All Books ====
+TypeScript Programming by Boris Cherny, $32.99
+Node.js Design Patterns by Mario Casciaro, $39.99
+Learning Drizzle ORM by John Smith, $29.5
+SQL Database Design by Alice Johnson, $34.95

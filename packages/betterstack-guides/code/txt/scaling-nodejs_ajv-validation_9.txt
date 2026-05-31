@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ajv-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Validation errors: [
+  {
+    instancePath: '/age',
+    schemaPath: '#/properties/age/type',
+    keyword: 'type',
+    params: { type: 'integer' },
+    message: 'must be integer'
+  }
+]

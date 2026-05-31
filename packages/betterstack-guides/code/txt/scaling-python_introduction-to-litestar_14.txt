@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-litestar/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [26658] using WatchFiles
+INFO:     Started server process [26662]
+INFO:     Waiting for application startup.
+2025-03-12 12:19:30,059 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-12 12:19:30,059 INFO sqlalchemy.engine.Engine COMMIT
+INFO - 2025-03-12 12:19:30,059 - sqlalchemy.engine.Engine - base - BEGIN (implicit)
+INFO - 2025-03-12 12:19:30,059 - sqlalchemy.engine.Engine - base - COMMIT
+INFO:     Application startup complete.

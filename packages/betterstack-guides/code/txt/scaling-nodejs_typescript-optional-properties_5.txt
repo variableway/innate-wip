@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-optional-properties/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+/ts-optional-null/src/problem.ts:8
+  const phoneNumber = user.phone.replace(/-/g, '');
+                                 ^
+TypeError: Cannot read properties of undefined (reading 'replace')

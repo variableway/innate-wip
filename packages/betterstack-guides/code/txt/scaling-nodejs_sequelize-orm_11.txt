@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sequelize-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+==== All Books ====
+Executing (default): SELECT `id`, `title`, `author`, `price`, `createdAt`, `updatedAt` FROM `books` AS `Book`;
+Eloquent JavaScript by Marijn Haverbeke, $34.95
+You Don't Know JS by Kyle Simpson, $24.99
+JavaScript: The Good Parts by Douglas Crockford, $29.99
+Node.js Design Patterns by Mario Casciaro, $39.99

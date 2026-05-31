@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+conf.d  fastcgi_params  mime.types  modules  nginx.conf  scgi_params  uwsgi_params

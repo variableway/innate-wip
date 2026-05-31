@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 80
+
+2022-08-31T17:19:42+01:00 INF incoming search query 'Go' on page '1' page_num=1 search_query=Go
+2022-08-31T17:19:43+01:00 DBG page_num=1 search_query=Go wikipedia_search_response={...}
+2022-08-31T17:19:43+01:00 TRC search query 'Go' succeeded without errors page_num=1 search_query=Go
+2022-08-31T17:19:43+01:00 INF incoming request method=GET elapsed_ms=843.652451 status_code=200 url=/search?q=Go

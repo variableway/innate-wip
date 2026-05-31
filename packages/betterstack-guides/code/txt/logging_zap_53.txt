@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[output]
+2023-05-20T15:32:50.821+0100    DEBUG   entered searchHandler() {"correlation_id": "chkdk4koo2ej1bpr4l90"}

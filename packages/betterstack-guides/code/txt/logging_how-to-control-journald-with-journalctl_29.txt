@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+Jan 06 15:40:19 falcon systemd[1]: Starting docker.service - Docker Application Container Engine...
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.062820121+01:00" level=info msg="Starting up"
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.063738107+01:00" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.063900900+01:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/system>
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.244641929+01:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.658573403+01:00" level=info msg="Loading containers: start."
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.710466438+01:00" level=info msg="Firewalld: docker zone already exists, returning"
+Jan 06 15:40:20 falcon dockerd[3017]: time="2025-01-06T15:40:20.964546328+01:00" level=info msg="Firewalld: interface br-b2325828137f already part of docker zone, returning"
+Jan 06 15:40:21 falcon dockerd[3017]: time="2025-01-06T15:40:21.047457060+01:00" level=info msg="Firewalld: interface br-a4f2fa388fc2 already part of docker zone, returning"
+Jan 06 15:40:21 falcon dockerd[3017]: time="2025-01-06T15:40:21.142260916+01:00" level=info msg="Firewalld: interface docker0 already part of docker zone, returning"
+. . .

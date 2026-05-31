@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+[output]
+{"SYSLOG_IDENTIFIER":"supergfxd","_TRANSPORT":"stdout","__MONOTONIC_TIMESTAMP":"303405189223","_RUNTIME_SCOPE":"system","__SEQNUM_ID":"699003bb8d9b4e16a49ee0d845f5be64","__SEQNUM":"144711354","_COMM":"supergfxd","MESSAGE":"WARN: get_runtime_status: Could not find dGPU","__CURSOR":"s=699003bb8d9b4e16a49ee0d845f5be64;i=8a01eba;b=40d8cb53df934b6b8205666796a69234;m=46a45bc867;t=62bd0da3dfd84;x=cdfa3e7b1b67aafd","_CAP_EFFECTIVE":"1ffffffffff","_GID":"0","_HOSTNAME":"falcon","_STREAM_ID":"15e02852f29f485b9e2866a7a27c3b4d","PRIORITY":"6","_SYSTEMD_SLICE":"system.slice","_EXE":"/usr/bin/supergfxd","__REALTIME_TIMESTAMP":"1737025874951556","_UID":"0","SYSLOG_FACILITY":"3","_SYSTEMD_CGROUP":"/system.slice/supergfxd.service","_SYSTEMD_INVOCATION_ID":"1e2f890b696c4cedab849d5ccc3afefc","_SELINUX_CONTEXT":"system_u:system_r:unconfined_t:s0","_SYSTEMD_UNIT":"supergfxd.service","_CMDLINE":"/usr/bin/supergfxd","_PID":"1982","_BOOT_ID":"40d8cb53df934b6b8205666796a69234","_MACHINE_ID":"fd08879b531543db8847a3f7cea42cac"}
+. . .

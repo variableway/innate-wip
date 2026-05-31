@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-declaration-files/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+src/test.ts:13:14 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'CalculationResult'.
+
+13 formatResult("wrong");
+                ~~~~~~~
+
+
+Found 1 error in src/test.ts:13

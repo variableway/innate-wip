@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/web-apis-with-hapijs/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[output]
+{
+  "statusCode": 400,
+  "error": "Bad Request",
+  "message": "Invalid request payload input"
+}

@@ -1,0 +1,29 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[label log-processing-stack/vector/vector.yaml]
+sources:
+  ...
+
+[highlight]
+transforms:
+  app_logs_parser:
+    inputs:
+      - "app_logs"
+    type: "remap"
+    source: |
+      # Parse JSON logs
+      ., err = parse_json(.message)
+[/highlight]
+
+sinks:
+  print:
+    type: "console"
+    inputs:
+[highlight]
+      - "app_logs_parser"
+[/highlight]
+    encoding:
+      codec: "json"

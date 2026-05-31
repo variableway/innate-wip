@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[Timestamp] [Hostname] CRON[Process ID]: ([Username]) [Event type] ([Additional information])

@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 13
+
+transform:
+  error_mode: ignore
+  log_statements:
+    - context: log
+      statements:
+        - merge_maps(attributes, ParseJSON(body), "upsert") where IsMatch(body, "^\\{")
+        - flatten(cache)
+        - merge_maps(attributes, cache, "upsert")

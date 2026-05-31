@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/valibot-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+{ name: 'Jane', age: 30 }
+Validation error: Name must be at least 3 characters

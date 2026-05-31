@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/introduction-to-typescript-swc/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+> typescript-swc-project@1.0.0 build
+> swc src -d dist --copy-files --strip-leading-paths
+
+Successfully compiled: 1 file with swc (77.17ms)

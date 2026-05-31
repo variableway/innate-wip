@@ -1,0 +1,28 @@
+# Source: https://betterstack.com/community/guides/logging/caddy-logging/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 38
+
+[label vector.yaml]
+sources:
+  caddy:
+    type: docker_logs
+    include_images:
+      - caddy
+      - custom-caddy
+
+sinks:
+  betterstack:
+    type: http
+    method: post
+    inputs: [caddy]
+[highlight]
+    uri: <ingestion_host>
+[/highlight]
+    encoding:
+      codec: json
+    auth:
+      strategy: bearer
+[highlight]
+      token: <source_token>
+[/highlight]

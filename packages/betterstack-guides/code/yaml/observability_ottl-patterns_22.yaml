@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 22
+
+transform:
+  error_mode: ignore
+  trace_statements:
+    - context: span
+      statements:
+        - set(attributes["service.performance.tier"], "Slow") where duration_ms > 1000
+        - set(attributes["service.performance.tier"], "Medium") where duration_ms > 500 && duration_ms <= 1000
+        - set(attributes["service.performance.tier"], "Fast") where duration_ms <= 500

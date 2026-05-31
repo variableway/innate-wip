@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-run/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
+556d36710c4c   caddy     "/usr/bin/caddy run…"    2 seconds ago   Up 1 second   80/tcp    eager_newton

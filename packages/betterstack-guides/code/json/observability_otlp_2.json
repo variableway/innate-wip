@@ -1,0 +1,56 @@
+# Source: https://betterstack.com/community/guides/observability/otlp/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "my-awesome-service"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "super.library",
+            "version": "2.5.1",
+            "attributes": [
+              {
+                "key": "my.awesome.scope.attribute",
+                "value": {
+                  "stringValue": "amazing scope attribute!"
+                }
+              }
+            ]
+          },
+          "spans": [
+            {
+              "traceId": "123456789ABCDEF0123456789ABCDEF0",
+              "spanId": "FEDCBA9876543210",
+              "parentSpanId": "FEDCBA9876543211",
+              "name": "I'm a fantastic client span",
+              "startTimeUnixNano": "1678886400000000000",
+              "endTimeUnixNano": "1678886401000000000",
+              "kind": 3,
+              "attributes": [
+                {
+                  "key": "my.amazing.span.attr",
+                  "value": {
+                    "stringValue": "a truly valuable value"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

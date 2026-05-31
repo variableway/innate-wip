@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 20
+
+[env]
+_.file = ".env"

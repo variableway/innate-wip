@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: json
+# Normalized: json
+# Block index: 45
+
+[output]
+{
+    "content": "This content has been updated. Flask makes updating API resources easy!",
+    "created_at": "2025-02-27T10:49:38.369401",
+    "id": "3257de2a-ddae-4070-90d4-1b04a367bb07",
+    "published": false,
+    "title": "Updated Blog Post Title",
+    "updated_at": "2025-02-27T11:39:22.845589"
+}

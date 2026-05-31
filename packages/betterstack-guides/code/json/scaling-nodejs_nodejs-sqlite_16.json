@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-sqlite/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{
+  "id": 1,
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "genre": "Classic",
+  "price": 12.99
+}

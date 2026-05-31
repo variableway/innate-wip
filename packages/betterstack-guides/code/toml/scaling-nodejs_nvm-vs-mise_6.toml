@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-vs-mise/
+# Original language: toml
+# Normalized: toml
+# Block index: 6
+
+[tools]
+node = "22.0.0"

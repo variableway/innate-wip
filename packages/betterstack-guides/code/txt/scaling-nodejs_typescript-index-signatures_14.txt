@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-index-signatures/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+src/mixed.ts:4:3 - error TS2411: Property 'port' of type 'number' is not assignable to 'string' index type 'string | boolean'.
+
+4   port: number; // Error: number not compatible with string | boolean
+    ~~~~
+
+src/mixed.ts:9:7 - error TS2741: Property 'port' is missing in type '{ version: string; debug: true; theme: string; apiTimeout: string; }' but required in type 'AppConfig'.
+
+9 const config: AppConfig = {
+        ~~~~~~
+
+  src/mixed.ts:4:3
+    4   port: number; // Error: number not compatible with string | boolean
+        ~~~~
+    'port' is declared here.
+
+
+Found 2 errors in the same file, starting at: src/mixed.ts:4

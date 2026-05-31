@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 34
+
+[label hello-ingress.yaml]
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: hello-ingress
+spec:
+ rules:
+ - http:
+     paths:
+     - path: /hello
+       pathType: Prefix
+       backend:
+         service:
+           name: hello-service
+           port:
+             number: 80

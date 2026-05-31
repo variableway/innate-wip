@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-run/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Unable to find image 'caddy:latest' locally
+Trying to pull docker.io/library/caddy:latest...
+Getting image source signatures
+Copying blob sha256:2408cc74d12b done
+Copying blob sha256:1c43bd95fd77 done
+Copying blob sha256:943334fce8ae done
+Copying config sha256:45958e825d5a done
+Writing manifest to image destination
+Storing signatures

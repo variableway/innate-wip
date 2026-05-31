@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 55
+
+[output]
+May 26, 2025 > 09:01:59 | INFO | incoming 'GET' request to '/' | {'request_id': 'f235cdbb-849b-4304-b91c-74ca029362d4', 'path': '/', 'method': 'GET', 'status_code': 200, 'response_size': 1068, 'elapsed': 0.0042858123779296875}

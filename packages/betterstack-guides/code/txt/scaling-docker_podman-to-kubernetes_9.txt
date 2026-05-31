@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+NS             TYPE   NPROCS    PID USER   COMMAND
+4026531837     user        4  98786 marin  /lib/systemd/systemd --user
+├─4026531834   time       10  98786 marin  /lib/systemd/systemd --user
+├─4026531835   cgroup      8  98786 marin  /lib/systemd/systemd --user
+├─4026531836   pid         8  98786 marin  /lib/systemd/systemd --user
+├─4026531838   uts         8  98786 marin  /lib/systemd/systemd --user
+├─4026531839   ipc         8  98786 marin  /lib/systemd/systemd --user
+├─4026531840   net         8  98786 marin  /lib/systemd/systemd --user
+├─4026531841   mnt         4  98786 marin  /lib/systemd/systemd --user
+├─4026532336   mnt         0        root
+└─4026532337   user        6  99106 marin  catatonit -P
+  ├─4026532338 mnt         3  99106 marin  catatonit -P
+[highlight]
+  ├─4026532340 net         2 100589 marin  /catatonit -P
+  ├─4026532401 mnt         1 100589 marin  /catatonit -P
+  ├─4026532402 mnt         1 100584 marin  /usr/bin/slirp4netns --disable-host-loopback --mtu=65520 --enable-sandbox --enable-seccomp --enable-ipv6 -c -e 3 -r 4 --netns-type=path /run/user/1000/netns/netns-844a415e-435c-39aa-9962-b04eaf69e806 tap0
+  ├─4026532403 uts         2 100589 marin  /catatonit -P
+  ├─4026532404 ipc         2 100589 marin  /catatonit -P
+  ├─4026532405 pid         1 100589 marin  /catatonit -P
+  ├─4026532406 cgroup      1 100589 marin  /catatonit -P
+  ├─4026532407 mnt         1 100594 165531 /http-echo
+  ├─4026532408 pid         1 100594 165531 /http-echo
+  └─4026532409 cgroup      1 100594 165531 /http-echo
+[/highlight]

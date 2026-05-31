@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 44
+
+CONTAINER ID   IMAGE                                          COMMAND              CREATED          STATUS          PORTS                                 NAMES
+412f0f8cad51   betterstackcommunity/nginx-helloworld:latest   "/runner.sh nginx"   34 minutes ago   Up 34 minutes   0.0.0.0:80->80/tcp, [::]:80->80/tcp   nginx
+d0eeb92cc5ca   logify:latest                                  "./logify.sh"        34 minutes ago   Up 34 minutes

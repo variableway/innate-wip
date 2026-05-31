@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/dozzle-docker/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label docker-compose.yml]
+version: "3.8"
+
+services:
+  # ... your other application services
+
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8080:8080"
+    command: --no-analytics
+
+# ... your volumes and networks

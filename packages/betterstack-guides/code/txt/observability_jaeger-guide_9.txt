@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/observability/jaeger-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+HotR.O.D. - A tracing demo application.
+
+. . .
+
+Flags:
+  -b, --basepath string                  Basepath for frontend service(default "/")
+  -c, --customer-service-port int        Port for customer service (default 8081)
+  -d, --driver-service-port int          Port for driver service (default 8082)
+[highlight]
+  -D, --fix-db-query-delay duration      Average latency of MySQL DB query (default 300ms)
+  -M, --fix-disable-db-conn-mutex        Disables the mutex guarding db connection
+  -W, --fix-route-worker-pool-size int   Default worker pool size (default 3)
+[/highlight]
+. . .

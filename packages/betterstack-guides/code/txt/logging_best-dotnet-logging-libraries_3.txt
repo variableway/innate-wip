@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+info: Program[0]
+      Ordering 3 units of Example Product with a total price of ¤150.99

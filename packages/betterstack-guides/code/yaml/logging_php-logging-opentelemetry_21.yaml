@@ -1,0 +1,40 @@
+# Source: https://betterstack.com/community/guides/logging/php-logging-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+[label otelcol.yaml]
+receivers:
+  otlp:
+    protocols:
+      http:
+processors:
+[highlight]
+  attributes/betterstack:
+    actions:
+      - key: better_stack_source_token
+        value: <your_source_token>
+        action: insert
+[/highlight]
+  batch:
+exporters:
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+[highlight]
+  otlp/betterstack:
+    endpoint: "https://in-otel.logs.betterstack.com:443"
+[/highlight]
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/jaeger]
+[highlight]
+    logs/betterstack:
+      receivers: [otlp]
+      processors: [batch, attributes/betterstack]
+      exporters: [otlp/betterstack]
+[/highlight]

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+2024-09-18T17:21:29.159Z      debug   ottl@v0.108.0/parser.go:281     initial TransformContext        <initial telemetry payload>
+2024-09-18T17:21:29.159Z      debug   ottl@v0.108.0/parser.go:302     TransformContext after statement execution      <telemetry payload after transformation>

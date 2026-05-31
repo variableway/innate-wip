@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 28
+
+[output]
+# HELP memory_usage_bytes Current memory usage of the service in bytes
+# TYPE memory_usage_bytes gauge
+memory_usage_bytes{hostname="host1.domain.com"} 3.4422784e+07

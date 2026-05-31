@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/execa-cli/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Error: Command failed with ENOENT: nonexistentcommand
+spawn nonexistentcommand ENOENT
+Command: nonexistentcommand
+Exit code: undefined
+Error output:

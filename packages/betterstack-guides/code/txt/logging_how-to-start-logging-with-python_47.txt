@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+{"name": "__main__", "timestamp": "2023-02-06T09:28:54Z", "severity": "ERROR", "filename": "example.py", "lineno": 26, "process": 913135, "message": "division by zero", "exc_info": "Traceback (most recent call last):\n  File \"/home/betterstack/community/python-logging/example.py\", line 24, in <module>\n    1 / 0\n    ~~^~~\nZeroDivisionError: division by zero"}
+{"name": "__main__", "timestamp": "2023-02-06T09:28:54Z", "severity": "CRITICAL", "filename": "example.py", "lineno": 27, "process": 913135, "message": "division by zero", "exc_info": "Traceback (most recent call last):\n  File \"/home/betterstack/community/python-logging/example.py\", line 24, in <module>\n    1 / 0\n    ~~^~~\nZeroDivisionError: division by zero"}
+{"name": "__main__", "timestamp": "2023-02-06T09:28:54Z", "severity": "ERROR", "filename": "example.py", "lineno": 28, "process": 913135, "message": "division by zero", "exc_info": "Traceback (most recent call last):\n  File \"/home/betterstack/community/python-logging/example.py\", line 24, in <module>\n    1 / 0\n    ~~^~~\nZeroDivisionError: division by zero"}

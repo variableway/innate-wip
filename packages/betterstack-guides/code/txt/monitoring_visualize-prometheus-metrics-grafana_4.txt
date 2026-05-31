@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/visualize-prometheus-metrics-grafana/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+NAME            IMAGE                       COMMAND                  SERVICE         CREATED              STATUS              PORTS
+node-exporter   prom/node-exporter:latest   "/bin/node_exporter …"   node-exporter   About a minute ago   Up About a minute   0.0.0.0:9100->9100/tcp, :::9100->9100/tcp
+prometheus      prom/prometheus:latest      "/bin/prometheus --c…"   prometheus      About a minute ago   Up About a minute   0.0.0.0:9090->9090/tcp, :::9090->9090/tcp

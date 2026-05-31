@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structured-logging/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+2024-06-17T08:55:00Z [INFO]  User 'user123' logged in from 192.168.0.1
+2024-06-17T08:55:01Z [ERROR] Database connection failed: Connection refused

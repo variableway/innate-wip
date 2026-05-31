@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/observability/index/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+OpenTelemetry Collector Builder (v0.111.0)
+
+ocb generates a custom OpenTelemetry Collector binary using the
+build configuration given by the "--config" argument. If no build
+configuration is provided, ocb will generate a default Collector.
+. . .

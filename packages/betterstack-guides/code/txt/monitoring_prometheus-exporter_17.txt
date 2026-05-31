@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+[+] Running 4/4
+ ✔ Network prometheus-exporter_nginx-server  Created             0.2s
+ ✔ Container nginx                           Started             0.7s
+ ✔ Container prometheus                      Started             0.7s
+ ✔ Container custom-nginx-exporter           Started             0.8s

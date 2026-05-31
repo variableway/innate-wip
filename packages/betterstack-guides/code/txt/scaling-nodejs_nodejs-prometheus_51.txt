@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 51
+
+rate(db_query_duration_seconds_sum[3m]) / rate(db_query_duration_seconds_count[3m])

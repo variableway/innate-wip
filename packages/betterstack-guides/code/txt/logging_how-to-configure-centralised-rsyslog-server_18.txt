@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[label /etc/rsyslog.d/50-default.conf]
+#  Default rules for rsyslog.
+#
+#                       For more information see rsyslog.conf(5) and /etc/rsyslog.conf
+
+*.* @@0.0.0.0:514
+
+#
+# First some standard log files.  Log by facility.
+#
+auth,authpriv.*                 /var/log/auth.log
+*.*;auth,authpriv.none          -/var/log/syslog
+#cron.*                         /var/log/cron.log
+#daemon.*                       -/var/log/daemon.log
+kern.*                          -/var/log/kern.log
+#lpr.*                          -/var/log/lpr.log
+mail.*                          -/var/log/mail.log
+#user.*                         -/var/log/user.log

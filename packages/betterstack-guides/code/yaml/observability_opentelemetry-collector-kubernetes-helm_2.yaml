@@ -1,0 +1,65 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label values.yaml]
+mode: daemonset
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+  requests:
+    cpu: 200m
+    memory: 400Mi
+image:
+  tag: "0.81.0"
+
+# Enable Kubernetes attributes enrichment
+presets:
+  kubernetesAttributes:
+    enabled: true
+
+# Collector configuration
+config:
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+          endpoint: 0.0.0.0:4317
+        http:
+          endpoint: 0.0.0.0:4318
+          cors:
+            allowed_origins:
+              - http://*
+              - https://*
+
+  processors:
+    batch:
+      send_batch_size: 8192
+      timeout: 5s
+    memory_limiter:
+      check_interval: 5s
+      limit_mib: 800
+      spike_limit_mib: 150
+
+  exporters:
+    otlp:
+      endpoint: observability.example.com:443
+      headers:
+        api-key: ${OBSERVABILITY_API_KEY}
+    otlp/metrics:
+      endpoint: metrics.example.com:443
+      headers:
+        api-key: ${METRICS_API_KEY}
+
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [memory_limiter, batch, k8sattributes]
+        exporters: [otlp]
+      metrics:
+        receivers: [otlp]
+        processors: [memory_limiter, batch, k8sattributes]
+        exporters: [otlp/metrics]

@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[output]
+{
+	"PRIORITY" : "6",
+	"__CURSOR" : "s=699003bb8d9b4e16a49ee0d845f5be64;i=8a02766;b=40d8cb53df934b6b8205666796a69234;m=470ddacd3d;t=62bd143bd025a;x=cdfa3e7b1b67aafd",
+	"__REALTIME_TIMESTAMP" : "1737027644883546",
+	"__MONOTONIC_TIMESTAMP" : "305175121213",
+	"__SEQNUM" : "144713574",
+	"__SEQNUM_ID" : "699003bb8d9b4e16a49ee0d845f5be64",
+	"_BOOT_ID" : "40d8cb53df934b6b8205666796a69234",
+	"MESSAGE" : "WARN: get_runtime_status: Could not find dGPU"
+}

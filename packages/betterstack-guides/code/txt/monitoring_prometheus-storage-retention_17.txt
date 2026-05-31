@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: txt
+# Normalized: txt
+# Block index: 17
+
+Daily Storage = Ingestion Rate × 24 hours × Bytes per Sample

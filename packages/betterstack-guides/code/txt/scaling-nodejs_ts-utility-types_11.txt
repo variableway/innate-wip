@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-utility-types/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Validation errors: []
+New product: {
+  name: 'Laptop',
+  description: 'Gaming laptop',
+  price: 1200,
+  category: 'Electronics',
+  inStock: true
+}
+Update data: { name: 'Updated Laptop', price: 1100 }

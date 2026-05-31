@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+YYYY/MM/DD HH:MM:SS [<severity_level>] <pid>#<tid>: *<cid> <message>

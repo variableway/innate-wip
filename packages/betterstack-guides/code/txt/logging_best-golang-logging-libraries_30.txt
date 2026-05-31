@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[output]
+2023/07/12 11:46:34  info Hello from Apex logger    app=myapp env=prod

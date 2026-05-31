@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-environment-variables/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+[label .env]
+PORT=4000
+API_KEY=secret-key-123
+DATABASE_URL=mongodb://localhost:27017/myapp

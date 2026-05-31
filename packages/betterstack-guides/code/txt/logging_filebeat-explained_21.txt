@@ -1,0 +1,51 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+{
+  "@timestamp": "2025-06-04T07:55:03.658Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "_doc",
+    "version": "9.0.1"
+  },
+  "pid": 169516,
+  "ssn": "407-01-2433",
+  "log": {
+    "offset": 699725,
+    "file": {
+      "path": "/var/log/logify/app.log",
+      "device_id": "2049",
+      "inode": "259470",
+      "fingerprint": "337d323bb6858c439b81fec30abaccc82f8576477737a881801695d2ad617b1f"
+    }
+  },
+  "message": "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1748876646}",
+  "input": {
+    "type": "filestream"
+  },
+  "ecs": {
+    "version": "8.0.0"
+  },
+  "host": {
+    "name": "deffe2f97ae8"
+  },
+  "agent": {
+    "name": "deffe2f97ae8",
+    "type": "filebeat",
+    "version": "9.0.1",
+    "ephemeral_id": "354e0fef-db29-48bf-b9fc-96a3bf5d011b",
+    "id": "28d7a11c-5619-44b6-a094-6b59bb9c2313"
+  },
+[highlight]
+  "timestamp": 1748876646,
+  "ip": "127.0.0.1",
+  "msg": "Task completed successfully",
+  "status": 200,
+  "level": 30,
+  "emailAddress": "user@mail.com"
+[/highlight]
+}
+...

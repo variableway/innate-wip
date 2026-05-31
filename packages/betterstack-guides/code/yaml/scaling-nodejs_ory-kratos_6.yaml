@@ -1,0 +1,71 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ory-kratos/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 6
+
+[label docker/config/kratos.yml]
+version: v1.3.1
+
+dsn: sqlite:///var/lib/sqlite/users.db?_fk=true
+
+serve:
+  public:
+    base_url: http://127.0.0.1:4433/
+[highlight]
+    cors:
+      enabled: true
+      allowed_origins:
+        - http://127.0.0.1:3000
+        - http://localhost:3000
+[/highlight]
+  admin:
+    base_url: http://127.0.0.1:4434/
+
+selfservice:
+  default_browser_return_url: http://127.0.0.1:3000/
+  allowed_return_urls:
+    - http://127.0.0.1:3000
+
+  methods:
+    password:
+      enabled: true
+    totp:
+      enabled: true
+
+  flows:
+    error:
+      ui_url: http://127.0.0.1:3000/error
+    settings:
+      ui_url: http://127.0.0.1:3000/settings
+      privileged_session_max_age: 15m
+    recovery:
+      enabled: true
+      ui_url: http://127.0.0.1:3000/recovery
+    verification:
+      enabled: true
+      ui_url: http://127.0.0.1:3000/verification
+      after:
+        default_browser_return_url: http://127.0.0.1:3000/
+    logout:
+      after:
+        default_browser_return_url: http://127.0.0.1:3000/login
+    login:
+      ui_url: http://127.0.0.1:3000/login
+      lifespan: 10m
+    registration:
+      lifespan: 10m
+      ui_url: http://127.0.0.1:3000/register
+      after:
+        password:
+          hooks:
+            - hook: session
+
+identity:
+  default_schema_id: default
+  schemas:
+    - id: default
+      url: file:///etc/config/kratos/identity.schema.json
+
+courier:
+  smtp:
+    connection_uri: smtps://test:test@mailslurper:1025/?skip_ssl_verify=true

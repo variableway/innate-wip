@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 61
+
+[output]
+May 26, 2025 > 09:24:38 | INFO | location 'nonexistentcity' not found | {'request_id': 'b264840b-f4c2-447b-ace3-8aa5b293dd0c', 'query': 'nonexistentcity'}

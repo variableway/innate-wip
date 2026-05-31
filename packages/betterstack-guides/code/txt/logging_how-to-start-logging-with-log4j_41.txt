@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+log4j2.contextSelector=org.apache.logging.log4j.core.async.BasicAsyncLoggerContextSelector

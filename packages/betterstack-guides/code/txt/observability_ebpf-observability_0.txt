@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/observability/ebpf-observability/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+[output]
+6.12.11-200.fc41.x86_64

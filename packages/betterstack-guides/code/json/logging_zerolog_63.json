@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 63
+
+[output]
+{"level":"info","git_revision":"510791faa17a362faeab72bd367ca26e5b0ad5f6","go_version":"go1.19","port":"3000","time":"2022-09-02T11:24:32.92043003+01:00","message":"Starting Wikipedia App Server on port '3000'"}

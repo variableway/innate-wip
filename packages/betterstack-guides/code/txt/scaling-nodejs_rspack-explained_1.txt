@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rspack-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Welcome to Create Rspack, powered by @rspack/create-rspack
+
+? Project name: rspack-demo
+? Select a template: › - Use arrow-keys. Return to submit.
+    vue
+    react
+    react-ts
+❯   vanilla
+    vanilla-ts

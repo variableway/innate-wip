@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 39
+
+vector:
+  container_name: vector
+  image: timberio/vector:0.34.0-alpine
+  restart: always
+  volumes:
+    - ./vector.yaml:/etc/vector/vector.yaml
+    - /var/run/docker.sock:/var/run/docker.sock:ro

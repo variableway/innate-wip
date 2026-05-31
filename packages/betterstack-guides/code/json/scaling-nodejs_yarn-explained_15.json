@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yarn-explained/
+# Original language: json
+# Normalized: json
+# Block index: 15
+
+[label package.json]
+{
+  ...
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  }
+}

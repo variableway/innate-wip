@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/best-golang-logging-libraries/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+timestamp=2023-07-12T11:40:40.283743165+02:00 level=info message="fetching random quote" app=myapp env=prod
+timestamp=2023-07-12T11:40:40.284696226+02:00 level=error message="fetching random quote" app=myapp duration=0 env=prod error="Get \"https://api.quotable.i/random\": dial tcp: lookup api.quotable.i: no such host"

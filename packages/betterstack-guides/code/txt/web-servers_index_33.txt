@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+caddy  | {"level":"info","ts":1699964271.9924734,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+caddy  | {"level":"info","ts":1699964271.9926255,"msg":"serving initial configuration"}
+caddy  | {"level":"info","ts":1699964271.994773,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc0004b6780"}
+caddy  | {"level":"info","ts":1699964271.994943,"logger":"tls","msg":"cleaning storage unit","description":"FileStorage:/data/caddy"}
+caddy  | {"level":"info","ts":1699964271.9964683,"logger":"tls","msg":"finished cleaning storage units"}

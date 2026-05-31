@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+Watcher Process started.
+HTTP server running. Access it at: http://localhost:8080/
+Listening on http://0.0.0.0:4000/

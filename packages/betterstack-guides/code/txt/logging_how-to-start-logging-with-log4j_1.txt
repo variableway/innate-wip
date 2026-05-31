@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building demo 1.0-SNAPSHOT
+[INFO] from pom.xml
+. . .
+[INFO] --- jar:3.0.2:jar (default-jar) @ demo ---
+[INFO] Building jar: /Users/erichu/Documents/Better Stack/demos/log4j-demo/demo/target/demo-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.498 s
+[INFO] Finished at: 2023-04-20T14:09:46-04:00
+[INFO] ------------------------------------------------------------------------

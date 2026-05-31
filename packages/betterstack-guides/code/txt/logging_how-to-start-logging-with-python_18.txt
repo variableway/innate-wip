@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+example: 2023-02-05 21:21:46,634 | INFO | example.py:17 | 653630 >>> An info
+example: 2023-02-05 21:21:46,634 | WARNING | example.py:18 | 653630 >>> A warning

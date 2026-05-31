@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 34
+
+[output]
+ID:                     <node_id>
+Hostname:               manager-1
+Joined at:              2022-09-21 11:07:08.730840341 +0000 utc
+Status:
+ State:                 Ready
+ [highlight]
+ Availability:          Drain
+ [/highlight]
+ Address:               116.203.21.130
+Manager Status:
+ Address:               <ip_address>
+ Raft Status:           Reachable
+ Leader:                Yes
+
+. . .

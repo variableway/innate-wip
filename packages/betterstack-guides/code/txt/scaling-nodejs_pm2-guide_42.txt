@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 42
+
+[output]
+pm2 save
+[PM2] Saving current process list...
+[PM2] Successfully saved in /home/<username>/.pm2/dump.pm2

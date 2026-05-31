@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 1
+
+[label otel-config.yaml]
+receivers:
+  filelog:
+    include: ["/var/log/nginx/access.log"]
+    start_at: end
+    operators:
+      - type: regex_parser
+        regex: '^(?P<timestamp>\S+) (?P<level>\S+) (?P<message>.*)$'
+        timestamp:
+          parse_from: attributes.timestamp
+          layout_type: gotime
+          layout: "2006-01-02T15:04:05Z07:00"

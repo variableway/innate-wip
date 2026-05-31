@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 49
+
+This flexibility enables comprehensive testing across different Kubernetes
+releases without needing to reconfigure a single cluster repeatedly.
+
+### Add-ons and extensions
+
+Minikube includes several add-ons that provide additional functionality beyond
+the core Kubernetes features. These add-ons can enhance your development
+experience by providing tools for monitoring, networking, and more.
+
+To see which add-ons are available and their status:

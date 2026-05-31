@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-prometheus-backend/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+[label prometheus.yml]
+storage:
+  tsdb:
+    out_of_order_time_window: 30m
+
+otlp:
+  promote_resource_attributes:
+    - service.instance.id
+    - service.name
+    - service.namespace
+    - deployment.environment
+    - k8s.namespace.name
+    - k8s.pod.name
+
+  # Optional: keep the original service.name and service.instance.id
+  # in target_info even though they're used for job and instance
+  keep_identifying_resource_attributes: true

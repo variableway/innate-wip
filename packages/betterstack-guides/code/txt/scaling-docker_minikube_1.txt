@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+==> Installing minikube
+==> Pouring minikube--1.35.0.x86_64_linux.bottle.tar.gz
+==> Caveats
+Bash completion has been installed to:
+ /home/user/.linuxbrew/etc/bash_completion.d
+==> Summary
+🍺  /home/user/.linuxbrew/Cellar/minikube/1.35.0: 9 files, 70.0MB

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+Feb 10 15:45:14 ubuntu-lts sshd[47343]: Failed password for root from 103.106.189.143 port 33990 ssh2

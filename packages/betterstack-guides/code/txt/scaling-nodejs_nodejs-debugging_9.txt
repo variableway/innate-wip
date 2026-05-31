@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+. . .
+Break on start in index.js:18
+ 16 }
+ 17
+>18 console.log(getPrimes(100));
+ 19

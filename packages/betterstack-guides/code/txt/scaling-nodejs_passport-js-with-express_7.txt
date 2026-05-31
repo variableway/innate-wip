@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/passport-js-with-express/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+Server running on http://localhost:3000
+GET / 200 2.141 ms - 49

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/commander-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+Creating item "my-item" of type "default"

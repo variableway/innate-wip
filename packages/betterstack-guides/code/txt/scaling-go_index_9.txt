@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Server started on port 8000

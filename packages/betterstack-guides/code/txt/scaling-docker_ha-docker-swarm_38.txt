@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+Creating network nginx_nginx
+Creating service nginx_nginx

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 73
+
+[output]
+NAME                         CPU(cores)   MEMORY(bytes)
+hello-app-9c7b8f6d4-jntk8    1m           21Mi
+hello-app-9c7b8f6d4-x5m2j    1m           21Mi

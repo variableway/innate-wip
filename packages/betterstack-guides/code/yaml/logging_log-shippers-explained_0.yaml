@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 0
+
+receivers:
+  <unique_receiver_name>:
+    # Receiver configuration
+
+processors:
+  <unique_processor_name>:
+    # Processor configuration
+
+exporters:
+  <unique_exporter_name>:
+    # Exporter configuration
+
+service:
+  pipelines:
+    <pipeline_name>:
+      receivers: [<receiver_names>]
+      processors: [<processor_names>]
+      exporters: [<exporter_names>]

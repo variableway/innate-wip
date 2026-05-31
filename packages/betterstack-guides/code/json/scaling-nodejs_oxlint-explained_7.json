@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-explained/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+"rules": {
+  "no-unused-vars": "error",
+  "react/jsx-no-undef": "warn",
+  "no-debugger": "off",
+  "eqeqeq": "warn"
+}

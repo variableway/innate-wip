@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/monitoring-linux-auth-logs/
+# Original language: json
+# Normalized: json
+# Block index: 11
+
+{
+  "appname": "sshd",
+  "context": {
+    "ip_address": "180.101.88.225",
+    "port": "14347",
+    "protocol": "ssh2",
+    "username": "root"
+  },
+  "event": {
+    "category": "authentication",
+    "name": "failed password"
+  },
+  "file": "/var/log/auth.log",
+  "host": "ubuntu-lts",
+  "hostname": "ubuntu-lts",
+  "message": "Failed password for root from 180.101.88.225 port 14347 ssh2",
+  "procid": 177242,
+  "source_type": "file",
+  "timestamp": "2024-02-15T17:27:40Z"
+}

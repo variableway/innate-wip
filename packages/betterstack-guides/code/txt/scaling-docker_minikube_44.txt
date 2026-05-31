@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 44
+
+This command creates a new Minikube cluster with a separate configuration,
+storage, and network from your default cluster. Each profile effectively
+represents an isolated Kubernetes environment.
+
+You can list all your profiles to see what clusters are available:

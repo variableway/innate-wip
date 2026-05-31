@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-target-compiler/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Processed 2 items

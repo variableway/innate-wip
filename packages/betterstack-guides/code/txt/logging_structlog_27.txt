@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+2025-06-06T13:56:46.479795Z [info     ] An info message                process_id=55798

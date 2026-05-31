@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 59
+
+[output]
+Resolving "wordpress" using unqualified-search registries (/home/<your_user_name>/.config/containers/registries.conf)
+Trying to pull docker.io/library/wordpress:latest...
+Getting image source signatures
+Copying blob c5d33b602102 done
+...
+Copying config bc823df9ea done
+Writing manifest to image destination
+Storing signatures
+980f5792fb9c34ea9357ffa290d5d79ac0b48b70701cd4693f5d7e2b4f2312f1
+exit code: 0

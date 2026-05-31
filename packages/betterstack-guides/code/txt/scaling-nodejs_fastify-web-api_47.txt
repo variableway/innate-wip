@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+ Host localhost:3000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:3000...
+* connect to ::1 port 3000 from ::1 port 56374 failed: Connection refused
+*   Trying 127.0.0.1:3000...
+* Connected to localhost (127.0.0.1) port 3000
+> DELETE /api/posts/e1d7d3df-8d62-44ef-a1a2-f629db0755ff HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 204 No Content
+< access-control-allow-origin: *
+< Date: Wed, 19 Mar 2025 12:35:55 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=72
+< 
+* Connection #0 to host localhost left intact

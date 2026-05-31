@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-vs-kubernetes/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+[label web-service.yaml]
+apiVersion: v1
+kind: Service
+metadata:
+ name: web
+spec:
+ selector:
+   app: web
+ ports:
+ - port: 80
+   targetPort: 80
+ type: ClusterIP

@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-enums/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+[1] Application started
+[3] Critical error

@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+# HELP post_request_duration_seconds Duration of requests to https://jsonplaceholder.typicode.com/posts
+# TYPE post_request_duration_seconds summary
+post_request_duration_seconds{method="GET",quantile="0.5"} 0.3418126106262207
+post_request_duration_seconds{method="GET",quantile="0.9"} 0.35525965690612793
+post_request_duration_seconds{method="GET",quantile="0.99"} 0.49892544746398926
+post_request_duration_seconds_count{method="GET"} 25.0
+post_request_duration_seconds_sum{method="GET"} 8.648272037506104

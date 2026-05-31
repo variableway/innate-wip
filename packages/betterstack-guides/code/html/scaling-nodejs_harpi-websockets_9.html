@@ -1,0 +1,88 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/harpi-websockets/
+# Original language: html
+# Normalized: html
+# Block index: 9
+
+[label public/index.html]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hapi WebSocket Demo</title>
+    <style>
+      /* ... existing styles ... */
+    </style>
+    [highlight]
+    <script src="https://cdn.jsdelivr.net/npm/@hapi/nes@14.0.1/lib/client.min.js"></script>
+    [/highlight]
+  </head>
+  <body>
+    <!-- ... existing HTML structure ... -->
+
+    <script>
+      [highlight]
+      let client;
+      const messageArea = document.getElementById('messageArea');
+      const statusDiv = document.getElementById('connectionStatus');
+      const messageInput = document.getElementById('messageInput');
+      const sendBtn = document.getElementById('sendBtn');
+
+      // Connect using Nes client
+      async function connectWebSocket() {
+          client = new nes.Client('http://localhost:3000');
+
+          try {
+              await client.connect();
+              statusDiv.textContent = 'Connected to Hapi server';
+              statusDiv.style.background = '#d4edda';
+              messageInput.disabled = false;
+              sendBtn.disabled = false;
+
+              // Subscribe to WebSocket messages
+              await client.subscribe('/websocket', (message) => {
+                  displayMessage(message);
+              });
+
+              // Send welcome message
+              displayMessage('Connected to Hapi WebSocket server!');
+
+          } catch (err) {
+              statusDiv.textContent = 'Failed to connect';
+              statusDiv.style.background = '#f8d7da';
+              console.error('Connection error:', err);
+          }
+      }
+
+      function displayMessage(text) {
+          const messageDiv = document.createElement('div');
+          messageDiv.className = 'message';
+          messageDiv.textContent = text;
+          messageArea.appendChild(messageDiv);
+          messageArea.scrollTop = messageArea.scrollHeight;
+      }
+
+      async function sendMessage() {
+          if (messageInput.value.trim() && client) {
+              try {
+                  await client.request({
+                      method: 'POST',
+                      path: '/message',
+                      payload: { message: messageInput.value }
+                  });
+                  messageInput.value = '';
+              } catch (err) {
+                  console.error('Send error:', err);
+              }
+          }
+      }
+
+      messageInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter' && !messageInput.disabled) {
+              sendMessage();
+          }
+      });
+
+      connectWebSocket();
+      [/highlight]
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-node-intro/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "types": ["node"],
+    "lib": ["esnext"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+[highlight]
+  "ts-node": {
+    "esm": true
+  }
+[/highlight]
+}

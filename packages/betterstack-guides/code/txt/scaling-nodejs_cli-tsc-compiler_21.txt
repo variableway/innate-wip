@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/cli-tsc-compiler/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+[12:35:02 PM] File change detected. Starting incremental compilation...
+
+[12:35:03 PM] Found 0 errors. Watching for file changes.

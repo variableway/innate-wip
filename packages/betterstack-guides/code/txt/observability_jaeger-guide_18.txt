@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/jaeger-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+fix: overriding MySQL query delay       {"old": "300ms", "new": "50ms"}
+fix: disabling db connection mutex
+[highlight]
+fix: overriding route worker pool size  {"old": 3, "new": 10000}
+[/highlight]
+Starting all services

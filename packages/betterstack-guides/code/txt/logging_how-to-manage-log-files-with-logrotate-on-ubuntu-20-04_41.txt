@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[label /path/to/logrotate.log]
+reading config file /home/betterstack/logify/logrotate.conf
+acquired lock on state file /home/betterstack/logify/logrotate.stateReading state from file: /home/betterstack/logify/logrotate.state
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 1 logs
+
+rotating pattern: /home/betterstack/logify/*.log
+ forced from command line (7 rotations)
+empty log files are not rotated, old logs are removed
+considering log /home/betterstack/logify/log_records.log
+  Now: 2023-04-30 09:19
+  Last rotated at 2023-04-30 09:19
+  log needs rotating
+considering log /home/betterstack/logify/logrotate.log
+  Now: 2023-04-30 09:19
+  Last rotated at 2023-04-30 09:00
+  log does not need rotating (log is empty)
+rotating log /home/betterstack/logify/log_records.log, log->rotateCount is 7
+dateext suffix '-2023043009'
+
+. . .

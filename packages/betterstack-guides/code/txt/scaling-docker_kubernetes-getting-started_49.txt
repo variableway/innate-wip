@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kubernetes-getting-started/
+# Original language: txt
+# Normalized: txt
+# Block index: 49
+
+[output]
+Name:             hello-app-5b568cb498-dflt2
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Mon, 17 Mar 2025 04:16:38 +0100
+Labels:           app=hello-app
+                  pod-template-hash=5b568cb498
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.8
+[... additional output omitted for brevity ...]

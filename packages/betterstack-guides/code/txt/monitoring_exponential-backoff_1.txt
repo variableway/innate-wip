@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/exponential-backoff/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+delay = initialDelay * (factor ^ retryNumber)

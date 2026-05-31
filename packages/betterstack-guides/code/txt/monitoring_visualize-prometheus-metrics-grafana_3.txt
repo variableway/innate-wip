@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/monitoring/visualize-prometheus-metrics-grafana/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+. . .
+[+] Running 3/3
+ ✔ Network prometheus-grafana  Created                     0.3s
+ ✔ Container node-exporter     Started                     0.8s
+ ✔ Container prometheus        Started                     0.7s

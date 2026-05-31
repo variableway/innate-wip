@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+[output]
+Valid user data: { username: 'johndoe', email: 'john.doe@example.com', age: 25 }

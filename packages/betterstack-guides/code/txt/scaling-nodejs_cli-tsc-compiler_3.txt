@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/cli-tsc-compiler/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+added 1 package, and audited 2 packages in 2s
+
+found 0 vulnerabilities

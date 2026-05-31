@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+1687927940843: Starting application on port 3000
+Encountered an unexpected error while backing up the database
+[2023-06-28T04:49:48.113Z]: Device XYZ123 went offline

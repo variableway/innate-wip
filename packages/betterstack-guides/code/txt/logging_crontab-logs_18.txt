@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[label crontab entry]
+0 3 * * * /path/to/script.sh > /var/log/script-output.log 2> /var/log/script-error.log

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/yup-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Validation error: You must be at least 18 years old

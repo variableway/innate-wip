@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+. . .
+
+rotating pattern: /var/log/logify/*.log
+ after 1 days (7 rotations)
+empty log files are not rotated, old logs are removed
+considering log /var/log/logify/log_records.log
+Creating new state
+  Now: 2023-04-29 10:35
+  Last rotated at 2023-04-29 10:00
+  log does not need rotating (log has already been rotated)
+
+. . .

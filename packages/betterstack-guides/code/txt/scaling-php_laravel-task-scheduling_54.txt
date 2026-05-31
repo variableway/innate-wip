@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-php/laravel-task-scheduling/
+# Original language: text
+# Normalized: txt
+# Block index: 54
+
+[output]
+0 0 * * *  bash scripts/backup.sh .............................. Next Due: 12 hours from now

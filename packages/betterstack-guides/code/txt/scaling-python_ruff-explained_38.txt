@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 38
+
+[output]
+pre-commit installed at .git/hooks/pre-commit

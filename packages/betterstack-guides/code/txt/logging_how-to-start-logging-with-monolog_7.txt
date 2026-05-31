@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+[2022-07-12T01:36:14.873269+02:00] daily.DEBUG: This is a debug message. [] []
+[2022-07-12T01:36:14.874132+02:00] daily.INFO: This is an info level message. [] []
+[2022-07-12T01:36:14.874320+02:00] daily.NOTICE: This is a notice level message. [] []
+[2022-07-12T01:36:14.874551+02:00] daily.WARNING: This is a warning level message. [] []
+[2022-07-12T01:36:14.874788+02:00] daily.ERROR: This is an error level message. [] []
+[2022-07-12T01:36:14.874888+02:00] daily.CRITICAL: This is a critical level message. [] []
+[2022-07-12T01:36:14.874981+02:00] daily.ALERT: This is an alert level message. [] []
+[2022-07-12T01:36:14.875060+02:00] daily.EMERGENCY: This is an emergency level message. [] []

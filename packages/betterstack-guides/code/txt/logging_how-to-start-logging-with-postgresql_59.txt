@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 59
+
+LOG:  duration: 5005.975 ms

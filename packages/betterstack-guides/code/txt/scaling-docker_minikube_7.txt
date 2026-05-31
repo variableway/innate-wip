@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+This command instructs Minikube to use Kubernetes version 1.24.0 specifically,
+rather than the most recent stable version that Minikube would otherwise default
+to.
+
+Applications with more demanding resource requirements might need additional
+computing power. You can allocate more CPUs and memory to your Minikube cluster:

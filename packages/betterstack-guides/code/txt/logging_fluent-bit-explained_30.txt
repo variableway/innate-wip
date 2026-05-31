@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[label fluent-bit-config/fluent-bit.conf]
+[SERVICE]
+    Flush        1
+    Daemon       off
+    Log_Level    debug
+    Parsers_File parser_json.conf
+
+[INPUT]
+    Name         tail
+    Path         /var/log/logify/app.log
+    Parser       json_parser
+    Tag          filelogs
+
+[FILTER]
+    Name record_modifier
+    Match filelogs
+    Remove_key     emailAddress
+    Record hostname ${HOSTNAME}
+
+[highlight]
+[FILTER]
+    Name lua
+    Match filelogs
+    Script convert_timestamp.lua
+    Call append_converted_timestamp
+[/highlight]
+
+[OUTPUT]
+    Name         stdout
+    format       json
+    Match        filelogs

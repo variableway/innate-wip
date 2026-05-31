@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-python/introduction-to-flask/
+# Original language: json
+# Normalized: json
+# Block index: 50
+
+[output]
+{
+    "content": "This post will be deleted to test the DELETE endpoint.",
+    "created_at": "2025-02-27T11:50:47.532310",
+    "id": "84e1072a-c729-4dc1-b8c4-38f6a728caa2",
+    "published": true,
+    "title": "Post to Delete",
+    "updated_at": "2025-02-27T11:50:47.532326"
+}

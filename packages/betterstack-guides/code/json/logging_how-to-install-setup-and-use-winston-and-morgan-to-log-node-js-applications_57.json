@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 57
+
+[output]
+{"level":"http","message":"GET /crypto 200 1559281 - 3787.124 ms","timestamp":"2025-05-23 01:10:50.777 PM"}
+{"level":"http","message":"GET /crypto 200 1559167 - 3536.938 ms","timestamp":"2025-05-23 01:11:21.554 PM"}
+{"level":"http","message":"GET /crypto 200 1559204 - 685.213 ms","timestamp":"2025-05-23 01:11:23.833 PM"}

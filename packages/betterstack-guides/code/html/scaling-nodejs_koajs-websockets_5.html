@@ -1,0 +1,104 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/koajs-websockets/
+# Original language: html
+# Normalized: html
+# Block index: 5
+
+[label public/index.html]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Koa WebSocket Demo</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        margin: 50px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      #messages {
+        border: 2px solid #e1e5e9;
+        height: 350px;
+        overflow-y: scroll;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        background: #f8f9fa;
+      }
+      .input-group {
+        display: flex;
+        gap: 12px;
+      }
+      #messageInput {
+        flex: 1;
+        padding: 12px;
+        border: 2px solid #e1e5e9;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+      #sendButton {
+        padding: 12px 24px;
+        background: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #sendButton:hover {
+        background: #0052a3;
+      }
+      .message {
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        background: white;
+        border-radius: 6px;
+        border-left: 4px solid #0066cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Koa WebSocket Demo</h1>
+      <div id="messages"></div>
+      <div class="input-group">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Enter your message here..."
+        />
+        <button id="sendButton" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      const ws = new WebSocket("ws://localhost:3000");
+      const messagesDiv = document.getElementById("messages");
+
+      ws.onmessage = function (event) {
+        const messageElement = document.createElement("div");
+        messageElement.className = "message";
+        messageElement.textContent = event.data;
+        messagesDiv.appendChild(messageElement);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      };
+
+      function sendMessage() {
+        const input = document.getElementById("messageInput");
+        if (input.value.trim()) {
+          ws.send(input.value);
+          input.value = "";
+        }
+      }
+
+      document
+        .getElementById("messageInput")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            sendMessage();
+          }
+        });
+    </script>
+  </body>
+</html>

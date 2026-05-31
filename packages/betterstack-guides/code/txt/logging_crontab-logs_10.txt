@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[label /etc/logrotate.d/custom-cron-logs]
+/var/log/custom_scripts.log {
+   weekly
+   rotate 4
+   compress
+   missingok
+   notifempty
+}

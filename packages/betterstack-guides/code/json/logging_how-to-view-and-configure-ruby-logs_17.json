@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{"timestamp":"2023-04-18T10:04:00.835675","level":"INFO ","git_commit_hash":"13f2942d96a8a25b4da6e86bd5865c0eee13cc62","pid":114761,"msg":"Starting application..."}

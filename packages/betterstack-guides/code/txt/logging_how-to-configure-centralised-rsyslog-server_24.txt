@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+alternatives.log  btmp                   dpkg.log    lastlog        ubuntu-2gb-nbg1-1/          wtmp
+apache2/          cloud-init.log         faillog     private/       ubuntu-advantage.log
+apt/              cloud-init-output.log  journal/    syslog         ubuntu-advantage-timer.log
+auth.log          dist-upgrade/          kern.log    syslog.1       ufw.log
+bootstrap.log     dmesg                  landscape/  ubuntu-20-04/  unattended-upgrades/

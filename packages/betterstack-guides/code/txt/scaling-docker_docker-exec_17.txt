@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+total 36
+drwxr-xr-x 1 root root 4096 Mar  7 15:10 .
+drwxr-xr-x 1 root root 4096 Mar  7 15:10 ..
+drwxr-xr-x 1 root root 4096 Mar  7 15:10 conf.d
+-rw-r--r-- 1 root root  664 Mar  5 16:14 fastcgi_params
+-rw-r--r-- 1 root root 5349 Mar  5 16:14 mime.types
+...

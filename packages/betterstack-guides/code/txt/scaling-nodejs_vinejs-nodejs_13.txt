@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/vinejs-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+{"errors":[{"message":"The name field must have at least 2 characters","rule":"minLength","field":"name","meta":{"min":2}},{"message":"The email field must be a valid email address","rule":"email","field":"email"},{"message":"The password field must have at least 8 characters","rule":"minLength","field":"password","meta":{"min":8}}]}

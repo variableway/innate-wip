@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/java-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[+] Running 3/3
+✔ Network prometheus-java_default  Created                    0.8s
+✔ Container prometheus            Started                    1.3s
+✔ Container app                   Started                    1.3s

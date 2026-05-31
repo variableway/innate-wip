@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-vs-asdf/
+# Original language: toml
+# Normalized: toml
+# Block index: 9
+
+# .mise.toml
+[tools]
+node = "20.10.0"
+
+[env]
+DATABASE_URL = "postgresql://localhost/myapp"
+NODE_ENV = "development"
+_.file = ".env"  # Load from .env file
+_.path = "/usr/local/bin"  # Add to PATH
+
+# Or use inline in .tool-versions
+# mise env add API_KEY=secret

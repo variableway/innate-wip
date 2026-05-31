@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/ai/index/
+# Original language: zero
+# Normalized: txt
+# Block index: 1
+
+enum Kind {
+    text,
+    mixed,
+}
+
+shape Stats {
+    letters: i32,
+    digits: i32,
+    other: i32,
+}

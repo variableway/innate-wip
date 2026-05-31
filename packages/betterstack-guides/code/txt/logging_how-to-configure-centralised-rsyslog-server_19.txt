@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-configure-centralised-rsyslog-server/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[label /etc/rsyslog.d/50-default.conf]
+*.* @@0.0.0.0:514
+
+*.* @@192.168.122.235
+
+cron.* @@192.168.122.237:514

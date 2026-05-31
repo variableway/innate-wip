@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-linux-logs-on-ubuntu-20-04/
+# Original language: txt
+# Normalized: txt
+# Block index: 0
+
+[output]
+alternatives.log  auth.log       btmp            cloud-init-output.log  dmesg    dpkg.log  journal/  landscape/  private/  ubuntu-advantage-license-check.log  ubuntu-advantage-timer.log  unattended-upgrades/
+apt/              bootstrap.log  cloud-init.log  dist-upgrade/          dmesg.0  faillog   kern.log  lastlog     syslog    ubuntu-advantage.log                ufw.log                     wtmp

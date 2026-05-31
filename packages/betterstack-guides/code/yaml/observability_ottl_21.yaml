@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/ottl/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+[label config.yaml]
+processors:
+  filter/ottl:
+    error_mode: ignore
+    logs:
+      log_record:
+        - not IsMatch(body, "Failed password")

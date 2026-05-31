@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parcel-vs-vite/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+[label package.json]
+{
+  "targets": {
+    "modern": {
+      "engines": {
+        "browsers": "Chrome >= 80"
+      }
+    },
+    "legacy": {
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    }
+  }
+}

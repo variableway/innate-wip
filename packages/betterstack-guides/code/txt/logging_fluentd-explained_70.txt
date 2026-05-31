@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 70
+
+[label log-processing-stack/docker-compose.yml]
+  fluentd:
+    ...
+    ports:
+[highlight]
+      - "24220:24220"
+[/highlight]
+      - "24224:24224"
+      - "24224:24224/udp"

@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/monitor-docker-containers/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                1565                1546                0                   15:44               ?                   00:00:00            npm start
+root                1601                1565                0                   15:44               ?                   00:00:00            node app.js

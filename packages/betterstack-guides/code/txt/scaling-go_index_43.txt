@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-go/index/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+[output]
+. . .
+go-blog-db       | 2024-08-13 12:59:11.465 UTC [1] LOG:  database system is ready to accept connections
+[highlight]
+go-blog-migrate  | 1/u create_posts_table (55.800791ms)
+go-blog-migrate exited with code 0
+[/highlight]
+go-blog-app      | Server started on port 8000
+go-blog-caddy    | {"level":"info","ts":1723553953.7705374

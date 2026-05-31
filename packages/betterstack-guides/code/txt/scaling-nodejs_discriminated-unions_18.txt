@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/discriminated-unions/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+Ready to upload
+Uploading document.pdf: 45%
+Upload finished: https://cdn.example.com/doc.pdf
+Upload failed: Network timeout (retry 2)

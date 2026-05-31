@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 37
+
+[output]
+{
+  "time": "2024-01-03T11:06:50.971029852+01:00",
+  "level": "DEBUG",
+[highlight]
+  "source": {
+    "function": "main.main",
+    "file": "/home/ayo/dev/betterstack/demo/slog/main.go",
+    "line": 17
+  },
+[/highlight]
+  "msg": "Debug message"
+}

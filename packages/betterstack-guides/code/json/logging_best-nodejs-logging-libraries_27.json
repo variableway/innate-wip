@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+{"context":{"logLevel":30,"name":"my-service","userId":1234},"message":"User login","sequence":"0","time":1687813925555,"version":"2.0.0"}
+{"context":{"logLevel":20,"name":"my-service","query":"SELECT * FROM users"},"message":"Executing database query","sequence":"1","time":1687813925556,"version":"2.0.0"}
+{"context":{"amount":100,"logLevel":30,"name":"my-service"},"message":"Processing payment","sequence":"2","time":1687813925556,"version":"2.0.0"}

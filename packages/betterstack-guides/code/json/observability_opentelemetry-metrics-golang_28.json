@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-golang/
+# Original language: jsonc
+# Normalized: json
+# Block index: 28
+
+{
+  "Name": "system.memory.heap",
+  "Description": "Memory usage of the allocated heap objects.",
+  "Unit": "By",
+  "Data": {
+    "DataPoints": [
+      {
+        "Attributes": [],
+        "StartTime": "2024-10-31T10:29:12.906723195+01:00",
+        "Time": "2024-10-31T10:29:24.909464553+01:00",
+        "Value": 619032 // The memory usage in bytes
+      }
+    ]
+  }
+}

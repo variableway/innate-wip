@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 28
+
+[label pyproject.toml]
+[tool.ruff]
+select = ["E", "F", "I", "B", "ANN"]
+line-length = 88
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    "venv",
+    "__pycache__",
+]
+target-version = "py312"
+
+[highlight]
+[[tool.ruff.lint.per-file-ignores]
+# Ignore unused imports in __init__.py files
+"__init__.py" = ["F401"]
+# Ignore missing type annotations in tests
+"test_*.py" = ["ANN"]
+[/highlight]

@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-relabeling/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 25
+
+[label prometheus.yml]
+scrape_configs:
+  - job_name: nginx
+    static_configs:
+      - targets:
+          - nginx-exporter:9113
+[highlight]
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: promhttp_.* # Drop all metrics starting with "promhttp_"
+        action: drop
+[/highlight]

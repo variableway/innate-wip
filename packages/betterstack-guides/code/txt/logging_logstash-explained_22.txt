@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[label logstash/config/logstash.conf]
+...
+filter {
+  if [message] =~ /^{.*}$/ {
+    json {
+      source => "message"
+    }
+  }
+[highlight]
+  mutate {
+    remove_field => ["event", "message", "emailAddress"]
+    add_field => { "env" => "development" }
+  }
+[/highlight]
+}
+...

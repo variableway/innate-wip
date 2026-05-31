@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/logstash-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+{
+   .... 
+           "event" => {
+        "original" => "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Initialized application\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1749032396}"
+    },
+         "message" => "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Initialized application\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1749032396}",
+[highlight]
+      "@timestamp" => 2025-06-04T10:20:43.355224148Z,
+              "ip" => "127.0.0.1",
+             "msg" => "Initialized application",
+             "pid" => 169516,
+             "ssn" => "407-01-2433",
+[/highlight]
+             "log" => {
+        "file" => {
+            "path" => "/var/log/logify/app.log"
+        }
+    }
+}

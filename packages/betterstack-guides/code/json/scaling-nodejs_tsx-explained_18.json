@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/tsx-explained/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[label package.json]
+{
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "start:native": "node --experimental-strip-types src/app.ts",
+    "start": "tsx src/app.ts"
+  }
+}

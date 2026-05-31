@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-metrics-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))

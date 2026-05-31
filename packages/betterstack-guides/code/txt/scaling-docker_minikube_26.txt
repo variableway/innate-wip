@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 26
+
+The URL includes the IP address of the Minikube node and the assigned
+`NodePort`. You can now access your application by visiting this URL in a
+browser or by using tools like curl:

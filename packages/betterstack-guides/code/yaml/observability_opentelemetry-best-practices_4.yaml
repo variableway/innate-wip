@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-best-practices/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+processors:
+  filter:
+    spans:
+      include:
+        match_type: regexp
+        attributes:
+          - key: db.statement
+            value: "(?i)(?:password|passwd|pwd)\\s*=\\s*[^\\s,;]+"
+      actions:
+        - key: db.statement
+          action: update
+          value: "REDACTED"

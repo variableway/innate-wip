@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+total 12
+-rw-rw-r-- 1 marin marin 164 Nov 10 13:03 Caddyfile
+-rw-rw-r-- 1 marin marin 302 Nov 10 13:05 docker-compose.yml
+-rw-rw-r-- 1 marin marin 188 Nov 10 13:04 index.html

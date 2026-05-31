@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 20
+
+[output]
+{"level":"info","timestamp":"2023-05-15T16:15:05.466+0100","msg":"Hello from Zap!"}

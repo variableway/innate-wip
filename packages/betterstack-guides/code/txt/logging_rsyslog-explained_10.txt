@@ -1,0 +1,41 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+total 444
+total 444
+-rw-r--r--  1 root      root                 0 Oct 22 04:33 alternatives.log
+drwxr-xr-x  2 root      root              4096 Oct 27 08:37 apt
+[highlight]
+-rw-r-----  1 syslog    adm               7596 Oct 27 08:44 auth.log
+[/highlight]
+-rw-r--r--  1 root      root                 0 Oct 22 04:33 bootstrap.log
+-rw-rw----  1 root      utmp                 0 Feb 17  2023 btmp
+[highlight]
+-rw-r-----  1 syslog    adm             105503 Oct 27 08:33 cloud-init.log
+-rw-r-----  1 root      adm               5769 Oct 27 08:33 cloud-init-output.log
+[/highlight]
+drwxr-xr-x  2 root      root              4096 Feb 10  2023 dist-upgrade
+[highlight]
+-rw-r-----  1 root      adm              46597 Oct 27 08:33 dmesg
+[/highlight]
+-rw-r--r--  1 root      root              6664 Oct 27 08:37 dpkg.log
+-rw-r--r--  1 root      root             32032 Oct 27 08:33 faillog
+drwxr-sr-x+ 4 root      systemd-journal   4096 Oct 27 08:33 journal
+[highlight]
+-rw-r-----  1 syslog    adm              70510 Oct 27 08:44 kern.log
+[/highlight]
+drwxr-xr-x  2 landscape landscape         4096 Oct 27 08:33 landscape
+-rw-rw-r--  1 root      utmp            292292 Oct 27 08:35 lastlog
+drwx------  2 root      root              4096 Feb 17  2023 private
+[highlight]
+-rw-r-----  1 syslog    adm             136675 Oct 27 08:44 syslog
+[/highlight]
+-rw-r--r--  1 root      root              4748 Oct 27 08:37 ubuntu-advantage.log
+[highlight]
+-rw-r-----  1 syslog    adm              10487 Oct 27 08:44 ufw.log
+drwxr-x---  2 root      adm               4096 Oct 22 04:28 unattended-upgrades
+[/highlight]
+-rw-rw-r--  1 root      utmp              3840 Oct 27 08:35 wtmp

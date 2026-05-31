@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-to-kubernetes/
+# Original language: text
+# Normalized: txt
+# Block index: 63
+
+[output]
+-rw-r--r-- 1 marin marin 2270 Jan 19 11:21 example.yaml

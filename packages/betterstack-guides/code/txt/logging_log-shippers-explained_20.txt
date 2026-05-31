@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[label /etc/logstash/conf/01-read-nginx-logs.conf]
+input {
+    file {
+        'path' => '/var/logs/nginx/access.log'
+        'type' => 'nginx'
+        'start_position' => 'beginning'
+    }
+}
+
+filter {
+    grok {
+        match => { "message" => "%{IPORHOST:remote_ip} - %{DATA:user_name} \[%{HTTPDATE:access_time}\] \"%{WORD:http_method} %{DATA:url} HTTP/%{NUMBER:http_version}\" %{NUMBER:response_code} %{NUMBER:body_sent_bytes} \"%{DATA:referrer}\" \"%{DATA:agent}\"" }
+   }
+
+    mutate {
+        add_field => {
+            "mutate"=> "true"
+        }
+    }
+}
+
+output {
+    http {
+        url => "https://in.logs.betterstack.com/"
+        http_method => "post"
+        headers => {
+          "Authorization" => "Bearer <your_betterstack_source_token>"
+        }
+        format => "json"
+    }
+}

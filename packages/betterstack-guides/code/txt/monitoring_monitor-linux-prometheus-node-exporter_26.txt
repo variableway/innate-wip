@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/monitoring/monitor-linux-prometheus-node-exporter/
+# Original language: text
+# Normalized: txt
+# Block index: 26
+
+[output]
+[+] Running 3/3
+ ✔ Container prometheus     Removed                              0.3s
+ ✔ Container collector      Started                              1.0s
+ ✔ Container node-exporter  Started                              0.9s

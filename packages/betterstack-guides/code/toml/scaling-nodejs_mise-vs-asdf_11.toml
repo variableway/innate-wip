@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mise-vs-asdf/
+# Original language: toml
+# Normalized: toml
+# Block index: 11
+
+[label .mise.toml]
+[tasks.install]
+run = "npm install"
+
+[tasks.dev]
+run = "npm run dev"
+depends = ["install"]
+
+[tasks.test]
+run = "npm test"
+env = { NODE_ENV = "test" }
+
+[tasks.deploy]
+run = """
+npm run build
+aws s3 sync dist/ s3://my-bucket
+"""

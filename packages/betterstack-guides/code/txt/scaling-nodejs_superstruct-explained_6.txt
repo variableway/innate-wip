@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/superstruct-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+This schema tells Superstruct that a person object must have:
+
+- `firstName` as a string
+- `lastName` as a string  
+- `age` as a number
+
+Each validation rule is a function. You can mix and match these functions to create complex validation logic.
+
+Now create your main `index.ts` file to test the validation:

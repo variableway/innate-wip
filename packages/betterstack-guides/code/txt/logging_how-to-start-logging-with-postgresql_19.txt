@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+/var/lib/pgsql/data/log/postgresql-Thu.log

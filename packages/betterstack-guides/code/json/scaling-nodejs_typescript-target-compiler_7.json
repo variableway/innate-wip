@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-target-compiler/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "strict": true
+  }
+}

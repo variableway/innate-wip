@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/parsing-csv-files-with-papa-parse/
+# Original language: json
+# Normalized: json
+# Block index: 12
+
+[
+{
+  "id": 1,
+  "name": "John Smith",
+  "department": "Engineering",
+  "salary": 75000
+},
+{
+  "id": 2,
+  "name": "Sara Johnson",
+  "department": "Marketing",
+  "salary": 82000
+},
+{
+  "id": 3,
+  "name": "Michael Brown",
+  "department": "Finance",
+  "salary": 95000
+}
+]

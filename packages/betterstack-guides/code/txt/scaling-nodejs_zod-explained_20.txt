@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 20
+
+Another option is `parse()`, which throws an error if validation fails. Modify your code to use `parse()` instead:

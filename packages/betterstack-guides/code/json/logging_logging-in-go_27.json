@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logging-in-go/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+{"time":"2023-05-24T19:03:10.70311982+01:00","level":"DEBUG","msg":"Debug message"}
+{"time":"2023-05-24T19:03:10.703187713+01:00","level":"INFO","msg":"Info message"}
+{"time":"2023-05-24T19:03:10.703190419+01:00","level":"WARN","msg":"Warning message"}
+{"time":"2023-05-24T19:03:10.703192892+01:00","level":"ERROR","msg":"Error message"}

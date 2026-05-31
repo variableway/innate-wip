@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/cli-tsc-compiler/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "module": "nodenext", "target": "esnext", ...
+    "noUncheckedIndexedAccess": true, "exactOptionalPropertyTypes": true, ...
+    "strict": true, "jsx": "react-jsx",
+    "verbatimModuleSyntax": true, "isolatedModules": true,
+    "noUncheckedSideEffectImports": true, "moduleDetection": "force",
+    "skipLibCheck": true
+  }
+}

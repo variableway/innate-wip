@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/mapped-types/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+Update: { name: 'Alice Smith' }
+Display: { id: 1, name: 'Alice', email: 'alice@example.com' }

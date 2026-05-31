@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[output]
+Alertname         Starts At                Summary             State
+NodeExporterDown  2024-11-20 13:36:36 UTC  Node Exporter down  active

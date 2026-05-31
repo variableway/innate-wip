@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+...
+ privateInfo ${record["privateInfo"].gsub(/(\d{3}-\d{2}-\d{4})/, 'REDACTED').gsub(/(\d+\.\d+\.\d+\.\d+)/, 'REDACTED')}
+ ...

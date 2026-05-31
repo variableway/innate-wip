@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 30
+
+This code builds upon the existing `UserSchema` by adding an optional `phoneNumber` field. Using `UserSchema.extend()`, the schema is expanded while preserving its original structure. TypeScript automatically infers the updated type, recognizing `phoneNumber` as optional.  
+
+When `ExtendedSchema.safeParse(userData)` runs, Zod validates the data while TypeScript ensures type safety at compile time. If `phoneNumber` is omitted, the validation still passes, demonstrating how Zod enables flexible yet strict data validation while keeping TypeScript types in sync.
+
+Run the script:

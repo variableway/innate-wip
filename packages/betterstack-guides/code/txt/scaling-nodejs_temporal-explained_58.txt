@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/temporal-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 58
+
+[output]
+Default: 2025-02-06T14:30:45-05:00[America/New_York]
+Date only: 2025-02-06
+Time only: 14:30:45

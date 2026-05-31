@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/react2shell_react_server/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+You have been pwned:
+THIS_IS_A_SECRET_KEY=a3d13rj73hjkwh3rj3k
+SECRET_PASSWORD=my_password

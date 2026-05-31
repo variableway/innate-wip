@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-manage-log-files-with-logrotate-on-ubuntu-20-04/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[output]
+logrotate state -- version 2
+"/home/<user>/logify/log_records.log" 2023-4-29-20:0:0

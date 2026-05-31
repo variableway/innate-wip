@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+2025-01-28 14:06:51.173156 I [1294858:60] MyApp -- Application started
+2025-01-28 14:06:51.173174 E [1294858:60 main.rb:8] MyApp -- An error occurred

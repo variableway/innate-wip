@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pnpm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 331, reused 70, downloaded 261, added 261, done
+
+devDependencies:
++ jest 29.7.0
+
+Done in 23.6s using pnpm v10.6.4

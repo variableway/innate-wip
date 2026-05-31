@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/morgan-logging-nodejs/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+{"requestId":"4a240343-c22e-40f0-9c4b-5b937ecc8215","method":"GET","url":"/","status":304,"responseTime":"3.568 ms"}
+{"requestId":"91093119-86ab-4861-bdad-7d35886751b7","method":"GET","url":"/about","status":304,"responseTime":"0.726 ms"}

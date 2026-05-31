@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+[label log-processing-stack/logify/Dockerfile]
+FROM ubuntu:latest
+
+COPY . .
+
+RUN chmod +x logify.sh
+
+RUN mkdir -p /var/log/logify
+
+RUN ln -sf /dev/stdout /var/log/logify/app.log
+
+CMD ["./logify.sh"]

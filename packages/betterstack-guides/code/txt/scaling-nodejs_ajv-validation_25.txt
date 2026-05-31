@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ajv-validation/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+[output]
+Validation errors: [
+  {
+    instancePath: '/password',
+    schemaPath: '#/properties/password/passwordComplexity',
+    keyword: 'passwordComplexity',
+    params: {},
+    message: 'must pass "passwordComplexity" keyword validation'
+  }
+]

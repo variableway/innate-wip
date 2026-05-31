@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: text
+# Normalized: txt
+# Block index: 86
+
+[output]
+HTTP/1.1 200 OK
+X-Correlation-Id: cc7qa0picq4sk77aqql0
+Date: Wed, 31 Aug 2022 18:14:27 GMT
+Content-Type: text/html; charset=utf-8

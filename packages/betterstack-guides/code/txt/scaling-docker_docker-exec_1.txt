@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-exec/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+CONTAINER ID   IMAGE   COMMAND                  CREATED         STATUS         PORTS     NAMES
+7a3c1af5f11a   nginx   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   80/tcp    my-nginx

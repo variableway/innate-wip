@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nestjs-vs-rails/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 23
+
+# test/fixtures/posts.yml
+published_post:
+  title: "Published Post"
+  content: "This post is published"
+  published: true
+  user: john
+
+draft_post:
+  title: "Draft Post"
+  content: "This post is a draft"
+  published: false
+  user: jane

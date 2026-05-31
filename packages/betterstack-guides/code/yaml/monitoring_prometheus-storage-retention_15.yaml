@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 15
+
+spec:
+  containers:
+  - name: prometheus
+    args:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+[highlight]
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=90d'
+[/highlight]

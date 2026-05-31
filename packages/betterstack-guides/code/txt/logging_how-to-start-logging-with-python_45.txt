@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[output]
+{"name": "__main__", "timestamp": "2023-02-06T09:08:04Z", "severity": "INFO", "filename": "example.py", "lineno": 21, "process": 872558, "message": "An info"}
+{"name": "__main__", "timestamp": "2023-02-06T09:08:04Z", "severity": "WARNING", "filename": "example.py", "lineno": 22, "process": 872558, "message": "A warning"}
+{"name": "__main__", "timestamp": "2023-02-06T09:08:04Z", "severity": "ERROR", "filename": "example.py", "lineno": 23, "process": 872558, "message": "An error", "user_id": "james103", "session_id": "eheo3e"}

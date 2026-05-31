@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 37
+
+[output]
+2025-05-23 15:11:15.198 | DEBUG    | __main__:<module>:4 - A debug message.

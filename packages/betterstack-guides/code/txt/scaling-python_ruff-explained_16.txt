@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Found 1 error (1 fixed, 0 remaining).

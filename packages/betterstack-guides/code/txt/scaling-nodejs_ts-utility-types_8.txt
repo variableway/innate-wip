@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ts-utility-types/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+
+Create request: { email: 'alice@example.com', name: 'Alice Johnson', role: 'user' }
+User summary: { id: '123', name: 'Alice Johnson', isActive: true }

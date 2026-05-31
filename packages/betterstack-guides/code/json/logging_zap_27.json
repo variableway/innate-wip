@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zap/
+# Original language: json
+# Normalized: json
+# Block index: 27
+
+[output]
+{"level":"error","ts":1684164638.0570025,"caller":"zap/main.go:47","msg":"Failed to perform an operation","operation":"someOperation","error":"something happened","retryAttempts":3,"user":"john.doe","stacktrace":"main.main\n\t/home/ayo/dev/demo/zap/main.go:47\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:250"}

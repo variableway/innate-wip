@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typebox-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+
+Raw validation errors: [
+  {
+    type: 52,
+    schema: {
+      minLength: 3,
+      maxLength: 20,
+      type: 'string',
+      [Symbol(TypeBox.Kind)]: 'String'
+    },
+    path: '/username',
+    value: 'jo',
+    message: 'Expected string length greater or equal to 3',
+    errors: []
+  },
+  ...
+  {
+    type: 39,
+    schema: { minimum: 18, type: 'number', [Symbol(TypeBox.Kind)]: 'Number' },
+    path: '/age',
+    value: 16,
+    message: 'Expected number to be greater or equal to 18',
+    errors: []
+  }
+]

@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 27
+
+[output]
+.
+├── Caddyfile
+├── dist
+│   ├── assets
+│   │   ├── index-1a72bdb1.js
+│   │   └── index-1eb968c3.css
+│   └── index.html
+├── docker-compose.yml
+└── index.html
+
+2 directories, 6 files

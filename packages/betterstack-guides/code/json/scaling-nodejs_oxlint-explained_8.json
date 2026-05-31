@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/oxlint-explained/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+"ignorePatterns": ["dist/", "node_modules/"]

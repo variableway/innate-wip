@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/index/
+# Original language: text
+# Normalized: txt
+# Block index: 0
+
+[output]
+Jul 17 14:32:45 myserver sshd[1234]: Accepted publickey for admin from 192.168.1.50 port 45678 ssh2: RSA SHA256:Ab3d9EfGhIjK1mN0pQrSt2uVwXyZ

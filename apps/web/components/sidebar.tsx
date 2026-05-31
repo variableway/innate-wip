@@ -24,6 +24,7 @@ import {
   Globe,
   Newspaper,
   ChevronRight,
+  FileText,
 } from "lucide-react"
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -59,17 +60,25 @@ function SidebarContent({
 }) {
   const pathname = usePathname()
   const [contentOpen, setContentOpen] = useState(true)
+  const [feedOpen, setFeedOpen] = useState(true)
   const [makingOpen, setMakingOpen] = useState(true)
+  const [cheatsheetsOpen, setCheatsheetsOpen] = useState(true)
   const [awesomeOpen, setAwesomeOpen] = useState(true)
   const [rssOpen, setRssOpen] = useState(false)
 
   // Auto-expand relevant sections based on current route
   useEffect(() => {
-    if (pathname.startsWith("/writing") || pathname.startsWith("/feed") || pathname.startsWith("/cheatsheets") || pathname.startsWith("/collections")) {
+    if (pathname.startsWith("/writing") || pathname.startsWith("/collections")) {
       setContentOpen(true)
+    }
+    if (pathname.startsWith("/feed")) {
+      setFeedOpen(true)
     }
     if (pathname.startsWith("/making")) {
       setMakingOpen(true)
+    }
+    if (pathname.startsWith("/cheatsheets") || pathname.startsWith("/betterstack-guides")) {
+      setCheatsheetsOpen(true)
     }
     if (pathname.startsWith("/awesome")) {
       setAwesomeOpen(true)
@@ -77,11 +86,12 @@ function SidebarContent({
   }, [pathname])
 
   const isWriting = pathname === "/writing" || pathname.startsWith("/writing/")
+  const isCollections = pathname === "/collections" || pathname.startsWith("/collections/")
+  const isFeed = pathname === "/feed" || pathname.startsWith("/feed/")
   const isAwesomeRoot = pathname === "/awesome"
   const isMaking = pathname === "/making" || pathname.startsWith("/making/")
   const isCheatsheets = pathname === "/cheatsheets" || pathname.startsWith("/cheatsheets/")
-  const isCollections = pathname === "/collections" || pathname.startsWith("/collections/")
-  const isFeed = pathname === "/feed" || pathname.startsWith("/feed/")
+  const isBetterstack = pathname === "/betterstack-guides" || pathname.startsWith("/betterstack-guides/")
 
   return (
     <aside
@@ -121,7 +131,7 @@ function SidebarContent({
             onClick={() => setContentOpen(!contentOpen)}
             className={cn(
               "flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-all w-full text-left",
-              (isWriting || isFeed || isCheatsheets || isCollections)
+              (isWriting || isCollections)
                 ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
                 : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
               collapsed && "justify-center px-0"
@@ -152,30 +162,6 @@ function SidebarContent({
                 <span>Writing</span>
               </Link>
               <Link
-                href="/feed"
-                className={cn(
-                  "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
-                  isFeed
-                    ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
-                    : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
-                )}
-              >
-                <Newspaper className="h-3.5 w-3.5 shrink-0" />
-                <span>Feed</span>
-              </Link>
-              <Link
-                href="/cheatsheets"
-                className={cn(
-                  "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
-                  isCheatsheets
-                    ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
-                    : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
-                )}
-              >
-                <BookOpen className="h-3.5 w-3.5 shrink-0" />
-                <span>Cheatsheets</span>
-              </Link>
-              <Link
                 href="/collections"
                 className={cn(
                   "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
@@ -186,6 +172,46 @@ function SidebarContent({
               >
                 <Globe className="h-3.5 w-3.5 shrink-0" />
                 <span>Collections</span>
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Feed Category */}
+        <div className="px-2 mb-2">
+          <button
+            onClick={() => setFeedOpen(!feedOpen)}
+            className={cn(
+              "flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-all w-full text-left",
+              isFeed
+                ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
+                : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
+              collapsed && "justify-center px-0"
+            )}
+            title="Feed"
+          >
+            <Newspaper className="h-4 w-4 shrink-0" />
+            {!collapsed && (
+              <>
+                <span className="flex-1">Feed</span>
+                <ChevronRight className={cn("h-3 w-3 transition-transform", feedOpen && "rotate-90")} />
+              </>
+            )}
+          </button>
+
+          {feedOpen && !collapsed && (
+            <div className="ml-2 mt-0.5 space-y-0.5">
+              <Link
+                href="/feed"
+                className={cn(
+                  "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
+                  isFeed
+                    ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
+                    : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
+                )}
+              >
+                <Newspaper className="h-3.5 w-3.5 shrink-0" />
+                <span>Feed</span>
               </Link>
             </div>
           )}
@@ -262,6 +288,58 @@ function SidebarContent({
               >
                 <CheckSquare className="h-3.5 w-3.5 shrink-0" />
                 <span>Issues</span>
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Cheatsheets Category */}
+        <div className="px-2 mb-2">
+          <button
+            onClick={() => setCheatsheetsOpen(!cheatsheetsOpen)}
+            className={cn(
+              "flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-all w-full text-left",
+              (isCheatsheets || isBetterstack)
+                ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
+                : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
+              collapsed && "justify-center px-0"
+            )}
+            title="Cheatsheets"
+          >
+            <FileText className="h-4 w-4 shrink-0" />
+            {!collapsed && (
+              <>
+                <span className="flex-1">Cheatsheets</span>
+                <ChevronRight className={cn("h-3 w-3 transition-transform", cheatsheetsOpen && "rotate-90")} />
+              </>
+            )}
+          </button>
+
+          {cheatsheetsOpen && !collapsed && (
+            <div className="ml-2 mt-0.5 space-y-0.5">
+              <Link
+                href="/cheatsheets"
+                className={cn(
+                  "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
+                  isCheatsheets
+                    ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
+                    : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
+                )}
+              >
+                <BookOpen className="h-3.5 w-3.5 shrink-0" />
+                <span>Cheatsheets</span>
+              </Link>
+              <Link
+                href="/betterstack-guides"
+                className={cn(
+                  "flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all",
+                  isBetterstack
+                    ? "bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7] font-semibold"
+                    : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground"
+                )}
+              >
+                <BookOpen className="h-3.5 w-3.5 shrink-0" />
+                <span>Better Stack Guides</span>
               </Link>
             </div>
           )}

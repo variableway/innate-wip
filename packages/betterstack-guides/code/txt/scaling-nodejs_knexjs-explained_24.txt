@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/knexjs-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 24
+
+[output]
+{
+  ...,
+  sql: 'select count(*) as `count` from `books` limit ?'
+}
+Total books before deletion: 3
+{
+  ...,
+  sql: 'select * from `books` where `author` like ? limit ?'
+}
+Found book to delete: JavaScript: The Good Parts
+{
+  ...,
+  sql: 'delete from `books` where `id` = ?'
+}
+Book deleted successfully
+{
+  ...,
+  sql: 'select count(*) as `count` from `books` limit ?'
+}
+Total books after deletion: 2

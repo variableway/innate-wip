@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/ha-docker-swarm/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-09-21 10:18:15 UTC; 58s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 25355 (dockerd)
+      Tasks: 7
+     Memory: 22.2M
+        CPU: 346ms
+     CGroup: /system.slice/docker.service
+             └─25355 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock

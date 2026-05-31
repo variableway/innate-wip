@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 43
+
+2025-01-29 10:37:59.904835 E [1578977:puma srv tp 001 subscriber.rb:138] (43.2ms) ApplicationController -- Completed #hello -- {:controller=>"ApplicationController", :action=>"hello", :format=>"*/*", :method=>"GET", :path=>"/", :status=>500, :view_runtime=>8.12, :db_runtime=>0.0, :queries_count=>0, :cached_queries_count=>0, :allocations=>4698, :status_message=>"Internal Server Error"}

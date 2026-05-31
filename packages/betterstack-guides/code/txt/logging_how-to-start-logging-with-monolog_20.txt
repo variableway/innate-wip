@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-monolog/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+[2022-08-01T18:00:02.603380+00:00] my_logger.INFO: This file has been executed. [] {"user":"Eric"}

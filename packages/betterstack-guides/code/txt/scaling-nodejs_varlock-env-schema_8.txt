@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/varlock-env-schema/
+# Original language: text
+# Normalized: txt
+# Block index: 8
+
+[output]
+VITE v7.3.1 ready in 326 ms
+
+  ➜  Local:   http://localhost:3002/
+  ➜  Network: http://192.168.5.184:3002/

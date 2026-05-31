@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/graphql-fastify/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{
+  "data": {
+    "createUser": {
+      "id": "4",
+      "name": "Sarah Davis",
+      "email": "sarah@example.com",
+      "role": "analyst"
+    }
+  }
+}

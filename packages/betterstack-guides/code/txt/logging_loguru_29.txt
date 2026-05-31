@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[output]
+May 23, 2025 > 14:29:13 | INFO | A user requested a service. | {'seller_id': '001', 'product_id': '123'}

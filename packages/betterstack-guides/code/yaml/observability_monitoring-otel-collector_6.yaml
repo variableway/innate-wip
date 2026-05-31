@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/observability/monitoring-otel-collector/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 6
+
+service:
+ telemetry:
+   metrics:
+     readers:
+       - periodic:
+           interval: 5000
+     exporter:
+       otlp:
+         protocol: http/protobuf
+         endpoint: http://monitoring-backend:4318
+         insecure: true
+         temporality_preference: delta
+   traces:
+     processors:
+       - batch:
+     exporter:
+       otlp:
+         protocol: grpc/protobuf
+         endpoint: https://tracing-backend:4317

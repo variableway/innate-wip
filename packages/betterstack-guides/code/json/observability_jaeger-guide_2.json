@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/jaeger-guide/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+[output]
+. . .
+{"msg":"Query server started","http_addr":"[::]:16686","grpc_addr":"[::]:16685"}
+{"msg":"Health Check state change","status":"ready"}
+{"msg":"Starting GRPC server","port":16685,"addr":":16685"}
+{"msg":"[core] [Server #7 ListenSocket #8]ListenSocket created"}
+{"msg":"Starting HTTP server","port":16686,"addr":":16686"}

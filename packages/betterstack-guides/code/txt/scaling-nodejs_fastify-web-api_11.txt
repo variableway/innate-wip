@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-web-api/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "blog.db" at "file:../data/blog.db"
+
+SQLite database blog.db created at file:../data/blog.db
+
+🚀  Your database is now in sync with your Prisma schema. Done in 14ms
+
+✔ Generated Prisma Client (v6.5.0) to ./node_modules/@prisma/client in
+ 70ms

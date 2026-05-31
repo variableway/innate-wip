@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[label .env]
+. . .
+[highlight]
+GITHUB_CLIENT_ID=<your_github_client_id>
+GITHUB_CLIENT_SECRET=<your_github_client_secret>
+[/highlight]
+. . .

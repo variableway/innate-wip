@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+127.0.0.1 alice Alice [07/May/2021:10:44:53 +0200] "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4531.93 Safari/537.36"

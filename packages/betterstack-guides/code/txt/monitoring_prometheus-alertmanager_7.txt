@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+. . .
+[+] Running 4/4
+ ✔ Network prometheus-alertmanager_monitoring  Created           0.2s
+ ✔ Container alertmanager                      Started           0.7s
+ ✔ Container node-exporter                     Started           0.6s
+ ✔ Container prometheus                        Started           0.7s

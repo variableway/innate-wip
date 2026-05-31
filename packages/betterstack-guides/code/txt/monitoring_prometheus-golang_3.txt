@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-golang/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[label .env]
+GO_ENV=development
+PORT=8000
+LOG_LEVEL=info

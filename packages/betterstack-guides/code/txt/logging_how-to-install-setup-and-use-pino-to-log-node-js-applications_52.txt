@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-pino-to-log-node-js-applications/
+# Original language: text
+# Normalized: txt
+# Block index: 52
+
+[output]
+[12:48:25.939] INFO (5964): info
+[12:48:25.940] ERROR (5964): error
+[12:48:25.940] FATAL (5964): fatal
+
+{"level":30,"time":"2025-05-22T12:48:25.939Z","pid":5964,"hostname":"ubuntu","msg":"info"}
+{"level":50,"time":"2025-05-22T12:48:25.940Z","pid":5964,"hostname":"ubuntu","msg":"error"}
+{"level":60,"time":"2025-05-22T12:48:25.940Z","pid":5964,"hostname":"ubuntu","msg":"fatal"}

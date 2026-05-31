@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 4
+
+[label alerts.yaml]
+groups:
+- name: node_exporter_alerts
+  rules:
+  - alert: NodeExporterDown
+    expr: up{job="node-exporter"} == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Node Exporter down"
+      description: "Node Exporter has been down for more than 1 minute."

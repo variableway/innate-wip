@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-strict-option/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "nodenext",
+    "strict": false,
+    "outDir": "./dist"
+  }
+}

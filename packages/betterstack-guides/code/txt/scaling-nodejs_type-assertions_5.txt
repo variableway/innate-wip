@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/type-assertions/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+src/problem.ts:6:10 - error TS2339: Property 'disabled' does not exist on type 'HTMLElement'.
+
+6   button.disabled = true; // Error: Property 'disabled' doesn't exist on HTMLElement
+           ~~~~~~~~
+
+Found 1 error in src/problem.ts:6

@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+[output]
+{
+  ...
+  "message": "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 169516, \"ssn\": \"407-01-2433\", \"timestamp\": 1748878010}",
+  "input": {
+    "type": "filestream"
+  },
+  ...
+}

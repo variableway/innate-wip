@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 12
+
+[output]
+2025-05-29T07:53:21.925722Z  INFO vector::app: Log level is enabled. level="info"
+2025-05-29T07:53:21.927170Z  INFO vector::app: Loading configs. paths=["/etc/vector/vector.yaml"]
+2025-05-29T07:53:21.933143Z  INFO vector::topology::running: Running healthchecks.
+2025-05-29T07:53:21.933290Z  INFO vector: Vector has started. debug="false" version="0.47.0" arch="x86_64" revision="3d5af22 2025-05-20 13:53:41.638057046"
+2025-05-29T07:53:21.933304Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2025-05-29T07:53:21.933425Z  INFO vector::topology::builder: Healthcheck passed.
+2025-05-29T07:53:21.933594Z  INFO source{component_kind="source" component_id=app_logs component_type=file}: vector::sources::file: Starting file server. include=["/var/log/logify/app.log"] exclude=[]
+2025-05-29T07:53:21.934326Z  INFO source{component_kind="source" component_id=app_logs component_type=file}:file_server: file_source::checkpointer: Attempting to read legacy checkpoint files.
+2025-05-29T07:53:21.937338Z  INFO source{component_kind="source" component_id=app_logs component_type=file}:file_server: vector::internal_events::file::source: Found new file to watch. file=/var/log/logify/app.log
+...

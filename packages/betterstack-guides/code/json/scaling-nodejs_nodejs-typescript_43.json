@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: json
+# Normalized: json
+# Block index: 43
+
+[label .eslintrc.json]
+"extends": [
+  "eslint:recommended",
+  "plugin:@typescript-eslint/recommended",
+  [highlight]
+  "plugin:prettier/recommended"
+  [/highlight]
+]

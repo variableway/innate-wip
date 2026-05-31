@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/biome-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+// packages/frontend/biome.json
+{
+  "extends": ["//"],
+  "linter": {
+    "rules": {
+      "correctness": {
+        "useHookAtTopLevel": "error"
+      }
+    }
+  }
+}

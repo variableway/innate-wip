@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+set(attributes["user.email"], SHA256(attributes["user.email"]))

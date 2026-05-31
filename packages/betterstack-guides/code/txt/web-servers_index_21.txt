@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 21
+
+[output]
+total 16
+drwx------  3 root  root    4096 Nov 10 12:20 acme
+drwx------  3 root  root    4096 Nov 10 12:21 certificates
+drwx------  2 root  root    4096 Nov 10 12:21 locks
+drwx------  2 root  root    4096 Nov 10 12:21 ocsp

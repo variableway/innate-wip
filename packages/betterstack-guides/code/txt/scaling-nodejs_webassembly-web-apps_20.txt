@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/webassembly-web-apps/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+[webpack-dev-server] Server started: Hot Module Replacement enabled, Live Reloading enabled, Progress disabled, Overlay enabled.
+bundle.js:138 [HMR] Waiting for update signal from WDS...
+index.js:106 WebAssembly performance testing environment ready
+index.js:91 Fibonacci(35) (JS): 0ms
+index.js:91 Fibonacci(35) (WASM): 0.19999999925494194ms
+index.js:78 Fibonacci(35): 1.00x improvement with WebAssembly
+index.js:91 Prime Count(5000) (JS): 0.8000000007450581ms
+index.js:91 Prime Count(5000) (WASM): 0.2999999988824129ms
+index.js:78 Prime Count(5000): 1.00x improvement with WebAssembly

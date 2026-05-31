@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 5
+
+[label alertmanager.yml]
+global:
+  resolve_timeout: 1m
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'betterstack'
+
+receivers:
+- name: 'betterstack'
+  webhook_configs:
+[highlight]
+  - url: '<your_betterstack_webhook_url>'
+[/highlight]

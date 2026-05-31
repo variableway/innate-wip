@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+-- Logs begin at Sat 2024-10-26 07:06:58 UTC, end at Thu 2025-01-16 10:37:13 UTC. --

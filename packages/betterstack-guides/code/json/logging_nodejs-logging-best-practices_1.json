@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+{
+  "level": "info",
+  "timestamp": "2023-10-25T07:12:46.743Z",
+  "filename": "file.jpg",
+  "msg": "image 'file.jpg' was uploaded successfully"
+}

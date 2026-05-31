@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/never-unknown-types/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+
+src/complete-example.ts:19:13 - error TS2322: Type 'unknown' is not assignable to type 'never'.
+
+19       const exhaustiveCheck: never = obj.status;
+               ~~~~~~~~~~~~~~~
+
+
+Found 1 error in src/complete-example.ts:19

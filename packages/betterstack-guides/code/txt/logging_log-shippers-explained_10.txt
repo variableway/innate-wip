@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[label /etc/td-agent/td-agent.conf]
+<source>
+  @type tail
+  path /var/log/nginx/access.log
+  pos_file /var/run/td-agent/nginx.log.pos
+  format nginx
+  tag access.nginx
+</source>

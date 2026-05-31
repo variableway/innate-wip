@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/logging/filebeat-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[label filebeat-config/filebeat.yml]
+filebeat.inputs:
+- type: filestream
+  id: logify-logs
+  paths:
+    - /var/log/logify/app.log
+
+[highlight]
+processors:
+  - decode_json_fields:
+      fields: ["message"]
+      target: ""
+[/highlight]
+
+output.console:
+  pretty: true

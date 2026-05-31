@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-reverse-proxy-nginx/
+# Original language: txt
+# Normalized: txt
+# Block index: 11
+
+[label your_domain]
+server {
+    server_name <your_domain>;
+
+    location / {
+        proxy_pass <http://localhost:3000>;
+    }
+}

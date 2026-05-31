@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/satisfies-operator/
+# Original language: text
+# Normalized: txt
+# Block index: 11
+
+[output]
+
+src/config.ts:9:3 - error TS2353: Object literal may only specify known properties, and 'yellow' does not exist in type 'Record<Colors, string | RGB>'.
+
+9   yellow: "#ffff00",
+    ~~~~~~
+
+Found 1 error in src/config.ts:9

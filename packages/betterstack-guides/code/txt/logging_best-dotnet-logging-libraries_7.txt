@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 7
+
+You will also find that the `app.json` log file has been created with the
+following JSON logs:

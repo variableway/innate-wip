@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/drizzle-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+Added 3 books to the database!
+Added book: "SQL Database Design" successfully!

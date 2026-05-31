@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/fluent-bit-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 53
+
+[output]
+NAME         IMAGE                                COMMAND                  SERVICE         CREATED         STATUS         PORTS
+fluent-bit   fluent/fluent-bit:latest             "/fluent-bit/bin/flu…"   fluent-bit      9 seconds ago   Up 9 seconds   2020/tcp, 0.0.0.0:24224->24224/tcp, [::]:24224->24224/tcp
+logify       log-processing-stack-logify-script   "./logify.sh"            logify-script   9 seconds ago   Up 8 seconds

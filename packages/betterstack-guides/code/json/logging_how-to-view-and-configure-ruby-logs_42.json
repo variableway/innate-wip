@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 42
+
+[output]
+{"host":"fedora","application":"Semantic Logger","timestamp":"2023-04-19T16:09:28.554393Z","level":"error","level_index":4,"pid":259353,"thread":"60","file":"main.rb","line":9,"name":"MyApp","exception":{"name":"ZeroDivisionError","message":"divided by 0","stack_trace":["main.rb:7:in `/'","main.rb:7:in `<main>'"]}}

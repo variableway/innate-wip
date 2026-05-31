@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+[output]
+{
+  "id": "3",
+  "name": "Charlie",
+  "email": "charlie@example.com"
+}

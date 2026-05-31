@@ -1,0 +1,39 @@
+# Source: https://betterstack.com/community/guides/scaling-php/laravel-docker/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 19
+
+[label compose.yaml]
+services:
+ app:
+   build:
+     context: .
+     target: base
+   container_name: laravel-blog-app
+   restart: unless-stopped
+   volumes:
+     - ./:/var/www
+     - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+
+ nginx:
+   image: nginx:alpine
+   container_name: laravel-blog-nginx
+   restart: unless-stopped
+   ports:
+     - "8000:80"
+   volumes:
+     - ./:/var/www
+     - ./nginx/conf.d/:/etc/nginx/conf.d/
+
+ db:
+   image: postgres:bookworm
+   container_name: laravel-blog-db
+   restart: unless-stopped
+   environment:
+     POSTGRES_DB: ${DB_DATABASE}
+     POSTGRES_PASSWORD: ${DB_PASSWORD}
+   volumes:
+     - dbdata:/var/lib/mysql
+
+volumes:
+ dbdata:

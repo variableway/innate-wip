@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: text
+# Normalized: txt
+# Block index: 33
+
+[output]
+real    0m3.452s
+user    0m0.004s
+sys     0m0.004s

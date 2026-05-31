@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Client Version: v1.32.3
+Kustomize Version: v5.5.0

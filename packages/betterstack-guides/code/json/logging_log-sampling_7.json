@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/log-sampling/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+{"level":"info","ts":1703799628.2984571,"msg":"an info message"}
+{"level":"warn","ts":1703799628.2984889,"msg":"a warning message"}
+{"level":"error","ts":1703799628.2984993,"msg":"an error message"}
+{"level":"info","ts":1703799628.2985106,"msg":"an info message"}
+{"level":"warn","ts":1703799628.2985137,"msg":"a warning message"}
+{"level":"error","ts":1703799628.2985182,"msg":"an error message"}
+{"level":"info","ts":1703799628.298522,"msg":"an info message"}
+{"level":"warn","ts":1703799628.2985265,"msg":"a warning message"}
+{"level":"error","ts":1703799628.2985306,"msg":"an error message"}

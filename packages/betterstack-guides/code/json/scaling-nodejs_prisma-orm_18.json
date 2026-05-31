@@ -1,0 +1,46 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/prisma-orm/
+# Original language: json
+# Normalized: json
+# Block index: 18
+
+[label prisma/seed/data.json]
+{
+  "users": [
+    {
+      "email": "alice@example.com",
+      "name": "Alice Johnson",
+      "password": "password123"
+    },
+    {
+      "email": "bob@example.com",
+      "name": "Bob Smith",
+      "password": "password456"
+    }
+  ],
+  "posts": [
+    {
+      "title": "Getting Started with Prisma",
+      "content": "This is a post about Prisma ORM...",
+      "published": true,
+      "authorEmail": "alice@example.com"
+    },
+    {
+      "title": "Advanced PostgreSQL Features",
+      "content": "In this post, we explore...",
+      "published": true,
+      "authorEmail": "bob@example.com"
+    }
+  ],
+  "comments": [
+    {
+      "content": "Great post! I learned a lot.",
+      "authorEmail": "bob@example.com",
+      "postTitle": "Getting Started with Prisma"
+    },
+    {
+      "content": "Thanks for sharing this information!",
+      "authorEmail": "alice@example.com",
+      "postTitle": "Advanced PostgreSQL Features"
+    }
+  ]
+}

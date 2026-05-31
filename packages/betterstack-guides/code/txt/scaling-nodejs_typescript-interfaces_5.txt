@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-interfaces/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+Creating user: Alice
+Email: alice@example.com
+Age: 30
+Creating user: Bob
+Email: bob@example.com
+Age: undefined
+Creating user: Charlie
+Email: undefined
+Age: 25
+{
+  id: 0.9949918257484061,
+  name: 'Alice',
+  email: 'alice@example.com',
+  age: 30
+}

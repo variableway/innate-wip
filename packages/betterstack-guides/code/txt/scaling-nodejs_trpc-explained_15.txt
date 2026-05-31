@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/trpc-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 15
+
+[output]
+Creating a new user:
+User created: { id: '3', name: 'Charlie', email: 'charlie@example.com' }
+
+Trying to create a user with the same email:
+Error: A user with this email already exists
+
+Trying with invalid data:
+Validation error: [
+  {
+    "code": "too_small",
+    "minimum": 2,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Name must be at least 2 characters long",
+    "path": [
+      "name"
+    ]
+  },
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  }
+]

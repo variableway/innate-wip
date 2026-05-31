@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/nodejs-logging-best-practices/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[output]
+{
+  "level": 30,
+  "timestamp": "2023-10-25T01:09:17.304Z",
+  "pid": 607573,
+  "hostname": "fedora",
+  "service": "UserService",
+  "userID": "USR-1234",
+  "msg": "user 'USR-1234' updated successfully"
+}

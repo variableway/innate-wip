@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/execa-cli/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+
+DEMO: Processing output chunks
+Found JavaScript file: ./node_modules/is-plain-obj/index.js
+./node_modules/shebang-regex/index.js
+...
+./node_modules/unicorn-magic/default.js
+./node_modules/pretty-ms/index.js
+./index.js
+Find command completed

@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 30
+
+[label /etc/apache2/apache2.conf]
+...
+LogFormat "%{User-agent}i" agent
+[highlight]
+LogFormat "{ \"timestamp\":\"%t\", \"protocol\":\"%H\", \"method\":\"%m\", \"request\":\"%U\", \"query\":\"%q\", \"request_size_in_bytes\":\"%I\", \"status_code\":\"%>s\", \"response_size_in_bytes\":\"%O\", \"time_taken_ms\":\"%{ms}T\" }" json
+[/highlight]

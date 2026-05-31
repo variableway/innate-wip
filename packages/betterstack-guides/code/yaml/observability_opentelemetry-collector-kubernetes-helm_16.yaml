@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-collector-kubernetes-helm/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 16
+
+resources:
+  limits:
+    cpu: 2
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi

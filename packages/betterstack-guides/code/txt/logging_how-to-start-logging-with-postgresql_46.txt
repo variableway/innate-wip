@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+time=2023-07-30 22:02:27.929 UTC pid=17678 error=00000 sess_id=64c6ddf3.450e LOG:  database system is ready to accept connections
+time=2023-07-30 22:03:33.613 UTC pid=17769 error=00000 sess_id=64c6de20.4569 tag=idle usr=postgres db=chinook app=psql LOG:  statement: UPDATE album SET title = 'Audioslave' WHERE albumid = 10;

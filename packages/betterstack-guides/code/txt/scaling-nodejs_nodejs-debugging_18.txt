@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-debugging/
+# Original language: text
+# Normalized: txt
+# Block index: 18
+
+break in index.js:6
+Watchers:
+  0: primes = [ 2, 3 ]
+  1: i = 4
+
+  4
+  5   for (let i = 2; i <= max; ++i) {
+> 6     if (!sieve[i]) {
+  7       primes.push(i);
+  8

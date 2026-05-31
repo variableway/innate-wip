@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Installing latest LTS version.
+Downloading and installing node v22.14.0...
+Checksums matched!
+Now using node v22.14.0 (npm v10.9.2)

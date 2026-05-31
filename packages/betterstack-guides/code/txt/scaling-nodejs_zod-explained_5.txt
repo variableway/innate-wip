@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 5
+
+With this setup, your TypeScript environment is ready, allowing you to run TypeScript files using TSX. 
+
+## Getting started with Zod
+
+In this section, you will learn how to create and use Zod schemas to validate data types in your TypeScript application. Zod provides a type-safe way to validate data at runtime while maintaining strong TypeScript integration.
+
+Create a new file `validation.ts` in your project directory and add the following code:

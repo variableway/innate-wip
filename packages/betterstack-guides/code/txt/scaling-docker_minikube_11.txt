@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/minikube/
+# Original language: txt
+# Normalized: txt
+# Block index: 11
+
+This output confirms that all the essential components of your Kubernetes
+cluster are operational. The host refers to the Minikube virtual machine or
+container, the `kubelet` is the primary node agent, and the `apiserver` is the
+Kubernetes API server that processes requests to the cluster.
+
+You can also use `kubectl` to get a more detailed view of your cluster's
+node(s):

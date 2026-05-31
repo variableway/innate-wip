@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sveltekit-vs-nextjs/
+# Original language: txt
+# Normalized: txt
+# Block index: 9
+
+src/routes/
+├── +page.svelte           // /
+├── about/+page.svelte     // /about
+├── blog/
+│   ├── +page.svelte       // /blog
+│   └── [slug]/+page.svelte // /blog/post-title
+└── dashboard/
+    ├── +layout.svelte     // Shared layout
+    ├── +page.svelte       // /dashboard
+    └── settings/+page.svelte // /dashboard/settings

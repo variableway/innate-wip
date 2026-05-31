@@ -1,0 +1,34 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 26
+
+[label docker-compose.yml]
+services:
+  # . . .
+  collector:
+    container_name: json-to-yaml-collector
+    image: otel/opentelemetry-collector:latest
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol/config.yaml
+[highlight]
+    depends_on:
+      jaeger:
+        condition: service_healthy
+[/highlight]
+    networks:
+      - json-to-yaml-network
+
+[highlight]
+  jaeger:
+    container_name: json-to-yaml-jaeger
+    image: jaegertracing/all-in-one:latest
+    environment:
+      JAEGER_PROPAGATION: w3c
+    ports:
+      - 16686:16686
+    healthcheck:
+      test: [CMD, wget, -q, -S, -O, "-", "localhost:14269"]
+    networks:
+      - json-to-yaml-network
+[/highlight]

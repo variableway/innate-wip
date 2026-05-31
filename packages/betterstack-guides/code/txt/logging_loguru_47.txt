@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/logging/loguru/
+# Original language: text
+# Normalized: txt
+# Block index: 47
+
+[output]
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 23, 2025 - 13:22:12
+Django version 4.1.1, using settings 'djangoWorldClock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.

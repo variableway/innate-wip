@@ -1,0 +1,26 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-nodejs-tracing/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 31
+
+[label docker-compose.yml]
+services:
+  auth:
+    . . .
+    environment:
+      . . .
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+[highlight]
+      OTEL_NODE_ENABLED_INSTRUMENTATIONS: ${OTEL_NODE_ENABLED_INSTRUMENTATIONS}
+[/highlight]
+    . . .
+
+  converter:
+    . . .
+    environment:
+      . . .
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+[highlight]
+      OTEL_NODE_ENABLED_INSTRUMENTATIONS: ${OTEL_NODE_ENABLED_INSTRUMENTATIONS}
+[/highlight]
+    . . .

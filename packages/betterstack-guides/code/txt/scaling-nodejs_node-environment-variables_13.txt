@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-environment-variables/
+# Original language: txt
+# Normalized: txt
+# Block index: 13
+
+[label .env]
+NODE_ENV=development
+LOG_LEVEL=info

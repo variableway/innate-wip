@@ -1,0 +1,24 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/kind/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 46
+
+[label local-image-deployment.yaml]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: my-app
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: my-app
+ template:
+   metadata:
+     labels:
+       app: my-app
+   spec:
+     containers:
+     - name: my-app
+       image: my-app:latest
+       imagePullPolicy: Never

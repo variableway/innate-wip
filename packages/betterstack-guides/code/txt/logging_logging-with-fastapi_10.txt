@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+INFO   127.0.0.1:52458 - "GET / HTTP/1.1" 200
+INFO   127.0.0.1:52483 - "GET /users/42 HTTP/1.1" 200
+INFO   127.0.0.1:52510 - "GET /items/?skip=5&limit=20 HTTP/1.1" 200

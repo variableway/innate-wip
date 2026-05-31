@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-declaration-files/
+# Original language: json
+# Normalized: json
+# Block index: 16
+
+[label tsconfig.json]
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+[highlight]
+    "allowJs": true,
+    "checkJs": true,
+[/highlight]
+    "declaration": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
+  }
+}

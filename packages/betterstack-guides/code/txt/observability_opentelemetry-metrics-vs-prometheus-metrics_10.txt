@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+Metric #0
+Descriptor:
+     -> Name: post_request_duration_seconds
+     -> Description: Duration of requests to https://jsonplaceholder.typicode.com/posts
+     -> Unit:
+     -> DataType: Summary
+SummaryDataPoints #0
+StartTimestamp: 2024-11-28 16:17:43.804 +0000 UTC
+Timestamp: 2024-11-28 17:15:33.804 +0000 UTC
+Count: 81
+Sum: 13.936882
+QuantileValue #0: Quantile 0.500000, Value 0.15260272
+QuantileValue #1: Quantile 0.900000, Value 0.182577072
+QuantileValue #2: Quantile 0.990000, Value 0.58300406

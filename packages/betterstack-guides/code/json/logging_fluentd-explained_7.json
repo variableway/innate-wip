@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/fluentd-explained/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Task completed successfully", "pid": 124134, "ssn": "407-01-2433", "timestamp": 1748586917}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Operation finished", "pid": 124134, "ssn": "407-01-2433", "timestamp": 1748586920}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Initialized application", "pid": 124134, "ssn": "407-01-2433", "timestamp": 1748586923}
+{"status": 200, "ip": "127.0.0.1", "level": 30, "emailAddress": "user@mail.com", "msg": "Task completed successfully", "pid": 124134, "ssn": "407-01-2433", "timestamp": 1748586926}

@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-storage-retention/
+# Original language: txt
+# Normalized: txt
+# Block index: 18
+
+10,000 samples/sec × 86,400 seconds × 2 bytes = ~1.7 GB per day

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/web-servers/index/
+# Original language: text
+# Normalized: txt
+# Block index: 4
+
+[output]
+{"level":"info","ts":1699254136.4690306,"logger":"tls","msg":"cleaning storage unit","description":"FileStorage:/data/caddy"}

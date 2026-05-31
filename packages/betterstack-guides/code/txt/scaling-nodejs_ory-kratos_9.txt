@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ory-kratos/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[label .env]
+NEXT_PUBLIC_ORY_SDK_URL=http://127.0.0.1:4433/
+NEXT_PUBLIC_ORY_UI_URL=http://127.0.0.1:3000/

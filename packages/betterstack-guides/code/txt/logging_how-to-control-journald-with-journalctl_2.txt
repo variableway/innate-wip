@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[output]
+-- Logs begin at Sat 2024-10-26 07:06:58 UTC, end at Thu 2025-01-16 10:37:13 UTC. --
+Oct 26 07:06:58 Ubuntu-20-04 sshd[3011984]: Disconnected from invalid user pzserver 175.107.32.186 port 52429 [preauth]
+Oct 26 07:07:02 Ubuntu-20-04 sshd[3011990]: Invalid user qinyang from 196.189.87.177 port 3496
+Oct 26 07:07:03 Ubuntu-20-04 sshd[3011990]: Received disconnect from 196.189.87.177 port 3496:11: Bye Bye [preauth]
+Oct 26 07:07:03 Ubuntu-20-04 sshd[3011990]: Disconnected from invalid user qinyang 196.189.87.177 port 3496 [preauth]
+. . .

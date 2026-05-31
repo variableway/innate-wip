@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nestjs-vs-laravel/
+# Original language: txt
+# Normalized: txt
+# Block index: 6
+
+app/
+├── Http/Controllers/
+├── Models/
+├── Services/
+routes/
+├── api.php
+└── web.php

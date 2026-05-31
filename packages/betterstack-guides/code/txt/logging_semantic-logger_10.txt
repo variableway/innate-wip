@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+2025-01-29 18:47:17.464853 I [1711333:60] Device -- Operation completed

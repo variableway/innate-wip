@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-dotnet-logging-libraries/
+# Original language: txt
+# Normalized: txt
+# Block index: 15
+
+As mentioned, NLog can also be configured using an XML configuration file
+(`nlog.config`):

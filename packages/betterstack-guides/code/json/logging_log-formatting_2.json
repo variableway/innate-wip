@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 2
+
+{
+  "host": "fedora",
+  "application": "Semantic Logger",
+  "timestamp": "2023-06-28T17:20:19.409882Z",
+  "level": "info",
+  "level_index": 2,
+  "pid": 982617,
+  "thread": "60",
+  "name": "MyApp",
+  "message": "Starting application on port 3000"
+}

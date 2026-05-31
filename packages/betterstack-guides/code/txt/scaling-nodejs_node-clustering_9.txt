@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/node-clustering/
+# Original language: text
+# Normalized: txt
+# Block index: 9
+
+[output]
+Primary pid=111556
+App (PID: 111567) is listening on port 3000
+App (PID: 111569) is listening on port 3000
+App (PID: 111568) is listening on port 3000
+App (PID: 111570) is listening on port 3000

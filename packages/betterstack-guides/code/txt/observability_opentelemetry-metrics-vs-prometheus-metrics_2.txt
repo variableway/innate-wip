@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+Resource SchemaURL:
+Resource attributes:
+     -> service.name: Str(demo-app)
+     -> net.host.name: Str(demo-app)
+     -> server.address: Str(demo-ap)
+     -> service.instance.id: Str(localhost:8000)
+     -> net.host.port: Str(8000)
+     -> http.scheme: Str(http)
+     -> server.port: Str(8000)
+     -> url.scheme: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL:
+InstrumentationScope github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver 0.111.0

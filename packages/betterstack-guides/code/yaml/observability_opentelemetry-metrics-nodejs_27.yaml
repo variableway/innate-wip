@@ -1,0 +1,32 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-nodejs/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 27
+
+[label otelcol.yaml]
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: otel-metrics-demo-collector:4318
+
+processors:
+  attributes/betterstack:
+    actions:
+      - key: better_stack_source_token
+[highlight]
+        value: <source_token>
+[/highlight]
+        action: insert
+  batch:
+
+exporters:
+  prometheusremotewrite/betterstack:
+    endpoint: https://in-otel.logs.betterstack.com/metrics
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [batch, attributes/betterstack]
+      exporters: [prometheusremotewrite/betterstack]

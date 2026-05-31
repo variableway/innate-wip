@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 17
+
+[output]
+{"name":"myapp","hostname":"fedora","pid":2394009,"level":30,"msg":"Hello from Bunyan logger","time":"2023-06-25T06:58:59.196Z","v":0}

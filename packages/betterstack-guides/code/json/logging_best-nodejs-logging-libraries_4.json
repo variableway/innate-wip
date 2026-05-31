@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/best-nodejs-logging-libraries/
+# Original language: json
+# Normalized: json
+# Block index: 4
+
+[output]
+{
+  "level": 30,
+  "time": "2023-09-26T11:52:16.060Z",
+  "pid": 595644,
+  "hostname": "fedora",
+  "name": "John doe",
+  "id": "283487",
+[highlight]
+  "email": "[Redacted]",
+[/highlight]
+  "msg": "user profile updated"
+}

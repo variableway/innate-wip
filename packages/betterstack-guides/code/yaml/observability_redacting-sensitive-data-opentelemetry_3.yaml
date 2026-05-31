@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 3
+
+transform:
+  error_mode: <ignore|silent|propagate>
+  <trace|metric|log>_statements:
+    - context: string
+      conditions:
+        - string
+        - string
+      statements:
+        - string
+        - string
+        - string

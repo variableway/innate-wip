@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/typescript-index-signatures/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+src/problem.ts:8:3 - error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'UserCache'.
+  No index signature with a parameter of type 'string' was found on type 'UserCache'.
+
+8   cache[userId] = name; // Error: no index signature
+    ~~~~~~~~~~~~~
+
+src/problem.ts:12:10 - error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'UserCache'.
+  No index signature with a parameter of type 'string' was found on type 'UserCache'.
+
+12   return cache[userId]; // Error: no index signature
+            ~~~~~~~~~~~~~
+
+
+Found 2 errors in the same file, starting at: src/problem.ts:8

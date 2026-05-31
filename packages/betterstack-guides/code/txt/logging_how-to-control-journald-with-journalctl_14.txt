@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-control-journald-with-journalctl/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+_SOURCE_MONOTONIC_TIMESTAMP
+SSSD_PRG_NAME
+UNIT_RESULT
+PROBLEM_DIR
+_COMM
+_GID
+CODE_LINE
+SYSLOG_RAW
+SYSLOG_TIMESTAMP
+_CAP_EFFECTIVE
+ACTION
+USER_ID
+. . .

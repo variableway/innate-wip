@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 17
+
+[output]
+2023-04-25 14:36:48.402 [main] INFO com.example.App - Order shipped successfully.
+2023-04-25 14:36:48.404 [main] WARN com.example.App - Potential security vulnerability detected in user input: '...'
+2023-04-25 14:36:48.404 [main] ERROR com.example.App - Failed to process order. Error: {. . .}
+2023-04-25 14:36:48.404 [main] FATAL com.example.App - System crashed. Shutting down...

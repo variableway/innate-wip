@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/observability/opentelemetry-metrics-vs-prometheus-metrics/
+# Original language: text
+# Normalized: txt
+# Block index: 6
+
+Metric #6
+Descriptor:
+     -> Name: http_active_requests
+     -> Description: Number of active users in the system
+     -> Unit:
+     -> DataType: Gauge
+NumberDataPoints #0
+StartTimestamp: 1970-01-01 00:00:00 +0000 UTC
+Timestamp: 2024-11-28 17:04:23.804 +0000 UTC
+Value: 2.000000

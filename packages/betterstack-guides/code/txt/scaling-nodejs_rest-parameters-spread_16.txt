@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/rest-parameters-spread/
+# Original language: text
+# Normalized: txt
+# Block index: 16
+
+[output]
+Total: 125
+Combined: [ 1, 2, 3, 4, 5, 6 ]
+Original: [ 1, 2, 3 ]
+Copy: [ 1, 2, 3 ]
+Extended: [ 1, 2, 3, 4, 5 ]

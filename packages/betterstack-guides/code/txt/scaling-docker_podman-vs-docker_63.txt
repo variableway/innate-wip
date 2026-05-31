@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 63
+
+[output]
+Resolving "mysql" using unqualified-search registries (/home/<your_user_name>/.config/containers/registries.conf)
+Trying to pull docker.io/library/mysql:5.7...
+Getting image source signatures
+Copying blob 62aca7179a54 done
+...
+Copying config bdba757bc9 done
+Writing manifest to image destination
+Storing signatures
+21615c3d36236f181b94831b5c1eb699153f7cf912fdefcb342732069f99c09d
+exit code: 0

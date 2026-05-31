@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/ory-kratos/
+# Original language: text
+# Normalized: txt
+# Block index: 3
+
+[output]
+kratos-demo/
+├── docker/
+│   ├── config/
+│   │   ├── identity.schema.json
+│   │   └── kratos.yml
+│   └── docker-compose.yml
+└── users.db

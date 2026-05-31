@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+2023-04-25 21:21:26.991 [main] INFO com.example.App - Order shipped successfully. Order number: xxxxx. Buyer name: xxxxx. Destination: xxxxx.

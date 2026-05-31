@@ -1,0 +1,16 @@
+# Source: https://betterstack.com/community/guides/observability/logging-metrics-tracing/
+# Original language: json
+# Normalized: json
+# Block index: 1
+
+{
+  "ip_address": "127.0.0.1",
+  "user_identifier": "alice",
+  "user_authentication": "Alice",
+  "timestamp": "06/May/2021:11:26:42 +0200",
+  "request_method": "GET",
+  "request_url": "/",
+  "protocol": "HTTP/1.1",
+  "status_code": 200,
+  "response_size": 3477
+}

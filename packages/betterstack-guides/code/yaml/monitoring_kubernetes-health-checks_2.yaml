@@ -1,0 +1,37 @@
+# Source: https://betterstack.com/community/guides/monitoring/kubernetes-health-checks/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slow-starting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: slow-starting-app
+  template:
+    metadata:
+      labels:
+        app: slow-starting-app
+    spec:
+      containers:
+      - name: app-container
+        image: slow-app:latest
+        ports:
+        - containerPort: 8080
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          failureThreshold: 30
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3

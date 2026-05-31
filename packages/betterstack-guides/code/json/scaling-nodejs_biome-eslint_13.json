@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/biome-eslint/
+# Original language: json
+# Normalized: json
+# Block index: 13
+
+// package.json
+{
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,json}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
+  }
+}

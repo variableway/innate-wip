@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 33
+
+[output]
+{"level":"info","message":"Info message","requestId":"f9ed4675f1c53513c61a3b3b4e25b4c0","service":"admin-service"}
+{"level":"error","message":"Error message","requestId":"f9ed4675f1c53513c61a3b3b4e25b4c0","service":"admin-service"}

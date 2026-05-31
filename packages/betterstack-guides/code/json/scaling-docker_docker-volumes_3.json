@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-volumes/
+# Original language: json
+# Normalized: json
+# Block index: 3
+
+[output]
+[
+    {
+        "CreatedAt": "2023-03-17T14:05:22Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/my_data/_data",
+        "Name": "my_data",
+        "Options": {},
+        "Scope": "local"
+    }
+]

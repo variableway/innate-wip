@@ -1,0 +1,27 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-memory-leaks/
+# Original language: yml
+# Normalized: yaml
+# Block index: 42
+
+[label /etc/alertmanager/alertmanager.yml]
+
+global:
+  resolve_timeout: 1m
+
+route:
+  group_by: ['alertname', 'cluster']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  receiver: 'gmail-notifications'
+
+receivers:
+- name: 'gmail-notifications'
+  email_configs:
+  - to: <example2@gmail.com>
+    from: <example@gmail.com>
+    smarthost: smtp.gmail.com:587
+    auth_username: <example@gmail.com>
+    auth_identity: <example@gmail.com>
+    auth_password: <app_password>
+    send_resolved: true

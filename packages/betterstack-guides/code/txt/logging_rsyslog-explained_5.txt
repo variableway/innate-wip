@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+● rsyslog.service - System Logging Service
+     Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; preset: enabled)
+[highlight]
+     Active: active (running) since Thu 2025-05-22 09:36:01 UTC; 2 weeks 0 days ago
+[/highlight]
+TriggeredBy: ● syslog.socket
+       Docs: man:rsyslogd(8)
+             man:rsyslog.conf(5)
+             https://www.rsyslog.com/doc/
+   Main PID: 927 (rsyslogd)
+      Tasks: 4 (limit: 4540)
+     Memory: 64.3M (peak: 65.0M)
+        CPU: 1min 6.787s
+     CGroup: /system.slice/rsyslog.service
+             └─927 /usr/sbin/rsyslogd -n -iNONE
+
+Warning: some journal files were not opened due to insufficient permissions.

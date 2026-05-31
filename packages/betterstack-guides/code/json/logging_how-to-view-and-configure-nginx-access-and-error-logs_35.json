@@ -1,0 +1,35 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-nginx-access-and-error-logs/
+# Original language: json
+# Normalized: json
+# Block index: 35
+
+[output]
+{
+  "level": "info",
+  "ts": "2025-05-27T11:57:31+00:00",
+  "message": "handled request GET /",
+  "request": {
+    "id": "f45a82a7-7066-40d4-981d-145952c290f8",
+    "remote_ip": "172.17.0.1",
+    "remote_port": "39638",
+    "protocol": "HTTP/1.1",
+    "method": "GET",
+    "host": "localhost",
+    "uri": "/",
+    "headers": {
+      "user-agent": "curl/8.6.0",
+      "accept": "*/*",
+      "accept-encoding": "",
+      "traceparent": "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
+      "tracestate": "rojo=00f067aa0ba902b7"
+    }
+  },
+  "bytes_read": 229,
+  "duration_msecs": 0.000,
+  "size": 853,
+  "status": 200,
+  "resp_headers": {
+    "content_length": "615",
+    "content_type": "text/html"
+  }
+}

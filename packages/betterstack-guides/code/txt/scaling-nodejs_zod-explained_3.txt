@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/zod-explained/
+# Original language: txt
+# Normalized: txt
+# Block index: 3
+
+Before creating the main TypeScript file, update the `package.json` file to include a convenient script for running the project:

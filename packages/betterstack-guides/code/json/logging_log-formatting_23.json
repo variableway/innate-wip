@@ -1,0 +1,18 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 23
+
+{
+  "timestamp": "2023-09-10T15:30:45.123456Z",
+[highlight]
+  "correlation_id": "9ea8f2b4-639e-4de7-b406-f6cd3a155e9f",
+[/highlight]
+  "level": "INFO",
+  "message": "Received incoming HTTP request",
+  "request": {
+    "method": "GET",
+    "path": "/api/resource",
+    "remote_address": "192.168.1.100"
+  }
+}

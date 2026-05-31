@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/monitoring/php-laravel-prometheus/
+# Original language: text
+# Normalized: txt
+# Block index: 25
+
+# HELP app_memory_usage_bytes Current memory usage in bytes
+# TYPE app_memory_usage_bytes gauge
+app_memory_usage_bytes{type="real"} 6291456
+app_memory_usage_bytes{type="emalloc"} 2097152

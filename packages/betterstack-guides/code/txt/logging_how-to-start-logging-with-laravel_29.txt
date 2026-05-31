@@ -1,0 +1,6 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-start-logging-with-laravel/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+INFO | [2022-08-15T10:49:41.056687+00:00] | The route /user is being accessed. | {"username":"test"}

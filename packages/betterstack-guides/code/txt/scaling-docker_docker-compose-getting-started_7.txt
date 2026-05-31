@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/
+# Original language: text
+# Normalized: txt
+# Block index: 7
+
+[output]
+NAME                        IMAGE                     COMMAND                                          SERVICE    CREATED         STATUS         PORTS
+docker-compose-backend-1    docker-compose-backend    "docker-entrypoint.sh npm start"                 backend    2 minutes ago   Up 2 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp
+docker-compose-database-1   mongo                     "docker-entrypoint.sh mongod"                    database   2 minutes ago   Up 2 minutes   27017/tcp
+docker-compose-frontend-1   docker-compose-frontend   "/docker-entrypoint.sh nginx -g 'daemon off;'"   frontend   2 minutes ago   Up 2 minutes   0.0.0.0:5173->80/tcp, :::5173->80/tcp

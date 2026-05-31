@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+src/server.ts:74:35 - error TS2571: Object is of type 'unknown'.
+
+74       lastUpdated: dateFns.format(data.timestamp, 'LLL dd, yyyy hh:mm:ss a O'),
+                                     ~~~~
+Found 1 error in src/server.ts:74

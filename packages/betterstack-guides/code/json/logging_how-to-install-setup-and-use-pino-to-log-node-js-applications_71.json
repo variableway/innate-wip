@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-pino-to-log-node-js-applications/
+# Original language: json
+# Normalized: json
+# Block index: 71
+
+[output]
+{"level":30,"time":"2023-03-03T14:30:54.508Z","pid":291881,"hostname":"ubuntu","req":{"id":1,"method":"GET","url":"/crypto","query":{},"params":{},"headers":{"host":"localhost:4000","user-agent":"curl/7.85.0","accept":"*/*"},"remoteAddress":"::ffff:127.0.0.1","remotePort":36862},"res":{"statusCode":200,"headers":{"x-powered-by":"Express","content-type":"application/json; charset=utf-8","content-length":"1099516","etag":"W/\"10c6fc-mMUyGYJwdl+yk7A7N/rYiPWqFjo\""}},"responseTime":2848,"msg":"request completed"}

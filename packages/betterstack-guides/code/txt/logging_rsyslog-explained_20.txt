@@ -1,0 +1,25 @@
+# Source: https://betterstack.com/community/guides/logging/rsyslog-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[label /etc/rsyslog.d/51-rsyslog-logify.conf]
+global(
+  workDirectory="/var/spool/rsyslog"
+)
+
+# Load the imfile module to read logs from a file
+module(load="imfile")
+
+# Define a new input for reading logs from a file
+input(type="imfile"
+      File="/var/log/logify/app.log"
+      Tag="FileLogs"
+      PersistStateInterval="10"
+      Facility="local0")
+
+# Send logs with the specified tag to the console
+if $syslogtag == 'FileLogs' then {
+    action(type="omfile"
+           file="/var/log/syslog")
+}

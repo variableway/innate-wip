@@ -1,0 +1,15 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-apache-access-and-error-logs/
+# Original language: txt
+# Normalized: txt
+# Block index: 26
+
+[output]
+HTTP/1.1 200 OK
+Date: Fri, 06 Jun 2025 12:20:11 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Last-Modified: Fri, 06 Jun 2025 11:01:55 GMT
+ETag: "29af-636e52880f64f"
+Accept-Ranges: bytes
+Content-Length: 10671
+Vary: Accept-Encoding
+Content-Type: text/html

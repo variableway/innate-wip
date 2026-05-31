@@ -1,0 +1,13 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: json
+# Normalized: json
+# Block index: 19
+
+[output]
+{
+  "file": "/var/log/logify/app.log",
+  "host": "vector-test",
+  "message": "{\"status\": 200, \"ip\": \"127.0.0.1\", \"level\": 30, \"emailAddress\": \"user@mail.com\", \"msg\": \"Task completed successfully\", \"pid\": 12655, \"ssn\": \"407-01-2433\", \"time\": 1694551048}",
+  "source_type": "file",
+  "timestamp": "2025-05-29T07:53:21.937620774Z"
+}

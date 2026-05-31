@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/crontab-logs/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+Apr 20 14:00:01 myserver CRON[1234]: (root) CMD (/usr/local/bin/backup.sh)
+Apr 20 14:00:02 myserver CRON[1234]: (root) FINISHED (exit status: 0)
+Apr 20 15:00:01 myserver CRON[1235]: (www-data) CMD (/usr/bin/php /var/www/maintenance.php)
+Apr 20 15:00:03 myserver CRON[1235]: (www-data) FINISHED (exit status: 1)

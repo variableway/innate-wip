@@ -1,0 +1,23 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-alertmanager/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 21
+
+[label alerts.yml]
+groups:
+- name: Example group
+  rules:
+  - alert: HighMemoryUsage # The rule that suppresses should come before the rule that is suppressed in each group
+    expr: 1
+    for: 5m
+    labels:
+      inhibit: "true"
+    annotations:
+      summary: "This is an inhibiting rule"
+  - alert: MemoryUsageWarning
+    expr: 1
+    for: 5m
+    labels:
+      inhibited: "true"
+    annotations:
+      summary: "This is an inhibited rule"

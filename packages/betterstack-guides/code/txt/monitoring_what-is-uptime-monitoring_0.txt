@@ -1,0 +1,21 @@
+# Source: https://betterstack.com/community/guides/monitoring/what-is-uptime-monitoring/
+# Original language: txt
+# Normalized: txt
+# Block index: 0
+
+[output]
+Twitter / Error
+
+This page is down
+I scream. You scream. We all scream... for us to fix this page. Weâll stop making jokes and get things up and running soon.
+
+Retry
+
+Home
+Status
+Terms of Service
+Privacy Policy
+Cookie Policy
+Imprint
+Ads info
+© Twitter

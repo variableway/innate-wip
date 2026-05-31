@@ -1,0 +1,168 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/harpi-websockets/
+# Original language: html
+# Normalized: html
+# Block index: 5
+
+[label public/index.html]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hapi WebSocket Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 30px;
+        background: #f0f2f5;
+      }
+      .demo-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: #4a90e2;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      .status {
+        padding: 10px 20px;
+        background: #e8f4f8;
+        border-bottom: 1px solid #d1e7dd;
+        font-size: 14px;
+      }
+      #messageArea {
+        height: 400px;
+        overflow-y: auto;
+        padding: 20px;
+        background: #fafbfc;
+      }
+      .message {
+        margin-bottom: 12px;
+        padding: 10px 14px;
+        background: #ffffff;
+        border-radius: 8px;
+        border-left: 4px solid #4a90e2;
+        font-size: 15px;
+      }
+      .controls {
+        padding: 20px;
+        border-top: 1px solid #e1e5e9;
+        display: flex;
+        gap: 12px;
+      }
+      #messageInput {
+        flex: 1;
+        padding: 12px;
+        border: 2px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      #sendBtn {
+        padding: 12px 24px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      #sendBtn:hover {
+        background: #357abd;
+      }
+      #sendBtn:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-container">
+      <div class="header">
+        <h1>Hapi WebSocket Demo</h1>
+      </div>
+      <div class="status" id="connectionStatus">Connecting...</div>
+      <div id="messageArea"></div>
+      <div class="controls">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+          disabled
+        />
+        <button id="sendBtn" onclick="sendMessage()" disabled>Send</button>
+      </div>
+    </div>
+
+    <script>
+      let client;
+      const messageArea = document.getElementById("messageArea");
+      const statusDiv = document.getElementById("connectionStatus");
+      const messageInput = document.getElementById("messageInput");
+      const sendBtn = document.getElementById("sendBtn");
+
+      // Connect to Hapi WebSocket server
+      function connectWebSocket() {
+        client = new WebSocket("ws://localhost:3000/websocket");
+
+        client.onopen = function () {
+          statusDiv.textContent = "Connected to Hapi server";
+          statusDiv.style.background = "#d4edda";
+          messageInput.disabled = false;
+          sendBtn.disabled = false;
+        };
+
+        client.onmessage = function (event) {
+          displayMessage(event.data);
+        };
+
+        client.onclose = function () {
+          statusDiv.textContent = "Disconnected from server";
+          statusDiv.style.background = "#f8d7da";
+          messageInput.disabled = true;
+          sendBtn.disabled = true;
+        };
+
+        client.onerror = function () {
+          statusDiv.textContent = "Connection error occurred";
+          statusDiv.style.background = "#fff3cd";
+        };
+      }
+
+      function displayMessage(text) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = "message";
+        messageDiv.textContent = text;
+        messageArea.appendChild(messageDiv);
+        messageArea.scrollTop = messageArea.scrollHeight;
+      }
+
+      function sendMessage() {
+        if (messageInput.value.trim() && client.readyState === WebSocket.OPEN) {
+          client.send(messageInput.value);
+          messageInput.value = "";
+        }
+      }
+
+      messageInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter" && !sendBtn.disabled) {
+          sendMessage();
+        }
+      });
+
+      connectWebSocket();
+    </script>
+  </body>
+</html>

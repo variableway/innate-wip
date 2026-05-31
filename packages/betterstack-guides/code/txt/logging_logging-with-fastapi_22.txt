@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/logging-with-fastapi/
+# Original language: text
+# Normalized: txt
+# Block index: 22
+
+[output]
+{"timestamp": "2025-05-20T10:09:21.328026", "level": "INFO", "logger": "app", "module": "main", "line": 66, "message": "Root endpoint accessed"}

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/deno-overview-for-nodejs-users/
+# Original language: text
+# Normalized: txt
+# Block index: 13
+
+[output]
+Fetched To-Do Item: { userId: 1, id: 1, title: "delectus aut autem", completed: false }

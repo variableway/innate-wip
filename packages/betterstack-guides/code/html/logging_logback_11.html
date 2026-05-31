@@ -1,0 +1,17 @@
+# Source: https://betterstack.com/community/guides/logging/logback/
+# Original language: xml
+# Normalized: html
+# Block index: 11
+
+[label logback.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration>
+    . . .
+    [highlight]
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="STDOUT" />
+    </root>
+    [/highlight]
+</configuration>

@@ -1,0 +1,36 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/docker-networks/
+# Original language: json
+# Normalized: json
+# Block index: 9
+
+[output]
+[
+   {
+       "Name": "my_network",
+       "Id": "f4bd3d0bbac5e664a9841052905e3364c8fe5da1d8055df42b9f8c72b6c7e2b3",
+       "Created": "2023-03-17T10:43:21.648303237Z",
+       "Scope": "local",
+       "Driver": "bridge",
+       "EnableIPv6": false,
+       "IPAM": {
+           "Driver": "default",
+           "Options": {},
+           "Config": [
+               {
+                   "Subnet": "172.18.0.0/16",
+                   "Gateway": "172.18.0.1"
+               }
+           ]
+       },
+       "Internal": false,
+       "Attachable": false,
+       "Ingress": false,
+       "ConfigFrom": {
+           "Network": ""
+       },
+       "ConfigOnly": false,
+       "Containers": {},
+       "Options": {},
+       "Labels": {}
+   }
+]

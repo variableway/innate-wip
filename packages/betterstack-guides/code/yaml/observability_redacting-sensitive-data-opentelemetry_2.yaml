@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/observability/redacting-sensitive-data-opentelemetry/
+# Original language: yaml
+# Normalized: yaml
+# Block index: 2
+
+processors:
+  redaction/mask:
+    allow_all_keys: true
+    blocked_values:
+      - 4[0-9]{12}(?:[0-9]{3})? # VISA
+      - 5[1-5][0-9]{14} # Mastercard
+      - 3[47][0-9]{13} # Amex

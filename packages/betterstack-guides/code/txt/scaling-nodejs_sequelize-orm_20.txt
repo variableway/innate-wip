@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/sequelize-orm/
+# Original language: text
+# Normalized: txt
+# Block index: 20
+
+[output]
+=== Before update ===
+Executing (default): SELECT `id`, `title`, `author`, `price`, `createdAt`, `updatedAt` FROM `books` AS `Book` WHERE `Book`.`title` = 'JavaScript: The Good Parts' LIMIT 1;
+JavaScript: The Good Parts current price: $29.99
+Executing (default): UPDATE `books` SET `price`=$1,`updatedAt`=$2 WHERE `id` = $3
+=== After update ===
+JavaScript: The Good Parts new price: $32.99

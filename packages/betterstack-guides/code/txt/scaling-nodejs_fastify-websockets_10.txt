@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-websockets/
+# Original language: text
+# Normalized: txt
+# Block index: 10
+
+[output]
+...
+Client connected from 127.0.0.1
+Client 127.0.0.1 disconnected - Code: 1001, Reason: none

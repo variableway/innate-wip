@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/semantic-logger/
+# Original language: text
+# Normalized: txt
+# Block index: 41
+
+[output]
+2025-01-29 10:25:53.991568 I [1573174:puma srv tp 001] (44.9ms) ApplicationController -- Completed #hello -- {:controller=>"ApplicationController", :action=>"hello", :format=>"*/*", :method=
+>"GET", :path=>"/", :status=>200, :view_runtime=>10.91, :db_runtime=>0.0, :queries_count=>0, :cached_queries_count=>0, :allocations=>4581, :status_message=>"OK"}

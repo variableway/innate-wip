@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/monitoring/prometheus-kubernetes-helm/
+# Original language: text
+# Normalized: txt
+# Block index: 1
+
+[output]
+"prometheus-community" has been added to your repositories

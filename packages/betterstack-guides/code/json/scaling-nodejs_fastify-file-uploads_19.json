@@ -1,0 +1,12 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/fastify-file-uploads/
+# Original language: json
+# Normalized: json
+# Block index: 19
+
+[output]
+{
+  "error": "File validation failed",
+  "details": [
+    "File extension '.exe' not allowed. Allowed: .jpg, .jpeg, .png, .pdf, .txt"
+  ]
+}

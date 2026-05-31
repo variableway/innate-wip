@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 46
+
+[output]
+installed package podman-compose 1.0.6, installed using Python 3.11.6
+These apps are now globally available
+  - podman-compose
+⚠️ Note: '/home/<your_user_name>/.local/bin' is not on your PATH environment variable. These apps will not be globally accessible until your PATH is updated. Run `pipx ensurepath` to automatically add it, or manually modify your PATH in your shell's config file (i.e. ~/.bashrc).
+done! ✨ 🌟 ✨

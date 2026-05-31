@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-python/ruff-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 14
+
+[output]
+
+app.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+  |
+1 | / import datetime
+2 | | from pathlib import Path
+3 | | import math
+4 | | from collections import defaultdict
+5 | | import json
+  | |___________^ I001
+  |
+  = help: Organize imports
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

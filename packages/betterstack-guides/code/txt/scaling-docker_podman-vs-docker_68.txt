@@ -1,0 +1,22 @@
+# Source: https://betterstack.com/community/guides/scaling-docker/podman-vs-docker/
+# Original language: text
+# Normalized: txt
+# Block index: 68
+
+[output]
+podman-compose version: 1.0.6
+['podman', '--version', '']
+using podman version: 4.3.1
+** excluding:  set()
+podman stop -t 10 db
+db
+exit code: 0
+podman stop -t 10 wordpress
+wordpress
+exit code: 0
+podman rm db
+db
+exit code: 0
+podman rm wordpress
+wordpress
+exit code: 0

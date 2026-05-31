@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/logging/structlog/
+# Original language: json
+# Normalized: json
+# Block index: 39
+
+[output]
+{"name": "file.txt", "event": "File opened successfully", "level": "info", "timestamp": "2025-06-06T14:00:41.444091Z"}
+{"name": "app.log", "event": "File deleted", "level": "warning", "timestamp": "2025-06-06T14:00:41.444334Z"}

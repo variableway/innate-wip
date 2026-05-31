@@ -1,0 +1,31 @@
+# Source: https://betterstack.com/community/guides/logging/vector-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 29
+
+[label log-processing-stack/vector/vector.yaml]
+...
+transforms:
+  app_logs_parser:
+    inputs:
+      - "app_logs"
+    type: "remap"
+    source: |
+      # Parse JSON logs
+      ., err = parse_json(.message)
+
+      # Remove emailAddress field
+      del(.emailAddress)
+
+      # Add an environment field
+      .environment = "dev"
+
+      # Format date to the ISO format
+      .time = from_unix_timestamp!(.time)
+      .time = format_timestamp!(.time, format: "%+")
+[highlight]
+      if .status == 200 {
+        .success = true
+      }
+[/highlight]
+...

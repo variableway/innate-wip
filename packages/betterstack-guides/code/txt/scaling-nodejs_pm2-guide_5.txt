@@ -1,0 +1,9 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/pm2-guide/
+# Original language: text
+# Normalized: txt
+# Block index: 5
+
+[output]
+. . .
+[rundev] App server restarted
+server-0  | dadjokes server started on port: 3000

@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 49
+
+[output]
+{"level":"fatal","error":"failed to connect to database","time":"2022-09-01T09:35:27+01:00","message":"something catastrophic happened!"}

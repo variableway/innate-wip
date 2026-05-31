@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/zerolog/
+# Original language: json
+# Normalized: json
+# Block index: 7
+
+[output]
+{"level":"error","time":"2022-08-31T11:57:18.764748096-07:00","message":"Error message"}

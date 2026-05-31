@@ -1,0 +1,7 @@
+# Source: https://betterstack.com/community/guides/logging/how-to-view-and-configure-ruby-logs/
+# Original language: json
+# Normalized: json
+# Block index: 26
+
+[output]
+{"timestamp":"2023-04-19T13:15:32.277236","level":"ERROR","pid":163713,"msg":"divided by 0 main.rb:24:in `/' main.rb:24:in `<main>'"}

@@ -1,0 +1,19 @@
+# Source: https://betterstack.com/community/guides/logging/log-shippers-explained/
+# Original language: toml
+# Normalized: toml
+# Block index: 8
+
+[label /etc/vector/vector.toml]
+...
+sinks:
+  better_stack:
+    type: "http"
+    method: "post"
+    inputs:
+      - "nginx_parser"
+    uri: "https://in.logs.betterstack.com/"
+    encoding:
+      codec: "json"
+    auth:
+      strategy: "bearer"
+      token: "<your_betterstack_source_token>"

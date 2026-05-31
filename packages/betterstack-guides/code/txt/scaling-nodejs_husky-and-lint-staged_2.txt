@@ -1,0 +1,14 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/husky-and-lint-staged/
+# Original language: text
+# Normalized: txt
+# Block index: 2
+
+[label .gitignore]
+node_modules/
+npm-debug.log*
+.env
+.env.local
+.DS_Store
+*.log
+dist/
+build/

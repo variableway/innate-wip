@@ -1,0 +1,8 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/nvm-explained/
+# Original language: text
+# Normalized: txt
+# Block index: 19
+
+[output]
+Running node v22.14.0 (npm v10.9.2)
+v22.14.0

@@ -1,0 +1,20 @@
+# Source: https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
+# Original language: text
+# Normalized: txt
+# Block index: 45
+
+[output]
+[+] Running 5/5
+ ✔ Network fastify-url-shortener_url-shortener  Created          0.2s
+ ✔ Volume "fastify-url-shortener_pg-data"       Created          0.0s
+ ✔ Container url-shortener-db                   Created          0.1s
+ ✔ Container url-shortener-app                  Created          0.1s
+ ✔ Container url-shortener-caddy-server         Created          0.1s
+Attaching to url-shortener-app, url-shortener-caddy-server, url-shortener-db
+. . .
+
+url-shortener-db            | 2024-07-30 12:43:54.957 UTC [1] LOG:  starting PostgreSQL 16.3 on x86_64-pc-linux-musl, compiled by gcc (Alpine 13.2.1_git20240309) 13.2.1 20240309, 64-bit
+. . .
+url-shortener-caddy-server  | {"level":"info","ts":1722343436.5617106,"logger":"tls","msg":"finished cleaning storage units"}
+. . .
+url-shortener-app           | {"level":"info","time":"2024-07-30T12:45:21.950Z","pid":17,"host":"d51e7abc421b","reqId":"

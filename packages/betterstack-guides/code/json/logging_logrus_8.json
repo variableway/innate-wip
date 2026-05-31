@@ -1,0 +1,10 @@
+# Source: https://betterstack.com/community/guides/logging/logrus/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+[output]
+{"action":"login","component":"auth_service","ip_address":"192.168.1.1","level":"info","msg":"User login successful","success":true,"ti
+me":"2025-03-09T10:15:25+01:00","user_id":12345}
+{"level":"info","msg":"Processing request","request_id":"req-abc-123","time":"2025-03-09T10:15:25+01:00"}
+{"endpoint":"/users","level":"info","method":"GET","module":"api","msg":"Request received","time":"2025-03-09T10:15:25+01:00"}

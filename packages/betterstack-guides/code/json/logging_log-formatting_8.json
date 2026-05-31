@@ -1,0 +1,11 @@
+# Source: https://betterstack.com/community/guides/logging/log-formatting/
+# Original language: json
+# Normalized: json
+# Block index: 8
+
+{
+  debug: -4,
+  info: 0,
+  warn: 4,
+  error: 8,
+}

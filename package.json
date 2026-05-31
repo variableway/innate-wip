@@ -18,6 +18,9 @@
     "sync:collections": "pnpm --filter @innate/web sync:collections"
   },
   "devDependencies": {
+    "cheerio": "^1.2.0",
+    "playwright": "^1.60.0",
+    "puppeteer-core": "^25.1.0",
     "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@11.1.2"
