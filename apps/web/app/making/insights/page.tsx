@@ -1,80 +1,78 @@
-import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Lightbulb, Calendar } from "lucide-react"
+import { Lightbulb, Calendar, ArrowRight, FileText } from "lucide-react"
 import { Badge } from "@innate/ui"
-import { getInsightById, insights } from "@/lib/making/data"
-import { extractToc } from "@/lib/content/parser"
-import { ServerMarkdown } from "@/components/server-markdown"
-import { TableOfContents } from "@/components/table-of-contents"
+import { insights } from "@/lib/making/data"
 
-// Generate static params for all insights
-export function generateStaticParams() {
-  return insights.map((insight) => ({
-    id: insight.id,
-  }))
-}
+export default function InsightsPage() {
+  const sorted = [...insights].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
 
-interface InsightDetailPageProps {
-  params: Promise<{
-    id: string
-  }>
-}
-
-export default async function InsightDetailPage({ params }: InsightDetailPageProps) {
-  const { id } = await params
-  const insight = getInsightById(id)
-
-  if (!insight) {
-    notFound()
-  }
-
-  const content = insight.content
-  const toc = extractToc(content)
+  const categories = Array.from(new Set(insights.map((i) => i.category)))
 
   return (
-    <div className="h-full flex flex-col">
-      {/* Header */}
-      <div className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
-        <div className="px-4 py-3">
-          <Link
-            href="/making/insights"
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors mb-2"
-          >
-            <ArrowLeft className="h-3 w-3" />
-            Back to Insights
-          </Link>
-          <div className="flex items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-primary" />
-            <h1 className="text-lg font-semibold">Insight Detail</h1>
+    <div className="h-full overflow-y-auto">
+      <div className="max-w-5xl mx-auto p-6">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f97316]/10">
+              <Lightbulb className="h-5 w-5 text-[#f97316]" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground tracking-tight">Insights</h1>
+              <p className="text-xs text-muted-foreground/60">
+                {sorted.length} insights across {categories.length} categories
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="max-w-5xl mx-auto p-6">
-          {/* Title Section */}
-          <div className="mb-8 pb-6 border-b border-border">
-            <div className="flex items-center gap-2 mb-3">
-              <Badge variant="outline" className="text-xs capitalize">
-                {insight.category}
-              </Badge>
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
-                {insight.date}
-              </span>
-            </div>
-            <h2 className="text-2xl font-bold">{insight.title}</h2>
-          </div>
+        {/* Category pills */}
+        <div className="flex items-center gap-x-2 gap-y-1.5 flex-wrap mb-8">
+          {categories.map((cat) => (
+            <span
+              key={cat}
+              className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-muted text-muted-foreground capitalize"
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
-            {/* Markdown Content */}
-            <ServerMarkdown content={content} />
-
-            <aside>
-              <TableOfContents headings={toc} />
-            </aside>
-          </div>
+        {/* Insights list */}
+        <div className="space-y-3">
+          {sorted.map((insight) => (
+            <Link
+              key={insight.id}
+              href={`/making/insights/${insight.id}`}
+              className="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 hover:shadow-md hover:border-[#8FA68E]/30 transition-all duration-200"
+            >
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#f97316]/10">
+                <FileText className="h-4 w-4 text-[#f97316]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <Badge variant="outline" className="text-[10px] capitalize">
+                    {insight.category}
+                  </Badge>
+                  <span className="text-[10px] text-muted-foreground/50 flex items-center gap-1">
+                    <Calendar className="h-2.5 w-2.5" />
+                    {insight.date}
+                  </span>
+                </div>
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-[#8FA68E] transition-colors line-clamp-1">
+                  {insight.title}
+                </h3>
+                {insight.summary && (
+                  <p className="text-xs text-muted-foreground/60 mt-1 line-clamp-2">
+                    {insight.summary}
+                  </p>
+                )}
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-[#8FA68E] group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
+            </Link>
+          ))}
         </div>
       </div>
     </div>
