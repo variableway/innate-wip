@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useEffect, useMemo } from "react"
-import { BlogList, BlogListItem } from "@/components/blog-list"
-import { BlogViewer } from "@/components/blog-viewer"
+import { BlogList, BlogListItem } from "@/components/writing/blog-list"
+import { BlogViewer } from "@/components/writing/blog-viewer"
 import { MarkdownPreview } from "@/components/markdown-preview"
 import { TableOfContents } from "@/components/table-of-contents"
 import { FileText, X, ExternalLink, ArrowLeft, BookOpen } from "lucide-react"

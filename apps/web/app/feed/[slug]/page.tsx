@@ -8,7 +8,7 @@ import rehypeSlug from "rehype-slug"
 import { getWritingMeta, getWriting, extractToc } from "@/lib/content"
 import { remarkMermaid } from "@/lib/remark-mermaid"
 import { MermaidBlock } from "@/components/mermaid-block"
-import { BlogViewer } from "@/components/blog-viewer"
+import { BlogViewer } from "@/components/writing/blog-viewer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 

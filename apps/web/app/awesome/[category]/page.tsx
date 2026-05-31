@@ -16,7 +16,7 @@ import {
   Github,
   ArrowLeft,
 } from "lucide-react"
-import { AwesomeItemsClient } from "@/components/awesome-items-client"
+import { AwesomeItemsClient } from "@/components/awesome/awesome-items-client"
 
 const iconMap: Record<string, React.ReactNode> = {
   code: <Code className="h-5 w-5" />,

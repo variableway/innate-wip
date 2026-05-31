@@ -4,7 +4,7 @@ import {
   getAwesomeCategories,
   getAllAwesomeItems,
 } from "@/lib/awesome/data"
-import { AwesomeItemsClient } from "@/components/awesome-items-client"
+import { AwesomeItemsClient } from "@/components/awesome/awesome-items-client"
 import {
   Code,
   Briefcase,

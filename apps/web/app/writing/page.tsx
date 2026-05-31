@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { getWritingMeta, getWriting, extractToc } from "@/lib/content"
-import { BlogPageClient } from "@/components/blog-page-client"
+import { BlogPageClient } from "@/components/writing/blog-page-client"
 
 export const metadata: Metadata = {
   title: "Writing | Innate",
