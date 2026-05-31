@@ -3,22 +3,121 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Sun, Moon, PanelLeftOpen, PanelLeftClose } from "lucide-react"
+import {
+  Sun,
+  Moon,
+  PanelLeftOpen,
+  PanelLeftClose,
+  ChevronDown,
+  BookOpen,
+  PenLine,
+  Globe,
+  Newspaper,
+  Hammer,
+  FolderGit2,
+  Calendar,
+  Lightbulb,
+  CheckSquare,
+  FileText,
+  Tag,
+} from "lucide-react"
 import { useTheme } from "next-themes"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@innate/ui"
 
 interface HeaderProps {
   collapsed: boolean
   onToggleSidebar: () => void
   isMobile: boolean
+  categories: Array<{
+    slug: string
+    name: string
+    icon: string
+    color: string
+    count: number
+  }>
 }
 
-export function Header({ collapsed, onToggleSidebar, isMobile }: HeaderProps) {
+interface NavItem {
+  label: string
+  href: string
+  icon: React.ReactNode
+}
+
+interface NavCategory {
+  label: string
+  icon: React.ReactNode
+  items: NavItem[]
+}
+
+export function Header({ collapsed, onToggleSidebar, isMobile, categories }: HeaderProps) {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
   const pathname = usePathname()
 
-  const isWriting = pathname === "/writing" || pathname.startsWith("/writing/")
-  const isAwesome = pathname === "/awesome" || pathname.startsWith("/awesome/")
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === href
+    return pathname === href || pathname.startsWith(`${href}/`)
+  }
+
+  const isCategoryActive = (items: NavItem[]) =>
+    items.some((item) => isActive(item.href))
+
+  const navCategories: NavCategory[] = [
+    {
+      label: "Content",
+      icon: <BookOpen className="h-3.5 w-3.5" />,
+      items: [
+        { label: "Writing", href: "/writing", icon: <PenLine className="h-3.5 w-3.5" /> },
+        { label: "Collections", href: "/collections", icon: <Globe className="h-3.5 w-3.5" /> },
+      ],
+    },
+    {
+      label: "Feed",
+      icon: <Newspaper className="h-3.5 w-3.5" />,
+      items: [
+        { label: "Feed", href: "/feed", icon: <Newspaper className="h-3.5 w-3.5" /> },
+      ],
+    },
+    {
+      label: "Making",
+      icon: <Hammer className="h-3.5 w-3.5" />,
+      items: [
+        { label: "Projects", href: "/making/projects", icon: <FolderGit2 className="h-3.5 w-3.5" /> },
+        { label: "Weekly", href: "/making/weekly", icon: <Calendar className="h-3.5 w-3.5" /> },
+        { label: "Insights", href: "/making/insights", icon: <Lightbulb className="h-3.5 w-3.5" /> },
+        { label: "Issues", href: "/making/issues", icon: <CheckSquare className="h-3.5 w-3.5" /> },
+      ],
+    },
+    {
+      label: "Cheatsheets",
+      icon: <FileText className="h-3.5 w-3.5" />,
+      items: [
+        { label: "Cheatsheets", href: "/cheatsheets", icon: <BookOpen className="h-3.5 w-3.5" /> },
+        { label: "Better Stack Guides", href: "/betterstack-guides", icon: <FileText className="h-3.5 w-3.5" /> },
+      ],
+    },
+    {
+      label: "Awesome",
+      icon: <Tag className="h-3.5 w-3.5" />,
+      items: [
+        { label: "All Items", href: "/awesome", icon: <Tag className="h-3.5 w-3.5" /> },
+        ...categories.map((cat) => ({
+          label: cat.name,
+          href: `/awesome/${cat.slug}`,
+          icon: (
+            <span style={{ color: cat.color }}>
+              <Tag className="h-3.5 w-3.5" />
+            </span>
+          ),
+        })),
+      ],
+    },
+  ]
 
   return (
     <header
@@ -45,28 +144,40 @@ export function Header({ collapsed, onToggleSidebar, isMobile }: HeaderProps) {
           )}
 
           <nav className="flex items-center gap-0.5">
-            <Link
-              href="/writing"
-              className={cn(
-                "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
-                isWriting
-                  ? "text-foreground bg-secondary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-              )}
-            >
-              Writing
-            </Link>
-            <Link
-              href="/awesome"
-              className={cn(
-                "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
-                isAwesome
-                  ? "text-foreground bg-secondary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-              )}
-            >
-              Awesome
-            </Link>
+            {navCategories.map((cat) => (
+              <DropdownMenu key={cat.label}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-default",
+                      isCategoryActive(cat.items)
+                        ? "text-foreground bg-secondary"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    )}
+                  >
+                    {cat.icon}
+                    <span>{cat.label}</span>
+                    <ChevronDown className="h-3 w-3 opacity-60" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="min-w-[160px]">
+                  {cat.items.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "flex items-center gap-2 cursor-pointer",
+                          isActive(item.href) && "text-[#8FA68E] font-medium"
+                        )}
+                      >
+                        {item.icon}
+                        <span>{item.label}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ))}
           </nav>
         </div>
 

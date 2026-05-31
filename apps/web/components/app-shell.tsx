@@ -38,6 +38,7 @@ export function AppShell({ categories, children }: AppShellProps) {
           collapsed={collapsed}
           onToggleSidebar={() => setCollapsed((c) => !c)}
           isMobile={isMobile}
+          categories={categories}
         />
         <main className="flex-1 overflow-hidden relative">{children}</main>
       </div>
