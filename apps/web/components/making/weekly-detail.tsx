@@ -29,8 +29,8 @@ import {
   Button,
   cn
 } from "@innate/ui"
-import { getWeeklyById, getIssuesForWeekly, weeklySummaries, projects, type Issue } from "@/lib/making/data"
-import { isBilingualText } from "@/lib/making/types"
+import { getWeeklyById, getIssuesForWeekly, weeklySummaries, projects } from "@/lib/making/data"
+import { isBilingualText, type Issue } from "@/lib/making/types"
 
 export function WeeklyDetail() {
   const params = useParams()

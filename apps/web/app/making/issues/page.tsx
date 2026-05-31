@@ -23,11 +23,9 @@ import {
   issues, 
   projects, 
   getAllLabels,
-  filterIssues,
-  type Issue,
-  type ViewMode,
-  type IssueFilter
+  filterIssues
 } from "@/lib/making/data"
+import { type Issue, type ViewMode, type IssueFilter } from "@/lib/making/types"
 import { MarkdownRendererSimple } from "@/components/markdown-renderer"
 
 export default function IssuesPage() {

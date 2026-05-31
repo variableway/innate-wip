@@ -1,0 +1,822 @@
+{
+  "source": {
+    "id": "awesome-codex-skills",
+    "name": "Awesome Codex Skills",
+    "repo": "https://github.com/ComposioHQ/awesome-codex-skills",
+    "description": "Curated list from Awesome Codex Skills",
+    "addedDate": "2026-05-29",
+    "lastSynced": "2026-05-29T12:53:04.100Z"
+  },
+  "items": [
+    {
+      "slug": "brooks-lint",
+      "name": "brooks-lint",
+      "description": "AI code reviews grounded in six classic engineering books — decay risk diagnostics with book citations, severity labels, and four analysis modes (PR review, architecture audit, tech debt, test quality).",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/hyhmrright/brooks-lint",
+      "installCommand": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo hyhmrright/brooks-lint --path skills/brooks-lint --name brooks-lint",
+      "tags": [
+        "github",
+        "debugging",
+        "testing",
+        "development"
+      ]
+    },
+    {
+      "slug": "bringyour-migration-auditor",
+      "name": "bringyour-migration-auditor",
+      "description": "Audit Claude Code to Codex harness migrations for AGENTS.md/CLAUDE.md scope, hooks, MCP config, skills, secrets, and validation notes.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/unitedideas/bringyour-mcp/tree/main/skills/bringyour-migration-auditor",
+      "installCommand": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo unitedideas/bringyour-mcp --path skills/bringyour-migration-auditor --name bringyour-migration-auditor",
+      "tags": [
+        "mcp",
+        "development"
+      ]
+    },
+    {
+      "slug": "codebase-migrate",
+      "name": "codebase-migrate",
+      "description": "Run large codebase migrations and multi-file refactors in reviewable batches with CI verification.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "ci",
+        "development"
+      ],
+      "shortDescription": "Codebase migrations + multi-file refactors"
+    },
+    {
+      "slug": "codebase-recon",
+      "name": "codebase-recon",
+      "description": "Analyze git history to understand a codebase before reading any code — surfaces hotspots, bug magnets, bus factor, momentum, and high-risk files (hotspot ∩ bug-magnet) via auto-scaled analysis.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/yujiachen-y/codebase-recon-skill",
+      "installCommand": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo yujiachen-y/codebase-recon-skill --path skills/codebase-recon --name codebase-recon",
+      "tags": [
+        "development"
+      ]
+    },
+    {
+      "slug": "create-plan",
+      "name": "create-plan",
+      "description": "Quickly draft concise execution plans for coding tasks.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "writing",
+        "planning",
+        "development"
+      ],
+      "shortDescription": "Create a plan"
+    },
+    {
+      "slug": "deploy-pipeline",
+      "name": "deploy-pipeline",
+      "description": "End-to-end Stripe → Supabase → Vercel release pipelines with verify and rollback.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "ci",
+        "deployment",
+        "development"
+      ],
+      "shortDescription": "Stripe/Supabase/Vercel deploy pipelines"
+    },
+    {
+      "slug": "emdash-skills",
+      "name": "Emdash Skills",
+      "description": "14-category autonomous product-building OS: CF Workers + Hono + Angular + D1 + Stripe. One-line prompts to deployed SaaS with 94 reference docs, 18 agents, and Codex-native `.agents/skills/` support.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/megabytespace/claude-skills",
+      "installCommand": null,
+      "tags": [
+        "development"
+      ]
+    },
+    {
+      "slug": "gh-address-comments",
+      "name": "gh-address-comments",
+      "description": "Address review or issue comments on the open GitHub PR for the current branch using `gh`.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "github",
+        "development"
+      ],
+      "shortDescription": "Address comments in a GitHub PR review"
+    },
+    {
+      "slug": "gh-fix-ci",
+      "name": "gh-fix-ci",
+      "description": "Inspect failing GitHub Actions checks, summarize failures, and propose fixes.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "github",
+        "ci",
+        "development"
+      ],
+      "shortDescription": "Fix failing Github CI actions"
+    },
+    {
+      "slug": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Build and evaluate MCP servers with best practices and an evaluation harness.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "mcp",
+        "development"
+      ]
+    },
+    {
+      "slug": "pr-review-ci-fix",
+      "name": "pr-review-ci-fix",
+      "description": "Automated GitHub/GitLab PR review plus CI auto-fix loop via the Composio CLI.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "github",
+        "ci",
+        "automation",
+        "development"
+      ],
+      "shortDescription": "Automated PR review + CI auto-fix across GitHub/GitLab"
+    },
+    {
+      "slug": "sentry-triage",
+      "name": "sentry-triage",
+      "description": "Diagnose Sentry issues by mapping stack frames to local source — no copy-paste.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "debugging",
+        "development"
+      ],
+      "shortDescription": "Sentry error diagnosis via the Composio CLI"
+    },
+    {
+      "slug": "webapp-testing",
+      "name": "webapp-testing",
+      "description": "Run targeted web app tests and summarize results.",
+      "category": "development",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "development"
+      ]
+    },
+    {
+      "slug": "aurakit",
+      "name": "AuraKit",
+      "description": "All-in-one skill framework: 46 modes, 23 sub-agents, 6-layer OWASP security, 10 lifecycle hooks, ~55% token savings.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/smorky850612/Aurakit",
+      "installCommand": "npx @smorky85/aurakit",
+      "tags": [
+        "security",
+        "frameworks",
+        "development"
+      ]
+    },
+    {
+      "slug": "vibe-skills",
+      "name": "Vibe-Skills",
+      "description": "Governed Codex skill harness for staged, test-driven work: routes 340+ skills through requirement freeze, plan approval, execution, verification evidence, and cross-session memory.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+      "installCommand": null,
+      "tags": [
+        "testing",
+        "planning",
+        "development"
+      ]
+    },
+    {
+      "slug": "polywave",
+      "name": "polywave",
+      "description": "Parallel agent coordination with structural merge safety. Scout decomposes, Wave agents implement in isolated worktrees with disjoint file ownership. Same protocol on Claude Code and Codex.",
+      "category": "development",
+      "isLocal": false,
+      "repoUrl": "https://github.com/blackwell-systems/polywave-codex",
+      "installCommand": null,
+      "tags": [
+        "agents",
+        "worktree",
+        "development"
+      ]
+    },
+    {
+      "slug": "connect",
+      "name": "connect",
+      "description": "Connect Codex to 1000+ apps via the Composio CLI for real actions (Slack, GitHub, Notion, etc.).",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "github",
+        "automation",
+        "notion",
+        "slack",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "connect-apps",
+      "name": "connect-apps",
+      "description": "Wire up Composio CLI connections for Claude and kick off app workflows from the shell.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "automation",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "issue-triage",
+      "name": "issue-triage",
+      "description": "Triage Linear or Jira backlogs and run bug sweeps from the terminal.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "debugging",
+        "productivity"
+      ],
+      "shortDescription": "Linear/Jira triage + bug sweeps via the Composio CLI"
+    },
+    {
+      "slug": "linear",
+      "name": "linear",
+      "description": "Manage issues, projects, and team workflows in Linear.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "productivity"
+      ],
+      "shortDescription": "Manage Linear issues in Codex"
+    },
+    {
+      "slug": "meeting-insights-analyzer",
+      "name": "meeting-insights-analyzer",
+      "description": "Analyze meeting transcripts for themes, risks, and follow-ups.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "meetings",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "meeting-notes-and-actions",
+      "name": "meeting-notes-and-actions",
+      "description": "Turn meeting transcripts into summaries with decisions and owner-tagged action items.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "meetings",
+        "productivity"
+      ],
+      "shortDescription": "Meeting transcript to notes and actions"
+    },
+    {
+      "slug": "internal-comms",
+      "name": "internal-comms",
+      "description": "Craft internal announcements, updates, and stakeholder messaging.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "productivity"
+      ]
+    },
+    {
+      "slug": "invoice-organizer",
+      "name": "invoice-organizer",
+      "description": "Normalize and extract invoice data for tracking and reporting.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "finance",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "notion-knowledge-capture",
+      "name": "notion-knowledge-capture",
+      "description": "Convert chats or notes into structured Notion pages with proper linking.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "notion",
+        "productivity"
+      ],
+      "shortDescription": "Capture conversations into structured Notion pages"
+    },
+    {
+      "slug": "notion-meeting-intelligence",
+      "name": "notion-meeting-intelligence",
+      "description": "Prepare meeting materials with Notion context plus Codex research.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "meetings",
+        "analysis",
+        "notion",
+        "productivity"
+      ],
+      "shortDescription": "Prep meetings with Notion context and tailored agendas"
+    },
+    {
+      "slug": "notion-research-documentation",
+      "name": "notion-research-documentation",
+      "description": "Synthesize multiple Notion sources into briefs, comparisons, or reports with citations.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "analysis",
+        "notion",
+        "productivity"
+      ],
+      "shortDescription": "Research Notion content and produce briefs/reports"
+    },
+    {
+      "slug": "notion-spec-to-implementation",
+      "name": "notion-spec-to-implementation",
+      "description": "Turn Notion specs into implementation plans, tasks, and progress tracking.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "notion",
+        "planning",
+        "productivity"
+      ],
+      "shortDescription": "Turn Notion specs into implementation plans, tasks, and progress tracking"
+    },
+    {
+      "slug": "support-ticket-triage",
+      "name": "support-ticket-triage",
+      "description": "Triage customer support tickets with categories, priority, next actions, and draft replies.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "debugging",
+        "writing",
+        "productivity"
+      ],
+      "shortDescription": "Categorize and respond to support tickets"
+    },
+    {
+      "slug": "file-organizer",
+      "name": "file-organizer",
+      "description": "Organize, rename, and tidy files to keep workspaces clean.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "organization",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "paperjsx",
+      "name": "paperjsx",
+      "description": "Generate PPTX presentations, DOCX documents, XLSX spreadsheets, and PDF invoices/reports/charts from structured JSON. Runs locally via `@paperjsx/mcp-server` — no API key, no network calls.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "mcp",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "skill-share",
+      "name": "skill-share",
+      "description": "Share skills and reusable instructions across teammates.",
+      "category": "productivity",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "sharing",
+        "productivity"
+      ]
+    },
+    {
+      "slug": "codex-sms-verification",
+      "name": "codex-sms-verification",
+      "description": "real-SIM SMS verification for AI agents via VirtualSMS MCP. 145+ countries, 2000+ services, both hosted (mcp.virtualsms.io) and local stdio transports.",
+      "category": "communication",
+      "isLocal": false,
+      "repoUrl": "https://github.com/virtualsms-io/codex-sms-verification",
+      "installCommand": null,
+      "tags": [
+        "mcp",
+        "sms",
+        "communication"
+      ]
+    },
+    {
+      "slug": "email-draft-polish",
+      "name": "email-draft-polish",
+      "description": "Draft, rewrite, or condense emails for the right tone and audience.",
+      "category": "communication",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "writing",
+        "communication"
+      ],
+      "shortDescription": "Draft or polish emails to fit tone/length"
+    },
+    {
+      "slug": "changelog-generator",
+      "name": "changelog-generator",
+      "description": "Create clear changelogs from commits or summaries.",
+      "category": "communication",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "writing",
+        "documentation",
+        "communication"
+      ]
+    },
+    {
+      "slug": "content-research-writer",
+      "name": "content-research-writer",
+      "description": "Research and draft content with sourced citations.",
+      "category": "communication",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "writing",
+        "analysis",
+        "communication"
+      ]
+    },
+    {
+      "slug": "diasporic-intelligence",
+      "name": "diasporic-intelligence",
+      "description": "source-credit skill for consent-governed lineage AI with attribution, provenance, revocation, and non-impersonation boundaries.",
+      "category": "communication",
+      "isLocal": false,
+      "repoUrl": "https://github.com/MinistaJazz/diasporic-intelligence",
+      "installCommand": null,
+      "tags": [
+        "ai-ethics",
+        "communication"
+      ]
+    },
+    {
+      "slug": "novel-writing",
+      "name": "novel-writing",
+      "description": "public Codex skill for fiction planning, chapter drafting, scene continuation, and revision.",
+      "category": "communication",
+      "isLocal": false,
+      "repoUrl": "https://github.com/wgwtest/novel-writing",
+      "installCommand": null,
+      "tags": [
+        "fiction",
+        "communication"
+      ]
+    },
+    {
+      "slug": "tailored-resume-generator",
+      "name": "tailored-resume-generator",
+      "description": "Tailor resumes to job descriptions with quantified impact.",
+      "category": "communication",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "writing",
+        "career",
+        "communication"
+      ]
+    },
+    {
+      "slug": "unslop",
+      "name": "unslop",
+      "description": "CLI and MCP server that removes AI writing patterns from text: tricolons, em-dash overuse, hedging stacks, and sycophancy openers. Works with Codex, Claude Code, Gemini CLI, and Cursor. Five intensity levels and a lint-only audit mode.",
+      "category": "communication",
+      "isLocal": false,
+      "repoUrl": "https://github.com/MohamedAbdallah-14/unslop",
+      "installCommand": null,
+      "tags": [
+        "mcp",
+        "ai-detection",
+        "communication"
+      ]
+    },
+    {
+      "slug": "spreadsheet-formula-helper",
+      "name": "spreadsheet-formula-helper",
+      "description": "Write and debug spreadsheet formulas, pivots, and array formulas.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "debugging",
+        "writing",
+        "formulas",
+        "data"
+      ],
+      "shortDescription": "Build/debug Excel or Sheets formulas"
+    },
+    {
+      "slug": "competitive-ads-extractor",
+      "name": "competitive-ads-extractor",
+      "description": "Analyze competitor ads and extract structured insights.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "marketing",
+        "data"
+      ]
+    },
+    {
+      "slug": "datadog-logs",
+      "name": "datadog-logs",
+      "description": "Filter Datadog logs from the shell via the Composio CLI, with JSON-friendly output and digest workflows.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "automation",
+        "data"
+      ],
+      "shortDescription": "Datadog log filtering via the Composio CLI"
+    },
+    {
+      "slug": "developer-growth-analysis",
+      "name": "developer-growth-analysis",
+      "description": "Analyze Codex chat history for coding patterns and learning gaps.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "lead-research-assistant",
+      "name": "lead-research-assistant",
+      "description": "Research leads and enrich records with firmographic data.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "analysis",
+        "data"
+      ]
+    },
+    {
+      "slug": "domain-name-brainstormer",
+      "name": "domain-name-brainstormer",
+      "description": "Brainstorm available domain names with criteria and checks.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "domains",
+        "data"
+      ]
+    },
+    {
+      "slug": "raffle-winner-picker",
+      "name": "raffle-winner-picker",
+      "description": "Randomly select winners with audit-friendly logs.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "random",
+        "data"
+      ]
+    },
+    {
+      "slug": "langsmith-fetch",
+      "name": "langsmith-fetch",
+      "description": "Pull LangSmith project/test data for analysis.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "testing",
+        "langchain",
+        "data"
+      ]
+    },
+    {
+      "slug": "helium-mcp",
+      "name": "helium-mcp",
+      "description": "Search real-time news with bias scoring, get live market data, ML options pricing, and balanced news synthesis via MCP.",
+      "category": "data",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "mcp",
+        "search",
+        "news",
+        "data"
+      ]
+    },
+    {
+      "slug": "brand-guidelines",
+      "name": "brand-guidelines",
+      "description": "Apply OpenAI/Codex brand colors and typography to artifacts.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "design",
+        "meta"
+      ]
+    },
+    {
+      "slug": "agent-deep-links",
+      "name": "agent-deep-links",
+      "description": "Build and validate deep links for Codex, Cursor, and VS Code with Slack-safe formatting and fallback guidance.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "slack",
+        "agents",
+        "meta"
+      ]
+    },
+    {
+      "slug": "canvas-design",
+      "name": "canvas-design",
+      "description": "Generate structured canvas layouts and design artifacts.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "design",
+        "meta"
+      ]
+    },
+    {
+      "slug": "image-enhancer",
+      "name": "image-enhancer",
+      "description": "Upscale and refine images with configurable presets.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "images",
+        "meta"
+      ]
+    },
+    {
+      "slug": "slack-gif-creator",
+      "name": "slack-gif-creator",
+      "description": "Generate GIFs for Slack with captions and styling.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "slack",
+        "video",
+        "meta"
+      ]
+    },
+    {
+      "slug": "theme-factory",
+      "name": "theme-factory",
+      "description": "Create reusable theme tokens and palettes.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "design",
+        "meta"
+      ]
+    },
+    {
+      "slug": "video-downloader",
+      "name": "youtube-downloader",
+      "description": "Download and prepare videos for offline review.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "meta"
+      ]
+    },
+    {
+      "slug": "template-skill",
+      "name": "template-skill",
+      "description": "Starter template for building new skills.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "templates",
+        "meta"
+      ]
+    },
+    {
+      "slug": "skill-installer",
+      "name": "skill-installer",
+      "description": "Helper scripts to install skills from curated lists or GitHub paths.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "github",
+        "installer",
+        "meta"
+      ],
+      "shortDescription": "Install curated skills from openai/skills or other repos"
+    },
+    {
+      "slug": "skill-creator",
+      "name": "skill-creator",
+      "description": "Guidance for building effective Codex skills with progressive disclosure.",
+      "category": "meta",
+      "isLocal": true,
+      "repoUrl": null,
+      "installCommand": null,
+      "tags": [
+        "meta"
+      ],
+      "shortDescription": "Create or update a skill"
+    }
+  ]
+}

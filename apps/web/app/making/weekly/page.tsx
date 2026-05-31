@@ -10,7 +10,7 @@ import {
   CardContent,
   Badge,
   cn
-} from "@allone/ui"
+} from "@innate/ui"
 import { weeklySummaries, getIssuesForWeekly } from "@/lib/making/data"
 
 export default function WeeklyPage() {

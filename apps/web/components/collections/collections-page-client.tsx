@@ -6,7 +6,7 @@ import { CollectionsCardGrid } from "@/components/collections/collections-card-g
 import { CollectionsList } from "@/components/collections/collections-list"
 import { CollectionViewer } from "@/components/collections/collection-viewer"
 import { Globe, X, ChevronLeft, ChevronRight } from "lucide-react"
-import { cn } from "@allone/utils"
+import { cn } from "@/lib/utils"
 
 const PAGE_SIZE = 10
 

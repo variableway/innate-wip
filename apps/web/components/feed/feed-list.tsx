@@ -3,24 +3,21 @@
 import { useState, useMemo } from "react"
 import { FeedCard } from "./feed-card"
 import { FeedFilter } from "./feed-filter"
-import { Post, FeedFilter as FeedFilterType } from "@/lib/types"
+import type { FeedPost, FeedFilterType } from "./types"
 import { Loader2 } from "lucide-react"
-import { Button } from "@allone/ui"
 
 interface FeedListProps {
-  posts: Post[]
+  posts: FeedPost[]
 }
 
 // 按时间分组
-function groupPostsByTime(posts: Post[]) {
-  const groups: { label: string; posts: Post[] }[] = []
-  
-  // 这里简化处理，实际应该按真实日期分组
-  // 现在按索引分组模拟
+function groupPostsByTime(posts: FeedPost[]) {
+  const groups: { label: string; posts: FeedPost[] }[] = []
+
   const today = posts.filter((_, i) => i < 2)
   const yesterday = posts.filter((_, i) => i >= 2 && i < 4)
   const earlier = posts.filter((_, i) => i >= 4)
-  
+
   if (today.length > 0) {
     groups.push({ label: "Today", posts: today })
   }
@@ -30,7 +27,7 @@ function groupPostsByTime(posts: Post[]) {
   if (earlier.length > 0) {
     groups.push({ label: "Earlier", posts: earlier })
   }
-  
+
   return groups
 }
 
@@ -38,6 +35,15 @@ export function FeedList({ posts }: FeedListProps) {
   const [filter, setFilter] = useState<FeedFilterType>("all")
   const [displayCount, setDisplayCount] = useState(6)
   const [isLoading, setIsLoading] = useState(false)
+
+  // Extract unique categories from posts
+  const categories = useMemo(() => {
+    const cats = new Set<string>()
+    for (const post of posts) {
+      if (post.category) cats.add(post.category)
+    }
+    return Array.from(cats).sort()
+  }, [posts])
 
   // 筛选文章
   const filteredPosts = useMemo(() => {
@@ -54,7 +60,6 @@ export function FeedList({ posts }: FeedListProps) {
   // 加载更多
   const handleLoadMore = async () => {
     setIsLoading(true)
-    // 模拟加载延迟
     await new Promise((resolve) => setTimeout(resolve, 500))
     setDisplayCount((prev) => prev + 6)
     setIsLoading(false)
@@ -70,7 +75,7 @@ export function FeedList({ posts }: FeedListProps) {
     <div className="space-y-8">
       {/* 筛选器 */}
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm py-4 border-b border-border/50">
-        <FeedFilter currentFilter={filter} onFilterChange={setFilter} />
+        <FeedFilter currentFilter={filter} onFilterChange={setFilter} categories={categories} />
       </div>
 
       {/* 编辑精选 */}
@@ -82,7 +87,7 @@ export function FeedList({ posts }: FeedListProps) {
           </h2>
           <div className="space-y-4">
             {editorsPicks.map((post) => (
-              <FeedCard key={post.id} post={post} />
+              <FeedCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
@@ -96,7 +101,7 @@ export function FeedList({ posts }: FeedListProps) {
           </h2>
           <div className="space-y-4">
             {group.posts.slice(0, displayCount).map((post) => (
-              <FeedCard key={post.id} post={post} />
+              <FeedCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
@@ -105,11 +110,10 @@ export function FeedList({ posts }: FeedListProps) {
       {/* 加载更多 */}
       {hasMore && (
         <div className="flex justify-center py-8">
-          <Button
-            variant="outline"
+          <button
             onClick={handleLoadMore}
             disabled={isLoading}
-            className="min-w-[200px]"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-w-[200px]"
           >
             {isLoading ? (
               <>
@@ -119,7 +123,7 @@ export function FeedList({ posts }: FeedListProps) {
             ) : (
               "Load more"
             )}
-          </Button>
+          </button>
         </div>
       )}
 

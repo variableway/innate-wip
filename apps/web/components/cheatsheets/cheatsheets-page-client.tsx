@@ -4,7 +4,7 @@ import { useState, useMemo } from "react"
 import Link from "next/link"
 import { CheatsheetMeta, ViewMode } from "@/lib/cheatsheets/types"
 import { Badge } from "@innate/ui"
-import { cn } from "@allone/utils"
+import { cn } from "@/lib/utils"
 import {
   BookOpen,
   LayoutGrid,

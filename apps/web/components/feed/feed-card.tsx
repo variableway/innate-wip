@@ -1,35 +1,49 @@
 "use client"
 
 import Link from "next/link"
-import { Card, CardContent } from "@allone/ui"
 import { Heart, MessageCircle, Bookmark, Clock } from "lucide-react"
-import { cn } from "@allone/utils"
-import type { Post } from "@/lib/types"
-import { tags } from "@/lib/data"
+import { cn } from "@/lib/utils"
+import type { FeedPost } from "./types"
 
 interface FeedCardProps {
-  post: Post
+  post: FeedPost
   variant?: "default" | "compact" | "featured"
 }
 
-export function FeedCard({ post, variant = "default" }: FeedCardProps) {
-  // 获取标签颜色
-  const getTagColor = (tagName: string) => {
-    const tag = tags.find((t) => t.slug === tagName)
-    return tag?.color || "#8FA68E"
-  }
+const tagColorMap: Record<string, string> = {
+  ai: "#8FA68E",
+  coding: "#7A9CAE",
+  design: "#D4845E",
+  product: "#E89B73",
+  career: "#9BB5C4",
+  tutorial: "#A8C5A8",
+  news: "#8B7355",
+  experience: "#6B8E9B",
+}
 
+function getTagColor(tagName: string): string {
+  return tagColorMap[tagName.toLowerCase()] || "#8FA68E"
+}
+
+const categoryStyles: Record<string, string> = {
+  article: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+  log: "bg-green-500/10 text-green-600 dark:text-green-400",
+  news: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+  thought: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+  insight: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+}
+
+export function FeedCard({ post, variant = "default" }: FeedCardProps) {
   if (variant === "compact") {
     return (
       <Link href={`/feed/${post.slug}`}>
-        <Card className="hover:shadow-md transition-shadow border-border/50">
-          <CardContent className="p-4">
+        <div className="rounded-xl border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow border-border/50">
+          <div className="p-4">
             <div className="flex items-start gap-4">
-              {/* 作者头像 */}
               <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-sm font-medium flex-shrink-0">
                 {post.author.name[0]}
               </div>
-              
+
               <div className="flex-1 min-w-0">
                 <h3 className="font-medium text-foreground line-clamp-1 mb-1">
                   {post.title}
@@ -44,21 +58,21 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
                 </div>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </Link>
     )
   }
 
   return (
     <Link href={`/feed/${post.slug}`}>
-      <Card 
+      <div
         className={cn(
-          "group hover:shadow-lg transition-all duration-300 border-border/50",
+          "group rounded-xl border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all duration-300 border-border/50",
           post.isEditorsPick && "border-[#D4845E]/30 ring-1 ring-[#D4845E]/10"
         )}
       >
-        <CardContent className="p-6">
+        <div className="p-6">
           {/* 头部：编辑精选标记 + 日期 */}
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
@@ -71,15 +85,8 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
                 </span>
               )}
               {post.category && (
-                <span className={cn(
-                  "text-xs px-2 py-0.5 rounded-full",
-                  post.category === "article" && "bg-[#8FA68E]/10 text-[#8FA68E]",
-                  post.category === "log" && "bg-[#7A9CAE]/10 text-[#7A9CAE]",
-                  post.category === "news" && "bg-[#D4845E]/10 text-[#D4845E]",
-                )}>
-                  {post.category === "article" && "Article"}
-                  {post.category === "log" && "Log"}
-                  {post.category === "news" && "News"}
+                <span className={cn("text-xs px-2 py-0.5 rounded-full", categoryStyles[post.category] || "bg-muted text-muted-foreground")}>
+                  {post.category.charAt(0).toUpperCase() + post.category.slice(1)}
                 </span>
               )}
             </div>
@@ -103,9 +110,9 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
                 <span
                   key={tag}
                   className="text-xs px-2 py-1 rounded-md"
-                  style={{ 
+                  style={{
                     backgroundColor: `${getTagColor(tag)}20`,
-                    color: getTagColor(tag)
+                    color: getTagColor(tag),
                   }}
                 >
                   #{tag}
@@ -124,7 +131,7 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
                 <span className="font-medium">{post.author.name}</span>
                 <span className="text-muted-foreground"> · </span>
                 <span className="text-muted-foreground">
-                  {post.readTime} min read
+                  {post.readTime || 1} min read
                 </span>
               </div>
             </div>
@@ -132,19 +139,19 @@ export function FeedCard({ post, variant = "default" }: FeedCardProps) {
             <div className="flex items-center gap-4 text-muted-foreground">
               <button className="flex items-center gap-1 text-sm hover:text-[#D4845E] transition-colors">
                 <Heart className="h-4 w-4" />
-                <span>{post.likes}</span>
+                <span>0</span>
               </button>
               <button className="flex items-center gap-1 text-sm hover:text-[#8FA68E] transition-colors">
                 <MessageCircle className="h-4 w-4" />
-                <span>{post.comments}</span>
+                <span>0</span>
               </button>
               <button className="hover:text-[#7A9CAE] transition-colors">
                 <Bookmark className="h-4 w-4" />
               </button>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </Link>
   )
 }

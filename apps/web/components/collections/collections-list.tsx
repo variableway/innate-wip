@@ -1,7 +1,7 @@
 "use client"
 
 import { CollectionItem } from "@/lib/collections/types"
-import { cn } from "@allone/utils"
+import { cn } from "@/lib/utils"
 import { Calendar, Tag } from "lucide-react"
 
 const sourceColors: Record<string, string> = {

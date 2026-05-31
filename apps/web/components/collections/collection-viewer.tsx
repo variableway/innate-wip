@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { CollectionItem } from "@/lib/collections/types"
 import { ArrowLeft, ExternalLink, Tag, Loader2, LayoutGrid } from "lucide-react"
-import { cn } from "@allone/utils"
+import { cn } from "@/lib/utils"
 
 const sourceColors: Record<string, string> = {
   kimi: "bg-violet-500/10 text-violet-600 dark:text-violet-400",

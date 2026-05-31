@@ -4,7 +4,7 @@ export interface PostMeta {
   date: string
   updated?: string
   author: string
-  category: 'article' | 'log' | 'news'
+  category: string
   tags: string[]
   excerpt?: string
   cover?: string
@@ -16,8 +16,8 @@ export interface PostMeta {
 
 export interface ParsedPost {
   meta: PostMeta
-  content: string        // Markdown 原文
-  html: string          // 转换后的 HTML
+  content: string
+  html: string
 }
 
 export interface Author {
@@ -28,9 +28,4 @@ export interface Author {
     twitter?: string
     github?: string
   }
-}
-
-export interface ContentConfig {
-  postsPerPage: number
-  defaultAuthor: string
 }

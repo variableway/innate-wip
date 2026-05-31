@@ -1,181 +1,157 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { ArticleReader } from '@/components/feed/article-reader'
-import { getPost, getAllPostSlugObjects, getPostsMeta } from '@/lib/content'
-import type { ParsedPost, PostMeta } from '@/lib/content'
+import { evaluate } from "@mdx-js/mdx"
+import * as runtime from "react/jsx-runtime"
+import remarkGfm from "remark-gfm"
+import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
+import { getWritingMeta, getWriting, extractToc } from "@/lib/content"
+import { remarkMermaid } from "@/lib/remark-mermaid"
+import { MermaidBlock } from "@/components/mermaid-block"
+import { BlogViewer } from "@/components/blog-viewer"
+import Link from "next/link"
+import { ArrowLeft } from "lucide-react"
 
-interface ArticlePageProps {
-  params: Promise<{
-    slug: string
-  }>
+interface Props {
+  params: Promise<{ slug: string }>
 }
 
-/**
- * 生成元数据
- */
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+export async function generateStaticParams() {
+  const posts = await getWritingMeta()
+  return posts.map((p) => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPost(slug)
-  
-  if (!post) {
-    return {
-      title: 'Article Not Found',
-    }
-  }
-  
-  const { meta } = post
-  
+  const post = await getWriting(slug)
+  if (!post) return { title: "Not Found" }
   return {
-    title: meta.title,
-    description: meta.excerpt,
-    openGraph: meta.cover
-      ? {
-          images: [{ url: meta.cover }],
-        }
-      : undefined,
+    title: `${post.meta.title} | Feed`,
+    description: post.meta.excerpt || post.meta.title,
   }
 }
 
-/**
- * 生成静态参数（SSG 模式）
- * 在服务端模式下会按需生成
- */
-export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
-  // 在生产构建时生成所有文章
-  if (process.env.NODE_ENV === 'production') {
-    return getAllPostSlugObjects()
-  }
-  
-  // 开发时只生成示例
-  return [{ slug: 'example-post' }]
-}
-
-/**
- * 动态模式配置
- * - auto: 自动选择
- * - force-static: 强制静态渲染（用于静态导出）
- * - force-dynamic: 强制动态渲染（用于 ISR）
- */
-export const dynamic = 'auto'
-
-/**
- * 动态路由参数配置
- * 注意：在静态导出模式下，此配置不生效
- * 需要配合 next.config.mjs 中的 dynamicParams 设置
- */
-export const dynamicParams = false
-
-/**
- * ISR 重新验证时间（秒）
- * 仅在服务端模式下生效
- */
-export const revalidate = 60
-
-export default async function ArticlePage({ params }: ArticlePageProps) {
+export default async function FeedArticlePage({ params }: Props) {
   const { slug } = await params
-  const post = await getPost(slug)
+  const post = await getWriting(slug)
+  if (!post) notFound()
 
-  if (!post) {
-    notFound()
+  const toc = extractToc(post.content)
+  const dateStr = new Date(post.meta.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+
+  if (post.type === "mdx") {
+    const { default: Content } = await evaluate(post.content, {
+      ...runtime,
+      remarkPlugins: [remarkGfm, remarkMermaid],
+      rehypePlugins: [
+        [
+          rehypePrettyCode,
+          {
+            theme: {
+              light: "github-light",
+              dark: "github-dark",
+            },
+            keepBackground: true,
+            defaultLang: "plaintext",
+          },
+        ],
+        rehypeSlug,
+      ],
+    } as any)
+
+    return (
+      <div className="max-w-5xl mx-auto px-6 py-6">
+        <Link
+          href="/feed"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Feed
+        </Link>
+
+        <article className="flex flex-col h-full">
+          <div className="border-b border-border pb-4 mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded uppercase tracking-wide bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                {post.meta.category}
+              </span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground">
+                MDX
+              </span>
+            </div>
+            <h1 className="text-2xl font-bold text-foreground leading-tight">
+              {post.meta.title}
+            </h1>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3 flex-wrap">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[11px] font-medium">
+                  {post.meta.author[0]}
+                </div>
+                <span>{post.meta.author}</span>
+              </div>
+              <span>{dateStr}</span>
+              <span>{post.meta.readingTime || 1} min read</span>
+            </div>
+            {post.meta.tags.length > 0 && (
+              <div className="flex items-center gap-1.5 mt-3 flex-wrap">
+                {post.meta.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-0.5 text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded-md"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="flex-1 overflow-y-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
+              <div className="markdown-content">
+                {post.meta.excerpt && (
+                  <div className="bg-secondary/50 border-l-4 border-[#8FA68E] p-4 mb-6 rounded-r-lg">
+                    <p className="text-muted-foreground italic text-sm">{post.meta.excerpt}</p>
+                  </div>
+                )}
+                <Content components={{ MermaidBlock }} />
+              </div>
+              <aside>
+                {/* ToC placeholder for MDX */}
+              </aside>
+            </div>
+          </div>
+        </article>
+      </div>
+    )
   }
-
-  // 获取相关文章
-  const relatedPosts = await getRelatedPosts(slug, post.meta.tags, 3)
-
-  // 转换 ParsedPost 格式为 ArticleReader 需要的格式
-  const articleData = transformPostForReader(post, slug)
 
   return (
-    <div className="py-6 px-6">
-      <ArticleReader post={articleData} relatedPosts={relatedPosts} />
+    <div className="max-w-5xl mx-auto px-6 py-6">
+      <Link
+        href="/feed"
+        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to Feed
+      </Link>
+
+      <BlogViewer
+        title={post.meta.title}
+        content={post.content}
+        excerpt={post.meta.excerpt || ""}
+        date={dateStr}
+        author={post.meta.author}
+        category={post.meta.category}
+        tags={post.meta.tags}
+        readingTime={post.meta.readingTime || 1}
+        toc={toc}
+        isMobile={false}
+      />
     </div>
   )
-}
-
-/**
- * 获取相关文章
- */
-async function getRelatedPosts(
-  currentSlug: string,
-  tags: string[],
-  limit: number
-): Promise<PostMeta[]> {
-  if (tags.length === 0) return []
-  
-  const posts = await getPostsMeta({ status: 'published', limit: 20 })
-  
-  return posts
-    .filter((p) => p.slug !== currentSlug)
-    .map((p) => ({
-      ...p,
-      score: p.tags.filter((t) => tags.includes(t)).length,
-    }))
-    .sort((a, b) => (b as PostMeta & { score: number }).score - (a as PostMeta & { score: number }).score)
-    .slice(0, limit)
-}
-
-/**
- * 转换 ParsedPost 为 ArticleReader 需要的格式
- */
-function transformPostForReader(post: ParsedPost, slug: string): {
-  slug: string
-  title: string
-  summary: string
-  content: string
-  html: string
-  date: string
-  author: {
-    name: string
-    avatar?: string
-    role?: string
-  }
-  category: string
-  tags: string[]
-  readTime: number
-  toc: Array<{ id: string; text: string; level: number }>
-} {
-  const { meta, html, content } = post
-  
-  // 从内容中提取目录
-  const toc = extractTocFromHtml(html)
-  
-  return {
-    slug,
-    title: meta.title,
-    summary: meta.excerpt || '',
-    content,
-    html,
-    date: meta.date,
-    author: {
-      name: meta.author,
-      avatar: undefined,
-      role: undefined,
-    },
-    category: meta.category,
-    tags: meta.tags,
-    readTime: meta.readingTime,
-    toc,
-  }
-}
-
-/**
- * 从 HTML 中提取目录
- */
-function extractTocFromHtml(html: string): Array<{ id: string; text: string; level: number }> {
-  const toc: Array<{ id: string; text: string; level: number }> = []
-  const headingRegex = /<h([23])[^>]*>(?:<a[^>]*>)?([^<]+)(?:<\/a>)?<\/h\1>/g
-  let match
-  
-  while ((match = headingRegex.exec(html)) !== null) {
-    const level = parseInt(match[1])
-    const text = match[2].trim()
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-    
-    toc.push({ id, text, level })
-  }
-  
-  return toc
 }
