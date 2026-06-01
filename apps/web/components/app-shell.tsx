@@ -17,7 +17,7 @@ interface AppShellProps {
 }
 
 export function AppShell({ categories, children }: AppShellProps) {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
