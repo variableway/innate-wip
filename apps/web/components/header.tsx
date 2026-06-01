@@ -161,7 +161,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
                     <ChevronDown className="h-3 w-3 opacity-60" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="min-w-[160px]">
+                <DropdownMenuContent align="start" sideOffset={8} collisionPadding={8} className="min-w-[160px]">
                   {cat.items.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <Link

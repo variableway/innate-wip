@@ -148,7 +148,7 @@ function SidebarContent({
           </button>
 
           {contentOpen && !collapsed && (
-            <div className="ml-2 mt-0.5 space-y-0.5">
+            <div className="ml-2 mt-1 space-y-1 pb-1">
               <Link
                 href="/writing"
                 className={cn(
@@ -202,7 +202,7 @@ function SidebarContent({
           </button>
 
           {feedOpen && !collapsed && (
-            <div className="ml-2 mt-0.5 space-y-0.5">
+            <div className="ml-2 mt-1 space-y-1 pb-1">
               <Link
                 href="/feed"
                 className={cn(
@@ -244,7 +244,7 @@ function SidebarContent({
           </button>
 
           {makingOpen && !collapsed && (
-            <div className="ml-2 mt-0.5 space-y-0.5">
+            <div className="ml-2 mt-1 space-y-1 pb-1">
               <Link
                 href="/making/projects"
                 className={cn(
@@ -322,7 +322,7 @@ function SidebarContent({
           </button>
 
           {cheatsheetsOpen && !collapsed && (
-            <div className="ml-2 mt-0.5 space-y-0.5">
+            <div className="ml-2 mt-1 space-y-1 pb-1">
               <Link
                 href="/cheatsheets"
                 className={cn(
@@ -376,7 +376,7 @@ function SidebarContent({
           </button>
 
           {awesomeOpen && !collapsed && (
-            <div className="ml-2 mt-0.5 space-y-0.5">
+            <div className="ml-2 mt-1 space-y-1 pb-1">
               <Link
                 href="/awesome"
                 className={cn(
