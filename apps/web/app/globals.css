@@ -3,54 +3,106 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ================================================================
+   Design System: Innate — Editorial Precision
+   Inspired by Vercel/Statsig restraint + Notion warmth
+   ================================================================ */
+
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --radius: 0.625rem;
+  /* Surface */
+  --background: #fafaf9;
+  --foreground: #1c1917;
+
+  /* Cards & elevated surfaces */
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --popover: #ffffff;
+  --popover-foreground: #1c1917;
+
+  /* The brand ink — primary is the text color itself (Vercel pattern) */
+  --primary: #1c1917;
+  --primary-foreground: #fafaf9;
+
+  /* Secondary / muted surfaces */
+  --secondary: #f5f5f4;
+  --secondary-foreground: #1c1917;
+
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+
+  /* The ONE accent — sage green, used sparingly */
+  --accent: #8FA68E;
+  --accent-foreground: #ffffff;
+  --accent-subtle: rgba(143, 166, 142, 0.1);
+
+  /* Feedback */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* Borders — shadow-as-border + subtle line */
+  --border: rgba(28, 25, 23, 0.08);
+  --border-strong: #e7e5e4;
+  --input: rgba(28, 25, 23, 0.08);
+  --ring: #8FA68E;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Tracking */
+  --tracking-tight: -0.02em;
+  --tracking-display: -0.03em;
+
+  /* Line heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --background: #0c0a09;
+  --foreground: #fafaf9;
+
+  --card: #1c1917;
+  --card-foreground: #fafaf9;
+  --popover: #1c1917;
+  --popover-foreground: #fafaf9;
+
+  --primary: #fafaf9;
+  --primary-foreground: #1c1917;
+
+  --secondary: #292524;
+  --secondary-foreground: #fafaf9;
+
+  --muted: #292524;
+  --muted-foreground: #a8a29e;
+
+  --accent: #8FA68E;
+  --accent-foreground: #1c1917;
+  --accent-subtle: rgba(143, 166, 142, 0.15);
+
+  --destructive: #ef4444;
+  --destructive-foreground: #1c1917;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: #292524;
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #8FA68E;
 }
 
 @theme inline {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --font-sans: 'Geist', 'Geist Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -82,27 +134,110 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-/* Scrollbar hide utility */
+/* ================================================================
+   Scrollbar hide utility
+   ================================================================ */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* ========================================
-   Markdown Content Styles
-   ======================================== */
+/* ================================================================
+   Micro-interactions
+   ================================================================ */
+
+/* Card lift — universal hover pattern */
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Link underline animation */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+/* Button press */
+.btn-press {
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Nav item */
+.nav-item {
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 0 2px 2px 0;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-item[data-active="true"]::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ================================================================
+   Markdown Content Styles — Reading Experience
+   ================================================================ */
 
 .markdown-content {
   color: var(--foreground);
-  line-height: 1.75;
+  line-height: 1.7;
+  font-size: 1.0625rem; /* 17px base, comfortable reading */
 }
 
 .markdown-content h1,
@@ -113,14 +248,15 @@
 }
 
 .markdown-content h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 2rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--foreground);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .markdown-content h2 {
@@ -129,38 +265,42 @@
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   color: var(--foreground);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .markdown-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 0.5rem;
   color: var(--foreground);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
 .markdown-content h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--foreground);
+  line-height: 1.35;
 }
 
 .markdown-content h5,
 .markdown-content h6 {
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.5rem;
   color: var(--foreground);
 }
 
 .markdown-content p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.75;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+  line-height: 1.7;
   color: var(--foreground);
 }
 
@@ -173,15 +313,15 @@
 }
 
 .markdown-content a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
 }
 
 .markdown-content a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  border-bottom-color: var(--accent);
 }
 
 .markdown-content strong {
@@ -196,8 +336,8 @@
 
 .markdown-content ul,
 .markdown-content ol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
   padding-left: 1.5rem;
 }
 
@@ -210,9 +350,9 @@
 }
 
 .markdown-content li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.7;
 }
 
 .markdown-content li > ul,
@@ -223,7 +363,7 @@
 
 .markdown-content li input[type="checkbox"] {
   margin-right: 0.5rem;
-  accent-color: var(--primary);
+  accent-color: var(--accent);
   width: 1rem;
   height: 1rem;
   vertical-align: middle;
@@ -249,7 +389,7 @@
   padding: 1rem;
   background-color: var(--muted);
   border-radius: 0.75rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   overflow-x: auto;
 }
 
@@ -263,9 +403,9 @@
 
 .markdown-content blockquote {
   margin: 1.5rem 0;
-  padding: 0.75rem 1rem;
-  border-left: 4px solid var(--primary);
-  background-color: var(--muted);
+  padding: 0.875rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background-color: var(--accent-subtle);
   border-radius: 0 0.5rem 0.5rem 0;
   font-style: italic;
 }
@@ -282,7 +422,8 @@
   width: 100%;
   margin: 1.5rem 0;
   border-collapse: collapse;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
+  font-size: 0.9375rem;
 }
 
 .markdown-content th {
@@ -290,12 +431,12 @@
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
 }
 
 .markdown-content td {
   padding: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
 }
 
 .markdown-content tr:nth-child(even) {
@@ -303,9 +444,9 @@
 }
 
 .markdown-content hr {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
   border: none;
-  border-top: 2px solid var(--border);
+  border-top: 1px solid var(--border-strong);
 }
 
 .markdown-content img {
@@ -336,16 +477,16 @@
 
 .dark .markdown-content pre {
   background-color: var(--muted);
-  border-color: var(--border);
+  border-color: var(--border-strong);
 }
 
 .dark .markdown-content blockquote {
-  background-color: var(--muted);
-  border-left-color: var(--primary);
+  background-color: var(--accent-subtle);
+  border-left-color: var(--accent);
 }
 
 .dark .markdown-content table {
-  border-color: var(--border);
+  border-color: var(--border-strong);
 }
 
 .dark .markdown-content th,
@@ -353,14 +494,25 @@
   background-color: var(--muted);
 }
 
-/* ========================================
+/* Inline code (not in pre) should keep original style */
+.markdown-content :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--muted);
+  border-radius: 0.375rem;
+  color: var(--primary);
+}
+
+/* ================================================================
    rehype-pretty-code (Shiki) Styles
-   ======================================== */
+   ================================================================ */
 
 figure[data-rehype-pretty-code-figure] {
   margin: 1.5rem 0;
   border-radius: 0.75rem;
   overflow: hidden;
+  border: 1px solid var(--border-strong);
 }
 
 figure[data-rehype-pretty-code-figure] pre {
@@ -370,7 +522,7 @@ figure[data-rehype-pretty-code-figure] pre {
   font-size: 0.875rem;
   line-height: 1.7;
   background-color: var(--muted);
-  border: 1px solid var(--border);
+  border: none;
 }
 
 figure[data-rehype-pretty-code-figure] code {
@@ -420,19 +572,9 @@ figure[data-rehype-pretty-code-figure] code [data-chars-id] {
   height: auto;
 }
 
-/* Inline code (not in pre) should keep original style */
-.markdown-content :not(pre) > code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  padding: 0.2rem 0.4rem;
-  background-color: var(--muted);
-  border-radius: 0.375rem;
-  color: var(--primary);
-}
-
-/* ========================================
-   highlight.js (rehype-highlight) Theme
-   ======================================== */
+/* ================================================================
+   highlight.js (rehype-highlight) Theme — GitHub style
+   ================================================================ */
 
 .markdown-content .hljs {
   color: #24292e;
@@ -568,24 +710,18 @@ figure[data-rehype-pretty-code-figure] code [data-chars-id] {
   color: #79c0ff;
 }
 
-/* ========================================
+/* ================================================================
    Animation Utilities
-   ======================================== */
+   ================================================================ */
 
 @keyframes slide-in-from-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .animate-in {

@@ -65,7 +65,9 @@ export default async function InsightDetailPage({ params }: Props) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
-            <ServerMarkdown content={content} />
+            <div className="max-w-3xl">
+              <ServerMarkdown content={content} />
+            </div>
             <aside>
               <TableOfContents headings={toc} />
             </aside>

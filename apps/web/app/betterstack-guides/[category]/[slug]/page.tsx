@@ -48,12 +48,12 @@ export default async function GuidePage({ params }: Props) {
               </Link>
 
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-[11px] font-medium px-2 py-0.5 rounded uppercase tracking-wide bg-[#8FA68E]/10 text-[#6b856a] dark:text-[#a8c4a7]">
+                <span className="text-[11px] font-medium px-2 py-0.5 rounded uppercase tracking-wide bg-[var(--accent-subtle)] text-[var(--accent)]">
                   {guide.category}
                 </span>
               </div>
 
-              <h1 className="text-2xl font-bold text-foreground leading-tight">
+              <h1 className="text-2xl font-semibold text-foreground leading-tight tracking-tight">
                 {guide.title}
               </h1>
 
@@ -63,7 +63,7 @@ export default async function GuidePage({ params }: Props) {
                   href={`https://betterstack.com${guide.filePath.replace(/.*packages\/betterstack-guides\/guides/, "").replace(".md", "/")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#8FA68E] hover:underline"
+                  className="text-[var(--accent)] hover:underline"
                 >
                   betterstack.com
                 </a>
@@ -73,7 +73,7 @@ export default async function GuidePage({ params }: Props) {
             {/* Content with ToC */}
             <div className="flex-1 overflow-y-auto">
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
-                <div className="markdown-content">
+                <div className="markdown-content max-w-3xl">
                   <ServerMarkdown content={guide.content} />
                 </div>
                 <aside>

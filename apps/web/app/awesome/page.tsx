@@ -50,16 +50,17 @@ export default async function AwesomePage() {
               <Link
                 key={cat.slug}
                 href={`/awesome/${cat.slug}`}
-                className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 hover:shadow-md hover:border-[#8FA68E]/30 transition-all duration-200"
+                className="group flex items-center gap-3 rounded-xl p-4 bg-card card-hover"
+                style={{ boxShadow: '0 0 0 1px var(--border)' }}
               >
                 <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-transform group-hover:scale-105"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-transform duration-200 group-hover:scale-105"
                   style={{ backgroundColor: `${cat.color}15`, color: cat.color }}
                 >
                   {iconMap[cat.icon] || <Tag className="h-5 w-5" />}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[#8FA68E] transition-colors">
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[var(--accent)] transition-colors duration-200">
                     {cat.name}
                   </h3>
                   <p className="text-xs text-muted-foreground/60 mt-0.5">

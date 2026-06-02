@@ -132,17 +132,18 @@ export default async function BetterstackGuidesPage() {
                     <Link
                       key={`${item.category}/${item.slug}`}
                       href={`/betterstack-guides/${item.category}/${item.slug}`}
-                      className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:shadow-md hover:border-[#8FA68E]/30 transition-all duration-200"
+                      className="group flex items-start gap-3 rounded-xl p-4 bg-card card-hover"
+                      style={{ boxShadow: '0 0 0 1px var(--border)' }}
                     >
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-semibold text-foreground group-hover:text-[#8FA68E] transition-colors line-clamp-2">
+                        <h3 className="text-sm font-semibold text-foreground group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
                           {item.title}
                         </h3>
                         <p className="text-[10px] text-muted-foreground/50 mt-1.5 uppercase tracking-wide">
                           {item.category.replace(/-/g, " ")}
                         </p>
                       </div>
-                      <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/30 group-hover:text-[#8FA68E] group-hover:translate-x-0.5 transition-all shrink-0 mt-0.5" />
+                      <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/30 group-hover:text-[var(--accent)] group-hover:translate-x-0.5 transition-all duration-200 shrink-0 mt-0.5" />
                     </Link>
                   ))}
                 </div>

@@ -82,7 +82,7 @@ export function BlogViewer({
         )}
 
         {/* Title */}
-        <h1 className="text-2xl md:text-3xl font-bold text-foreground mt-2 mb-3 leading-tight tracking-tight">
+        <h1 className="text-2xl md:text-3xl font-semibold text-foreground mt-2 mb-3 leading-tight tracking-tight">
           {title}
         </h1>
 
@@ -126,10 +126,10 @@ export function BlogViewer({
       <div className="flex-1">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
           {/* Main content */}
-          <div>
+          <div className="max-w-3xl">
             {/* Excerpt block */}
             {excerpt && (
-              <div className="bg-[#8FA68E]/5 border-l-4 border-[#8FA68E] p-4 mb-6 rounded-r-lg">
+              <div className="bg-[var(--accent-subtle)] border-l-4 border-[var(--accent)] p-4 mb-6 rounded-r-lg">
                 <p className="text-muted-foreground italic text-sm leading-relaxed">{excerpt}</p>
               </div>
             )}

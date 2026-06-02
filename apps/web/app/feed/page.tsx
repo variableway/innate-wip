@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 function StatPill({ icon, value, label }: { icon: React.ReactNode; value: number; label: string }) {
   return (
     <div className="flex items-center gap-1.5 text-xs text-muted-foreground/70">
-      <span className="text-[#8FA68E]">{icon}</span>
+      <span className="text-[var(--accent)]">{icon}</span>
       <span className="font-semibold text-foreground">{value}</span>
       <span>{label}</span>
     </div>
@@ -51,8 +51,8 @@ export default async function FeedPage() {
         {/* Hero Header */}
         <div className="mb-8 pb-6 border-b border-border/50">
           <div className="flex items-center gap-3 mb-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#8FA68E]/10">
-              <Newspaper className="h-5 w-5 text-[#8FA68E]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent-subtle)]">
+              <Newspaper className="h-5 w-5 text-[var(--accent)]" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-foreground tracking-tight">Feed</h1>

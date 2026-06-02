@@ -62,7 +62,7 @@ export default async function HomePage() {
 
   return (
     <div className="h-full overflow-y-auto">
-      <div className="max-w-6xl mx-auto px-5 py-10 md:px-8">
+      <div className="max-w-6xl mx-auto px-5 py-12 md:px-8 md:py-16">
         {/* ============================================================ */}
         {/*  Hero + Bento Grid                                           */}
         {/* ============================================================ */}
@@ -70,36 +70,37 @@ export default async function HomePage() {
           {/* ── Hero tile (spans 2 cols on md, 3 on lg) ── */}
           <Link
             href="/writing"
-            className="group relative md:col-span-2 lg:col-span-3 rounded-3xl border border-border bg-gradient-to-br from-[#8FA68E]/10 via-background to-background p-6 md:p-8 overflow-hidden hover:shadow-lg hover:border-[#8FA68E]/30 transition-all duration-300"
+            className="group relative md:col-span-2 lg:col-span-3 rounded-xl p-6 md:p-8 overflow-hidden card-hover bg-card"
+            style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8FA68E]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent)]/[0.04] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#8FA68E]">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent)]">
                   <PenLine className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
+                  <h1 className="text-2xl md:text-4xl font-semibold text-foreground tracking-tight leading-tight">
                     Innate
                   </h1>
-                  <p className="text-xs text-muted-foreground/70">
+                  <p className="text-xs text-muted-foreground mt-0.5">
                     Personal knowledge hub & project tracker
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
                 A unified workspace that aggregates GitHub issues, project
                 documentation, weekly progress summaries, technical
                 cheatsheets, curated collections, and blog writing — all in
                 one place with AI-powered analysis.
               </p>
-              <div className="mt-5 flex items-center gap-4 text-xs text-muted-foreground/60">
+              <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
-                  <Layers className="h-3.5 w-3.5 text-[#8FA68E]" />
+                  <Layers className="h-3.5 w-3.5 text-[var(--accent)]" />
                   {totalContent.toLocaleString()} pieces of content
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Zap className="h-3.5 w-3.5 text-[#8FA68E]" />
+                  <Zap className="h-3.5 w-3.5 text-[var(--accent)]" />
                   Statically generated
                 </span>
               </div>
@@ -107,15 +108,15 @@ export default async function HomePage() {
           </Link>
 
           {/* ── Stats tile ── */}
-          <div className="rounded-3xl border border-border bg-card p-6 flex flex-col justify-between hover:shadow-md hover:border-[#8FA68E]/20 transition-all duration-300">
+          <div className="rounded-xl p-6 flex flex-col justify-between bg-card card-hover" style={{ boxShadow: '0 0 0 1px var(--border)' }}>
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground/60 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-muted-foreground/70 uppercase tracking-wider">
                 Content
               </span>
               <Compass className="h-4 w-4 text-muted-foreground/30" />
             </div>
             <div className="mt-2">
-              <div className="text-3xl font-bold text-foreground">
+              <div className="text-3xl font-semibold text-foreground tracking-tight">
                 {totalContent.toLocaleString()}
               </div>
               <div className="text-xs text-muted-foreground/60 mt-0.5">
@@ -132,8 +133,6 @@ export default async function HomePage() {
             description="Blog posts, thoughts, and technical articles."
             count={stats.posts}
             countLabel="posts"
-            color="#8FA68E"
-            size="normal"
           />
 
           {/* ── Better Stack Guides tile (tall) ── */}
@@ -144,8 +143,7 @@ export default async function HomePage() {
             description="410+ technical guides scraped from the Better Stack community covering logging, monitoring, Docker, scaling, and more."
             count={stats.guides}
             countLabel="guides"
-            color="#14b8a6"
-            size="tall"
+            tall
           />
 
           {/* ── Cheatsheets tile ── */}
@@ -156,22 +154,21 @@ export default async function HomePage() {
             description="300+ quick reference guides."
             count={stats.cheatsheets}
             countLabel="sheets"
-            color="#06b6d4"
-            size="normal"
           />
 
           {/* ── Making tile (wide, spans 2 cols) ── */}
           <Link
             href="/making"
-            className="group md:col-span-2 rounded-3xl border border-border bg-card p-6 overflow-hidden hover:shadow-lg hover:border-[#8FA68E]/20 transition-all duration-300"
+            className="group md:col-span-2 rounded-xl p-6 overflow-hidden bg-card card-hover"
+            style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex items-start justify-between mb-5">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#8b5cf6]/10">
-                  <Code2 className="h-4 w-4 text-[#8b5cf6]" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary">
+                  <Code2 className="h-4 w-4 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[#8b5cf6] transition-colors">
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[var(--accent)] transition-colors duration-200">
                     Making
                   </h3>
                   <p className="text-[11px] text-muted-foreground/60">
@@ -179,7 +176,7 @@ export default async function HomePage() {
                   </p>
                 </div>
               </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-[#8b5cf6] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-[var(--accent)] group-hover:translate-x-0.5 transition-all duration-200" />
             </div>
             <div className="grid grid-cols-4 gap-3">
               <MiniStat
@@ -213,8 +210,6 @@ export default async function HomePage() {
             description="Unified content discovery."
             count={stats.posts}
             countLabel="articles"
-            color="#f59e0b"
-            size="normal"
           />
 
           {/* ── Collections tile ── */}
@@ -225,22 +220,21 @@ export default async function HomePage() {
             description="Ideas and experiments from AI agents."
             count={stats.collections}
             countLabel="items"
-            color="#6366f1"
-            size="normal"
           />
 
           {/* ── Awesome tile (wide, shows categories) ── */}
           <Link
             href="/awesome"
-            className="group md:col-span-2 lg:col-span-2 rounded-3xl border border-border bg-card p-6 overflow-hidden hover:shadow-lg hover:border-[#8FA68E]/20 transition-all duration-300"
+            className="group md:col-span-2 lg:col-span-2 rounded-xl p-6 overflow-hidden bg-card card-hover"
+            style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex items-start justify-between mb-5">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ec4899]/10">
-                  <Tag className="h-4 w-4 text-[#ec4899]" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary">
+                  <Tag className="h-4 w-4 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[#ec4899] transition-colors">
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-[var(--accent)] transition-colors duration-200">
                     Awesome
                   </h3>
                   <p className="text-[11px] text-muted-foreground/60">
@@ -248,13 +242,13 @@ export default async function HomePage() {
                   </p>
                 </div>
               </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-[#ec4899] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-[var(--accent)] group-hover:translate-x-0.5 transition-all duration-200" />
             </div>
             <div className="flex flex-wrap gap-1.5">
               {awesomeCategories.slice(0, 8).map((cat) => (
                 <span
                   key={cat.slug}
-                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-muted text-muted-foreground/70"
+                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary text-muted-foreground/70"
                 >
                   {cat.name}
                 </span>
@@ -268,15 +262,15 @@ export default async function HomePage() {
           </Link>
 
           {/* ── Code blocks tile (decorative stat) ── */}
-          <div className="rounded-3xl border border-border bg-gradient-to-br from-[#8FA68E]/5 to-background p-6 flex flex-col justify-between hover:shadow-md hover:border-[#8FA68E]/20 transition-all duration-300">
+          <div className="rounded-xl p-6 flex flex-col justify-between bg-card card-hover" style={{ boxShadow: '0 0 0 1px var(--border)' }}>
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground/60 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-muted-foreground/70 uppercase tracking-wider">
                 Code
               </span>
               <GitBranch className="h-4 w-4 text-muted-foreground/30" />
             </div>
             <div className="mt-2">
-              <div className="text-3xl font-bold text-foreground">
+              <div className="text-3xl font-semibold text-foreground tracking-tight">
                 8,598
               </div>
               <div className="text-xs text-muted-foreground/60 mt-0.5">
@@ -289,16 +283,17 @@ export default async function HomePage() {
           <Link
             href="/rss.xml"
             target="_blank"
-            className="group rounded-3xl border border-border bg-card p-6 flex flex-col justify-between hover:shadow-md hover:border-orange-500/30 transition-all duration-300"
+            className="group rounded-xl p-6 flex flex-col justify-between bg-card card-hover"
+            style={{ boxShadow: '0 0 0 1px var(--border)' }}
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground/60 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-muted-foreground/70 uppercase tracking-wider">
                 RSS
               </span>
-              <BarChart3 className="h-4 w-4 text-muted-foreground/30 group-hover:text-orange-500 transition-colors" />
+              <BarChart3 className="h-4 w-4 text-muted-foreground/30 group-hover:text-[var(--accent)] transition-colors duration-200" />
             </div>
             <div className="mt-2">
-              <div className="text-sm font-semibold text-foreground group-hover:text-orange-500 transition-colors">
+              <div className="text-sm font-semibold text-foreground group-hover:text-[var(--accent)] transition-colors duration-200">
                 Subscribe
               </div>
               <div className="text-xs text-muted-foreground/60 mt-0.5">
@@ -309,7 +304,7 @@ export default async function HomePage() {
         </div>
 
         {/* Footer */}
-        <div className="mt-10 pt-6 border-t border-border/50 text-center">
+        <div className="mt-16 pt-6 border-t border-[var(--border-strong)] text-center">
           <p className="text-xs text-muted-foreground/40">
             Built with Next.js, React 19, TypeScript & Tailwind CSS — Statically generated for GitHub Pages
           </p>
@@ -320,7 +315,7 @@ export default async function HomePage() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  BentoCard                                                         */
+/*  BentoCard — standardized card component                           */
 /* ------------------------------------------------------------------ */
 
 interface BentoCardProps {
@@ -330,8 +325,7 @@ interface BentoCardProps {
   description: string
   count: number
   countLabel: string
-  color: string
-  size?: "normal" | "tall"
+  tall?: boolean
 }
 
 function BentoCard({
@@ -341,52 +335,43 @@ function BentoCard({
   description,
   count,
   countLabel,
-  color,
-  size = "normal",
+  tall,
 }: BentoCardProps) {
   return (
     <Link
       href={href}
       className={cn(
-        "group relative rounded-3xl border border-border bg-card p-6 overflow-hidden hover:shadow-lg transition-all duration-300",
-        "hover:border-[#8FA68E]/20"
+        "group relative rounded-xl p-6 overflow-hidden bg-card card-hover",
+        tall && "md:row-span-2"
       )}
+      style={{ boxShadow: '0 0 0 1px var(--border)' }}
     >
       {/* subtle top-right glow */}
-      <div
-        className="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"
-        style={{ backgroundColor: color }}
-      />
+      <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl opacity-[0.04] bg-[var(--accent)] group-hover:opacity-[0.08] transition-opacity duration-300" />
 
       <div className="relative flex flex-col h-full">
-        <div className="flex items-start justify-between mb-3">
-          <div
-            className="flex h-9 w-9 items-center justify-center rounded-xl shrink-0"
-            style={{ backgroundColor: `${color}15` }}
-          >
-            <span style={{ color }}>{icon}</span>
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary shrink-0">
+            <span className="text-foreground">{icon}</span>
           </div>
-          <span className="text-[11px] font-medium text-muted-foreground/50 bg-muted/60 px-2 py-0.5 rounded-full">
+          <span className="text-[11px] font-medium text-muted-foreground/60 bg-secondary px-2 py-0.5 rounded-full">
             {count} {countLabel}
           </span>
         </div>
 
-        <h3
-          className="text-sm font-semibold text-foreground transition-colors mb-1"
-          style={{ color: "inherit" }}
-        >
-          <span className="group-hover:text-[#8FA68E] transition-colors">
+        <h3 className="text-sm font-semibold text-foreground mb-1">
+          <span className="group-hover:text-[var(--accent)] transition-colors duration-200">
             {title}
           </span>
         </h3>
 
-        <p className="text-xs text-muted-foreground/60 leading-relaxed">
+        <p className="text-xs text-muted-foreground/70 leading-relaxed">
           {description}
         </p>
 
-        <div className="mt-auto pt-3 flex items-center gap-1 text-xs text-muted-foreground/40 group-hover:text-[#8FA68E] transition-colors">
+        <div className="mt-auto pt-4 flex items-center gap-1 text-xs text-muted-foreground/50 group-hover:text-[var(--accent)] transition-colors duration-200">
           <span>Explore</span>
-          <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-200" />
         </div>
       </div>
     </Link>
@@ -407,9 +392,9 @@ function MiniStat({
   label: string
 }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-2xl bg-muted/40 p-3">
-      <span className="text-muted-foreground/50 mb-1">{icon}</span>
-      <span className="text-sm font-bold text-foreground">{value}</span>
+    <div className="flex flex-col items-center justify-center rounded-xl bg-secondary/60 p-3">
+      <span className="text-muted-foreground/40 mb-1">{icon}</span>
+      <span className="text-sm font-semibold text-foreground tracking-tight">{value}</span>
       <span className="text-[10px] text-muted-foreground/50">{label}</span>
     </div>
   )

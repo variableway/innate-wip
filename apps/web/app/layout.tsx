@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import { ThemeProvider } from '@/components/theme-provider'
 import { AppShell } from '@/components/app-shell'
 import { getAwesomeCategories, getAllAwesomeItems } from '@/lib/awesome/data'
@@ -30,8 +32,8 @@ export default async function RootLayout({
   }))
 
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AppShell categories={categoriesWithCount}>{children}</AppShell>
         </ThemeProvider>

@@ -56,7 +56,7 @@ interface NavCategory {
 }
 
 export function Header({ collapsed, onToggleSidebar, isMobile, categories }: HeaderProps) {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
   const pathname = usePathname()
 
@@ -123,7 +123,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
   return (
     <header
       className={cn(
-        "h-14 border-b border-border bg-card/80 backdrop-blur-md flex items-center px-4 shrink-0 z-20",
+        "h-14 border-b border-[var(--border-strong)] bg-card/80 backdrop-blur-md flex items-center px-4 shrink-0 z-20",
         "md:px-6"
       )}
     >
@@ -133,7 +133,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
           {!isMobile && (
             <button
               onClick={onToggleSidebar}
-              className="rounded-md p-1.5 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors mr-1"
+              className="rounded-md p-1.5 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors mr-1 focus-ring"
               aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
             >
               {collapsed ? (
@@ -168,7 +168,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
                         href={item.href}
                         className={cn(
                           "flex items-center gap-2 cursor-pointer",
-                          isActive(item.href) && "text-[#8FA68E] font-medium"
+                          isActive(item.href) && "text-[var(--accent)] font-medium"
                         )}
                       >
                         {item.icon}
@@ -186,18 +186,18 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
         <div className="flex items-center gap-1">
           <button
             onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
-            className="hidden md:flex items-center gap-1.5 h-8 px-2.5 rounded-lg text-xs text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors border border-border/50"
+            className="hidden md:flex items-center gap-1.5 h-8 px-2.5 rounded-lg text-xs text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors border border-[var(--border-strong)] focus-ring"
             aria-label="Open command palette"
           >
             <Search className="h-3.5 w-3.5" />
             <span className="text-[11px]">Search</span>
-            <kbd className="hidden lg:inline-flex h-4 min-w-[1rem] items-center justify-center rounded border border-border bg-muted px-1 text-[10px] font-medium text-muted-foreground">
+            <kbd className="hidden lg:inline-flex h-4 min-w-[1rem] items-center justify-center rounded border border-[var(--border-strong)] bg-muted px-1 text-[10px] font-medium text-muted-foreground">
               ⌘K
             </kbd>
           </button>
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            className="relative w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            className="relative w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors focus-ring"
             aria-label="Toggle theme"
           >
             <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

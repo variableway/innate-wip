@@ -115,9 +115,9 @@ export default async function FeedArticlePage({ params }: Props) {
 
           <div className="flex-1 overflow-y-auto">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
-              <div className="markdown-content">
+              <div className="markdown-content max-w-3xl">
                 {post.meta.excerpt && (
-                  <div className="bg-secondary/50 border-l-4 border-[#8FA68E] p-4 mb-6 rounded-r-lg">
+                  <div className="bg-[var(--accent-subtle)] border-l-4 border-[var(--accent)] p-4 mb-6 rounded-r-lg">
                     <p className="text-muted-foreground italic text-sm">{post.meta.excerpt}</p>
                   </div>
                 )}
