@@ -41,6 +41,7 @@ interface HeaderProps {
     color: string
     count: number
   }>
+  onOpenSearch: () => void
 }
 
 interface NavItem {
@@ -55,7 +56,7 @@ interface NavCategory {
   items: NavItem[]
 }
 
-export function Header({ collapsed, onToggleSidebar, isMobile, categories }: HeaderProps) {
+export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpenSearch }: HeaderProps) {
   const { setTheme, resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
   const pathname = usePathname()
@@ -147,33 +148,30 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
           <nav className="flex items-center gap-0.5">
             {navCategories.map((cat) => (
               <DropdownMenu key={cat.label}>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    className={cn(
-                      "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-default",
-                      isCategoryActive(cat.items)
-                        ? "text-foreground bg-secondary"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                    )}
-                  >
-                    {cat.icon}
-                    <span>{cat.label}</span>
-                    <ChevronDown className="h-3 w-3 opacity-60" />
-                  </button>
+                <DropdownMenuTrigger
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-default",
+                    isCategoryActive(cat.items)
+                      ? "text-foreground bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  )}
+                >
+                  {cat.icon}
+                  <span>{cat.label}</span>
+                  <ChevronDown className="h-3 w-3 opacity-60" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" sideOffset={8} collisionPadding={8} className="min-w-[160px]">
+                <DropdownMenuContent align="start" sideOffset={8} className="min-w-[160px] z-50 border border-border rounded-lg shadow-lg bg-popover">
                   {cat.items.map((item) => (
-                    <DropdownMenuItem key={item.href} asChild>
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "flex items-center gap-2 cursor-pointer",
-                          isActive(item.href) && "text-[var(--accent)] font-medium"
-                        )}
-                      >
-                        {item.icon}
-                        <span>{item.label}</span>
-                      </Link>
+                    <DropdownMenuItem
+                      key={item.href}
+                      render={<Link href={item.href} />}
+                      className={cn(
+                        "flex items-center gap-2 cursor-pointer",
+                        isActive(item.href) && "text-[var(--accent)] font-medium"
+                      )}
+                    >
+                      {item.icon}
+                      <span>{item.label}</span>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -185,7 +183,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories }: Hea
         {/* Right: actions */}
         <div className="flex items-center gap-1">
           <button
-            onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
+            onClick={onOpenSearch}
             className="hidden md:flex items-center gap-1.5 h-8 px-2.5 rounded-lg text-xs text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors border border-[var(--border-strong)] focus-ring"
             aria-label="Open command palette"
           >

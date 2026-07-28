@@ -419,14 +419,14 @@ function SidebarContent({
           </div>
         )}
         <a
-          href="https://github.com"
+          href="https://github.com/variableway/innate-wip"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
             "flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-muted-foreground hover:bg-secondary/80 hover:text-foreground transition-colors",
             collapsed && "justify-center px-0"
           )}
-          title="GitHub"
+          title="GitHub Repository"
         >
           <Github className="h-4 w-4 shrink-0" />
           {!collapsed && <span>GitHub</span>}

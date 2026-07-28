@@ -18,8 +18,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 本仓库 checkout 到 apps/innate-wip，与 innate-base monorepo 中的位置一致
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: apps/innate-wip
+
+      # workspace 依赖直接引用 ../../packages/{ui,utils,tsconfig}（innate-base monorepo 根目录），
+      # 需要从私有仓库 variableway/innate-fe-templates 稀疏检出共享包。
+      # 需要在本仓库 Settings → Secrets 中配置 INNATE_BASE_TOKEN（对该私有仓库有 read 权限的 PAT）。
+      - name: Checkout innate-base shared packages
+        uses: actions/checkout@v4
+        with:
+          repository: variableway/innate-fe-templates
+          token: ${{ secrets.INNATE_BASE_TOKEN }}
+          path: .innate-base
+          sparse-checkout: |
+            packages/ui
+            packages/utils
+            packages/tsconfig
+
+      - name: Restore monorepo layout
+        run: |
+          mv .innate-base/packages packages
+          rm -rf .innate-base
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -29,16 +51,19 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: apps/innate-wip/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: |
+          cd apps/innate-wip
+          pnpm install --no-frozen-lockfile
 
       - name: Fetch projects from GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ github.repository_owner }}
         run: |
-          cd apps/web
+          cd apps/innate-wip/apps/web
           node scripts/fetch-projects.js
 
       - name: Fetch AGENTS.md from GitHub
@@ -46,7 +71,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ github.repository_owner }}
         run: |
-          cd apps/web
+          cd apps/innate-wip/apps/web
           node scripts/fetch-agents.js
 
       - name: Fetch issues from GitHub
@@ -54,16 +79,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ github.repository_owner }}
         run: |
-          cd apps/web
+          cd apps/innate-wip/apps/web
           node scripts/fetch-issues.js
 
       - name: Generate weekly summary
         run: |
-          cd apps/web
+          cd apps/innate-wip/apps/web
           node scripts/generate-weekly.js
 
       - name: Commit data changes
         run: |
+          cd apps/innate-wip
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add apps/web/data/
@@ -79,13 +105,13 @@ jobs:
           GITHUB_PAGES: 'true'
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          cd apps/web
+          cd apps/innate-wip/apps/web
           pnpm build:static
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/web/dist
+          path: apps/innate-wip/apps/web/dist
 
   deploy:
     environment:

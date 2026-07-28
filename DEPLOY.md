@@ -1,5 +1,25 @@
 # GitHub Pages Deployment Guide
 
+## 前置条件：INNATE_BASE_TOKEN secret
+
+本仓库的 workspace 依赖（`@innate/ui`、`@innate/utils`、`@innate/tsconfig`）
+**直接引用** innate-base monorepo 根目录的 `../../packages/*`，本仓库内没有副本。
+GitHub Actions 会从私有仓库 `variableway/innate-fe-templates` 稀疏检出这三个包，
+还原 monorepo 目录布局后再构建。
+
+因此必须先在 **本仓库 Settings → Secrets and variables → Actions** 中配置：
+
+- **`INNATE_BASE_TOKEN`**：对 `variableway/innate-fe-templates` 有 read 权限的
+  PAT（Fine-grained PAT 勾选该仓库的 Contents: read 即可）。
+
+配置命令（需先有 PAT）：
+
+```bash
+gh secret set INNATE_BASE_TOKEN --repo variableway/innate-wip
+```
+
+未配置时，workflow 会在 "Checkout innate-base shared packages" 步骤失败。
+
 ## 启用 GitHub Pages
 
 如果部署失败并显示 404 错误，需要手动启用 GitHub Pages：

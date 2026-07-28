@@ -41,8 +41,8 @@ node scripts/run-all.sh         # Run all data scripts
 ### Monorepo (pnpm workspaces)
 
 - **`apps/web/`** — Main Next.js 16 app (`@innate/web`)
-- **`packages/ui/`** — Shared Radix UI component library (`@innate/ui`, imported as `@allone/ui`)
-- **`packages/utils/`** — Shared utilities with `cn()` helper (`@innate/utils`, imported as `@allone/utils`)
+- **`packages/ui/`** — 不在本仓库；`@innate/ui` 通过 `workspace:*` 直接引用 `<innate-base>/packages/ui`（需位于 innate-base 的 `apps/innate-wip` 路径下）
+- **`packages/utils/`** — 同上，`@innate/utils` 直接引用 `<innate-base>/packages/utils`
 - **`packages/tsconfig/`** — Shared TypeScript configs (base, nextjs, react-library)
 - **`packages/task-watcher/`** — CLI tool for task syncing (`@innate/task-watcher`)
 
@@ -80,11 +80,11 @@ The app supports two build modes controlled by environment variables:
 
 ### UI component library
 
-`packages/ui/src/components/ui/` contains Radix UI-based components. Add new components there and export from `packages/ui/src/index.ts`. Uses CVA + tailwind-merge for variant styling.
+`@innate/ui`（Base UI 组件库）通过 `workspace:*` 直接引用 `<innate-base>/packages/ui`，本仓库不含副本。新增组件在 innate-base 根包中维护。Uses CVA + tailwind-merge for variant styling.
 
 ## Tech Stack
 
 - Next.js 16, React 19, TypeScript 6
-- Tailwind CSS 4, Radix UI, Lucide React icons
+- Tailwind CSS 4, Base UI, Lucide React icons
 - unified/remark/rehype for markdown processing
 - pnpm workspaces, deployed to GitHub Pages via GitHub Actions

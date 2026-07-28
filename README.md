@@ -95,14 +95,14 @@ innate-websites/
 - **Language:** TypeScript 6
 - **Package Manager:** pnpm with workspaces
 - **Styling:** Tailwind CSS
-- **UI Components:** Radix UI primitives
+- **UI Components:** Base UI primitives (via `@innate/ui`，直接引用 innate-base 根包)
 - **Icons:** Lucide React
 - **Deployment:** GitHub Pages
 
 ## Available Scripts
 
 ```bash
-pnpm install              # Install dependencies
+pnpm install              # Install dependencies（需位于 innate-base 的 apps/innate-wip 路径下）
 pnpm dev                  # Start development server
 pnpm build                # Build all packages
 pnpm lint                 # Lint all packages

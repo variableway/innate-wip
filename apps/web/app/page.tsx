@@ -302,13 +302,6 @@ export default async function HomePage() {
             </div>
           </Link>
         </div>
-
-        {/* Footer */}
-        <div className="mt-16 pt-6 border-t border-[var(--border-strong)] text-center">
-          <p className="text-xs text-muted-foreground/40">
-            Built with Next.js, React 19, TypeScript & Tailwind CSS — Statically generated for GitHub Pages
-          </p>
-        </div>
       </div>
     </div>
   )

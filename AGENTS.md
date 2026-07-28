@@ -58,19 +58,34 @@ innate-websites/
 │           ├── fetch-agents.js
 │           └── generate-weekly.js
 ├── packages/
-│   ├── ui/                     # Shared UI component library
-│   ├── utils/                  # Shared utility functions
-│   └── tsconfig/               # Shared TypeScript configs
+│   ├── task-watcher/           # CLI tool for task syncing
+│   └── betterstack-guides/     # Guides content package
 └── .github/workflows/          # CI/CD workflows
 ```
+
+> `packages/{ui,utils,tsconfig}` 不在本仓库内——见下方 "Shared Packages"。
 
 ### Key Technologies
 - **React 19** with **Next.js 16**
 - **TypeScript 6**
 - **pnpm** workspaces
 - **Tailwind CSS** for styling
-- **Radix UI** for accessible components
+- **Base UI** (`@base-ui/react`) for accessible components
 - **unified/remark** for markdown processing
+
+### Shared Packages (direct workspace reference to innate-base)
+
+`@innate/ui`、`@innate/utils`、`@innate/tsconfig` **直接引用** innate-base
+monorepo 根目录的 `packages/{ui,utils,tsconfig}`（单一真源，本仓库无副本）：
+
+- `pnpm-workspace.yaml` 的 `packages` 包含 `../../packages/{ui,utils,tsconfig}`
+  （pnpm 支持 workspace 根目录之外的相对路径），web 的 `workspace:*` 依赖
+  直接解析到 monorepo 根包。
+- **前置条件**：本仓库必须位于 innate-base 的 `apps/innate-wip` 路径下，
+  单独克隆本仓库无法 `pnpm install`。
+- **GitHub Pages CI**：workflow 会从私有仓库 `variableway/innate-fe-templates`
+  稀疏检出这三个包并还原 monorepo 目录布局，需要在仓库 Secrets 中配置
+  `INNATE_BASE_TOKEN`（对 innate-fe-templates 有 read 权限的 PAT）。
 
 ## Important Patterns
 
@@ -154,10 +169,11 @@ interface WeeklySummary {
 ## Common Tasks
 
 ### Adding a New UI Component
-1. Create file in `packages/ui/src/components/ui/`
-2. Use Radix UI primitives
-3. Export from `packages/ui/src/index.ts`
-4. Follow existing component patterns
+UI components are maintained in the innate-base monorepo root, not here:
+1. Add the component in `<innate-base>/packages/ui/src/components/ui/`
+2. Use Base UI primitives (no `asChild` — use the `render` prop instead)
+3. Export from `<innate-base>/packages/ui/src/index.ts`
+4. 本仓库通过 `workspace:*` 直接引用根包，重新 `pnpm install` 即可生效
 
 ### Fetching Fresh Data
 ```bash
@@ -240,7 +256,7 @@ interface Cheatsheet extends CheatsheetMeta {
 
 ## Dependencies of Note
 
-- `@radix-ui/*` - Accessible UI primitives
+- `@base-ui/react` - Accessible UI primitives
 - `lucide-react` - Icon library
 - `unified` + `remark-parse` + `remark-gfm` - Markdown processing
 - `rehype-highlight` - Code syntax highlighting

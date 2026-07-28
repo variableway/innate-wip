@@ -1,5 +1,11 @@
 packages:
   - "apps/*"
   - "packages/*"
+  # 直接引用 innate-base monorepo 根目录的共享包（pnpm 支持 workspace 根之外的相对路径）
+  - "../../packages/ui"
+  - "../../packages/utils"
+  - "../../packages/tsconfig"
 allowBuilds:
   sharp: false
+minimumReleaseAgeExclude:
+  - puppeteer-core@25.4.0

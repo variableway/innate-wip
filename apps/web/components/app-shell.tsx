@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
-import { CommandPalette } from "@/components/command-palette"
+import { CommandPalette, type SearchItem } from "@/components/command-palette"
 
 interface AppShellProps {
   categories: Array<{
@@ -13,12 +13,14 @@ interface AppShellProps {
     color: string
     count: number
   }>
+  searchData: SearchItem[]
   children: React.ReactNode
 }
 
-export function AppShell({ categories, children }: AppShellProps) {
+export function AppShell({ categories, searchData, children }: AppShellProps) {
   const [collapsed, setCollapsed] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
+  const [commandOpen, setCommandOpen] = useState(false)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -40,8 +42,13 @@ export function AppShell({ categories, children }: AppShellProps) {
           onToggleSidebar={() => setCollapsed((c) => !c)}
           isMobile={isMobile}
           categories={categories}
+          onOpenSearch={() => setCommandOpen(true)}
         />
-        <CommandPalette categories={categories} />
+        <CommandPalette
+          searchData={searchData}
+          open={commandOpen}
+          onOpenChange={setCommandOpen}
+        />
         <main className="flex-1 overflow-hidden relative">{children}</main>
       </div>
     </div>
