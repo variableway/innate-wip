@@ -13,13 +13,6 @@ import {
   PenLine,
   Globe,
   Newspaper,
-  Hammer,
-  FolderGit2,
-  Calendar,
-  Lightbulb,
-  CheckSquare,
-  FileText,
-  Tag,
   Search,
 } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -29,6 +22,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@innate/ui"
+import type { SitePlugin } from "@/lib/plugins/types"
+import { PluginIcon } from "@/lib/plugins/icons"
 
 interface HeaderProps {
   collapsed: boolean
@@ -41,6 +36,7 @@ interface HeaderProps {
     color: string
     count: number
   }>
+  plugins: SitePlugin[]
   onOpenSearch: () => void
 }
 
@@ -56,9 +52,15 @@ interface NavCategory {
   items: NavItem[]
 }
 
-export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpenSearch }: HeaderProps) {
+export function Header({
+  collapsed,
+  onToggleSidebar,
+  isMobile,
+  plugins,
+  onOpenSearch,
+}: HeaderProps) {
   const { setTheme, resolvedTheme } = useTheme()
-  const isDark = resolvedTheme === 'dark'
+  const isDark = resolvedTheme === "dark"
   const pathname = usePathname()
 
   const isActive = (href: string) => {
@@ -74,51 +76,45 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpe
       label: "Content",
       icon: <BookOpen className="h-3.5 w-3.5" />,
       items: [
-        { label: "Writing", href: "/writing", icon: <PenLine className="h-3.5 w-3.5" /> },
-        { label: "Collections", href: "/collections", icon: <Globe className="h-3.5 w-3.5" /> },
+        {
+          label: "Writing",
+          href: "/writing",
+          icon: <PenLine className="h-3.5 w-3.5" />,
+        },
+        {
+          label: "Collections",
+          href: "/collections",
+          icon: <Globe className="h-3.5 w-3.5" />,
+        },
       ],
     },
     {
       label: "Feed",
       icon: <Newspaper className="h-3.5 w-3.5" />,
       items: [
-        { label: "Feed", href: "/feed", icon: <Newspaper className="h-3.5 w-3.5" /> },
+        {
+          label: "Feed",
+          href: "/feed",
+          icon: <Newspaper className="h-3.5 w-3.5" />,
+        },
       ],
     },
-    {
-      label: "Making",
-      icon: <Hammer className="h-3.5 w-3.5" />,
-      items: [
-        { label: "Projects", href: "/making/projects", icon: <FolderGit2 className="h-3.5 w-3.5" /> },
-        { label: "Weekly", href: "/making/weekly", icon: <Calendar className="h-3.5 w-3.5" /> },
-        { label: "Insights", href: "/making/insights", icon: <Lightbulb className="h-3.5 w-3.5" /> },
-        { label: "Issues", href: "/making/issues", icon: <CheckSquare className="h-3.5 w-3.5" /> },
-      ],
-    },
-    {
-      label: "Cheatsheets",
-      icon: <FileText className="h-3.5 w-3.5" />,
-      items: [
-        { label: "Cheatsheets", href: "/cheatsheets", icon: <BookOpen className="h-3.5 w-3.5" /> },
-        { label: "Better Stack Guides", href: "/betterstack-guides", icon: <FileText className="h-3.5 w-3.5" /> },
-      ],
-    },
-    {
-      label: "Awesome",
-      icon: <Tag className="h-3.5 w-3.5" />,
-      items: [
-        { label: "All Items", href: "/awesome", icon: <Tag className="h-3.5 w-3.5" /> },
-        ...categories.map((cat) => ({
-          label: cat.name,
-          href: `/awesome/${cat.slug}`,
-          icon: (
-            <span style={{ color: cat.color }}>
-              <Tag className="h-3.5 w-3.5" />
-            </span>
-          ),
+    ...plugins.map((plugin) => ({
+      label: plugin.nav.sectionLabel,
+      icon: (
+        <PluginIcon
+          name={plugin.nav.sectionIcon}
+          className="h-3.5 w-3.5"
+        />
+      ),
+      items: [...plugin.nav.items]
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+        .map((item) => ({
+          label: item.label,
+          href: item.href,
+          icon: <PluginIcon name={item.icon} className="h-3.5 w-3.5" />,
         })),
-      ],
-    },
+    })),
   ]
 
   return (
@@ -129,7 +125,6 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpe
       )}
     >
       <div className="flex items-center justify-between w-full">
-        {/* Left: toggle + nav */}
         <div className="flex items-center gap-1 min-w-0">
           {!isMobile && (
             <button
@@ -160,7 +155,11 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpe
                   <span>{cat.label}</span>
                   <ChevronDown className="h-3 w-3 opacity-60" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" sideOffset={8} className="min-w-[160px] z-50 border border-border rounded-lg shadow-lg bg-popover">
+                <DropdownMenuContent
+                  align="start"
+                  sideOffset={8}
+                  className="min-w-[160px] z-50 border border-border rounded-lg shadow-lg bg-popover"
+                >
                   {cat.items.map((item) => (
                     <DropdownMenuItem
                       key={item.href}
@@ -180,7 +179,6 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpe
           </nav>
         </div>
 
-        {/* Right: actions */}
         <div className="flex items-center gap-1">
           <button
             onClick={onOpenSearch}
@@ -194,7 +192,7 @@ export function Header({ collapsed, onToggleSidebar, isMobile, categories, onOpe
             </kbd>
           </button>
           <button
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
+            onClick={() => setTheme(isDark ? "light" : "dark")}
             className="relative w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors focus-ring"
             aria-label="Toggle theme"
           >

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
 import { CommandPalette, type SearchItem } from "@/components/command-palette"
+import type { SitePlugin } from "@/lib/plugins/types"
 
 interface AppShellProps {
   categories: Array<{
@@ -13,11 +14,17 @@ interface AppShellProps {
     color: string
     count: number
   }>
+  plugins: SitePlugin[]
   searchData: SearchItem[]
   children: React.ReactNode
 }
 
-export function AppShell({ categories, searchData, children }: AppShellProps) {
+export function AppShell({
+  categories,
+  plugins,
+  searchData,
+  children,
+}: AppShellProps) {
   const [collapsed, setCollapsed] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
   const [commandOpen, setCommandOpen] = useState(false)
@@ -33,6 +40,7 @@ export function AppShell({ categories, searchData, children }: AppShellProps) {
     <div className="flex h-dvh w-full overflow-hidden bg-background">
       <Sidebar
         categories={categories}
+        plugins={plugins}
         collapsed={collapsed}
         isMobile={isMobile}
       />
@@ -42,6 +50,7 @@ export function AppShell({ categories, searchData, children }: AppShellProps) {
           onToggleSidebar={() => setCollapsed((c) => !c)}
           isMobile={isMobile}
           categories={categories}
+          plugins={plugins}
           onOpenSearch={() => setCommandOpen(true)}
         />
         <CommandPalette

@@ -92,7 +92,8 @@ export function CommandPalette({ searchData, open: openProp, onOpenChange }: Com
     <CommandDialog
       open={open}
       onOpenChange={setOpen}
-      className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-xl w-[calc(100vw-2rem)]"
+      showCloseButton={false}
+      className="top-[max(5.5rem,12vh)] left-1/2 max-h-[min(24rem,calc(100vh-8rem))] w-[calc(100vw-2rem)] max-w-lg -translate-x-1/2 translate-y-0 sm:max-w-lg"
     >
       <CommandInput
         autoFocus

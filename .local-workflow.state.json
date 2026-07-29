@@ -1,0 +1,10 @@
+{
+  "task_file": "task/project/project-overview.md",
+  "task_id": "local-20260728-96c9d5f8",
+  "title": "Project Overview",
+  "started_at": "2026-07-28 18:49:38",
+  "status": "completed",
+  "tracing_file": "tasks/tracing/project-overview.md",
+  "completed_at": "2026-07-28 18:52:35",
+  "summary": "Completed Task 1 (Content-first refactor + solution docs):\n\n1. Hid non-Content from shell: Making / Cheatsheets / Awesome / Better Stack Guides removed from sidebar, header, homepage, and search seed. Routes kept. Added apps/web/lib/site-features.ts.\n2. Plugin mode design \u2192 docs/solution/plugin-mode.md (manifest, route|iframe, migration P0\u2013P4).\n3. Task docs workflow \u2192 docs/solution/task-docs-workflow.md (project/ vs issues/, Content\u2192Spec\u2192Requirements\u2192Handoff\u2192Verify).\n4. Multi-agent context \u2192 docs/solution/multi-agent-context.md (system/requirement/interaction + execution patterns).\n5. Index \u2192 docs/solution/README.md.\n\nCode: sidebar.tsx, header.tsx, page.tsx, layout.tsx, site-features.ts."
+}

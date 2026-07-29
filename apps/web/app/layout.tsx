@@ -3,8 +3,9 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { ThemeProvider } from '@/components/theme-provider'
 import { AppShell } from '@/components/app-shell'
-import { getAwesomeCategories, getAllAwesomeItems } from '@/lib/awesome/data'
 import { getWritingMeta } from '@/lib/content'
+import { siteFeatures } from '@/lib/site-features'
+import { getEnabledPlugins } from '@/lib/plugins/registry'
 import './globals.css'
 
 const SITE_URL = process.env.SITE_URL || 'https://variableway.github.io/innate'
@@ -24,35 +25,36 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const categories = await getAwesomeCategories()
-  const items = await getAllAwesomeItems()
   const posts = await getWritingMeta()
+  const plugins = getEnabledPlugins()
 
-  const categoriesWithCount = categories.map((cat) => ({
-    ...cat,
-    count: items.filter((item) => item.category === cat.slug).length,
-  }))
+  // Awesome category chips reserved for when awesome plugin is enabled.
+  const categoriesWithCount: Array<{
+    slug: string
+    name: string
+    icon: string
+    color: string
+    count: number
+  }> = []
 
-  const searchData = [
-    ...items.map((item) => ({
-      type: 'awesome' as const,
-      title: item.name,
-      subtitle: item.shortDescription ?? item.description,
-      href: `/awesome/${item.category}`,
-    })),
-    ...posts.map((post) => ({
-      type: 'writing' as const,
-      title: post.title,
-      subtitle: post.excerpt ?? post.category,
-      href: `/writing/${post.slug}`,
-    })),
-  ]
+  const searchData = siteFeatures.content
+    ? posts.map((post) => ({
+        type: 'writing' as const,
+        title: post.title,
+        subtitle: post.excerpt ?? post.category,
+        href: `/writing/${post.slug}`,
+      }))
+    : []
 
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <AppShell categories={categoriesWithCount} searchData={searchData}>
+          <AppShell
+            categories={categoriesWithCount}
+            plugins={plugins}
+            searchData={searchData}
+          >
             {children}
           </AppShell>
         </ThemeProvider>
