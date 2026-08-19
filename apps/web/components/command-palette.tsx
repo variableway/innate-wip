@@ -93,7 +93,7 @@ export function CommandPalette({ searchData, open: openProp, onOpenChange }: Com
       open={open}
       onOpenChange={setOpen}
       showCloseButton={false}
-      className="top-[max(5.5rem,12vh)] left-1/2 max-h-[min(24rem,calc(100vh-8rem))] w-[calc(100vw-2rem)] max-w-lg -translate-x-1/2 translate-y-0 sm:max-w-lg"
+      className="top-[max(5.5rem,12vh)] left-1/2 max-h-[min(24rem,calc(100vh-8rem))] w-[min(32rem,calc(100vw-2rem))] max-w-lg -translate-x-1/2 translate-y-0 overflow-clip outline-none sm:w-[min(32rem,calc(100vw-2rem))]"
     >
       <CommandInput
         autoFocus
