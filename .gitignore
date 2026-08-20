@@ -15,6 +15,11 @@ node_modules/
 .next/
 .DS_Store
 
+# Shared packages linked from innate-fe-base (see scripts/link-shared-packages.sh)
+packages/ui
+packages/tsconfig
+.innate-fe-base/
+
 # Build outputs
 dist/
 *.tsbuildinfo

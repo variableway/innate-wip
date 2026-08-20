@@ -1,0 +1,38 @@
+name: Setup workspace
+description: Link shared packages from innate-fe-templates, then install pnpm deps
+inputs:
+  token:
+    description: PAT with Contents read on variableway/innate-fe-templates
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Checkout shared packages
+      uses: actions/checkout@v4
+      with:
+        repository: variableway/innate-fe-templates
+        token: ${{ inputs.token }}
+        path: .innate-fe-base
+        sparse-checkout: |
+          packages/ui
+          packages/tsconfig
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+        cache: pnpm
+        cache-dependency-path: pnpm-lock.yaml
+
+    - name: Link shared packages
+      shell: bash
+      env:
+        INNATE_FE_BASE: ${{ github.workspace }}/.innate-fe-base
+      run: bash scripts/link-shared-packages.sh
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --no-frozen-lockfile

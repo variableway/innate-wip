@@ -73,19 +73,21 @@ innate-websites/
 - **Base UI** (`@base-ui/react`) for accessible components
 - **unified/remark** for markdown processing
 
-### Shared Packages (direct workspace reference to innate-base)
+### Shared Packages (symlink from innate-fe-base)
 
-`@innate/ui`、`@innate/utils`、`@innate/tsconfig` **直接引用** innate-base
-monorepo 根目录的 `packages/{ui,utils,tsconfig}`（单一真源，本仓库无副本）：
+`@innate/ui` 和 `@innate/tsconfig` 不在本仓库内。`scripts/link-shared-packages.sh`
+把它们软链到 `packages/ui`、`packages/tsconfig`，web 仍用 `workspace:*`。
 
-- `pnpm-workspace.yaml` 的 `packages` 包含 `../../packages/{ui,utils,tsconfig}`
-  （pnpm 支持 workspace 根目录之外的相对路径），web 的 `workspace:*` 依赖
-  直接解析到 monorepo 根包。
-- **前置条件**：本仓库必须位于 innate-base 的 `apps/innate-wip` 路径下，
-  单独克隆本仓库无法 `pnpm install`。
-- **GitHub Pages CI**：workflow 会从私有仓库 `variableway/innate-fe-templates`
-  稀疏检出这三个包并还原 monorepo 目录布局，需要在仓库 Secrets 中配置
-  `INNATE_BASE_TOKEN`（对 innate-fe-templates 有 read 权限的 PAT）。
+- **本地**：默认指向 `innate-works/base/innate-fe-base`（可用 `INNATE_FE_BASE` 覆盖）
+  ```bash
+  pnpm link:packages   # 或 ./scripts/link-shared-packages.sh
+  pnpm install
+  ```
+- **不必**把本仓库放到 innate-base / innate-fe-base 的 `apps/` 下面。
+- **CI / Pages**：workflow 稀疏检出私有仓库 `variableway/innate-fe-templates`，
+  再跑同一个脚本。CI 下是 **copy**（不是 symlink），避免 Next 解析到仓库外。
+  需要 Secrets 中的 `INNATE_BASE_TOKEN`。
+- 链接目录已 gitignore，不要提交。
 
 ## Important Patterns
 
@@ -169,11 +171,11 @@ interface WeeklySummary {
 ## Common Tasks
 
 ### Adding a New UI Component
-UI components are maintained in the innate-base monorepo root, not here:
-1. Add the component in `<innate-base>/packages/ui/src/components/ui/`
+UI components are maintained in innate-fe-base (`packages/ui`), not here:
+1. Add the component in `innate-fe-base/packages/ui/src/components/ui/`
 2. Use Base UI primitives (no `asChild` — use the `render` prop instead)
-3. Export from `<innate-base>/packages/ui/src/index.ts`
-4. 本仓库通过 `workspace:*` 直接引用根包，重新 `pnpm install` 即可生效
+3. Export from `innate-fe-base/packages/ui/src/index.ts`
+4. 本仓库通过 `packages/ui` 软链引用，`pnpm link:packages` 后即可生效
 
 ### Fetching Fresh Data
 ```bash

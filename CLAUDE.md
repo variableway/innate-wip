@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
+pnpm link:packages              # symlink @innate/ui + @innate/tsconfig from innate-fe-base
 pnpm install                    # Install dependencies
 pnpm dev                        # Start Next.js dev server (apps/web)
 ./run.sh web dev                # Alternative: run specific app
@@ -41,9 +42,8 @@ node scripts/run-all.sh         # Run all data scripts
 ### Monorepo (pnpm workspaces)
 
 - **`apps/web/`** — Main Next.js 16 app (`@innate/web`)
-- **`packages/ui/`** — 不在本仓库；`@innate/ui` 通过 `workspace:*` 直接引用 `<innate-base>/packages/ui`（需位于 innate-base 的 `apps/innate-wip` 路径下）
-- **`packages/utils/`** — 同上，`@innate/utils` 直接引用 `<innate-base>/packages/utils`
-- **`packages/tsconfig/`** — Shared TypeScript configs (base, nextjs, react-library)
+- **`packages/ui/`** — 不在本仓库；由 `scripts/link-shared-packages.sh` 软链到 `innate-fe-base/packages/ui`
+- **`packages/tsconfig/`** — 同上，软链到 `innate-fe-base/packages/tsconfig`
 - **`packages/task-watcher/`** — CLI tool for task syncing (`@innate/task-watcher`)
 
 ### Web app structure (`apps/web/`)
@@ -80,7 +80,7 @@ The app supports two build modes controlled by environment variables:
 
 ### UI component library
 
-`@innate/ui`（Base UI 组件库）通过 `workspace:*` 直接引用 `<innate-base>/packages/ui`，本仓库不含副本。新增组件在 innate-base 根包中维护。Uses CVA + tailwind-merge for variant styling.
+`@innate/ui`（Base UI 组件库）通过 `packages/ui` 软链引用 innate-fe-base，本仓库不含副本。新增组件在 innate-fe-base 中维护。Uses CVA + tailwind-merge for variant styling.
 
 ## Tech Stack
 

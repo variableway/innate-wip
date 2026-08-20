@@ -1,77 +1,92 @@
-# GitHub Pages Deployment Guide
+# Deployment
 
-## 前置条件：INNATE_BASE_TOKEN secret
+共享包 `@innate/ui` / `@innate/tsconfig` 不在本仓库。本地用软链，CI 用同一脚本
+`scripts/link-shared-packages.sh` 链到 `variableway/innate-fe-templates`。
 
-本仓库的 workspace 依赖（`@innate/ui`、`@innate/utils`、`@innate/tsconfig`）
-**直接引用** innate-base monorepo 根目录的 `../../packages/*`，本仓库内没有副本。
-GitHub Actions 会从私有仓库 `variableway/innate-fe-templates` 稀疏检出这三个包，
-还原 monorepo 目录布局后再构建。
+## 本地
 
-因此必须先在 **本仓库 Settings → Secrets and variables → Actions** 中配置：
+```bash
+pnpm link:packages    # 默认链到 innate-works/base/innate-fe-base
+pnpm install
+pnpm dev              # http://localhost:3000
+```
 
-- **`INNATE_BASE_TOKEN`**：对 `variableway/innate-fe-templates` 有 read 权限的
-  PAT（Fine-grained PAT 勾选该仓库的 Contents: read 即可）。
+覆盖路径：`INNATE_FE_BASE=/path/to/innate-fe-base pnpm link:packages`
 
-配置命令（需先有 PAT）：
+## 必须配置的 secret：INNATE_BASE_TOKEN
+
+GitHub Actions 和 Cloudflare Pages 都要能读私有仓库 `variableway/innate-fe-templates`。
+
+在 **本仓库 Settings → Secrets and variables → Actions** 中配置：
+
+- **`INNATE_BASE_TOKEN`**：对该私有仓库有 Contents: read 的 PAT
 
 ```bash
 gh secret set INNATE_BASE_TOKEN --repo variableway/innate-wip
 ```
 
-未配置时，workflow 会在 "Checkout innate-base shared packages" 步骤失败。
+未配置时，workflow 会在 Checkout shared packages 步骤失败。
 
-## 启用 GitHub Pages
+---
 
-如果部署失败并显示 404 错误，需要手动启用 GitHub Pages：
+## GitHub Pages
 
-### 方法 1：通过 GitHub 网站启用（推荐）
+仓库 Pages 已设为 **Source: GitHub Actions**，站点：
 
-1. 访问仓库设置页面：
-   ```
-   https://github.com/qdriven/innate-websites/settings/pages
-   ```
+https://variableway.github.io/innate-wip/
 
-2. 在 "Build and deployment" 部分：
-   - **Source**: 选择 `GitHub Actions`
+构建：`Deploy to GitHub Pages`（push `main`）或 `Fetch Issues and Deploy to Pages`（定时）。
 
-3. 点击 **Save**
+流程：checkout 本仓库 → 稀疏检出 `innate-fe-templates` → `link-shared-packages.sh` →
+`pnpm install` → `pnpm --filter @innate/web build:static`（`GITHUB_PAGES=true`，带
+`/innate-wip` basePath）→ `actions/deploy-pages`。
 
-4. 重新运行失败的 workflow：
-   - 访问 Actions 页面
-   - 找到失败的 workflow
-   - 点击 "Re-run jobs"
+CI 里脚本会 **copy** 共享包（不是 symlink），避免 Next 沿着软链走到另一个仓库找依赖。
 
-### 方法 2：通过 GitHub CLI 启用
+首次若 404，在仓库 Settings → Pages 把 Source 选成 GitHub Actions。
+
+---
+
+## Cloudflare Pages
+
+GitHub Pages 用 `basePath=/innate-wip`；Cloudflare 默认挂在站点根路径，**不要**设
+`GITHUB_PAGES`。两种接入方式：
+
+### 方式 A：GitHub Actions 部署（推荐）
+
+和 Pages 同一套构建，只是产物交给 wrangler。需要：
+
+1. Cloudflare 里创建一个 Pages 项目，名字 `innate-wip`（可先空项目）
+2. 本仓库 Secrets：
+   - `CLOUDFLARE_API_TOKEN`（Account.Cloudflare Pages: Edit）
+   - `CLOUDFLARE_ACCOUNT_ID`
+3. 本仓库 Variables：`ENABLE_CLOUDFLARE=true`
 
 ```bash
-gh api \
-  -X POST \
-  -H "Accept: application/vnd.github.v3+json" \
-  /repos/qdriven/innate-websites/pages \
-  -f source[branch]=main \
-  -f source[path]=/
+gh secret set CLOUDFLARE_API_TOKEN --repo variableway/innate-wip
+gh secret set CLOUDFLARE_ACCOUNT_ID --repo variableway/innate-wip
+gh variable set ENABLE_CLOUDFLARE --body true --repo variableway/innate-wip
 ```
 
-### 方法 3：通过 API 启用
+之后 `Deploy to Cloudflare Pages` 会在 push `main` 时跑。不设 variable 时 job 会被跳过。
+
+### 方式 B：Cloudflare 直接连 GitHub 仓库
+
+Dashboard → Pages → Connect git → `variableway/innate-wip`：
+
+| 项 | 值 |
+|---|---|
+| Framework | None |
+| Build command | 见下方 |
+| Build output directory | `apps/web/dist` |
+| Root directory | `/` |
+| Environment variables | `INNATE_BASE_TOKEN`、`NODE_VERSION=20` |
+
+Build command：
 
 ```bash
-curl -X POST \
-  -H "Authorization: token YOUR_GITHUB_TOKEN" \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/qdriven/innate-websites/pages \
-  -d '{"source":{"branch":"main","path":"/"}}'
+corepack enable && corepack prepare pnpm@11.20.0 --activate && bash scripts/link-shared-packages.sh && pnpm install --no-frozen-lockfile && pnpm --filter @innate/web build:static
 ```
 
-## 部署状态
-
-启用后，部署将自动进行。检查状态：
-
-```
-https://github.com/qdriven/innate-websites/actions
-```
-
-部署成功后，网站地址：
-
-```
-https://qdriven.github.io/innate-websites/
-```
+CF 构建机没有本地 `innate-fe-base`，脚本会用 `INNATE_BASE_TOKEN` 稀疏克隆
+`innate-fe-templates` 再做软链。不要设置 `GITHUB_PAGES`。

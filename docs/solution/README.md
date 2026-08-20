@@ -5,6 +5,7 @@ Task 1（Refactor & simplify）产出：
 | Doc | Covers |
 |-----|--------|
 | [plugin-mode.md](./plugin-mode.md) | Plugin 注册进 sidebar；route / iframe（**P1 已落地**） |
+| [micro-frontend-research.md](./micro-frontend-research.md) | Task 2 MFE 框架调研：不引入框架，走 build-time registry（2026-08） |
 | [task-docs-workflow.md](./task-docs-workflow.md) | `task/project` + `task/issues`：Content → Spec → Requirements → Handoff → Verify |
 | [multi-agent-context.md](./multi-agent-context.md) | system / requirement / interaction；多 Agent / Sub Agent |
 

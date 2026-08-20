@@ -1,10 +1,7 @@
 packages:
   - "apps/*"
   - "packages/*"
-  # 直接引用 innate-base monorepo 根目录的共享包（pnpm 支持 workspace 根之外的相对路径）
-  - "../../packages/ui"
-  - "../../packages/utils"
-  - "../../packages/tsconfig"
+  # packages/ui + packages/tsconfig are symlinks created by scripts/link-shared-packages.sh
 allowBuilds:
   sharp: false
 minimumReleaseAgeExclude:
