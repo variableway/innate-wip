@@ -21,8 +21,8 @@
   "devDependencies": {
     "cheerio": "^1.2.0",
     "playwright": "^1.62.1",
-    "puppeteer-core": "^25.5.0",
+    "puppeteer-core": "^25.9.0",
     "typescript": "^7.0.2"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.24.0"
 }
