@@ -8,6 +8,7 @@ Task 1（Refactor & simplify）产出：
 | [micro-frontend-research.md](./micro-frontend-research.md) | Task 2 MFE 框架调研：不引入框架，走 build-time registry（2026-08） |
 | [task-docs-workflow.md](./task-docs-workflow.md) | `task/project` + `task/issues`：Content → Spec → Requirements → Handoff → Verify |
 | [multi-agent-context.md](./multi-agent-context.md) | system / requirement / interaction；多 Agent / Sub Agent |
+| [multi-agent-dispatch.md](./multi-agent-dispatch.md) | 跨 CLI 并行分派：波次调度 + git worktrees + 单写者合并；开源方案对照（2026-08） |
 
 ## Related code
 
