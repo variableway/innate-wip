@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter @innate/web dev",
-    "link:packages": "bash scripts/link-shared-packages.sh",
     "run:project": "bash run.sh",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",

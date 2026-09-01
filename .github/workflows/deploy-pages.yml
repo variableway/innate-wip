@@ -23,8 +23,6 @@ jobs:
 
       - name: Setup workspace
         uses: ./.github/actions/setup-workspace
-        with:
-          token: ${{ secrets.INNATE_BASE_TOKEN }}
 
       - name: Fetch projects from GitHub
         env:

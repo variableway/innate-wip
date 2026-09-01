@@ -1,0 +1,17 @@
+{
+  "name": "@innate/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "*.json"
+  ],
+  "exports": {
+    ".": "./base.json",
+    "./base": "./base.json",
+    "./base.json": "./base.json",
+    "./nextjs": "./nextjs.json",
+    "./nextjs.json": "./nextjs.json",
+    "./react-library": "./react-library.json",
+    "./react-library.json": "./react-library.json"
+  }
+}

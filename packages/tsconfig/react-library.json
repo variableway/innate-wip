@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React Library",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "target": "ES6",
+    "noEmit": true,
+    "paths": {
+      "react": [
+        "../../node_modules/@types/react"
+      ],
+      "react-dom": [
+        "../../node_modules/@types/react-dom"
+      ],
+      "react/jsx-runtime": [
+        "../../node_modules/@types/react/jsx-runtime.d.ts"
+      ]
+    }
+  }
+}

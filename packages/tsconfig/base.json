@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "paths": {
+      "react": [
+        "../../node_modules/@types/react"
+      ],
+      "react-dom": [
+        "../../node_modules/@types/react-dom"
+      ],
+      "react/jsx-runtime": [
+        "../../node_modules/@types/react/jsx-runtime.d.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
