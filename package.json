@@ -24,5 +24,9 @@
     "puppeteer-core": "^25.9.0",
     "typescript": "^7.0.2"
   },
-  "packageManager": "pnpm@11.24.0"
+  "packageManager": "pnpm@11.24.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

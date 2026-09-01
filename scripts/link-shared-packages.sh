@@ -21,7 +21,7 @@ REMOTE_REPO="${INNATE_FE_BASE_REPO:-variableway/innate-fe-templates}"
 SHARED_PACKAGES=(ui tsconfig)
 
 RELATIVE_DEFAULT="${REPO_ROOT}/../../base/innate-fe-base"
-ABSOLUTE_DEFAULT="/Users/patrick/workspace/variableway/innate-works/base/innate-fe-base"
+ABSOLUTE_DEFAULT="/Users/patrick/workspace/variableway/innate-workspace/base/innate-fe-base"
 
 usage() {
   cat <<'EOF'
@@ -33,7 +33,7 @@ Resolution order for the source repo:
   1. First argument (directory)
   2. $INNATE_FE_BASE
   3. ../../base/innate-fe-base (relative to this repo)
-  4. /Users/patrick/workspace/variableway/innate-works/base/innate-fe-base
+  4. /Users/patrick/workspace/variableway/innate-workspace/base/innate-fe-base
   5. Existing .innate-fe-base/ clone
   6. Sparse-clone $INNATE_FE_BASE_REPO using $INNATE_BASE_TOKEN
 EOF

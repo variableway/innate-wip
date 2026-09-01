@@ -1,8 +1,8 @@
 packages:
   - "apps/*"
   - "packages/*"
-  # packages/ui + packages/tsconfig are symlinks created by scripts/link-shared-packages.sh
 allowBuilds:
+  esbuild: true
   sharp: false
 minimumReleaseAgeExclude:
   - puppeteer-core@25.4.0 || 25.5.0

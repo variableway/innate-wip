@@ -4,12 +4,21 @@
 
 ## Task graph
 
-```
-T01 (flags + registry) ┐
-T02 (scripts + CI)     ├─→ T04 (join, main)
-T03 (docs-only)        ┘
+```mermaid
+flowchart LR
+  subgraph P["三 Agent 并行（Pattern B）"]
+    direction TB
+    T01["T01 flags + registry"]
+    T02["T02 scripts + CI"]
+    T03["T03 docs-only"]
+  end
+  T01 --> T04
+  T02 --> T04
+  T03 --> T04
+  T04["T04 join, main"]
 
-T01/T02/T03 文件分区不重叠 → 可三 Agent 并行（Pattern B，docs/solution/multi-agent-context.md）
+  P -. 文件分区不重叠 → 可并行 .-> T04
+  style P fill:#f5f5f5,stroke:#999,stroke-dasharray:5 5
 ```
 
 ## Shared ownership
