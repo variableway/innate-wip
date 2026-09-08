@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "id": "innate-next-mono",
-      "name": "innate-next-mono",
-      "description": "A mono repo base project for creating website",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/innate-next-mono"
-    },
-    {
       "id": "spark-cli",
       "name": "spark-cli",
       "description": "Daily Cli command ideas fired by spark",
@@ -17,7 +10,7 @@
     {
       "id": "innate-feeds",
       "name": "innate-feeds",
-      "description": "collect different feeds",
+      "description": "Github Trending and Starred Repo",
       "color": "#8FA68E",
       "repoUrl": "https://github.com/variableway/innate-feeds"
     },
@@ -104,7 +97,42 @@
       "description": "ai art after work",
       "color": "#8FA68E",
       "repoUrl": "https://github.com/variableway/innate-ai-art"
+    },
+    {
+      "id": "innate-router",
+      "name": "innate-router",
+      "description": "innate-router for client and server",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-router"
+    },
+    {
+      "id": "innate-aiswitcher",
+      "name": "innate-aiswitcher",
+      "description": "simple ai switch ",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-aiswitcher"
+    },
+    {
+      "id": "reset-from-zero",
+      "name": "reset-from-zero",
+      "description": "build exeperimens",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/reset-from-zero"
+    },
+    {
+      "id": "innate-tutor",
+      "name": "innate-tutor",
+      "description": "ai tutor experientation",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-tutor"
+    },
+    {
+      "id": "innate-workspace",
+      "name": "innate-workspace",
+      "description": "innate workspace and project indexes",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-workspace"
     }
   ],
-  "lastUpdated": "2026-05-17T22:56:37.632Z"
+  "lastUpdated": "2026-09-08T04:56:09.121Z"
 }
