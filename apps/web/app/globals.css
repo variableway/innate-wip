@@ -4,46 +4,46 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ================================================================
-   Design System: Innate — Editorial Precision
-   Inspired by Vercel/Statsig restraint + Notion warmth
+   Design System: Innate — Marshmallow (shadcn-studio)
+   Warm pink palette with soft lavender surfaces
    ================================================================ */
 
 :root {
   /* Surface */
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  --background: oklch(0.97 0.01 264.53);
+  --foreground: oklch(0.22 0 0);
 
   /* Cards & elevated surfaces */
-  --card: #ffffff;
-  --card-foreground: #1c1917;
-  --popover: #ffffff;
-  --popover-foreground: #1c1917;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0 0);
 
   /* The brand ink — primary is the text color itself (Vercel pattern) */
-  --primary: #1c1917;
-  --primary-foreground: #fafaf9;
+  --primary: oklch(0.22 0 0);
+  --primary-foreground: oklch(1 0 0);
 
   /* Secondary / muted surfaces */
-  --secondary: #f5f5f4;
-  --secondary-foreground: #1c1917;
+  --secondary: oklch(0.94 0.07 98.08);
+  --secondary-foreground: oklch(0.22 0 0);
 
-  --muted: #f5f5f4;
-  --muted-foreground: #78716c;
+  --muted: oklch(0.92 0.01 268.52);
+  --muted-foreground: oklch(0.34 0 0);
 
-  /* The ONE accent — sage green, used sparingly */
-  --accent: #8FA68E;
-  --accent-foreground: #ffffff;
-  --accent-subtle: rgba(143, 166, 142, 0.1);
+  /* The ONE accent — marshmallow pink, used sparingly */
+  --accent: oklch(0.8 0.14 349.25);
+  --accent-foreground: oklch(0 0 0);
+  --accent-subtle: oklch(0.8 0.14 349.25 / 0.12);
 
   /* Feedback */
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
+  --destructive: oklch(0.7 0.19 23.19);
+  --destructive-foreground: oklch(1 0 0);
 
   /* Borders — shadow-as-border + subtle line */
-  --border: rgba(28, 25, 23, 0.08);
-  --border-strong: #e7e5e4;
-  --input: rgba(28, 25, 23, 0.08);
-  --ring: #8FA68E;
+  --border: oklch(0.85 0 0);
+  --border-strong: oklch(0.8 0 0);
+  --input: oklch(0.85 0 0);
+  --ring: oklch(0.8 0.14 349.25);
 
   /* Radius */
   --radius: 0.75rem;
@@ -70,34 +70,34 @@
 }
 
 .dark {
-  --background: #0c0a09;
-  --foreground: #fafaf9;
+  --background: oklch(0.22 0 0);
+  --foreground: oklch(0.97 0.01 264.53);
 
-  --card: #1c1917;
-  --card-foreground: #fafaf9;
-  --popover: #1c1917;
-  --popover-foreground: #fafaf9;
+  --card: oklch(0.29 0 0);
+  --card-foreground: oklch(0.97 0.01 264.53);
+  --popover: oklch(0.29 0 0);
+  --popover-foreground: oklch(0.97 0.01 264.53);
 
-  --primary: #fafaf9;
-  --primary-foreground: #1c1917;
+  --primary: oklch(0.97 0.01 264.53);
+  --primary-foreground: oklch(0.22 0 0);
 
-  --secondary: #292524;
-  --secondary-foreground: #fafaf9;
+  --secondary: oklch(0.77 0.15 306.21);
+  --secondary-foreground: oklch(0.22 0 0);
 
-  --muted: #292524;
-  --muted-foreground: #a8a29e;
+  --muted: oklch(0.32 0 0);
+  --muted-foreground: oklch(0.85 0 0);
 
-  --accent: #8FA68E;
-  --accent-foreground: #1c1917;
-  --accent-subtle: rgba(143, 166, 142, 0.15);
+  --accent: oklch(0.8 0.14 349.25);
+  --accent-foreground: oklch(0.22 0 0);
+  --accent-subtle: oklch(0.8 0.14 349.25 / 0.16);
 
-  --destructive: #ef4444;
-  --destructive-foreground: #1c1917;
+  --destructive: oklch(0.7 0.19 23.19);
+  --destructive-foreground: oklch(0.22 0 0);
 
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: #292524;
-  --input: rgba(255, 255, 255, 0.08);
-  --ring: #8FA68E;
+  --border: oklch(0.39 0 0);
+  --border-strong: oklch(0.45 0 0);
+  --input: oklch(0.39 0 0);
+  --ring: oklch(0.8 0.14 349.25);
 }
 
 @theme inline {

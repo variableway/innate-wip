@@ -1,15 +1,12 @@
 import Link from "next/link"
 import { getWritingMeta } from "@/lib/content"
-import { getAllCollections } from "@/lib/collections/data"
 import { getEnabledHomeTiles } from "@/lib/plugins/registry"
 import {
   PenLine,
-  Globe,
   Newspaper,
   ArrowRight,
   Layers,
   Zap,
-  Compass,
   BarChart3,
   Puzzle,
 } from "lucide-react"
@@ -17,23 +14,15 @@ import { cn } from "@/lib/utils"
 
 export default async function HomePage() {
   const posts = await getWritingMeta()
-  const collections = getAllCollections()
   const pluginTiles = getEnabledHomeTiles()
-
-  const stats = {
-    posts: posts.length,
-    collections: collections.length,
-  }
-
-  const totalContent = stats.posts + stats.collections
 
   return (
     <div className="h-full overflow-y-auto">
       <div className="max-w-6xl mx-auto px-5 py-12 md:px-8 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(140px,auto)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(140px,auto)]">
           <Link
             href="/writing"
-            className="group relative md:col-span-2 lg:col-span-3 rounded-xl p-6 md:p-8 overflow-hidden card-hover bg-card"
+            className="group relative md:col-span-3 rounded-xl p-6 md:p-8 overflow-hidden card-hover bg-card"
             style={{ boxShadow: "0 0 0 1px var(--border)" }}
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent)]/[0.04] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
@@ -58,7 +47,7 @@ export default async function HomePage() {
               <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
                   <Layers className="h-3.5 w-3.5 text-[var(--accent)]" />
-                  {totalContent.toLocaleString()} pieces of content
+                  {posts.length.toLocaleString()} posts
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Zap className="h-3.5 w-3.5 text-[var(--accent)]" />
@@ -68,42 +57,13 @@ export default async function HomePage() {
             </div>
           </Link>
 
-          <div
-            className="rounded-xl p-6 flex flex-col justify-between bg-card card-hover"
-            style={{ boxShadow: "0 0 0 1px var(--border)" }}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-medium text-muted-foreground/70 uppercase tracking-wider">
-                Content
-              </span>
-              <Compass className="h-4 w-4 text-muted-foreground/30" />
-            </div>
-            <div className="mt-2">
-              <div className="text-3xl font-semibold text-foreground tracking-tight">
-                {totalContent.toLocaleString()}
-              </div>
-              <div className="text-xs text-muted-foreground/60 mt-0.5">
-                writing + collections
-              </div>
-            </div>
-          </div>
-
           <BentoCard
             href="/writing"
             icon={<PenLine className="h-5 w-5" />}
             title="Writing"
             description="Tutorials, learning notes, and technical articles."
-            count={stats.posts}
+            count={posts.length}
             countLabel="posts"
-          />
-
-          <BentoCard
-            href="/collections"
-            icon={<Globe className="h-5 w-5" />}
-            title="Collections"
-            description="Daily ideas and AI product / project analysis."
-            count={stats.collections}
-            countLabel="items"
           />
 
           <BentoCard
@@ -111,7 +71,7 @@ export default async function HomePage() {
             icon={<Newspaper className="h-5 w-5" />}
             title="Feed"
             description="Unified content discovery."
-            count={stats.posts}
+            count={posts.length}
             countLabel="articles"
           />
 

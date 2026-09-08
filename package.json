@@ -19,11 +19,11 @@
   },
   "devDependencies": {
     "cheerio": "^1.2.0",
-    "playwright": "^1.62.1",
-    "puppeteer-core": "^25.9.0",
+    "playwright": "^1.63.0",
+    "puppeteer-core": "^25.10.0",
     "typescript": "^7.0.2"
   },
-  "packageManager": "pnpm@11.24.0",
+  "packageManager": "pnpm@12.3.4",
   "workspaces": [
     "apps/*",
     "packages/*"
