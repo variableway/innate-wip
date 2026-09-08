@@ -865,6 +865,1600 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4980022320",
+      "number": 88,
+      "title": "Simplify add command further + remove outdated/update/use/profile commands",
+      "description": "# Task\n\nTask 2: Remove -a, -s, -l from add command. Only keep -g (global) and -f (force overwrite).\n\nTask 3: Remove these commands:\n1. outdated command  \n2. update command\n3. use command\n4. profile command (all subcommands)\n\n## Agent Expansion\n\nadd command now auto-detects agents and installs all skills from source. No interactive skill/agent selection needed. The only interactive part is the confirmation prompt, which -f skips.\n\n## Plan\n\nTask 2: Remove -a/-s/-l from add. Only -g and -f remain. Auto-detect agents via resolveTargets(). Install all skills from source. Task 3: Remove outdated, update, use, profile commands from index.ts. Removed their imports and command registrations.\n\n## Execution\n\nindex.ts: removed 4 command blocks (~70 lines). add.ts: simplified from 543 to 246 lines. Removed selectInstallables, selectSkillTargets, selectCommandTargets. Added resolveTargets() for auto-detection. Build: 407 modules (down from 411), 1.14 MB.\n\n### Documentation Check\n\n## 文档更新建议\n\n- **packages/skill-cli/README.md**: 目录缺少 README.md (P1)\n- **packages/tool-docx/README.md**: 目录缺少 README.md (P1)\n\n## Result\n\nTask 2: add command now only has -g (global) and -f (force). Installs all skills to auto-detected agents. Task 3: Removed outdated, update, use, profile commands.\n\n## Metadata\n\n- Title: Simplify add command further + remove outdated/update/use/profile commands\n- Created at: 2026-07-26T09:52:56Z\n- Completed at: 2026-07-26T09:54:54Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-07-26T09:52:57Z",
+      "updatedAt": "2026-07-26T09:54:55Z",
+      "closedAt": "2026-07-26T09:54:55Z",
+      "url": "https://github.com/variableway/fire-skills/issues/88",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4979529274",
+      "number": 87,
+      "title": "Simplify Add Command",
+      "description": "# Task\n\nRemove --no-symlink, --silent, -y; always use copy mode; keep -g -a -s -l -f\n\n## Agent Expansion\n\nOverwrite detection: The existing copySkillDirectory and command copy logic already replaces files (rmSync + cpSync). Force flag skips all interactive confirmations. If we want a true overwrite prompt, that would require checking existsSync before copying and prompting the user — but installInstallable always overwrites which is the expected behavior for package managers.\n\n## Plan\n\n1. Remove --no-symlink: simplify installInstallable to always copy 2. Remove --silent: always show full output 3. Remove -y/--yes: replaced by -f/--force 4. Updated index.ts command registration 5. Updated sync.ts and update.ts callers 6. Updated docs/cli/add.md\n\n## Execution\n\nChanged files: installations.ts (removed symlink support, ~40 lines removed), add.ts (removed silent/symlink/yes, ~20 lines simplified), index.ts (simplified options), sync.ts (removed symlink var), update.ts (removed symlink param), docs/cli/add.md (updated docs). Build passes (411 modules, 1.16 MB).\n\n### Documentation Check\n\n## 文档更新建议\n\n- **packages/skill-cli/README.md**: 目录缺少 README.md (P1)\n- **packages/tool-docx/README.md**: 目录缺少 README.md (P1)\n\n## Result\n\nSimplified add command: removed --no-symlink, --silent, -y/--yes. Now only has -g, -a, -s, -l, -f. Always uses copy mode. Installation process is always fully visible.\n\n## Metadata\n\n- Title: Simplify Add Command\n- Created at: 2026-07-26T07:06:23Z\n- Completed at: 2026-07-26T07:13:20Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-07-26T07:06:24Z",
+      "updatedAt": "2026-07-26T07:13:21Z",
+      "closedAt": "2026-07-26T07:13:21Z",
+      "url": "https://github.com/variableway/fire-skills/issues/87",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865610820",
+      "number": 85,
+      "title": "[Refactor] 重构 skill-cli commands：提取公共类型、添加描述/示例/前置条件、按功能分组目录",
+      "description": "## 任务描述：重构 skill-cli commands（当前12个文件，2200行）需要完成以下5项：## 任务清单 1. **为每个命令添加 Description**   - 每个命令文件顶部添加 `COMMAND_DESCRIPTION` 常量   - 描述该命令的用途、功能和适用场景 2. **为每个命令添加 Examples**   - 每个命令添加 `COMMAND_EXAMPLES` 数组   - 包含2-3个典型使用示例（CLI 命令行） 3. **为每个命令添加 Prerequisites**   - 每个命令添加 `COMMAND_PREREQUISITES` 数组   - 说明执行该命令的前置条件（如 CLI 已构建、gh 已认证等） 4. **提取通用 Model/Types**   - 创建 `commands/shared/types.ts`：公共选项类型（`CommonOptions`、`FormatOutputOptions`、`BranchSkillOptions`等）   - 创建 `commands/shared/format.ts`：提取 `normalizedFormat` 公共函数（当前在 inspect/validate/use 中重复）   - 创建 `commands/shared/index.ts`：统一导出 5. **按功能重新组织目录**   - `commands/skill/`：add, remove, update, list, validate, inspect, use（Skill 管理操作）   - `commands/agent/`：agent（Agent 配置管理）   - `commands/profile/`：profile（Profile 管理）   - `commands/search/`：search（搜索/发现）   - `commands/map-sync/`：map, sync（映射和同步）   - `commands/doctor/`：doctor（环境诊断）   - 更新 `index.ts` 中所有 import 路径 ## 当前命令列表 | 命令 | 功能 | 分组 | |------|------|------| | add | 安装 skills | skill/ | | remove | 移除 skills | skill/ | | update | 更新 skills | skill/ | | list | 列出已安装 skills | skill/ | | validate | 验证 skill 结构 | skill/ | | inspect | 检查 skill 风险 | skill/ | | use | 生成 task packet | skill/ | | agent | 管理 agent 配置 | agent/ | | profile | 管理 skill profile | profile/ | | search | 搜索 skills | search/ | | map | 映射 skills 到 agent | map-sync/ | | sync | 同步 skills | map-sync/ | | doctor | 环境诊断 | doctor/ | ## 交付物 - 新目录结构下的所有命令文件 - `commands/shared/` 公共模块 - 更新后的 `index.ts` import 路径 - 无回归（原有 CLI 功能不受影响）",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T05:54:15Z",
+      "updatedAt": "2026-07-12T06:02:40Z",
+      "closedAt": "2026-07-12T06:02:40Z",
+      "url": "https://github.com/variableway/fire-skills/issues/85",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865293148",
+      "number": 79,
+      "title": "[Build] 优化 local-workflow 和 git-workflow skill",
+      "description": "## 任务描述（任务5/5）—— 增强 Build 工具第5项：按照当前写入文件的方式，优化 local-workflow 和 git-workflow skill，然后进行测试。## 需要涵盖的内容 - [ ] 基于 Issue #3 的新 tracking 格式（`tasks/tracing/<task-name>/`），更新两个 skill 的 orchestrate.py 和 tracing.py - [ ] 更新 `skills/devops/git-workflow/SKILL.md`：   - 说明新的 tracking 目录结构   - 确认支持 kimi-cli（基于 Issue #4） - [ ] 更新 `skills/devops/local-workflow/SKILL.md`：同上 - [ ] 测试 git-workflow：   - 运行 `orchestrate.py init` → 检查 tracking 文件是否正确写入   - 运行 `orchestrate.py finish` → 检查完成记录 - [ ] 测试 local-workflow：   - 运行 `orchestrate.py init` → 检查 tracking 文件   - 运行 `orchestrate.py finish` → 检查完成记录 ## 交付物 - 修改后的 SKILL.md（两个）- 修改后的 orchestrate.py（两个）- 测试验证结果",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:48:18Z",
+      "updatedAt": "2026-07-12T04:13:53Z",
+      "closedAt": "2026-07-12T04:13:53Z",
+      "url": "https://github.com/variableway/fire-skills/issues/79",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865293060",
+      "number": 78,
+      "title": "[Build] 增强 kimi-cli 的 skill 支持",
+      "description": "## 任务描述（任务4/5）—— 增强 Build 工具第4项：当前 agents.ts 中已有 kimi-cli，但可能缺少 commands 目录支持。需要增强 kimi-cli 的 skill 配置。## 需要涵盖的内容 - [ ] 检查 `packages/skill-core/src/agents.ts` 中 `kimi-cli` 的配置 - [ ] 确认 Kimi Code CLI 是否支持 commands/skills 目录模式 - [ ] 如果支持 commands，添加 `commandsDir` 和 `globalCommandsDir` - [ ] 验证 `skillsDir` 和 `globalSkillsDir` 路径与 Kimi CLI 实际路径一致 - [ ] 确保 `supported_agents` 列表中包含 `kimi` 或 `kimi-cli` ## 交付物 - 修改后的 `packages/skill-core/src/agents.ts` - 验证结果",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:48:15Z",
+      "updatedAt": "2026-07-12T04:11:59Z",
+      "closedAt": "2026-07-12T04:11:59Z",
+      "url": "https://github.com/variableway/fire-skills/issues/78",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865292998",
+      "number": 77,
+      "title": "[Build] Tracking 目录按任务名分目录",
+      "description": "## 任务描述（任务3/5）—— 增强 Build 工具第3项：执行任务时候生成的计划，写入到 tracking 目录，一个目录对应一个任务文件。## 需要涵盖的内容 - [ ] `git-workflow.md` → 对应 `tasks/tracing/git-workflow/` 目录 - [ ] 每次执行任务也有一个目录对应，名字就是这个任务名 - [ ] 修改 `skills/devops/git-workflow/scripts/tracing.py`：   - 从 `tasks/tracing/` 改为 `tasks/tracing/<task-name>/`   - 按任务名创建子目录   - 向后兼容：如果旧文件存在，先迁移或保留 - [ ] 修改 `skills/devops/local-workflow/scripts/tracing.py`：同上 - [ ] 更新 orchestrate.py 传递正确的 `task-name` 给 tracing ## 交付物 - 修改后的 `tracing.py`（git-workflow 和 local-workflow 各一份）- 新的 tracking 目录结构",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:48:13Z",
+      "updatedAt": "2026-07-12T04:12:03Z",
+      "closedAt": "2026-07-12T04:12:03Z",
+      "url": "https://github.com/variableway/fire-skills/issues/77",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865292920",
+      "number": 76,
+      "title": "[Build] 确认全局安装 devops skills 流程可用",
+      "description": "## 任务描述（任务2/5）—— 增强 Build 工具第2项：确认 skill-spark 安装到 `~/.local/bin` 后，可以正常安装 devops 相关的 skills 到全局。## 需要涵盖的内容 - [ ] 验证 `~/.local/bin` 在 PATH 中时 `skill-spark` 命令可直接调用 - [ ] 验证 `skill-spark add skills/devops --system`（或 `install.sh --system`）能正确全局安装 - [ ] 验证 `skill-spark add skills/devops --system --agent kimi` 可为指定 agent 全局安装 - [ ] 验证全局安装的 skills 出现在 `~/.config/agents/skills/` 或 `~/.skill-spark/.agents/skills/` 下 - [ ] 如发现问题，修复 `install.sh` 或 `installations.ts` 中的逻辑 ## 交付物 - 安装验证结果 - 如有 bug，修复代码",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:48:11Z",
+      "updatedAt": "2026-07-12T04:12:08Z",
+      "closedAt": "2026-07-12T04:12:08Z",
+      "url": "https://github.com/variableway/fire-skills/issues/76",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865292815",
+      "number": 75,
+      "title": "[Build] Build skill-spark 后自动安装到 ~/.local/bin",
+      "description": "## 任务描述（任务1/5）—— 增强 Build 工具第1项：Build skill-spark 之后，需要放到 `~/.local/bin` 目录下，使其可在命令行全局使用。## 需要涵盖的内容 - [ ] 创建 `scripts/build-install.sh` 脚本：先 `bun run build`（或 `build:all`），再将产物复制/链接到 `~/.local/bin` - [ ] 修改 `package.json` 添加 `build:install` 脚本入口 - [ ] 检查 `~/.local/bin` 是否在 PATH 中，如不在给出提示 - [ ] 支持 macOS 和 Linux - [ ] 验证安装后 `skill-spark --version` 可正常运行 ## 交付物 - `scripts/build-install.sh`（新文件）- `package.json` 新增 `build:install` 脚本 - 安装后的命令验证截图或输出",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:48:08Z",
+      "updatedAt": "2026-07-12T04:11:55Z",
+      "closedAt": "2026-07-12T04:11:55Z",
+      "url": "https://github.com/variableway/fire-skills/issues/75",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865228889",
+      "number": 71,
+      "title": "[Docs] devops skill 安装指南",
+      "description": "## 任务描述\n\n说明 skill-spark 如何安装 devops 相关的 skill（即 workflow 相关的 skill），写入到 \n**docs/usage/install-devops-skills.md**。\n\n## 需要涵盖的内容\n\n- [ ] 什么是 devops skill（与 workflow 相关）\n- [ ] 当前有哪些 devops skill 可用（git-workflow, local-workflow, github-cli-skill, gh-create-release, scanning-for-secrets）\n- [ ] 使用 install.sh 脚本安装 devops skill 的方法\n- [ ] 使用 skill-spark CLI 直接安装的方法\n- [ ] 全局安装 vs 项目级安装的区别\n- [ ] 为特定 agent 安装的方法\n- [ ] 验证安装是否成功\n- [ ] 示例命令和输出\n\n## 相关上下文\n\n- 项目名: skill-spark\n- devops skills 目录: skills/devops/\n- 安装脚本: scripts/install.sh\n- 移除脚本: scripts/remove.sh\n- 更新脚本: scripts/update.sh\n- 仓库: https://github.com/variableway/fire-skills\n\n## 交付物\n\n- 文件: docs/usage/install-devops-skills.md\n- 格式: Markdown\n- 语言: 中文（与任务文件保持一致）\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:23:00Z",
+      "updatedAt": "2026-07-12T03:28:22Z",
+      "closedAt": "2026-07-12T03:28:22Z",
+      "url": "https://github.com/variableway/fire-skills/issues/71",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865228826",
+      "number": 70,
+      "title": "[Docs] skill-spark 功能、架构与模块说明",
+      "description": "## 任务描述\n\n说明 skill-spark 当前的主要功能、架构、模块及每个模块的功能，写入到 \n**docs/skill-spark/overview.md**。\n\n## 需要涵盖的内容\n\n- [ ] 主要功能概述（SkillOps CLI 的核心能力）\n- [ ] 整体架构（Monorepo 三件套: skill-cli / skill-core / skill-schemas）\n- [ ] 模块列表\n  - [ ] skill-cli — 命令行接口\n  - [ ] skill-core — 核心逻辑（发现、源、验证、检查、安装、映射等）\n  - [ ] skill-schemas — 共享 Zod 数据模式\n- [ ] 每个模块的具体功能说明\n  - CLI 命令: add, update, outdated, remove, list, validate, inspect, use, search, find, profile, map, sync, agent, doctor\n  - Core 模块: agents, discovery, fs, inspection, installations, mapping, output, registry, schemas, skill-parser, skill-targets, source-providers, sources, state, tracked, types, validation\n\n## 相关上下文\n\n- 项目名: skill-spark\n- 项目描述: Universal skill manager for AI coding agents - merge of Fire-Skill and Flins\n- Monorepo 结构:\n  - packages/skill-cli: CLI 入口\n  - packages/skill-core: 核心逻辑\n  - packages/skill-schemas: 共享 Zod schemas\n- 仓库: https://github.com/variableway/fire-skills\n\n## 交付物\n\n- 文件: docs/skill-spark/overview.md\n- 格式: Markdown\n- 语言: 中文（与任务文件保持一致）\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:22:59Z",
+      "updatedAt": "2026-07-12T03:28:18Z",
+      "closedAt": "2026-07-12T03:28:18Z",
+      "url": "https://github.com/variableway/fire-skills/issues/70",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4865228719",
+      "number": 69,
+      "title": "[Docs] skill-spark 安装与运行指南",
+      "description": "## 任务描述\n\n说明 skill-spark 当前包如何安装和运行，写入到 \n**docs/skill-spark/install-and-run.md**。\n\n## 需要涵盖的内容\n\n- [ ] 前置依赖（Node.js / Bun / pnpm）\n- [ ] 从源码安装步骤\n- [ ] 构建命令（bun run build / build:exe）\n- [ ] 全局安装与本地运行方式\n- [ ] CLI 基本使用示例（skill-spark --help）\n- [ ] 验证安装成功的方法\n\n## 相关上下文\n\n- 项目名: skill-spark\n- 项目描述: Universal skill manager for AI coding agents\n- 包管理器: pnpm@11.12.0\n- 构建工具: Bun\n- 仓库: https://github.com/variableway/fire-skills\n\n## 交付物\n\n- 文件: docs/skill-spark/install-and-run.md\n- 格式: Markdown\n- 语言: 中文（与任务文件保持一致）\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-07-12T03:22:57Z",
+      "updatedAt": "2026-07-12T03:28:13Z",
+      "closedAt": "2026-07-12T03:28:13Z",
+      "url": "https://github.com/variableway/fire-skills/issues/69",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4672968566",
+      "number": 68,
+      "title": "编写青钥(cyacle)碳管理协同平台软件著作权申请书",
+      "description": "# Task\n\n基于 software-copyright/references/ 下的 xxxxxx系统-设计说明.docx 与 xxxxxx系统-使用说明.docx 模板格式，结合 cyacle-doc/ 目录中的青钥产品文档内容，使用 K8S + 微服务/ETCD + Redis/Postgresql/ES + TypeScript(前端)/Golang+gin(后端) 技术栈，完成青钥(cyacle)碳管理协同平台的软件著作权申请书编写。Reference: tasks/issues/software-copy.md\n\n## Agent Expansion\n\n验收标准：1) 文档结构与 xxxxxx系统-设计说明/使用说明 模板完全对齐（修订历史/目录/简介/产品概述/使用说明四大主章节，3.x 含业务流程/功能模块/对外接口三个子章节）；2) 内容完全围绕 cyacle 青钥碳管理协同平台，覆盖 cyacle-doc 中的账号工作空间、研究对象、项目、证明文件、活动数据、数据库、元件公式、模型分配核算、分析工具、报告生成等核心模块；3) 设计说明 中明确 K8S+微服务/ETCD/Redis/Postgresql/ES+TypeScript/Golang+gin 技术栈；4) 包含 6 张数据表（通讯包头/创建项目请求/成功响应/失败响应/eCoinvent 查询请求与响应）；5) 使用 docx 模板对应的中文业务语境。\n\n## Plan\n\n1. 用 pandoc 将 xxxxxx系统-设计说明.docx 与 xxxxxx系统-使用说明.docx 转 markdown 解析模板结构；2. 阅读 cyacle-doc/docs/{cyacle-features,cyacle-learning} 提取产品能力；3. 创建 software-copyright/cyacle-设计说明.md 与 software-copyright/cyacle-使用说明.md，章节结构与模板完全一致，业务内容替换为碳管理领域；4. 编写 6 张数据表（与模板接口表 1:1 对应），用青钥业务字段替换金融字段；5. 在 2.2 系统架构中明确 K8S/微服务/ETCD/Redis/Postgresql/ES/TypeScript/Golang+gin 技术栈。\n\n## Execution\n\n新增两个 markdown 文件：software-copyright/cyacle-设计说明.md（441 行，26987 字节）和 software-copyright/cyacle-使用说明.md（441 行，26921 字节）。两者结构完全一致：封面+修订历史+目录+1 简介（1.1 编写目的/1.2 使用对象/1.3 产品范围）+2 产品概述（2.1 总体框架/2.2 系统架构（含技术栈表）/2.3 模块描述）+3 使用说明（3.1 业务流程/3.2 功能模块/3.3 对外接口）。功能模块替换为：账号与工作空间服务/碳核算路由服务/后台连接与存储/通用公共服务，覆盖登录、项目、模型、分配、报告、分析工具。对外接口章节保留 6 张表（含 ecoinvent 因子查询请求与响应），业务字段替换为碳核算字段。\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: .agents/skills/frontend-code-organization, .agents/skills/frontend-dev, skills/sdlc, skills/sdlc/frontend/fe-code-structure, skills/sdlc/frontend/fe-foundation (P0)\n- **skill-eval/README.md**: 文件 'README.md' 被引用 (P1)\n- **skills/sdlc/frontend/fe-code-structure/README.md**: 目录缺少 README.md (P1)\n- **skills/sdlc/frontend/fe-foundation/README.md**: 目录缺少 README.md (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\n已完成青钥(cyacle)碳管理协同平台软件著作权申请书的编写。基于 software-copyright/references/ 中的 xxxxxx系统-设计说明.docx 与 xxxxxx系统-使用说明.docx 模板格式，结合 cyacle-doc/ 中青钥产品文档，提炼碳管理协同平台能力，输出两份文档：software-copyright/cyacle-设计说明.md（441 行）与 software-copyright/cyacle-使用说明.md（441 行）。文档明确采用 K8S+微服务/ETCD+Redis/Postgresql/ES + TypeScript(前端)/Golang+gin(后端) 技术栈，覆盖注册登录、研究对象、项目、证明文件、活动数据、数据库、元件公式、模型分配核算、分析工具、报告生成等核心模块，包含 6 张数据表（通讯包头/创建项目请求与成功失败响应/eCoinvent 因子查询请求与响应）。\n\n## Metadata\n\n- Title: Task 1: 编写青钥(cyacle)碳管理协同平台软件著作权申请书\n- Created at: 2026-06-16T09:40:16Z\n- Completed at: 2026-06-16T09:42:42Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-16T09:40:18Z",
+      "updatedAt": "2026-06-16T09:42:43Z",
+      "closedAt": "2026-06-16T09:42:43Z",
+      "url": "https://github.com/variableway/fire-skills/issues/68",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4672443985",
+      "number": 67,
+      "title": "分析 baoyu-design Skill 的优点和缺点",
+      "description": "# Task\n\n分析 content-creation/skills/baoyu-design 目录的 skill 好的地方和不好的地方，并将分析报告写入 docs/skill-anslysis/baoyu-design.md。报告需包含：1) 优点分析；2) 缺点分析；3) 改进建议；4) GitHub 地址或 RESOURCE.yaml；5) 其他问题描述。\n\n## Agent Expansion\n\n验收标准：1) 报告中包含 GitHub 仓库地址；2) 包含优点、不好的地方、改进建议、其他问题四部分；3) 写入路径为 docs/skill-anslysis/baoyu-design.md；4) 改进建议具体可执行。\n\n## Plan\n\n1) 读取 baoyu-design/README.md、SKILL.md、system-prompt.md 前 80 行、references/claude.md、.gitignore、package.json 与目录结构。2) 按『架构 / 工程实现 / 工程治理 / 使用门槛 / 设计陷阱 / 文档 i18n / 治理安全』6 个维度归纳优点与缺点。3) 按『降低门槛 / 工程陷阱 / 文档与多语言 / 治理与安全 / 体验增强 / 工程实践』6 类给出 20 条改进建议。4) 补充 10 条容易被忽略的小问题。\n\n## Execution\n\n在 docs/skill-anslysis/baoyu-design.md 写入完整分析报告。报告含 GitHub URL https://github.com/JimLiu/baoyu-design、版本 HEAD 96104cc、MIT 许可、作者 Jim Liu（宝玉）、上游 Anthropic Claude Design。优点 14 条、缺点 20 条、改进建议 20 条、其他问题 10 条、最终结论与 4 条优先级建议。\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: .agents/skills/frontend-code-organization, .agents/skills/frontend-dev, skills/sdlc, skills/sdlc/frontend/fe-code-structure, skills/sdlc/frontend/fe-foundation (P0)\n- **skill-eval/README.md**: 文件 'README.md' 被引用 (P1)\n- **skills/sdlc/frontend/fe-code-structure/README.md**: 目录缺少 README.md (P1)\n- **skills/sdlc/frontend/fe-foundation/README.md**: 目录缺少 README.md (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\nTask 1 完成。已分析 baoyu-design Skill 的优点（14 条）、不好的地方（20 条）、改进建议（20 条）、其他问题（10 条），并写入 docs/skill-anslysis/baoyu-design.md。报告中明确包含 GitHub 地址（https://github.com/JimLiu/baoyu-design）、版本号、目录结构与上游来源。\n\n## Metadata\n\n- Title: Task 1: 分析 baoyu-design Skill 的优点和缺点\n- Created at: 2026-06-16T08:26:36Z\n- Completed at: 2026-06-16T08:28:49Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-16T08:26:38Z",
+      "updatedAt": "2026-06-16T08:28:51Z",
+      "closedAt": "2026-06-16T08:28:50Z",
+      "url": "https://github.com/variableway/fire-skills/issues/67",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4670588457",
+      "number": 66,
+      "title": "Expand skill-spark doctor to auto-repair missing agent directories",
+      "description": "# Task\n\n## Task 2: Expand skill-spark doctor to auto-repair missing agent directories\n\n### Goals\n- Make doctor interactive\n\n### Acceptance Criteria\n- [ ] Doctor detects missing agent directories\n- [ ] Doctor can auto-repair missing directories\n\nReference: tasks/issues/skill-spark.md\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: skills/sdlc (P0)\n- **docs/README.md**: 目录缺少 README.md (P1)\n- **skills/sdlc/README.md**: 目录缺少 README.md (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\nTask 2 completed: Expanded skill-spark doctor to auto-repair missing agent directories.\n\nChanges:\n- Enhanced doctor.ts to detect missing agent directories for all installed agents\n- Added interactive confirmation prompt to create missing directories\n- Shows repair summary with created/failed counts\n- Displays overall diagnosis summary\n\nThe doctor command now:\n1. Checks workspace directories (.claude/skills, .agents/skills, etc.)\n2. Detects installed agents\n3. Lists missing agent directories\n4. Offers to auto-create missing directories with confirmation\n\n## Metadata\n\n- Title: Expand skill-spark doctor to auto-repair missing agent directories\n- Created at: 2026-06-16T02:48:55Z\n- Completed at: 2026-06-16T02:50:28Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-16T02:48:57Z",
+      "updatedAt": "2026-06-16T02:50:29Z",
+      "closedAt": "2026-06-16T02:50:29Z",
+      "url": "https://github.com/variableway/fire-skills/issues/66",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4663840937",
+      "number": 65,
+      "title": "Merge install.sh / remove.sh / update.sh logic into skill-spark CLI",
+      "description": "# Task\n\n## Task 1: Merge install.sh / remove.sh / update.sh logic into skill-spark CLI\n\n### Goals\n- Consolidate installation scripts into the skill-spark CLI\n\n### Acceptance Criteria\n- [ ] All installation logic in CLI\n- [ ] Scripts can be deprecated\n\nReference: tasks/issues/skill-spark.md\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **docs/use-case/extract/README.md**: 目录缺少 README.md (P1)\n- **docs/use-case/search/README.md**: 目录缺少 README.md (P1)\n- **tasks/issues/README.md**: 目录缺少 README.md (P1)\n\n## Result\n\nTask 1 completed: Created wrapper scripts (install.sh, remove.sh, update.sh) in scripts/ that delegate to skill-spark CLI. The core installation logic was already in the CLI; these scripts provide the documented shell interface.\n\n## Metadata\n\n- Title: Merge install.sh / remove.sh / update.sh logic into skill-spark CLI\n- Created at: 2026-06-15T09:37:30Z\n- Completed at: 2026-06-15T09:43:26Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-15T09:37:31Z",
+      "updatedAt": "2026-06-15T09:43:27Z",
+      "closedAt": "2026-06-15T09:43:27Z",
+      "url": "https://github.com/variableway/fire-skills/issues/65",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4618406279",
+      "number": 64,
+      "title": "Task 2 & 3: URL内容获取 + GH关闭Issues",
+      "description": "# Task\n\n## Task 2\n使用 skill-spark 获取 URL markdown 内容，写入 use-cases 目录\n\n## Task 3\n使用 gh CLI 关闭所有 GitHub Issues，写入 use-cases 目录\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **tasks/issues/README.md**: 目录缺少 README.md (P1)\n\n## Result\n\nTask 2 & 3 完成。\n\n## Task 2: URL 内容提取\n- 使用 anysearch extract 命令提取网页内容\n- 提取了 GitHub Issues 文档和 GitHub CLI 文档\n- 写入 docs/use-case/ 目录\n\n## Task 3: 批量关闭 GitHub Issues\n- 使用 gh CLI 关闭了 11 个开放的 Issues\n- 创建了使用指南文档\n\n## 新增文件\n- docs/use-case/url-extraction.md\n- docs/use-case/url-extract-github-docs.md\n- docs/use-case/url-extract-gh-cli.md\n- docs/use-case/gh-close-issues.md\n\n## Metadata\n\n- Title: Task 2 & 3: URL内容获取 + GH关闭Issues\n- Created at: 2026-06-09T03:04:50Z\n- Completed at: 2026-06-09T03:11:53Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-09T03:04:52Z",
+      "updatedAt": "2026-06-09T03:11:54Z",
+      "closedAt": "2026-06-09T03:10:19Z",
+      "url": "https://github.com/variableway/fire-skills/issues/64",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4618197719",
+      "number": 63,
+      "title": "使用skill-spark进行search skill的use case",
+      "description": "# Task\n\n使用 skill-spark 搜索 Agent Github Automation 相关 skills，支持多种输出格式\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: skills/base/anysearch, skills/base/skill-spark, skills/devops/gh-create-release, skills/devops/github-cli-skill, skills/devops/local-workflow, skills/devops/scanning-for-secrets, skills/meta/skill-creator (P0)\n- **skills/base/anysearch/README.md**: 目录缺少 README.md (P1)\n- **skills/base/skill-spark/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/gh-create-release/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/github-cli-skill/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/local-workflow/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/scanning-for-secrets/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/README.md**: 目录缺少 README.md (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\nTask 1 完成。skill-spark search 已支持多格式输出。\n\n## 新增功能\n\n### 1. Markdown 输出格式\n\u001b[90m┌\u001b[39m   skill-spark \n\u001b[?25l\u001b[90m│\u001b[39m\n\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory..\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory...\u001b[1G\u001b[J\u001b[32m◇\u001b[39m  Search complete\n\u001b[?25h\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Results written to results.md (markdown)\n\u001b[90m│\u001b[39m\n\u001b[32m◇\u001b[39m  Found 50 skills (registry: 50)\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-use Manage Globalize translation resources using the CLI. Use th...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-setup Set up the Globalize CLI, create a translation project, and ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    release-notes Draft release notes and changelog entries from git history o...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Tanstack Start ⚠️ **Status: Release Candidate - Monitoring for Stability** ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    vibe-check Turn a complete beginner's app idea into a buildable plan, t...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Vercel Deployment Agent Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Validate Ci And App Config Files Against Upstream Json Schemas Before Merge Use check-jsonschema when an agent needs to catch broken Git...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Upptime Github Actions Uptime Monitor Status Page An ASE skill built around Upptime, the open source uptime mo...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Update Repository Docs Automatically After Code Changes And Open Review Prs Use GitHub Next's update-docs workflow when code changes sho...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Typedoc Typescript Api Documentation Generator TypeDoc is the standard documentation generator for TypeScri...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Notes Logs And Screenshots Into Structured Github Issues With Github Issue Creator Convert messy bug notes, error logs, voice dictation, and sc...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Reviewed Code Changes With Swe Agent Run SWE-agent against a repository issue so a language model...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Fix Prs Use the gh-issues workflow to fetch filtered GitHub issues, ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Trivy Container Scanner 2 Wraps the Trivy CLI for comprehensive container image vulner...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Requests And Issues From A Keyboard First Terminal Queue With Gh Dash Use gh-dash when an agent or operator needs assigned pull re...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Request Security Risks With Staged Threat Modeling And Investigation Using Vulnvibes Analyze a GitHub pull request for security impact, run targe...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Github Issues With Body First Evidence Checks And Constrained Label Operations From Claude Code Triage Issue Use Claude Code triage-issue to read a GitHub issue, verify ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Test Documentation Sites Across Mobile Tablet And Desktop With Github Agentic Workflows Run a repeatable docs-site check that builds locally, opens ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Terraform Plan Apply Automation Runs terraform plan against changed modules, posts a structu...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Prometheus Alerting Rules Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Showing 20 of 50 results. Use --limit to see more.\n\u001b[90m│\u001b[39m\n\u001b[90m└\u001b[39m  Found 50 skills\n\n\u001b[90m┌\u001b[39m   skill-spark \n\u001b[?25l\u001b[90m│\u001b[39m\n\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[32m◇\u001b[39m  Search complete\n\u001b[?25h\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Results written to results.md (markdown)\n\u001b[90m│\u001b[39m\n\u001b[32m◇\u001b[39m  Found 50 skills (registry: 50)\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-use Manage Globalize translation resources using the CLI. Use th...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-setup Set up the Globalize CLI, create a translation project, and ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    release-notes Draft release notes and changelog entries from git history o...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Tanstack Start ⚠️ **Status: Release Candidate - Monitoring for Stability** ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    vibe-check Turn a complete beginner's app idea into a buildable plan, t...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Vercel Deployment Agent Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Validate Ci And App Config Files Against Upstream Json Schemas Before Merge Use check-jsonschema when an agent needs to catch broken Git...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Upptime Github Actions Uptime Monitor Status Page An ASE skill built around Upptime, the open source uptime mo...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Update Repository Docs Automatically After Code Changes And Open Review Prs Use GitHub Next's update-docs workflow when code changes sho...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Typedoc Typescript Api Documentation Generator TypeDoc is the standard documentation generator for TypeScri...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Notes Logs And Screenshots Into Structured Github Issues With Github Issue Creator Convert messy bug notes, error logs, voice dictation, and sc...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Reviewed Code Changes With Swe Agent Run SWE-agent against a repository issue so a language model...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Fix Prs Use the gh-issues workflow to fetch filtered GitHub issues, ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Trivy Container Scanner 2 Wraps the Trivy CLI for comprehensive container image vulner...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Requests And Issues From A Keyboard First Terminal Queue With Gh Dash Use gh-dash when an agent or operator needs assigned pull re...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Request Security Risks With Staged Threat Modeling And Investigation Using Vulnvibes Analyze a GitHub pull request for security impact, run targe...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Github Issues With Body First Evidence Checks And Constrained Label Operations From Claude Code Triage Issue Use Claude Code triage-issue to read a GitHub issue, verify ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Test Documentation Sites Across Mobile Tablet And Desktop With Github Agentic Workflows Run a repeatable docs-site check that builds locally, opens ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Terraform Plan Apply Automation Runs terraform plan against changed modules, posts a structu...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Prometheus Alerting Rules Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Showing 20 of 50 results. Use --limit to see more.\n\u001b[90m│\u001b[39m\n\u001b[90m└\u001b[39m  Found 50 skills\n\n### 2. 输出内容包含来源信息\n- Author (作者)\n- Source (仓库来源)\n- Tags (标签)\n- Date (查询时间)\n\n### 3. JSON 格式 (原有)\n\u001b[90m┌\u001b[39m   skill-spark \n\u001b[?25l\u001b[90m│\u001b[39m\n\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◓\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◑\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◒\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[35m◐\u001b[39m  Searching registry and directory.\u001b[1G\u001b[J\u001b[32m◇\u001b[39m  Search complete\n\u001b[?25h\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Results written to results.json (json)\n\u001b[90m│\u001b[39m\n\u001b[32m◇\u001b[39m  Found 50 skills (registry: 50)\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-use Manage Globalize translation resources using the CLI. Use th...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    globalize-now-cli-setup Set up the Globalize CLI, create a translation project, and ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    release-notes Draft release notes and changelog entries from git history o...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Tanstack Start ⚠️ **Status: Release Candidate - Monitoring for Stability** ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    vibe-check Turn a complete beginner's app idea into a buildable plan, t...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Vercel Deployment Agent Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Validate Ci And App Config Files Against Upstream Json Schemas Before Merge Use check-jsonschema when an agent needs to catch broken Git...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Upptime Github Actions Uptime Monitor Status Page An ASE skill built around Upptime, the open source uptime mo...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Update Repository Docs Automatically After Code Changes And Open Review Prs Use GitHub Next's update-docs workflow when code changes sho...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Typedoc Typescript Api Documentation Generator TypeDoc is the standard documentation generator for TypeScri...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Notes Logs And Screenshots Into Structured Github Issues With Github Issue Creator Convert messy bug notes, error logs, voice dictation, and sc...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Reviewed Code Changes With Swe Agent Run SWE-agent against a repository issue so a language model...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Turn Github Issues Into Fix Prs Use the gh-issues workflow to fetch filtered GitHub issues, ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Trivy Container Scanner 2 Wraps the Trivy CLI for comprehensive container image vulner...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Requests And Issues From A Keyboard First Terminal Queue With Gh Dash Use gh-dash when an agent or operator needs assigned pull re...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Pull Request Security Risks With Staged Threat Modeling And Investigation Using Vulnvibes Analyze a GitHub pull request for security impact, run targe...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Triage Github Issues With Body First Evidence Checks And Constrained Label Operations From Claude Code Triage Issue Use Claude Code triage-issue to read a GitHub issue, verify ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Test Documentation Sites Across Mobile Tablet And Desktop With Github Agentic Workflows Run a repeatable docs-site check that builds locally, opens ...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Terraform Plan Apply Automation Runs terraform plan against changed modules, posts a structu...\n\u001b[90m│\u001b[39m\n\u001b[90m│\u001b[39m    Prometheus Alerting Rules Use the upstream install or setup path that matches your env...\n\u001b[90m│\u001b[39m\n\u001b[34m●\u001b[39m  Showing 20 of 50 results. Use --limit to see more.\n\u001b[90m│\u001b[39m\n\u001b[90m└\u001b[39m  Found 50 skills\n\n## 修改文件\n- src/commands/search.ts: 添加 generateMarkdown() 函数和 --format 选项\n- src/index.ts: 添加 --format CLI 选项\n\n## 测试结果\n- JSON 输出: ✅\n- Markdown 输出: ✅\n- 自动检测格式: ✅\n- 来源信息: ✅\n\n## Metadata\n\n- Title: Task 1: 使用skill-spark进行search skill的use case\n- Created at: 2026-06-09T02:17:49Z\n- Completed at: 2026-06-09T02:21:20Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-09T02:17:50Z",
+      "updatedAt": "2026-06-09T02:21:22Z",
+      "closedAt": "2026-06-09T02:21:21Z",
+      "url": "https://github.com/variableway/fire-skills/issues/63",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4617805898",
+      "number": 62,
+      "title": "更新当前目录文档",
+      "description": "# Task\n\n更新 fire-skills 项目文档\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: .agents/skills/anysearch, .agents/skills/dev, .agents/skills/dev/agent-browser, .agents/skills/dev/control-flow, .agents/skills/dev/gh-cli, .agents/skills/dev/github-release, .agents/skills/dev/maintain, .agents/skills/dev/metrics-graphana, .agents/skills/dev/sessions, .agents/skills/dev/terminal-emulator, .agents/skills/git-workflow, .agents/skills/local-workflow, .agents/skills/meta/create-skill, .agents/skills/meta/skill-template, .agents/skills/sdlc/brainstorm-beagle, .agents/skills/sdlc/brainstorm-experiments-new, .agents/skills/sdlc/brainstorm-ideas-new, .agents/skills/sdlc/brainstorm-solutions, .agents/skills/sdlc/brainstorm-synthesis, .agents/skills/sdlc/brainstorming-features, .agents/skills/sdlc/brainstorming-ideation, .agents/skills/sdlc/office-hours, .agents/skills/sdlc/planning-brainstorming, .agents/skills/sdlc/product-structured-brainstorm, .agents/skills/sdlc/productivity-brainstorming, .agents/skills/sdlc/release, .agents/skills/skill-creator, .agents/skills/skill-spark, skills/base/anysearch, skills/base/skill-spark, skills/devops/gh-create-release, skills/devops/git-workflow, skills/devops/github-cli-skill, skills/devops/local-workflow, skills/devops/scanning-for-secrets, skills/meta/skill-creator (P0)\n- **docs/examples/cli/README.md**: 目录缺少 README.md (P1)\n- **docs/reasearch/skill-mgr/README.md**: 目录缺少 README.md (P1)\n- **docs/use-cases/README.md**: 目录缺少 README.md (P1)\n- **skills/base/anysearch/README.md**: 目录缺少 README.md (P1)\n- **skills/base/skill-spark/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/README.md**: 文件 'README.md' 被引用 (P1)\n- **skills/devops/gh-create-release/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/git-workflow/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/git-workflow/references/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/github-cli-skill/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/local-workflow/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/scanning-for-secrets/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/agents/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/references/README.md**: 目录缺少 README.md (P1)\n- **tasks/issues/README.md**: 目录缺少 README.md (P1)\n- **skills/base/anysearch/SKILL.md**: 脚本 'anysearch_cli.py' 被引用 (P1)\n- **skills/devops/git-workflow/SKILL.md**: 脚本 'close_issue.py' 被引用 (P1)\n- **skills/devops/github-cli-skill/SKILL.md**: 脚本 'create_issue.py' 被引用 (P1)\n- **skills/devops/local-workflow/SKILL.md**: 脚本 'orchestrate.py' 被引用 (P1)\n- **skills/meta/skill-creator/SKILL.md**: 脚本 'quick_validate.py' 被引用 (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\n文档更新完成：\n\n1. CLAUDE.md: 添加了 scripts/ 目录说明和 .claude/commands/ 说明\n2. tasks/issues/skills-creators.md: 标记已完成任务 (Task 2, 4, 5)\n\n## Metadata\n\n- Title: 更新当前目录文档\n- Created at: 2026-06-09T00:56:20Z\n- Completed at: 2026-06-09T00:57:06Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-09T00:56:21Z",
+      "updatedAt": "2026-06-09T00:57:08Z",
+      "closedAt": "2026-06-09T00:57:07Z",
+      "url": "https://github.com/variableway/fire-skills/issues/62",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4617750711",
+      "number": 61,
+      "title": "测试Github flow运行流程 - Claude Code/Codex/Kimi",
+      "description": "# Task\n\n## 目标\n测试 git-workflow 在不同 AI Agent 下的 GitHub flow 运行流程。\n\n## 测试内容\n1. Claude Code: 测试 git-workflow 完整流程（创建Issue → 实现任务 → 关闭Issue）\n2. Codex: 安装 skills 到 Codex，验证 skill 可用性\n3. Kimi: 安装 skills 到 Kimi，验证 skill 可用性\n\n## 验收标准\n- [ ] Claude Code 下 git-workflow 流程正常运行\n- [ ] Codex 下 skills 安装成功，SKILL.md 可访问\n- [ ] Kimi 下 skills 安装成功，SKILL.md 可访问\n- [ ] 各 agent 目录结构正确，符号链接指向规范存储\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: .agents/skills/anysearch, .agents/skills/dev, .agents/skills/dev/agent-browser, .agents/skills/dev/control-flow, .agents/skills/dev/gh-cli, .agents/skills/dev/github-release, .agents/skills/dev/maintain, .agents/skills/dev/metrics-graphana, .agents/skills/dev/sessions, .agents/skills/dev/terminal-emulator, .agents/skills/git-workflow, .agents/skills/local-workflow, .agents/skills/meta/create-skill, .agents/skills/meta/skill-template, .agents/skills/sdlc/brainstorm-beagle, .agents/skills/sdlc/brainstorm-experiments-new, .agents/skills/sdlc/brainstorm-ideas-new, .agents/skills/sdlc/brainstorm-solutions, .agents/skills/sdlc/brainstorm-synthesis, .agents/skills/sdlc/brainstorming-features, .agents/skills/sdlc/brainstorming-ideation, .agents/skills/sdlc/office-hours, .agents/skills/sdlc/planning-brainstorming, .agents/skills/sdlc/product-structured-brainstorm, .agents/skills/sdlc/productivity-brainstorming, .agents/skills/sdlc/release, .agents/skills/skill-creator, .agents/skills/skill-spark, skills/base/anysearch, skills/base/skill-spark, skills/devops/gh-create-release, skills/devops/git-workflow, skills/devops/github-cli-skill, skills/devops/local-workflow, skills/devops/scanning-for-secrets, skills/meta/skill-creator (P0)\n- **docs/examples/cli/README.md**: 目录缺少 README.md (P1)\n- **docs/reasearch/skill-mgr/README.md**: 目录缺少 README.md (P1)\n- **docs/use-cases/README.md**: 目录缺少 README.md (P1)\n- **skills/base/anysearch/README.md**: 目录缺少 README.md (P1)\n- **skills/base/skill-spark/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/README.md**: 文件 'README.md' 被引用 (P1)\n- **skills/devops/gh-create-release/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/git-workflow/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/git-workflow/references/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/github-cli-skill/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/local-workflow/README.md**: 目录缺少 README.md (P1)\n- **skills/devops/scanning-for-secrets/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/agents/README.md**: 目录缺少 README.md (P1)\n- **skills/meta/skill-creator/references/README.md**: 目录缺少 README.md (P1)\n- **tasks/issues/README.md**: 目录缺少 README.md (P1)\n- **.agents/skills/anysearch/SKILL.md**: 脚本 'anysearch_cli.py' 被引用 (P1)\n- **.agents/skills/git-workflow/SKILL.md**: 脚本 'close_issue.py' 被引用 (P1)\n- **.agents/skills/local-workflow/SKILL.md**: 脚本 'orchestrate.py' 被引用 (P1)\n- **.agents/skills/skill-creator/SKILL.md**: 脚本 'quick_validate.py' 被引用 (P1)\n- **skills/base/anysearch/SKILL.md**: 脚本 'anysearch_cli.py' 被引用 (P1)\n- **skills/devops/git-workflow/SKILL.md**: 脚本 'close_issue.py' 被引用 (P1)\n- **skills/devops/github-cli-skill/SKILL.md**: 脚本 'create_issue.py' 被引用 (P1)\n- **skills/devops/local-workflow/SKILL.md**: 脚本 'orchestrate.py' 被引用 (P1)\n- **skills/meta/skill-creator/SKILL.md**: 脚本 'quick_validate.py' 被引用 (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\nTask 5 完成。测试 Github flow 运行流程 - Claude Code/Codex/Kimi。\n\n## 测试结果\n\n### Claude Code ✅\n- 全局 ~/.claude/skills/: 7 个 skill 全部安装成功\n- 项目 .claude/skills/: 7 个 skill 全部安装成功\n- SKILL.md 可访问性: 全部 OK\n- git-workflow 流程: Issue #60, #61 创建和关闭正常\n\n### Codex ✅\n- ~/.codex/skills/: 7 个 skill 全部安装成功\n- SKILL.md 可访问性: 全部 OK\n- 符号链接指向规范存储\n\n### Kimi ✅\n- ~/.kimi/skills/: 7 个 skill 全部安装成功\n- SKILL.md 可访问性: 全部 OK\n- 符号链接指向规范存储\n\n## 总结\n三个 AI Agent (Claude Code, Codex, Kimi) 的 skills 安装和 git-workflow 流程均正常工作。所有符号链接正确指向规范存储 ~/.skill-spark/.agents/skills/。\n\n## Metadata\n\n- Title: Task 5: 测试Github flow运行流程 - Claude Code/Codex/Kimi\n- Created at: 2026-06-09T00:44:19Z\n- Completed at: 2026-06-09T00:45:37Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-09T00:44:21Z",
+      "updatedAt": "2026-06-09T00:45:38Z",
+      "closedAt": "2026-06-09T00:45:38Z",
+      "url": "https://github.com/variableway/fire-skills/issues/61",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4612053482",
+      "number": 60,
+      "title": "确认base/devops skills在Claude Code下全局和项目级别生效",
+      "description": "# Task\n\n1. 确认base/devops skills在Claude Code下可以全局和项目级别生效\n2. 先删除项目级别的.claude目录，然后测试全局和项目级别skill生效情况\n\n测试内容：\n- 全局安装 base skills (anysearch, skill-spark)\n- 全局安装 devops skills (gh-create-release, git-workflow, github-cli, local-workflow, scanning-for-secrets)\n- 项目级别安装 base skills\n- 项目级别安装 devops skills\n- 删除和重新安装验证\n- SKILL.md 可访问性验证\n\n## Agent Expansion\n\n_Not recorded._\n\n## Plan\n\n_Not recorded._\n\n## Execution\n\n### Documentation Check\n\n## 文档更新建议\n\n- **README.md**: Skill 变更影响: .agents/skills/dev, .agents/skills/dev/agent-browser, .agents/skills/dev/control-flow, .agents/skills/dev/gh-cli, .agents/skills/dev/github-release, .agents/skills/dev/maintain, .agents/skills/dev/metrics-graphana, .agents/skills/dev/sessions, .agents/skills/dev/terminal-emulator, .agents/skills/meta/create-skill, .agents/skills/meta/skill-template, .agents/skills/sdlc/brainstorm-beagle, .agents/skills/sdlc/brainstorm-experiments-new, .agents/skills/sdlc/brainstorm-ideas-new, .agents/skills/sdlc/brainstorm-solutions, .agents/skills/sdlc/brainstorm-synthesis, .agents/skills/sdlc/brainstorming-features, .agents/skills/sdlc/brainstorming-ideation, .agents/skills/sdlc/office-hours, .agents/skills/sdlc/planning-brainstorming, .agents/skills/sdlc/product-structured-brainstorm, .agents/skills/sdlc/productivity-brainstorming, .agents/skills/sdlc/release (P0)\n- **tasks/issues/README.md**: 目录缺少 README.md (P1)\n- **CLAUDE.md**: skill/workflow 变更可能影响项目指令 (P1)\n\n## Result\n\nTask 4 完成。确认 base/devops skills 在 Claude Code 下全局和项目级别均可生效。\n\n测试结果：\n- 全局安装 base skills (anysearch, skill-spark) ✅\n- 全局安装 devops skills (5个) ✅\n- 项目安装 base skills ✅\n- 项目安装 devops skills ✅\n- 删除/重新安装验证 ✅\n- SKILL.md 可访问性验证 ✅\n\n所有符号链接正确指向规范存储 (~/.skill-spark/.agents/skills/<name>/)，全局和项目级别共 7 个 skill 均正常工作。\n\n## Metadata\n\n- Title: Task 4: 确认base/devops skills在Claude Code下全局和项目级别生效\n- Created at: 2026-06-08T10:26:20Z\n- Completed at: 2026-06-08T10:26:29Z\n- Status: closed",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-06-08T10:26:22Z",
+      "updatedAt": "2026-06-08T10:26:30Z",
+      "closedAt": "2026-06-08T10:26:30Z",
+      "url": "https://github.com/variableway/fire-skills/issues/60",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4514273129",
+      "number": 59,
+      "title": "设置全局 Python Skill 执行仓库",
+      "description": "1. 设置统一的 Python Skill 运行环境 2. 使用 UV 管理 3. 创建 Python UV 环境创建 SKILL 4. 调研 TOP 10 Python CLI/Tool/FastAPI 项目创建 SKILL",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-25T04:30:09Z",
+      "updatedAt": "2026-05-25T04:34:05Z",
+      "closedAt": "2026-05-25T04:34:05Z",
+      "url": "https://github.com/variableway/fire-skills/issues/59",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4514258762",
+      "number": 58,
+      "title": "使用文件测试 markdown-converter skill",
+      "description": "1. 使用 AI工具箱.docx 和 Tauri 目标占用.docx 测试 markdown-converter skill 2. 确认可以转化为markdown格式 3. 测试转化后的markdown文件是否可以正常打开 4. 测试转化后的markdown文件是否可以正常渲染",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-25T04:26:40Z",
+      "updatedAt": "2026-05-25T04:27:53Z",
+      "closedAt": "2026-05-25T04:27:53Z",
+      "url": "https://github.com/variableway/fire-skills/issues/58",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4514203745",
+      "number": 57,
+      "title": "Define Skill Market - Convert markdown-converter to local skill",
+      "description": "Convert https://smithery.ai/skills/steipete/markdown-converter into a local skill. Support Kimi, Trae, Trae Solo, Codex, Opencode, Claude Code.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-25T04:11:54Z",
+      "updatedAt": "2026-05-25T04:17:49Z",
+      "closedAt": "2026-05-25T04:17:49Z",
+      "url": "https://github.com/variableway/fire-skills/issues/57",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4514170717",
+      "number": 56,
+      "title": "按照github workflow给Trae/Trae Solo安装dev-workflow SKILL",
+      "description": "1. 安装dev-workflow 相关的SKILL给Trae和Trae Solo 2. 对这些SKill进行测试，确认生效",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-25T04:03:08Z",
+      "updatedAt": "2026-05-25T04:08:56Z",
+      "closedAt": "2026-05-25T04:08:56Z",
+      "url": "https://github.com/variableway/fire-skills/issues/56",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4514157372",
+      "number": 55,
+      "title": "Please Refine the analysis skills",
+      "description": "把 analysis skill 都标准化，遵照 Agent Skill 的规范。任务内容：1. 把 analysis skill 都标准化，遵照 Agent Skill 的规范。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-25T03:59:38Z",
+      "updatedAt": "2026-05-25T04:03:00Z",
+      "closedAt": "2026-05-25T04:03:00Z",
+      "url": "https://github.com/variableway/fire-skills/issues/55",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493845197",
+      "number": 54,
+      "title": "Move install-by-tag script to root level",
+      "description": "把 install-by-tag.sh/ps1 从 dev/ 移到项目根目录，方便直接运行安装 skill",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T10:41:45Z",
+      "updatedAt": "2026-05-21T10:42:30Z",
+      "closedAt": "2026-05-21T10:42:30Z",
+      "url": "https://github.com/variableway/fire-skills/issues/54",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493456569",
+      "number": 53,
+      "title": "Test Create Release Skill + Skill Tag 方案",
+      "description": "1. 测试 github release skill 是否可以工作\n2. 如果成功，添加 gh skill 和 github release 到 dev-workflow-install.sh 及其他 OS 安装脚本\n3. 提出 skill 标签方案：在 frontmatter header 中打 tag，安装脚本扫描 skill 目录按 tag 安装",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:40:30Z",
+      "updatedAt": "2026-05-21T09:48:14Z",
+      "closedAt": "2026-05-21T09:48:14Z",
+      "url": "https://github.com/variableway/fire-skills/issues/53",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493428233",
+      "number": 52,
+      "title": "Local Workflow 验证：确认 local-workflow skill 可以正常工作",
+      "description": "Task 3: Local Workflow 测试安装到本项目确认可以生效，验证 local-workflow skill 可以正常工作。需要测试 local-workflow 的 init、implement、finish 流程是否正常运行。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:35:59Z",
+      "updatedAt": "2026-05-21T09:36:53Z",
+      "closedAt": "2026-05-21T09:36:53Z",
+      "url": "https://github.com/variableway/fire-skills/issues/52",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493304492",
+      "number": 51,
+      "title": "Github Workflow/Local Workflow 测试验证",
+      "description": "## Task 1: Github Workflow/Local Workflow\n\n1. GITHUB Workflow 测试安装到本项目确认可以生效\n2. GITHUB Workflow 测试安装到Codex/Opencode项目确认可以生效\n3. Local Workflow也一样，确认可以生效\n4. 测试方法和结论写入到文档docs validation 目录\n5. 确认Trae/Trae Solo 也支持这个skill，同时分析当前SKILL的缺点是什么，目前看是GITHUB ISSUE会会有Comment，显得不太完整",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:17:20Z",
+      "updatedAt": "2026-06-09T03:10:21Z",
+      "closedAt": "2026-06-09T03:10:21Z",
+      "url": "https://github.com/variableway/fire-skills/issues/51",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493245582",
+      "number": 50,
+      "title": "Test: create_issue.py --body inline",
+      "description": "This is a test with inline body",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:08:35Z",
+      "updatedAt": "2026-05-21T09:09:08Z",
+      "closedAt": "2026-05-21T09:09:08Z",
+      "url": "https://github.com/variableway/fire-skills/issues/50",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493241551",
+      "number": 49,
+      "title": "Test: create_issue.py --body-file",
+      "description": "## Test Issue\n\nThis is a test issue created from a file using github-cli-skill's `create_issue.py --body-file`.\n\n### Steps to verify\n1. Issue body matches file content\n2. Labels are applied correctly\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:08:00Z",
+      "updatedAt": "2026-05-21T09:09:02Z",
+      "closedAt": "2026-05-21T09:09:02Z",
+      "url": "https://github.com/variableway/fire-skills/issues/49",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4493218395",
+      "number": 48,
+      "title": "Retest Skills after folder Structure change",
+      "description": "1. Add create issue by file for github-cli-skill\n2. Test github-cli-skill after folder structure change",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-21T09:04:24Z",
+      "updatedAt": "2026-05-21T09:09:34Z",
+      "closedAt": "2026-05-21T09:09:34Z",
+      "url": "https://github.com/variableway/fire-skills/issues/48",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4405632876",
+      "number": 47,
+      "title": "Skill Feeds 网站所需 Skill 清单与推荐",
+      "description": "Task 2: 给出如果需要实现一个skill feeds的网站需要哪些skill\n\n1. 给出如果需要实现一个skill feeds的网站需要哪些skill\n2. 列出一个skill清单，同时每个同类型的skill给出Top 5 Skill 推荐",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T10:18:53Z",
+      "updatedAt": "2026-05-08T10:30:01Z",
+      "closedAt": "2026-05-08T10:30:01Z",
+      "url": "https://github.com/variableway/fire-skills/issues/47",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4405483824",
+      "number": 46,
+      "title": "深度调研Skill Composition",
+      "description": "Task 1: 深度调研Skill Composition\n\n1. 研究Skill Composition的原理\n2. 分析Skill Composition的优缺点\n3. 探索Skill Composition的实现方式\n4. 使用Use Case方式来说明如何进行比如通用skill和专用skill在项目中怎么组织是合理\n5. 如何用可视化的角度来做Skill Composition/Workflow",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T09:54:15Z",
+      "updatedAt": "2026-05-08T10:05:11Z",
+      "closedAt": "2026-05-08T10:05:11Z",
+      "url": "https://github.com/variableway/fire-skills/issues/46",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4404122426",
+      "number": 45,
+      "title": "Personal SKILL Workflow: Evolving AI Usage Path for Coders",
+      "description": "Research and plan a personal SKILL execution workflow for a coder with broad interests. Cover: 1) Continuously evolving AI usage path, 2) Skill composition workflows with reproducible tutorials, 3) Cross-domain learning-to-practice SKILL workflows, 4) Analysis and action plan. Write findings to tasks/issues/skill-feeds/.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T05:56:04Z",
+      "updatedAt": "2026-05-08T06:16:31Z",
+      "closedAt": "2026-05-08T06:16:31Z",
+      "url": "https://github.com/variableway/fire-skills/issues/45",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4403626565",
+      "number": 44,
+      "title": "Deep Research: Agent Skill Evaluation & Top 20 OSS Eval Tools",
+      "description": "1. Deep research on how to eval Agent Skill (frameworks, methodologies, dimensions). 2. Find top 20 Agent Skill Eval open source projects. 3. Write findings into a separate file under tasks/issues/skill-feeds/.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T03:46:21Z",
+      "updatedAt": "2026-05-08T04:05:03Z",
+      "closedAt": "2026-05-08T04:05:03Z",
+      "url": "https://github.com/variableway/fire-skills/issues/44",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4397690965",
+      "number": 43,
+      "title": "Build the Skill Feeds Site Plan",
+      "description": "Plan a Skill Feeds Site that aggregates and benchmarks AI skills from marketplaces (skills.sh, ClawHub, etc.). Include: site architecture, skill feed aggregation, benchmarking with PromptFoo, scalable design. Write planning and research into separate files under tasks/issues/skill-feeds/.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-07T09:35:20Z",
+      "updatedAt": "2026-05-07T09:45:16Z",
+      "closedAt": "2026-05-07T09:45:16Z",
+      "url": "https://github.com/variableway/fire-skills/issues/43",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4333883806",
+      "number": 42,
+      "title": "Research Q&A-to-Course Recording & Top GitHub Repos",
+      "description": "Research how to record Q&A sessions and convert them into structured courses. Identify top 20 GitHub repos implementing AI-assisted learning or conversation-to-course systems. Output in both Chinese and English.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "research",
+          "name": "research",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-27T07:28:01Z",
+      "updatedAt": "2026-04-27T08:12:26Z",
+      "closedAt": "2026-04-27T08:12:26Z",
+      "url": "https://github.com/variableway/fire-skills/issues/42",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4333673740",
+      "number": 41,
+      "title": "Q&A 转课程 + AI 学习平台 Top 20 仓库调研",
+      "description": "## Task 2：如何记录问答变成课程 + 相关仓库调研\n\n### Part A：Q&A 转课程\n1. 如何将 Expert/Novice 的问答记录转化为结构化课程？\n2. 课程的格式、结构、可复用性设计\n\n### Part B：Top 20 GitHub 仓库调研\n寻找已经在实现或朝这个方向发展的 GitHub 仓库：\n- AI 驱动的学习/教育平台\n- 多代理教学系统\n- Q&A 转课程的工具\n- Expert-Novice 学习模式",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-27T06:49:15Z",
+      "updatedAt": "2026-06-09T03:10:24Z",
+      "closedAt": "2026-06-09T03:10:24Z",
+      "url": "https://github.com/variableway/fire-skills/issues/41",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4333603436",
+      "number": 40,
+      "title": "AI 驱动的学习方式探讨 - Expert/Novice 双代理群聊学习模式",
+      "description": "## Task 1：一个新的学习方式探讨\n\n### 背景\n使用 openclaw/hermesclaw 框架，在群聊中通过两个 AI 代理进行协作学习：\n- **Expert（专家）**：解释概念，引导学习\n- **Novice（新手）**：根据 Expert 的指导学习，提出问题\n\n### 分析需求\n1. 可行性分析：Expert/Novice 双代理学习模式的可行性\n2. 输入/输出定义：针对两类课程\n   - agents.md 使用教程（如 openclaw 仓库使用方式）\n   - 其他课程（references folder 下的课程）\n3. 实现步骤：需要什么 skills、soul、memory？\n4. 学习模式：Expert 用费曼 skill 或其他 skill？Novice 用什么 skill？",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-27T06:37:19Z",
+      "updatedAt": "2026-04-27T06:47:06Z",
+      "closedAt": "2026-04-27T06:47:06Z",
+      "url": "https://github.com/variableway/fire-skills/issues/40",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4333298237",
+      "number": 39,
+      "title": "Analysis - Skill Migration & Benchmarking Strategy",
+      "description": "## Task 1: Analysis\n\n### Part A: How to Migrate Skills into Personal Skills\n- Analyze skills from superpowers (8 skills) and mattprocock-skills (14 skills) repos\n- Identify migration strategies for personal skill collections\n- Consider personal taste, workflow preferences, and practical utility\n- Compare skill structures, quality, and patterns\n\n### Part B: How to Benchmark Skills\n- Research benchmarking approaches from reference file (skill-benchmark.md)\n- Evaluate benchmark tools: SkillsBench, PinchBench, Skillmark, Claude Code Skill Benchmarks\n- Design benchmarking methodology for personal skills\n- Consider best practices from mgechev/skills-best-practices\n\n### Output\n- Results written to tasks/analysis/benchmark/ folder\n- Migration guide for personal skills\n- Benchmarking strategy document",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-27T05:28:00Z",
+      "updatedAt": "2026-04-27T05:32:10Z",
+      "closedAt": "2026-04-27T05:32:10Z",
+      "url": "https://github.com/variableway/fire-skills/issues/39",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675865",
+      "number": 38,
+      "title": "评估新的frontend skill想法",
+      "description": "1. 请评估新的frontend想法，对于backend dev是否友好，用最严格的眼光看，给出好和坏的都考虑的评估\n2. 然后提供一个针对想要构建的fronend skill建议backend dev使用流程，文档形式保留\n\n---\n*Task ID: 8*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:55Z",
+      "updatedAt": "2026-06-09T03:10:27Z",
+      "closedAt": "2026-06-09T03:10:27Z",
+      "url": "https://github.com/variableway/fire-skills/issues/38",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675788",
+      "number": 37,
+      "title": "现实的是使用skill 问题",
+      "description": "1. 如果使用一个复杂组件的fronend skill，但是自身是后端开发者，但是想要一个美观而且使用的前端界面，应该怎么做？\n2. 有些组件布局不好描述，是否使用skill的时候会不够精确而调用组件或者修改组件出现问题？\n3. 这个问题如何解决？我当前想到最快的可能是，layout的问题，可以ai genenrate 一个最简单的mockup layout，然后根据这个layout来调用组件\n4. 已经实现组件，component，block就可以直接使用，使用不管是npx安装也好，还是直接在template项目一用，当前的template项目是否可以干净一些，每次ui package启动的时候就使用命令行完全\n安装依赖的社区组件，或者有选择性的按照呢，来创建新的项目？\n5. 如果想要方便人使用是否可以在template项目中完成一个web 页面，可以让用户直接在浏览器中打开，看到需要的组件，block，然后生成AI可以明白的内容，在进行Task的编写呢？\n6. 这是我[../innate-next-mono](../innate-next-mono) 项目最初的web application的项目，请现在评估是否可以能实现？如果要实现需要如何使用？如果可行请给出实现计划\n7. 同样的概念，对于数据分析而言，是否也可以找到一些图表很多的网站作为展示，然后用户可以选择使用那个图标生成更精准的AI 任务，请一起评估，如果可行，各处5-10个数据分析图表网站做参考\n\n以上所有内容都写入分析报告，然后写入到[text](../analysis)目录，当然分主题编写\n\n---\n*Task ID: 7*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:54Z",
+      "updatedAt": "2026-06-09T03:10:29Z",
+      "closedAt": "2026-06-09T03:10:29Z",
+      "url": "https://github.com/variableway/fire-skills/issues/37",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675700",
+      "number": 36,
+      "title": "按照",
+      "description": "1. [text](../analysis/fe-skills-frontend-optimization.md)，按照这个建议直接开始优化 [../innate-next-mono](../innate-next-mono) 项目，这个项目作为template项目可行吗？\n项目\n2. 优化之后更新skill\n\n---\n*Task ID: 6*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:52Z",
+      "updatedAt": "2026-06-09T03:10:32Z",
+      "closedAt": "2026-06-09T03:10:32Z",
+      "url": "https://github.com/variableway/fire-skills/issues/36",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675627",
+      "number": 35,
+      "title": "frontend skill 优化",
+      "description": "1. 当前skill提到了很多具体的@innate/ui，innate-mono-next等等仓库，但是这些仓库的可能代码 are not maintained anymore\n2. 我想参考几个项目作为示范代码例子需要怎么做，请分析给出建议？是否需要做一个template项目，把当前的skill中的代码都放到这个项目中，尤其是component，block，这种相关的内容呢？这样就非常方便开发，我理解\n3. 比如我可以聚合常见的opensource的组件放一个项目，比如shadcn-ui，21st等等，这是一个好方式吗？\n\n请给我以上想法做一个调研，看是否有更好的方式？放到[text](../analysis)中去\n\n---\n*Task ID: 5*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:50Z",
+      "updatedAt": "2026-06-09T03:10:35Z",
+      "closedAt": "2026-06-09T03:10:35Z",
+      "url": "https://github.com/variableway/fire-skills/issues/35",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675553",
+      "number": 34,
+      "title": "需要示范代码",
+      "description": "1. 当前的fe-skills中，都没有示范kill需要示范代码\n2. 我想参考几个项目作为示范代码例子需要怎么做，请分析给出建议\n比如项目:\n1. https://github.com/variableway/innate-next-mono\n2. https://github.com/variableway/innate-websites\n3. https://github.com/variableway/innate-executable\n\n其他开源项目如:\n1. https://github.com/21st-dev/1code.git\n2. https://github.com/serafimcloud/21st\n\n同时添加了[text](../../fe-skills/innate-frontend/CLAUDE.md)这个文件请一并参考是否可以合并入当前skill，同时对frontend和desktop的增强\n\n---\n*Task ID: 4*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:49Z",
+      "updatedAt": "2026-06-09T03:10:37Z",
+      "closedAt": "2026-06-09T03:10:37Z",
+      "url": "https://github.com/variableway/fire-skills/issues/34",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675474",
+      "number": 33,
+      "title": "创建install fe-skill脚本",
+      "description": "f i\n1. 检查当前脚本是否已经支持\n2. 如果不支持请修改\n\n---\n*Task ID: 3*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:47Z",
+      "updatedAt": "2026-06-09T03:10:40Z",
+      "closedAt": "2026-06-09T03:10:40Z",
+      "url": "https://github.com/variableway/fire-skills/issues/33",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675402",
+      "number": 32,
+      "title": "合并FE Skill",
+      "description": "1. 按照当前的建议开始合并skill\n2. 先做frontend-web的skill\n3. 然后做desktop-application的skill，当然desktop-application skill实际上包含了frontend-skill\n\n请执行，同时理论上都需要代码作为references，但是由于shadcn-ui可能都会升级，所以需要考虑如何升级实际示范代码, 关于terminal skill的不需要合并，可能最后不需要这个skill\n\n一下是参考的分析结果:\n\n```\n⏺ 分析完成\n\n  对 fe-skills 目录下 11 个 skill/资源进行了详细分析，以下是可合并清单：\n\n  合并组 1: Desktop App Skills（4 → 1）\n\n  - tauri-desktop-app/SKILL.md\n  - kimi-desktop-app/SKILL.md\n  - glm-desktop-app/glm-desktop-app.json\n  - advanced/create-tauri-desktop-app.json\n\n  理由：技术栈完全一致（Tauri 2.x + Next.js 16 + React 19 + pnpm monorepo），kimi-desktop-app 是\n  tauri-desktop-app 的具体实现，glm-desktop-app 是增加 AI 聊天功能，advanced JSON\n  是初始化步骤。合并为统一 desktop-app Skill，内部用\"场景选择\"区分。\n\n  合并组 2: Frontend + Validate（2 → 1）\n\n  - innate-frontend/SKILL.md（保留为主体）\n  - frontend-validate/SKILL.md（V1-V3 合并为验证子模块，V4 Tauri 部分移入 desktop-app）\n\n  合并组 3: Terminal Setup（2 → 1）\n\n  - beginner/terminal-setup-mac.json\n  - beginner/terminal-setup-windows.json\n\n  合并为一个 Skill，内部按 Mac/Windows 分支。\n\n  不合并（保持独立）\n\n  - prd-writer-skill、project-analysis-skill、kimi-user-cases/\n\n  总计：11 → 6，减少 5 个\n```\n\n---\n*Task ID: 2*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:46Z",
+      "updatedAt": "2026-06-09T03:10:43Z",
+      "closedAt": "2026-06-09T03:10:43Z",
+      "url": "https://github.com/variableway/fire-skills/issues/32",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306675332",
+      "number": 31,
+      "title": "Analalysis FE Skills",
+      "description": "1. 分析当前[text](../../fe-skills)中关于前端开发的web和desktop有哪些skill可以合并的\n2. 请列出可以合并的清单\n\n---\n*Task ID: 1*",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [],
+      "createdAt": "2026-04-22T04:21:44Z",
+      "updatedAt": "2026-06-09T03:10:45Z",
+      "closedAt": "2026-06-09T03:10:45Z",
+      "url": "https://github.com/variableway/fire-skills/issues/31",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306626057",
+      "number": 30,
+      "title": "Add post-commit doc check hook + enhance doc_checker rules",
+      "description": "创建 post-commit hook 调用 doc_checker，覆盖所有 commit 场景。增强 doc_checker 检查 CLAUDE.md、Agents.md 等配置文件。保留 workflow finish 中的 doc_checker 作为 commit 前提醒。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-22T04:03:42Z",
+      "updatedAt": "2026-04-22T04:15:49Z",
+      "closedAt": "2026-04-22T04:15:49Z",
+      "url": "https://github.com/variableway/fire-skills/issues/30",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306595499",
+      "number": 29,
+      "title": "Integrate doc_checker into git-workflow and local-workflow finish",
+      "description": "在 git-workflow 和 local-workflow 的 finish 阶段集成 doc_checker.py，任务完成后自动检测文档更新需求。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-22T03:52:14Z",
+      "updatedAt": "2026-04-22T03:55:30Z",
+      "closedAt": "2026-04-22T03:55:30Z",
+      "url": "https://github.com/variableway/fire-skills/issues/29",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4306462590",
+      "number": 28,
+      "title": "Complete docs tasks: directory READMEs + auto-doc-update proposal",
+      "description": "Task 1: 为每个目录创建 README.md。Task 2: 给出自动文档更新建议和 skill 工作流设计方案。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-22T03:02:49Z",
+      "updatedAt": "2026-04-22T03:51:03Z",
+      "closedAt": "2026-04-22T03:51:03Z",
+      "url": "https://github.com/variableway/fire-skills/issues/28",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4302033947",
+      "number": 27,
+      "title": "Check/update install script for fe-skills",
+      "description": "检查当前安装脚本是否已支持 fe-skills 的安装，如果不支持则修改",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-21T10:42:26Z",
+      "updatedAt": "2026-04-21T10:46:55Z",
+      "closedAt": "2026-04-21T10:46:55Z",
+      "url": "https://github.com/variableway/fire-skills/issues/27",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4301939023",
+      "number": 26,
+      "title": "Merge FE Skills - frontend-web and desktop-app",
+      "description": "按照 Task 1 分析结果合并 skill：1) frontend-web (innate-frontend + frontend-validate) 2) desktop-app (tauri-desktop-app + kimi-desktop-app + glm-desktop-app + advanced JSON)。Terminal skill 不合并。",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-21T10:24:03Z",
+      "updatedAt": "2026-04-21T10:34:20Z",
+      "closedAt": "2026-04-21T10:34:20Z",
+      "url": "https://github.com/variableway/fire-skills/issues/26",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4301538132",
+      "number": 25,
+      "title": "Analysis FE Skills - Find mergeable web and desktop skills",
+      "description": "分析当前 fe-skills 中关于前端开发的 web 和 desktop 有哪些 skill 可以合并的，并列出可以合并的清单",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-21T09:11:38Z",
+      "updatedAt": "2026-04-21T09:14:41Z",
+      "closedAt": "2026-04-21T09:14:41Z",
+      "url": "https://github.com/variableway/fire-skills/issues/25",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4294866983",
+      "number": 24,
+      "title": "Analyze and update skill documentation",
+      "description": "Task 11: 请分析这些 skill 的对应文档\n\n1. 分析所有 skill 的文档（github-cli-skill, git-workflow, local-workflow, gh-create-release）\n2. 检查文档完整性和一致性\n3. 补充缺失的文档或修正不准确的内容",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T10:11:10Z",
+      "updatedAt": "2026-04-20T10:17:32Z",
+      "closedAt": "2026-04-20T10:17:32Z",
+      "url": "https://github.com/variableway/fire-skills/issues/24",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4294672667",
+      "number": 23,
+      "title": "Test git-workflow and local-workflow under Claude Code (global + project)",
+      "description": "Task 10: 测试 claude code 下面 git-workflow 和 local-workflow 的工作情况\n\n1. 测试 git-workflow 和 local-workflow 在 Claude Code 下的工作情况\n2. 需要都 work，不管是 global 还是 project level\n3. 同时验证 install.sh 文件的工作情况",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T09:39:05Z",
+      "updatedAt": "2026-04-20T09:44:47Z",
+      "closedAt": "2026-04-20T09:44:47Z",
+      "url": "https://github.com/variableway/fire-skills/issues/23",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4293520037",
+      "number": 22,
+      "title": "[TEST] Task 8: E2E with tracing fix",
+      "description": "Test full workflow with state read before close.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T06:19:09Z",
+      "updatedAt": "2026-04-20T06:19:34Z",
+      "closedAt": "2026-04-20T06:19:34Z",
+      "url": "https://github.com/variableway/fire-skills/issues/22",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4293504684",
+      "number": 21,
+      "title": "[TEST] Task 8: git-workflow with local tracking",
+      "description": "# Test Local Tracking\\n\\nTest that git-workflow now creates local tracing files alongside GitHub issues.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "git-workflow",
+          "name": "git-workflow",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T06:15:22Z",
+      "updatedAt": "2026-04-20T06:16:48Z",
+      "closedAt": "2026-04-20T06:16:48Z",
+      "url": "https://github.com/variableway/fire-skills/issues/21",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4293425812",
+      "number": 20,
+      "title": "[TEST] Task 6: Local project skill trigger",
+      "description": "# Test git-workflow skill trigger from local project\n\n## Task 1\n\nInstall github-cli-skill and git-workflow skill in local project.\n\n## Task 2\n\nCreate a task markdown file to trigger the git-workflow skill.\n\n## Task 3\n\nTest creating a GitHub issue by task input using the git-workflow orchestrator.\n\n## Expected Results\n\n- Issue is created with task description as first comment\n- After task completion, issue is closed\n- First comment contains original description + appended completion message",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "git-workflow",
+          "name": "git-workflow",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T05:55:41Z",
+      "updatedAt": "2026-04-20T05:55:58Z",
+      "closedAt": "2026-04-20T05:55:58Z",
+      "url": "https://github.com/variableway/fire-skills/issues/20",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4293389535",
+      "number": 19,
+      "title": "[TEST] Task 5: git-workflow global test",
+      "description": "# Test git-workflow skill from global installation\n\n## Task 1\n\nVerify that git-workflow skill works after folder structure change.\n\n## Task 2\n\nVerify that git-workflow skill works after install script.\n\n## Task 3\n\nVerify create issue by task input works correctly.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "git-workflow",
+          "name": "git-workflow",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T05:47:32Z",
+      "updatedAt": "2026-04-20T05:47:46Z",
+      "closedAt": "2026-04-20T05:47:46Z",
+      "url": "https://github.com/variableway/fire-skills/issues/19",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4292986229",
+      "number": 18,
+      "title": "[TEST] git-workflow skill validation",
+      "description": "# Test Task\\n\\nThis is a test task for validating the git-workflow skill.\\n\\n## Requirements\\n- Create issue from task description\\n- Close issue with appended completion message\\n- Verify first comment is updated correctly",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        },
+        {
+          "id": "git-workflow",
+          "name": "git-workflow",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T03:56:21Z",
+      "updatedAt": "2026-04-20T03:56:36Z",
+      "closedAt": "2026-04-20T03:56:36Z",
+      "url": "https://github.com/variableway/fire-skills/issues/18",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4292982544",
+      "number": 17,
+      "title": "[TEST] gh api create",
+      "description": "test body",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T03:55:10Z",
+      "updatedAt": "2026-04-20T03:56:55Z",
+      "closedAt": "2026-04-20T03:56:55Z",
+      "url": "https://github.com/variableway/fire-skills/issues/17",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4292976340",
+      "number": 16,
+      "title": "[TEST] git-workflow skill validation",
+      "description": "test body",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T03:53:10Z",
+      "updatedAt": "2026-04-20T03:56:54Z",
+      "closedAt": "2026-04-20T03:56:54Z",
+      "url": "https://github.com/variableway/fire-skills/issues/16",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4292913486",
+      "number": 15,
+      "title": "[TEST] github-cli-skill: create issue by file",
+      "description": "# Test Issue Body\n\nThis issue was created to test the **create issue by file** feature of the github-cli-skill.\n\n## Checklist\n\n- [x] gh CLI is installed\n- [x] gh auth is working\n- [x] `--body-file` flag works correctly\n\n## Notes\n\nCreated during skill validation after folder structure change.\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-20T03:30:49Z",
+      "updatedAt": "2026-04-20T03:30:57Z",
+      "closedAt": "2026-04-20T03:30:57Z",
+      "url": "https://github.com/variableway/fire-skills/issues/15",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4246082358",
+      "number": 14,
+      "title": "Task: Install frontend skills system-wide and update docs",
+      "description": "## Task Description\n\nBased on [frontend skills analysis](../tasks/analysis/frontend-skill-analysis.md), confirm and install both `innate-frontend` (Web) and `tauri-desktop-app` (Desktop) skills at system level for all supported AI agents.\n\n## Checklist\n\n- [x] Confirm both skills are sufficient to start new web and desktop projects\n- [x] Install `innate-frontend` at system level for Claude, Kimi, Codex, OpenCode\n- [x] Install `tauri-desktop-app` at system level for Claude, Kimi, Codex, OpenCode\n- [x] Create `docs/usage/install-frontend-skills.md` with installation instructions\n- [x] Update `docs/index.md` and `docs/README.md` with new doc references\n- [x] Verify installation across all 4 agents\n\n## Implementation Summary\n\n- Both skills confirmed sufficient for starting new web/desktop projects\n- Installed via `./install.sh --system innate-frontend tauri-desktop-app` — symlinks created in all 5 target directories\n- Created comprehensive installation guide at `docs/usage/install-frontend-skills.md`\n- Updated doc indexes to reference the new guide\n\n## Files Modified\n\n| File | Changes |\n|------|---------|\n| `docs/usage/install-frontend-skills.md` | New installation guide for frontend skills |\n| `docs/index.md` | Added link to frontend skills doc |\n| `docs/README.md` | Added link to frontend skills doc |\n| `tasks/features/fontend-skills.md` | Task file (new) |",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-12T00:23:36Z",
+      "updatedAt": "2026-04-12T00:23:44Z",
+      "closedAt": "2026-04-12T00:23:44Z",
+      "url": "https://github.com/variableway/fire-skills/issues/14",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4209135963",
+      "number": 13,
+      "title": "Test: Dual Tracing Verification",
+      "description": "Testing that both GitHub Issue and local tracing file are created",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T02:21:33Z",
+      "updatedAt": "2026-04-06T02:22:23Z",
+      "closedAt": "2026-04-06T02:22:23Z",
+      "url": "https://github.com/variableway/fire-skills/issues/13",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4209134035",
+      "number": 12,
+      "title": "Fix local workflow tracing when github-workflow is triggered",
+      "description": "## Task 3: local work flow process is not invoked\n\nwhen github-workflow is triggered,but local workflow is not processed. The Feature should be:\n\n1. READ the task , then trigger the github workflow, create issue, and create local tracing file\n2. After AI Agent do his job, issue updated, and local tracing file updated\n3. When Only trigger local workflow, the github issue is not created anymore\n\nVerfification:\n1. Update A Test GIthub Workflow Task Both Issue and local tracing file is updated\n2. Update A Test Local Workflow, only local tracing file is updated\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T02:20:36Z",
+      "updatedAt": "2026-04-06T03:29:21Z",
+      "closedAt": "2026-04-06T02:22:58Z",
+      "url": "https://github.com/variableway/fire-skills/issues/12",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4209034095",
+      "number": 11,
+      "title": "Install script review - support both system and project level",
+      "description": "## Task 3: Install script review\n\nPlease review the skill install script,please make sure it could be install in both system level and project level",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:32:40Z",
+      "updatedAt": "2026-04-06T01:33:23Z",
+      "closedAt": "2026-04-06T01:33:23Z",
+      "url": "https://github.com/variableway/fire-skills/issues/11",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208995812",
+      "number": 10,
+      "title": "Test: AI Config Skill",
+      "description": "Test dual tracing feature",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:13:03Z",
+      "updatedAt": "2026-04-06T01:13:08Z",
+      "closedAt": "2026-04-06T01:13:08Z",
+      "url": "https://github.com/variableway/fire-skills/issues/10",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208986321",
+      "number": 9,
+      "title": "Local workflow as a separated skill",
+      "description": "# Workflow Skill\n\n## Task 1: Github-workflow with gh command\n\n- please use github cli to rewrite the current logic for better performance\n- keep current solution as one alternative if gh was not install in first place\n\n## Task 2: local workflow as an seperated skill\n\n- keep current local workflow tracing in github-workflow-skill\n- but separate the local workflow as a skill to support only local tracing without creating an github issues.",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T01:08:10Z",
+      "updatedAt": "2026-04-06T01:08:28Z",
+      "closedAt": "2026-04-06T01:08:28Z",
+      "url": "https://github.com/variableway/fire-skills/issues/9",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208969470",
+      "number": 8,
+      "title": "Github-workflow with gh command",
+      "description": "## 原始需求\n\n请使用 github cli 来重写当前的逻辑以获得更好的性能\n\n## 变更内容\n\n### 1. 新增后端模块 (`github_backend.py`)\n- `GhCliBackend`: 使用 `gh` CLI 进行 Issue 操作（创建、更新、评论、获取）\n- `ApiBackend`: 使用 REST API 作为回退方案\n- `create_backend()`: 自动检测并创建最佳可用后端\n- `is_gh_available()`: 检测 `gh` 是否安装\n\n### 2. 修改 `create_issue.py`\n- 优先使用 `gh issue create`（如果可用）\n- 回退到 REST API（如果 `gh` 未安装）\n- 显示当前使用的后端类型\n\n### 3. 修改 `update_issue.py`\n- 优先使用 `gh issue close/reopen/comment/view`\n- 回退到 REST API\n- 统一接口保持向后兼容\n\n### 4. 修改 `orchestrate.py`\n- 更新为使用新的后端模块\n- 自动检测后端可用性\n\n### 5. 更新 `SKILL.md` 文档\n- 添加 GitHub CLI 性能优化说明\n- 新增 GitHub CLI 配置指南\n- 说明 REST API 回退机制\n\n## 实现目标\n\n- **性能优化**: 使用 `gh` CLI 获得更好的性能和可靠性\n- **向后兼容**: 保留原有 REST API 实现作为备选方案\n- **简化配置**: `gh` 用户无需额外配置 Token\n\n## 回退策略\n\n如果 `gh` 未安装，自动使用原有的 REST API 实现，通过以下方式获取 Token:\n1. 命令行参数: `--token`\n2. 环境变量: `GITHUB_TOKEN`\n3. 项目配置: `.github-task-workflow.yaml`\n4. 全局配置: `~/.config/github-task-workflow/config.yaml`",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T00:59:25Z",
+      "updatedAt": "2026-04-06T00:59:42Z",
+      "closedAt": "2026-04-06T00:59:41Z",
+      "url": "https://github.com/variableway/fire-skills/issues/8",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4208931397",
+      "number": 7,
+      "title": "创建 Local Task Tracing 功能",
+      "description": "# Task Features\n\n## Task 1: 创建Local Task Tracking\n\n当前github workflow skill是把任务内容和更新内容会写到github，这个skill是在执行任务的时候更新到GITHUB的内容\n在本地也记录一下：\n1. 把Task原始内容和Agent解析过后的内容本地记录到tracing folder\n2. Task完成之后Update Issue的内容也更新到步骤1写入的文件中\n3. 写入的文件是markdown文件，名字按照task文件名称命名，如果后续还是这个文件里面的Task，可以继续往这个文件添加内容",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "description": "New feature or request"
+        },
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-06T00:39:48Z",
+      "updatedAt": "2026-04-06T00:47:27Z",
+      "closedAt": "2026-04-06T00:47:27Z",
+      "url": "https://github.com/variableway/fire-skills/issues/7",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203206274",
+      "number": 6,
+      "title": "mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构\n\n## Task 2: mindstorm skill\n\nmindstorm skill更新：\n1. 名字修改为brainstorm好点呢，还是mindstorm保留也可以\n2. 如果让mindstorm skill 直接输入analysis，planning，prd draft会合理吗，请严格比较目前\nmindstorm skill做的事情，是否输出这三个文档合适？\n\n## Task 3: mindstorm skill - personal product vs biz product\n\nmindstorm skill这个更适合一个：\n1. 个人小项目的决定呢？\n2. 比较大的Biz 项目\n\n如果是个人小项目，也就是就是自己一个人决定，还需要交互式吗？是否可以给个人开始一个AI Agent 项目的mindstorm skill？关注合理性，可行性，是否可以对自己本身有用，这个有用是否可以复制到别人身上，哪些人可以复制，哪些人比较难复制，找到自己的可能客户群体呢？ 请尝试创建一个personal brainstorm skill，看看效果如何。\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T03:13:15Z",
+      "updatedAt": "2026-04-04T03:20:52Z",
+      "closedAt": "2026-04-04T03:20:52Z",
+      "url": "https://github.com/variableway/fire-skills/issues/6",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203190856",
+      "number": 5,
+      "title": "mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构\n\n## Task 2: mindstorm skill\n\nmindstorm skill更新：\n1. 名字修改为brainstorm好点呢，还是mindstorm保留也可以\n2. 如果让mindstorm skill 直接输入analysis，planning，prd draft会合理吗，请严格比较目前\nmindstorm skill做的事情，是否输出这三个文档合适？\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T03:08:20Z",
+      "updatedAt": "2026-04-04T03:09:45Z",
+      "closedAt": "2026-04-04T03:09:45Z",
+      "url": "https://github.com/variableway/fire-skills/issues/5",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203160262",
+      "number": 4,
+      "title": "mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:58:41Z",
+      "updatedAt": "2026-04-04T03:03:44Z",
+      "closedAt": "2026-04-04T03:03:44Z",
+      "url": "https://github.com/variableway/fire-skills/issues/4",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203121434",
+      "number": 3,
+      "title": "setup gitignore",
+      "description": "# Task 1: setup gitignore\n\n请按照当前文件增加.gitignore文件，忽略所有pyc文件\n\n## Task 2: github task workflow 配置到本项目\n\ngithub task workflow 配置到当前目录，目前看起来是没有工作的，需要做到:\n1. 安装到全局环境\n2. 当当前目录可以执行这个workflow，先创建issue，在执行AI任务，最后更新issue\n\n",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:47:15Z",
+      "updatedAt": "2026-04-04T02:47:29Z",
+      "closedAt": "2026-04-04T02:47:29Z",
+      "url": "https://github.com/variableway/fire-skills/issues/3",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203080007",
+      "number": 2,
+      "title": "Configure github-task-workflow for spark-skills project",
+      "description": "# Task 1: setup gitignore\n\n请按照当前文件增加.gitignore文件，忽略所有pyc文件\n\n## Task 2: github task workflow 配置到本项目\n\ngithub task workflow 配置到当前目录，目前看起来是没有工作的，需要做到:\n1. 安装到全局环境\n2. 当当前目录可以执行这个workflow，先创建issue，在执行AI任务，最后更新issue",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:41:09Z",
+      "updatedAt": "2026-04-04T02:41:29Z",
+      "closedAt": "2026-04-04T02:41:29Z",
+      "url": "https://github.com/variableway/fire-skills/issues/2",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203076701",
+      "number": 1,
+      "title": "Test issue from spark-skills",
+      "description": "Testing github-task-workflow setup",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:40:18Z",
+      "updatedAt": "2026-04-04T02:40:26Z",
+      "closedAt": "2026-04-04T02:40:26Z",
+      "url": "https://github.com/variableway/fire-skills/issues/1",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4981287545",
       "number": 1,
       "title": "Monorepo refactor: unify all projects into single monorepo",
@@ -884,7 +2478,70 @@
       "closedAt": "2026-07-26T23:02:08Z",
       "url": "https://github.com/variableway/innate-keepthem/issues/1",
       "author": "qdriven"
+    },
+    {
+      "id": "issue-5264369613",
+      "number": 5,
+      "title": "Mono Repo 重构：抽取共享 UI 包到 packages/ui",
+      "description": "# Task\n\n当前项目包括两个不同类型的项目：1) 根目录下的 Astro 项目；2) superlinear-academy (Next.js)。\n\n任务目标：\n1. 把当前项目变成一个 Mono Repository\n2. 抽取 UI 和公共代码到 packages/ui（以 shadcn-ui 为基础）\n3. 两个 Web 项目（放入 apps/ 目录）都依赖 packages/ui，形成完整 Mono Repository\n4. 启动两个项目，能正常运行且页面有内容即视为完成\n\n## Agent Expansion\n\n验收标准：1) 根级 pnpm workspace 生效，pnpm -r list 显示 3 个包（@atlas/web、@atlas/academy、@atlas/ui）；2) 两个 app 均依赖 packages/ui 且构建通过；3) 两个 dev server 正常运行、页面有内容。关键假设：以 academy 新版 shadcn-ui 组件作为 packages/ui 的规范实现，atlas 旧版组件作废。\n\n## Plan\n\n1. 根级创建 pnpm-workspace.yaml（apps/* + packages/*）。2. 抽取 academy 的 9 个 shadcn 组件到 packages/ui（@atlas/ui）。3. 迁移 Astro 项目到 apps/atlas、superlinear-academy 到 apps/academy。4. 打通集成：Tailwind v4 @source 指令、tsconfig paths 映射、Next transpilePackages、Astro ssr.noExternal。5. 安装依赖、生产构建、启动 dev server 验证。\n\n## Execution\n\n变更：根级 pnpm workspace + 单一 lockfile；packages/ui 含 9 个共享组件与 cn() utils；apps/atlas（Astro，改名 @atlas/web）与 apps/academy（Next.js 16，改名 @atlas/academy）均以 workspace:* 依赖 @atlas/ui；CI 工作流 deploy.yml 适配 workspace。测试：根级 pnpm install 成功；atlas 生产构建成功（71 页）；academy next build 成功（6 路由）；两个 dev server 均 200 且页面含内容。\n\n## Result\n\nMono Repo 重构完成：项目已变为 pnpm workspace（apps/atlas + apps/academy 依赖 packages/ui）。根级 pnpm install 成功，两个 app 生产构建通过，dev server 正常运行且页面有内容。\n\n## Metadata\n\n- Title: Mono Repo 重构：抽取共享 UI 包到 packages/ui\n- Created at: 2026-08-27T05:55:29Z\n- Completed at: 2026-08-27T06:33:04Z\n- Status: closed",
+      "status": "closed",
+      "project": "reset-from-zero",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-08-27T05:55:31Z",
+      "updatedAt": "2026-08-27T06:33:06Z",
+      "closedAt": "2026-08-27T06:33:06Z",
+      "url": "https://github.com/variableway/reset-from-zero/issues/5",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4946214745",
+      "number": 3,
+      "title": "Make submodule support multi-folder and configurable",
+      "description": "# Task\n\nReview scripts/ and apps/ folders. Ensure submodule support works with multiple folders and is configurable (not hard-coded to a single path).\n\n## Agent Expansion\n\nAssumptions: registry remains the app metadata source of truth; submodule path roots are configured separately in scripts/submodule.config.json (JSON, zero deps) so add-submodule.mts does not need the yaml package. Acceptance: (1) helper accepts --folder/--path/--repo/--org/--host; (2) roots configurable via config file and SUBMODULE_* env; (3) rejects paths outside allowed roots; (4) apps/README + registry document multi-folder paths; (5) generate-manifest reads config roots for skill scanning and keeps path-agnostic registry apps.\n\n## Plan\n\n1. Review scripts/add-submodule.mts (hard-coded apps/) and apps/registry + README.\n2. Add scripts/submodule.config.json with roots/defaultRoot/org/host.\n3. Extend add-submodule.mts for multi-folder + CLI/env overrides + validation.\n4. Update generate-manifest.mjs to use configurable roots/registry paths.\n5. Document in apps/README.md and registry.yaml comments.\n6. Verify --help and reject invalid folder/path; commit on issue branch.\n\n## Execution\n\nChanged files: scripts/submodule.config.json (new), scripts/add-submodule.mts, scripts/generate-manifest.mjs, apps/registry.yaml, apps/README.md; also added scripts/bump-pnpm.mjs as part of scripts/ landing.\nVerification: node scripts/add-submodule.mts --help; rejected --folder not-allowed, --path ../escape/evil, --path docs/foo; SUBMODULE_ROOTS=apps,docs updated allowed roots in help; generate-manifest still needs yaml package (pre-existing). Commit b2b16e0 on branch 3-submodule-multi-folder in worktree.\n\n### Documentation Check\n\n## 文档更新建议\n\n- **apps/README.md**: 文件 'README.md' 被引用 (P1)\n\n## Result\n\nSubmodule support is multi-folder and configurable. Default roots: apps, tutorials, skillsets, ai-infra via scripts/submodule.config.json; override with CLI (--folder/--path/--repo/--org/--host) or SUBMODULE_* env. Registry paths may live under any configured root.\n\n## Metadata\n\n- Title: Make submodule support multi-folder and configurable\n- Created at: 2026-07-22T06:38:54Z\n- Completed at: 2026-07-22T06:51:02Z\n- Status: closed",
+      "status": "closed",
+      "project": "reset-from-zero",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-07-22T06:38:56Z",
+      "updatedAt": "2026-07-22T06:51:03Z",
+      "closedAt": "2026-07-22T06:51:03Z",
+      "url": "https://github.com/variableway/reset-from-zero/issues/3",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4937874356",
+      "number": 1,
+      "title": "ai-proxy: OmniRoute & Codex2API docker-compose 部署脚手架",
+      "description": "# Task\n\n基于 ai-infra/omniroute-vs-codex2api-comparison.md 分析结论：\n\n1. 先 clone 两个上游项目：\n   - https://github.com/diegosouzapw/OmniRoute\n   - https://github.com/james-6-23/codex2api\n2. 在 ai-infra/ai-proxy/ 下分别创建 omnirouter 与 codex2api 目录\n3. 为两个项目各自编写/生成可用的 docker-compose 文件，便于本地构建与启动\n4. 实现须走 git-worktree 隔离（主工作区有未提交改动）\n\n验收标准：\n- ai-infra/ai-proxy/omnirouter/ 与 ai-infra/ai-proxy/codex2api/ 存在可运行的 docker-compose 配置\n- 上游仓库已浅克隆到合理本地路径\n- 全程使用 git-workflow；IMPLEMENT 阶段使用 git-worktree\n\n## Agent Expansion\n\n验收标准：\n1. ai-infra/ai-proxy/omnirouter 与 codex2api 各有可用 docker-compose\n2. 上游仓库已浅克隆到各目录 upstream/（gitignore，可用 clone-upstreams.sh 重拉）\n3. 全程 git-workflow；IMPLEMENT 在 worktree `reset-from-zero-wt-1` / 分支 `1-ai-proxy-compose`\n\n假设：默认用官方预构建镜像最快落地；本地构建走 omnirouter `--profile build` 或 codex2api `docker-compose.build.yml`。\n\n## Plan\n\n1. orchestrate init → Issue #1\n2. Worktree 门禁：主仓脏 + 用户要求隔离 → worktree add -b 1-ai-proxy-compose\n3. 浅克隆 OmniRoute / Codex2API 到 ai-proxy/*/upstream\n4. 基于官方 compose 编写 wrapper compose + .env.example + README + clone 脚本\n5. docker compose config 校验\n6. 发现 git-workflow 将 worktree 标为「可选」→ 改为强制门禁并同步 skillset 源\n7. commit + finish\n\n## Execution\n\n变更：\n- ai-infra/ai-proxy/omnirouter/docker-compose.yml（diegosouzapw/omniroute:latest）\n- ai-infra/ai-proxy/codex2api/docker-compose.yml（ghcr + PG18 + Redis7）\n- ai-infra/ai-proxy/codex2api/docker-compose.build.yml\n- clone-upstreams.sh / README / .gitignore\n- 提交 507a9ef on 1-ai-proxy-compose\n\n测试：docker compose config -q 对三个 compose 均通过。\n\nWorktree：已触发。路径 ../reset-from-zero-wt-1，分支 1-ai-proxy-compose。\n\nSkill 修复：原 IMPLEMENT 写「可选隔离」，Agent 可能跳过。已在 ~/.claude/skills/git-workflow/SKILL.md 与 skillsets/devops-skill/git-workflow/SKILL.md 增加「Worktree 门禁（强制）」与流程图节点。\n\n### Documentation Check\n\n## 文档更新建议\n\n- **ai-infra/ai-proxy/README.md**: 文件 '.gitignore' 被引用 (P1)\n\n## Result\n\n已完成 ai-proxy OmniRoute/Codex2API docker-compose 脚手架；上游已浅克隆；在 worktree 内实现并提交。git-workflow 已补强 Worktree 强制门禁。\n\n## Metadata\n\n- Title: ai-proxy: OmniRoute & Codex2API docker-compose 部署脚手架\n- Created at: 2026-07-21T10:31:27Z\n- Completed at: 2026-07-21T10:40:45Z\n- Status: closed",
+      "status": "closed",
+      "project": "reset-from-zero",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-07-21T10:31:28Z",
+      "updatedAt": "2026-07-21T10:40:46Z",
+      "closedAt": "2026-07-21T10:40:46Z",
+      "url": "https://github.com/variableway/reset-from-zero/issues/1",
+      "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-09-08T14:02:03.850Z"
+  "lastUpdated": "2026-09-08T14:16:41.986Z"
 }
