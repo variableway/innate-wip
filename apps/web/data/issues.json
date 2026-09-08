@@ -139,8 +139,8 @@
       "id": "issue-5371451269",
       "number": 20,
       "title": "spark repo: 管理 GitHub 仓库 registry（scan/clone/list）",
-      "description": "# Task\n\n## Task 1: 管理 GitHub 仓库（registry 方式，非 submodule）\n\n背景与目标：\n1. 一个目录内可能包含多个 GitHub 仓库，但这些仓库不希望作为 git submodule 管理。\n2. 需要一个命令扫描指定目录下的所有 GitHub 仓库，并保存到 registry 文件。\n3. 参考实现：innate-workspace/scripts/ 下的 Python 实现（scan.py / clone.py），将其转换为 spark-cli 子命令。\n\n新增子命令 spark repo：\n- scan <folder_name>：扫描目录，保存到 registry_<folder_name>.yaml\n- clone -r <repo_name> -f registry_<folder_name>.yaml：从 registry 克隆仓库到 <folder_name> 目录\n- list -f registry_<folder_name>.yaml：列出 registry 中的仓库\n\nspark-cli 代码位于 innate-apps/tooling/spark-cli。完成后需补充 BDD 测试用例与文档。\n\n## Agent Expansion\n\n_Pending until finish. Record clarified scope, questions, assumptions, and acceptance criteria._\n\n## Plan\n\n_Pending until finish._\n\n## Execution\n\n_Pending until finish._\n\n## Result\n\n_Pending until finish._\n\n## Metadata\n\n- Created at: 2026-09-07T07:26:33Z\n- Status: open",
-      "status": "open",
+      "description": "# Task\n\n## Task 1: 管理 GitHub 仓库（registry 方式，非 submodule）\n\n背景与目标：\n1. 一个目录内可能包含多个 GitHub 仓库，但这些仓库不希望作为 git submodule 管理。\n2. 需要一个命令扫描指定目录下的所有 GitHub 仓库，并保存到 registry 文件。\n3. 参考实现：innate-workspace/scripts/ 下的 Python 实现（scan.py / clone.py），将其转换为 spark-cli 子命令。\n\n新增子命令 spark repo：\n- scan <folder_name>：扫描目录，保存到 registry_<folder_name>.yaml\n- clone -r <repo_name> -f registry_<folder_name>.yaml：从 registry 克隆仓库到 <folder_name> 目录\n- list -f registry_<folder_name>.yaml：列出 registry 中的仓库\n\nspark-cli 代码位于 innate-apps/tooling/spark-cli。完成后需补充 BDD 测试用例与文档。\n\n## Agent Expansion\n\n范围澄清与假设：仅实现 registry 方式的仓库管理，不改动现有 submodule 逻辑；SSH URL 归一化为 HTTPS 形式存储；registry 文件名由目录 basename 推导为 registry_<folder>.yaml。\n验收标准：scan 能发现带 origin 的仓库并写入 yaml；clone 支持全量与 -r 单仓克隆、已存在则跳过；list 输出 name/repo/path；重复 scan 与旧 registry 合并并保留 name/desc。\n\n## Plan\n\n1. 实现 internal/registry（Scan/Read/Write/Merge/FindByName/TargetPath）；2. 实现 cmd/repo 父命令与 scan/clone/list 子命令并在 root 注册；3. 补充 BDD 测试；4. 补充中英文文档与 navigation/AGENTS；5. 全量构建与测试。\n\n## Execution\n\n新增 internal/registry/{registry,scan}.go、cmd/repo/{repo,scan,clone,list}.go；修改 cmd/root.go 注册 RepoCmd；新增 internal/registry/{registry_suite_test,registry_test}.go（13 specs）。\n文档新增 docs/{zh,en}/{usage,spec,features}/repo.md 并更新 docs/{zh,en}/navigation.json、AGENTS.md。\n校验：go build ./... 通过；go test ./internal/registry/... 通过（ok）。全量 go test ./... 因既有测试包触发 SSH 'Password:' 提示而中断（与本任务无关）。\n\n## Result\n\n已完成 spark repo 子命令（scan/clone/list），用 registry 文件管理目录下多个 GitHub 仓库（替代 submodule）。实现 internal/registry 包（扫描/读写/merge/克隆目标路径），新增 cmd/repo 命令组并注册到根命令；补充 Ginkgo/Gomega BDD 测试（13 个 spec 全部通过）；新增中英文文档（usage/spec/features）并更新 navigation.json 与 AGENTS.md。\n\n## Metadata\n\n- Title: spark repo: 管理 GitHub 仓库 registry（scan/clone/list）\n- Created at: 2026-09-07T07:26:33Z\n- Completed at: 2026-09-08T05:07:59Z\n- Status: closed",
+      "status": "closed",
       "project": "spark-cli",
       "labels": [
         {
@@ -157,8 +157,8 @@
         }
       ],
       "createdAt": "2026-09-07T07:26:35Z",
-      "updatedAt": "2026-09-07T07:26:35Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T05:08:00Z",
+      "closedAt": "2026-09-08T05:08:00Z",
       "url": "https://github.com/variableway/spark-cli/issues/20",
       "author": "qdriven"
     },
@@ -2543,5 +2543,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-09-08T04:56:29.988Z"
+  "lastUpdated": "2026-09-08T08:28:30.595Z"
 }
