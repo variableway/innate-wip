@@ -592,6 +592,279 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4373618096",
+      "number": 15,
+      "title": "Fix PlatformTabs + Theme + GitHub Actions",
+      "description": "1. 修复多操作系统脚本切换不显示问题\n2. 改善 Markdown 主题为更温暖明亮的风格\n3. 设置 GitHub Actions 部署静态站点",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T02:00:05Z",
+      "updatedAt": "2026-05-04T02:20:08Z",
+      "closedAt": "2026-05-04T02:20:08Z",
+      "url": "https://github.com/variableway/innate-executable/issues/15",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4373557023",
+      "number": 14,
+      "title": "AutoScan tutorials - 替换硬编码为动态扫描",
+      "description": "替换 BUILTIN_SKILL_PATHS 和 BUILTIN_SKILLS 硬编码为动态文件扫描：\n1. 创建构建时扫描脚本，扫描 public/skills/ 目录\n2. 生成 skills-manifest.json 供客户端使用\n3. 支持 GitHub Pages 静态部署\n4. 添加新教程只需放入 public/skills/ 目录",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T01:36:41Z",
+      "updatedAt": "2026-05-04T01:39:48Z",
+      "closedAt": "2026-05-04T01:39:48Z",
+      "url": "https://github.com/variableway/innate-executable/issues/14",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4373554547",
+      "number": 13,
+      "title": "Fix: Platform tabs not rendering + theme too dark",
+      "description": "## Task 18: 两个问题\n\n### 问题1: 多操作系统 PlatformTabs 不能展示\n教程中的 macOS/Windows 切换标签页不能正常显示，需要修复 PlatformTabs 组件。\n\n### 问题2: Markdown Theme 太沉闷\n整体 Markdown 主题偏暗，需要调整为更温暖、更亮的主题。\n\n## Task Reference\n- tasks/issues/2-start-cc.md Task 18",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T01:35:34Z",
+      "updatedAt": "2026-05-04T01:41:45Z",
+      "closedAt": "2026-05-04T01:41:45Z",
+      "url": "https://github.com/variableway/innate-executable/issues/13",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4373532798",
+      "number": 12,
+      "title": "Feat: RunnableBlock redesign — Markdown-native code blocks",
+      "description": "## Task 16: RunnableBlock Redesign\n\nCurrent: RunnableCodeBlock uses verbose JSX props like code={...}\nGoal: Standard fenced code blocks with auto-Run button\n\nChanges:\n1. Auto-detect runnable code blocks from language (bash, python, etc)\n2. Add Run button to standard Markdown code blocks\n3. Support Python execution via temp file\n4. Keep existing RunnableCodeBlock for backward compat",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T01:26:31Z",
+      "updatedAt": "2026-05-04T01:29:03Z",
+      "closedAt": "2026-05-04T01:29:03Z",
+      "url": "https://github.com/variableway/innate-executable/issues/12",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4373424493",
+      "number": 11,
+      "title": "按照 Research 文件制作系列教程",
+      "description": "按照 tasks/research/ 中的教程大纲，制作完整系列教程：\n1. 制作 P0 优先级教程（OpenClaw体验、跨学科之旅、数学基础）\n2. 制作 P1 教程（搜索总结、邮件日程、数学下、认知科学）\n3. 说明制作方法\n4. 检查展示效果，考虑 Python/Notebook 集成",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T00:39:56Z",
+      "updatedAt": "2026-05-04T00:45:27Z",
+      "closedAt": "2026-05-04T00:45:27Z",
+      "url": "https://github.com/variableway/innate-executable/issues/11",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4373423488",
+      "number": 10,
+      "title": "Fix: MDX acorn parse error in tutorials",
+      "description": "## Bug Description\n[next-mdx-remote] error compiling MDX: Could not parse expression with acorn\nMore information: https://mdxjs.com/docs/troubleshooting-mdx\n\n## Task Reference\n- tasks/issues/2-start-cc.md Task 14",
+      "status": "open",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-04T00:39:28Z",
+      "updatedAt": "2026-05-04T00:39:29Z",
+      "closedAt": null,
+      "url": "https://github.com/variableway/innate-executable/issues/10",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368763133",
+      "number": 9,
+      "title": "Feat: Add Git installation tutorial",
+      "description": "Task 13: 添加 Git 安装教程。已完成 - 见 commit 6aaa704",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T11:23:22Z",
+      "updatedAt": "2026-05-02T11:23:36Z",
+      "closedAt": "2026-05-02T11:23:36Z",
+      "url": "https://github.com/variableway/innate-executable/issues/9",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368756696",
+      "number": 8,
+      "title": "Feat: Add Node.js installation tutorial",
+      "description": "## Task 12: 添加 Node.js 安装教程\n\n1. 创建 Node.js 安装教程（含版本管理）\n2. 教程为中文，支持 Mac/Windows\n3. 包含一键安装脚本，支持 Mac/Windows",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T11:19:39Z",
+      "updatedAt": "2026-05-02T11:23:12Z",
+      "closedAt": "2026-05-02T11:23:12Z",
+      "url": "https://github.com/variableway/innate-executable/issues/8",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368705411",
+      "number": 7,
+      "title": "Feat: Add install Kimi-cli tutorial",
+      "description": "See commit cc06c72",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T10:51:48Z",
+      "updatedAt": "2026-05-02T10:51:58Z",
+      "closedAt": "2026-05-02T10:51:58Z",
+      "url": "https://github.com/variableway/innate-executable/issues/7",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368692988",
+      "number": 6,
+      "title": "Feat: Add install Kimi-cli tutorial",
+      "description": "## 任务描述\n请添加安装 Kimi-cli 教程，要求：\n1. 创建完整的 Kimi-cli 安装教程（中文）\n2. 教程中加入安装 kimi-cli 的命令安装脚本\n3. 同时支持 MacOS 和 Windows 平台\n4. 需要有一键安装脚本\n\n## Task Reference\n- tasks/issues/2-start-cc.md Task 11",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T10:44:29Z",
+      "updatedAt": "2026-05-02T10:52:07Z",
+      "closedAt": "2026-05-02T10:52:07Z",
+      "url": "https://github.com/variableway/innate-executable/issues/6",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368684729",
+      "number": 5,
+      "title": "Fix: First Run button click does not execute command in terminal",
+      "description": "## Bug Description\n第一次执行教程内容的时候不会在terminal中执行命令\n\n## Requirements\n1. 第一次执行教程内容的时候必须在terminal中执行命令\n2. 每次点击Run按钮都必须执行命令\n3. 增加验证机制，确保命令能够正常执行\n\n## Affected Files\n- playground/apps/desktop/src/store/useAppStore.ts\n- playground/apps/desktop/src/components/terminal-panel.tsx\n- playground/apps/desktop/src/components/tutorial/run-button.tsx\n- playground/apps/desktop/src/components/tutorial/runnable-code-block.tsx\n\n## Task Reference\n- tasks/issues/2-start-cc.md Task 10",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T10:39:38Z",
+      "updatedAt": "2026-05-02T10:43:56Z",
+      "closedAt": "2026-05-02T10:43:56Z",
+      "url": "https://github.com/variableway/innate-executable/issues/5",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368677283",
+      "number": 4,
+      "title": "Hello-Claw + Path2AGI 转化为分级教程",
+      "description": "将 references/hello-claw 和 references/Path2AGI 内容转化为教程：\n1. Hello-Claw：AI助手系统教程\n2. Path2AGI：AGI知识图谱教程\n3. 分等级：完全小白、中等水平、高级（非目标用户）",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T10:36:28Z",
+      "updatedAt": "2026-05-02T10:46:48Z",
+      "closedAt": "2026-05-02T10:46:48Z",
+      "url": "https://github.com/variableway/innate-executable/issues/4",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4368676032",
+      "number": 3,
+      "title": "WayToAGI to Tutorials - 调研批量转化Pipeline",
+      "description": "调研如何将 WayToAGI 飞书知识库内容批量转化为教程：\n1. 分析 https://waytoagi.feishu.cn/wiki/space/7226178700923011075 的内容结构\n2. 设计 Pipeline，每个步骤分析可行性和可用工具\n3. 商业化可行性分析",
+      "status": "closed",
+      "project": "innate-executable",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-02T10:35:59Z",
+      "updatedAt": "2026-05-02T10:46:15Z",
+      "closedAt": "2026-05-02T10:46:15Z",
+      "url": "https://github.com/variableway/innate-executable/issues/3",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4980022320",
       "number": 88,
       "title": "Simplify add command further + remove outdated/update/use/profile commands",
@@ -2270,5 +2543,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-09-09T14:04:32.623Z"
+  "lastUpdated": "2026-09-09T14:16:46.448Z"
 }
