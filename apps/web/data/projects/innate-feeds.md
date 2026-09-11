@@ -26,7 +26,16 @@ innate-feeds/
 │   │   ├── collector/       # Data collection layer
 │   │   │   ├── github.ts    # GitHub API / gh CLI wrappers (uses execFileSync)
 │   │   │   ├── firecrawl.ts # Firecrawl-based GitHub Trending scraper
-│   │   │   └── sync.ts      # Trending and starred sync orchestration
+│   │   │   ├── sync.ts      # Trending and starred sync orchestration
+│   │   │   ├── shared/      # Shared collector utilities
+│   │   │   │   ├── types.ts # ExternalFeedItem, FeedCollector interfaces
+│   │   │   │   ├── storage.ts # JSON storage (manifest + saveItems)
+│   │   │   │   └── http.ts  # HTTP utilities (fetchJson, fetchHtml, retry)
+│   │   │   ├── producthunt.ts    # Product Hunt daily/weekly/monthly collector
+│   │   │   ├── yc-companies.ts   # YC Companies API collector
+│   │   │   ├── a16z-portfolio.ts # a16z Portfolio collector
+│   │   │   ├── github-topics.ts  # GitHub Topics search collector
+│   │   │   └── vc-portfolio.ts   # Unified external collector orchestrator
 │   │   ├── data/            # Static data export/import utilities
 │   │   │   ├── export-incremental.ts  # Incremental JSON chunk exporter
 │   │   │   ├── export-static.ts       # Full static exporter
@@ -61,9 +70,19 @@ innate-feeds/
 │   ├── tsconfig.json
 │   └── vite.config.ts       # Vite config with GitHub Pages plugin + API proxy
 ├── git-repo-scanner/        # Standalone Go CLI (not part of the web app)
+├── dsh-plugin-directory/    # Unused Next.js prototype (plugin UI now lives in frontend /dsh)
+│   ├── prisma/              # Prisma 7 schema (Plugin + Category), Postgres
+│   ├── scripts/             # import-dsh-plugins.ts (YAML/JSON → Postgres, dry-run default)
+│   ├── src/
+│   │   ├── app/             # App Router pages: / (listing), /plugins/[slug], /categories
+│   │   ├── components/      # shadcn ui/ + plugin cards, filters (nuqs-driven)
+│   │   ├── server/plugins/  # queries.ts + search-params.ts (nuqs parsers)
+│   │   └── lib/             # db.ts (PrismaClient + adapter-pg), categories.ts
+│   └── docs/                # awesome-import-spec.md (awesome list → awesome.json 转换规范)
+├── awesome/                 # Curated awesome lists (dsh-plugin-directory 的数据源在 awesome/awesome-dsh-plugin)
 ├── docs/                    # Documentation
 ├── tasks/                   # Task working directories
-├── package.json             # Root workspace scripts (uses concurrently)
+├── package.json             # Root bun workspace (workspaces: backend, frontend)
 ├── dev.sh                   # Bash helper to start both dev servers
 └── CLAUDE.md
 ```
@@ -85,6 +104,7 @@ innate-feeds/
 | Validation | Zod (used in API input validation) |
 | Type checking | TypeScript 5.7+ |
 | Side utility | Go 1.26+ (`git-repo-scanner`) |
+| Plugin directory | Vite + TanStack Router routes under `/dsh`, data from Hono `/api/plugins` (awesome-dsh-plugin YAML) |
 
 ## Build and development commands
 
@@ -92,9 +112,10 @@ All commands assume you are in the project root unless noted.
 
 ### Install dependencies
 
+The repo is a **bun workspace** (`workspaces: backend, frontend`) — one install at the root covers everything:
+
 ```bash
-bun install
-bun run install:all   # or: cd backend && bun install && cd ../frontend && bun install
+bun install   # = bun run install:all
 ```
 
 ### Start development
@@ -111,7 +132,11 @@ bun run dev:backend   # cd backend && bun run dev
 bun run dev:frontend  # cd frontend && bun run dev
 ```
 
-The Vite dev server proxies `/api` requests to `http://localhost:4000`.
+The Vite dev server proxies `/api` requests to `http://localhost:4000`. Plugin directory is `http://localhost:3000/dsh`.
+
+### Plugin directory (`/dsh`)
+
+The DSH plugin browser is part of the Vite app (same sidebar and theme). The Hono backend reads `../awesome/awesome-dsh-plugin/data` (override with `DSH_PLUGIN_DATA_DIR`). The old Next.js app in `dsh-plugin-directory/` is unused.
 
 ### Sync data from GitHub
 
@@ -145,6 +170,36 @@ bunx tsx src/app/cli.ts sync trending daily
 bunx tsx src/app/cli.ts sync starred [username] [--force] [--days N]
 bunx tsx src/app/cli.ts sync digest --days 90
 bunx tsx src/app/cli.ts sync window [--days 90] [--skip-readme] [--force]
+```
+
+### Sync external sources (Product Hunt / YC / a16z / GitHub Topics)
+
+These are independent JSON-based collectors (no SQLite, see `docs/external-collectors.md`).
+
+```bash
+cd backend
+
+# Product Hunt — daily/weekly/monthly leaderboards (Firecrawl)
+bun run sync:producthunt                                           # today, all periods
+bun src/app/cli.ts sync producthunt --period daily                 # daily only
+bun src/app/cli.ts sync producthunt --period weekly --date 2026-08-25
+bun src/app/cli.ts sync producthunt --period monthly --date 2026-08-01
+
+# YC Companies — public API (no auth)
+bun run sync:yc                                                    # all default batches
+bun src/app/cli.ts sync yc --batch P26 --query "open source"
+
+# a16z Portfolio — static list + GitHub enrichment
+bun run sync:a16z
+
+# GitHub Topics — search repos by topic (AI/LLM/Agent etc.)
+bun run sync:topics                                                # all AI topics
+bun src/app/cli.ts sync github-topics --topic llm --topic agent    # specific topics
+bun run topics:list                                                # list available topics
+
+# Unified sync (all external sources)
+bun run sync:vc
+bun src/app/cli.ts sync vc --source producthunt --source yc
 ```
 
 ### Other backend CLI commands
@@ -282,6 +337,14 @@ Schema is defined in `backend/src/db/schema.sql`:
 - `collector/firecrawl.ts` — uses the `firecrawl` SDK to scrape GitHub Trending with a JSON extraction schema. Generates deterministic repo IDs from SHA-256 hash of `fullName`.
 - `collector/sync.ts` — orchestrates trending/starred sync with transactional writes.
 - `collector/sync-window.ts` — 90-day window: trending + starred + digest + README prefetch for static/API snapshots.
+- `collector/producthunt.ts` — Product Hunt daily/weekly/monthly leaderboard collector (Firecrawl + HTML fallback). Stores JSON to `~/.innate/producthunt/`.
+- `collector/yc-companies.ts` — YC Companies public API collector. Stores JSON to `~/.innate/yc/`.
+- `collector/a16z-portfolio.ts` — a16z AI Portfolio static list + GitHub enrichment. Stores JSON to `~/.innate/a16z/`.
+- `collector/github-topics.ts` — GitHub Topics search via GitHub Search API. Stores JSON to `~/.innate/github-topics/`.
+- `collector/vc-portfolio.ts` — Unified orchestrator for all external collectors.
+- `collector/shared/types.ts` — Shared types (`ExternalFeedItem`, `FeedCollector`, `FeedSource`).
+- `collector/shared/storage.ts` — JSON storage abstraction (manifest + saveItems).
+- `collector/shared/http.ts` — HTTP utilities (fetchJson, fetchHtml, retry).
 - `data/export-incremental.ts` — exports data as incremental JSON chunks with a manifest for static mode.
 - `data/import-static.ts` — imports static JSON back into SQLite.
 - `db/index.ts` — all SQL lives here. Uses prepared statements from `better-sqlite3`. Batch-fetches topics to avoid N+1 queries. Exports typed interfaces (`FeedItemDTO`, `FeedStatsDTO`, `TrendingItemRow`, `StarredItemRow`).
@@ -313,6 +376,9 @@ Schema is defined in `backend/src/db/schema.sql`:
 | Changing trending/starred/window sync | `backend/src/collector/sync.ts`, `sync-window.ts`, `firecrawl.ts` |
 | Changing the 90-day window / README prefetch | `backend/src/collector/sync-window.ts` |
 | Changing digest issues sync | `backend/src/collector/issues-digest.ts` |
+| Adding/changing external collectors (PH/YC/a16z/Topics) | `backend/src/collector/producthunt.ts`, `yc-companies.ts`, `a16z-portfolio.ts`, `github-topics.ts` |
+| Changing external collector shared logic | `backend/src/collector/shared/types.ts`, `storage.ts`, `http.ts` |
+| Changing digest issues sync | `backend/src/collector/issues-digest.ts` |
 | Changing the database schema or queries | `backend/src/db/schema.sql` and `backend/src/db/index.ts` |
 | Changing database path resolution | `backend/src/db/paths.ts` |
 | Adding new CLI commands | `backend/src/app/cli.ts` and `backend/package.json` scripts |
@@ -323,6 +389,8 @@ Schema is defined in `backend/src/db/schema.sql`:
 | Changing types shared between frontend and backend concepts | `frontend/src/types/feed.ts` (backend has its own internal types in `db/index.ts`) |
 | Changing styling / theme | `frontend/src/styles.css` and `frontend/src/themes/` |
 | Updating the git scanner | `git-repo-scanner/main.go` |
+| Changing the plugin directory site | `frontend/src/pages/dsh/`, `frontend/src/components/plugin-*.tsx` |
+| Changing plugin data loading | `backend/src/data/plugin-catalog.ts` |
 
 ## Security considerations
 

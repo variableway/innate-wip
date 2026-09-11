@@ -167,7 +167,7 @@
       "number": 19,
       "title": "spark repo: 管理 GitHub 仓库 registry（scan/clone/list）",
       "description": "# Task\n\n## Task 1: 管理 GitHub 仓库（registry 方式，非 submodule）\n\n背景与目标：\n1. 一个目录内可能包含多个 GitHub 仓库，但这些仓库不希望作为 git submodule 管理。\n2. 需要一个命令扫描指定目录下的所有 GitHub 仓库，并保存到 registry 文件。\n3. 参考实现：innate-workspace/scripts/ 下的 Python 实现（scan.py / clone.py），将其转换为 spark-cli 子命令。\n\n新增子命令 spark repo：\n- scan <folder_name>：扫描目录，保存到 registry_<folder_name>.yaml\n- clone -r <repo_name> -f registry_<folder_name>.yaml：从 registry 克隆仓库到 <folder_name> 目录\n- list -f registry_<folder_name>.yaml：列出 registry 中的仓库\n\nspark-cli 代码位于 innate-apps/tooling/spark-cli。完成后需补充 BDD 测试用例与文档。\n\n## Agent Expansion\n\n_Pending until finish. Record clarified scope, questions, assumptions, and acceptance criteria._\n\n## Plan\n\n_Pending until finish._\n\n## Execution\n\n_Pending until finish._\n\n## Result\n\n_Pending until finish._\n\n## Metadata\n\n- Created at: 2026-09-07T07:25:44Z\n- Status: open",
-      "status": "open",
+      "status": "closed",
       "project": "spark-cli",
       "labels": [
         {
@@ -184,8 +184,8 @@
         }
       ],
       "createdAt": "2026-09-07T07:25:46Z",
-      "updatedAt": "2026-09-07T07:25:46Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-11T07:05:13Z",
+      "closedAt": "2026-09-11T07:05:13Z",
       "url": "https://github.com/variableway/spark-cli/issues/19",
       "author": "qdriven"
     },
@@ -2543,5 +2543,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-09-11T03:55:10.149Z"
+  "lastUpdated": "2026-09-11T08:27:33.473Z"
 }
