@@ -30,7 +30,7 @@ This repository (`innate-spark`) is a personal **docs and product-index hub**. I
 ## Commands
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan        # sync tools/registry/apps.yaml from innate-works dirs
+bun tools/innate-registry-cli/src/cli.ts scan        # sync tools/registry/apps.yaml from innate-works + hub-hosted dirs
 bun tools/innate-registry-cli/src/cli.ts clone       # clone per apps.yaml into innate-works
 bun tools/innate-registry-cli/src/cli.ts scan-refs   # → sibling innate-works/registry.yaml
 bun tools/innate-registry-cli/src/cli.ts clone-refs
@@ -48,5 +48,6 @@ ln -sf ../../tools/pre-commit.sh .git/hooks/pre-commit
 ## Registry contract
 
 - `scan` is read → merge → write: directory contents are the source of truth for `name` / `repo` / `path` / `desc`; manual extension fields (`kind`, `template`, `templateVersion`, `deploy`, `publishes`) are preserved in place. `--regenerate` drops all extension fields — use it deliberately.
+- Hub-internal repos are scanned via `<hubName>/...` entries in `scanDirs` (currently `innate-spark/base`, `innate-spark/projects`); their registry paths keep the `innate-spark/` prefix so `clone` restores them inside the hub. Nested reference clones inside product working copies (e.g. `reset-from-zero/tutorials/`) stay out — keep the default depth.
 - Sibling `innate-works/registry.yaml` stays where it is; only `scan-refs` / `clone-refs` touch it.
 - Secrets never go into files: `innate-selfhost-cli` reads its password only from the `SELFHOST_CLI_PASSWORD` env var.
