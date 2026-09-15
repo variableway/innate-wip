@@ -113,13 +113,6 @@
       "repoUrl": "https://github.com/variableway/innate-aiswitcher"
     },
     {
-      "id": "reset-from-zero",
-      "name": "reset-from-zero",
-      "description": "build exeperimens",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/reset-from-zero"
-    },
-    {
       "id": "innate-tutor",
       "name": "innate-tutor",
       "description": "ai tutor experientation",
@@ -141,5 +134,5 @@
       "repoUrl": "https://github.com/variableway/innate-spark"
     }
   ],
-  "lastUpdated": "2026-09-15T07:01:19.023Z"
+  "lastUpdated": "2026-09-15T11:25:48.303Z"
 }

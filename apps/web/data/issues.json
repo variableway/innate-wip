@@ -113,13 +113,6 @@
       "repoUrl": "https://github.com/variableway/innate-aiswitcher"
     },
     {
-      "id": "reset-from-zero",
-      "name": "reset-from-zero",
-      "description": "build exeperimens",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/reset-from-zero"
-    },
-    {
       "id": "innate-tutor",
       "name": "innate-tutor",
       "description": "ai tutor experientation",
@@ -2485,70 +2478,7 @@
       "closedAt": "2026-07-26T23:02:08Z",
       "url": "https://github.com/variableway/innate-keepthem/issues/1",
       "author": "qdriven"
-    },
-    {
-      "id": "issue-5264369613",
-      "number": 5,
-      "title": "Mono Repo 重构：抽取共享 UI 包到 packages/ui",
-      "description": "# Task\n\n当前项目包括两个不同类型的项目：1) 根目录下的 Astro 项目；2) superlinear-academy (Next.js)。\n\n任务目标：\n1. 把当前项目变成一个 Mono Repository\n2. 抽取 UI 和公共代码到 packages/ui（以 shadcn-ui 为基础）\n3. 两个 Web 项目（放入 apps/ 目录）都依赖 packages/ui，形成完整 Mono Repository\n4. 启动两个项目，能正常运行且页面有内容即视为完成\n\n## Agent Expansion\n\n验收标准：1) 根级 pnpm workspace 生效，pnpm -r list 显示 3 个包（@atlas/web、@atlas/academy、@atlas/ui）；2) 两个 app 均依赖 packages/ui 且构建通过；3) 两个 dev server 正常运行、页面有内容。关键假设：以 academy 新版 shadcn-ui 组件作为 packages/ui 的规范实现，atlas 旧版组件作废。\n\n## Plan\n\n1. 根级创建 pnpm-workspace.yaml（apps/* + packages/*）。2. 抽取 academy 的 9 个 shadcn 组件到 packages/ui（@atlas/ui）。3. 迁移 Astro 项目到 apps/atlas、superlinear-academy 到 apps/academy。4. 打通集成：Tailwind v4 @source 指令、tsconfig paths 映射、Next transpilePackages、Astro ssr.noExternal。5. 安装依赖、生产构建、启动 dev server 验证。\n\n## Execution\n\n变更：根级 pnpm workspace + 单一 lockfile；packages/ui 含 9 个共享组件与 cn() utils；apps/atlas（Astro，改名 @atlas/web）与 apps/academy（Next.js 16，改名 @atlas/academy）均以 workspace:* 依赖 @atlas/ui；CI 工作流 deploy.yml 适配 workspace。测试：根级 pnpm install 成功；atlas 生产构建成功（71 页）；academy next build 成功（6 路由）；两个 dev server 均 200 且页面含内容。\n\n## Result\n\nMono Repo 重构完成：项目已变为 pnpm workspace（apps/atlas + apps/academy 依赖 packages/ui）。根级 pnpm install 成功，两个 app 生产构建通过，dev server 正常运行且页面有内容。\n\n## Metadata\n\n- Title: Mono Repo 重构：抽取共享 UI 包到 packages/ui\n- Created at: 2026-08-27T05:55:29Z\n- Completed at: 2026-08-27T06:33:04Z\n- Status: closed",
-      "status": "closed",
-      "project": "reset-from-zero",
-      "labels": [
-        {
-          "id": "task",
-          "name": "task",
-          "color": "ededed",
-          "description": ""
-        }
-      ],
-      "createdAt": "2026-08-27T05:55:31Z",
-      "updatedAt": "2026-08-27T06:33:06Z",
-      "closedAt": "2026-08-27T06:33:06Z",
-      "url": "https://github.com/variableway/reset-from-zero/issues/5",
-      "author": "qdriven"
-    },
-    {
-      "id": "issue-4946214745",
-      "number": 3,
-      "title": "Make submodule support multi-folder and configurable",
-      "description": "# Task\n\nReview scripts/ and apps/ folders. Ensure submodule support works with multiple folders and is configurable (not hard-coded to a single path).\n\n## Agent Expansion\n\nAssumptions: registry remains the app metadata source of truth; submodule path roots are configured separately in scripts/submodule.config.json (JSON, zero deps) so add-submodule.mts does not need the yaml package. Acceptance: (1) helper accepts --folder/--path/--repo/--org/--host; (2) roots configurable via config file and SUBMODULE_* env; (3) rejects paths outside allowed roots; (4) apps/README + registry document multi-folder paths; (5) generate-manifest reads config roots for skill scanning and keeps path-agnostic registry apps.\n\n## Plan\n\n1. Review scripts/add-submodule.mts (hard-coded apps/) and apps/registry + README.\n2. Add scripts/submodule.config.json with roots/defaultRoot/org/host.\n3. Extend add-submodule.mts for multi-folder + CLI/env overrides + validation.\n4. Update generate-manifest.mjs to use configurable roots/registry paths.\n5. Document in apps/README.md and registry.yaml comments.\n6. Verify --help and reject invalid folder/path; commit on issue branch.\n\n## Execution\n\nChanged files: scripts/submodule.config.json (new), scripts/add-submodule.mts, scripts/generate-manifest.mjs, apps/registry.yaml, apps/README.md; also added scripts/bump-pnpm.mjs as part of scripts/ landing.\nVerification: node scripts/add-submodule.mts --help; rejected --folder not-allowed, --path ../escape/evil, --path docs/foo; SUBMODULE_ROOTS=apps,docs updated allowed roots in help; generate-manifest still needs yaml package (pre-existing). Commit b2b16e0 on branch 3-submodule-multi-folder in worktree.\n\n### Documentation Check\n\n## 文档更新建议\n\n- **apps/README.md**: 文件 'README.md' 被引用 (P1)\n\n## Result\n\nSubmodule support is multi-folder and configurable. Default roots: apps, tutorials, skillsets, ai-infra via scripts/submodule.config.json; override with CLI (--folder/--path/--repo/--org/--host) or SUBMODULE_* env. Registry paths may live under any configured root.\n\n## Metadata\n\n- Title: Make submodule support multi-folder and configurable\n- Created at: 2026-07-22T06:38:54Z\n- Completed at: 2026-07-22T06:51:02Z\n- Status: closed",
-      "status": "closed",
-      "project": "reset-from-zero",
-      "labels": [
-        {
-          "id": "task",
-          "name": "task",
-          "color": "ededed",
-          "description": ""
-        }
-      ],
-      "createdAt": "2026-07-22T06:38:56Z",
-      "updatedAt": "2026-07-22T06:51:03Z",
-      "closedAt": "2026-07-22T06:51:03Z",
-      "url": "https://github.com/variableway/reset-from-zero/issues/3",
-      "author": "qdriven"
-    },
-    {
-      "id": "issue-4937874356",
-      "number": 1,
-      "title": "ai-proxy: OmniRoute & Codex2API docker-compose 部署脚手架",
-      "description": "# Task\n\n基于 ai-infra/omniroute-vs-codex2api-comparison.md 分析结论：\n\n1. 先 clone 两个上游项目：\n   - https://github.com/diegosouzapw/OmniRoute\n   - https://github.com/james-6-23/codex2api\n2. 在 ai-infra/ai-proxy/ 下分别创建 omnirouter 与 codex2api 目录\n3. 为两个项目各自编写/生成可用的 docker-compose 文件，便于本地构建与启动\n4. 实现须走 git-worktree 隔离（主工作区有未提交改动）\n\n验收标准：\n- ai-infra/ai-proxy/omnirouter/ 与 ai-infra/ai-proxy/codex2api/ 存在可运行的 docker-compose 配置\n- 上游仓库已浅克隆到合理本地路径\n- 全程使用 git-workflow；IMPLEMENT 阶段使用 git-worktree\n\n## Agent Expansion\n\n验收标准：\n1. ai-infra/ai-proxy/omnirouter 与 codex2api 各有可用 docker-compose\n2. 上游仓库已浅克隆到各目录 upstream/（gitignore，可用 clone-upstreams.sh 重拉）\n3. 全程 git-workflow；IMPLEMENT 在 worktree `reset-from-zero-wt-1` / 分支 `1-ai-proxy-compose`\n\n假设：默认用官方预构建镜像最快落地；本地构建走 omnirouter `--profile build` 或 codex2api `docker-compose.build.yml`。\n\n## Plan\n\n1. orchestrate init → Issue #1\n2. Worktree 门禁：主仓脏 + 用户要求隔离 → worktree add -b 1-ai-proxy-compose\n3. 浅克隆 OmniRoute / Codex2API 到 ai-proxy/*/upstream\n4. 基于官方 compose 编写 wrapper compose + .env.example + README + clone 脚本\n5. docker compose config 校验\n6. 发现 git-workflow 将 worktree 标为「可选」→ 改为强制门禁并同步 skillset 源\n7. commit + finish\n\n## Execution\n\n变更：\n- ai-infra/ai-proxy/omnirouter/docker-compose.yml（diegosouzapw/omniroute:latest）\n- ai-infra/ai-proxy/codex2api/docker-compose.yml（ghcr + PG18 + Redis7）\n- ai-infra/ai-proxy/codex2api/docker-compose.build.yml\n- clone-upstreams.sh / README / .gitignore\n- 提交 507a9ef on 1-ai-proxy-compose\n\n测试：docker compose config -q 对三个 compose 均通过。\n\nWorktree：已触发。路径 ../reset-from-zero-wt-1，分支 1-ai-proxy-compose。\n\nSkill 修复：原 IMPLEMENT 写「可选隔离」，Agent 可能跳过。已在 ~/.claude/skills/git-workflow/SKILL.md 与 skillsets/devops-skill/git-workflow/SKILL.md 增加「Worktree 门禁（强制）」与流程图节点。\n\n### Documentation Check\n\n## 文档更新建议\n\n- **ai-infra/ai-proxy/README.md**: 文件 '.gitignore' 被引用 (P1)\n\n## Result\n\n已完成 ai-proxy OmniRoute/Codex2API docker-compose 脚手架；上游已浅克隆；在 worktree 内实现并提交。git-workflow 已补强 Worktree 强制门禁。\n\n## Metadata\n\n- Title: ai-proxy: OmniRoute & Codex2API docker-compose 部署脚手架\n- Created at: 2026-07-21T10:31:27Z\n- Completed at: 2026-07-21T10:40:45Z\n- Status: closed",
-      "status": "closed",
-      "project": "reset-from-zero",
-      "labels": [
-        {
-          "id": "task",
-          "name": "task",
-          "color": "ededed",
-          "description": ""
-        }
-      ],
-      "createdAt": "2026-07-21T10:31:28Z",
-      "updatedAt": "2026-07-21T10:40:46Z",
-      "closedAt": "2026-07-21T10:40:46Z",
-      "url": "https://github.com/variableway/reset-from-zero/issues/1",
-      "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-09-15T07:01:37.369Z"
+  "lastUpdated": "2026-09-15T11:26:03.216Z"
 }
