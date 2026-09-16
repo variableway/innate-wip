@@ -9,6 +9,8 @@ Task 1（Refactor & simplify）产出：
 | [task-docs-workflow.md](./task-docs-workflow.md) | `task/project` + `task/issues`：Content → Spec → Requirements → Handoff → Verify |
 | [multi-agent-context.md](./multi-agent-context.md) | system / requirement / interaction；多 Agent / Sub Agent |
 | [multi-agent-dispatch.md](./multi-agent-dispatch.md) | 跨 CLI 并行分派：波次调度 + git worktrees + 单写者合并；开源方案对照（2026-08） |
+| [plugin-dual-track.md](./plugin-dual-track.md) | 插件双轨：package-as-plugin（构建时组合）× iframe（逃生门）；含 Tauri desktop shell 影响评估（2026-09） |
+| [innate-factory.md](./innate-factory.md) | Index repo 演进为 innate-factory：模板 + 生成器 + registry + innate-cli 的 app 工厂结构（2026-09） |
 
 ## Related code
 
