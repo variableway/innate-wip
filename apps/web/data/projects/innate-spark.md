@@ -14,15 +14,15 @@ This repository (`innate-spark`) is a personal **docs and product-index hub**. I
 | `product-center/products/<slug>/` | Per-product idea / analysis / design / spec / log, plus `links.md` |
 | `base/` | Shared base projects (currently `innate-backend`: Go backend base — `innate-go` CLI, skills, use-case docs). Code lives here |
 | `tools/registry/` | Four data tables: `apps.yaml` (scan-synced) + `plugins.yaml` / `skills.yaml` / `deploy.yaml` (manual only) |
-| `tools/innate-registry-cli/` · `tools/innate-selfhost-cli/` | The only code allowed in this repo (Bun, compiled to `tools/bin/`, gitignored) |
-| `tools/pre-commit.sh` | Git hook: runs `scan` and stages `tools/registry/apps.yaml` |
+| `tools/fire-skills/` | The only code allowed in this repo: `skill-spark` multi-subcommand CLI (Bun, built to `tools/fire-skills/dist/`, gitignored). Legacy `tools/innate-registry-cli/` · `tools/innate-selfhost-cli/` are kept as reference only |
+| `tools/pre-commit.sh` | Git hook: runs `registry scan` and stages `tools/registry/apps.yaml` |
 | `.innate-registry-cli.yaml` | Scan/clone layout config — change paths here, never hardcode them in CLI source |
 
 ## Working rules
 
 - Read `README.md` and `product-center/catalog.md` before adding or moving domain files.
 - Put unsorted captures in `docs/inbox/`. Domain-ready ideas go to that domain’s `idea/`. Cross-domain analysis goes to `docs/idea/`.
-- Record implementation locations only in each product’s `links.md`. If the task is to write code, do it in the implementation project (or ask to open / attach that folder). Do not add application source, lockfiles, or `node_modules` here — except `tools/innate-registry-cli/`, `tools/innate-selfhost-cli/`, and shared base projects under `base/`.
+- Record implementation locations only in each product’s `links.md`. If the task is to write code, do it in the implementation project (or ask to open / attach that folder). Do not add application source, lockfiles, or `node_modules` here — except `tools/fire-skills/` (including the legacy `tools/innate-registry-cli/`, `tools/innate-selfhost-cli/`), and shared base projects under `base/`.
 - Add a product row to `product-center/catalog.md` before creating `product-center/products/<slug>/`. Product stages: `idea` → `design` → `spec` → `building` → `live` → `paused` → `retired`.
 - Do not add nested `AGENTS.md` files. Put domain differences in `.cursor/rules/*.mdc` with `globs`.
 - Docs are written mostly in Chinese; keep that convention. Link to a note instead of duplicating it.
@@ -30,16 +30,18 @@ This repository (`innate-spark`) is a personal **docs and product-index hub**. I
 ## Commands
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan        # sync tools/registry/apps.yaml from innate-works + hub-hosted dirs
-bun tools/innate-registry-cli/src/cli.ts clone       # clone per apps.yaml into innate-works
-bun tools/innate-registry-cli/src/cli.ts scan-refs   # → sibling innate-works/registry.yaml
-bun tools/innate-registry-cli/src/cli.ts clone-refs
+SPARK="bun tools/fire-skills/packages/skill-cli/src/index.ts"
 
-bun tools/innate-selfhost-cli/src/cli.ts profiles            # list SMB hosts from config.json
-bun tools/innate-selfhost-cli/src/cli.ts open --profile lazycat
+$SPARK registry scan        # sync tools/registry/apps.yaml from innate-works + hub-hosted dirs
+$SPARK registry clone       # clone per apps.yaml into innate-works
+$SPARK registry scan-refs   # → sibling innate-works/registry.yaml
+$SPARK registry clone-refs
 
-# Per-CLI test + build (writes tools/bin/<name>, gitignored)
-cd tools/innate-registry-cli && bun test && bun run build
+$SPARK selfhost profiles --config tools/fire-skills/config.json   # list SMB hosts from config.json
+$SPARK selfhost open --profile lazycat --config tools/fire-skills/config.json
+
+# Test + build the single binary (→ tools/fire-skills/dist/skill-spark, gitignored)
+cd tools/fire-skills && bun test && bun run build:all
 
 # One-time: enable the pre-commit scan hook
 ln -sf ../../tools/pre-commit.sh .git/hooks/pre-commit
@@ -50,4 +52,4 @@ ln -sf ../../tools/pre-commit.sh .git/hooks/pre-commit
 - `scan` is read → merge → write: directory contents are the source of truth for `name` / `repo` / `path` / `desc`; manual extension fields (`kind`, `template`, `templateVersion`, `deploy`, `publishes`) are preserved in place. `--regenerate` drops all extension fields — use it deliberately.
 - Hub-internal repos are scanned via `<hubName>/...` entries in `scanDirs` (currently `innate-spark/base`, `innate-spark/projects`); their registry paths keep the `innate-spark/` prefix so `clone` restores them inside the hub. Nested reference clones inside product working copies (e.g. `reset-from-zero/tutorials/`) stay out — keep the default depth.
 - Sibling `innate-works/registry.yaml` stays where it is; only `scan-refs` / `clone-refs` touch it.
-- Secrets never go into files: `innate-selfhost-cli` reads its password only from the `SELFHOST_CLI_PASSWORD` env var.
+- Secrets never go into files: `skill-spark selfhost` reads its password only from the `SELFHOST_CLI_PASSWORD` env var.
