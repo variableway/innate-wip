@@ -12,7 +12,7 @@ This repository (`innate-spark`) is a personal **docs and product-index hub**. I
 | `docs/writing/` | Long-form how-tos |
 | `product-center/catalog.md` | **Single source of truth** for the product list |
 | `product-center/products/<slug>/` | Per-product idea / analysis / design / spec / log, plus `links.md` |
-| `base/` | Shared base projects (currently `innate-backend`: Go backend base — `innate-go` CLI, skills, use-case docs). Code lives here |
+| `base/` | Shared base projects as git submodules: `innate-backend` + `innate-fe-base`. Configured via `hubScanDirs`; update with `clone` or `clone --registry tools/registry/base.yaml` |
 | `tools/registry/` | Four data tables: `apps.yaml` (scan-synced) + `plugins.yaml` / `skills.yaml` / `deploy.yaml` (manual only) |
 | `tools/fire-skills/` | The only code allowed in this repo: `skill-spark` multi-subcommand CLI (Bun, built to `tools/fire-skills/dist/`, gitignored). Legacy `tools/innate-registry-cli/` · `tools/innate-selfhost-cli/` are kept as reference only |
 | `tools/pre-commit.sh` | Git hook: runs `registry scan` and stages `tools/registry/apps.yaml` |
@@ -30,7 +30,15 @@ This repository (`innate-spark`) is a personal **docs and product-index hub**. I
 ## Commands
 
 ```bash
+<<<<<<< HEAD
 SPARK="bun tools/fire-skills/packages/skill-cli/src/index.ts"
+=======
+bun tools/innate-registry-cli/src/cli.ts scan        # sync tools/registry/apps.yaml (hub + innate-works + apps)
+bun tools/innate-registry-cli/src/cli.ts clone       # clone/pull per apps.yaml (hub base via hubScanDirs / hubName)
+bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml  # base only
+bun tools/innate-registry-cli/src/cli.ts scan-refs   # → sibling innate-works/registry.yaml
+bun tools/innate-registry-cli/src/cli.ts clone-refs
+>>>>>>> 4070f9c (update registry)
 
 $SPARK registry scan        # sync tools/registry/apps.yaml from innate-works + hub-hosted dirs
 $SPARK registry clone       # clone per apps.yaml into innate-works
