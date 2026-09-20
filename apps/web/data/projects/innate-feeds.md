@@ -74,7 +74,6 @@ innate-feeds/
 │   │   └── preview.ts      # Static server for dist/ (replaces `vite preview`)
 │   ├── package.json
 │   └── tsconfig.json
-├── git-repo-scanner/        # Standalone Go CLI (not part of the web app)
 ├── dsh-plugin-directory/    # Unused Next.js prototype (plugin UI now lives in frontend /dsh)
 │   ├── prisma/              # Prisma 7 schema (Plugin + Category), Postgres
 │   ├── scripts/             # import-dsh-plugins.ts (YAML/JSON → Postgres, dry-run default)
@@ -109,7 +108,6 @@ innate-feeds/
 | Data fetching | GitHub CLI (`gh`) and Firecrawl |
 | Validation | Zod (used in API input validation) |
 | Type checking | TypeScript 5.7+ |
-| Side utility | Go 1.26+ (`git-repo-scanner`) |
 | Plugin directory | TanStack Router routes under `/dsh`, data from Hono `/api/plugins` (awesome-dsh-plugin YAML) |
 
 ## Build and development commands
@@ -180,7 +178,7 @@ bunx tsx src/app/cli.ts sync window [--days 90] [--skip-readme] [--force]
 
 ### Sync external sources (Product Hunt / YC / a16z / GitHub Topics)
 
-These are independent JSON-based collectors (no SQLite, see `docs/external-collectors.md`).
+These are independent JSON-based collectors (no SQLite, see `docs/arch-design/external-collectors.md`).
 
 ```bash
 cd backend
@@ -238,10 +236,12 @@ bun run import:static
 
 ```bash
 cd frontend
-bun run dev       # Dev server on port 3000
-bun run build     # Production build to frontend/dist/
-bun run preview   # Preview production build
+bun run dev       # Bun dev server on port 3000 (proxy + live reload)
+bun run build     # Production build (Bun.build) to frontend/dist/
+bun run preview   # Serve the production build on port 4173
 ```
+
+The whole toolchain is Bun: `scripts/build.ts` compiles Tailwind with `@tailwindcss/node` + the oxide `Scanner` (same API the official Vite plugin used), bundles the JS with `Bun.build`, assembles `index.html` with hashed asset URLs (prefixed by `VITE_BASE_PATH`), copies `public/`, and writes `404.html` + `.nojekyll` for GitHub Pages. Env names keep the `VITE_*` prefix for CI compatibility.
 
 ### shadcn/ui components (Base UI edition)
 
@@ -259,7 +259,7 @@ Configuration lives in `frontend/components.json` (aliases use `@/*`). Component
 ### Static site build (GitHub Pages)
 
 ```bash
-# From repo root — sync/export first (see docs/data-update-workflow.md), then:
+# From repo root — sync/export first (see docs/arch-design/data-update-workflow.md), then:
 bun run build:static
 
 # Full 90-day snapshot then static build
@@ -287,14 +287,15 @@ bun run format:ts:check   # Check formatting without writing
 
 ```
 ┌─────────────────┐      /api/*       ┌─────────────────────────────┐
-│  Vite dev server│ ─────────────────> │  Hono server (backend/src/  │
-│  port 3000      │   (proxied)        │  app/server.ts) port 4000   │
+│  Bun dev server │ ─────────────────> │  Hono server (backend/src/  │
+│  scripts/dev.ts │   (proxied)        │  app/server.ts) port 4000   │
+│  port 3000      │                    │  (prod: bun dist/server.js) │
 └─────────────────┘                    └─────────────────────────────┘
                                                   │
                        ┌──────────────────────────┼──────────────────────────┐
                        ▼                          ▼                          ▼
-              better-sqlite3              sync.ts / cli.ts              gh / Firecrawl
-              (feeds.db)                  github.ts firecrawl.ts
+                 bun:sqlite                  sync.ts / cli.ts              gh / Firecrawl
+                 (feeds.db)                  github.ts firecrawl.ts
 ```
 
 ### Dual deployment modes
@@ -322,7 +323,7 @@ GitHub Trending has no historical API. A 90-day window syncs **current** daily/w
 
 1. **Trending**: `sync.ts` calls `fetchTrendingWithFirecrawl()` first. If Firecrawl returns no results, it falls back to `fetchTrendingRepos()`, which scrapes `https://github.com/trending` via `gh api` and then fetches full repo metadata via the GitHub API.
 2. **Starred**: `sync.ts` calls `fetchStarredReposWithDate()`, which paginates through `gh api user/starred` (or `users/{username}/starred`) using the `application/vnd.github.v3.star+json` accept header to obtain `starred_at` timestamps. Supports incremental sync via `stopAt` / `days` parameters.
-3. Both pipelines call `upsertTrendingRepo()` / `upsertStarredRepo()`, `insertTrendingTopics()` / `insertStarredTopics()` inside a single `better-sqlite3` transaction.
+3. Both pipelines call `upsertTrendingRepo()` / `upsertStarredRepo()`, `insertTrendingTopics()` / `insertStarredTopics()` inside a single `bun:sqlite` transaction.
 4. **Window sync** (`sync window`, default 90 days): current trending + starred since cutoff + digest issues created in-window + README prefetch into `./readmes` and `frontend/public/data/readmes`.
 5. **Digest**: `issues-digest.ts` writes JSON (not SQLite). `data:export` copies the newest dump to `frontend/public/data/digest.json`.
 6. **README (API)**: `fetchRepoReadme()` is cache-first with a background remote refresh. **README (static / browser)**: live GitHub first, bundled `/data/readmes` fallback. Batch prefetch skips files newer than 7 days unless `--force`.
@@ -366,7 +367,7 @@ Schema is defined in `backend/src/db/schema.sql`:
 - `collector/shared/http.ts` — HTTP utilities (fetchJson, fetchHtml, retry).
 - `data/export-incremental.ts` — exports data as incremental JSON chunks with a manifest for static mode.
 - `data/import-static.ts` — imports static JSON back into SQLite.
-- `db/index.ts` — all SQL lives here. Uses prepared statements from `better-sqlite3`. Batch-fetches topics to avoid N+1 queries. Exports typed interfaces (`FeedItemDTO`, `FeedStatsDTO`, `TrendingItemRow`, `StarredItemRow`).
+- `db/index.ts` — all SQL lives here. Uses prepared statements from `bun:sqlite`. Batch-fetches topics to avoid N+1 queries. Exports typed interfaces (`FeedItemDTO`, `FeedStatsDTO`, `TrendingItemRow`, `StarredItemRow`).
 - `db/paths.ts` — resolves database path via `DB_PATH` env var or `INNATE_HOME` (defaults to `~/.innate`).
 
 ### Frontend
@@ -379,12 +380,6 @@ Schema is defined in `backend/src/db/schema.sql`:
 - `services/feeds.ts` supports both API and static modes. In static mode, fetches JSON chunks via `manifest.json`, merges digest `digest.json` with live GitHub, and prefers live READMEs with a static-file fallback.
 - `services/hidden.ts` tracks user-hidden items (localStorage + `/api/feeds/hide`; static mode also merges the exported `hidden.json`). `feeds.ts` filters them out of every list/detail response.
 - `styles.css` defines a Tailwind v4 theme with CSS custom properties and a `.dark` variant. Additional themes available via `themes/linear.css` and `themes/notion.css`.
-
-### Go scanner
-
-- `main.go` is a single-file CLI.
-- Recursively walks a folder, detects `.git` directories, parses `.git/config` for `remote "origin"` URLs.
-- Supports GitHub and GitLab API enrichment.
 
 ## Where to make changes
 
@@ -408,7 +403,8 @@ Schema is defined in `backend/src/db/schema.sql`:
 | Changing API client | `frontend/src/services/feeds.ts` |
 | Changing types shared between frontend and backend concepts | `frontend/src/types/feed.ts` (backend has its own internal types in `db/index.ts`) |
 | Changing styling / theme | `frontend/src/styles.css` and `frontend/src/themes/` |
-| Updating the git scanner | `git-repo-scanner/main.go` |
+| Changing the frontend build / dev toolchain | `frontend/scripts/build.ts`, `dev.ts`, `preview.ts` |
+| Bundling the backend for production | `backend/package.json` (`build` → `bun build --target=bun` into `backend/dist/`) |
 | Changing the plugin directory site | `frontend/src/pages/dsh/`, `frontend/src/components/plugin-*.tsx` |
 | Changing plugin data loading | `backend/src/data/plugin-catalog.ts` |
 
@@ -425,6 +421,6 @@ Schema is defined in `backend/src/db/schema.sql`:
 ## Deployment notes
 
 - CI: `.github/workflows/ci.yml` (test, typecheck, format, build). Pages: `.github/workflows/deploy.yml`.
-- For production API mode: `bun run start` builds the frontend and serves it from the backend at `http://localhost:4000` (same origin as `/api`). Bind with `HOST` / `PORT` as needed.
-- For GitHub Pages: daily cron runs `sync window` (90 days) then deploys `frontend/dist/`. Manual **Run workflow** can choose window / daily / skip. See `docs/data-update-workflow.md`.
-- Dev still uses Vite on port 3000 with `/api` proxied to the backend.
+- For production API mode: `bun run start` bundles both backend (`backend/dist/server.js`) and frontend (`frontend/dist/`) with Bun, then serves the site from the backend at `http://localhost:4000` (same origin as `/api`). Bind with `HOST` / `PORT` as needed.
+- For GitHub Pages: daily cron runs `sync window` (90 days) then deploys `frontend/dist/`. Manual **Run workflow** can choose window / daily / skip. See `docs/arch-design/data-update-workflow.md`.
+- Dev uses the Bun dev server (`frontend/scripts/dev.ts`) on port 3000 with `/api` proxied to the backend.
