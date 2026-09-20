@@ -49,15 +49,16 @@ innate-feeds/
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── feeds.db*            # Runtime SQLite database (WAL mode)
-├── frontend/                # TanStack Router + Vite + React 19 + Tailwind v4
+├── frontend/                # TanStack Router + React 19 + Tailwind v4 (built with Bun)
 │   ├── src/
 │   │   ├── pages/           # TanStack Router route definitions (page.tsx + route.tsx)
 │   │   │   ├── __root/      # Root layout with sidebar, header, category panel
 │   │   │   ├── index/       # Redirects to /trending
 │   │   │   ├── trending/    # Trending repos page
 │   │   │   └── starred/     # Starred repos page
-│   │   ├── components/      # AppHeader, AppSidebar, CategoryPanel, FeedCard, FilterBar, StatsCards
-│   │   ├── hooks/           # usePersistedFeedFilters
+│   │   ├── components/      # App components (AppHeader, AppSidebar, FeedCard…); ui/ = vendored shadcn/ui v4 (Base UI)
+│   │   │   └── ui/          # shadcn/ui official registry components (base-vega preset, @base-ui/react)
+│   │   ├── hooks/           # usePersistedFeedFilters, use-mobile (shadcn)
 │   │   ├── services/        # API client (feeds.ts) — supports both API and static modes
 │   │   ├── types/           # TypeScript domain types (feed.ts)
 │   │   ├── lib/             # utils.ts (cn, formatNumber, formatDate), theme.tsx, feed-filters-storage.ts
@@ -66,9 +67,13 @@ innate-feeds/
 │   │   ├── router.tsx       # Route tree assembly
 │   │   └── styles.css       # Tailwind CSS v4 theme + dark mode
 │   ├── index.html
+│   ├── components.json     # shadcn/ui CLI config (style: base-vega, Base UI)
+│   ├── scripts/            # Bun build toolchain (no Vite)
+│   │   ├── build.ts        # Prod build: Tailwind engine + Bun.build + index.html assembly + Pages 404
+│   │   ├── dev.ts          # Dev server: /api proxy, rebuild on change, SSE live reload
+│   │   └── preview.ts      # Static server for dist/ (replaces `vite preview`)
 │   ├── package.json
-│   ├── tsconfig.json
-│   └── vite.config.ts       # Vite config with GitHub Pages plugin + API proxy
+│   └── tsconfig.json
 ├── git-repo-scanner/        # Standalone Go CLI (not part of the web app)
 ├── dsh-plugin-directory/    # Unused Next.js prototype (plugin UI now lives in frontend /dsh)
 │   ├── prisma/              # Prisma 7 schema (Plugin + Category), Postgres
@@ -94,17 +99,18 @@ innate-feeds/
 | Runtime | Bun / Node.js 18+ |
 | Frontend framework | React 19 |
 | Routing | TanStack Router (manual route registration, not file-based) |
-| Build tool | Vite 6 |
-| Styling | Tailwind CSS v4 with CSS-based theme configuration |
-| UI utilities | `lucide-react`, `clsx`, `tailwind-merge`, `sonner` (toasts), `next-themes` |
+| Build tool | Bun's bundler — backend `bun build --target=bun`, frontend `Bun.build` via `frontend/scripts/` (no Vite) |
+| Styling | Tailwind CSS v4 with CSS-based theme configuration, compiled by `@tailwindcss/node` + `@tailwindcss/oxide` |
+| UI primitives | shadcn/ui v4 (official Base UI edition, `base-vega` preset) vendored in `frontend/src/components/ui/` via the shadcn CLI |
+| UI utilities | `lucide-react`, `cn`, `class-variance-authority`, `tw-animate-css`, `sonner` (toasts), `next-themes` |
 | Backend framework | Hono 4 |
 | HTTP server | `@hono/node-server` |
-| Database | SQLite via `better-sqlite3` |
+| Database | SQLite via `bun:sqlite` (no native addons, bundle-friendly) |
 | Data fetching | GitHub CLI (`gh`) and Firecrawl |
 | Validation | Zod (used in API input validation) |
 | Type checking | TypeScript 5.7+ |
 | Side utility | Go 1.26+ (`git-repo-scanner`) |
-| Plugin directory | Vite + TanStack Router routes under `/dsh`, data from Hono `/api/plugins` (awesome-dsh-plugin YAML) |
+| Plugin directory | TanStack Router routes under `/dsh`, data from Hono `/api/plugins` (awesome-dsh-plugin YAML) |
 
 ## Build and development commands
 
@@ -132,11 +138,11 @@ bun run dev:backend   # cd backend && bun run dev
 bun run dev:frontend  # cd frontend && bun run dev
 ```
 
-The Vite dev server proxies `/api` requests to `http://localhost:4000`. Plugin directory is `http://localhost:3000/dsh`.
+The Bun dev server (`frontend/scripts/dev.ts`) proxies `/api` requests to `http://localhost:4000`, rebuilds the bundle on file change, and live-reloads the page (JS changes reload; CSS-only changes hot-swap the stylesheet). Plugin directory is `http://localhost:3000/dsh`.
 
 ### Plugin directory (`/dsh`)
 
-The DSH plugin browser is part of the Vite app (same sidebar and theme). The Hono backend reads `../awesome/awesome-dsh-plugin/data` (override with `DSH_PLUGIN_DATA_DIR`). The old Next.js app in `dsh-plugin-directory/` is unused.
+The DSH plugin browser is part of the same React app (same sidebar and theme). The Hono backend reads `../awesome/awesome-dsh-plugin/data` (override with `DSH_PLUGIN_DATA_DIR`). The old Next.js app in `dsh-plugin-directory/` is unused.
 
 ### Sync data from GitHub
 
@@ -236,6 +242,19 @@ bun run dev       # Dev server on port 3000
 bun run build     # Production build to frontend/dist/
 bun run preview   # Preview production build
 ```
+
+### shadcn/ui components (Base UI edition)
+
+The frontend vendors the official shadcn/ui v4 components (Base UI behavior primitives, `base-vega` preset) in `frontend/src/components/ui/` — managed by the shadcn CLI, no shared UI package dependency.
+
+```bash
+cd frontend
+bun run shadcn:add button          # Add a component from the official registry
+bun run shadcn:add --all           # Add everything
+bun run shadcn:update              # Re-fetch every vendored component at its latest version
+```
+
+Configuration lives in `frontend/components.json` (aliases use `@/*`). Component CSS depends on the theme tokens already defined in `frontend/src/styles.css` plus `tw-animate-css`.
 
 ### Static site build (GitHub Pages)
 
@@ -385,6 +404,7 @@ Schema is defined in `backend/src/db/schema.sql`:
 | Changing GitHub Pages deploy / data cron | `.github/workflows/deploy.yml` |
 | Changing pages / routes | `frontend/src/pages/` and `frontend/src/router.tsx` |
 | Changing UI components | `frontend/src/components/` |
+| Adding / updating shadcn/ui primitives | `frontend/src/components/ui/` — in `frontend/`: `bun run shadcn:add <component>` to add, `bun run shadcn:update` to refresh all (config: `frontend/components.json`) |
 | Changing API client | `frontend/src/services/feeds.ts` |
 | Changing types shared between frontend and backend concepts | `frontend/src/types/feed.ts` (backend has its own internal types in `db/index.ts`) |
 | Changing styling / theme | `frontend/src/styles.css` and `frontend/src/themes/` |
