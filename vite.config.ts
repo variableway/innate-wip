@@ -16,13 +16,22 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   resolve: {
     dedupe: ["react", "react-dom"],
-    alias: {
-      "#writing-files": path.resolve(
-        pkgDir,
-        `src/lib/content/bundled-files.${writingSourceMode()}.ts`
-      ),
-      mermaid: "mermaid/dist/mermaid.esm.min.mjs",
-    },
+    alias: [
+      {
+        find: "#writing-files",
+        replacement: path.resolve(
+          pkgDir,
+          `src/lib/content/bundled-files.${writingSourceMode()}.ts`
+        ),
+      },
+      {
+        find: /^mermaid$/,
+        replacement: path.resolve(
+          pkgDir,
+          "node_modules/mermaid/dist/mermaid.esm.min.mjs"
+        ),
+      },
+    ],
   },
   optimizeDeps: {
     exclude: ["mermaid"],
