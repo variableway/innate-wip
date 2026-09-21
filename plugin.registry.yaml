@@ -1,0 +1,21 @@
+protocol: innate.domain-pages.v1
+version: 1
+
+template:
+  repo: variableway/innate-fe-templates
+  release: pages-kit
+  shell: writing-shell.zip
+
+site:
+  title: Innate WIP
+  defaultPath: /
+  home: ./pages/home.md
+
+domains:
+  - id: writing
+    content: ./content
+    mount: content
+    path: /writing
+
+pages:
+  outDir: site

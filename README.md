@@ -1,140 +1,27 @@
-# Innate - Personal Website & Project Tracking
+# innate-wip — Writing 静态站
 
-A modern personal website built with Next.js, featuring project tracking, GitHub Issues integration, and weekly progress summaries.
-
-## What is this website?
-
-**Innate** is a personal portfolio and project tracking platform that:
-
-1. **Tracks GitHub Issues** - Automatically fetches and displays issues from multiple repositories
-2. **Project Analysis** - Shows project documentation (AGENTS.md) and AI-generated analysis
-3. **Weekly Summaries** - Generates weekly progress reports with AI evaluation
-4. **Knowledge Base** - Collects tutorials and learning resources
-5. **Cheatsheets** - 300+ quick reference guides for developer tools and frameworks
-
-## Data Collection
-
-This website collects and displays the following information:
-
-### GitHub Data
-- **Issues** from GitHub repositories (title, description, status, labels)
-- **Projects** metadata (name, description, repository URL)
-- Data is fetched via GitHub API and stored in `apps/web/data/`
-
-### Project Documentation
-- **AGENTS.md** files from each project repository
-- AI-generated analysis (features, strengths, weaknesses)
-
-### Weekly Data
-- Completed issues per week
-- AI-generated evaluations and mindset analysis
-- Bilingual content (Chinese & English)
-
-## Project Structure
+独立 GitHub 仓（`variableway/innate-wip`），嵌在 fe-templates 的 `apps/innate-wip`。  
+这就是 Writing：Vite 静态站，入口就是笔记工作区，直接打 GitHub Pages。不挂 webshell，也不走 pages-kit。
 
 ```
-innate-websites/
-├── apps/
-│   └── web/                 # Main Next.js application
-│       ├── app/making/      # Issues, Projects, Weekly summaries
-│       ├── app/cheatsheets/ # Quick reference guides
-│       ├── app/collections/ # AI agent collections
-│       ├── app/writing/     # Blog posts
-│       ├── app/tutorials/   # Quick tutorials
-│       ├── data/            # JSON data files
-│       └── scripts/         # Data fetching scripts
-├── packages/
-│   ├── ui/                  # Shared UI component library
-│   ├── utils/               # Shared utility functions
-│   └── tsconfig/            # Shared TypeScript configs
-└── package.json
+content/*.md          # 文章
+src/                  # UI（@innate/ui）
+.github/workflows/deploy-pages.yml
 ```
 
-## Website Sections
+## 本机
 
-### /making
-- **Issues** - Browse and filter GitHub issues from all projects
-- **Projects** - View project details with AGENTS.md documentation
-- **Weekly** - Weekly progress summaries with AI analysis
-- **Insights** - AI-generated insights from project activity
-
-### /cheatsheets
-- Quick reference guides for 300+ developer tools and frameworks
-- Card and list view toggle with search and category filtering
-- Markdown-rendered detail pages sourced from `docs/cheatsheets/`
-
-### /collections
-- Random ideas and experiments collected from AI agents
-- Filterable by category, source, and tags
-- Embedded viewer for external content
-
-### /writing
-- Blog platform for thoughts, ideas, and experiences
-- Markdown posts with table of contents
-- RSS feed support
-
-### /tutorials
-- 5-minute quick-start tutorials for small tools
-- Copy-and-modify examples with immediate results
-- Includes Go language learning content
-
-### /feed
-- Content discovery feed with 60-second ISR refresh
-- Aggregated posts with engagement metrics
-
-### /learning-library
-- Course catalog for educational resources
-- Grid layout with course details
-
-### /deep-news
-- Deep/thoughtful articles in a feed format
-
-## Technology Stack
-
-- **Framework:** Next.js 16 with React 19
-- **Language:** TypeScript 6
-- **Package Manager:** pnpm with workspaces
-- **Styling:** Tailwind CSS
-- **UI Components:** Base UI primitives (via `@innate/ui`，直接引用 innate-base 根包)
-- **Icons:** Lucide React
-- **Deployment:** GitHub Pages
-
-## Available Scripts
+在 **fe-templates 根**（workspace 能解析 `@innate/ui`）：
 
 ```bash
-pnpm install              # Install dependencies（需位于 innate-base 的 apps/innate-wip 路径下）
-pnpm dev                  # Start development server
-pnpm build                # Build all packages
-pnpm lint                 # Lint all packages
-./run.sh web dev          # Run web app specifically
+pnpm --filter @innate/wip dev
+# → http://localhost:4016/#/
 ```
 
-### Data Management
+或在本目录：`./dev.sh`
 
-```bash
-# Fetch latest issues from GitHub
-cd apps/web && node scripts/fetch-issues.js
+## GitHub Pages
 
-# Generate weekly summary
-cd apps/web && node scripts/generate-weekly.js
+本仓 push `main` 即构建。CI 会 sparse checkout `innate-fe-templates` 里的 `@innate/ui`（不是整仓），然后 `pnpm build`，上传 `dist/`。
 
-# Fetch project AGENTS.md
-cd apps/web && node scripts/fetch-agents.js
-```
-
-## GitHub Pages Deployment
-
-The website is automatically deployed to GitHub Pages via GitHub Actions:
-
-```
-https://qdriven.github.io/innate-websites/
-```
-
-To enable deployment:
-1. Go to repository Settings → Pages
-2. Set Source to "GitHub Actions"
-3. Push to main branch to trigger deployment
-
-## License
-
-Private project
+站点：`https://<owner>.github.io/<repo>/#/`

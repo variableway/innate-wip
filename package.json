@@ -1,31 +1,40 @@
 {
-  "name": "innate",
+  "name": "@innate/wip",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "pnpm --filter @innate/web dev",
-    "run:project": "bash run.sh",
-    "build": "pnpm -r build",
-    "lint": "pnpm -r lint",
-    "clean": "rm -rf .next node_modules && pnpm -r clean",
-    "sync": "pnpm --filter @innate/task-watcher task-watcher sync",
-    "sync:data": "pnpm --filter @innate/web sync:data",
-    "sync:issues": "pnpm --filter @innate/web sync:issues",
-    "sync:projects": "pnpm --filter @innate/web sync:projects",
-    "sync:agents": "pnpm --filter @innate/web sync:agents",
-    "sync:weekly": "pnpm --filter @innate/web sync:weekly",
-    "sync:insights": "pnpm --filter @innate/web sync:insights",
-    "sync:collections": "pnpm --filter @innate/web sync:collections"
+    "dev": "vite",
+    "build": "vite build && cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@innate/ui": "workspace:*",
+    "@tanstack/react-router": "^1.132.0",
+    "lucide-react": "^0.577.0",
+    "mermaid": "^11.15.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "cheerio": "^1.2.0",
-    "playwright": "^1.63.0",
-    "puppeteer-core": "^25.10.0",
-    "typescript": "^7.0.2"
-  },
-  "packageManager": "pnpm@12.3.4",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "@tailwindcss/vite": "^4.1.18",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "jsdom": "^27.0.0",
+    "tailwindcss": "^4.0.6",
+    "typescript": "^5.7.2",
+    "vite": "^7.3.5",
+    "vitest": "^3.2.6"
+  }
 }

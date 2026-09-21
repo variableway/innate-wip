@@ -1,7 +1,0 @@
-# Source: https://betterstack.com/community/guides/scaling-nodejs/file-uploads-with-hapijs/
-# Original language: text
-# Normalized: txt
-# Block index: 4
-
-[output]
-Server running at: http://localhost:3000

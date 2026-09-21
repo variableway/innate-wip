@@ -5,29 +5,22 @@ __v0_jsx-dev-runtime.ts
 .snowflake/
 .v0-trash/
 .vercel/
-next.user-config.*
 
 # Environment variables
-.env*.local
+.env
+.env.*
+!.env.example
 
-# Common ignores
 node_modules/
-.next/
 .DS_Store
-
-# Build outputs
 dist/
+site/
+writing-shell.zip
+kit/
 *.tsbuildinfo
-
-# Logs
 *.log
-npm-debug.log*
-pnpm-debug.log*
 
-# Editor directories
 .idea/
 .vscode/
 *.swp
-*.swo
 *~
-

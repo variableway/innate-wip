@@ -1,12 +1,20 @@
-name: Deploy to GitHub Pages
+name: Deploy writing to GitHub Pages
 
+# 本仓自己的静态站。不 clone 整个 fe-templates，只 sparse 拉 @innate/ui。
 on:
   push:
     branches: [main, master]
+    paths:
+      - "content/**"
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "vite.config.ts"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -18,59 +26,48 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout this site
         uses: actions/checkout@v4
+        with:
+          path: site
 
-      - name: Setup workspace
-        uses: ./.github/actions/setup-workspace
+      - name: Sparse checkout @innate/ui
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.FE_TEMPLATES_REPO || 'variableway/innate-fe-templates' }}
+          token: ${{ secrets.FE_TEMPLATES_TOKEN || github.token }}
+          path: templates
+          sparse-checkout: |
+            packages/ui
+            packages/tsconfig
+            package.json
+            pnpm-workspace.yaml
+            pnpm-lock.yaml
+          sparse-checkout-cone-mode: false
 
-      - name: Fetch projects from GitHub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ github.repository_owner }}
-        run: node scripts/fetch-projects.js
-        working-directory: apps/web
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
 
-      - name: Fetch AGENTS.md from GitHub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ github.repository_owner }}
-        run: node scripts/fetch-agents.js
-        working-directory: apps/web
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: templates/pnpm-lock.yaml
 
-      - name: Fetch issues from GitHub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ORG: ${{ github.repository_owner }}
-        run: node scripts/fetch-issues.js
-        working-directory: apps/web
-
-      - name: Generate weekly summary
-        run: node scripts/generate-weekly.js
-        working-directory: apps/web
-
-      - name: Commit data changes
+      - name: Install and build
+        working-directory: templates
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add apps/web/data/
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update data on push [$(date -u +%Y-%m-%d-%H:%M)]"
-            git push
-          fi
-
-      - name: Build static site
-        env:
-          GITHUB_PAGES: "true"
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: pnpm --filter @innate/web build:static
+          mkdir -p apps
+          rm -rf apps/innate-wip
+          mv ../site apps/innate-wip
+          pnpm install --filter @innate/wip...
+          PUBLIC_PATH=./ pnpm --filter @innate/wip build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/web/dist
+          path: templates/apps/innate-wip/dist
 
   deploy:
     environment:

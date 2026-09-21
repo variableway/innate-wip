@@ -1,8 +1,0 @@
-# Source: https://betterstack.com/community/guides/observability/ottl-patterns/
-# Original language: json
-# Normalized: json
-# Block index: 14
-
-{
-  "body": "{\"user\": \"alice\", \"status\": \"active\", \"details\": { \"role\": \"admin\" }}"
-}

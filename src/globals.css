@@ -1,0 +1,220 @@
+@import "@fontsource-variable/inter";
+@import "@innate/ui/globals.css";
+
+@custom-variant dark (&:is(.dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: var(--background);
+}
+
+#root > * {
+  height: 100%;
+}
+
+/* 本站浅色面再提亮一档；不改 @innate/ui 默认主题。 */
+:root,
+:root[data-theme] {
+  --background: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+  --secondary: oklch(0.99 0 0);
+  --muted: oklch(0.99 0 0);
+  --accent: oklch(0.985 0 0);
+  --border: oklch(0.94 0 0);
+  --input: oklch(0.94 0 0);
+  --sidebar: oklch(1 0 0);
+  --sidebar-accent: oklch(0.975 0 0);
+  --sidebar-border: oklch(0.94 0 0);
+  --surface: oklch(0.99 0 0);
+  --code: oklch(0.985 0 0);
+}
+
+@theme inline {
+  --font-sans:
+    "Inter Variable", "PingFang SC", "Noto Sans SC", "Microsoft YaHei",
+    sans-serif;
+}
+
+/* Tailwind preflight 会清掉标题字号、列表符号和块间距，这里用 token 补回来。 */
+.markdown-content {
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.markdown-content > *:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+.markdown-content h2 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+.markdown-content h3 {
+  margin: 1.35rem 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+}
+
+.markdown-content p {
+  margin: 0.85rem 0;
+}
+
+.markdown-content ul {
+  margin: 0.75rem 0;
+  padding-left: 1.35rem;
+  list-style: disc;
+}
+
+.markdown-content ol {
+  margin: 0.75rem 0;
+  padding-left: 1.35rem;
+  list-style: decimal;
+}
+
+.markdown-content li {
+  margin: 0.3rem 0;
+}
+
+.markdown-content li > ul,
+.markdown-content li > ol {
+  margin: 0.25rem 0;
+}
+
+.markdown-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown-content blockquote {
+  margin: 1rem 0;
+  border-left: 3px solid var(--border);
+  padding: 0.15rem 0 0.15rem 1rem;
+  color: var(--muted-foreground);
+}
+
+.markdown-content hr {
+  margin: 1.5rem 0;
+  border-color: var(--border);
+}
+
+.markdown-content pre {
+  margin: 1rem 0;
+  overflow-x: auto;
+  white-space: pre;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--muted);
+  padding: 1rem;
+}
+
+.markdown-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  border-radius: 0.25rem;
+  background: var(--muted);
+  padding: 0.15em 0.4em;
+}
+
+.markdown-content pre code {
+  display: block;
+  background: transparent;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  white-space: pre;
+  color: var(--foreground);
+}
+
+.markdown-content .markdown-table-wrap {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: var(--muted);
+  font-weight: 600;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.markdown-content .hljs {
+  background: transparent;
+  color: inherit;
+}
+
+.markdown-content .hljs-comment,
+.markdown-content .hljs-quote {
+  color: var(--muted-foreground);
+}
+
+.markdown-content .hljs-keyword,
+.markdown-content .hljs-selector-tag,
+.markdown-content .hljs-meta .hljs-keyword {
+  color: var(--primary);
+}
+
+.markdown-content .hljs-title,
+.markdown-content .hljs-section,
+.markdown-content .hljs-name {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.markdown-content .hljs-string,
+.markdown-content .hljs-attr,
+.markdown-content .hljs-symbol,
+.markdown-content .hljs-bullet,
+.markdown-content .hljs-addition {
+  color: var(--chart-2);
+}
+
+.markdown-content .hljs-number,
+.markdown-content .hljs-literal,
+.markdown-content .hljs-type,
+.markdown-content .hljs-built_in {
+  color: var(--chart-4);
+}
+
+.markdown-content .hljs-variable,
+.markdown-content .hljs-template-variable,
+.markdown-content .hljs-tag .hljs-attr {
+  color: var(--chart-1);
+}
+

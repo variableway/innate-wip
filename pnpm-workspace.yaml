@@ -1,9 +1,0 @@
-packages:
-  - "apps/*"
-  - "packages/*"
-allowBuilds:
-  esbuild: true
-  sharp: false
-minimumReleaseAgeExclude:
-  - puppeteer-core@25.4.0 || 25.5.0
-  - '@puppeteer/browsers@3.1.0'
