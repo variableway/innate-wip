@@ -12,7 +12,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "#writing-files": ["./src/lib/content/bundled-files.use-cases.ts"]
+    }
   },
   "include": ["src", "vite.config.ts", "vitest.config.ts"]
 }

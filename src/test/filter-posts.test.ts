@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 import {
   countByCategory,
   filterWritingPosts,
+  postFolderId,
 } from "../lib/writing/filter-posts"
 
 const posts = [
@@ -11,6 +12,8 @@ const posts = [
     excerpt: "Pads and rotors",
     category: "log",
     tags: ["receipts", "f250"],
+    vault: "content",
+    folder: "demo",
   },
   {
     slug: "b",
@@ -18,6 +21,8 @@ const posts = [
     excerpt: "Notes on focus",
     category: "insight",
     tags: ["tools"],
+    vault: "docs",
+    folder: "use-cases",
   },
 ]
 
@@ -32,6 +37,10 @@ describe("filterWritingPosts", () => {
     expect(filterWritingPosts(posts, { tag: "receipts" }).map((p) => p.slug)).toEqual([
       "a",
     ])
+    expect(filterWritingPosts(posts, { folder: "docs/use-cases" }).map((p) => p.slug)).toEqual([
+      "b",
+    ])
+    expect(postFolderId(posts[0]!)).toBe("content/demo")
   })
 })
 

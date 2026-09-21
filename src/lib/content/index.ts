@@ -1,4 +1,4 @@
-import { writingFiles } from "./bundled-files"
+import { writingFiles } from "#writing-files"
 import {
   parseWritingFile,
   sortPostsByDate,

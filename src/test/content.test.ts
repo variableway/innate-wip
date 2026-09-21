@@ -1,29 +1,29 @@
 import { describe, expect, it } from "vitest"
-import { getWriting, getWritingMeta } from "../lib/content"
-import { writingFiles } from "../lib/content/bundled-files"
+import { getWritingMeta } from "../lib/content"
+import { writingFiles } from "#writing-files"
 import { parseFrontmatter } from "../lib/content/parser"
 import { fallbackSlug, parseWritingFile } from "../lib/content/parse-post"
 
 describe("writing content vault", () => {
-  it("loads published posts from nested folders", () => {
+  it("loads only use-cases markdown by default", () => {
     const posts = getWritingMeta({ status: "published" })
+    const files = Object.keys(writingFiles)
+    expect(files.length).toBeGreaterThan(0)
+    expect(files.every((filePath) => filePath.includes("/use-cases/"))).toBe(true)
+    expect(files.some((filePath) => filePath.includes("/demo/"))).toBe(false)
+    expect(files.some((filePath) => filePath.includes("/docs/modules/"))).toBe(false)
     expect(posts.length).toBeGreaterThan(0)
     expect(posts.every((post) => post.slug && post.title)).toBe(true)
-    expect(
-      Object.keys(writingFiles).some((filePath) => filePath.includes("/demo/"))
-    ).toBe(true)
+    expect(posts.every((post) => post.vault === "use-cases")).toBe(true)
   })
 
-  it("resolves a known slug from content/demo", () => {
-    expect(getWriting("first-weekly-log")?.title).toMatch(/Weekly Log/)
-  })
-
-  it("keeps category and tags from frontmatter", () => {
-    const post = getWriting("building-static-site")
-    expect(post?.category).toBe("article")
-    expect(post?.tags).toEqual(
-      expect.arrayContaining(["static-site", "nextjs", "performance"])
+  it("titles use-case pages from the first heading", () => {
+    const post = getWritingMeta().find((item) =>
+      item.slug.includes("01-empty-webshell")
     )
+    expect(post?.title).toMatch(/空白的 Web Shell/)
+    expect(post?.vault).toBe("use-cases")
+    expect(post?.folder).toBe("")
   })
 })
 
@@ -43,9 +43,15 @@ body
 
 describe("nested path fallbacks", () => {
   it("builds a url-safe slug from three folder levels", () => {
-    expect(
-      fallbackSlug("/vault/content/demo/nested/deep/note.md")
-    ).toBe("demo-nested-deep-note")
+    expect(fallbackSlug("/vault/content/demo/nested/deep/note.md")).toBe(
+      "content-demo-nested-deep-note"
+    )
+    expect(fallbackSlug("/repo/docs/use-cases/01-empty-webshell.md")).toBe(
+      "use-cases-01-empty-webshell"
+    )
+    expect(fallbackSlug("/repo/docs/use-cases/01-empty-webshell.md", "docs")).toBe(
+      "docs-use-cases-01-empty-webshell"
+    )
   })
 
   it("uses the first folder as category when frontmatter omits it", () => {
@@ -54,6 +60,8 @@ describe("nested path fallbacks", () => {
       "---\ntitle: Deep\n---\nHi\n"
     )
     expect(post.category).toBe("demo")
-    expect(post.slug).toBe("demo-nested-deep-note")
+    expect(post.vault).toBe("content")
+    expect(post.folder).toBe("demo/nested/deep")
+    expect(post.slug).toBe("content-demo-nested-deep-note")
   })
 })

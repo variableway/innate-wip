@@ -31,6 +31,8 @@ export function WritingPage() {
     content: post.content,
     toc: post.toc,
     type: post.type,
+    vault: post.vault,
+    folder: post.folder,
   }))
 
   return <BlogPageClient posts={list} />

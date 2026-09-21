@@ -4,12 +4,20 @@ export interface FilterablePost {
   excerpt: string
   category: string
   tags: string[]
+  vault?: string
+  folder?: string
 }
 
 export interface WritingListFilter {
   query?: string
   category?: string | null
   tag?: string | null
+  folder?: string | null
+}
+
+export function postFolderId(post: Pick<FilterablePost, "vault" | "folder">): string {
+  const vault = post.vault || "content"
+  return post.folder ? `${vault}/${post.folder}` : vault
 }
 
 export function filterWritingPosts<T extends FilterablePost>(
@@ -20,8 +28,13 @@ export function filterWritingPosts<T extends FilterablePost>(
   return posts.filter((post) => {
     if (filter.category && post.category !== filter.category) return false
     if (filter.tag && !post.tags.includes(filter.tag)) return false
+    if (filter.folder) {
+      const id = postFolderId(post)
+      if (id !== filter.folder && !id.startsWith(`${filter.folder}/`)) return false
+    }
     if (!query) return true
-    const haystack = `${post.title} ${post.excerpt} ${post.tags.join(" ")} ${post.category}`.toLowerCase()
+    const haystack =
+      `${post.title} ${post.excerpt} ${post.tags.join(" ")} ${post.category} ${postFolderId(post)}`.toLowerCase()
     return haystack.includes(query)
   })
 }

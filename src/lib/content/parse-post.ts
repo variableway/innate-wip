@@ -1,45 +1,103 @@
 import { extractToc, parseFrontmatter } from "./parser"
 import type { PostMeta } from "./types"
+import {
+  resolveWritingSource,
+  type WritingSource,
+  type WritingVault,
+} from "./writing-source"
+
+export type { WritingVault }
 
 export interface WritingPost extends PostMeta {
   slug: string
   type: "md" | "mdx"
   content: string
   toc: Array<{ id: string; text: string; level: number }>
+  vault: WritingVault
+  folder: string
 }
 
-/** `.../content/demo/nested/deep/note.md` → `demo/nested/deep/note.md` */
-export function contentRelativePath(filePath: string): string {
+export function sourceFromFilePath(
+  filePath: string,
+  source: WritingSource = resolveWritingSource(import.meta.env.VITE_WRITING_SOURCE)
+): {
+  vault: WritingVault
+  relative: string
+} {
   const normalized = filePath.replace(/\\/g, "/")
-  const marker = "/content/"
-  const writingMarker = "/content/writing/"
-  if (normalized.includes(writingMarker)) {
-    return normalized.slice(normalized.lastIndexOf(writingMarker) + writingMarker.length)
+  if (source === "use-cases") {
+    const useCasesIdx = normalized.lastIndexOf("/use-cases/")
+    if (useCasesIdx >= 0) {
+      return {
+        vault: "use-cases",
+        relative: normalized.slice(useCasesIdx + "/use-cases/".length),
+      }
+    }
   }
-  const idx = normalized.lastIndexOf(marker)
-  if (idx >= 0) return normalized.slice(idx + marker.length)
-  return normalized.split("/").pop() ?? "untitled.md"
+  const docsIdx = normalized.lastIndexOf("/docs/")
+  const contentIdx = normalized.lastIndexOf("/content/")
+  if (docsIdx >= 0 && docsIdx > contentIdx) {
+    return {
+      vault: "docs",
+      relative: normalized.slice(docsIdx + "/docs/".length),
+    }
+  }
+  if (contentIdx >= 0) {
+    let relative = normalized.slice(contentIdx + "/content/".length)
+    if (relative.startsWith("writing/")) relative = relative.slice("writing/".length)
+    return { vault: "content", relative }
+  }
+  return {
+    vault: "content",
+    relative: normalized.split("/").pop() ?? "untitled.md",
+  }
 }
 
-export function fallbackSlug(filePath: string): string {
-  return contentRelativePath(filePath)
-    .replace(/\.(md|mdx)$/i, "")
-    .replace(/\/+/g, "-")
+/** @deprecated use sourceFromFilePath().relative */
+export function contentRelativePath(filePath: string): string {
+  return sourceFromFilePath(filePath).relative
 }
 
-function folderCategory(filePath: string): string {
-  const folders = contentRelativePath(filePath).split("/").slice(0, -1)
-  return folders[0] ?? ""
+export function fallbackSlug(
+  filePath: string,
+  source?: WritingSource
+): string {
+  const { vault, relative } = sourceFromFilePath(filePath, source)
+  const stem = relative.replace(/\.(md|mdx)$/i, "").replace(/\/+/g, "-")
+  return `${vault}-${stem}`
 }
 
-export function parseWritingFile(filePath: string, raw: string): WritingPost {
+function folderFromRelative(relative: string): string {
+  const parts = relative.split("/").slice(0, -1)
+  return parts.join("/")
+}
+
+function titleFromBody(body: string, filePath: string): string {
+  const heading = body.match(/^#\s+(.+)$/m)
+  if (heading?.[1]) return heading[1].trim()
+  const name = sourceFromFilePath(filePath).relative.split("/").pop() ?? "untitled.md"
+  return name.replace(/\.(md|mdx)$/i, "")
+}
+
+export function parseWritingFile(
+  filePath: string,
+  raw: string,
+  source?: WritingSource
+): WritingPost {
   const name = filePath.split(/[/\\]/).pop() ?? "untitled.md"
   const type: "md" | "mdx" = name.endsWith(".mdx") ? "mdx" : "md"
+  const { vault, relative } = sourceFromFilePath(filePath, source)
+  const folder = folderFromRelative(relative)
   const { meta, body } = parseFrontmatter(raw)
+  const title =
+    meta.title && meta.title !== "Untitled" ? meta.title : titleFromBody(body, filePath)
   return {
     ...meta,
-    slug: meta.slug || fallbackSlug(filePath),
-    category: meta.category || folderCategory(filePath) || "article",
+    title,
+    slug: meta.slug || fallbackSlug(filePath, source),
+    category: meta.category || folder.split("/")[0] || vault,
+    vault,
+    folder,
     type,
     content: body,
     toc: extractToc(body),

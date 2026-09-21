@@ -7,11 +7,26 @@ import tailwindcss from "@tailwindcss/vite"
 const pkgDir = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(pkgDir, "../..")
 
+function writingSourceMode(): "use-cases" | "docs" {
+  return process.env.VITE_WRITING_SOURCE === "docs" ? "docs" : "use-cases"
+}
+
 export default defineConfig({
   base: process.env.PUBLIC_PATH ?? "./",
   plugins: [tailwindcss(), react()],
   resolve: {
     dedupe: ["react", "react-dom"],
+    alias: {
+      "#writing-files": path.resolve(
+        pkgDir,
+        `src/lib/content/bundled-files.${writingSourceMode()}.ts`
+      ),
+      mermaid: "mermaid/dist/mermaid.esm.min.mjs",
+    },
+  },
+  optimizeDeps: {
+    exclude: ["mermaid"],
+    include: ["mermaid/dist/mermaid.esm.min.mjs"],
   },
   server: { port: 4016, strictPort: true, fs: { allow: [repoRoot, pkgDir] } },
   preview: { port: 4016, strictPort: true },

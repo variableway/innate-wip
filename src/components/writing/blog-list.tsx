@@ -8,6 +8,8 @@ export interface BlogListItem {
   category: string
   tags: string[]
   readingTime: number
+  vault?: string
+  folder?: string
 }
 
 interface BlogListProps {

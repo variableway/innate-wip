@@ -23,10 +23,12 @@ import {
 } from "@innate/ui"
 import { BlogList, type BlogListItem } from "./blog-list"
 import { BlogViewer } from "./blog-viewer"
+import { FolderNav } from "./folder-nav"
 import {
   countByCategory,
   filterWritingPosts,
 } from "../../lib/writing/filter-posts"
+import { buildFolderTree } from "../../lib/writing/folder-tree"
 
 export interface BlogPostFull extends BlogListItem {
   content: string
@@ -44,10 +46,12 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
   const [query, setQuery] = useState("")
   const [filterTag, setFilterTag] = useState<string | null>(null)
   const [filterCategory, setFilterCategory] = useState<string | null>(null)
+  const [filterFolder, setFilterFolder] = useState<string | null>(null)
   const [activeSlug, setActiveSlug] = useState(posts[0]?.slug ?? "")
   const [mobileDetail, setMobileDetail] = useState(false)
 
   const notebooks = useMemo(() => countByCategory(posts), [posts])
+  const folders = useMemo(() => buildFolderTree(posts), [posts])
   const recent = useMemo(() => posts.slice(0, 5), [posts])
   const filteredPosts = useMemo(
     () =>
@@ -55,8 +59,9 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
         query,
         category: filterCategory,
         tag: filterTag,
+        folder: filterFolder,
       }),
-    [posts, query, filterCategory, filterTag]
+    [posts, query, filterCategory, filterTag, filterFolder]
   )
 
   useEffect(() => {
@@ -87,26 +92,37 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
   function showAll() {
     setFilterCategory(null)
     setFilterTag(null)
+    setFilterFolder(null)
   }
 
-  const listTitle = filterCategory
-    ? filterCategory
-    : filterTag
-      ? `#${filterTag}`
-      : "All Notes"
+  const listTitle = filterFolder
+    ? filterFolder.split("/").pop() ?? filterFolder
+    : filterCategory
+      ? filterCategory
+      : filterTag
+        ? `#${filterTag}`
+        : "All Notes"
 
   const sidebar = (
     <WritingNav
       total={posts.length}
       notebooks={notebooks}
+      folders={folders}
       recent={recent}
       activeSlug={activeSlug}
       filterCategory={filterCategory}
+      filterFolder={filterFolder}
       query={query}
       onQueryChange={setQuery}
       onShowAll={showAll}
       onSelectCategory={(id) => {
         setFilterCategory(id)
+        setFilterTag(null)
+        setFilterFolder(null)
+      }}
+      onSelectFolder={(id) => {
+        setFilterFolder(id)
+        setFilterCategory(null)
         setFilterTag(null)
       }}
       onSelectRecent={selectPost}
@@ -130,6 +146,7 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
             onTagClick={(tag) => {
               setFilterTag(tag)
               setFilterCategory(null)
+              setFilterFolder(null)
             }}
           />
         ) : (
@@ -171,11 +188,13 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
           onTagClick={(tag) => {
             setFilterTag(tag)
             setFilterCategory(null)
+            setFilterFolder(null)
             setMobileDetail(false)
           }}
           onCategoryClick={(category) => {
             setFilterCategory(category)
             setFilterTag(null)
+            setFilterFolder(null)
             setMobileDetail(false)
           }}
         />
@@ -228,24 +247,30 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
 function WritingNav({
   total,
   notebooks,
+  folders,
   recent,
   activeSlug,
   filterCategory,
+  filterFolder,
   query,
   onQueryChange,
   onShowAll,
   onSelectCategory,
+  onSelectFolder,
   onSelectRecent,
 }: {
   total: number
   notebooks: Array<{ id: string; count: number }>
+  folders: ReturnType<typeof buildFolderTree>
   recent: BlogListItem[]
   activeSlug: string
   filterCategory: string | null
+  filterFolder: string | null
   query: string
   onQueryChange: (value: string) => void
   onShowAll: () => void
   onSelectCategory: (id: string) => void
+  onSelectFolder: (id: string) => void
   onSelectRecent: (slug: string) => void
 }) {
   return (
@@ -280,9 +305,12 @@ function WritingNav({
             icon={FileText}
             label="Notes"
             count={total}
-            active={!filterCategory}
+            active={!filterCategory && !filterFolder}
             onClick={onShowAll}
           />
+          <SectionLabel>Folders</SectionLabel>
+          <FolderNav nodes={folders} activeId={filterFolder} onSelect={onSelectFolder} />
+          <Separator className="mx-2" />
           <SectionLabel>Recent notes</SectionLabel>
           <ul className="flex flex-col gap-0.5">
             {recent.map((post) => (

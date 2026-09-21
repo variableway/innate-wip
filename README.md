@@ -1,13 +1,13 @@
 # innate-wip — Writing 静态站
 
-独立 GitHub 仓（`variableway/innate-wip`），嵌在 fe-templates 的 `apps/innate-wip`。  
-这就是 Writing：Vite 静态站，入口就是笔记工作区，直接打 GitHub Pages。不挂 webshell，也不走 pages-kit。
+独立 GitHub 仓，嵌在 fe-templates 的 `apps/innate-wip`。Vite 静态站，入口就是笔记工作区。
 
-```
-content/*.md          # 文章
-src/                  # UI（@innate/ui）
-.github/workflows/deploy-pages.yml
-```
+内容源由 `VITE_WRITING_SOURCE` 决定：
+
+| 构建 | 扫描 |
+| --- | --- |
+| 默认 / 本仓 Pages | `use-cases/`（本仓）以及父仓 `docs/use-cases/` |
+| `VITE_WRITING_SOURCE=docs`（fe-base Pages） | 仓库根 `docs/` |
 
 ## 本机
 
@@ -15,13 +15,15 @@ src/                  # UI（@innate/ui）
 
 ```bash
 pnpm --filter @innate/wip dev
-# → http://localhost:4016/#/
+# → http://localhost:4016/#/   只看 use-cases
+
+VITE_WRITING_SOURCE=docs pnpm --filter @innate/wip dev
+# 预览 fe-base Pages：整棵 docs/
 ```
 
 或在本目录：`./dev.sh`
 
 ## GitHub Pages
 
-本仓 push `main` 即构建。CI 会 sparse checkout `innate-fe-templates` 里的 `@innate/ui`（不是整仓），然后 `pnpm build`，上传 `dist/`。
-
-站点：`https://<owner>.github.io/<repo>/#/`
+- **innate-fe-base**：根 workflow `deploy-writing-pages.yml` 以 `VITE_WRITING_SOURCE=docs` 构建本 app
+- **本仓单独 push**：只打包 `use-cases/`
