@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import {
   BookMarked,
   FileText,
+  PanelLeft,
   PenLine,
   Search,
 } from "lucide-react"
@@ -16,8 +17,16 @@ import {
   InputGroupAddon,
   InputGroupInput,
   Kbd,
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
   ScrollArea,
   Separator,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
   cn,
   useIsMobile,
 } from "@innate/ui"
@@ -29,6 +38,7 @@ import {
   filterWritingPosts,
 } from "../../lib/writing/filter-posts"
 import { buildFolderTree } from "../../lib/writing/folder-tree"
+import { useMediaQuery } from "../../lib/use-media-query"
 
 export interface BlogPostFull extends BlogListItem {
   content: string
@@ -43,14 +53,16 @@ interface BlogPageClientProps {
 
 export function BlogPageClient({ posts }: BlogPageClientProps) {
   const isMobile = useIsMobile()
+  const isWide = useMediaQuery("(min-width: 1280px)")
   const [query, setQuery] = useState("")
   const [filterTag, setFilterTag] = useState<string | null>(null)
   const [filterCategory, setFilterCategory] = useState<string | null>(null)
   const [filterFolder, setFilterFolder] = useState<string | null>(null)
   const [activeSlug, setActiveSlug] = useState(posts[0]?.slug ?? "")
   const [mobileDetail, setMobileDetail] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
 
-  const notebooks = useMemo(() => countByCategory(posts), [posts])
+  const categories = useMemo(() => countByCategory(posts), [posts])
   const folders = useMemo(() => buildFolderTree(posts), [posts])
   const recent = useMemo(() => posts.slice(0, 5), [posts])
   const filteredPosts = useMemo(
@@ -106,7 +118,7 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
   const sidebar = (
     <WritingNav
       total={posts.length}
-      notebooks={notebooks}
+      categories={categories}
       folders={folders}
       recent={recent}
       activeSlug={activeSlug}
@@ -114,25 +126,58 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
       filterFolder={filterFolder}
       query={query}
       onQueryChange={setQuery}
-      onShowAll={showAll}
+      onShowAll={() => {
+        showAll()
+        setNavOpen(false)
+      }}
       onSelectCategory={(id) => {
         setFilterCategory(id)
         setFilterTag(null)
         setFilterFolder(null)
+        setNavOpen(false)
       }}
       onSelectFolder={(id) => {
         setFilterFolder(id)
         setFilterCategory(null)
         setFilterTag(null)
+        setNavOpen(false)
       }}
-      onSelectRecent={selectPost}
+      onSelectRecent={(slug) => {
+        selectPost(slug)
+        setNavOpen(false)
+      }}
     />
   )
 
   const listPane = (
-    <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-r border-border bg-background">
-      <div className="flex h-12 shrink-0 items-center justify-between border-b border-border px-4">
-        <h2 className="text-sm font-semibold capitalize">{listTitle}</h2>
+    <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden bg-background">
+      <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border px-4">
+        <div className="flex min-w-0 items-center gap-1">
+          <Sheet open={navOpen} onOpenChange={setNavOpen}>
+            <SheetTrigger
+              render={
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon-sm"
+                  className="xl:hidden"
+                  aria-label="Open navigation"
+                />
+              }
+            >
+              <PanelLeft />
+            </SheetTrigger>
+            <SheetContent side="left" className="w-72 gap-0 p-0">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Writing</SheetTitle>
+              </SheetHeader>
+              <div className="flex h-full min-h-0 flex-col">{sidebar}</div>
+            </SheetContent>
+          </Sheet>
+          <h2 className="truncate text-sm font-semibold capitalize">
+            {listTitle}
+          </h2>
+        </div>
         <span className="text-muted-foreground text-xs tabular-nums">
           {filteredPosts.length}
         </span>
@@ -174,7 +219,6 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
       {activePost ? (
         <BlogViewer
           title={activePost.title}
-          slug={activePost.slug}
           content={activePost.content}
           excerpt={activePost.excerpt}
           date={activePost.date}
@@ -183,7 +227,7 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
           tags={activePost.tags}
           readingTime={activePost.readingTime}
           toc={activePost.toc}
-          showDedicatedLink
+          showToc
           onBack={() => setMobileDetail(false)}
           onTagClick={(tag) => {
             setFilterTag(tag)
@@ -214,19 +258,44 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
     </section>
   )
 
+  if (isWide) {
+    return (
+      <ResizablePanelGroup className="h-full min-h-0 w-full">
+        <ResizablePanel
+          defaultSize={256}
+          minSize={180}
+          maxSize={384}
+          groupResizeBehavior="preserve-pixel-size"
+          className="min-h-0 overflow-hidden"
+        >
+          {sidebar}
+        </ResizablePanel>
+        <ResizableHandle className="bg-sidebar-border" />
+        <ResizablePanel
+          defaultSize={352}
+          minSize={240}
+          maxSize={560}
+          groupResizeBehavior="preserve-pixel-size"
+          className="min-h-0 overflow-hidden"
+        >
+          {listPane}
+        </ResizablePanel>
+        <ResizableHandle />
+        <ResizablePanel
+          minSize={320}
+          className="min-h-0 overflow-hidden"
+        >
+          {detailPane}
+        </ResizablePanel>
+      </ResizablePanelGroup>
+    )
+  }
+
   return (
-    <div
-      className={cn(
-        "grid h-full min-h-0 w-full overflow-hidden",
-        "grid-cols-1 md:grid-cols-[22rem_minmax(0,1fr)] xl:grid-cols-[16rem_22rem_minmax(0,1fr)]"
-      )}
-    >
-      <aside className="hidden min-h-0 min-w-0 overflow-hidden xl:block">
-        {sidebar}
-      </aside>
+    <div className="grid h-full min-h-0 w-full grid-cols-1 overflow-hidden md:grid-cols-[22rem_minmax(0,1fr)]">
       <div
         className={cn(
-          "min-h-0 min-w-0 overflow-hidden",
+          "min-h-0 min-w-0 overflow-hidden border-r border-border",
           isMobile && mobileDetail && "hidden"
         )}
       >
@@ -246,7 +315,7 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
 
 function WritingNav({
   total,
-  notebooks,
+  categories,
   folders,
   recent,
   activeSlug,
@@ -260,7 +329,7 @@ function WritingNav({
   onSelectRecent,
 }: {
   total: number
-  notebooks: Array<{ id: string; count: number }>
+  categories: Array<{ id: string; count: number }>
   folders: ReturnType<typeof buildFolderTree>
   recent: BlogListItem[]
   activeSlug: string
@@ -276,7 +345,7 @@ function WritingNav({
   return (
     <nav
       aria-label="Writing"
-      className="bg-sidebar text-sidebar-foreground flex h-full min-h-0 flex-col border-r border-sidebar-border"
+      className="bg-sidebar text-sidebar-foreground flex h-full min-h-0 flex-col"
     >
       <div className="flex h-12 shrink-0 items-center gap-2 px-4">
         <PenLine className="size-4" data-icon />
@@ -329,16 +398,16 @@ function WritingNav({
             ))}
           </ul>
           <Separator className="mx-2" />
-          <SectionLabel>Notebooks</SectionLabel>
+          <SectionLabel>Categories</SectionLabel>
           <ul className="flex flex-col gap-0.5">
-            {notebooks.map((notebook) => (
-              <li key={notebook.id}>
+            {categories.map((category) => (
+              <li key={category.id}>
                 <NavRow
                   icon={BookMarked}
-                  label={notebook.id}
-                  count={notebook.count}
-                  active={filterCategory === notebook.id}
-                  onClick={() => onSelectCategory(notebook.id)}
+                  label={category.id}
+                  count={category.count}
+                  active={filterCategory === category.id}
+                  onClick={() => onSelectCategory(category.id)}
                 />
               </li>
             ))}

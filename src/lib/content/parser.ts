@@ -75,10 +75,52 @@ export function parseFrontmatter(content: string): { meta: PostMeta; body: strin
   }
 }
 
+/**
+ * 从正文派生摘要：跳过标题与代码块，取第一个自然段，
+ * 去掉链接、行内代码、强调等 markdown 记号后截断。
+ */
+export function deriveExcerpt(content: string, maxLength = 120): string {
+  const paragraph: string[] = []
+  let inFence = false
+
+  for (const line of content.split("\n")) {
+    if (/^\s*(```|~~~)/.test(line)) {
+      if (paragraph.length > 0) break
+      inFence = !inFence
+      continue
+    }
+    if (inFence) continue
+
+    const text = line.trim()
+    if (!text) {
+      if (paragraph.length > 0) break
+      continue
+    }
+    if (/^#{1,6}\s/.test(text)) {
+      if (paragraph.length > 0) break
+      continue
+    }
+    paragraph.push(text)
+  }
+
+  const raw = paragraph
+    .join(" ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/`([^`]*)`/g, "$1")
+    .replace(/<\/?[A-Za-z][^>]*>/g, "")
+    .replace(/[*_~]+/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+
+  if (!raw) return ""
+  if (raw.length <= maxLength) return raw
+  return `${raw.slice(0, maxLength).trimEnd()}…`
+}
+
 export function extractToc(
   content: string
-): Array<{ level: number; text: string; id: string }> {
-  const headings: Array<{ level: number; text: string; id: string }> = []
+): Array<{ level: number; text: string; id: string }> {  const headings: Array<{ level: number; text: string; id: string }> = []
   const seenIds = new Map<string, number>()
   const lines = content.split("\n")
 

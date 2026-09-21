@@ -6,11 +6,9 @@ import {
 } from "@innate/ui"
 import { MarkdownPreview } from "../markdown-preview"
 import { TableOfContents, type TocItem } from "../table-of-contents"
-import { AppLink as Link } from "../../lib/routing"
 
 export interface BlogViewerProps {
   title: string
-  slug?: string
   content: string
   excerpt: string
   date: string
@@ -21,14 +19,12 @@ export interface BlogViewerProps {
   toc: TocItem[]
   onBack?: () => void
   showToc?: boolean
-  showDedicatedLink?: boolean
   onTagClick?: (tag: string) => void
   onCategoryClick?: (category: string) => void
 }
 
 export function BlogViewer({
   title,
-  slug,
   content,
   date,
   author,
@@ -38,7 +34,6 @@ export function BlogViewer({
   toc,
   onBack,
   showToc = false,
-  showDedicatedLink = false,
   onTagClick,
   onCategoryClick,
 }: BlogViewerProps) {
@@ -57,6 +52,19 @@ export function BlogViewer({
             Back
           </Button>
         ) : null}
+        {category ? (
+          <Badge
+            variant="secondary"
+            className="mb-2"
+            render={
+              onCategoryClick ? (
+                <button type="button" onClick={() => onCategoryClick(category)} />
+              ) : undefined
+            }
+          >
+            {category}
+          </Badge>
+        ) : null}
         <h1 className="text-foreground text-2xl font-semibold tracking-tight md:text-[1.75rem]">
           {title}
         </h1>
@@ -71,34 +79,20 @@ export function BlogViewer({
 
       <ScrollArea className="min-h-0 flex-1">
         <div className="px-6 py-6 md:px-8 md:py-8">
-          <div
-            className={
-              showToc
-                ? "grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_12.5rem]"
-                : undefined
-            }
-          >
-            <MarkdownPreview source={content} />
-            {showToc ? (
+          {showToc ? (
+            <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_12.5rem]">
+              <MarkdownPreview source={content} />
               <aside className="hidden lg:block">
-                <TableOfContents headings={toc} />
+                <TableOfContents headings={toc} className="top-6" />
               </aside>
-            ) : null}
-          </div>
+            </div>
+          ) : (
+            <MarkdownPreview source={content} className="mx-auto max-w-3xl" />
+          )}
         </div>
       </ScrollArea>
 
       <footer className="flex shrink-0 flex-wrap items-center gap-1.5 border-t border-border px-6 py-3 md:px-8">
-        <Badge
-          variant="secondary"
-          render={
-            onCategoryClick ? (
-              <button type="button" onClick={() => onCategoryClick(category)} />
-            ) : undefined
-          }
-        >
-          {category}
-        </Badge>
         {tags.map((tag) => (
           <Badge
             key={tag}
@@ -112,14 +106,6 @@ export function BlogViewer({
             {tag}
           </Badge>
         ))}
-        {showDedicatedLink && slug ? (
-          <Link
-            href={`/${slug}`}
-            className="text-muted-foreground hover:text-foreground ml-auto text-xs underline-offset-4 hover:underline"
-          >
-            Open dedicated page
-          </Link>
-        ) : null}
       </footer>
     </article>
   )

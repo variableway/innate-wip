@@ -1,4 +1,4 @@
-import { extractToc, parseFrontmatter } from "./parser"
+import { deriveExcerpt, extractToc, parseFrontmatter } from "./parser"
 import type { PostMeta } from "./types"
 import {
   resolveWritingSource,
@@ -101,6 +101,7 @@ export function parseWritingFile(
     type,
     content: body,
     toc: extractToc(body),
+    excerpt: meta.excerpt || deriveExcerpt(body),
   }
 }
 

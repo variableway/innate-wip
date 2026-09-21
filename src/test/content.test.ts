@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { getWritingMeta } from "../lib/content"
 import { writingFiles } from "#writing-files"
-import { parseFrontmatter } from "../lib/content/parser"
+import { deriveExcerpt, parseFrontmatter } from "../lib/content/parser"
 import { fallbackSlug, parseWritingFile } from "../lib/content/parse-post"
 
 describe("writing content vault", () => {
@@ -63,5 +63,43 @@ describe("nested path fallbacks", () => {
     expect(post.vault).toBe("content")
     expect(post.folder).toBe("demo/nested/deep")
     expect(post.slug).toBe("content-demo-nested-deep-note")
+  })
+})
+
+describe("deriveExcerpt", () => {
+  it("skips the title and code fences, takes the first paragraph", () => {
+    const body = [
+      "# 用例 1：标题",
+      "",
+      "在仓库根执行。`pnpm run dev` 会起 Vite。",
+      "",
+      "```bash",
+      "pnpm install",
+      "```",
+      "",
+      "后面的段落不应出现。",
+    ].join("\n")
+    expect(deriveExcerpt(body)).toBe("在仓库根执行。pnpm run dev 会起 Vite。")
+  })
+
+  it("strips markdown syntax and truncates long paragraphs", () => {
+    const long = Array.from({ length: 40 }, (_, i) => `word${i}`).join(" ")
+    const body = `[link text](https://example.com) ${long}`
+    const excerpt = deriveExcerpt(body, 30)
+    expect(excerpt.startsWith("link text word0")).toBe(true)
+    expect(excerpt.length).toBeLessThanOrEqual(31)
+    expect(excerpt.endsWith("…")).toBe(true)
+  })
+
+  it("falls back to an empty string when no prose exists", () => {
+    expect(deriveExcerpt("# 标题\n\n```bash\ncode\n```")).toBe("")
+  })
+
+  it("is used when frontmatter has no excerpt", () => {
+    const post = parseWritingFile(
+      "/repo/docs/use-cases/01-empty-webshell.md",
+      "# 标题\n\n第一段正文描述。\n"
+    )
+    expect(post.excerpt).toBe("第一段正文描述。")
   })
 })
