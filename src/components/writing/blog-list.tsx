@@ -1,4 +1,5 @@
 import { Badge, cn } from "@innate/ui"
+import { labelChipStyle } from "../../lib/writing/label-color"
 
 export interface BlogListItem {
   slug: string
@@ -56,12 +57,19 @@ export function BlogList({
               </p>
             ) : null}
             <div className="mt-2 flex flex-wrap items-center gap-1">
-              <Badge variant="muted">{item.category}</Badge>
+              <Badge
+                variant="outline"
+                className="label-chip"
+                style={labelChipStyle(item.category)}
+              >
+                {item.category}
+              </Badge>
               {item.tags.slice(0, 3).map((tag) => (
                 <Badge
                   key={tag}
                   variant="outline"
-                  className="cursor-pointer"
+                  className="label-chip cursor-pointer"
+                  style={labelChipStyle(tag)}
                   onClick={(event) => {
                     event.stopPropagation()
                     onTagClick?.(tag)

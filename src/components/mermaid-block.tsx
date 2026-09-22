@@ -9,11 +9,39 @@ interface MermaidBlockProps {
 
 let mermaidInitialized = false
 
+/** 从 CSS token 读出图表配色，交给 mermaid 的 themeVariables（颜色事实源在 globals.css）。 */
+function readMermaidVariables(): Record<string, string> {
+  const styles = getComputedStyle(document.documentElement)
+  const read = (name: string) => styles.getPropertyValue(name).trim()
+  return {
+    background: "transparent",
+    fontFamily:
+      '"Inter Variable", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif',
+    fontSize: "14px",
+    mainBkg: read("--mermaid-main-bkg"),
+    nodeBorder: read("--mermaid-node-border"),
+    nodeTextColor: read("--mermaid-node-text"),
+    lineColor: read("--mermaid-line"),
+    clusterBkg: read("--mermaid-cluster-bkg"),
+    clusterBorder: read("--mermaid-cluster-border"),
+    actorBkg: read("--mermaid-main-bkg"),
+    actorBorder: read("--mermaid-node-border"),
+    actorTextColor: read("--mermaid-node-text"),
+    signalColor: read("--mermaid-signal"),
+    signalTextColor: read("--mermaid-signal"),
+    noteBkgColor: read("--mermaid-note-bkg"),
+    noteBorderColor: read("--mermaid-note-border"),
+    noteFontColor: read("--mermaid-note-text"),
+    activationBkgColor: read("--mermaid-activation"),
+    edgeLabelBackground: read("--mermaid-label-bg"),
+    textColor: read("--mermaid-node-text"),
+  }
+}
+
 function initMermaid() {
   if (mermaidInitialized) return
   mermaid.initialize({
     startOnLoad: false,
-    theme: "default",
     securityLevel: "strict",
   })
   mermaidInitialized = true
@@ -57,10 +85,11 @@ export function MermaidBlock({ chart, children }: MermaidBlockProps) {
     let cancelled = false
     const id = `mermaid-${Math.random().toString(36).slice(2, 11)}`
 
-    // Re-initialize with appropriate theme when dark mode changes
+    // 每次渲染前按当前明暗模式重新套用配色
     mermaid.initialize({
       startOnLoad: false,
-      theme: isDark ? "dark" : "default",
+      theme: "base",
+      themeVariables: readMermaidVariables(),
       securityLevel: "strict",
     })
 

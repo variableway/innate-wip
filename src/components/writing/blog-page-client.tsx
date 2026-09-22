@@ -1,8 +1,17 @@
-import { useEffect, useMemo, useState } from "react"
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+  type Ref,
+} from "react"
 import {
   BookMarked,
   FileText,
   PanelLeft,
+  PanelLeftClose,
+  PanelLeftOpen,
   PenLine,
   Search,
 } from "lucide-react"
@@ -38,6 +47,7 @@ import {
   filterWritingPosts,
 } from "../../lib/writing/filter-posts"
 import { buildFolderTree } from "../../lib/writing/folder-tree"
+import { labelColorValue } from "../../lib/writing/label-color"
 import { useMediaQuery } from "../../lib/use-media-query"
 
 export interface BlogPostFull extends BlogListItem {
@@ -51,6 +61,12 @@ interface BlogPageClientProps {
   posts: BlogPostFull[]
 }
 
+type NavPanelHandle = NonNullable<
+  ComponentProps<typeof ResizablePanel>["panelRef"]
+> extends Ref<infer T>
+  ? T
+  : never
+
 export function BlogPageClient({ posts }: BlogPageClientProps) {
   const isMobile = useIsMobile()
   const isWide = useMediaQuery("(min-width: 1280px)")
@@ -61,6 +77,8 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
   const [activeSlug, setActiveSlug] = useState(posts[0]?.slug ?? "")
   const [mobileDetail, setMobileDetail] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const navPanelRef = useRef<NavPanelHandle | null>(null)
+  const [navCollapsed, setNavCollapsed] = useState(false)
 
   const categories = useMemo(() => countByCategory(posts), [posts])
   const folders = useMemo(() => buildFolderTree(posts), [posts])
@@ -174,6 +192,27 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
               <div className="flex h-full min-h-0 flex-col">{sidebar}</div>
             </SheetContent>
           </Sheet>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon-sm"
+            className="hidden xl:inline-flex"
+            aria-label={navCollapsed ? "Expand navigation" : "Collapse navigation"}
+            aria-expanded={!navCollapsed}
+            onClick={() => {
+              const panel = navPanelRef.current
+              if (!panel) return
+              if (panel.isCollapsed()) {
+                panel.expand()
+                setNavCollapsed(false)
+              } else {
+                panel.collapse()
+                setNavCollapsed(true)
+              }
+            }}
+          >
+            {navCollapsed ? <PanelLeftOpen /> : <PanelLeftClose />}
+          </Button>
           <h2 className="truncate text-sm font-semibold capitalize">
             {listTitle}
           </h2>
@@ -262,10 +301,17 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
     return (
       <ResizablePanelGroup className="h-full min-h-0 w-full">
         <ResizablePanel
+          panelRef={navPanelRef}
           defaultSize={256}
           minSize={180}
           maxSize={384}
+          collapsible
+          collapsedSize={0}
           groupResizeBehavior="preserve-pixel-size"
+          onResize={(size) => {
+            const collapsed = size.inPixels < 1
+            setNavCollapsed((prev) => (prev === collapsed ? prev : collapsed))
+          }}
           className="min-h-0 overflow-hidden"
         >
           {sidebar}
@@ -408,6 +454,7 @@ function WritingNav({
                   count={category.count}
                   active={filterCategory === category.id}
                   onClick={() => onSelectCategory(category.id)}
+                  iconColor={labelColorValue(category.id)}
                 />
               </li>
             ))}
@@ -432,12 +479,14 @@ function NavRow({
   count,
   active,
   onClick,
+  iconColor,
 }: {
   icon: typeof FileText
   label: string
   count: number
   active: boolean
   onClick: () => void
+  iconColor?: string
 }) {
   return (
     <button
@@ -449,7 +498,11 @@ function NavRow({
         "data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium"
       )}
     >
-      <Icon className="size-4 shrink-0" data-icon="inline-start" />
+      <Icon
+        className="size-4 shrink-0"
+        data-icon="inline-start"
+        style={iconColor ? { color: iconColor } : undefined}
+      />
       <span className="min-w-0 flex-1 truncate text-left">{label}</span>
       <span className="text-muted-foreground text-xs tabular-nums">{count}</span>
     </button>

@@ -6,6 +6,7 @@ import {
 } from "@innate/ui"
 import { MarkdownPreview } from "../markdown-preview"
 import { TableOfContents, type TocItem } from "../table-of-contents"
+import { labelChipStyle } from "../../lib/writing/label-color"
 
 export interface BlogViewerProps {
   title: string
@@ -54,8 +55,9 @@ export function BlogViewer({
         ) : null}
         {category ? (
           <Badge
-            variant="secondary"
-            className="mb-2"
+            variant="outline"
+            className="label-chip mb-2"
+            style={labelChipStyle(category)}
             render={
               onCategoryClick ? (
                 <button type="button" onClick={() => onCategoryClick(category)} />
@@ -97,6 +99,8 @@ export function BlogViewer({
           <Badge
             key={tag}
             variant="outline"
+            className="label-chip"
+            style={labelChipStyle(tag)}
             render={
               onTagClick ? (
                 <button type="button" onClick={() => onTagClick(tag)} />

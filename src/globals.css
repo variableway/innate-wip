@@ -32,6 +32,56 @@ body,
   --code: oklch(0.985 0 0);
 }
 
+/* 标签类配色（category 与 tag 共用）：色相由名字 hash 生成（见 lib/writing/label-color.ts），
+   明度/彩度在这里统一控制，保证任意生成色都和谐可读。 */
+:root,
+:root[data-theme] {
+  --label-l: 0.58;
+  --label-c: 0.12;
+}
+
+/* Mermaid 图表配色：mermaid-block 运行时读取后交给 mermaid 的 themeVariables。
+   只能放 hex —— mermaid 内部的色彩计算不支持 oklch。 */
+:root,
+:root[data-theme] {
+  --mermaid-main-bkg: #d8e7ff;
+  --mermaid-node-border: #2f6fe4;
+  --mermaid-node-text: #1f2a44;
+  --mermaid-line: #4a5b76;
+  --mermaid-cluster-bkg: #eaf1fd;
+  --mermaid-cluster-border: #9dbff0;
+  --mermaid-signal: #33415c;
+  --mermaid-note-bkg: #fff3c4;
+  --mermaid-note-border: #d9b95c;
+  --mermaid-note-text: #4a3f13;
+  --mermaid-activation: #c7dcff;
+  --mermaid-label-bg: #ffffff;
+}
+
+/* 暗色变体：html 会带 data-theme，这里必须用同级别选择器才能胜出上面的亮色定义。 */
+.dark,
+.dark[data-theme] {
+  --mermaid-main-bkg: #24335a;
+  --mermaid-node-border: #7ea4ff;
+  --mermaid-node-text: #e6edf7;
+  --mermaid-line: #8aa2c8;
+  --mermaid-cluster-bkg: #1a2540;
+  --mermaid-cluster-border: #3d5ca8;
+  --mermaid-signal: #c9d6ea;
+  --mermaid-note-bkg: #3d3717;
+  --mermaid-note-border: #8a7a33;
+  --mermaid-note-text: #f0e8c8;
+  --mermaid-activation: #31456e;
+  --mermaid-label-bg: #141b2d;
+}
+
+/* 挂在 Badge 上：文字、底色、边框都由同一个色相 token 派生。 */
+.label-chip {
+  color: var(--label-color);
+  background-color: color-mix(in oklab, var(--label-color) 12%, transparent);
+  border-color: color-mix(in oklab, var(--label-color) 35%, transparent);
+}
+
 @theme inline {
   --font-sans:
     "Inter Variable", "PingFang SC", "Noto Sans SC", "Microsoft YaHei",
