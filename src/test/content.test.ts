@@ -5,25 +5,33 @@ import { deriveExcerpt, parseFrontmatter } from "../lib/content/parser"
 import { fallbackSlug, parseWritingFile } from "../lib/content/parse-post"
 
 describe("writing content vault", () => {
-  it("loads only use-cases markdown by default", () => {
+  it("bundles only local use-cases and content markdown by default", () => {
     const posts = getWritingMeta({ status: "published" })
     const files = Object.keys(writingFiles)
     expect(files.length).toBeGreaterThan(0)
-    expect(files.every((filePath) => filePath.includes("/use-cases/"))).toBe(true)
-    expect(files.some((filePath) => filePath.includes("/demo/"))).toBe(false)
-    expect(files.some((filePath) => filePath.includes("/docs/modules/"))).toBe(false)
+    expect(
+      files.every(
+        (filePath) =>
+          filePath.includes("/use-cases/") || filePath.includes("/content/")
+      )
+    ).toBe(true)
+    expect(files.some((filePath) => filePath.includes("/docs/"))).toBe(false)
     expect(posts.length).toBeGreaterThan(0)
     expect(posts.every((post) => post.slug && post.title)).toBe(true)
-    expect(posts.every((post) => post.vault === "use-cases")).toBe(true)
+    expect(
+      posts.every(
+        (post) => post.vault === "use-cases" || post.vault === "content"
+      )
+    ).toBe(true)
   })
 
-  it("titles use-case pages from the first heading", () => {
+  it("loads demo content posts with content vault metadata", () => {
     const post = getWritingMeta().find((item) =>
-      item.slug.includes("01-empty-webshell")
+      item.slug.includes("tools-for-thinkers")
     )
-    expect(post?.title).toMatch(/空白的 Web Shell/)
-    expect(post?.vault).toBe("use-cases")
-    expect(post?.folder).toBe("")
+    expect(post?.title).toMatch(/Tools for Thinkers/)
+    expect(post?.vault).toBe("content")
+    expect(post?.folder).toBe("demo")
   })
 })
 
